@@ -22,8 +22,8 @@ android {
 
     defaultConfig {
         applicationId = "es.sebas1705.impostorandroidgame"
-        versionCode = 3
-        versionName = "1.1.1"
+        versionCode = 4
+        versionName = "1.1.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
