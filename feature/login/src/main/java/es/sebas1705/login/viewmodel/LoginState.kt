@@ -10,4 +10,5 @@ data class LoginState(
     val loginMode: LoginMode = LoginMode.Main,
     val isWaitingEmailVerification: Boolean = false,
     val resetEmailSent: Boolean = false,
+    val resendCooldownSeconds: Int = 0,
 ) : MVIBaseState

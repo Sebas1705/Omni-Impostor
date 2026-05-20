@@ -60,6 +60,7 @@
     <string name="core_resources_login_verify_title">Verify your email</string>
     <string name="core_resources_login_verify_body">We sent a verification link to your email. Please check your inbox and click the link before signing in.</string>
     <string name="core_resources_login_resend_verification">Resend verification email</string>
+    <string name="core_resources_login_cancel_verification">Cancel registration</string>
     <string name="core_resources_login_check_verified">I\'ve verified my email</string>
     <string name="core_resources_login_email_not_verified">Email not verified yet. Please click the link in your inbox.</string>
     <string name="core_resources_login_guest_restricted">This feature is only available for registered users. Sign in to access ranking and profile.</string>

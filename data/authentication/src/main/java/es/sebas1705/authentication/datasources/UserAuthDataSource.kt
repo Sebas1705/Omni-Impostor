@@ -87,6 +87,14 @@ class UserAuthDataSource @Inject constructor(
         onSuccessListener = { ResponseState.EmptySuccess }
     )
 
+    fun deleteCurrentUser(): FlowResponseNothing = taskFlowManager.taskFlowProducer(
+        taskAction = {
+            firebaseAuth.currentUser?.delete()
+                ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+        },
+        onSuccessListener = { ResponseState.EmptySuccess }
+    )
+
     private fun maskUid(uid: String): String =
         if (uid.length <= 6) uid else "${uid.take(3)}...${uid.takeLast(3)}"
 }

@@ -11,6 +11,7 @@ sealed interface LoginIntent : MVIBaseIntent {
     data class SendPasswordReset(val email: String) : LoginIntent
     data object ResendVerificationEmail : LoginIntent
     data object CheckEmailVerified : LoginIntent
+    data object CancelEmailVerification : LoginIntent
     data class ChangeMode(val mode: LoginMode) : LoginIntent
     data object ConsumeNavigation : LoginIntent
     data object ClearError : LoginIntent

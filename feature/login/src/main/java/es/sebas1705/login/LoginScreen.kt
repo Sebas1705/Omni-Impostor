@@ -37,6 +37,7 @@ fun LoginScreen(
         errorMessage = uiState.errorMessage,
         loginMode = uiState.loginMode,
         resetEmailSent = uiState.resetEmailSent,
+        resendCooldownSeconds = uiState.resendCooldownSeconds,
         onGoogleSignIn = { loginViewModel.eventHandler(LoginIntent.SignInWithGoogle) },
         onSignInWithEmail = { email, password ->
             loginViewModel.eventHandler(LoginIntent.SignInWithEmail(email, password))
@@ -50,6 +51,7 @@ fun LoginScreen(
         onSignInAsGuest = { loginViewModel.eventHandler(LoginIntent.SignInAsGuest) },
         onResendVerificationEmail = { loginViewModel.eventHandler(LoginIntent.ResendVerificationEmail) },
         onCheckEmailVerified = { loginViewModel.eventHandler(LoginIntent.CheckEmailVerified) },
+        onCancelEmailVerification = { loginViewModel.eventHandler(LoginIntent.CancelEmailVerification) },
         onChangeMode = { mode -> loginViewModel.eventHandler(LoginIntent.ChangeMode(mode)) },
         onDismissError = { loginViewModel.eventHandler(LoginIntent.ClearError) }
     )

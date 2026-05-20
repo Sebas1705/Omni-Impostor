@@ -54,6 +54,8 @@ class AuthenticationRepository @Inject constructor(
     override fun isEmailVerified(): Boolean = userAuthDataSource.isEmailVerified()
     override fun isAnonymous(): Boolean = userAuthDataSource.isAnonymous()
 
+    override fun deleteCurrentUser(): FlowResponseNothing = userAuthDataSource.deleteCurrentUser()
+
     override suspend fun isSessionExpected(): Boolean =
         settingsPreferencesDataSource.getAuthSessionExpected().first()
 

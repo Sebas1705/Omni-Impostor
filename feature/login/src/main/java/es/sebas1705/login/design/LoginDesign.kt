@@ -68,6 +68,7 @@ fun LoginDesign(
     errorMessage: String? = null,
     loginMode: LoginMode = LoginMode.Main,
     resetEmailSent: Boolean = false,
+    resendCooldownSeconds: Int = 0,
     onGoogleSignIn: () -> Unit = {},
     onSignInWithEmail: (email: String, password: String) -> Unit = { _, _ -> },
     onSignUpWithEmail: (email: String, password: String) -> Unit = { _, _ -> },
@@ -75,6 +76,7 @@ fun LoginDesign(
     onSignInAsGuest: () -> Unit = {},
     onResendVerificationEmail: () -> Unit = {},
     onCheckEmailVerified: () -> Unit = {},
+    onCancelEmailVerification: () -> Unit = {},
     onChangeMode: (LoginMode) -> Unit = {},
     onDismissError: () -> Unit = {}
 ) {
@@ -164,8 +166,10 @@ fun LoginDesign(
                                 sound = sound,
                                 onResend = onResendVerificationEmail,
                                 onCheckVerified = onCheckEmailVerified,
+                                onCancel = onCancelEmailVerification,
                                 errorMessage = errorMessage,
-                                onDismissError = onDismissError
+                                onDismissError = onDismissError,
+                                resendCooldownSeconds = resendCooldownSeconds
                             )
                         }
                     }
@@ -409,9 +413,13 @@ private fun EmailVerificationPanel(
     sound: (Sounds) -> Unit,
     onResend: () -> Unit,
     onCheckVerified: () -> Unit,
+    onCancel: () -> Unit,
     errorMessage: String?,
-    onDismissError: () -> Unit
+    onDismissError: () -> Unit,
+    resendCooldownSeconds: Int = 0,
 ) {
+    val canResend = resendCooldownSeconds == 0
+
     Text(
         text = stringResource(ResourceR.string.core_resources_login_verify_title),
         style = MaterialTheme.typography.titleLarge,
@@ -431,10 +439,24 @@ private fun EmailVerificationPanel(
         Text(stringResource(ResourceR.string.core_resources_login_check_verified))
     }
     OutlinedButton(
-        onClick = { sound(Sounds.CLK_CASUAL); onResend() },
+        onClick = { if (canResend) { sound(Sounds.CLK_CASUAL); onResend() } },
+        enabled = canResend,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Text(stringResource(ResourceR.string.core_resources_login_resend_verification))
+        if (canResend) {
+            Text(stringResource(ResourceR.string.core_resources_login_resend_verification))
+        } else {
+            Text(stringResource(ResourceR.string.core_resources_login_resend_verification) + " ($resendCooldownSeconds s)")
+        }
+    }
+    TextButton(
+        onClick = { sound(Sounds.CLK_TAP); onCancel() },
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = stringResource(ResourceR.string.core_resources_login_cancel_verification),
+            color = MaterialTheme.colorScheme.error
+        )
     }
     ErrorSection(errorMessage = errorMessage, sound = sound, onDismissError = onDismissError)
 }

@@ -47,15 +47,18 @@ class TaskFlowManager(
     ): FlowResponse<T> = callbackFlow {
         logI("Starting task flow producer")
         val sender = this@callbackFlow::trySendBlocking
+        val closer = this@callbackFlow::close
         try {
             sender(ResponseState.Loading)
             assertChecker()?.let {
                 logE("Error in task flow producer: $it")
                 sender(createResponse(ErrorResponseType.BAD_REQUEST, it))
+                closer(null)
             }
                 ?: taskAction()
                     .addOnSuccessListener {
                         sender(onSuccessListener(it))
+                        closer(null)
                     }.addOnFailureListener {
                         sender(
                             ResponseState.Error(
@@ -65,6 +68,7 @@ class TaskFlowManager(
                                 loggerAction
                             )
                         )
+                        closer(null)
                     }
         } catch (e: Exception) {
             logE("Error in task flow producer: ${e.message}")
@@ -76,11 +80,9 @@ class TaskFlowManager(
                     loggerAction
                 )
             )
+            closer(null)
         }
-        awaitClose {
-            channel.close()
-            close()
-        }
+        awaitClose { }
     }
 
     /**

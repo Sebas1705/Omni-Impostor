@@ -108,6 +108,12 @@ interface IAuthenticationRepository {
     fun isAnonymous(): Boolean
 
     /**
+     * Deletes the currently signed-in user account from Firebase.
+     * Used when the user cancels the email-verification flow before confirming.
+     */
+    fun deleteCurrentUser(): FlowResponseNothing
+
+    /**
      * Reads whether app expects an authenticated user in this installation.
      */
     suspend fun isSessionExpected(): Boolean
