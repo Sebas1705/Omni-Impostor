@@ -44,6 +44,8 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import es.sebas1705.core.resources.R
 import es.sebas1705.offlinegame.viewmodel.OfflineGameState
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import kotlin.math.roundToInt
 
 private const val REVEAL_THRESHOLD_PX = -180f
@@ -275,8 +277,9 @@ internal fun RevealContinueButton(
     revealedCurrentCard: Boolean,
     onNextRevealPlayer: () -> Unit
 ) {
+    val sound = LocalSoundPlayer.current
     FilledTonalButton(
-        onClick = onNextRevealPlayer,
+        onClick = { sound(Sounds.CLK_ARCADE); onNextRevealPlayer() },
         enabled = revealedCurrentCard,
         modifier = Modifier.fillMaxWidth()
     ) {

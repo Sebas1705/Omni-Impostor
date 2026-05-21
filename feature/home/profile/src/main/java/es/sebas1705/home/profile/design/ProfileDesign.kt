@@ -66,6 +66,8 @@ import es.sebas1705.models.Categories
 import es.sebas1705.models.nameRes
 import es.sebas1705.ui.adaptive.LocalForceCompactTables
 import es.sebas1705.ui.adaptive.TableSortAnimation
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.ui.theme.AppTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
@@ -94,6 +96,7 @@ fun ProfileDesign(
     onDebugNav: () -> Unit = {}
 ) {
     val forceCompactTables = LocalForceCompactTables.current
+    val sound = LocalSoundPlayer.current
     val isCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 420
     val isVeryCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 360
     val tableScrollState = rememberScrollState()
@@ -132,7 +135,7 @@ fun ProfileDesign(
                     tabs.forEach { (tab, label) ->
                         Tab(
                             selected = selectedTab == tab,
-                            onClick = { onSelectTab(tab) },
+                            onClick = { sound(Sounds.CLK_CASUAL); onSelectTab(tab) },
                             text = {
                                 Text(
                                     text = label,
@@ -297,7 +300,7 @@ fun ProfileDesign(
 
             item(contentType = "signOut") {
                 OutlinedButton(
-                    onClick = onSignOut,
+                    onClick = { sound(Sounds.CLK_INSTANT); onSignOut() },
                     modifier = Modifier.fillMaxWidth(),
                     colors = ButtonDefaults.outlinedButtonColors(
                         contentColor = MaterialTheme.colorScheme.error
@@ -310,7 +313,7 @@ fun ProfileDesign(
             if (BuildConfig.DEBUG) {
                 item(contentType = "debug") {
                     Button(
-                        onClick = onDebugNav,
+                        onClick = { sound(Sounds.CLK_TAP); onDebugNav() },
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(stringResource(ResourceR.string.core_resources_settings_open_debug_tools))
@@ -494,6 +497,7 @@ private fun ProfileTableCell(
     sortDirection: ProfileSortDirection?,
     onClick: () -> Unit
 ) {
+    val sound = LocalSoundPlayer.current
     if (!isHeader) {
         Text(
             text = text,
@@ -508,7 +512,7 @@ private fun ProfileTableCell(
     }
 
     Row(
-        modifier = modifier.clickable(onClick = onClick),
+        modifier = modifier.clickable { sound(Sounds.CLK_CLOCK); onClick() },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(2.dp)
     ) {

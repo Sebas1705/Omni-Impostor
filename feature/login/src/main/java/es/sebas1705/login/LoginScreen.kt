@@ -13,7 +13,7 @@ import es.sebas1705.login.viewmodel.LoginViewModel
 @Composable
 fun LoginScreen(
     modifier: Modifier = Modifier,
-    onLoginSuccess: () -> Unit = {},
+    onLoginSuccess: (isGuest: Boolean) -> Unit = {},
     loginViewModel: LoginViewModel = hiltViewModel()
 ) {
     val uiState by loginViewModel.uiState.collectAsStateWithLifecycle()
@@ -23,9 +23,9 @@ fun LoginScreen(
         loginViewModel.eventHandler(LoginIntent.CheckSession)
     }
 
-    LaunchedEffect(uiState.navigateToHome, onLoginSuccess) {
+    LaunchedEffect(uiState.navigateToHome) {
         if (uiState.navigateToHome) {
-            onLoginSuccess()
+            onLoginSuccess(uiState.navigateAsGuest)
             loginViewModel.eventHandler(LoginIntent.ConsumeNavigation)
         }
     }
@@ -35,8 +35,24 @@ fun LoginScreen(
         isCheckingSession = uiState.isCheckingSession,
         loading = loading,
         errorMessage = uiState.errorMessage,
+        loginMode = uiState.loginMode,
+        resetEmailSent = uiState.resetEmailSent,
+        resendCooldownSeconds = uiState.resendCooldownSeconds,
         onGoogleSignIn = { loginViewModel.eventHandler(LoginIntent.SignInWithGoogle) },
+        onSignInWithEmail = { email, password ->
+            loginViewModel.eventHandler(LoginIntent.SignInWithEmail(email, password))
+        },
+        onSignUpWithEmail = { email, password ->
+            loginViewModel.eventHandler(LoginIntent.SignUpWithEmail(email, password))
+        },
+        onSendPasswordReset = { email ->
+            loginViewModel.eventHandler(LoginIntent.SendPasswordReset(email))
+        },
+        onSignInAsGuest = { loginViewModel.eventHandler(LoginIntent.SignInAsGuest) },
+        onResendVerificationEmail = { loginViewModel.eventHandler(LoginIntent.ResendVerificationEmail) },
+        onCheckEmailVerified = { loginViewModel.eventHandler(LoginIntent.CheckEmailVerified) },
+        onCancelEmailVerification = { loginViewModel.eventHandler(LoginIntent.CancelEmailVerification) },
+        onChangeMode = { mode -> loginViewModel.eventHandler(LoginIntent.ChangeMode(mode)) },
         onDismissError = { loginViewModel.eventHandler(LoginIntent.ClearError) }
     )
 }
-

@@ -8,6 +8,7 @@ import es.sebas1705.authentication.config.SettingsAuth
 import es.sebas1705.common.managers.ClassLogData
 import es.sebas1705.common.managers.TaskFlowManager
 import es.sebas1705.common.responses.ResponseState
+import es.sebas1705.common.responses.ErrorResponseType
 import es.sebas1705.common.utlis.alias.FlowResponseNothing
 import es.sebas1705.common.utlis.extensions.types.logI
 import javax.inject.Inject
@@ -77,6 +78,34 @@ class UserAuthDataSource @Inject constructor(
 
     /** HTTPS URL of the Google profile photo, or null if unavailable. */
     fun getUserPhotoUrl(): String? = firebaseAuth.currentUser?.photoUrl?.toString()
+
+    fun isAnonymous(): Boolean = firebaseAuth.currentUser?.isAnonymous ?: false
+
+    fun isEmailVerified(): Boolean = firebaseAuth.currentUser?.isEmailVerified ?: false
+
+    fun signInAnonymously(): FlowResponseNothing = taskFlowManager.taskFlowProducer(
+        taskAction = { firebaseAuth.signInAnonymously() },
+        onSuccessListener = {
+            if (it.user != null) ResponseState.EmptySuccess
+            else taskFlowManager.createResponse(ErrorResponseType.INTERNAL, SettingsAuth.NOT_LOGGED_USER)
+        }
+    )
+
+    fun sendVerificationEmail(): FlowResponseNothing = taskFlowManager.taskFlowProducer(
+        taskAction = {
+            firebaseAuth.currentUser?.sendEmailVerification()
+                ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+        },
+        onSuccessListener = { ResponseState.EmptySuccess }
+    )
+
+    fun deleteCurrentUser(): FlowResponseNothing = taskFlowManager.taskFlowProducer(
+        taskAction = {
+            firebaseAuth.currentUser?.delete()
+                ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+        },
+        onSuccessListener = { ResponseState.EmptySuccess }
+    )
 
     private fun maskUid(uid: String): String =
         if (uid.length <= 6) uid else "${uid.take(3)}...${uid.takeLast(3)}"

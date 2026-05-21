@@ -416,6 +416,12 @@ class OfflineGameViewModel @Inject constructor(
     }
 
 
+    override fun onCleared() {
+        super.onCleared()
+        runCatching { mediaPlayerManager.changeSong(Musics.BACKGROUND) }
+            .onFailure { logW("audio restore background failed: ${it.message}") }
+    }
+
     private fun describeResult(result: OfflineGameResult): String =
         "winner=${result.winner} word='${result.word}' impostors=${result.impostorNames.preview()} " +
             "votes(correct=${result.correctVotes}, incorrect=${result.incorrectVotes})"

@@ -10,8 +10,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dagger.hilt.android.AndroidEntryPoint
 import es.sebas1705.common.utlis.extensions.types.logI
+import es.sebas1705.domain.managers.MediaPlayerManager
 import es.sebas1705.main.AppNav
 import java.util.Locale
+import javax.inject.Inject
 
 
 /**
@@ -22,6 +24,9 @@ import java.util.Locale
  */
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var mediaPlayerManager: MediaPlayerManager
 
     /**
      * Create the activity and set the content to the SplashScreen
@@ -73,6 +78,16 @@ class MainActivity : ComponentActivity() {
             { hideSystemBars() },
             2000
         )
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mediaPlayerManager.onAppBackground()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mediaPlayerManager.onAppForeground()
     }
 
     private fun applySelectedLocaleToResources() {

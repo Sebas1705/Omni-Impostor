@@ -44,9 +44,17 @@ class AuthenticationRepository @Inject constructor(
     override suspend fun signWithGoogle(): FlowResponseNothing =
         googleAuthDataSource.signWithGoogle()
 
+    override fun signInAnonymously(): FlowResponseNothing = userAuthDataSource.signInAnonymously()
+
+    override fun sendVerificationEmail(): FlowResponseNothing = userAuthDataSource.sendVerificationEmail()
+
     //Functions:
     override fun signOut(): Boolean = userAuthDataSource.signOut()
     override fun isUserLogged(): Boolean = userAuthDataSource.isUserLogged()
+    override fun isEmailVerified(): Boolean = userAuthDataSource.isEmailVerified()
+    override fun isAnonymous(): Boolean = userAuthDataSource.isAnonymous()
+
+    override fun deleteCurrentUser(): FlowResponseNothing = userAuthDataSource.deleteCurrentUser()
 
     override suspend fun isSessionExpected(): Boolean =
         settingsPreferencesDataSource.getAuthSessionExpected().first()

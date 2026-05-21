@@ -43,6 +43,26 @@
     <string name="core_resources_login_google_prompt">Inicia sesión con Google para continuar tus partidas de Impostor.</string>
     <string name="core_resources_login_signing_in">Iniciando sesión…</string>
     <string name="core_resources_login_continue_google">Continuar con Google</string>
+    <string name="core_resources_login_sign_in_email">Iniciar sesión con email</string>
+    <string name="core_resources_login_sign_up_email">Crear una cuenta</string>
+    <string name="core_resources_login_continue_guest">Continuar como invitado</string>
+    <string name="core_resources_login_email_hint">Correo electrónico</string>
+    <string name="core_resources_login_password_hint">Contraseña</string>
+    <string name="core_resources_login_sign_in">Iniciar sesión</string>
+    <string name="core_resources_login_register">Registrarse</string>
+    <string name="core_resources_login_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="core_resources_login_send_reset">Enviar email de recuperación</string>
+    <string name="core_resources_login_reset_sent">Email de recuperación enviado. Revisa tu bandeja de entrada.</string>
+    <string name="core_resources_login_back_to_login">Volver al inicio</string>
+    <string name="core_resources_login_no_account">¿No tienes cuenta?</string>
+    <string name="core_resources_login_already_have_account">¿Ya tienes una cuenta?</string>
+    <string name="core_resources_login_verify_title">Verifica tu email</string>
+    <string name="core_resources_login_verify_body">Te hemos enviado un enlace de verificación. Revisa tu bandeja de entrada y haz clic en el enlace antes de iniciar sesión.</string>
+    <string name="core_resources_login_resend_verification">Reenviar email de verificación</string>
+    <string name="core_resources_login_cancel_verification">Cancelar registro</string>
+    <string name="core_resources_login_check_verified">Ya verifiqué mi email</string>
+    <string name="core_resources_login_email_not_verified">Email no verificado aún. Haz clic en el enlace de tu bandeja de entrada.</string>
+    <string name="core_resources_login_guest_restricted">Esta función solo está disponible para usuarios registrados. Inicia sesión para acceder al ranking y perfil.</string>
 
     <string name="core_resources_categories_title">Categorías</string>
     <string name="core_resources_categories_select_all">Seleccionar todo</string>

@@ -44,6 +44,26 @@
     <string name="core_resources_login_google_prompt">Sign in with Google to continue your Impostor matches.</string>
     <string name="core_resources_login_signing_in">Signing in...</string>
     <string name="core_resources_login_continue_google">Continue with Google</string>
+    <string name="core_resources_login_sign_in_email">Sign in with email</string>
+    <string name="core_resources_login_sign_up_email">Create an account</string>
+    <string name="core_resources_login_continue_guest">Continue as guest</string>
+    <string name="core_resources_login_email_hint">Email</string>
+    <string name="core_resources_login_password_hint">Password</string>
+    <string name="core_resources_login_sign_in">Sign in</string>
+    <string name="core_resources_login_register">Register</string>
+    <string name="core_resources_login_forgot_password">Forgot your password?</string>
+    <string name="core_resources_login_send_reset">Send reset email</string>
+    <string name="core_resources_login_reset_sent">Password reset email sent. Check your inbox.</string>
+    <string name="core_resources_login_back_to_login">Back to login</string>
+    <string name="core_resources_login_no_account">Don\'t have an account?</string>
+    <string name="core_resources_login_already_have_account">Already have an account?</string>
+    <string name="core_resources_login_verify_title">Verify your email</string>
+    <string name="core_resources_login_verify_body">We sent a verification link to your email. Please check your inbox and click the link before signing in.</string>
+    <string name="core_resources_login_resend_verification">Resend verification email</string>
+    <string name="core_resources_login_cancel_verification">Cancel registration</string>
+    <string name="core_resources_login_check_verified">I\'ve verified my email</string>
+    <string name="core_resources_login_email_not_verified">Email not verified yet. Please click the link in your inbox.</string>
+    <string name="core_resources_login_guest_restricted">This feature is only available for registered users. Sign in to access ranking and profile.</string>
 
     <string name="core_resources_categories_title">Categories</string>
     <string name="core_resources_categories_select_all">Select all</string>

@@ -13,5 +13,6 @@ dependencies {
 
     api(projects.domain.usescases.authentication)
     implementation(libs.lottie.compose)
+    implementation(libs.material.icons.extended)
 }
 

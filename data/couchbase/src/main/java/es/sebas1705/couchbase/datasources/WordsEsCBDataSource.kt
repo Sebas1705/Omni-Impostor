@@ -7,5 +7,5 @@ import javax.inject.Inject
 
 class WordsEsCBDataSource @Inject constructor(
     couchbaseManager: ICouchbaseManager
-): CBDataSource<WordDoc>(couchbaseManager, WordDoc::class)
+): CBDataSource<WordDoc>(couchbaseManager, WordDoc::class, "WordDoc_es_collection")
 

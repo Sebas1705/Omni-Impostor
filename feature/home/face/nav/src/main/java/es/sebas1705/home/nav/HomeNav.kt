@@ -15,6 +15,7 @@ private fun homeNavLogD(message: String) = HOME_NAV_LOG_TAG.logD(message)
 @Suppress("LongMethod")
 fun HomeNav(
     modifier: Modifier = Modifier,
+    isGuestUser: Boolean = false,
     onSignOut: () -> Unit = {},
     onDebugNav: () -> Unit = {},
     onOpenSettings: () -> Unit = {},
@@ -44,6 +45,7 @@ fun HomeNav(
     HomeDesign(
         modifier = modifier,
         backStack = backStack,
+        isGuestUser = isGuestUser,
         onSignOut = onSignOut,
         onDebugNav = onDebugNav,
         onOpenSettings = onOpenSettings,

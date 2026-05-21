@@ -48,6 +48,8 @@ import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.core.resources.R
 import es.sebas1705.home.nav.components.GameCoverCard
 import es.sebas1705.home.nav.components.ModeCard
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.ui.theme.AppTheme
 import es.sebas1705.ui.theme.makeTitle
 
@@ -65,12 +67,13 @@ fun FaceDesign(
     onOpenSettings: () -> Unit = {}
 ) {
     val selectedOffline = rememberSaveable { mutableStateOf(true) }
+    val sound = LocalSoundPlayer.current
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
         floatingActionButton = {
-            FloatingActionButton(onClick = onOpenSettings) {
+            FloatingActionButton(onClick = { sound(Sounds.CLK_TAP); onOpenSettings() }) {
                 Icon(
                     imageVector = Icons.Outlined.Settings,
                     contentDescription = stringResource(R.string.core_resources_settings_title)
@@ -123,7 +126,7 @@ fun FaceDesign(
                                     title = stringResource(R.string.core_resources_face_offline_mode),
                                     description = stringResource(R.string.core_resources_face_offline_mode_desc),
                                     icon = Icons.Outlined.OfflineBolt,
-                                    onClick = { selectedOffline.value = true },
+                                    onClick = { sound(Sounds.CLK_CASUAL); selectedOffline.value = true },
                                     modifier = Modifier.weight(1f),
                                     selected = selectedOffline.value
                                 )
@@ -131,7 +134,7 @@ fun FaceDesign(
                                     title = stringResource(R.string.core_resources_face_online_mode),
                                     description = stringResource(R.string.core_resources_face_online_mode_desc),
                                     icon = Icons.Outlined.CloudQueue,
-                                    onClick = { selectedOffline.value = false },
+                                    onClick = { sound(Sounds.CLK_CASUAL); selectedOffline.value = false },
                                     modifier = Modifier.weight(1f),
                                     selected = !selectedOffline.value
                                 )
@@ -185,7 +188,7 @@ fun FaceDesign(
                             }
                             item(contentType = "start") {
                                 FilledTonalButton(
-                                    onClick = onStartOfflineGame,
+                                    onClick = { sound(Sounds.CLK_ARCADE); onStartOfflineGame() },
                                     enabled = faceState.users.size >= 3 && faceState.categoriesStates.any { it.value },
                                     modifier = Modifier
                                         .fillMaxWidth()
@@ -282,7 +285,7 @@ fun FaceDesign(
                                 title = stringResource(R.string.core_resources_face_offline_mode),
                                 description = stringResource(R.string.core_resources_face_offline_mode_desc),
                                 icon = Icons.Outlined.OfflineBolt,
-                                onClick = { selectedOffline.value = true },
+                                onClick = { sound(Sounds.CLK_CASUAL); selectedOffline.value = true },
                                 modifier = Modifier.weight(1f),
                                 selected = selectedOffline.value
                             )
@@ -290,7 +293,7 @@ fun FaceDesign(
                                 title = stringResource(R.string.core_resources_face_online_mode),
                                 description = stringResource(R.string.core_resources_face_online_mode_desc),
                                 icon = Icons.Outlined.CloudQueue,
-                                onClick = { selectedOffline.value = false },
+                                onClick = { sound(Sounds.CLK_CASUAL); selectedOffline.value = false },
                                 modifier = Modifier.weight(1f),
                                 selected = !selectedOffline.value
                             )
@@ -317,7 +320,7 @@ fun FaceDesign(
                         }
                         item(contentType = "contentType8") {
                             FilledTonalButton(
-                                onClick = onStartOfflineGame,
+                                onClick = { sound(Sounds.CLK_ARCADE); onStartOfflineGame() },
                                 enabled = faceState.users.size >= 3 && faceState.categoriesStates.any { it.value },
                                 modifier = Modifier
                                     .fillMaxWidth()
@@ -396,8 +399,9 @@ fun FaceDesign(
 
 @Composable
 private fun FaceCategoriesCard(faceState: FaceState, onOpenCategories: () -> Unit) {
+    val sound = LocalSoundPlayer.current
     OutlinedButton(
-        onClick = onOpenCategories,
+        onClick = { sound(Sounds.CLK_CASUAL); onOpenCategories() },
         modifier = Modifier.fillMaxWidth()
     ) {
         Icon(
@@ -417,8 +421,9 @@ private fun FaceCategoriesCard(faceState: FaceState, onOpenCategories: () -> Uni
 
 @Composable
 private fun FaceUsersCard(faceState: FaceState, onOpenUser: () -> Unit) {
+    val sound = LocalSoundPlayer.current
     OutlinedButton(
-        onClick = onOpenUser,
+        onClick = { sound(Sounds.CLK_CASUAL); onOpenUser() },
         modifier = Modifier.fillMaxWidth()
     ) {
         Icon(
@@ -435,8 +440,9 @@ private fun FaceUsersCard(faceState: FaceState, onOpenUser: () -> Unit) {
 
 @Composable
 private fun FaceModeCard(faceState: FaceState, onOpenMode: () -> Unit) {
+    val sound = LocalSoundPlayer.current
     OutlinedButton(
-        onClick = onOpenMode,
+        onClick = { sound(Sounds.CLK_CASUAL); onOpenMode() },
         modifier = Modifier.fillMaxWidth()
     ) {
         Icon(

@@ -57,6 +57,8 @@ import es.sebas1705.home.ranking.viewmodel.RankingSortDirection
 import es.sebas1705.home.ranking.viewmodel.RankingTab
 import es.sebas1705.ui.adaptive.LocalForceCompactTables
 import es.sebas1705.ui.adaptive.TableSortAnimation
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.ui.theme.AppTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
@@ -86,6 +88,7 @@ fun RankingDesign(
     onToggleOfflineSort: (RankingOfflineSortColumn) -> Unit = {}
 ) {
     val forceCompactTables = LocalForceCompactTables.current
+    val sound = LocalSoundPlayer.current
     val isCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 420
     val isVeryCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 360
     val tableScrollState = rememberScrollState()
@@ -133,7 +136,7 @@ fun RankingDesign(
                     tabs.forEach { (tab, label) ->
                         Tab(
                             selected = selectedTab == tab,
-                            onClick = { onSelectTab(tab) },
+                            onClick = { sound(Sounds.CLK_CASUAL); onSelectTab(tab) },
                             text = {
                                 Text(
                                     text = label,
@@ -484,6 +487,7 @@ private fun RankingTableCell(
     onClick: () -> Unit,
     medalColor: Color? = null
 ) {
+    val sound = LocalSoundPlayer.current
     if (!isHeader) {
         Text(
             text = text,
@@ -498,7 +502,7 @@ private fun RankingTableCell(
     }
 
     Row(
-        modifier = modifier.clickable(onClick = onClick),
+        modifier = modifier.clickable { sound(Sounds.CLK_CLOCK); onClick() },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(2.dp)
     ) {

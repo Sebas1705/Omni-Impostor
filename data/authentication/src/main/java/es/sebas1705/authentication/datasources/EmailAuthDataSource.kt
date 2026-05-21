@@ -55,10 +55,8 @@ class EmailAuthDataSource @Inject constructor(
     ): FlowResponseNothing = taskFlowManager.taskFlowProducer(
         taskAction = { firebaseAuth.createUserWithEmailAndPassword(email, password) },
         onSuccessListener = {
-            if (it.user != null) {
-                it.user?.sendEmailVerification()
-                ResponseState.EmptySuccess
-            } else taskFlowManager.createResponse(
+            if (it.user != null) ResponseState.EmptySuccess
+            else taskFlowManager.createResponse(
                 ErrorResponseType.INTERNAL,
                 SettingsAuth.NOT_LOGGED_USER
             )

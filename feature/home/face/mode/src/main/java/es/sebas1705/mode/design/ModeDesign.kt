@@ -38,6 +38,8 @@ import es.sebas1705.common.FaceState
 import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.core.resources.R
 import es.sebas1705.models.Modes
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.ui.theme.AppTheme
 
 private const val TIMER_STEP_SECONDS = 30
@@ -58,6 +60,7 @@ fun ModeDesign(
         rememberSaveable { mutableIntStateOf(faceState.discussionTimerSeconds.coerceAtLeast(0)) }
     val selectedImpostorsKnowEachOther = rememberSaveable { mutableStateOf(faceState.impostorsKnowEachOther) }
     val selectedShowNumOfImpostors = rememberSaveable { mutableStateOf(faceState.showNumOfImpostors) }
+    val sound = LocalSoundPlayer.current
 
     Scaffold(
         modifier = modifier
@@ -68,7 +71,7 @@ fun ModeDesign(
             TopAppBar(
                 title = { Text(stringResource(R.string.core_resources_game_mode_title)) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) {
+                    IconButton(onClick = { sound(Sounds.CLK_TAP); onBack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.core_resources_back)
@@ -80,6 +83,7 @@ fun ModeDesign(
         bottomBar = {
             FilledTonalButton(
                 onClick = {
+                    sound(Sounds.CLK_ARCADE)
                     onSave(
                         runCatching { Modes.valueOf(selectedModeName.value) }
                             .getOrDefault(Modes.Classic),
@@ -120,7 +124,7 @@ fun ModeDesign(
                         contentType = { _ -> "contentType1" }) { option ->
                         val isSelected = selectedModeName.value == option.name
                         Card(
-                            onClick = { selectedModeName.value = option.name },
+                            onClick = { sound(Sounds.CLK_CASUAL); selectedModeName.value = option.name },
                             colors = if (isSelected) {
                                 CardDefaults.cardColors(
                                     containerColor = MaterialTheme.colorScheme.primaryContainer,
@@ -181,6 +185,7 @@ fun ModeDesign(
                 ) {
                     IconButton(
                         onClick = {
+                            sound(Sounds.CLK_CLOCK)
                             selectedImpostors.intValue =
                                 (selectedImpostors.intValue - 1).coerceAtLeast(1)
                         },
@@ -199,6 +204,7 @@ fun ModeDesign(
 
                     IconButton(
                         onClick = {
+                            sound(Sounds.CLK_CLOCK)
                             selectedImpostors.intValue += 1
                         },
                         enabled = (selectedImpostors.intValue + 1) != faceState.users.size
@@ -226,6 +232,7 @@ fun ModeDesign(
                 ) {
                     IconButton(
                         onClick = {
+                            sound(Sounds.CLK_CLOCK)
                             selectedTimerSeconds.intValue =
                                 (selectedTimerSeconds.intValue - TIMER_STEP_SECONDS).coerceAtLeast(0)
                         },
@@ -249,7 +256,7 @@ fun ModeDesign(
                     )
 
                     IconButton(
-                        onClick = { selectedTimerSeconds.intValue += TIMER_STEP_SECONDS }
+                        onClick = { sound(Sounds.CLK_CLOCK); selectedTimerSeconds.intValue += TIMER_STEP_SECONDS }
                     ) {
                         Icon(
                             imageVector = Icons.Filled.Add,

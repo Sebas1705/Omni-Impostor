@@ -31,9 +31,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import es.sebas1705.core.resources.R
 import es.sebas1705.offlinegame.models.OfflineWinner
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 
 @Composable
 internal fun EmptyResultCard(onBack: () -> Unit) {
+    val sound = LocalSoundPlayer.current
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)
@@ -46,7 +49,7 @@ internal fun EmptyResultCard(onBack: () -> Unit) {
                 text = stringResource(R.string.core_resources_no_result_available),
                 style = MaterialTheme.typography.titleMedium
             )
-            FilledTonalButton(onClick = onBack, modifier = Modifier.fillMaxWidth()) {
+            FilledTonalButton(onClick = { sound(Sounds.CLK_TAP); onBack() }, modifier = Modifier.fillMaxWidth()) {
                 Text(stringResource(R.string.core_resources_back))
             }
         }
@@ -265,7 +268,8 @@ internal fun ResultVoteAccuracyCard(correctVotes: Int, incorrectVotes: Int) {
 
 @Composable
 internal fun ResultCloseButton(onBack: () -> Unit) {
-    FilledTonalButton(onClick = onBack, modifier = Modifier
+    val sound = LocalSoundPlayer.current
+    FilledTonalButton(onClick = { sound(Sounds.CLK_TAP); onBack() }, modifier = Modifier
         .fillMaxWidth()
         .heightIn(min = 48.dp)) {
         Text(stringResource(R.string.core_resources_close))

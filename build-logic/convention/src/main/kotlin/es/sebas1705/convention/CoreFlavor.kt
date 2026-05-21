@@ -25,7 +25,7 @@ enum class FlavorDimension {
  */
 enum class CoreFlavor(val dimension: FlavorDimension, val applicationIdSuffix : String? = null) {
     Dev(FlavorDimension.CONTENT_TYPE, ".dev"),
-    Pro(FlavorDimension.CONTENT_TYPE, ".pro"),
+    Pro(FlavorDimension.CONTENT_TYPE),
 }
 
 /**

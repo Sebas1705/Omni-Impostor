@@ -88,6 +88,32 @@ interface IAuthenticationRepository {
     fun isUserLogged(): Boolean
 
     /**
+     * Sign in anonymously (guest access)
+     */
+    fun signInAnonymously(): FlowResponseNothing
+
+    /**
+     * Send a verification email to the current user
+     */
+    fun sendVerificationEmail(): FlowResponseNothing
+
+    /**
+     * Check if the current user's email is verified
+     */
+    fun isEmailVerified(): Boolean
+
+    /**
+     * Check if the current user is anonymous (guest)
+     */
+    fun isAnonymous(): Boolean
+
+    /**
+     * Deletes the currently signed-in user account from Firebase.
+     * Used when the user cancels the email-verification flow before confirming.
+     */
+    fun deleteCurrentUser(): FlowResponseNothing
+
+    /**
      * Reads whether app expects an authenticated user in this installation.
      */
     suspend fun isSessionExpected(): Boolean

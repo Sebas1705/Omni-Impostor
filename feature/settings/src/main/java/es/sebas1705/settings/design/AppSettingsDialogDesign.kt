@@ -24,6 +24,8 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import es.sebas1705.core.resources.R
 import es.sebas1705.settings.components.AppearanceSettingsCard
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.settings.components.AudioSettingsCard
 import es.sebas1705.settings.components.GameplaySettingsCard
 import es.sebas1705.settings.components.SettingsLoading
@@ -36,6 +38,7 @@ private fun SettingsContent(
     uiState: AppSettingsUiState,
     actions: AppSettingsDialogActions
 ) {
+    val sound = LocalSoundPlayer.current
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -64,7 +67,7 @@ private fun SettingsContent(
         }
         item(contentType = "contentType5") {
             FilledTonalButton(
-                onClick = actions.onResetDefaults
+                onClick = { sound(Sounds.CLK_INSTANT); actions.onResetDefaults() }
             ) {
                 Text(stringResource(R.string.core_resources_settings_reset_defaults))
             }
@@ -81,6 +84,7 @@ internal fun AppSettingsDialogDesign(
     actions: AppSettingsDialogActions,
     modifier: Modifier = Modifier,
 ) {
+    val sound = LocalSoundPlayer.current
     Dialog(
         onDismissRequest = actions.onDismiss,
         properties = DialogProperties(
@@ -94,7 +98,7 @@ internal fun AppSettingsDialogDesign(
                 TopAppBar(
                     title = { Text(stringResource(R.string.core_resources_settings_title)) },
                     navigationIcon = {
-                        IconButton(onClick = actions.onDismiss) {
+                        IconButton(onClick = { sound(Sounds.CLK_TAP); actions.onDismiss() }) {
                             Icon(
                                 imageVector = Icons.Outlined.Close,
                                 contentDescription = stringResource(R.string.core_resources_close)

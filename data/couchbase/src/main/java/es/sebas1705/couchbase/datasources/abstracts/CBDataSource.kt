@@ -8,11 +8,12 @@ import kotlin.reflect.KProperty1
 
 abstract class CBDataSource <T : Document> (
     private val couchbaseManager: ICouchbaseManager,
-    private val clazz: KClass<T>
+    private val clazz: KClass<T>,
+    collectionNameOverride: String? = null
 ) {
 
-    private val collectionName: String
-        get() = clazz.simpleName!! + "_collection"
+    private val collectionName: String =
+        collectionNameOverride ?: (clazz.simpleName!! + "_collection")
 
     fun count() = couchbaseManager.count(collectionName)
 

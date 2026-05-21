@@ -42,6 +42,8 @@ import es.sebas1705.categories.CategoriesFullScreenDialog
 import es.sebas1705.common.utlis.extensions.primitives.pushAndFree
 import es.sebas1705.common.utlis.extensions.types.logD
 import es.sebas1705.common.utlis.extensions.types.logI
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.game.UserFullScreenDialog
 import es.sebas1705.home.nav.HomeGraph
 import es.sebas1705.home.nav.models.homeTabs
@@ -105,6 +107,7 @@ private fun homeBackwardTransition() = ContentTransform(
 fun HomeDesign(
     modifier: Modifier = Modifier,
     backStack: NavBackStack<NavKey> = NavBackStack(HomeGraph.FaceScreen),
+    isGuestUser: Boolean = false,
     onSignOut: () -> Unit = {},
     onDebugNav: () -> Unit = {},
     onOpenSettings: () -> Unit = {},
@@ -152,6 +155,7 @@ fun HomeDesign(
         modifier = modifier,
         contentWindowInsets = WindowInsets(),
         bottomBar = {
+            val sound = LocalSoundPlayer.current
             NavigationBar {
                 homeTabs.forEach { tab ->
                     val isSelected = backStack.lastOrNull() == tab.key
@@ -190,6 +194,7 @@ fun HomeDesign(
                         onClick = {
                             if (backStack.lastOrNull() != tab.key) {
                                 homeDesignLogD("tab click from=${backStack.lastOrNull()} to=${tab.key}")
+                                sound(Sounds.CLK_TAP)
                                 backStack.pushAndFree(tab.key)
                             }
                         },

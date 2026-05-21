@@ -16,6 +16,8 @@ internal fun AppNavDesign(
     backStack: NavBackStack<NavKey>,
     overlayState: AppNavOverlayState,
     overlayActions: AppNavOverlayActions,
+    isGuestUser: Boolean = false,
+    onGuestStatusChange: (Boolean) -> Unit = {},
     modifier: Modifier = Modifier,
 ) = Box(
     modifier = modifier
@@ -23,6 +25,8 @@ internal fun AppNavDesign(
 ) {
     AppNavigationContent(
         backStack = backStack,
+        isGuestUser = isGuestUser,
+        onGuestStatusChange = onGuestStatusChange,
         onOpenSettings = overlayActions.onOpenSettings
     )
 

@@ -45,7 +45,7 @@ object ManagerModule {
     ): MediaPlayer = MediaPlayer.create(
         context,
         R.raw.core_resources_music_background
-    )
+    ).apply { isLooping = true }
 
     @Provides
     @Singleton

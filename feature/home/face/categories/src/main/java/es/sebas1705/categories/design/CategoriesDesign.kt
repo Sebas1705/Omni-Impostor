@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import es.sebas1705.categories.components.CategoryCard
 import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.models.Categories
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.ui.theme.AppTheme
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -45,6 +47,7 @@ fun CategoriesDesign(
     onClearSelection: () -> Unit = {},
     onBack: () -> Unit = {},
 ) {
+    val sound = LocalSoundPlayer.current
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         modifier = modifier
@@ -54,7 +57,7 @@ fun CategoriesDesign(
             TopAppBar(
                 title = { Text(stringResource(ResourceR.string.core_resources_categories_title)) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) {
+                    IconButton(onClick = { sound(Sounds.CLK_TAP); onBack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(ResourceR.string.core_resources_back)
@@ -75,13 +78,13 @@ fun CategoriesDesign(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     FilledTonalButton(
-                        onClick = onSelectAll,
+                        onClick = { sound(Sounds.CLK_ARCADE); onSelectAll() },
                         modifier = Modifier.weight(1f)
                     ) {
                         Text(stringResource(ResourceR.string.core_resources_categories_select_all))
                     }
                     OutlinedButton(
-                        onClick = onClearSelection,
+                        onClick = { sound(Sounds.CLK_INSTANT); onClearSelection() },
                         modifier = Modifier.weight(1f)
                     ) {
                         Text(stringResource(ResourceR.string.core_resources_categories_clear))
@@ -117,7 +120,7 @@ fun CategoriesDesign(
                     modifier = Modifier.height(200.dp),
                     category = category.first,
                     isSelected = category.second,
-                    onClick = { onCategoryClick(category.first) }
+                    onClick = { sound(Sounds.CLK_CASUAL); onCategoryClick(category.first) }
                 )
             }
         }

@@ -29,6 +29,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import es.sebas1705.common.utlis.UiModePreviews
+import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.ui.theme.AppTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
@@ -49,6 +51,7 @@ fun UserDesign(
             addAll(playerNames)
         }
     }
+    val sound = LocalSoundPlayer.current
 
     Scaffold(
         modifier = modifier
@@ -59,7 +62,7 @@ fun UserDesign(
             TopAppBar(
                 title = { Text(stringResource(ResourceR.string.core_resources_users_title)) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) {
+                    IconButton(onClick = { sound(Sounds.CLK_TAP); onBack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(ResourceR.string.core_resources_back)
@@ -71,6 +74,7 @@ fun UserDesign(
         bottomBar = {
             FilledTonalButton(
                 onClick = {
+                    sound(Sounds.CLK_ARCADE)
                     onSave(playerNames.filter { it.isNotEmpty() }.toImmutableList())
                 },
                 modifier = Modifier
@@ -110,7 +114,7 @@ fun UserDesign(
                         modifier = Modifier.weight(1f)
                     )
                     if (index > 1) IconButton(
-                        onClick = { playerNames.removeAt(index) },
+                        onClick = { sound(Sounds.CLK_INSTANT); playerNames.removeAt(index) },
                         modifier = Modifier.padding(start = 8.dp)
                     ) {
                         Icon(
@@ -123,7 +127,7 @@ fun UserDesign(
 
             item {
                 TextButton(
-                    onClick = { playerNames.add("") },
+                    onClick = { sound(Sounds.CLK_CASUAL); playerNames.add("") },
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(stringResource(ResourceR.string.core_resources_users_add_player))
