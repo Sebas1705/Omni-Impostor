@@ -1,6 +1,6 @@
-# Design — Impostor Android Game
+# Design — Omni-Impostor
 
-This document describes the current design architecture of the Impostor Android Game app, serving as reference for improvements and redesigns.
+This document describes the current design architecture of the Omni-Impostor app, serving as reference for improvements and redesigns.
 
 ## 1. General Concept
 
