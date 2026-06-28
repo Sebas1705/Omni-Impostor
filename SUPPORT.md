@@ -1,7 +1,7 @@
 ﻿# Support
 ## Getting Help
 For questions and usage help:
-1. Check documentation in `AndroidModApp/README.md` and `AndroidModApp/docs/`.
+1. Check documentation in `README.md` and `docs/`.
 2. Search existing issues first.
 3. Open a new issue using the appropriate template.
 ## What to Include
