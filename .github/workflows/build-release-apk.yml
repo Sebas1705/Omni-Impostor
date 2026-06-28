@@ -64,47 +64,7 @@ jobs:
         if: github.event.inputs.build_type == 'debug'
         run: |
           mkdir -p app
-          cat > app/google-services.json << 'ENDOFGOOGLE'
-          {
-            "project_info": {
-              "project_number": "000000000000",
-              "project_id": "impostor-debug",
-              "storage_bucket": "impostor-debug.appspot.com"
-            },
-            "client": [
-              {
-                "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
-                  "android_client_info": {
-                    "package_name": "es.sebas1705.impostorgame"
-                  }
-                },
-                "oauth_client": [
-                  {
-                    "client_id": "000000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
-                    "client_type": 3
-                  }
-                ],
-                "api_key": [
-                  {
-                    "current_key": "AIzaStubKeyForCIDebugBuildOnly00000000000"
-                  }
-                ],
-                "services": {
-                  "appinvite_service": {
-                    "other_platform_oauth_client": [
-                      {
-                        "client_id": "000000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
-                        "client_type": 3
-                      }
-                    ]
-                  }
-                }
-              }
-            ],
-            "configuration_version": "1"
-          }
-          ENDOFGOOGLE
+          echo 'ewogICJwcm9qZWN0X2luZm8iOiB7CiAgICAicHJvamVjdF9udW1iZXIiOiAiMDAwMDAwMDAwMDAwIiwKICAgICJwcm9qZWN0X2lkIjogImltcG9zdG9yLWRlYnVnIiwKICAgICJzdG9yYWdlX2J1Y2tldCI6ICJpbXBvc3Rvci1kZWJ1Zy5hcHBzcG90LmNvbSIKICB9LAogICJjbGllbnQiOiBbCiAgICB7CiAgICAgICJjbGllbnRfaW5mbyI6IHsKICAgICAgICAibW9iaWxlc2RrX2FwcF9pZCI6ICIxOjAwMDAwMDAwMDAwMDphbmRyb2lkOjAwMDAwMDAwMDAwMDAwMDAiLAogICAgICAgICJhbmRyb2lkX2NsaWVudF9pbmZvIjogewogICAgICAgICAgInBhY2thZ2VfbmFtZSI6ICJlcy5zZWJhczE3MDUuaW1wb3N0b3JhbmRyb2lkZ2FtZS5kZXYuZGVidWciCiAgICAgICAgfQogICAgICB9LAogICAgICAib2F1dGhfY2xpZW50IjogWwogICAgICAgIHsKICAgICAgICAgICJjbGllbnRfaWQiOiAiMDAwMDAwMDAwMDAwLXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwKICAgICAgICAgICJjbGllbnRfdHlwZSI6IDMKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJhcGlfa2V5IjogWwogICAgICAgIHsKICAgICAgICAgICJjdXJyZW50X2tleSI6ICJBSXphU3R1YktleUZvckNJRGVidWdCdWlsZE9ubHkwMDAwMDAwMDAwMCIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJzZXJ2aWNlcyI6IHsKICAgICAgICAiYXBwaW52aXRlX3NlcnZpY2UiOiB7CiAgICAgICAgICAib3RoZXJfcGxhdGZvcm1fb2F1dGhfY2xpZW50IjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgImNsaWVudF9pZCI6ICIwMDAwMDAwMDAwMDAteHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHguYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLAogICAgICAgICAgICAgICJjbGllbnRfdHlwZSI6IDMKICAgICAgICAgICAgfQogICAgICAgICAgXQogICAgICAgIH0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgImNsaWVudF9pbmZvIjogewogICAgICAgICJtb2JpbGVzZGtfYXBwX2lkIjogIjE6MDAwMDAwMDAwMDAwOmFuZHJvaWQ6MDAwMDAwMDAwMDAwMDAwMCIsCiAgICAgICAgImFuZHJvaWRfY2xpZW50X2luZm8iOiB7CiAgICAgICAgICAicGFja2FnZV9uYW1lIjogImVzLnNlYmFzMTcwNS5pbXBvc3RvcmFuZHJvaWRnYW1lLmRldiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJvYXV0aF9jbGllbnQiOiBbCiAgICAgICAgewogICAgICAgICAgImNsaWVudF9pZCI6ICIwMDAwMDAwMDAwMDAteHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHguYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLAogICAgICAgICAgImNsaWVudF90eXBlIjogMwogICAgICAgIH0KICAgICAgXSwKICAgICAgImFwaV9rZXkiOiBbCiAgICAgICAgewogICAgICAgICAgImN1cnJlbnRfa2V5IjogIkFJemFTdHViS2V5Rm9yQ0lEZWJ1Z0J1aWxkT25seTAwMDAwMDAwMDAwIgogICAgICAgIH0KICAgICAgXSwKICAgICAgInNlcnZpY2VzIjogewogICAgICAgICJhcHBpbnZpdGVfc2VydmljZSI6IHsKICAgICAgICAgICJvdGhlcl9wbGF0Zm9ybV9vYXV0aF9jbGllbnQiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAiY2xpZW50X2lkIjogIjAwMDAwMDAwMDAwMC14eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsCiAgICAgICAgICAgICAgImNsaWVudF90eXBlIjogMwogICAgICAgICAgICB9CiAgICAgICAgICBdCiAgICAgICAgfQogICAgICB9CiAgICB9LAogICAgewogICAgICAiY2xpZW50X2luZm8iOiB7CiAgICAgICAgIm1vYmlsZXNka19hcHBfaWQiOiAiMTowMDAwMDAwMDAwMDA6YW5kcm9pZDowMDAwMDAwMDAwMDAwMDAwIiwKICAgICAgICAiYW5kcm9pZF9jbGllbnRfaW5mbyI6IHsKICAgICAgICAgICJwYWNrYWdlX25hbWUiOiAiZXMuc2ViYXMxNzA1LmltcG9zdG9yYW5kcm9pZGdhbWUuZGVidWciCiAgICAgICAgfQogICAgICB9LAogICAgICAib2F1dGhfY2xpZW50IjogWwogICAgICAgIHsKICAgICAgICAgICJjbGllbnRfaWQiOiAiMDAwMDAwMDAwMDAwLXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwKICAgICAgICAgICJjbGllbnRfdHlwZSI6IDMKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJhcGlfa2V5IjogWwogICAgICAgIHsKICAgICAgICAgICJjdXJyZW50X2tleSI6ICJBSXphU3R1YktleUZvckNJRGVidWdCdWlsZE9ubHkwMDAwMDAwMDAwMCIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJzZXJ2aWNlcyI6IHsKICAgICAgICAiYXBwaW52aXRlX3NlcnZpY2UiOiB7CiAgICAgICAgICAib3RoZXJfcGxhdGZvcm1fb2F1dGhfY2xpZW50IjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgImNsaWVudF9pZCI6ICIwMDAwMDAwMDAwMDAteHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHguYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLAogICAgICAgICAgICAgICJjbGllbnRfdHlwZSI6IDMKICAgICAgICAgICAgfQogICAgICAgICAgXQogICAgICAgIH0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgImNsaWVudF9pbmZvIjogewogICAgICAgICJtb2JpbGVzZGtfYXBwX2lkIjogIjE6MDAwMDAwMDAwMDAwOmFuZHJvaWQ6MDAwMDAwMDAwMDAwMDAwMCIsCiAgICAgICAgImFuZHJvaWRfY2xpZW50X2luZm8iOiB7CiAgICAgICAgICAicGFja2FnZV9uYW1lIjogImVzLnNlYmFzMTcwNS5pbXBvc3RvcmFuZHJvaWRnYW1lIgogICAgICAgIH0KICAgICAgfSwKICAgICAgIm9hdXRoX2NsaWVudCI6IFsKICAgICAgICB7CiAgICAgICAgICAiY2xpZW50X2lkIjogIjAwMDAwMDAwMDAwMC14eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsCiAgICAgICAgICAiY2xpZW50X3R5cGUiOiAzCiAgICAgICAgfQogICAgICBdLAogICAgICAiYXBpX2tleSI6IFsKICAgICAgICB7CiAgICAgICAgICAiY3VycmVudF9rZXkiOiAiQUl6YVN0dWJLZXlGb3JDSURlYnVnQnVpbGRPbmx5MDAwMDAwMDAwMDAiCiAgICAgICAgfQogICAgICBdLAogICAgICAic2VydmljZXMiOiB7CiAgICAgICAgImFwcGludml0ZV9zZXJ2aWNlIjogewogICAgICAgICAgIm90aGVyX3BsYXRmb3JtX29hdXRoX2NsaWVudCI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICJjbGllbnRfaWQiOiAiMDAwMDAwMDAwMDAwLXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwKICAgICAgICAgICAgICAiY2xpZW50X3R5cGUiOiAzCiAgICAgICAgICAgIH0KICAgICAgICAgIF0KICAgICAgICB9CiAgICAgIH0KICAgIH0KICBdLAogICJjb25maWd1cmF0aW9uX3ZlcnNpb24iOiAiMSIKfQ==' | base64 --decode > app/google-services.json
 
       - name: Create google-services.json (release)
         if: github.event.inputs.build_type == 'release'
@@ -117,21 +77,21 @@ jobs:
         with:
           gradle-version: 'current'
 
-      - name: Build APK
-        run: |
-          if [ "${{ github.event.inputs.build_type }}" = "release" ]; then
-            gradle :app:assembleRelease --stacktrace --no-daemon --build-cache
-          else
-            gradle :app:assembleDebug --stacktrace --no-daemon --build-cache
-          fi
+      - name: Build debug APK (Dev flavor)
+        if: github.event.inputs.build_type == 'debug'
+        run: gradle :app:assembleDevDebug --stacktrace --no-daemon --build-cache
+
+      - name: Build release APK (Pro flavor)
+        if: github.event.inputs.build_type == 'release'
+        run: gradle :app:assembleProRelease --stacktrace --no-daemon --build-cache
 
       - name: Locate APK
         id: apk
         run: |
           if [ "${{ github.event.inputs.build_type }}" = "release" ]; then
-            APK=$(find app/build/outputs/apk/release -name '*.apk' | head -1)
+            APK=$(find app/build/outputs/apk/pro/release -name '*.apk' | head -1)
           else
-            APK=$(find app/build/outputs/apk/debug -name '*.apk' | head -1)
+            APK=$(find app/build/outputs/apk/dev/debug -name '*.apk' | head -1)
           fi
           echo "path=$APK" >> "$GITHUB_OUTPUT"
           echo "Found APK: $APK"
