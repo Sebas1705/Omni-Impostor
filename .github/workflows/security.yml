@@ -86,7 +86,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build for CodeQL
-        run: ./gradlew :app:assembleDebug --no-daemon --build-cache --stacktrace -x lint -x test
+        run: ./gradlew :app:assembleDevDebug --no-daemon --build-cache --stacktrace -x lint -x test
       - name: Check Code Scanning Availability
         id: code_scanning
         run: |
