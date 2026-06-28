@@ -1,7 +1,7 @@
 ﻿# Contributing Guide
 Thanks for helping improve this template.
 ## Scope
-This repository hosts the `AndroidModApp` template and its repository-level automation in `.github/`.
+This repository contains the **ImpostorAndroidGame** app and its repository-level automation in `.github/`.
 ## Getting Started
 1. Fork and clone the repository.
 2. Create a branch from `main`.
