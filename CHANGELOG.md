@@ -9,4 +9,4 @@ The format follows Keep a Changelog principles and semantic versioning for templ
 - Governance, release policy, triage, KPI and 30-60-90 maintenance docs.
 - Issue forms, pull request template, CODEOWNERS, and label sync workflow.
 ### Changed
-- Detekt configuration migration and validation pipeline hardening for `AndroidModApp`.
+- Detekt configuration migration and validation pipeline hardening.

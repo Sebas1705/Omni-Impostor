@@ -25,6 +25,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -59,7 +60,9 @@ internal fun OfflineGameRevealScreen(
         .orEmpty()
 
     var dragOffset by remember(playerIndex) { mutableFloatStateOf(0f) }
-    var showPassPhoneOverlay by remember(playerIndex) { mutableStateOf(false) }
+    // rememberSaveable survives rotation; a plain remember would reset the overlay on config change,
+    // causing the current player's card to be visible to the wrong player.
+    var showPassPhoneOverlay by rememberSaveable(playerIndex) { mutableStateOf(false) }
     val rotationY by animateFloatAsState(
         targetValue = if (uiState.revealedCurrentCard) 180f else 0f,
         label = "reveal_card_rotation"

@@ -189,7 +189,7 @@ fun FaceDesign(
                             item(contentType = "start") {
                                 FilledTonalButton(
                                     onClick = { sound(Sounds.CLK_ARCADE); onStartOfflineGame() },
-                                    enabled = faceState.users.size >= 3 && faceState.categoriesStates.any { it.value },
+                                    enabled = faceState.users.size >= 3 && faceState.categoriesStates.any { it.value } && faceState.impostors < faceState.users.size,
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .padding(bottom = 8.dp)
@@ -321,7 +321,7 @@ fun FaceDesign(
                         item(contentType = "contentType8") {
                             FilledTonalButton(
                                 onClick = { sound(Sounds.CLK_ARCADE); onStartOfflineGame() },
-                                enabled = faceState.users.size >= 3 && faceState.categoriesStates.any { it.value },
+                                enabled = faceState.users.size >= 3 && faceState.categoriesStates.any { it.value } && faceState.impostors < faceState.users.size,
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(bottom = 8.dp)

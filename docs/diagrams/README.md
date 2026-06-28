@@ -1,31 +1,33 @@
-# Diagramas del proyecto AndroidModApp
+# Architecture Diagrams
 
-Carpeta: `docs/diagrams`
+Folder: `docs/diagrams`
 
-Contiene varios archivos PlantUML (.puml) que describen la arquitectura multimódulo y ejemplos de diagramas:
+PlantUML (`.puml`) diagrams describing the multi-module architecture and data flows:
 
-- `00-modulos-dependencias.puml` - Mapa de módulos (core, data, domain, feature, app).
-- `01-capas-flujo.puml` - Diagrama de capas y flujo de dependencias (clean architecture).
-- `02-secuencia-flujo-uso.puml` - Secuencia típica: UI → UseCase → Repo → DataSource.
-- `03-core-paquetes.puml` - Paquetes y componentes del módulo `core`.
-- `04-domain-paquetes.puml` - Paquetes y clases del módulo `domain`.
-- `05-data-paquetes.puml` - Paquetes y estructuras del módulo `data`.
-- `06-feature-paquetes.puml` - Ejemplo de paquetes dentro de un `feature`.
-- `07-modelos-clases.puml` - Ejemplo de diagrama de clases para modelos y mappers.
+- `00-modulos-dependencias.puml` — Module map (core, data, domain, feature, app).
+- `01-capas-flujo.puml` — Layer diagram and dependency flow (Clean Architecture).
+- `02-secuencia-flujo-uso.puml` — Typical sequence: UI → UseCase → Repo → DataSource.
+- `03-core-paquetes.puml` — Packages and components of the `core` module.
+- `04-domain-paquetes.puml` — Packages and classes of the `domain` module.
+- `05-data-paquetes.puml` — Packages and structures of the `data` module.
+- `06-feature-paquetes.puml` — Example packages inside a `feature` module.
+- `07-modelos-clases.puml` — Class diagram example for models and mappers.
 
-Renderizado:
+## Rendering
 
-1. Instala PlantUML y Graphviz localmente, o usa un plugin de VS Code (PlantUML). 
-2. Para generar PNG desde la línea de comandos (si tienes `plantuml`):
+### Option 1: VS Code + PlantUML extension
+Install the PlantUML extension and Graphviz locally; open any `.puml` file and use the preview pane.
 
+### Option 2: Command line
 ```bash
 cd docs/diagrams
 plantuml *.puml
 ```
 
-3. Usualmente VS Code + PlantUML te permite previsualizar cada `.puml` y exportar PNG/SVG.
+### Option 3: Online
+Paste the contents of any `.puml` file at [plantuml.com/plantuml](https://www.plantuml.com/plantuml/uml/).
 
-Notas:
-- Los diagramas son plantillas basadas en la estructura multimódulo que hay en el repo. Si quieres diagramas exactos extraídos del código (clases reales, relaciones reales), puedo:
-  - analizar los paquetes Kotlin y generar diagramas de clases concretos, o
-  - extraer dependencias reales desde los `build.gradle.kts` y ajustar el diagrama de módulos.
+## Notes
+
+- Diagrams reflect the multi-module structure declared in `settings.gradle.kts`.
+- For exact class diagrams derived from real code (actual classes and relationships), the Kotlin packages can be analyzed and the diagrams regenerated from `build-logic`.
