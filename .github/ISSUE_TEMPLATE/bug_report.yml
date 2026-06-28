@@ -1,5 +1,5 @@
 ﻿name: Bug report
-description: Report a broken behavior in the template or its default setup.
+description: Report a broken behavior in the app or its CI setup.
 title: "[Bug]: "
 labels:
   - bug
@@ -14,7 +14,7 @@ body:
     attributes:
       label: Summary
       description: What happened and what did you expect instead?
-      placeholder: The template fails when...
+      placeholder: The app fails when...
     validations:
       required: true
   - type: textarea
@@ -24,8 +24,8 @@ body:
       description: List the exact steps to reproduce the issue.
       placeholder: |
         1. Clone the repository
-        2. cd AndroidModApp
-        3. Run .\gradlew.bat ...
+        2. Run doppler setup (or scripts/setup-secrets.sh) to create app/secrets.properties
+        3. Run ./gradlew assembleDevDebug
         4. Observe the failure
     validations:
       required: true
