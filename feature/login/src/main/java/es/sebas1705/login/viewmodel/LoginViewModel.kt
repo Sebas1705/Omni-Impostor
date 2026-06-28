@@ -1,5 +1,6 @@
 package es.sebas1705.login.viewmodel
 
+import android.app.Activity
 import android.content.Context
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -48,7 +49,7 @@ class LoginViewModel @Inject constructor(
     override fun intentHandler(intent: LoginIntent) =
         when (intent) {
             LoginIntent.CheckSession -> checkSession()
-            LoginIntent.SignInWithGoogle -> signInWithGoogle()
+            is LoginIntent.SignInWithGoogle -> signInWithGoogle(intent.activity)
             LoginIntent.SignInAsGuest -> signInAsGuest()
             is LoginIntent.SignInWithEmail -> signInWithEmail(intent.email, intent.password)
             is LoginIntent.SignUpWithEmail -> signUpWithEmail(intent.email, intent.password)
@@ -74,8 +75,8 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun signInWithGoogle() = execute(Dispatchers.IO) {
-        signInWithGoogleUseCase().catcher(
+    private fun signInWithGoogle(activity: Activity) = execute(Dispatchers.IO) {
+        signInWithGoogleUseCase(activity).catcher(
             onLoading = { startLoading() },
             onEmptySuccess = {
                 stopLoading()
@@ -245,7 +246,6 @@ class LoginViewModel @Inject constructor(
                 }
             },
             onError = { message ->
-                // Delete failed (e.g. session expired) — sign out anyway and go back
                 logI("Delete user failed: $message. Signing out and returning to main.")
                 signOutUseCase()
                 stopLoading()

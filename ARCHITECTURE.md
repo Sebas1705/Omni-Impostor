@@ -1,6 +1,6 @@
 # Architecture
 
-High-level architecture snapshot for AndroidNativeBase.
+High-level architecture snapshot for Omni-Impostor.
 
 ## Layer Model
 
