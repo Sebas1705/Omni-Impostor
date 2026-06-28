@@ -1,4 +1,4 @@
-# Impostor Android Game
+# Omni-Impostor
 
 A **digital board game for groups** built with Kotlin and Jetpack Compose. Players are secretly assigned a word — most players share the same word, but one or more are *impostors* assigned a different one. The group debates, votes, and tries to identify the impostor before time runs out.
 
@@ -54,8 +54,8 @@ feature/     ← splash · login · main · home (face · ranking · profile) ·
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/Sebas1705/ImpostorAndroidGame.git
-   cd ImpostorAndroidGame
+   git clone https://github.com/Sebas1705/Omni-Impostor.git
+   cd Omni-Impostor
    ```
 
 2. Add your `google-services.json` to the `app/` directory.
