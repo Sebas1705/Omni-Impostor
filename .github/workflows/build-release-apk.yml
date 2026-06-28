@@ -37,29 +37,6 @@ jobs:
           java-version: '21'
           distribution: temurin
 
-      - name: Set up latest stable Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: 'current'
-
-      - name: Generate Gradle wrapper
-        run: gradle wrapper --gradle-version current --distribution-type bin
-
-      - name: Decode keystore (release only)
-        if: github.event.inputs.build_type == 'release'
-        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/keystore.jks
-
-      - name: Create secrets.properties (release)
-        if: github.event.inputs.build_type == 'release'
-        run: |
-          mkdir -p app
-          cat > app/secrets.properties << EOF
-          signing_keystore_password=${{ secrets.SIGNING_KEYSTORE_PASSWORD }}
-          signing_key_alias=${{ secrets.SIGNING_KEY_ALIAS }}
-          EXAMPLE_URL_DEV=${{ secrets.EXAMPLE_URL_DEV || 'https://dev.example.com' }}
-          EXAMPLE_URL_PRO=${{ secrets.EXAMPLE_URL_PRO || 'https://pro.example.com' }}
-          EOF
-
       - name: Create secrets.properties (debug)
         if: github.event.inputs.build_type == 'debug'
         run: |
@@ -71,11 +48,23 @@ jobs:
             echo "EXAMPLE_URL_PRO=https://pro.example.com"
           } > app/secrets.properties
 
+      - name: Decode keystore and create secrets.properties (release)
+        if: github.event.inputs.build_type == 'release'
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/keystore.jks
+          mkdir -p app
+          {
+            echo "signing_keystore_password=${{ secrets.SIGNING_KEYSTORE_PASSWORD }}"
+            echo "signing_key_alias=${{ secrets.SIGNING_KEY_ALIAS }}"
+            echo "EXAMPLE_URL_DEV=${{ secrets.EXAMPLE_URL_DEV || 'https://dev.example.com' }}"
+            echo "EXAMPLE_URL_PRO=${{ secrets.EXAMPLE_URL_PRO || 'https://pro.example.com' }}"
+          } > app/secrets.properties
+
       - name: Create stub google-services.json (debug)
         if: github.event.inputs.build_type == 'debug'
         run: |
           mkdir -p app
-          cat > app/google-services.json << 'ENDOFFILE'
+          cat > app/google-services.json << 'ENDOFGOOGLE'
           {
             "project_info": {
               "project_number": "000000000000",
@@ -115,7 +104,7 @@ jobs:
             ],
             "configuration_version": "1"
           }
-          ENDOFFILE
+          ENDOFGOOGLE
 
       - name: Create google-services.json (release)
         if: github.event.inputs.build_type == 'release'
@@ -123,12 +112,17 @@ jobs:
           mkdir -p app
           echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
 
+      - name: Set up Gradle 9 (latest stable)
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 'current'
+
       - name: Build APK
         run: |
           if [ "${{ github.event.inputs.build_type }}" = "release" ]; then
-            ./gradlew :app:assembleRelease --stacktrace --no-daemon --build-cache
+            gradle :app:assembleRelease --stacktrace --no-daemon --build-cache
           else
-            ./gradlew :app:assembleDebug --stacktrace --no-daemon --build-cache
+            gradle :app:assembleDebug --stacktrace --no-daemon --build-cache
           fi
 
       - name: Locate APK
