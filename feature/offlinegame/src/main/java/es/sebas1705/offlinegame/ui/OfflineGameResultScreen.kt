@@ -29,6 +29,7 @@ import es.sebas1705.offlinegame.ui.components.EmptyResultCard
 import es.sebas1705.offlinegame.ui.components.ResultCloseButton
 import es.sebas1705.offlinegame.ui.components.ResultDetailsCard
 import es.sebas1705.offlinegame.ui.components.ResultPlayerRolesCard
+import es.sebas1705.offlinegame.ui.components.ResultRateCluesButton
 import es.sebas1705.offlinegame.ui.components.ResultVoteAccuracyCard
 import es.sebas1705.offlinegame.ui.components.ResultVotesRow
 import es.sebas1705.offlinegame.ui.components.ResultWinnerCard
@@ -42,6 +43,7 @@ internal fun OfflineGameResultScreen(
     players: List<String>,
     impostorIndexes: Set<Int>,
     onBack: () -> Unit,
+    onRateClues: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val resultImpostors = stringResource(R.string.core_resources_result_impostors)
@@ -128,6 +130,7 @@ internal fun OfflineGameResultScreen(
                             )
                         }
                     }
+                    item(contentType = "rate") { ResultRateCluesButton(onClick = onRateClues) }
                     item(contentType = "close") { ResultCloseButton(onBack = onBack) }
                 }
             }
@@ -168,6 +171,7 @@ internal fun OfflineGameResultScreen(
                     }
                 }
                 item(contentType = "contentType5") { Spacer(modifier = Modifier.height(4.dp)) }
+                item(contentType = "contentType_rate") { ResultRateCluesButton(onClick = onRateClues) }
                 item(contentType = "contentType6") { ResultCloseButton(onBack = onBack) }
             }
         }

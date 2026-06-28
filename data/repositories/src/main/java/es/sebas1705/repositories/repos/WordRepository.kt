@@ -60,7 +60,8 @@ class WordRepository @Inject constructor(
                     id = UUID.randomUUID().toString(),
                     word = it.word,
                     clue = it.clues,
-                    category = it.category
+                    category = it.category,
+                    relatedWords = it.relatedWords
                 )
             }
 

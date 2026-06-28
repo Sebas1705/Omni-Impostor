@@ -261,6 +261,14 @@
     <string name="core_resources_game_reason_final_duel_impostor_win">Only 1 civilian and 1 impostor remain. Impostors win.</string>
     <string name="core_resources_game_reason_tie">Only 1 civilian and 1 impostor remain.</string>
 
+    <!-- Clue rating screen -->
+    <string name="core_resources_result_rate_clues">Rate clues</string>
+    <string name="core_resources_clue_rating_title">Rate the clues</string>
+    <string name="core_resources_clue_rating_word">Word: %1$s</string>
+    <string name="core_resources_clue_rating_no_clues">No clues to rate.</string>
+    <string name="core_resources_clue_rating_submit">Submit &amp; finish</string>
+    <string name="core_resources_clue_rating_skip">Skip</string>
+
     <!-- Category names -->
     <string name="core_resources_cat_animals">Animals</string>
     <string name="core_resources_cat_food_and_drinks">Food and Drinks</string>
