@@ -1,6 +1,6 @@
 @startuml
 skinparam componentStyle rectangle
-title AndroidModApp - Mapa de módulos (multimódulo)
+title ImpostorAndroidGame - Mapa de módulos (multimódulo)
 
 component "app" as APP
 
