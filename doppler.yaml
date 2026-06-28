@@ -1,0 +1,3 @@
+setup:
+  project: omni-impostor
+  config: dev_personal
