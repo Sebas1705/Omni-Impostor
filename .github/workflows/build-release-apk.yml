@@ -88,15 +88,12 @@ jobs:
       - name: Locate APK
         id: apk
         run: |
-          if [ "${{ github.event.inputs.build_type }}" = "release" ]; then
-            APK=$(find app/build/outputs/apk/pro/release -name '*.apk' | head -1)
-          else
-            APK=$(find app/build/outputs/apk/dev/debug -name '*.apk' | head -1)
-          fi
+          APK=$(find app/build/outputs/apk -name '*.apk' | head -1)
           echo "path=$APK" >> "$GITHUB_OUTPUT"
           echo "Found APK: $APK"
 
       - name: Upload APK to GitHub Release
+        if: steps.apk.outputs.path != ''
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.release_tag }}
@@ -104,6 +101,7 @@ jobs:
           fail_on_unmatched_files: true
 
       - name: Upload APK as workflow artifact
+        if: steps.apk.outputs.path != ''
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.inputs.build_type }}-apk-${{ github.event.inputs.release_tag }}
