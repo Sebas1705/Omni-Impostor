@@ -1,23 +1,24 @@
 # 30-60-90 Day Checklist
 
+Use this after a major release or when onboarding to the project.
+
 ## First 30 Days
 
-- Enable required branch checks in GitHub using workflow job names.
-- Enable Dependabot auto-updates for Gradle and Actions.
-- Stabilize CI runtime and artifact visibility.
-- Publish and review AI context docs (`AI_INDEX.md`, `AGENTS.md`, `CLOUD.md`).
+- Enable required branch protection checks in GitHub using CI workflow job names.
+- Enable Dependabot auto-updates for Gradle dependencies and Actions.
+- Stabilize CI runtime and verify artifact visibility.
+- Review AI context docs: `AI_INDEX.md`, `AGENTS.md`, `docs/cloud.md`.
 
-## Days 31-60
+## Days 31–60
 
 - Reduce `build.maxIssues` in `config/detekt/detekt.yml` by a safe increment.
-- Close top recurring lint/detekt findings in touched modules.
-- Publish first maintenance release notes.
-- Run monthly dependency report and create upgrade issues for high-value updates.
+- Close top recurring Detekt findings in touched modules.
+- Run monthly dependency report and create issues for high-value updates.
+- Publish first maintenance release with a complete `CHANGELOG.md` entry.
 
-## Days 61-90
+## Days 61–90
 
-- Review KPI trend and tune quality gates.
-- Remove or shrink legacy baselines where feasible.
-- Plan next quarter roadmap for template evolution and migration support.
-- Re-validate AI context docs so they still match module graph and cloud setup.
-
+- Review quality KPI trends (coverage delta, Detekt findings trend, CI success rate).
+- Remove or shrink Detekt baselines where feasible.
+- Re-validate AI context docs against current module graph and cloud setup.
+- Plan next quarter roadmap: new features, tech debt, dependency upgrades.

@@ -32,7 +32,7 @@ Reference: `feature/main/.../MainViewModel.kt`
 References:
 
 - `domain/usescases/settings/.../ReadSettingsUseCase.kt`
-- `data/repositories/.../MyDocRepository.kt`
+- `data/repositories/.../repos/WordRepository.kt`
 - `data/repositories/.../RepositoriesDataModule.kt`
 
 ## Recipe D: Debug-Only Network Inspection
