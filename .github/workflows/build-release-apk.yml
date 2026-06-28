@@ -8,7 +8,7 @@ on:
         required: true
         default: "v1.1.3"
       build_type:
-        description: "Build type: release (requires keystore secrets) or debug"
+        description: "Build type: debug or release (release requires keystore secrets)"
         required: true
         default: "debug"
         type: choice
@@ -37,7 +37,7 @@ jobs:
           java-version: '21'
           distribution: temurin
 
-      - name: Set up Gradle (latest stable)
+      - name: Set up latest stable Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 'current'
@@ -51,34 +51,31 @@ jobs:
 
       - name: Create secrets.properties (release)
         if: github.event.inputs.build_type == 'release'
-        env:
-          KS_PASS: ${{ secrets.SIGNING_KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-          URL_DEV: ${{ secrets.EXAMPLE_URL_DEV }}
-          URL_PRO: ${{ secrets.EXAMPLE_URL_PRO }}
         run: |
           mkdir -p app
-          printf 'signing_keystore_password=%s
-signing_key_alias=%s
-EXAMPLE_URL_DEV=%s
-EXAMPLE_URL_PRO=%s
-'             "$KS_PASS" "$KEY_ALIAS" "${URL_DEV:-https://dev.example.com}" "${URL_PRO:-https://pro.example.com}"             > app/secrets.properties
+          cat > app/secrets.properties << EOF
+          signing_keystore_password=${{ secrets.SIGNING_KEYSTORE_PASSWORD }}
+          signing_key_alias=${{ secrets.SIGNING_KEY_ALIAS }}
+          EXAMPLE_URL_DEV=${{ secrets.EXAMPLE_URL_DEV || 'https://dev.example.com' }}
+          EXAMPLE_URL_PRO=${{ secrets.EXAMPLE_URL_PRO || 'https://pro.example.com' }}
+          EOF
 
       - name: Create secrets.properties (debug)
         if: github.event.inputs.build_type == 'debug'
         run: |
           mkdir -p app
-          printf 'signing_keystore_password=debug
-signing_key_alias=debug
-EXAMPLE_URL_DEV=https://dev.example.com
-EXAMPLE_URL_PRO=https://pro.example.com
-'             > app/secrets.properties
+          {
+            echo "signing_keystore_password=debug"
+            echo "signing_key_alias=debug"
+            echo "EXAMPLE_URL_DEV=https://dev.example.com"
+            echo "EXAMPLE_URL_PRO=https://pro.example.com"
+          } > app/secrets.properties
 
       - name: Create stub google-services.json (debug)
         if: github.event.inputs.build_type == 'debug'
         run: |
           mkdir -p app
-          cat > app/google-services.json <<'JSON'
+          cat > app/google-services.json << 'ENDOFFILE'
           {
             "project_info": {
               "project_number": "000000000000",
@@ -118,15 +115,13 @@ EXAMPLE_URL_PRO=https://pro.example.com
             ],
             "configuration_version": "1"
           }
-          JSON
+          ENDOFFILE
 
       - name: Create google-services.json (release)
         if: github.event.inputs.build_type == 'release'
-        env:
-          GOOGLE_SERVICES: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
           mkdir -p app
-          echo "$GOOGLE_SERVICES" > app/google-services.json
+          echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
 
       - name: Build APK
         run: |
