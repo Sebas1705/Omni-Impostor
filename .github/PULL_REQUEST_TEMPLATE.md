@@ -3,7 +3,7 @@
 - What changed at a high level?
 ## Checklist
 - [ ] Linked issue or RFC when applicable
-- [ ] Local validation completed (`cd AndroidModApp` then run the relevant Gradle tasks)
+- [ ] Local validation completed (`./gradlew assembleDevDebug lintDebug detekt`)
 - [ ] Release/changelog label applied (`bug`, `enhancement`, `documentation`, `ci`, `security`, `breaking-change`, or `skip-changelog`)
 - [ ] Docs/templates updated when behavior or setup changed
 - [ ] No new secrets or environment-specific values committed

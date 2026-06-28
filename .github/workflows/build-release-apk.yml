@@ -84,11 +84,11 @@ jobs:
 
       - name: Build Pro Release AAB
         if: github.event.inputs.build_type == 'release'
-        run: gradle :app:bundleProRelease --stacktrace --no-daemon --build-cache
+        run: ./gradlew :app:bundleProRelease --stacktrace --no-daemon --build-cache
 
       - name: Build Dev Debug APK (smoke test)
         if: github.event.inputs.build_type == 'debug'
-        run: gradle :app:assembleDevDebug --stacktrace --no-daemon --build-cache
+        run: ./gradlew :app:assembleDevDebug --stacktrace --no-daemon --build-cache
 
       - name: Locate output file
         id: output
