@@ -31,6 +31,10 @@ High-level architecture snapshot for Omni-Impostor.
 - In-app debug diagnostics in `feature:debug`, launched from `feature:main` navigation.
 - Full-screen app settings dialog in `feature:settings`, available globally via `feature:main`.
 
+## Module Inventory
+
+See `docs/module-map.md` for the full module list grouped by layer.
+
 ## Detailed Replication Guides
 
 - Guardrails: `docs/ai/ARCHITECTURE_GUARDRAILS.md`

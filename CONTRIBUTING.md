@@ -1,35 +1,53 @@
-﻿# Contributing Guide
-Thanks for helping improve this template.
+# Contributing Guide
+
 ## Scope
-This repository contains the **Omni-Impostor** app and its repository-level automation in `.github/`.
+
+This repository contains the **Omni-Impostor** Android app and its CI/CD automation in `.github/`.
+
 ## Getting Started
+
 1. Fork and clone the repository.
-2. Create a branch from `main`.
-3. Run checks locally from `AndroidModApp`:
-```powershell
-cd AndroidModApp
-.\gradlew.bat assembleDebug
-.\gradlew.bat detekt
-.\gradlew.bat coverageUnitTestAll
-```
+2. Set up secrets (requires Doppler CLI + `doppler login`):
+   ```bash
+   doppler setup          # auto-selects omni-impostor/dev_personal
+   bash scripts/setup-secrets.sh   # or .\scripts\setup-secrets.ps1 on Windows
+   ```
+3. Create a branch from `develop` (features) or `main` (hotfixes).
+4. Run checks locally:
+   ```powershell
+   .\gradlew.bat assembleDevDebug
+   .\gradlew.bat detekt
+   .\gradlew.bat coverageUnitTestAll
+   ```
+
+## Branch Strategy (GitFlow)
+
+| Branch | Purpose |
+|---|---|
+| `main` | Production releases only, always tagged |
+| `develop` | Integration branch — all features merge here first |
+| `feature/*` | New features, branched from `develop` |
+| `release/*` | Release prep, branched from `develop`, merged to `main` + `develop` |
+| `hotfix/*` | Critical fixes, branched from `main`, merged to `main` + `develop` |
+
 ## Pull Request Rules
-- Link the related issue or RFC when applicable.
-- Keep changes scoped and explain migration impact.
-- Update docs/templates when behavior changes.
-- Apply at least one release/changelog label (`bug`, `enhancement`, `documentation`, `ci`, `security`, `breaking-change`) unless the PR should be excluded with `skip-changelog`.
-- The repository root `.github/workflows/changelog-label-gate.yml` enforces this label requirement in CI.
-- Ensure required checks are green before requesting merge.
+
+- Open PRs against `develop` (features) or `main` (hotfixes).
+- Link the related issue when applicable.
+- Keep changes scoped; explain migration impact for breaking changes.
+- Update docs in the same PR when behavior changes.
+- Apply at least one label: `bug`, `enhancement`, `documentation`, `ci`, `security`, or `breaking-change`.
+- Ensure CI is green before requesting review.
+
 ## Commit Style
-Use short scoped messages, for example:
+
+Short scoped messages:
+- `feat(offlinegame): ...`
+- `fix(auth): ...`
 - `chore(ci): ...`
 - `docs: ...`
 - `build-logic: ...`
-- `feat(template): ...`
-## Breaking Changes
-For changes that affect consumers of the template:
-1. Open an RFC in a pull request.
-2. Include migration notes.
-3. Mark deprecations one release before removal.
-4. Add the `breaking-change` label so release notes and changelog generation place it correctly.
+
 ## Code of Conduct
+
 Be respectful, constructive, and collaborative in issues and pull requests.
