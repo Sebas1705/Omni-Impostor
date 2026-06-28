@@ -37,10 +37,13 @@ jobs:
           java-version: '21'
           distribution: temurin
 
-      - name: Set up Gradle 8.11.1
+      - name: Set up Gradle (latest stable)
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.11.1'
+          gradle-version: 'current'
+
+      - name: Generate Gradle wrapper
+        run: gradle wrapper --gradle-version current --distribution-type bin
 
       - name: Decode keystore (release only)
         if: github.event.inputs.build_type == 'release'
@@ -55,23 +58,82 @@ jobs:
           URL_PRO: ${{ secrets.EXAMPLE_URL_PRO }}
         run: |
           mkdir -p app
-          printf 'signing_keystore_password=%s\nsigning_key_alias=%s\nEXAMPLE_URL_DEV=%s\nEXAMPLE_URL_PRO=%s\n' \
-            "$KS_PASS" "$KEY_ALIAS" "${URL_DEV:-https://dev.example.com}" "${URL_PRO:-https://pro.example.com}" \
-            > app/secrets.properties
+          printf 'signing_keystore_password=%s
+signing_key_alias=%s
+EXAMPLE_URL_DEV=%s
+EXAMPLE_URL_PRO=%s
+'             "$KS_PASS" "$KEY_ALIAS" "${URL_DEV:-https://dev.example.com}" "${URL_PRO:-https://pro.example.com}"             > app/secrets.properties
 
       - name: Create secrets.properties (debug)
         if: github.event.inputs.build_type == 'debug'
         run: |
           mkdir -p app
-          printf 'signing_keystore_password=debug\nsigning_key_alias=debug\nEXAMPLE_URL_DEV=https://dev.example.com\nEXAMPLE_URL_PRO=https://pro.example.com\n' \
-            > app/secrets.properties
+          printf 'signing_keystore_password=debug
+signing_key_alias=debug
+EXAMPLE_URL_DEV=https://dev.example.com
+EXAMPLE_URL_PRO=https://pro.example.com
+'             > app/secrets.properties
+
+      - name: Create stub google-services.json (debug)
+        if: github.event.inputs.build_type == 'debug'
+        run: |
+          mkdir -p app
+          cat > app/google-services.json <<'JSON'
+          {
+            "project_info": {
+              "project_number": "000000000000",
+              "project_id": "impostor-debug",
+              "storage_bucket": "impostor-debug.appspot.com"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+                  "android_client_info": {
+                    "package_name": "es.sebas1705.impostorgame"
+                  }
+                },
+                "oauth_client": [
+                  {
+                    "client_id": "000000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+                    "client_type": 3
+                  }
+                ],
+                "api_key": [
+                  {
+                    "current_key": "AIzaStubKeyForCIDebugBuildOnly00000000000"
+                  }
+                ],
+                "services": {
+                  "appinvite_service": {
+                    "other_platform_oauth_client": [
+                      {
+                        "client_id": "000000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+                        "client_type": 3
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "configuration_version": "1"
+          }
+          JSON
+
+      - name: Create google-services.json (release)
+        if: github.event.inputs.build_type == 'release'
+        env:
+          GOOGLE_SERVICES: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          mkdir -p app
+          echo "$GOOGLE_SERVICES" > app/google-services.json
 
       - name: Build APK
         run: |
           if [ "${{ github.event.inputs.build_type }}" = "release" ]; then
-            gradle :app:assembleRelease --stacktrace --no-daemon --build-cache
+            ./gradlew :app:assembleRelease --stacktrace --no-daemon --build-cache
           else
-            gradle :app:assembleDebug --stacktrace --no-daemon --build-cache
+            ./gradlew :app:assembleDebug --stacktrace --no-daemon --build-cache
           fi
 
       - name: Locate APK
