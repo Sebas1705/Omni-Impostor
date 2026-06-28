@@ -2,14 +2,26 @@
 
 Centralized map of major documentation files.
 
-## Core Docs
+## Core Docs (root)
 
 - `README.md`
 - `ARCHITECTURE.md`
-- `MODULE_MAP.md`
-- `AI_INDEX.md`
 - `AGENTS.md`
-- `CLOUD.md`
+- `AI_INDEX.md`
+- `CONTRIBUTING.md`
+- `CHANGELOG.md`
+- `SECURITY.md`
+
+## Technical Reference (docs/)
+
+- `docs/module-map.md`
+- `docs/cloud.md`
+- `docs/design.md`
+- `docs/module-standards.md`
+- `docs/module-checklist.md`
+- `docs/logging-guide.md`
+- `docs/library-audit.md`
+- `build-logic/BUILD_LOGIC_BEST_PRACTICES.md`
 
 ## AI Implementation Docs
 
@@ -18,25 +30,15 @@ Centralized map of major documentation files.
 - `docs/ai/FLOW_CATALOG.md`
 - `docs/ai/PATTERN_RECIPES.md`
 
-## Process Docs
+## Process & Governance
 
 - `docs/governance.md`
-- `docs/triage-workflow.md`
 - `docs/release-policy.md`
-- `docs/template-evolution.md`
+- `docs/triage-workflow.md`
 - `docs/kpi-dashboard.md`
 - `docs/30-60-90-checklist.md`
 
-## Engineering Docs
+## Diagrams
 
-- `docs/module-standards.md`
-- `docs/module-checklist.md`
-- `docs/library-audit.md`
-- `docs/logging-guide.md`
-- `build-logic/BUILD_LOGIC_BEST_PRACTICES.md`
-
-## Templates
-
-- `config/templates/`
-- `config/templates/dependency-report-monthly.workflow.yml.template`
-
+- `docs/diagrams/00-modulos-dependencias.puml`
+- `docs/diagrams/README.md`
