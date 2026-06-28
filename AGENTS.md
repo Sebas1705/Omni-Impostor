@@ -38,5 +38,5 @@ Operating contract for AI agents and automation helpers working in this project.
 
 - Do not commit secrets or credentials.
 - Do not change release/governance rules silently.
-- Do not move files between repository root and `AndroidModApp/` without explicit intent and docs updates.
+- Do not rename or move modules without updating `settings.gradle.kts` and all cross-module documentation.
 
