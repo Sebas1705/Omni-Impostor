@@ -124,6 +124,7 @@ class OfflineGameViewModel @Inject constructor(
                 result = null,
                 discussionTimerSeconds = intent.discussionTimerSeconds,
                 impostorsKnowEachOther = intent.impostorsKnowEachOther,
+                showNumOfImpostors = intent.showNumOfImpostors,
             )
         }
         logI("initialize done step=${OfflineGameStep.Reveal}")
@@ -364,7 +365,7 @@ class OfflineGameViewModel @Inject constructor(
         val maxImpostors = (playerCount - 1).coerceAtLeast(1)
         val resolved = when (mode) {
             Modes.Classic -> requested.coerceIn(1, maxImpostors)
-            Modes.Chaos -> Random.nextInt(from = 1, until = requested + 1)
+            Modes.Chaos -> Random.nextInt(from = 1, until = requested.coerceAtMost(maxImpostors) + 1)
         }
         logD(
             "resolveImpostorCount mode=$mode requested=$requested playerCount=$playerCount " +
