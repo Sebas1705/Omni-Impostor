@@ -9,6 +9,7 @@
 
 # Ignore local configuration and secrets
 *.properties
+!gradle/wrapper/gradle-wrapper.properties
 
 # Ignore APKs and generated RAR/ZIP files
 *.apk
@@ -38,7 +39,9 @@
 /caches/
 **/gradle/caches/
 **/gradle/daemon/
-**/gradle/wrapper/
+**/gradle/wrapper/dists
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
 
 # Ignore Kotlin/Java build artifacts
 *.class
