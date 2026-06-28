@@ -9,6 +9,7 @@
 
 # Ignore local configuration and secrets
 *.properties
+!gradle.properties
 !gradle/wrapper/gradle-wrapper.properties
 
 # Ignore APKs and generated RAR/ZIP files
