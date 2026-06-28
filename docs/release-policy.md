@@ -1,87 +1,48 @@
 # Release Policy
 
-This template follows a predictable release rhythm to stay active and safe to adopt.
-
-## Cadence
-
-- Weekly: triage issues and pull requests.
-- Biweekly: dependency updates and plugin upgrades.
-- Monthly: tagged template release (`vYYYY.MM.PATCH`) with migration notes.
-- Monthly: generate dependency update report with `dependencyUpdates`.
-- Scheduled workflow: repository root `.github/workflows/dependency-report-monthly.yml`.
-- Template for reuse: `config/templates/dependency-report-monthly.workflow.yml.template`.
-
-## Branching
-
-- `main`: stable branch for releases.
-- `develop`: optional integration branch for larger batches.
-- Feature work should use short-lived branches and pull requests.
-
 ## Versioning
 
-- `MAJOR`: breaking build-logic or template contract changes.
-- `MINOR`: backward-compatible features and new module scaffolds.
-- `PATCH`: fixes, docs, dependency refreshes.
+Omni-Impostor uses semantic versioning: `vMAJOR.MINOR.PATCH`
 
-Release tags use `vYYYY.MM.PATCH` (example: `v2026.05.1`).
+| Increment | When |
+|---|---|
+| `MAJOR` | Breaking architectural changes or major feature overhauls |
+| `MINOR` | Backward-compatible new features |
+| `PATCH` | Bug fixes, CI changes, dependency updates, docs |
 
-## Release Automation
+Current series: `v1.x.x`
 
-- Workflow: repository root `.github/workflows/release.yml`
-- Label gate workflow: repository root `.github/workflows/changelog-label-gate.yml`
-- Release notes categories: repository root `.github/release.yml`
-- Automatic publish runs when a matching tag is pushed.
-- Manual publish is also available with workflow dispatch using a `version` input.
-- `CHANGELOG.md` is updated automatically from merged PR labels before the release is published.
+## Branch Strategy
 
-## Tag Helper Script
-
-Use repository root `release-tag.ps1` to create tags with the correct format.
-
-```powershell
-cd C:\Users\sebss\Documents\AndroidNativeBase
-.\release-tag.ps1 -Patch 1 -DryRun
-.\release-tag.ps1 -Patch 1 -Push
-```
-
-For a one-shot flow that runs `detekt`, creates the tag, and prints the expected release URL:
-
-```powershell
-cd C:\Users\sebss\Documents\AndroidNativeBase
-.\new-release.ps1 -Patch 1 -DryRun
-.\new-release.ps1 -Patch 1 -Push
-```
-
-## Optional PowerShell Aliases
-
-For the current session only:
-
-```powershell
-cd C:\Users\sebss\Documents\AndroidNativeBase
-. .\release-tag-alias.ps1
-rtag -Patch 1 -DryRun
-```
-
-For the one-shot flow with `detekt` + tag preview/push:
-
-```powershell
-cd C:\Users\sebss\Documents\AndroidNativeBase
-. .\release-tag-alias.ps1
-nrelease -Patch 1 -DryRun
-```
-
-If you want it permanently, add this line manually to your PowerShell profile:
-
-```powershell
-. "C:\Users\sebss\Documents\AndroidNativeBase\release-tag-alias.ps1"
-```
+- `main` — stable, always tagged at release
+- `develop` — integration; features land here before promoting to release
+- `release/x.y.z` — short-lived release prep branch; merged into `main` + `develop`, then deleted
+- `hotfix/*` — critical fixes branched from `main`
 
 ## Release Checklist
 
-1. Validation workflows green (`build + lint`, `detekt`, `unit tests + coverage`, `security`, `changelog label gate`).
-2. Pull requests since the previous release have correct changelog labels (`bug`, `enhancement`, `documentation`, `ci`, `security`, `breaking-change`, or `skip-changelog`).
-3. Migration notes included for any breaking/deprecation change.
-4. Git tag pushed after merge to `main`.
-5. Dependency update report reviewed (`./gradlew dependencyUpdates --no-parallel`).
-6. AI context docs reviewed when release includes architectural or operational changes (`AGENTS.md`, `CLOUD.md`, `ARCHITECTURE.md`, `MODULE_MAP.md`, `AI_INDEX.md`).
+1. All CI checks green: `build + lint`, `detekt`, `unit tests + coverage`.
+2. CHANGELOG.md updated with the new version section.
+3. Version code and name bumped in `app/build.gradle.kts`.
+4. No debug-only libraries leaking into release variant.
+5. Signed AAB produced by the CI workflow (`bundleProRelease`).
+6. Git tag pushed to `main` after merge.
+7. AI context docs reviewed for any architectural or operational changes (`AGENTS.md`, `ARCHITECTURE.md`, `docs/cloud.md`, `docs/module-map.md`, `AI_INDEX.md`).
 
+## CI/CD
+
+- Workflow: `.github/workflows/build-release-apk.yml`
+  - Trigger: manual dispatch with `release_tag` and `build_type` inputs
+  - Builds signed AAB (`bundleProRelease`) and uploads to the GitHub release
+- Dependency report: `.github/workflows/dependency-report-monthly.yml`
+  - Run monthly; review output with `./gradlew dependencyUpdates --no-parallel`
+
+## Secrets
+
+Managed via Doppler (`omni-impostor` project, `prd` config for CI).
+See `doppler.yaml` and `scripts/` for local setup.
+
+## Cadence
+
+- **Monthly:** dependency update review + tagged release if pending changes
+- **On demand:** hotfix releases for critical bugs

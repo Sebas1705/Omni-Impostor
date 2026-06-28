@@ -4,7 +4,7 @@ Operating contract for AI agents and automation helpers working in this project.
 
 ## Mission
 
-- Keep the template stable, maintainable, and well-documented.
+- Keep Omni-Impostor stable, maintainable, and well-documented.
 - Prefer incremental changes with verifiable outputs.
 
 ## Core Rules

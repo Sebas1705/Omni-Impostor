@@ -1,48 +1,51 @@
 # Module Standards
 
-Use these standards when creating or refactoring modules in this template.
+Standards for creating or refactoring modules in Omni-Impostor.
 
-## Layer intent
+## Layer Intent
 
-- `core`: reusable framework-like shared building blocks
-- `data`: external/local data source implementations and repositories
-- `domain`: business models, use cases, service interfaces
-- `feature`: UI flows and screen-level orchestration
+| Layer | Purpose |
+|---|---|
+| `core` | Shared building blocks — UI utils, design system, resources, common extensions |
+| `data` | External/local data source implementations and repository adapters |
+| `domain` | Business models, use cases, repository interfaces, service contracts |
+| `feature` | UI flows, screens, ViewModels, and screen-level orchestration |
 
-## Build logic usage
+## Build Logic
 
-- Apply one primary convention plugin (`buildlogic.android.core`, `buildlogic.android.data`, etc.)
-- Keep module-level Gradle files minimal and dependency-focused
-- Avoid hardcoded versions in module scripts; use `gradle/libs.versions.toml`
-- Prefer variant-aware dependencies for debug-only tooling (`debugImplementation` / `releaseImplementation`)
+- Apply the primary convention plugin for the layer (`buildlogic.android.core`, `buildlogic.android.data`, etc.)
+- Keep module Gradle files minimal — declare dependencies only, no version literals
+- All versions must be in `gradle/libs.versions.toml`
+- Debug-only tooling must use `debugImplementation` / `releaseImplementation` with a no-op for release
 
-## Naming and package conventions
+## Naming and Package Conventions
 
-- Use lowercase module folders and clear bounded context names
-- Keep package names aligned with module intent
-- Keep public APIs in `domain`; avoid leaking `data` implementation details
+- Lowercase module folder names with clear bounded-context names
+- Package names aligned with module intent and layer
+- Public APIs live in `domain`; never leak `data` implementation details into `feature`
 
-## Testing standards
+## Testing Standards
 
-- Unit tests for business logic are required in `domain` and `data`
-- Keep test names behavior-oriented (`given_when_then` style is acceptable)
-- Prefer deterministic tests (no network, no clock dependence without fakes)
-- Use shared testing dependencies from `buildlogic.android.unit.test`
-- If a module exposes diagnostics flows, include at least one smoke test path (compile + detekt)
+- Unit tests required for business logic in `domain` and `data`
+- Test names should be behavior-oriented (`given_when_then` style acceptable)
+- Tests must be deterministic — no real network or clock without fakes/stubs
+- Use shared test dependencies from `buildlogic.android.unit.test`
+- At minimum: one smoke path (compile + detekt) per diagnostics-exposing module
 
-## Static analysis standards
+## Static Analysis
 
-- Detekt is required for all modules via convention plugin
+- Detekt required in all modules via convention plugin
 - Fix new findings in touched files before merging
-- Use baselines only for legacy findings and reduce them over time
+- Baselines are for legacy findings only — shrink them over time
 
-## CI expectations
+## CI Expectations
 
 - `build + lint`, `detekt`, and `unit tests + coverage` must pass
 - Attach report artifacts for failed jobs to speed up debugging
 
-## Documentation expectations
+## Documentation Sync
 
-- Update related docs when architecture/module boundaries change.
-- Keep module references consistent with `MODULE_MAP.md` and `AI_INDEX.md`.
-
+When adding or changing modules:
+- Update `docs/module-map.md`
+- Update `settings.gradle.kts`
+- Update `docs/ai/FLOW_CATALOG.md` if a new data flow is introduced
