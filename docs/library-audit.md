@@ -1,58 +1,42 @@
-# Library Audit and Practical Recommendations
+# Library Audit
 
-This audit is based on `gradle/libs.versions.toml` and current module usage.
+Audit of `gradle/libs.versions.toml` and current module usage.
 
-## Current strengths
+## Current Strengths
 
-- Solid baseline for Android app architecture: Hilt, Retrofit/OkHttp, Room, Datastore, Firebase, Couchbase Lite.
-- Good quality stack already present: Detekt, JaCoCo, unit/instrumented test libraries.
-- Version catalog is centralized and build logic is modularized.
+- Solid Android architecture baseline: Hilt, Retrofit/OkHttp, Room, DataStore, Firebase, Couchbase Lite.
+- Quality tooling already in place: Detekt, JaCoCo, unit test libraries.
+- Centralized version catalog (`gradle/libs.versions.toml`) with modularized build logic.
 
-## High-value additions implemented
+## Implemented Additions
 
-1. Leak detection in debug builds
-   - Library: `com.squareup.leakcanary:leakcanary-android`
-   - Status: implemented in `app` as `debugImplementation`.
-   - Why: catches lifecycle and context leaks early.
-2. Network inspector in debug builds
-   - Library: `com.github.chuckerteam.chucker:library`
-   - Status: implemented in `buildlogic.android.retrofit` with `library-no-op` for release.
-   - Why: inspect REST traffic directly on device.
-3. Dependency update task in CI
-   - Plugin already declared (`benmanes-versions`).
-   - Status: enabled at root, runnable with `./gradlew dependencyUpdates --no-parallel`.
-   - Workflow template available at `config/templates/dependency-report-monthly.workflow.yml.template`.
-   - Why: monthly report of outdated dependencies.
+### Leak Detection (debug builds)
+- Library: `com.squareup.leakcanary:leakcanary-android`
+- Location: `app` as `debugImplementation`
+- Why: catches lifecycle and context leaks early
 
-## Couchbase runtime inspection options
+### Network Inspector (debug builds)
+- Library: `com.github.chuckerteam.chucker:library`
+- Location: `buildlogic.android.retrofit` — `library-no-op` stub in release
+- Why: inspect REST traffic directly on device
 
-For Couchbase Lite on Android there is no equivalent to "open SQLite in Android Studio" because storage is not plain SQLite tables you can browse safely.
+### Dependency Update Task
+- Plugin: `benmanes-versions` (declared at root)
+- Run: `./gradlew dependencyUpdates --no-parallel`
+- Workflow: `.github/workflows/dependency-report-monthly.yml`
+- Why: monthly report of outdated dependencies
 
-Practical options:
+## Couchbase Runtime Inspection
 
-1. In-app debug inspector (implemented in `feature:main` debug tools)
-   - Refresh all docs and show them on screen.
-   - Insert demo docs to verify writes quickly.
-2. Sync to backend and inspect from server tooling
-   - Replicate to Sync Gateway / Capella and inspect with backend consoles.
-3. Export diagnostic snapshot
-   - Add a debug-only action to dump docs as JSON for QA sessions.
+Couchbase Lite on Android does not expose plain SQLite files. Options:
 
-## What was implemented now
+1. **In-app debug inspector** (`feature:debug`) — refresh and display all documents on screen
+2. **Sync to backend** — replicate to Sync Gateway / Capella and inspect from server tooling
+3. **Export snapshot** — debug-only action to dump documents as JSON for QA sessions
 
-- Runtime Couchbase inspection in the debug tools screen.
-- Debug tools route (`feature:main`) to refresh diagnostics for Couchbase + OpenDB.
-- Chucker-backed OkHttp wiring via build variants in `data:retrofit`.
-- LeakCanary in app debug builds.
-- Root `dependencyUpdates` task activation for monthly dependency reporting.
-- `IMyDocRepository` binding in Hilt module so it can be injected from use cases.
-- Use cases in `domain:usescases:settings` to read and insert demo Couchbase docs.
+## Monthly Review Policy
 
-## Monthly review policy
-
-- Run `./gradlew dependencyUpdates --no-parallel` and review the generated report artifact.
-- Prioritize security and stable updates first.
-- Track alpha/beta upgrades separately unless needed for platform compatibility.
-
-
-
+1. Run `./gradlew dependencyUpdates --no-parallel` and review the report artifact.
+2. Prioritize security and stable updates first.
+3. Track alpha/beta upgrades separately unless needed for platform compatibility.
+4. Open issues for high-value updates and link to the monthly milestone.

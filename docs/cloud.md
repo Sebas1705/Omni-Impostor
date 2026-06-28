@@ -1,33 +1,55 @@
-# Cloud Context
+# Cloud & External Services
 
-Cloud and external service context for this template.
+Runtime services and secrets context for Omni-Impostor.
 
-## Services in Use
+## Services
 
-- Firebase (analytics, crashlytics, auth, firestore, realtime database, storage, messaging)
-- Open Trivia DB via Retrofit (`data:retrofit`)
-- Couchbase Lite for local embedded data (not cloud-hosted by default)
+| Service | Module | Purpose |
+|---|---|---|
+| Firebase Auth | `data:authentication` | Google Sign-In + anonymous auth |
+| Firebase Firestore | `data:firestore` | User profiles, online game state |
+| Firebase Realtime Database | `data:realtime` | Low-latency game sync |
+| Firebase Analytics | `data:analytics` | Event and user property tracking |
+| Firebase Crashlytics | `data:analytics` | Crash reporting |
+| Open Trivia DB | `data:retrofit` | Remote word/trivia question fetch |
+| Couchbase Lite | `data:couchbase` | Local embedded DB (words, ranking, debug snapshots) |
+
+## Secrets Management
+
+Secrets are managed by **Doppler** (`omni-impostor` project):
+
+| Config | Usage |
+|---|---|
+| `prd` | GitHub Actions CI (read via `DOPPLER_TOKEN` secret) |
+| `dev_personal` | Local development (auto-selected via `doppler.yaml`) |
+
+Required secrets: `SIGNING_KEYSTORE_PASSWORD`, `SIGNING_KEY_ALIAS`, `KEYSTORE_BASE64`, `GOOGLE_SERVICES_JSON`, `EXAMPLE_URL_DEV`, `EXAMPLE_URL_PRO`
+
+Local bootstrap:
+```bash
+doppler setup
+bash scripts/setup-secrets.sh    # or .\scripts\setup-secrets.ps1
+```
+This generates `app/secrets.properties`, `app/google-services.json`, and `app/keystore.jks`.
 
 ## Environment Notes
 
-- Android app expects local setup files (for example Firebase config) in developer environments.
-- CI and local release flows are orchestrated from repository root workflows/scripts.
-
-## Security and Secrets
-
-- Never commit secrets to Git.
-- Keep local secret files out of source control.
-- Treat API keys and service credentials as runtime environment concerns.
+- `google-services.json` is gitignored; generated at build time from Doppler.
+- CI uses a Doppler service token (`prd` config); local dev uses personal token (`dev_personal`).
+- Debug builds use a stub `google-services.json` with placeholder Firebase credentials.
 
 ## Operational Workflows
 
-- Release: repository root `.github/workflows/release.yml`
-- Dependency report: repository root `.github/workflows/dependency-report-monthly.yml`
-- Security checks: repository root security workflows
+| Workflow | File |
+|---|---|
+| Build & publish AAB | `.github/workflows/build-release-apk.yml` |
+| Dependency report | `.github/workflows/dependency-report-monthly.yml` |
+| Security scan | `.github/workflows/security.yml` |
 
 ## Risks and Controls
 
-- Dependency drift: mitigated with monthly dependency report and Dependabot.
-- Release-note quality drift: mitigated with changelog label gate.
-- Debug tooling leakage into release: mitigated with variant-scoped dependencies.
-
+| Risk | Control |
+|---|---|
+| Dependency drift | Monthly dependency report + Dependabot |
+| Secret leakage | Secrets in Doppler only; gitignore enforced |
+| Debug tooling in release | Variant-scoped dependencies (`debugImplementation`) |

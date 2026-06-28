@@ -1,20 +1,20 @@
-# Template Evolution
+# Architecture Evolution
 
-Use this process for meaningful template changes so teams can adopt updates safely.
+Process for meaningful architectural changes so they land safely.
 
 ## When to Open an RFC
 
 Open a lightweight RFC pull request when changing:
 
 - Convention plugin behavior in `build-logic/`.
-- Dependency versions strategy in `gradle/libs.versions.toml`.
-- Module templates in `config/templates/`.
-- Quality gates that can break consumer repositories.
+- Dependency version strategy in `gradle/libs.versions.toml`.
+- Module boundaries or layer contracts.
+- Quality gates that could break existing CI.
 
 ## RFC Format
 
 1. Goal and scope.
-2. Impacted modules/plugins.
+2. Impacted modules or plugins.
 3. Backward-compatibility assessment.
 4. Rollout and rollback steps.
 5. Validation evidence (CI jobs + local command output).
@@ -22,13 +22,15 @@ Open a lightweight RFC pull request when changing:
 
 ## Deprecation Policy
 
-- Announce deprecations in one release before removal.
-- Include replacement guidance.
-- Remove only after the next monthly release unless a security fix requires earlier action.
+- Announce deprecations one release before removal.
+- Include replacement guidance in the PR.
+- Remove only after the next release unless a security fix requires earlier action.
 
 ## Required Documentation Sync
 
-- If module boundaries change, update `MODULE_MAP.md` and `ARCHITECTURE.md`.
-- If operational workflow changes, update `AGENTS.md` and `AI_INDEX.md`.
-- If runtime services or secrets model changes, update `CLOUD.md`.
-
+| What changed | Docs to update |
+|---|---|
+| Module boundaries | `docs/module-map.md`, `ARCHITECTURE.md` |
+| Operational workflows or secrets | `AGENTS.md`, `AI_INDEX.md`, `docs/cloud.md` |
+| Build logic or Gradle config | `build-logic/BUILD_LOGIC_BEST_PRACTICES.md` |
+| Release process | `docs/release-policy.md`, `CHANGELOG.md` |

@@ -1,6 +1,6 @@
 # Agent Playbook
 
-Practical execution guide for AI agents working on this template.
+Practical execution guide for AI agents working on Omni-Impostor.
 
 ## Goal
 
