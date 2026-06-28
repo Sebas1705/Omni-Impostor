@@ -67,6 +67,7 @@
     <string name="core_resources_categories_title">Categorías</string>
     <string name="core_resources_categories_select_all">Seleccionar todo</string>
     <string name="core_resources_categories_clear">Limpiar</string>
+    <string name="core_resources_categories_done">Hecho</string>
     <string name="core_resources_categories_selected_summary">Categorías seleccionadas: %1$d/%2$d</string>
 
     <string name="core_resources_users_title">Usuarios</string>
