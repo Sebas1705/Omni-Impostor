@@ -1,6 +1,6 @@
 @startuml
 skinparam componentStyle rectangle
-title ImpostorAndroidGame - Mapa de módulos (multimódulo)
+title Omni-Impostor - Mapa de módulos (multimódulo)
 
 component "app" as APP
 
