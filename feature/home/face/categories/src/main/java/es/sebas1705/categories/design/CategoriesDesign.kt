@@ -47,6 +47,7 @@ fun CategoriesDesign(
     onSelectAll: () -> Unit = {},
     onClearSelection: () -> Unit = {},
     onBack: () -> Unit = {},
+    onDone: () -> Unit = {},
 ) {
     val sound = LocalSoundPlayer.current
     Scaffold(
@@ -102,7 +103,7 @@ fun CategoriesDesign(
                     modifier = Modifier.fillMaxWidth()
                 )
                 Button(
-                    onClick = { sound(Sounds.CLK_ARCADE); onBack() },
+                    onClick = { sound(Sounds.CLK_ARCADE); onDone() },
                     modifier = Modifier.fillMaxWidth(),
                     enabled = categoriesStates.any { it.value }
                 ) {

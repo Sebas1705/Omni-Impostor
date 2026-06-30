@@ -20,40 +20,37 @@ class CategoriesViewModel @Inject constructor(
 
     override fun intentHandler(intent: CategoriesIntent) =
         when (intent) {
-            is CategoriesIntent.ToggleCategory -> toggleCategory(intent)
+            is CategoriesIntent.Initialize -> initialize(intent.savedCategories)
+            is CategoriesIntent.ToggleCategory -> toggleCategory(intent.category)
             CategoriesIntent.SelectAll -> selectAll()
             CategoriesIntent.ClearSelection -> clearAll()
+            CategoriesIntent.Save -> save()
         }
 
-    private fun toggleCategory(
-        intent: CategoriesIntent.ToggleCategory
-    ) = execute(Dispatchers.IO) {
-        runCatching {
-            updateGameSelectedCategoriesUseCase(
-                selectedCategories = intent.categoriesStates
-                    .mapValues { (category, isSelected) ->
-                        if (category == intent.category) !isSelected else isSelected
-                    }
-                    .filterValues { it }
-                    .keys
-                    .toSet()
-            )
-        }.onFailure { logW("toggleCategory failed: ${it.message}") }
+    private fun initialize(saved: Map<Categories, Boolean>) = updateUi {
+        it.copy(draftCategories = saved)
     }
 
-    private fun selectAll() = execute(Dispatchers.IO) {
-        runCatching {
-            updateGameSelectedCategoriesUseCase(
-                selectedCategories = Categories.entries.toSet()
-            )
-        }.onFailure { logW("selectAll failed: ${it.message}") }
+    private fun toggleCategory(category: Categories) = updateUi { state ->
+        val newDraft = state.draftCategories.toMutableMap()
+        newDraft[category] = !(newDraft[category] ?: false)
+        state.copy(draftCategories = newDraft)
     }
 
-    private fun clearAll() = execute(Dispatchers.IO) {
+    private fun selectAll() = updateUi { state ->
+        state.copy(draftCategories = Categories.entries.associateWith { true })
+    }
+
+    private fun clearAll() = updateUi { state ->
+        state.copy(draftCategories = Categories.entries.associateWith { false })
+    }
+
+    private fun save() = execute(Dispatchers.IO) {
+        val draft = _uiState.value.draftCategories
         runCatching {
             updateGameSelectedCategoriesUseCase(
-                selectedCategories = emptySet()
+                selectedCategories = draft.filterValues { it }.keys.toSet()
             )
-        }.onFailure { logW("clearAll failed: ${it.message}") }
+        }.onFailure { logW("save categories failed: ${it.message}") }
     }
 }
