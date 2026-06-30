@@ -70,6 +70,8 @@
 *.private.env.json
 # Allow JSON assets
 !**/src/main/assets/**/*.json
+# Allow Firebase project config
+!firebase.json
 
 # Ignore VS Code settings
 .vscode/
