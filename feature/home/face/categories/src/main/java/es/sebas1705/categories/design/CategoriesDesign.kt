@@ -14,6 +14,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Button
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -46,6 +47,7 @@ fun CategoriesDesign(
     onSelectAll: () -> Unit = {},
     onClearSelection: () -> Unit = {},
     onBack: () -> Unit = {},
+    onDone: () -> Unit = {},
 ) {
     val sound = LocalSoundPlayer.current
     Scaffold(
@@ -100,6 +102,13 @@ fun CategoriesDesign(
                     color = MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.fillMaxWidth()
                 )
+                Button(
+                    onClick = { sound(Sounds.CLK_ARCADE); onDone() },
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = categoriesStates.any { it.value }
+                ) {
+                    Text(stringResource(ResourceR.string.core_resources_categories_done))
+                }
             }
         }
     ) { paddingValues ->

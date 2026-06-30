@@ -46,7 +46,8 @@ class SearchWordsUseCase @Inject constructor(
                 WordModel(
                     word = document.word,
                     clue = document.clue,
-                    category = category
+                    category = category,
+
                 )
             }
     }

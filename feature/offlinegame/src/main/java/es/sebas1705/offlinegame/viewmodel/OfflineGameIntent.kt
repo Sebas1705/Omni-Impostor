@@ -19,6 +19,9 @@ sealed interface OfflineGameIntent : MVIBaseIntent {
     data object NextRevealPlayer : OfflineGameIntent
     data class VotePlayer(val playerIndex: Int) : OfflineGameIntent
     data class SubmitGuess(val value: String) : OfflineGameIntent
+    data object GoToRating : OfflineGameIntent
+    data class RateClue(val clueText: String, val isPositive: Boolean) : OfflineGameIntent
+    data object SubmitRatings : OfflineGameIntent
 }
 
 

@@ -9,6 +9,6 @@ data class WordDoc(
     val id: String,
     val word: String,
     val clue: List<String>,
-    val category: String
+    val category: String,
 ) : Document(id)
 

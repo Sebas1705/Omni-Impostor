@@ -49,6 +49,7 @@ fun UserDesign(
     val playerNames = rememberSaveable(playerNames) {
         mutableStateListOf<String>().apply {
             addAll(playerNames)
+            while (size < 3) add("")
         }
     }
     val sound = LocalSoundPlayer.current
@@ -113,7 +114,7 @@ fun UserDesign(
                         },
                         modifier = Modifier.weight(1f)
                     )
-                    if (index > 1) IconButton(
+                    if (index > 2) IconButton(
                         onClick = { sound(Sounds.CLK_INSTANT); playerNames.removeAt(index) },
                         modifier = Modifier.padding(start = 8.dp)
                     ) {

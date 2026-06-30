@@ -3,6 +3,8 @@
 package es.sebas1705.offlinegame.ui
 
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
@@ -65,6 +68,7 @@ internal fun OfflineGameRevealScreen(
     var showPassPhoneOverlay by rememberSaveable(playerIndex) { mutableStateOf(false) }
     val rotationY by animateFloatAsState(
         targetValue = if (uiState.revealedCurrentCard) 180f else 0f,
+        animationSpec = if (uiState.revealedCurrentCard) tween(durationMillis = 600) else snap(),
         label = "reveal_card_rotation"
     )
     val density = LocalDensity.current
@@ -139,7 +143,11 @@ internal fun OfflineGameRevealScreen(
                     }
                 }
             } else {
-                Column(modifier = Modifier.fillMaxSize()) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .navigationBarsPadding()
+                ) {
                     RevealHeader(
                         playerIndex = playerIndex,
                         playersSize = uiState.players.size,
@@ -201,7 +209,8 @@ private fun PassPhoneOverlay(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(MaterialTheme.colorScheme.background)
+            .navigationBarsPadding(),
         contentAlignment = Alignment.Center
     ) {
         Column(

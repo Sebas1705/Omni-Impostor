@@ -267,6 +267,17 @@ internal fun ResultVoteAccuracyCard(correctVotes: Int, incorrectVotes: Int) {
 }
 
 @Composable
+internal fun ResultRateCluesButton(onClick: () -> Unit) {
+    val sound = LocalSoundPlayer.current
+    androidx.compose.material3.Button(
+        onClick = { sound(Sounds.CLK_CASUAL); onClick() },
+        modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)
+    ) {
+        Text(stringResource(R.string.core_resources_result_rate_clues))
+    }
+}
+
+@Composable
 internal fun ResultCloseButton(onBack: () -> Unit) {
     val sound = LocalSoundPlayer.current
     FilledTonalButton(onClick = { sound(Sounds.CLK_TAP); onBack() }, modifier = Modifier
