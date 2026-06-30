@@ -234,8 +234,9 @@ jobs:
 
       - name: Attach AAB to GitHub Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ needs.publish_release.outputs.tag }}
-        run: |
-          AAB=$(find app/build/outputs/bundle/proRelease -name "*.aab" | head -n 1)
-          gh release upload "$TAG" "$AAB" --clobber
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.publish_release.outputs.tag }}
+          files: app/build/outputs/bundle/**/*.aab
+          fail_on_unmatched_files: true
