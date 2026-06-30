@@ -97,10 +97,3 @@ jobs:
           status: completed
           releaseName: ${{ github.ref_name }}
           changesNotSentForReview: false
-
-      # ── Clean up sensitive files ───────────────────────────────────────────
-      - name: Remove sensitive files
-        if: always()
-        run: |
-          rm -f app/secrets.properties app/google-services.json app/keystore.jks
-          rm -f /tmp/play-service-account.json
