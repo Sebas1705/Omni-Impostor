@@ -14,6 +14,8 @@ import es.sebas1705.core.resources.Sounds
 import es.sebas1705.domain.managers.MediaPlayerManager
 import es.sebas1705.domain.managers.SoundPoolManager
 import es.sebas1705.game.words.SearchWordsUseCase
+import es.sebas1705.game.words.SubmitClueRatingsUseCase
+import es.sebas1705.models.ClueRating
 import es.sebas1705.models.Modes
 import es.sebas1705.offlinegame.models.OfflineGameResult
 import es.sebas1705.offlinegame.models.OfflineGameStep
@@ -30,6 +32,7 @@ class OfflineGameViewModel @Inject constructor(
     @ApplicationContext context: Context,
     private val searchWordsUseCase: SearchWordsUseCase,
     private val recordOfflineMatchResultUseCase: RecordOfflineMatchResultUseCase,
+    private val submitClueRatingsUseCase: SubmitClueRatingsUseCase,
     private val mediaPlayerManager: MediaPlayerManager,
     private val soundPoolManager: SoundPoolManager,
 ) : MVIBaseViewModel<OfflineGameState, OfflineGameIntent>(context) {
@@ -47,6 +50,9 @@ class OfflineGameViewModel @Inject constructor(
             OfflineGameIntent.NextRevealPlayer -> nextRevealPlayer()
             is OfflineGameIntent.VotePlayer -> votePlayer(intent.playerIndex)
             is OfflineGameIntent.SubmitGuess -> submitGuess(intent.value)
+            OfflineGameIntent.GoToRating -> goToRating()
+            is OfflineGameIntent.RateClue -> rateClue(intent.clueText, intent.isPositive)
+            OfflineGameIntent.SubmitRatings -> submitRatings()
         }
 
     @Suppress("LongMethod")
@@ -302,6 +308,38 @@ class OfflineGameViewModel @Inject constructor(
                 state.copy(guessFeedback = context.getString(R.string.core_resources_game_guess_wrong))
             }
         }
+
+    private fun goToRating() = updateUi { state ->
+        if (state.step != OfflineGameStep.Result) {
+            logW("goToRating ignored reason=invalid_step currentStep=${state.step}")
+            return@updateUi state
+        }
+        val impostorClues = state.impostorPlayerIndexes.mapNotNull { playerIdx ->
+            val clue = state.wordEntry?.clue
+                ?.getOrNull(playerIdx % (state.wordEntry.clue.size.coerceAtLeast(1)))
+            clue
+        }.distinct()
+        val initialRatings = impostorClues.associateWith { true }
+        logD("goToRating impostorClues=$impostorClues")
+        state.copy(step = OfflineGameStep.Rating, clueRatings = initialRatings, ratingsSubmitted = false)
+    }
+
+    private fun rateClue(clueText: String, isPositive: Boolean) = updateUi { state ->
+        state.copy(clueRatings = state.clueRatings + (clueText to isPositive))
+    }
+
+    private fun submitRatings() = execute(Dispatchers.IO) {
+        val state = _uiState.value
+        val word = state.wordEntry?.word.orEmpty()
+        val category = state.wordEntry?.category?.name.orEmpty()
+        val ratings = state.clueRatings.map { (clue, positive) ->
+            ClueRating(word = word, category = category, clue = clue, isPositive = positive)
+        }
+        logI("submitRatings count=${ratings.size} word='$word'")
+        runCatching { submitClueRatingsUseCase(ratings) }
+            .onFailure { logW("submitRatings failed: ${it.message}") }
+        updateUi { it.copy(ratingsSubmitted = true) }
+    }
 
     private fun buildResultIfFinished(
         state: OfflineGameState,

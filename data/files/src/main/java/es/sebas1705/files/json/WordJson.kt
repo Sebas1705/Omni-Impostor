@@ -8,7 +8,9 @@ data class WordJson(
     val word: String,
     @SerialName("clues")
     val clues: List<String>,
-    val category: String
+    val category: String,
+    @SerialName("related_words")
+    val relatedWords: List<String> = emptyList()
 )
 
 

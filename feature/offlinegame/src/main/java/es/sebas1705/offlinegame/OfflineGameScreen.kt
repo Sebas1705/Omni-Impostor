@@ -39,6 +39,7 @@ import es.sebas1705.offlinegame.models.OfflineGameStep
 import es.sebas1705.offlinegame.models.screenLogD
 import es.sebas1705.offlinegame.models.screenLogI
 import es.sebas1705.offlinegame.ui.OfflineGameDiscussionScreen
+import es.sebas1705.offlinegame.ui.OfflineGameRatingScreen
 import es.sebas1705.offlinegame.ui.OfflineGameResultScreen
 import es.sebas1705.offlinegame.ui.OfflineGameRevealScreen
 import es.sebas1705.offlinegame.viewmodel.OfflineGameIntent
@@ -113,6 +114,17 @@ fun OfflineGameScreen(
             screenLogD("action submit_guess valueLength=${value.length}")
             viewModel.eventHandler(OfflineGameIntent.SubmitGuess(value))
         },
+        onRateClues = {
+            screenLogD("action go_to_rating")
+            viewModel.eventHandler(OfflineGameIntent.GoToRating)
+        },
+        onRateClue = { clue, positive ->
+            viewModel.eventHandler(OfflineGameIntent.RateClue(clue, positive))
+        },
+        onSubmitRatings = {
+            screenLogI("action submit_ratings")
+            viewModel.eventHandler(OfflineGameIntent.SubmitRatings)
+        },
         showImpostorsInResult = showImpostorsInResult
     )
 }
@@ -126,6 +138,9 @@ private fun OfflineGameDesign(
     onNextRevealPlayer: () -> Unit,
     onVotePlayer: (Int) -> Unit,
     onGuess: (String) -> Unit,
+    onRateClues: () -> Unit,
+    onRateClue: (String, Boolean) -> Unit,
+    onSubmitRatings: () -> Unit,
     showImpostorsInResult: Boolean,
     modifier: Modifier = Modifier
 ) {
@@ -228,7 +243,22 @@ private fun OfflineGameDesign(
                         showImpostorsInResult = showImpostorsInResult,
                         players = uiState.players,
                         impostorIndexes = uiState.impostorPlayerIndexes,
-                        onBack = onBack
+                        onBack = onBack,
+                        onRateClues = onRateClues
+                    )
+                }
+
+                OfflineGameStep.Rating -> {
+                    OfflineGameRatingScreen(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(paddingValues)
+                            .padding(16.dp),
+                        uiState = uiState,
+                        onRateClue = onRateClue,
+                        onSubmit = onSubmitRatings,
+                        onSkip = onBack,
+                        onDone = onBack
                     )
                 }
             }

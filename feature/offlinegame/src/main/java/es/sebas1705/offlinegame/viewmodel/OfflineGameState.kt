@@ -23,6 +23,9 @@ data class OfflineGameState(
     val discussionTimerSeconds: Int = 180,
     val impostorsKnowEachOther: Boolean = false,
     val showNumOfImpostors: Boolean = false,
+    // clue text → thumbs up; only populated for impostors' clues
+    val clueRatings: Map<String, Boolean> = emptyMap(),
+    val ratingsSubmitted: Boolean = false,
 ) : MVIBaseState {
     val hasMoreRevealPlayers: Boolean
         get() = currentRevealIndex < players.lastIndex

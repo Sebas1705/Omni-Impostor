@@ -67,6 +67,7 @@
     <string name="core_resources_categories_title">Categorías</string>
     <string name="core_resources_categories_select_all">Seleccionar todo</string>
     <string name="core_resources_categories_clear">Limpiar</string>
+    <string name="core_resources_categories_done">Hecho</string>
     <string name="core_resources_categories_selected_summary">Categorías seleccionadas: %1$d/%2$d</string>
 
     <string name="core_resources_users_title">Usuarios</string>
@@ -257,6 +258,14 @@
     <string name="core_resources_game_reason_impostors_outnumber">Los impostores superan en número a los civiles y controlan la votación.</string>
     <string name="core_resources_game_reason_final_duel_impostor_win">Solo queda 1 civil y 1 impostor. Ganan los impostores.</string>
     <string name="core_resources_game_reason_tie">Solo queda 1 civil y 1 impostor.</string>
+
+    <!-- Clue rating screen -->
+    <string name="core_resources_result_rate_clues">Valorar pistas</string>
+    <string name="core_resources_clue_rating_title">Valora las pistas</string>
+    <string name="core_resources_clue_rating_word">Palabra: %1$s</string>
+    <string name="core_resources_clue_rating_no_clues">No hay pistas para valorar.</string>
+    <string name="core_resources_clue_rating_submit">Enviar y terminar</string>
+    <string name="core_resources_clue_rating_skip">Omitir</string>
 
     <!-- Category names -->
     <string name="core_resources_cat_animals">Animales</string>

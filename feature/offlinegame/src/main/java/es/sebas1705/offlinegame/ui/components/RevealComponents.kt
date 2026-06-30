@@ -3,6 +3,7 @@ package es.sebas1705.offlinegame.ui.components
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.Orientation
@@ -23,6 +24,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.People
+import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.TheaterComedy
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
@@ -155,6 +157,15 @@ internal fun RevealCard(
     onRevealDone: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
+    val cardColor by animateColorAsState(
+        targetValue = when {
+            !uiState.revealedCurrentCard -> MaterialTheme.colorScheme.primaryContainer
+            isImpostor -> MaterialTheme.colorScheme.errorContainer
+            else -> MaterialTheme.colorScheme.secondaryContainer
+        },
+        animationSpec = tween(durationMillis = 400),
+        label = "card_container_color"
+    )
     Box(modifier = Modifier.fillMaxWidth()) {
         Card(
             modifier = Modifier
@@ -189,7 +200,7 @@ internal fun RevealCard(
                     onRevealDone()
                 }
             },
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+            colors = CardDefaults.cardColors(containerColor = cardColor)
         ) {
             RevealCardContent(
                 uiState = uiState,
@@ -237,6 +248,14 @@ private fun RevealCardContent(
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         } else {
+            Icon(
+                imageVector = if (isImpostor) Icons.Outlined.TheaterComedy else Icons.Outlined.Person,
+                contentDescription = null,
+                modifier = Modifier.size(56.dp),
+                tint = if (isImpostor) MaterialTheme.colorScheme.error
+                       else MaterialTheme.colorScheme.secondary
+            )
+            Spacer(Modifier.height(8.dp))
             Text(
                 text = if (isImpostor) {
                     stringResource(R.string.core_resources_role_impostor)
@@ -244,7 +263,8 @@ private fun RevealCardContent(
                     stringResource(R.string.core_resources_role_civilian)
                 },
                 style = MaterialTheme.typography.titleLarge,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                color = if (isImpostor) MaterialTheme.colorScheme.onErrorContainer
+                        else MaterialTheme.colorScheme.onSecondaryContainer
             )
             Spacer(Modifier.height(10.dp))
             Text(
@@ -254,7 +274,8 @@ private fun RevealCardContent(
                     stringResource(R.string.core_resources_word_prefix, word)
                 },
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                color = if (isImpostor) MaterialTheme.colorScheme.onErrorContainer
+                        else MaterialTheme.colorScheme.onSecondaryContainer
             )
             if (otherImpostorNames.isNotEmpty()) {
                 Spacer(Modifier.height(12.dp))
@@ -264,7 +285,7 @@ private fun RevealCardContent(
                         otherImpostorNames.joinToString(", ")
                     ),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                    color = MaterialTheme.colorScheme.onErrorContainer
                 )
             }
         }
