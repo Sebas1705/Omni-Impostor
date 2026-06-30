@@ -5,6 +5,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [v1.2.0] - 2026-06-30
+
+<!-- Release notes generated using configuration in .github/release.yml at v1.2.0 -->
+
+
+
+**Full Changelog**: https://github.com/Sebas1705/Omni-Impostor/compare/v1.1.3...v1.2.0
 ## [1.1.3] - 2026-06-28
 
 ### Added
