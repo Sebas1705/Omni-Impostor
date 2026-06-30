@@ -20,9 +20,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -43,7 +41,6 @@ import es.sebas1705.offlinegame.ui.components.GuessWordInput
 import es.sebas1705.offlinegame.ui.components.VotePlayerItem
 import es.sebas1705.offlinegame.ui.components.VoteSectionHeader
 import es.sebas1705.offlinegame.viewmodel.OfflineGameState
-import kotlinx.coroutines.delay
 
 private val LANDSCAPE_BREAKPOINT = 600.dp
 
@@ -55,22 +52,14 @@ internal fun OfflineGameDiscussionScreen(
     modifier: Modifier = Modifier
 ) {
     val timerSeconds = uiState.discussionTimerSeconds
+    val secondsLeft = uiState.timerSecondsLeft
+    val enabledAnswer = timerSeconds == 0 || secondsLeft > 0
     var guessValue by rememberSaveable { mutableStateOf("") }
-    var secondsLeft by rememberSaveable { mutableIntStateOf(timerSeconds) }
-    var enabledAnswer by remember(secondsLeft) { mutableStateOf(timerSeconds == 0 || secondsLeft > 0) }
     val haptic = LocalHapticFeedback.current
 
-    LaunchedEffect(null) {
-        screenLogD("Discussion timer tick: $secondsLeft seconds left of $timerSeconds")
-        if (timerSeconds <= 0)
-            return@LaunchedEffect
-        while (secondsLeft >= 1) {
-            delay(1000L)
-            secondsLeft--
-            screenLogD("Discussion timer tick: $secondsLeft seconds left of $timerSeconds")
-            if (secondsLeft == 30 || secondsLeft == 10) {
-                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-            }
+    LaunchedEffect(secondsLeft) {
+        if (secondsLeft == 30 || secondsLeft == 10) {
+            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
         }
     }
 
