@@ -44,10 +44,7 @@ class ClueRatingFirestoreDataSource @Inject constructor(
                     .addOnSuccessListener { cont.resume(true) }
                     .addOnFailureListener { cont.resumeWithException(it) }
             }
-        }.getOrElse { e ->
-            logW("submitRatings failed: ${e.message}")
-            false
-        }
+        }.getOrElse { false }
     }
 
     private fun buildDocId(category: String, word: String, clue: String): String =
