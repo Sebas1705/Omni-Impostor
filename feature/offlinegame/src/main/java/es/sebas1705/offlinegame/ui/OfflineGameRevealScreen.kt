@@ -3,6 +3,8 @@
 package es.sebas1705.offlinegame.ui
 
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -66,6 +68,7 @@ internal fun OfflineGameRevealScreen(
     var showPassPhoneOverlay by rememberSaveable(playerIndex) { mutableStateOf(false) }
     val rotationY by animateFloatAsState(
         targetValue = if (uiState.revealedCurrentCard) 180f else 0f,
+        animationSpec = if (uiState.revealedCurrentCard) tween(durationMillis = 600) else snap(),
         label = "reveal_card_rotation"
     )
     val density = LocalDensity.current
