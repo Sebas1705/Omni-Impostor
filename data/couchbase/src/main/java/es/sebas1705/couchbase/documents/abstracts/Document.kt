@@ -52,16 +52,18 @@ open class Document(
 internal inline fun <reified T : Document> DocMap.fromMap(): T {
     val ctor = T::class.primaryConstructor
         ?: throw IllegalArgumentException("No primary constructor for ${T::class}")
-    val args = ctor.parameters.associateWith { param ->
+    val args = ctor.parameters.mapNotNull { param ->
         val value = this[param.name]
+        if (value == null && param.isOptional) return@mapNotNull null
         val classifier = param.type.classifier
-        when {
+        val mapped = when {
             value is Long && classifier == Int::class -> value.toInt()
             value is Map<*, *> && classifier is KClass<*> && Document::class.java.isAssignableFrom(classifier.java) ->
                 (value as Map<String, Any?>).fromMap(classifier as KClass<out Document>)
             else -> value
         }
-    }
+        param to mapped
+    }.toMap()
     return ctor.callBy(args)
 }
 
@@ -79,15 +81,17 @@ internal inline fun <reified T : Document> DocMap.fromMap(): T {
 internal fun <T : Document> DocMap.fromMap(clazz: KClass<T>): T {
     val ctor = clazz.primaryConstructor
         ?: throw IllegalArgumentException("No primary constructor for $clazz")
-    val args = ctor.parameters.associateWith { param ->
+    val args = ctor.parameters.mapNotNull { param ->
         val value = this[param.name]
+        if (value == null && param.isOptional) return@mapNotNull null
         val classifier = param.type.classifier
-        when {
+        val mapped = when {
             value is Long && classifier == Int::class -> value.toInt()
             value is Map<*, *> && classifier is KClass<*> && Document::class.java.isAssignableFrom(classifier.java) ->
                 (value as Map<String, Any?>).fromMap(classifier as KClass<out Document>)
             else -> value
         }
-    }
+        param to mapped
+    }.toMap()
     return ctor.callBy(args)
 }

@@ -7,6 +7,6 @@ data class WordModel(
     val word: String,
     val clue: List<String>,
     val category: Categories,
-    val relatedWords: List<String> = emptyList()
+
 )
 
