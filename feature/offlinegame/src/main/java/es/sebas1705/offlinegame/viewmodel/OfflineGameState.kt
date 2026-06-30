@@ -21,6 +21,7 @@ data class OfflineGameState(
     val guessFeedback: String? = null,
     val result: OfflineGameResult? = null,
     val discussionTimerSeconds: Int = 180,
+    val timerSecondsLeft: Int = 0,
     val impostorsKnowEachOther: Boolean = false,
     val showNumOfImpostors: Boolean = false,
     // clue text → thumbs up; only populated for impostors' clues

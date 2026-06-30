@@ -47,7 +47,7 @@ class SearchWordsUseCase @Inject constructor(
                     word = document.word,
                     clue = document.clue,
                     category = category,
-                    relatedWords = document.relatedWords
+
                 )
             }
     }

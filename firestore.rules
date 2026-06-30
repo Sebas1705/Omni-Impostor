@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Clue rating telemetry — any authenticated user (including anonymous)
+    // can create or update a rating document; no reads or deletes allowed.
+    match /clue_ratings/{docId} {
+      allow create, update: if request.auth != null;
+      allow read, delete: if false;
+    }
+
+    // All other collections — deny by default until explicit rules are added.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -22,6 +22,8 @@ import es.sebas1705.offlinegame.models.OfflineGameStep
 import es.sebas1705.offlinegame.models.OfflineWinner
 import es.sebas1705.ranking.RecordOfflineMatchResultUseCase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import java.text.Normalizer
 import javax.inject.Inject
 import kotlin.random.Random
@@ -146,8 +148,9 @@ class OfflineGameViewModel @Inject constructor(
         }
     }
 
-    private fun nextRevealPlayer() =
-        updateUi { state ->
+    private fun nextRevealPlayer(): Job {
+        var startTimer = false
+        val job = updateUi { state ->
             if (state.step != OfflineGameStep.Reveal || !state.revealedCurrentCard) {
                 logW(
                     "nextRevealPlayer ignored step=${state.step} " +
@@ -161,8 +164,10 @@ class OfflineGameViewModel @Inject constructor(
                     "nextRevealPlayer transition=Discussion startingSpeakerIndex=${state.currentSpeakerIndex} " +
                         "startingSpeaker=${state.players[state.currentSpeakerIndex]}"
                 )
+                startTimer = state.discussionTimerSeconds > 0
                 return@updateUi state.copy(
                     step = OfflineGameStep.Discussion,
+                    timerSecondsLeft = state.discussionTimerSeconds,
                     guessFeedback = context.getString(
                         R.string.core_resources_game_starts_discussion,
                         state.players[state.currentSpeakerIndex]
@@ -181,6 +186,20 @@ class OfflineGameViewModel @Inject constructor(
                 revealedCurrentCard = false
             )
         }
+        if (startTimer) startDiscussionTimer()
+        return job
+    }
+
+    private fun startDiscussionTimer() = execute(Dispatchers.IO) {
+        logD("startDiscussionTimer started seconds=${_uiState.value.timerSecondsLeft}")
+        while (true) {
+            delay(1000L)
+            val current = _uiState.value
+            if (current.step != OfflineGameStep.Discussion || current.timerSecondsLeft <= 0) break
+            updateUi { it.copy(timerSecondsLeft = (it.timerSecondsLeft - 1).coerceAtLeast(0)) }
+        }
+        logD("startDiscussionTimer ended")
+    }
 
     @Suppress("LongMethod")
     private fun votePlayer(

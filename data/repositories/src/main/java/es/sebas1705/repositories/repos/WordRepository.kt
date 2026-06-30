@@ -61,7 +61,7 @@ class WordRepository @Inject constructor(
                     word = it.word,
                     clue = it.clues,
                     category = it.category,
-                    relatedWords = it.relatedWords
+
                 )
             }
 

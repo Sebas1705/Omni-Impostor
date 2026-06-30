@@ -10,6 +10,5 @@ data class WordDoc(
     val word: String,
     val clue: List<String>,
     val category: String,
-    val relatedWords: List<String> = emptyList()
 ) : Document(id)
 

@@ -2,6 +2,7 @@ package es.sebas1705.offlinegame.ui.components
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -163,7 +164,7 @@ internal fun RevealCard(
             isImpostor -> MaterialTheme.colorScheme.errorContainer
             else -> MaterialTheme.colorScheme.secondaryContainer
         },
-        animationSpec = tween(durationMillis = 400),
+        animationSpec = if (uiState.revealedCurrentCard) tween(durationMillis = 400) else snap(),
         label = "card_container_color"
     )
     Box(modifier = Modifier.fillMaxWidth()) {

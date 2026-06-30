@@ -27,6 +27,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -60,6 +61,20 @@ fun ModeDesign(
         rememberSaveable { mutableIntStateOf(faceState.discussionTimerSeconds.coerceAtLeast(0)) }
     val selectedImpostorsKnowEachOther = rememberSaveable { mutableStateOf(faceState.impostorsKnowEachOther) }
     val selectedShowNumOfImpostors = rememberSaveable { mutableStateOf(faceState.showNumOfImpostors) }
+    // Sync once from faceState in case the ViewModel loaded async after first composition.
+    // rememberSaveable preserves user edits across rotation, so we only sync on first open.
+    val syncedWithFaceState = rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(faceState) {
+        if (!syncedWithFaceState.value) {
+            syncedWithFaceState.value = true
+            selectedModeName.value = faceState.mode.name
+            selectedImpostors.intValue = faceState.impostors.coerceAtLeast(1)
+            selectedShowImpostorsInResult.value = faceState.showImpostorsInResult
+            selectedTimerSeconds.intValue = faceState.discussionTimerSeconds.coerceAtLeast(0)
+            selectedImpostorsKnowEachOther.value = faceState.impostorsKnowEachOther
+            selectedShowNumOfImpostors.value = faceState.showNumOfImpostors
+        }
+    }
     val sound = LocalSoundPlayer.current
 
     Scaffold(
