@@ -30,7 +30,6 @@ class RankingViewModel @Inject constructor(
     override fun intentHandler(intent: RankingIntent) =
         when (intent) {
             RankingIntent.Load -> loadOfflineRanking()
-            is RankingIntent.SelectTab -> updateUi { it.copy(selectedTab = intent.tab) }
             is RankingIntent.ToggleOfflineSort -> toggleOfflineSort(intent.column)
         }
 

@@ -5,6 +5,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Removed
+- Online game mode leftovers: mode selector and "coming soon" text on the setup screen, Online tabs in Ranking and Profile, the unused `:data:realtime` module and the Firebase Realtime Database dependency, plus their strings and docs. The offline game is unchanged.
+
 ## [v1.2.0] - 2026-06-30
 
 <!-- Release notes generated using configuration in .github/release.yml at v1.2.0 -->

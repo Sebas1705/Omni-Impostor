@@ -27,15 +27,12 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDownward
 import androidx.compose.material.icons.outlined.ArrowUpward
-import androidx.compose.material.icons.outlined.CloudQueue
 import androidx.compose.material.icons.outlined.EmojiEvents
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.PrimaryScrollableTabRow
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -54,7 +51,6 @@ import es.sebas1705.home.ranking.models.OfflineRankingRowUi
 import es.sebas1705.home.ranking.viewmodel.RankingOfflineSort
 import es.sebas1705.home.ranking.viewmodel.RankingOfflineSortColumn
 import es.sebas1705.home.ranking.viewmodel.RankingSortDirection
-import es.sebas1705.home.ranking.viewmodel.RankingTab
 import es.sebas1705.ui.adaptive.LocalForceCompactTables
 import es.sebas1705.ui.adaptive.TableSortAnimation
 import es.sebas1705.core.resources.Sounds
@@ -79,25 +75,15 @@ private fun medalColor(position: Int): Color? = when (position) {
 @Suppress("LongMethod")
 fun RankingDesign(
     modifier: Modifier = Modifier,
-    selectedTab: RankingTab = RankingTab.Offline,
     offlineRows: ImmutableList<OfflineRankingRowUi> = persistentListOf(),
     offlineSort: RankingOfflineSort = RankingOfflineSort(),
     isLoading: Boolean = false,
     errorMessage: String? = null,
-    onSelectTab: (RankingTab) -> Unit = {},
     onToggleOfflineSort: (RankingOfflineSortColumn) -> Unit = {}
 ) {
     val forceCompactTables = LocalForceCompactTables.current
-    val sound = LocalSoundPlayer.current
-    val isCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 420
     val isVeryCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 360
     val tableScrollState = rememberScrollState()
-    val tabEdgePadding = if (isCompactPhone) 4.dp else 12.dp
-
-    val tabs = listOf(
-        RankingTab.Offline to stringResource(ResourceR.string.core_resources_ranking_tab_offline),
-        RankingTab.Online to stringResource(ResourceR.string.core_resources_ranking_tab_online)
-    )
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -128,82 +114,46 @@ fun RankingDesign(
                 )
             }
 
-            item(contentType = "tabs") {
-                PrimaryScrollableTabRow(
-                    selectedTabIndex = tabs.indexOfFirst { it.first == selectedTab },
-                    edgePadding = tabEdgePadding
-                ) {
-                    tabs.forEach { (tab, label) ->
-                        Tab(
-                            selected = selectedTab == tab,
-                            onClick = { sound(Sounds.CLK_CASUAL); onSelectTab(tab) },
-                            text = {
-                                Text(
-                                    text = label,
-                                    style = if (isVeryCompactPhone) {
-                                        MaterialTheme.typography.labelMedium
-                                    } else {
-                                        MaterialTheme.typography.titleSmall
-                                    },
-                                    maxLines = 1,
-                                    overflow = TextOverflow.Ellipsis
-                                )
-                            }
-                        )
+            if (isLoading) {
+                item(contentType = "loading") {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 24.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        CircularProgressIndicator()
                     }
                 }
-            }
-
-            when (selectedTab) {
-                RankingTab.Online -> {
-                    item(contentType = "online") {
-                        OnlineComingSoon()
-                    }
+            } else if (offlineRows.isEmpty()) {
+                item(contentType = "empty") {
+                    EmptyRankingState()
                 }
-
-                RankingTab.Offline -> {
-                    if (isLoading) {
-                        item(contentType = "loading") {
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(vertical = 24.dp),
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                CircularProgressIndicator()
-                            }
+            } else {
+                item(contentType = "podium") {
+                    OfflineRankingPodium(offlineRows)
+                }
+                item(contentType = "tableHeader") {
+                    RankingTableHeader(
+                        scrollState = tableScrollState,
+                        currentSort = offlineSort,
+                        onSortBy = onToggleOfflineSort
+                    )
+                }
+                items(
+                    items = offlineRows,
+                    key = { row -> row.playerName },
+                    contentType = { _ -> "tableRow" }
+                ) { row ->
+                    RankingTableRow(
+                        row = row,
+                        scrollState = tableScrollState,
+                        textStyle = if (isVeryCompactPhone) {
+                            MaterialTheme.typography.bodySmall
+                        } else {
+                            MaterialTheme.typography.bodyMedium
                         }
-                    } else if (offlineRows.isEmpty()) {
-                        item(contentType = "empty") {
-                            EmptyRankingState()
-                        }
-                    } else {
-                        item(contentType = "podium") {
-                            OfflineRankingPodium(offlineRows)
-                        }
-                        item(contentType = "tableHeader") {
-                            RankingTableHeader(
-                                scrollState = tableScrollState,
-                                currentSort = offlineSort,
-                                onSortBy = onToggleOfflineSort
-                            )
-                        }
-                        items(
-                            items = offlineRows,
-                            key = { row -> row.playerName },
-                            contentType = { _ -> "tableRow" }
-                        ) { row ->
-                            RankingTableRow(
-                                row = row,
-                                scrollState = tableScrollState,
-                                textStyle = if (isVeryCompactPhone) {
-                                    MaterialTheme.typography.bodySmall
-                                } else {
-                                    MaterialTheme.typography.bodyMedium
-                                }
-                            )
-                        }
-                    }
+                    )
                 }
             }
 
@@ -324,30 +274,6 @@ private fun EmptyRankingState() {
         )
         Text(
             text = stringResource(ResourceR.string.core_resources_ranking_offline_empty),
-            style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = TextAlign.Center
-        )
-    }
-}
-
-@Composable
-private fun OnlineComingSoon() {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(32.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        Icon(
-            imageVector = Icons.Outlined.CloudQueue,
-            contentDescription = null,
-            modifier = Modifier.size(56.dp),
-            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f)
-        )
-        Text(
-            text = stringResource(ResourceR.string.core_resources_ranking_online_not_implemented),
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center

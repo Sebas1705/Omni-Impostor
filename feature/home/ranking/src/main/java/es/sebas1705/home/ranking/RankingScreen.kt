@@ -24,12 +24,10 @@ fun RankingScreen(
 
     RankingDesign(
         modifier = modifier,
-        selectedTab = uiState.selectedTab,
         offlineRows = uiState.offlineRows,
         offlineSort = uiState.offlineSort,
         isLoading = loading,
         errorMessage = uiState.errorMessage,
-        onSelectTab = { rankingViewModel.eventHandler(RankingIntent.SelectTab(it)) },
         onToggleOfflineSort = { rankingViewModel.eventHandler(RankingIntent.ToggleOfflineSort(it)) }
     )
 }
