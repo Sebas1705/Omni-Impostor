@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.buildlogic.feature)
+    alias(libs.plugins.buildlogic.unit.test)
 }
 
 android {
@@ -18,5 +19,7 @@ dependencies {
     api(projects.domain.usescases.ranking)
 
     implementation(libs.material.icons.extended)
-}
 
+    testImplementation(libs.kotlinx.test)
+    testImplementation(libs.mockito.kotlin)
+}
