@@ -6,6 +6,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- Intermediate builds: every push to develop builds the Dev release APK and distributes it to testers with Firebase App Distribution (distribute.yml; setup in docs/firebase-distribution.md).
 - Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
 - Unit tests guarding WCAG AA contrast of every color scheme and one distinct icon per category.
 
