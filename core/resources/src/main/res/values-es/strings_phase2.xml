@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_resources_phase2_timer_critical">¡Date prisa!</string>
+    <string name="core_resources_phase2_timer_up">¡Se acabó el tiempo!</string>
+    <string name="core_resources_phase2_timer_up_hint">Vota o adivina la palabra ahora.</string>
+    <string name="core_resources_phase2_result_word_label">La palabra secreta era</string>
+    <string name="core_resources_phase2_result_impostors_label">Impostores</string>
+    <string name="core_resources_phase2_result_impostors_hidden">Ocultos por la configuración del modo</string>
+    <string name="core_resources_phase2_result_votes_title">Votos</string>
+    <string name="core_resources_phase2_rate_good">Buena pista</string>
+    <string name="core_resources_phase2_rate_bad">Mala pista</string>
+</resources>

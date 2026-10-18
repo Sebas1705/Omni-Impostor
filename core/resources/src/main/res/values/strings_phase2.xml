@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_resources_phase2_timer_critical">Hurry up!</string>
+    <string name="core_resources_phase2_timer_up">Time is up!</string>
+    <string name="core_resources_phase2_timer_up_hint">Cast your votes or guess the word now.</string>
+    <string name="core_resources_phase2_result_word_label">The secret word was</string>
+    <string name="core_resources_phase2_result_impostors_label">Impostors</string>
+    <string name="core_resources_phase2_result_impostors_hidden">Hidden by mode settings</string>
+    <string name="core_resources_phase2_result_votes_title">Votes</string>
+    <string name="core_resources_phase2_rate_good">Good clue</string>
+    <string name="core_resources_phase2_rate_bad">Bad clue</string>
+</resources>
