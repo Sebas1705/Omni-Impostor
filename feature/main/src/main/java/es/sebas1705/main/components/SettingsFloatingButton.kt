@@ -9,7 +9,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
+import es.sebas1705.ui.theme.AppDimens
 import es.sebas1705.core.resources.R as ResourceR
 
 @Composable
@@ -21,7 +21,7 @@ internal fun SettingsFloatingButton(
         onClick = onClick,
         modifier = modifier
             .statusBarsPadding()
-            .padding(8.dp)
+            .padding(AppDimens.spacing.sm)
     ) {
         Icon(
             imageVector = Icons.Outlined.Settings,
@@ -29,5 +29,3 @@ internal fun SettingsFloatingButton(
         )
     }
 }
-
-
