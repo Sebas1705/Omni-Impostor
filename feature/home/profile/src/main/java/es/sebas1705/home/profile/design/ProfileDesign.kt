@@ -101,7 +101,6 @@ fun ProfileDesign(
 
     val tabs = listOf(
         ProfileTab.OfflineRecord to stringResource(ResourceR.string.core_resources_profile_tab_offline_record),
-        ProfileTab.Online to stringResource(ResourceR.string.core_resources_profile_tab_online),
         ProfileTab.Data to stringResource(ResourceR.string.core_resources_profile_tab_data)
     )
 
@@ -208,20 +207,6 @@ fun ProfileDesign(
                                 }
                             )
                         }
-                    }
-                }
-
-                ProfileTab.Online -> {
-                    item(contentType = "online") {
-                        Text(
-                            text = stringResource(ResourceR.string.core_resources_profile_online_pending),
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(32.dp),
-                            textAlign = TextAlign.Center
-                        )
                     }
                 }
 

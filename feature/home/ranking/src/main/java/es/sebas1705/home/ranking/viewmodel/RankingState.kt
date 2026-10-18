@@ -6,7 +6,6 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 
 data class RankingState(
-    val selectedTab: RankingTab = RankingTab.Offline,
     val offlineRows: ImmutableList<OfflineRankingRowUi> = persistentListOf(),
     val offlineSort: RankingOfflineSort = RankingOfflineSort(),
     val errorMessage: String? = null
@@ -28,10 +27,5 @@ enum class RankingOfflineSortColumn {
 enum class RankingSortDirection {
     Ascending,
     Descending
-}
-
-enum class RankingTab {
-    Offline,
-    Online
 }
 
