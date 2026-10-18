@@ -18,7 +18,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import es.sebas1705.common.theme.ThemeContrast
 
-private val lowContrastLightScheme = lightColorScheme(
+internal val lowContrastLightScheme = lightColorScheme(
     primary = primaryLightLowContrast,
     onPrimary = onPrimaryLightLowContrast,
     primaryContainer = primaryContainerLightLowContrast,
@@ -56,7 +56,7 @@ private val lowContrastLightScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLightLowContrast,
 )
 
-private val lowContrastDarkScheme = darkColorScheme(
+internal val lowContrastDarkScheme = darkColorScheme(
     primary = primaryDarkLowContrast,
     onPrimary = onPrimaryDarkLowContrast,
     primaryContainer = primaryContainerDarkLowContrast,
@@ -94,7 +94,7 @@ private val lowContrastDarkScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDarkLowContrast,
 )
 
-private val mediumContrastLightColorScheme = lightColorScheme(
+internal val mediumContrastLightColorScheme = lightColorScheme(
     primary = primaryLightMediumContrast,
     onPrimary = onPrimaryLightMediumContrast,
     primaryContainer = primaryContainerLightMediumContrast,
@@ -132,7 +132,7 @@ private val mediumContrastLightColorScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLightMediumContrast,
 )
 
-private val highContrastLightColorScheme = lightColorScheme(
+internal val highContrastLightColorScheme = lightColorScheme(
     primary = primaryLightHighContrast,
     onPrimary = onPrimaryLightHighContrast,
     primaryContainer = primaryContainerLightHighContrast,
@@ -170,7 +170,7 @@ private val highContrastLightColorScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLightHighContrast,
 )
 
-private val mediumContrastDarkColorScheme = darkColorScheme(
+internal val mediumContrastDarkColorScheme = darkColorScheme(
     primary = primaryDarkMediumContrast,
     onPrimary = onPrimaryDarkMediumContrast,
     primaryContainer = primaryContainerDarkMediumContrast,
@@ -208,7 +208,7 @@ private val mediumContrastDarkColorScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDarkMediumContrast,
 )
 
-private val highContrastDarkColorScheme = darkColorScheme(
+internal val highContrastDarkColorScheme = darkColorScheme(
     primary = primaryDarkHighContrast,
     onPrimary = onPrimaryDarkHighContrast,
     primaryContainer = primaryContainerDarkHighContrast,
