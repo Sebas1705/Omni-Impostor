@@ -5,6 +5,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Medium-contrast light theme: darker secondary/tertiary containers so their text meets WCAG AA.
+- Each word category now has its own, more fitting icon.
+- Internal: spacing/elevation tokens and base UI components in `core/ui` for the visual refresh.
+
 ### Removed
 - Online game mode leftovers: mode selector and "coming soon" text on the setup screen, Online tabs in Ranking and Profile, the unused `:data:realtime` module and the Firebase Realtime Database dependency, plus their strings and docs. The offline game is unchanged.
 
