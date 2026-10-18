@@ -41,6 +41,7 @@ import es.sebas1705.offlinegame.ui.components.GuessWordInput
 import es.sebas1705.offlinegame.ui.components.VotePlayerItem
 import es.sebas1705.offlinegame.ui.components.VoteSectionHeader
 import es.sebas1705.offlinegame.viewmodel.OfflineGameState
+import es.sebas1705.ui.theme.AppDimens
 
 private val LANDSCAPE_BREAKPOINT = 600.dp
 
@@ -56,6 +57,7 @@ internal fun OfflineGameDiscussionScreen(
     val enabledAnswer = timerSeconds == 0 || secondsLeft > 0
     var guessValue by rememberSaveable { mutableStateOf("") }
     val haptic = LocalHapticFeedback.current
+    val spacing = AppDimens.spacing
 
     LaunchedEffect(secondsLeft) {
         if (secondsLeft == 30 || secondsLeft == 10) {
@@ -82,13 +84,15 @@ internal fun OfflineGameDiscussionScreen(
                         .weight(0.42f)
                         .fillMaxHeight()
                         .verticalScroll(rememberScrollState())
-                        .padding(end = 8.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                        .padding(end = spacing.sm),
+                    verticalArrangement = Arrangement.spacedBy(spacing.md)
                 ) {
-                    DiscussionTimer(
-                        secondsLeft = secondsLeft,
-                        totalSeconds = timerSeconds
-                    )
+                    if (timerSeconds > 0) {
+                        DiscussionTimer(
+                            secondsLeft = secondsLeft,
+                            totalSeconds = timerSeconds
+                        )
+                    }
                     DiscussionSessionChips(
                         totalPlayers = uiState.players.size,
                         alivePlayers = uiState.alivePlayerIndexes.size,
@@ -128,8 +132,8 @@ internal fun OfflineGameDiscussionScreen(
                     modifier = Modifier
                         .weight(0.58f)
                         .fillMaxHeight()
-                        .padding(start = 8.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                        .padding(start = spacing.sm),
+                    verticalArrangement = Arrangement.spacedBy(spacing.md)
                 ) {
                     item(contentType = "header") { VoteSectionHeader() }
                     itemsIndexed(
@@ -150,10 +154,12 @@ internal fun OfflineGameDiscussionScreen(
         } else {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+                verticalArrangement = Arrangement.spacedBy(spacing.md)
             ) {
-                item(contentType = "contentType0") {
-                    DiscussionTimer(secondsLeft = secondsLeft, totalSeconds = timerSeconds)
+                if (timerSeconds > 0) {
+                    item(contentType = "contentType0") {
+                        DiscussionTimer(secondsLeft = secondsLeft, totalSeconds = timerSeconds)
+                    }
                 }
                 item(contentType = "contentType_chips") {
                     DiscussionSessionChips(
