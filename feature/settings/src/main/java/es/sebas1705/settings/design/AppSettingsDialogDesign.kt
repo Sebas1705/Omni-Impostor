@@ -3,15 +3,18 @@ package es.sebas1705.settings.design
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Close
+import androidx.compose.material.icons.outlined.ErrorOutline
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -22,15 +25,23 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.core.resources.R
-import es.sebas1705.settings.components.AppearanceSettingsCard
 import es.sebas1705.core.resources.Sounds
-import es.sebas1705.ui.sound.LocalSoundPlayer
+import es.sebas1705.settings.components.AppearanceSettingsCard
 import es.sebas1705.settings.components.AudioSettingsCard
 import es.sebas1705.settings.components.GameplaySettingsCard
 import es.sebas1705.settings.components.SettingsLoading
 import es.sebas1705.settings.models.AppSettingsDialogActions
 import es.sebas1705.settings.viewmodel.AppSettingsUiState
+import es.sebas1705.ui.components.StatusChip
+import es.sebas1705.ui.components.StatusChipVariant
+import es.sebas1705.ui.sound.LocalSoundPlayer
+import es.sebas1705.ui.theme.AppDimens
+import es.sebas1705.ui.theme.AppTheme
+
+/** Cards stop growing on tablets so the form stays readable. */
+private val ContentMaxWidth = 560.dp
 
 @Composable
 private fun SettingsContent(
@@ -39,35 +50,40 @@ private fun SettingsContent(
     actions: AppSettingsDialogActions
 ) {
     val sound = LocalSoundPlayer.current
+    val spacing = AppDimens.spacing
+    val cardModifier = Modifier.widthIn(max = ContentMaxWidth)
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(paddingValues)
-            .padding(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+            .padding(paddingValues),
+        contentPadding = PaddingValues(spacing.lg),
+        verticalArrangement = Arrangement.spacedBy(spacing.lg),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        item(contentType = "contentType1") {
-            AudioSettingsCard(uiState = uiState, actions = actions)
+        item(contentType = "audio") {
+            AudioSettingsCard(uiState = uiState, actions = actions, modifier = cardModifier)
         }
-        item(contentType = "contentType2") {
-            AppearanceSettingsCard(uiState = uiState, actions = actions)
+        item(contentType = "appearance") {
+            AppearanceSettingsCard(uiState = uiState, actions = actions, modifier = cardModifier)
         }
-        item(contentType = "contentType3") {
-            GameplaySettingsCard(uiState = uiState, actions = actions)
+        item(contentType = "gameplay") {
+            GameplaySettingsCard(uiState = uiState, actions = actions, modifier = cardModifier)
         }
         if (!uiState.errorMessage.isNullOrBlank()) {
-            item(contentType = "contentType4") {
-                Text(
+            item(contentType = "error") {
+                StatusChip(
                     text = uiState.errorMessage,
-                    color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.bodyMedium
+                    variant = StatusChipVariant.Error,
+                    icon = Icons.Outlined.ErrorOutline
                 )
             }
         }
-        item(contentType = "contentType5") {
+        item(contentType = "reset") {
             FilledTonalButton(
-                onClick = { sound(Sounds.CLK_INSTANT); actions.onResetDefaults() }
+                onClick = { sound(Sounds.CLK_INSTANT); actions.onResetDefaults() },
+                modifier = cardModifier
+                    .fillMaxWidth()
+                    .heightIn(min = 48.dp)
             ) {
                 Text(stringResource(R.string.core_resources_settings_reset_defaults))
             }
@@ -119,4 +135,10 @@ internal fun AppSettingsDialogDesign(
     }
 }
 
-
+@UiModePreviews
+@Composable
+private fun SettingsLoadingPreview() {
+    AppTheme {
+        SettingsLoading(PaddingValues())
+    }
+}
