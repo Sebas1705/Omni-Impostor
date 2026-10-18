@@ -347,4 +347,7 @@
     <string name="core_resources_cat_office_and_stationery_desc">Material de escritorio, papelería y suministros de oficina.</string>
     <string name="core_resources_cat_emotions_and_feelings_desc">Estados emocionales, estados de ánimo y reacciones internas.</string>
     <string name="core_resources_cat_values_and_ethics_desc">Principios, moral y valores sociales.</string>
+    <string name="core_resources_home_tab_play">Jugar</string>
+    <string name="core_resources_home_tab_ranking">Ranking</string>
+    <string name="core_resources_home_tab_profile">Perfil</string>
 </resources>

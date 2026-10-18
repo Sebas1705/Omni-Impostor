@@ -16,6 +16,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Each word category now has its own, more fitting icon.
 
 ### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Offline game: the discussion timer never started counting down (state read before the update ran); vote and guess side effects (sound, ranking) now run outside the state update.
 - Offline game: names that collapse below 3 players after trimming/de-duplicating are rejected instead of starting a degenerate game.
 
@@ -30,6 +31,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Categories screen keeps a draft selection until you save it.
 
 ### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Game state is no longer lost on configuration changes (rotation, language, theme).
 - Reveal card snaps back to its color and rotation when moving to the next player.
 - Couchbase word documents: removed the `relatedWords` field and fixed default parameters when reading documents.
@@ -49,6 +51,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `gradle.properties` and `gradle-wrapper.properties` committed to repo.
 
 ### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Google sign-in (Credential Manager): pass `Activity` context through all layers for Android ≤ 13.
 - Google sign-in fallback: add `GetSignInWithGoogleOption` so sign-in works on all devices.
 - Rotation: `showPassPhoneOverlay` uses `rememberSaveable` — no longer dismissed on screen rotation.
@@ -61,6 +64,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.1.1] - 2026-05-20
 
 ### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Word collections: separate EN/ES lists so the language setting is respected during gameplay.
 - Music: pause background music when app goes to background.
 
