@@ -10,15 +10,25 @@ The app is a digital board game designed for groups. The design must be **fun, i
 
 ### Color Palette (Core UI)
 
-The theme uses Material 3 with support for three contrast levels (Low, Medium, High) and light/dark mode.
+The theme uses Material 3 with three contrast levels (Low, Medium, High) in light and dark mode
+(six schemes in `core/ui/.../theme/Color.kt` and `Theme.kt`). Low-contrast light values:
 
-- **Primary:** Blue (`#1A5FB5` light / `#A0C8FF` dark) — main action and interaction color.
-- **Secondary:** Green (`#1C6B47` light / `#98D8AB` dark) — confirmation, civilians, positive elements.
-- **Tertiary:** Yellow (`#785A00` light / `#FBC21F` dark) — warnings, tension, special emphasis.
-- **Error:** Standard M3 Red (`#BA1A1A`) — errors and impostor roles.
-- **Backgrounds:**
-  - *Light mode:* Cool neutral white (`#F8F9FF`).
-  - *Dark mode:* Cool dark grey (`#111318`) with surfaces at `#161A22`.
+- **Primary:** Blue (`#1565C0`) — main action and interaction color.
+- **Secondary:** Teal (`#00796B`) — confirmation, civilians, positive elements.
+- **Tertiary:** Light blue (`#0277BD`) — secondary emphasis.
+- **Error:** Red (`#BA1A1A`) — errors and impostor roles.
+- **Background (light):** cool white (`#F7FAFF`).
+
+`ContrastTest` (core/ui) fails if any key foreground/background pair of any scheme drops below WCAG AA (4.5:1).
+
+### Design tokens and base components
+
+- Spacing (`AppDimens.spacing`): xs 4, sm 8, md 12, lg 16, xl 24, xxl 32 dp.
+- Elevation (`AppDimens.elevation`): none 0, low 1, medium 3, high 6 dp.
+- Shapes: `appShapes` (4/8/12/16/24 dp); cards use `MaterialTheme.cardShape` (the `large` shape).
+- Components in `core/ui/.../components`: `AppCard`, `SectionHeader`, `StatusChip`, `PrimaryActionButton`.
+  New screens should use them instead of inline `dp` values and `RoundedCornerShape(...)`.
+- Category icons: one distinct Material `Outlined` icon per category (`CategoryIcons.kt`, guarded by `CategoryIconsTest`).
 
 ### Typography
 
@@ -52,7 +62,9 @@ Google Fonts are used to differentiate information hierarchy:
 
 ## 4. Areas for Improvement
 
-- **Icon Consistency:** Improve category icons so they feel part of a unified icon pack.
+- ~~**Icon Consistency**~~ Done in the visual foundation (phase 0).
 - **Visual Feedback:** Enhance transitions between game phases to feel more dynamic and alive.
 - **Results Hierarchy:** Make the winners screen more visually impactful and celebratory.
-- **Accessibility:** Ensure all color contrast levels comply with WCAG 2.1 AA at minimum.
+- ~~**Accessibility (contrast)**~~ Guarded by `ContrastTest`; touch targets and font scaling are checked per phase.
+
+Roadmap: `docs/designs/2026-10-18-visual-refresh-design.md`.

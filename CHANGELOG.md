@@ -5,6 +5,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Medium-contrast light theme: darker secondary/tertiary containers so their text meets WCAG AA.
+- Each word category now has its own, more fitting icon.
+- Internal: spacing/elevation tokens and base UI components in `core/ui` for the visual refresh.
+
 ## [v1.2.0] - 2026-06-30
 
 <!-- Release notes generated using configuration in .github/release.yml at v1.2.0 -->
