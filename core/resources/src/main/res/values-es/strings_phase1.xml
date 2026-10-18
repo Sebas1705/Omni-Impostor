@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="core_resources_phase1_face_subtitle">Elige categorías, jugadores y modo</string>
-    <string name="core_resources_phase1_ready_impostors">%1$d impostor(es) ✓</string>
+    <string name="core_resources_phase1_ready_impostors">%1$d impostor(es)</string>
     <string name="core_resources_phase1_warn_impostors">Los impostores deben ser menos que los jugadores</string>
     <string name="core_resources_phase1_start_title">¿Listos para jugar?</string>
     <string name="core_resources_phase1_start_ready">Todo listo. Pulsa empezar cuando estéis preparados.</string>

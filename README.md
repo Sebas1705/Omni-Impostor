@@ -14,8 +14,8 @@ Built on **multi-module Clean Architecture** with Firebase, Hilt, and Material D
 |---|---|
 | Offline party game | Pass-the-phone play with a local word bank (ES/EN) |
 | Animated reveal card | 3D flip reveals each player's secret word privately |
-| Word categories | Powered by [OpenTriviaDB](https://opentdb.com/) + a local word bank (ES/EN) |
-| Ranking system | Persistent leaderboard with streaks across sessions |
+| Word categories | 44 categories in a local word bank (ES/EN), stored on the device |
+| Ranking system | Local leaderboard with win counts and streaks, stored on the device |
 | Google Sign-In + Firebase Auth | Identity management with profile screen |
 | Material Design 3 | Dynamic light/dark theme · 3 contrast levels |
 | Custom typography | Finger Paint (titles) · Gupter (body) · Raleway (display) |
@@ -28,7 +28,7 @@ Built on **multi-module Clean Architecture** with Firebase, Hilt, and Material D
 |---|---|
 | UI | Jetpack Compose · Material 3 · Navigation Compose |
 | DI | Hilt |
-| Data | Firebase Auth · Firestore · Room · Couchbase Lite · Retrofit · DataStore |
+| Data | Firebase Auth · Firestore (clue ratings) · Couchbase Lite (words, ranking) · DataStore · Retrofit and Room modules exist but the game does not use them yet |
 | Analytics | Firebase Analytics · Crashlytics |
 | Architecture | Multi-module Clean Architecture (`app / core / data / domain / feature`) |
 | Quality | Detekt · LeakCanary · Chucker · GitHub Actions CI |
