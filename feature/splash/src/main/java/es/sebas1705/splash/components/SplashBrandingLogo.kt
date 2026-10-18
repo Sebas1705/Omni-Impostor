@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import es.sebas1705.splash.models.SplashBrandingData
+import es.sebas1705.ui.theme.AppDimens
 
 @Composable
 internal fun SplashBrandingLogo(
@@ -21,7 +21,6 @@ internal fun SplashBrandingLogo(
         modifier = Modifier
             .fillMaxWidth(0.8f)
             .fillMaxHeight(0.5f)
-            .padding(bottom = 6.dp)
+            .padding(bottom = AppDimens.spacing.sm)
     )
 }
-
