@@ -8,6 +8,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,7 +30,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
+import es.sebas1705.ui.theme.AppDimens
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import es.sebas1705.core.resources.R
@@ -184,7 +185,7 @@ private fun OfflineGameDesign(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
-                    .padding(16.dp),
+                    .padding(AppDimens.spacing.lg),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -199,12 +200,12 @@ private fun OfflineGameDesign(
             targetState = uiState.step,
             transitionSpec = {
                 val enterOffset = if (targetState.ordinal > initialState.ordinal) 1 else -1
-                (fadeIn(tween(PHASE_TRANSITION_DURATION_MS)) +
+                (fadeIn(tween(PHASE_TRANSITION_DURATION_MS, delayMillis = PHASE_TRANSITION_DURATION_MS / 4)) +
                     slideInVertically(tween(PHASE_TRANSITION_DURATION_MS)) { it / 5 * enterOffset })
                     .togetherWith(
                         fadeOut(tween(PHASE_TRANSITION_DURATION_MS / 2)) +
                             slideOutVertically(tween(PHASE_TRANSITION_DURATION_MS)) { -it / 10 * enterOffset }
-                    )
+                    ).using(SizeTransform(clip = false))
             },
             label = "game_step_transition"
         ) { step ->
@@ -214,7 +215,7 @@ private fun OfflineGameDesign(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(paddingValues)
-                            .padding(16.dp),
+                            .padding(AppDimens.spacing.lg),
                         uiState = uiState,
                         onRevealDone = onRevealDone,
                         onNextRevealPlayer = onNextRevealPlayer
@@ -226,7 +227,7 @@ private fun OfflineGameDesign(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(paddingValues)
-                            .padding(16.dp),
+                            .padding(AppDimens.spacing.lg),
                         uiState = uiState,
                         onVotePlayer = onVotePlayer,
                         onGuess = onGuess
@@ -238,7 +239,7 @@ private fun OfflineGameDesign(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(paddingValues)
-                            .padding(16.dp),
+                            .padding(AppDimens.spacing.lg),
                         result = uiState.result,
                         showImpostorsInResult = showImpostorsInResult,
                         players = uiState.players,
@@ -253,7 +254,7 @@ private fun OfflineGameDesign(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(paddingValues)
-                            .padding(16.dp),
+                            .padding(AppDimens.spacing.lg),
                         uiState = uiState,
                         onRateClue = onRateClue,
                         onSubmit = onSubmitRatings,
