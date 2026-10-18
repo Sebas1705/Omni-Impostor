@@ -207,9 +207,9 @@
     <string name="core_resources_info_eliminated">%1$d eliminados</string>
     <string name="core_resources_result_player_roles">Roles de jugadores</string>
     <string name="core_resources_result_vote_accuracy">Precisión de votos</string>
-    <string name="core_resources_face_ready_players">%1$d jugadores ✓</string>
+    <string name="core_resources_face_ready_players">%1$d jugadores</string>
     <string name="core_resources_face_warn_players">Necesitas 3+ jugadores</string>
-    <string name="core_resources_face_ready_categories">%1$d categorías ✓</string>
+    <string name="core_resources_face_ready_categories">%1$d categorías</string>
     <string name="core_resources_face_warn_categories">Sin categorías seleccionadas</string>
     <string name="core_resources_starts_player">Empieza: %1$s</string>
     <string name="core_resources_unknown">Desconocido</string>

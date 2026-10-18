@@ -24,9 +24,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [v1.2.0] - 2026-06-30
 
-<!-- Release notes generated using configuration in .github/release.yml at v1.2.0 -->
+### Added
+- Minimum of 3 players to start a game, and a role visual indicator in the reveal screen (from tester feedback).
+- Post-game clue rating: players can rate the impostors' clues, stored anonymously in Firestore (`clue_ratings`).
+- Categories screen keeps a draft selection until you save it.
 
+### Fixed
+- Game state is no longer lost on configuration changes (rotation, language, theme).
+- Reveal card snaps back to its color and rotation when moving to the next player.
+- Couchbase word documents: removed the `relatedWords` field and fixed default parameters when reading documents.
+- Firestore security rules allow authenticated writes to `clue_ratings`.
 
+### Changed
+- Gradle wrapper upgraded from 8.11.1 to 9.6.1; the release workflow now builds an AAB attached to the GitHub Release.
 
 **Full Changelog**: https://github.com/Sebas1705/Omni-Impostor/compare/v1.1.3...v1.2.0
 ## [1.1.3] - 2026-06-28
