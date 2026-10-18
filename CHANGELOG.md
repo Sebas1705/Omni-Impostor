@@ -5,20 +5,22 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
+- Unit tests guarding WCAG AA contrast of every color scheme and one distinct icon per category.
+
+### Changed
+- Visual refresh of the whole app (same palette and fonts): home/setup, categories, players and mode screens; reveal, discussion, result and rating screens; ranking and profile; settings, login and splash. Shared spacing/elevation tokens and base components (`AppCard`, `SectionHeader`, `StatusChip`, `PrimaryActionButton`) in `core/ui`.
+- Discussion timer shows urgency in the last 30 s and 10 s and a clear "time is up" state; the result screen highlights the winner.
+- Medium-contrast light theme: darker secondary/tertiary containers so their text meets WCAG AA.
+- Each word category now has its own, more fitting icon.
+
 ### Fixed
 - Offline game: the discussion timer never started counting down (state read before the update ran); vote and guess side effects (sound, ranking) now run outside the state update.
 - Offline game: names that collapse below 3 players after trimming/de-duplicating are rejected instead of starting a degenerate game.
 
-### Added
-- Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
-
 ### Removed
 - Online game mode leftovers: mode selector and "coming soon" text on the setup screen, Online tabs in Ranking and Profile, the unused `:data:realtime` module and the Firebase Realtime Database dependency, plus their strings and docs. The offline game is unchanged.
-
-### Changed
-- Medium-contrast light theme: darker secondary/tertiary containers so their text meets WCAG AA.
-- Each word category now has its own, more fitting icon.
-- Internal: spacing/elevation tokens and base UI components in `core/ui` for the visual refresh.
 
 ## [v1.2.0] - 2026-06-30
 
