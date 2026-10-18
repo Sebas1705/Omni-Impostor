@@ -6,27 +6,26 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Email
+import androidx.compose.material.icons.outlined.ErrorOutline
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.PersonAdd
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material.icons.outlined.VisibilityOff
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -43,6 +42,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -53,12 +53,23 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.core.resources.Sounds
-import androidx.compose.foundation.background
 import es.sebas1705.login.viewmodel.LoginMode
+import es.sebas1705.ui.components.AppCard
+import es.sebas1705.ui.components.PrimaryActionButton
+import es.sebas1705.ui.components.StatusChip
+import es.sebas1705.ui.components.StatusChipVariant
 import es.sebas1705.ui.sound.LocalSoundPlayer
+import es.sebas1705.ui.theme.AppDimens
 import es.sebas1705.ui.theme.AppTheme
 import es.sebas1705.ui.theme.makeTitle
 import es.sebas1705.core.resources.R as ResourceR
+
+/** Panel width stops growing on tablets so the form stays readable. */
+private val PanelMaxWidth = 480.dp
+private val MainLogoSize = 160.dp
+private val FormLogoSize = 88.dp
+private val ButtonIconSize = 18.dp
+private val MinTouchTarget = 48.dp
 
 @Composable
 fun LoginDesign(
@@ -81,22 +92,22 @@ fun LoginDesign(
     onDismissError: () -> Unit = {}
 ) {
     val sound = LocalSoundPlayer.current
+    val spacing = AppDimens.spacing
 
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 28.dp)
-            .padding(vertical = 40.dp),
-        verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
+            .padding(horizontal = spacing.xl, vertical = spacing.xxl),
+        verticalArrangement = Arrangement.spacedBy(spacing.xl, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         val isMain = loginMode == LoginMode.Main
         Image(
             painter = painterResource(ResourceR.drawable.core_resources_ic_app_logo),
             contentDescription = stringResource(ResourceR.string.core_resources_icon_content),
-            modifier = Modifier.size(if (isMain) 160.dp else 88.dp)
+            modifier = Modifier.size(if (isMain) MainLogoSize else FormLogoSize)
         )
         if (isMain) {
             Text(
@@ -115,18 +126,12 @@ fun LoginDesign(
                 transitionSpec = { fadeIn(tween(220)) togetherWith fadeOut(tween(120)) },
                 label = "login_panel"
             ) { mode ->
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainer
-                    ),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-                ) {
+                AppCard(modifier = Modifier.widthIn(max = PanelMaxWidth).fillMaxWidth()) {
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(24.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
+                            .padding(spacing.sm),
+                        verticalArrangement = Arrangement.spacedBy(spacing.md),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         when (mode) {
@@ -179,6 +184,102 @@ fun LoginDesign(
     }
 }
 
+/** Panel title, centered, with an optional explanatory subtitle. */
+@Composable
+private fun PanelHeader(title: String, subtitle: String? = null) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(AppDimens.spacing.xs),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.titleLarge.makeTitle(),
+            color = MaterialTheme.colorScheme.primary,
+            textAlign = TextAlign.Center
+        )
+        if (subtitle != null) {
+            Text(
+                text = subtitle,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}
+
+@Composable
+private fun SecondaryButton(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    icon: ImageVector? = null
+) {
+    OutlinedButton(
+        onClick = onClick,
+        enabled = enabled,
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = MinTouchTarget)
+    ) {
+        if (icon != null) {
+            Icon(icon, contentDescription = null, modifier = Modifier.size(ButtonIconSize))
+            Spacer(Modifier.size(AppDimens.spacing.sm))
+        }
+        Text(text)
+    }
+}
+
+@Composable
+private fun EmailField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    imeAction: ImeAction
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        label = { Text(stringResource(ResourceR.string.core_resources_login_email_hint)) },
+        leadingIcon = { Icon(Icons.Outlined.Email, contentDescription = null) },
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email, imeAction = imeAction),
+        modifier = Modifier.fillMaxWidth()
+    )
+}
+
+@Composable
+private fun PasswordField(
+    value: String,
+    onValueChange: (String) -> Unit
+) {
+    var showPassword by rememberSaveable { mutableStateOf(false) }
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        label = { Text(stringResource(ResourceR.string.core_resources_login_password_hint)) },
+        singleLine = true,
+        visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, imeAction = ImeAction.Done),
+        trailingIcon = {
+            IconButton(onClick = { showPassword = !showPassword }) {
+                Icon(
+                    imageVector = if (showPassword) Icons.Outlined.VisibilityOff else Icons.Outlined.Visibility,
+                    contentDescription = stringResource(
+                        if (showPassword) {
+                            ResourceR.string.core_resources_phase4_hide_password
+                        } else {
+                            ResourceR.string.core_resources_phase4_show_password
+                        }
+                    )
+                )
+            }
+        },
+        modifier = Modifier.fillMaxWidth()
+    )
+}
+
 @Composable
 private fun MainPanel(
     sound: (Sounds) -> Unit,
@@ -189,48 +290,33 @@ private fun MainPanel(
     errorMessage: String?,
     onDismissError: () -> Unit
 ) {
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_welcome_back),
-        style = MaterialTheme.typography.headlineSmall,
-        color = MaterialTheme.colorScheme.onSurface,
-        textAlign = TextAlign.Center
+    PanelHeader(
+        title = stringResource(ResourceR.string.core_resources_login_welcome_back),
+        subtitle = stringResource(ResourceR.string.core_resources_login_google_prompt)
     )
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_google_prompt),
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        textAlign = TextAlign.Center
+    PrimaryActionButton(
+        text = stringResource(ResourceR.string.core_resources_login_continue_google),
+        onClick = onGoogleSignIn
     )
-    Spacer(Modifier.height(4.dp))
-    Button(
-        onClick = { sound(Sounds.CLK_ARCADE); onGoogleSignIn() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(ResourceR.string.core_resources_login_continue_google))
-    }
-    HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
-    OutlinedButton(
-        onClick = { sound(Sounds.CLK_CASUAL); onSignInEmail() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Icon(Icons.Outlined.Email, contentDescription = null, modifier = Modifier.size(18.dp))
-        Spacer(Modifier.width(8.dp))
-        Text(stringResource(ResourceR.string.core_resources_login_sign_in_email))
-    }
-    OutlinedButton(
-        onClick = { sound(Sounds.CLK_CASUAL); onSignUpEmail() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Icon(Icons.Outlined.PersonAdd, contentDescription = null, modifier = Modifier.size(18.dp))
-        Spacer(Modifier.width(8.dp))
-        Text(stringResource(ResourceR.string.core_resources_login_sign_up_email))
-    }
+    HorizontalDivider(modifier = Modifier.padding(vertical = AppDimens.spacing.xs))
+    SecondaryButton(
+        text = stringResource(ResourceR.string.core_resources_login_sign_in_email),
+        icon = Icons.Outlined.Email,
+        onClick = { sound(Sounds.CLK_CASUAL); onSignInEmail() }
+    )
+    SecondaryButton(
+        text = stringResource(ResourceR.string.core_resources_login_sign_up_email),
+        icon = Icons.Outlined.PersonAdd,
+        onClick = { sound(Sounds.CLK_CASUAL); onSignUpEmail() }
+    )
     TextButton(
         onClick = { sound(Sounds.CLK_TAP); onGuest() },
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = MinTouchTarget)
     ) {
-        Icon(Icons.Outlined.Person, contentDescription = null, modifier = Modifier.size(18.dp))
-        Spacer(Modifier.width(8.dp))
+        Icon(Icons.Outlined.Person, contentDescription = null, modifier = Modifier.size(ButtonIconSize))
+        Spacer(Modifier.size(AppDimens.spacing.sm))
         Text(stringResource(ResourceR.string.core_resources_login_continue_guest))
     }
     ErrorSection(errorMessage = errorMessage, sound = sound, onDismissError = onDismissError)
@@ -247,55 +333,24 @@ private fun EmailLoginPanel(
 ) {
     var email by rememberSaveable { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }
-    var showPassword by rememberSaveable { mutableStateOf(false) }
 
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_sign_in_email),
-        style = MaterialTheme.typography.titleLarge,
-        color = MaterialTheme.colorScheme.onSurface
+    PanelHeader(title = stringResource(ResourceR.string.core_resources_login_sign_in_email))
+    EmailField(value = email, onValueChange = { email = it }, imeAction = ImeAction.Next)
+    PasswordField(value = password, onValueChange = { password = it })
+    PrimaryActionButton(
+        text = stringResource(ResourceR.string.core_resources_login_sign_in),
+        onClick = { onSignIn(email, password) }
     )
-    Spacer(Modifier.height(4.dp))
-    OutlinedTextField(
-        value = email,
-        onValueChange = { email = it },
-        label = { Text(stringResource(ResourceR.string.core_resources_login_email_hint)) },
-        leadingIcon = { Icon(Icons.Outlined.Email, contentDescription = null) },
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email, imeAction = ImeAction.Next),
-        modifier = Modifier.fillMaxWidth()
-    )
-    OutlinedTextField(
-        value = password,
-        onValueChange = { password = it },
-        label = { Text(stringResource(ResourceR.string.core_resources_login_password_hint)) },
-        singleLine = true,
-        visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, imeAction = ImeAction.Done),
-        trailingIcon = {
-            IconButton(onClick = { showPassword = !showPassword }) {
-                Icon(
-                    imageVector = if (showPassword) Icons.Outlined.VisibilityOff else Icons.Outlined.Visibility,
-                    contentDescription = null
-                )
-            }
-        },
-        modifier = Modifier.fillMaxWidth()
-    )
-    Button(
-        onClick = { sound(Sounds.CLK_ARCADE); onSignIn(email, password) },
-        modifier = Modifier.fillMaxWidth()
+    TextButton(
+        onClick = { sound(Sounds.CLK_TAP); onForgotPassword() },
+        modifier = Modifier.heightIn(min = MinTouchTarget)
     ) {
-        Text(stringResource(ResourceR.string.core_resources_login_sign_in))
-    }
-    TextButton(onClick = { sound(Sounds.CLK_TAP); onForgotPassword() }) {
         Text(stringResource(ResourceR.string.core_resources_login_forgot_password))
     }
-    OutlinedButton(
-        onClick = { sound(Sounds.CLK_TAP); onBack() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(ResourceR.string.core_resources_login_back_to_login))
-    }
+    SecondaryButton(
+        text = stringResource(ResourceR.string.core_resources_login_back_to_login),
+        onClick = { sound(Sounds.CLK_TAP); onBack() }
+    )
     ErrorSection(errorMessage = errorMessage, sound = sound, onDismissError = onDismissError)
 }
 
@@ -309,52 +364,18 @@ private fun EmailRegisterPanel(
 ) {
     var email by rememberSaveable { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }
-    var showPassword by rememberSaveable { mutableStateOf(false) }
 
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_sign_up_email),
-        style = MaterialTheme.typography.titleLarge,
-        color = MaterialTheme.colorScheme.onSurface
+    PanelHeader(title = stringResource(ResourceR.string.core_resources_login_sign_up_email))
+    EmailField(value = email, onValueChange = { email = it }, imeAction = ImeAction.Next)
+    PasswordField(value = password, onValueChange = { password = it })
+    PrimaryActionButton(
+        text = stringResource(ResourceR.string.core_resources_login_register),
+        onClick = { onSignUp(email, password) }
     )
-    Spacer(Modifier.height(4.dp))
-    OutlinedTextField(
-        value = email,
-        onValueChange = { email = it },
-        label = { Text(stringResource(ResourceR.string.core_resources_login_email_hint)) },
-        leadingIcon = { Icon(Icons.Outlined.Email, contentDescription = null) },
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email, imeAction = ImeAction.Next),
-        modifier = Modifier.fillMaxWidth()
+    SecondaryButton(
+        text = stringResource(ResourceR.string.core_resources_login_back_to_login),
+        onClick = { sound(Sounds.CLK_TAP); onBack() }
     )
-    OutlinedTextField(
-        value = password,
-        onValueChange = { password = it },
-        label = { Text(stringResource(ResourceR.string.core_resources_login_password_hint)) },
-        singleLine = true,
-        visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, imeAction = ImeAction.Done),
-        trailingIcon = {
-            IconButton(onClick = { showPassword = !showPassword }) {
-                Icon(
-                    imageVector = if (showPassword) Icons.Outlined.VisibilityOff else Icons.Outlined.Visibility,
-                    contentDescription = null
-                )
-            }
-        },
-        modifier = Modifier.fillMaxWidth()
-    )
-    Button(
-        onClick = { sound(Sounds.CLK_ARCADE); onSignUp(email, password) },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(ResourceR.string.core_resources_login_register))
-    }
-    OutlinedButton(
-        onClick = { sound(Sounds.CLK_TAP); onBack() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(ResourceR.string.core_resources_login_back_to_login))
-    }
     ErrorSection(errorMessage = errorMessage, sound = sound, onDismissError = onDismissError)
 }
 
@@ -369,42 +390,24 @@ private fun ForgotPasswordPanel(
 ) {
     var email by rememberSaveable { mutableStateOf("") }
 
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_forgot_password),
-        style = MaterialTheme.typography.titleLarge,
-        color = MaterialTheme.colorScheme.onSurface
-    )
-    Spacer(Modifier.height(4.dp))
+    PanelHeader(title = stringResource(ResourceR.string.core_resources_login_forgot_password))
     if (resetEmailSent) {
-        Text(
+        StatusChip(
             text = stringResource(ResourceR.string.core_resources_login_reset_sent),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.primary,
-            textAlign = TextAlign.Center
+            modifier = Modifier.fillMaxWidth(),
+            variant = StatusChipVariant.Ready
         )
     } else {
-        OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text(stringResource(ResourceR.string.core_resources_login_email_hint)) },
-            leadingIcon = { Icon(Icons.Outlined.Email, contentDescription = null) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email, imeAction = ImeAction.Done),
-            modifier = Modifier.fillMaxWidth()
+        EmailField(value = email, onValueChange = { email = it }, imeAction = ImeAction.Done)
+        PrimaryActionButton(
+            text = stringResource(ResourceR.string.core_resources_login_send_reset),
+            onClick = { onSendReset(email) }
         )
-        Button(
-            onClick = { sound(Sounds.CLK_ARCADE); onSendReset(email) },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(stringResource(ResourceR.string.core_resources_login_send_reset))
-        }
     }
-    OutlinedButton(
-        onClick = { sound(Sounds.CLK_TAP); onBack() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(ResourceR.string.core_resources_login_back_to_login))
-    }
+    SecondaryButton(
+        text = stringResource(ResourceR.string.core_resources_login_back_to_login),
+        onClick = { sound(Sounds.CLK_TAP); onBack() }
+    )
     ErrorSection(errorMessage = errorMessage, sound = sound, onDismissError = onDismissError)
 }
 
@@ -420,38 +423,28 @@ private fun EmailVerificationPanel(
 ) {
     val canResend = resendCooldownSeconds == 0
 
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_verify_title),
-        style = MaterialTheme.typography.titleLarge,
-        color = MaterialTheme.colorScheme.onSurface
+    PanelHeader(
+        title = stringResource(ResourceR.string.core_resources_login_verify_title),
+        subtitle = stringResource(ResourceR.string.core_resources_login_verify_body)
     )
-    Text(
-        text = stringResource(ResourceR.string.core_resources_login_verify_body),
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        textAlign = TextAlign.Center
+    PrimaryActionButton(
+        text = stringResource(ResourceR.string.core_resources_login_check_verified),
+        onClick = onCheckVerified
     )
-    Spacer(Modifier.height(4.dp))
-    Button(
-        onClick = { sound(Sounds.CLK_ARCADE); onCheckVerified() },
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(ResourceR.string.core_resources_login_check_verified))
-    }
-    OutlinedButton(
-        onClick = { if (canResend) { sound(Sounds.CLK_CASUAL); onResend() } },
-        enabled = canResend,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        if (canResend) {
-            Text(stringResource(ResourceR.string.core_resources_login_resend_verification))
+    SecondaryButton(
+        text = if (canResend) {
+            stringResource(ResourceR.string.core_resources_login_resend_verification)
         } else {
-            Text(stringResource(ResourceR.string.core_resources_login_resend_verification) + " ($resendCooldownSeconds s)")
-        }
-    }
+            stringResource(ResourceR.string.core_resources_login_resend_verification) + " ($resendCooldownSeconds s)"
+        },
+        enabled = canResend,
+        onClick = { if (canResend) { sound(Sounds.CLK_CASUAL); onResend() } }
+    )
     TextButton(
         onClick = { sound(Sounds.CLK_TAP); onCancel() },
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = MinTouchTarget)
     ) {
         Text(
             text = stringResource(ResourceR.string.core_resources_login_cancel_verification),
@@ -464,18 +457,16 @@ private fun EmailVerificationPanel(
 @Composable
 private fun ErrorSection(errorMessage: String?, sound: (Sounds) -> Unit, onDismissError: () -> Unit) {
     if (!errorMessage.isNullOrBlank()) {
-        Text(
+        StatusChip(
             text = errorMessage,
-            color = MaterialTheme.colorScheme.error,
-            style = MaterialTheme.typography.bodyMedium,
-            textAlign = TextAlign.Center
+            modifier = Modifier.fillMaxWidth(),
+            variant = StatusChipVariant.Error,
+            icon = Icons.Outlined.ErrorOutline
         )
-        OutlinedButton(
-            onClick = { sound(Sounds.CLK_TAP); onDismissError() },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(stringResource(ResourceR.string.core_resources_dismiss))
-        }
+        SecondaryButton(
+            text = stringResource(ResourceR.string.core_resources_dismiss),
+            onClick = { sound(Sounds.CLK_TAP); onDismissError() }
+        )
     }
 }
 
@@ -484,5 +475,13 @@ private fun ErrorSection(errorMessage: String?, sound: (Sounds) -> Unit, onDismi
 private fun Preview() {
     AppTheme {
         LoginDesign()
+    }
+}
+
+@UiModePreviews
+@Composable
+private fun EmailLoginPreview() {
+    AppTheme {
+        LoginDesign(loginMode = LoginMode.EmailLogin, errorMessage = "Wrong email or password")
     }
 }
