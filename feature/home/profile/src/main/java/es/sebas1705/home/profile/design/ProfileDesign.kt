@@ -1,3 +1,5 @@
+@file:Suppress("TooManyFunctions")
+
 package es.sebas1705.home.profile.design
 
 import androidx.compose.animation.AnimatedVisibility
@@ -7,32 +9,36 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDownward
 import androidx.compose.material.icons.outlined.ArrowUpward
 import androidx.compose.material.icons.outlined.Category
 import androidx.compose.material.icons.outlined.EmojiEvents
+import androidx.compose.material.icons.outlined.ErrorOutline
 import androidx.compose.material.icons.outlined.Groups
+import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.ManageAccounts
 import androidx.compose.material.icons.outlined.OfflineBolt
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -44,16 +50,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import es.sebas1705.common.utlis.UiModePreviews
+import es.sebas1705.core.resources.Sounds
 import es.sebas1705.feature.home.profile.BuildConfig
 import es.sebas1705.home.profile.components.ProfileBannerCard
 import es.sebas1705.home.profile.models.OfflineProfileRecordRowUi
@@ -66,12 +77,38 @@ import es.sebas1705.models.Categories
 import es.sebas1705.models.nameRes
 import es.sebas1705.ui.adaptive.LocalForceCompactTables
 import es.sebas1705.ui.adaptive.TableSortAnimation
-import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.components.AppCard
+import es.sebas1705.ui.components.SectionHeader
+import es.sebas1705.ui.components.StatusChip
+import es.sebas1705.ui.components.StatusChipVariant
 import es.sebas1705.ui.sound.LocalSoundPlayer
+import es.sebas1705.ui.theme.AppDimens
 import es.sebas1705.ui.theme.AppTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import es.sebas1705.core.resources.R as ResourceR
+
+private val GoldColor = Color(0xFFFFD700)
+private val MinRowHeight = 48.dp
+private const val SORTED_COLUMN_ALPHA_HEADER = 0.16f
+private const val SORTED_COLUMN_ALPHA_ROW = 0.08f
+private const val STAT_TILES_MAX_FONT_SCALE = 1.3f
+
+/** Fixed table layout: width and alignment of each column. */
+private data class ProfileColumn(
+    val column: ProfileOfflineRecordSortColumn,
+    val width: Dp,
+    val isNumeric: Boolean
+)
+
+private val ProfileColumns = listOf(
+    ProfileColumn(ProfileOfflineRecordSortColumn.Position, 60.dp, isNumeric = true),
+    ProfileColumn(ProfileOfflineRecordSortColumn.Player, 140.dp, isNumeric = false),
+    ProfileColumn(ProfileOfflineRecordSortColumn.CivilianWins, 96.dp, isNumeric = true),
+    ProfileColumn(ProfileOfflineRecordSortColumn.ImpostorWins, 96.dp, isNumeric = true),
+    ProfileColumn(ProfileOfflineRecordSortColumn.TotalWins, 96.dp, isNumeric = true),
+    ProfileColumn(ProfileOfflineRecordSortColumn.CurrentStreak, 96.dp, isNumeric = true)
+)
 
 @Composable
 @Suppress("LongMethod", "LongParameterList", "CyclomaticComplexMethod")
@@ -92,12 +129,13 @@ fun ProfileDesign(
     onSignOut: () -> Unit = {},
     onDebugNav: () -> Unit = {}
 ) {
+    val spacing = AppDimens.spacing
     val forceCompactTables = LocalForceCompactTables.current
     val sound = LocalSoundPlayer.current
     val isCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 420
     val isVeryCompactPhone = forceCompactTables || LocalConfiguration.current.screenWidthDp < 360
     val tableScrollState = rememberScrollState()
-    val tabEdgePadding = if (isCompactPhone) 4.dp else 12.dp
+    val tabEdgePadding = if (isCompactPhone) spacing.xs else spacing.md
 
     val tabs = listOf(
         ProfileTab.OfflineRecord to stringResource(ResourceR.string.core_resources_profile_tab_offline_record),
@@ -112,24 +150,17 @@ fun ProfileDesign(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+                .padding(spacing.sm),
+            verticalArrangement = Arrangement.spacedBy(spacing.sm)
         ) {
             item(contentType = "banner") {
                 ProfileBannerCard()
             }
-            item(contentType = "title") {
-                Text(
-                    text = stringResource(ResourceR.string.core_resources_profile_title),
-                    style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.onBackground
-                )
-            }
-            item(contentType = "subtitle") {
-                Text(
-                    text = stringResource(ResourceR.string.core_resources_profile_subtitle),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+            item(contentType = "header") {
+                SectionHeader(
+                    title = stringResource(ResourceR.string.core_resources_profile_title),
+                    subtitle = stringResource(ResourceR.string.core_resources_profile_subtitle),
+                    modifier = Modifier.padding(horizontal = spacing.xs, vertical = spacing.xs)
                 )
             }
 
@@ -166,7 +197,7 @@ fun ProfileDesign(
                             Column(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(vertical = 24.dp),
+                                    .padding(vertical = spacing.xl),
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
                                 CircularProgressIndicator()
@@ -174,15 +205,7 @@ fun ProfileDesign(
                         }
                     } else if (offlineRecordRows.isEmpty()) {
                         item(contentType = "empty") {
-                            Text(
-                                text = stringResource(ResourceR.string.core_resources_profile_offline_empty),
-                                style = MaterialTheme.typography.bodyLarge,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(32.dp),
-                                textAlign = TextAlign.Center
-                            )
+                            EmptyRecordState()
                         }
                     } else {
                         item(contentType = "tableHeader") {
@@ -192,13 +215,15 @@ fun ProfileDesign(
                                 onSortBy = onToggleOfflineRecordSort
                             )
                         }
-                        items(
+                        itemsIndexed(
                             items = offlineRecordRows,
-                            key = { row -> row.playerName },
-                            contentType = { _ -> "tableRow" }
-                        ) { row ->
+                            key = { _, row -> row.playerName },
+                            contentType = { _, _ -> "tableRow" }
+                        ) { index, row ->
                             ProfileOfflineRecordRow(
                                 row = row,
+                                isStriped = index % 2 == 1,
+                                sortedColumn = offlineRecordSort.column,
                                 scrollState = tableScrollState,
                                 textStyle = if (isVeryCompactPhone) {
                                     MaterialTheme.typography.bodySmall
@@ -226,55 +251,31 @@ fun ProfileDesign(
                             ProfileRolePreference.ImpostorHunter -> MaterialTheme.colorScheme.secondary
                             ProfileRolePreference.ImpostorSpecialist -> MaterialTheme.colorScheme.primary
                         }
-                        ProfileStatRow(
+                        ProfileStatCard(
                             icon = roleIcon,
-                            text = stringResource(
-                                ResourceR.string.core_resources_profile_row_role_preference,
-                                rolePreferenceLabel
-                            ),
-                            tint = roleColor
+                            label = stringResource(ResourceR.string.core_resources_phase3_profile_stat_role),
+                            value = rolePreferenceLabel,
+                            tint = roleColor,
+                            modifier = Modifier.fillMaxWidth()
                         )
                     }
                     item(contentType = "statCategory") {
                         val favoriteCategoryLabel = favoriteCategory?.let { stringResource(it.nameRes) }
                             ?: stringResource(ResourceR.string.core_resources_debug_no_data)
-                        ProfileStatRow(
+                        ProfileStatCard(
                             icon = Icons.Outlined.Category,
-                            text = stringResource(
-                                ResourceR.string.core_resources_profile_row_favorite_category,
-                                favoriteCategoryLabel
-                            ),
-                            tint = MaterialTheme.colorScheme.tertiary
+                            label = stringResource(ResourceR.string.core_resources_phase3_profile_stat_category),
+                            value = favoriteCategoryLabel,
+                            tint = MaterialTheme.colorScheme.tertiary,
+                            modifier = Modifier.fillMaxWidth()
                         )
                     }
-                    item(contentType = "statMatches") {
-                        ProfileStatRow(
-                            icon = Icons.Outlined.Groups,
-                            text = stringResource(
-                                ResourceR.string.core_resources_profile_row_matches_played,
-                                matchesPlayed
-                            ),
-                            tint = MaterialTheme.colorScheme.primary
-                        )
-                    }
-                    item(contentType = "statStreak") {
-                        ProfileStatRow(
-                            icon = Icons.Outlined.OfflineBolt,
-                            text = stringResource(
-                                ResourceR.string.core_resources_profile_row_current_streak,
-                                currentStreak
-                            ),
-                            tint = MaterialTheme.colorScheme.secondary
-                        )
-                    }
-                    item(contentType = "statBestStreak") {
-                        ProfileStatRow(
-                            icon = Icons.Outlined.EmojiEvents,
-                            text = stringResource(
-                                ResourceR.string.core_resources_profile_row_best_streak,
-                                bestStreak
-                            ),
-                            tint = Color(0xFFFFD700)
+                    item(contentType = "statNumbers") {
+                        ProfileNumberStats(
+                            matchesPlayed = matchesPlayed,
+                            currentStreak = currentStreak,
+                            bestStreak = bestStreak,
+                            useTiles = !isCompactPhone && LocalDensity.current.fontScale <= STAT_TILES_MAX_FONT_SCALE
                         )
                     }
                 }
@@ -282,10 +283,10 @@ fun ProfileDesign(
 
             if (!errorMessage.isNullOrBlank()) {
                 item(contentType = "error") {
-                    Text(
+                    StatusChip(
                         text = errorMessage,
-                        color = MaterialTheme.colorScheme.error,
-                        style = MaterialTheme.typography.bodyMedium
+                        variant = StatusChipVariant.Error,
+                        icon = Icons.Outlined.ErrorOutline
                     )
                 }
             }
@@ -293,7 +294,9 @@ fun ProfileDesign(
             item(contentType = "signOut") {
                 OutlinedButton(
                     onClick = { sound(Sounds.CLK_INSTANT); onSignOut() },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = MinRowHeight),
                     colors = ButtonDefaults.outlinedButtonColors(
                         contentColor = MaterialTheme.colorScheme.error
                     )
@@ -306,7 +309,9 @@ fun ProfileDesign(
                 item(contentType = "debug") {
                     Button(
                         onClick = { sound(Sounds.CLK_TAP); onDebugNav() },
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(min = MinRowHeight)
                     ) {
                         Text(stringResource(ResourceR.string.core_resources_settings_open_debug_tools))
                     }
@@ -317,33 +322,150 @@ fun ProfileDesign(
 }
 
 @Composable
-private fun ProfileStatRow(
-    icon: ImageVector,
-    text: String,
-    tint: Color,
-    modifier: Modifier = Modifier
-) {
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer)
-    ) {
-        Row(
+private fun EmptyRecordState() {
+    val spacing = AppDimens.spacing
+    AppCard(modifier = Modifier.fillMaxWidth()) {
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+                .padding(vertical = spacing.xl),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(spacing.md)
         ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = null,
-                tint = tint,
-                modifier = Modifier.size(24.dp)
+            Box(
+                modifier = Modifier
+                    .size(80.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.secondaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.History,
+                    contentDescription = null,
+                    modifier = Modifier.size(44.dp),
+                    tint = MaterialTheme.colorScheme.onSecondaryContainer
+                )
+            }
+            Text(
+                text = stringResource(ResourceR.string.core_resources_profile_offline_empty),
+                style = MaterialTheme.typography.titleMedium,
+                textAlign = TextAlign.Center
             )
             Text(
-                text = text,
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurface
+                text = stringResource(ResourceR.string.core_resources_phase3_profile_empty_hint),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}
+
+/** Icon in a tinted circle followed by a small label and a prominent value. */
+@Composable
+private fun ProfileStatCard(
+    icon: ImageVector,
+    label: String,
+    value: String,
+    tint: Color,
+    modifier: Modifier = Modifier,
+    stacked: Boolean = false
+) {
+    val spacing = AppDimens.spacing
+    AppCard(modifier = modifier.semantics(mergeDescendants = true) {}) {
+        val iconBadge: @Composable () -> Unit = {
+            Box(
+                modifier = Modifier
+                    .size(44.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.surfaceContainerHighest),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = null,
+                    tint = tint,
+                    modifier = Modifier.size(24.dp)
+                )
+            }
+        }
+        val texts: @Composable () -> Unit = {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Text(
+                text = value,
+                style = if (stacked) {
+                    MaterialTheme.typography.headlineSmall
+                } else {
+                    MaterialTheme.typography.titleMedium
+                },
+                fontWeight = FontWeight.SemiBold
+            )
+        }
+        if (stacked) {
+            Column(verticalArrangement = Arrangement.spacedBy(spacing.sm)) {
+                iconBadge()
+                Column(verticalArrangement = Arrangement.spacedBy(spacing.xs)) { texts() }
+            }
+        } else {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(spacing.md)
+            ) {
+                iconBadge()
+                Column(
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(spacing.xs)
+                ) { texts() }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ProfileNumberStats(
+    matchesPlayed: Int,
+    currentStreak: Int,
+    bestStreak: Int,
+    useTiles: Boolean
+) {
+    val spacing = AppDimens.spacing
+    val matches = stringResource(ResourceR.string.core_resources_phase3_profile_stat_matches)
+    val streak = stringResource(ResourceR.string.core_resources_phase3_profile_stat_streak)
+    val best = stringResource(ResourceR.string.core_resources_phase3_profile_stat_best_streak)
+    val primary = MaterialTheme.colorScheme.primary
+    val secondary = MaterialTheme.colorScheme.secondary
+    if (useTiles) {
+        Row(horizontalArrangement = Arrangement.spacedBy(spacing.sm)) {
+            ProfileStatCard(
+                icon = Icons.Outlined.Groups, label = matches, value = matchesPlayed.toString(),
+                tint = primary, modifier = Modifier.weight(1f), stacked = true
+            )
+            ProfileStatCard(
+                icon = Icons.Outlined.OfflineBolt, label = streak, value = currentStreak.toString(),
+                tint = secondary, modifier = Modifier.weight(1f), stacked = true
+            )
+            ProfileStatCard(
+                icon = Icons.Outlined.EmojiEvents, label = best, value = bestStreak.toString(),
+                tint = GoldColor, modifier = Modifier.weight(1f), stacked = true
+            )
+        }
+    } else {
+        Column(verticalArrangement = Arrangement.spacedBy(spacing.sm)) {
+            ProfileStatCard(
+                icon = Icons.Outlined.Groups, label = matches, value = matchesPlayed.toString(),
+                tint = primary, modifier = Modifier.fillMaxWidth()
+            )
+            ProfileStatCard(
+                icon = Icons.Outlined.OfflineBolt, label = streak, value = currentStreak.toString(),
+                tint = secondary, modifier = Modifier.fillMaxWidth()
+            )
+            ProfileStatCard(
+                icon = Icons.Outlined.EmojiEvents, label = best, value = bestStreak.toString(),
+                tint = GoldColor, modifier = Modifier.fillMaxWidth()
             )
         }
     }
@@ -351,20 +473,23 @@ private fun ProfileStatRow(
 
 @Composable
 private fun ProfileOfflineRecordHeader(
-    scrollState: androidx.compose.foundation.ScrollState,
+    scrollState: ScrollState,
     currentSort: ProfileOfflineRecordSort = ProfileOfflineRecordSort(),
     onSortBy: (ProfileOfflineRecordSortColumn) -> Unit = {}
 ) {
     ProfileOfflineRecordCells(
-        position = stringResource(ResourceR.string.core_resources_ranking_col_position),
-        player = stringResource(ResourceR.string.core_resources_ranking_col_player),
-        civilianWins = stringResource(ResourceR.string.core_resources_ranking_col_civilian_wins),
-        impostorWins = stringResource(ResourceR.string.core_resources_ranking_col_impostor_wins),
-        totalWins = stringResource(ResourceR.string.core_resources_ranking_col_total),
-        currentStreak = stringResource(ResourceR.string.core_resources_profile_col_current_streak),
+        labels = listOf(
+            stringResource(ResourceR.string.core_resources_ranking_col_position),
+            stringResource(ResourceR.string.core_resources_ranking_col_player),
+            stringResource(ResourceR.string.core_resources_ranking_col_civilian_wins),
+            stringResource(ResourceR.string.core_resources_ranking_col_impostor_wins),
+            stringResource(ResourceR.string.core_resources_ranking_col_total),
+            stringResource(ResourceR.string.core_resources_profile_col_current_streak)
+        ),
         textStyle = MaterialTheme.typography.titleSmall,
         scrollState = scrollState,
         isHeader = true,
+        isStriped = false,
         currentSort = currentSort,
         onSortBy = onSortBy
     )
@@ -373,157 +498,137 @@ private fun ProfileOfflineRecordHeader(
 @Composable
 private fun ProfileOfflineRecordRow(
     row: OfflineProfileRecordRowUi,
-    scrollState: androidx.compose.foundation.ScrollState,
+    isStriped: Boolean,
+    sortedColumn: ProfileOfflineRecordSortColumn,
+    scrollState: ScrollState,
     textStyle: TextStyle
 ) {
     ProfileOfflineRecordCells(
-        position = row.position.toString(),
-        player = row.playerName,
-        civilianWins = row.civilianWins.toString(),
-        impostorWins = row.impostorWins.toString(),
-        totalWins = row.totalWins.toString(),
-        currentStreak = row.currentStreak.toString(),
+        labels = listOf(
+            row.position.toString(),
+            row.playerName,
+            row.civilianWins.toString(),
+            row.impostorWins.toString(),
+            row.totalWins.toString(),
+            row.currentStreak.toString()
+        ),
         textStyle = textStyle,
-        scrollState = scrollState
+        scrollState = scrollState,
+        isHeader = false,
+        isStriped = isStriped,
+        currentSort = ProfileOfflineRecordSort(column = sortedColumn)
     )
 }
 
 @Composable
-@Suppress("LongMethod", "LongParameterList")
+@Suppress("LongParameterList")
 private fun ProfileOfflineRecordCells(
-    position: String,
-    player: String,
-    civilianWins: String,
-    impostorWins: String,
-    totalWins: String,
-    currentStreak: String,
+    labels: List<String>,
     textStyle: TextStyle,
-    scrollState: androidx.compose.foundation.ScrollState,
-    isHeader: Boolean = false,
-    currentSort: ProfileOfflineRecordSort = ProfileOfflineRecordSort(),
+    scrollState: ScrollState,
+    isHeader: Boolean,
+    isStriped: Boolean,
+    currentSort: ProfileOfflineRecordSort,
     onSortBy: (ProfileOfflineRecordSortColumn) -> Unit = {}
 ) {
-    Row(
+    val spacing = AppDimens.spacing
+    val rowBackground = when {
+        isHeader -> MaterialTheme.colorScheme.surfaceContainerHigh
+        isStriped -> MaterialTheme.colorScheme.surfaceContainerLow
+        else -> Color.Transparent
+    }
+    Box(
         modifier = Modifier
-            .then(
-                if (isHeader) {
-                    Modifier.background(MaterialTheme.colorScheme.background)
-                } else {
-                    Modifier
-                }
-            )
-            .horizontalScroll(scrollState)
-            .padding(horizontal = 8.dp, vertical = 4.dp),
-        horizontalArrangement = Arrangement.spacedBy(6.dp)
+            .fillMaxWidth()
+            .clip(if (isHeader) MaterialTheme.shapes.small else MaterialTheme.shapes.extraSmall)
+            .background(rowBackground)
     ) {
-        ProfileTableCell(
-            text = position,
-            style = textStyle,
-            modifier = Modifier.width(44.dp),
-            isHeader = isHeader,
-            sortDirection = currentSort.direction.takeIf {
-                isHeader && currentSort.column == ProfileOfflineRecordSortColumn.Position
-            },
-            onClick = { onSortBy(ProfileOfflineRecordSortColumn.Position) }
-        )
-        ProfileTableCell(
-            text = player,
-            style = textStyle,
-            modifier = Modifier.width(140.dp),
-            isHeader = isHeader,
-            sortDirection = currentSort.direction.takeIf {
-                isHeader && currentSort.column == ProfileOfflineRecordSortColumn.Player
-            },
-            onClick = { onSortBy(ProfileOfflineRecordSortColumn.Player) }
-        )
-        ProfileTableCell(
-            text = civilianWins,
-            style = textStyle,
-            modifier = Modifier.width(92.dp),
-            isHeader = isHeader,
-            sortDirection = currentSort.direction.takeIf {
-                isHeader && currentSort.column == ProfileOfflineRecordSortColumn.CivilianWins
-            },
-            onClick = { onSortBy(ProfileOfflineRecordSortColumn.CivilianWins) }
-        )
-        ProfileTableCell(
-            text = impostorWins,
-            style = textStyle,
-            modifier = Modifier.width(92.dp),
-            isHeader = isHeader,
-            sortDirection = currentSort.direction.takeIf {
-                isHeader && currentSort.column == ProfileOfflineRecordSortColumn.ImpostorWins
-            },
-            onClick = { onSortBy(ProfileOfflineRecordSortColumn.ImpostorWins) }
-        )
-        ProfileTableCell(
-            text = totalWins,
-            style = textStyle,
-            modifier = Modifier.width(92.dp),
-            isHeader = isHeader,
-            sortDirection = currentSort.direction.takeIf {
-                isHeader && currentSort.column == ProfileOfflineRecordSortColumn.TotalWins
-            },
-            onClick = { onSortBy(ProfileOfflineRecordSortColumn.TotalWins) }
-        )
-        ProfileTableCell(
-            text = currentStreak,
-            style = textStyle,
-            modifier = Modifier.width(92.dp),
-            isHeader = isHeader,
-            sortDirection = currentSort.direction.takeIf {
-                isHeader && currentSort.column == ProfileOfflineRecordSortColumn.CurrentStreak
-            },
-            onClick = { onSortBy(ProfileOfflineRecordSortColumn.CurrentStreak) }
-        )
+        Row(
+            modifier = Modifier
+                .horizontalScroll(scrollState)
+                .padding(horizontal = spacing.sm)
+        ) {
+            ProfileColumns.forEachIndexed { index, spec ->
+                val isSorted = currentSort.column == spec.column
+                ProfileTableCell(
+                    text = labels[index],
+                    style = textStyle,
+                    spec = spec,
+                    isHeader = isHeader,
+                    isSorted = isSorted,
+                    sortDirection = currentSort.direction.takeIf { isHeader && isSorted },
+                    onClick = { onSortBy(spec.column) }
+                )
+            }
+        }
     }
 }
 
 @Composable
-@Suppress("LongMethod")
+@Suppress("LongMethod", "LongParameterList")
 private fun ProfileTableCell(
     text: String,
     style: TextStyle,
-    modifier: Modifier,
+    spec: ProfileColumn,
     isHeader: Boolean,
+    isSorted: Boolean,
     sortDirection: ProfileSortDirection?,
     onClick: () -> Unit
 ) {
     val sound = LocalSoundPlayer.current
-    if (!isHeader) {
-        Text(
-            text = text,
-            style = style,
-            modifier = modifier,
-            color = MaterialTheme.colorScheme.onSurface,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            fontWeight = FontWeight.Normal
+    val tint = if (isSorted) {
+        MaterialTheme.colorScheme.primary.copy(
+            alpha = if (isHeader) SORTED_COLUMN_ALPHA_HEADER else SORTED_COLUMN_ALPHA_ROW
         )
+    } else {
+        Color.Transparent
+    }
+    val cellModifier = Modifier
+        .width(spec.width)
+        .heightIn(min = MinRowHeight)
+        .background(tint)
+        .padding(horizontal = AppDimens.spacing.xs)
+
+    if (!isHeader) {
+        Box(
+            modifier = cellModifier,
+            contentAlignment = if (spec.isNumeric) Alignment.Center else Alignment.CenterStart
+        ) {
+            Text(
+                text = text,
+                style = style,
+                color = MaterialTheme.colorScheme.onSurface,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = if (spec.isNumeric) TextAlign.Center else TextAlign.Start,
+                fontWeight = if (isSorted) FontWeight.SemiBold else FontWeight.Normal
+            )
+        }
         return
     }
 
+    val animatedHeaderColor = animateColorAsState(
+        targetValue = if (isSorted) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            MaterialTheme.colorScheme.onSurfaceVariant
+        },
+        animationSpec = tween(durationMillis = TableSortAnimation.HeaderColorDurationMs),
+        label = "profileHeaderSortColor"
+    )
     Row(
-        modifier = modifier.clickable { sound(Sounds.CLK_CLOCK); onClick() },
+        modifier = cellModifier.clickable { sound(Sounds.CLK_CLOCK); onClick() },
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(2.dp)
+        horizontalArrangement = if (spec.isNumeric) Arrangement.Center else Arrangement.Start
     ) {
-        val animatedHeaderColor = animateColorAsState(
-            targetValue = if (sortDirection != null) {
-                MaterialTheme.colorScheme.primary
-            } else {
-                MaterialTheme.colorScheme.onSurfaceVariant
-            },
-            animationSpec = tween(durationMillis = TableSortAnimation.HeaderColorDurationMs),
-            label = "profileHeaderSortColor"
-        )
         Text(
             text = text,
             style = style,
             color = animatedHeaderColor.value,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
-            fontWeight = if (sortDirection != null) FontWeight.SemiBold else FontWeight.Normal
+            fontWeight = if (isSorted) FontWeight.Bold else FontWeight.Normal,
+            modifier = Modifier.weight(1f, fill = false)
         )
         AnimatedVisibility(
             visible = sortDirection != null,
@@ -538,23 +643,54 @@ private fun ProfileTableCell(
                     animationSpec = tween(TableSortAnimation.IconExitDurationMs)
                 )
         ) {
+            val ascending = sortDirection == ProfileSortDirection.Ascending
             Icon(
-                imageVector = if (sortDirection == ProfileSortDirection.Ascending) {
-                    Icons.Outlined.ArrowUpward
-                } else {
-                    Icons.Outlined.ArrowDownward
-                },
-                contentDescription = null,
-                modifier = Modifier.size(12.dp)
+                imageVector = if (ascending) Icons.Outlined.ArrowUpward else Icons.Outlined.ArrowDownward,
+                contentDescription = stringResource(
+                    if (ascending) {
+                        ResourceR.string.core_resources_phase3_sorted_ascending
+                    } else {
+                        ResourceR.string.core_resources_phase3_sorted_descending
+                    }
+                ),
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.size(16.dp)
             )
         }
     }
 }
 
+private val PreviewRows = persistentListOf(
+    OfflineProfileRecordRowUi(1, "Ana", 5, 4, 9, 3),
+    OfflineProfileRecordRowUi(2, "Luis", 4, 3, 7, 0),
+    OfflineProfileRecordRowUi(3, "Marta", 2, 4, 6, 1)
+)
+
 @UiModePreviews
 @Composable
 private fun Preview() {
     AppTheme {
+        ProfileDesign(offlineRecordRows = PreviewRows)
+    }
+}
+
+@UiModePreviews
+@Composable
+private fun EmptyPreview() {
+    AppTheme {
         ProfileDesign()
+    }
+}
+
+@UiModePreviews
+@Composable
+private fun DataPreview() {
+    AppTheme {
+        ProfileDesign(
+            selectedTab = ProfileTab.Data,
+            matchesPlayed = 12,
+            currentStreak = 2,
+            bestStreak = 5
+        )
     }
 }
