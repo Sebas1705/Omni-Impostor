@@ -1,10 +1,20 @@
 package es.sebas1705.common.extensions.primitives
 
 import es.sebas1705.common.utlis.extensions.primitives.percentageFormat
+import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
+import java.util.Locale
 
 class FloatExtensionsTest {
+
+    private val originalLocale = Locale.getDefault()
+
+    // The formats use the device locale (comma in Spanish); the expectations are written for a dot.
+    @Before fun useUsLocale() = Locale.setDefault(Locale.US)
+
+    @After fun restoreLocale() = Locale.setDefault(originalLocale)
 
     @Test
     fun `percentageFormat formats positive float correctly`() {

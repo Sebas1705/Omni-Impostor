@@ -72,6 +72,7 @@
 !**/src/main/assets/**/*.json
 # Allow Firebase project config
 !firebase.json
+!scripts/firestore-rules/package.json
 
 # Ignore VS Code settings
 .vscode/

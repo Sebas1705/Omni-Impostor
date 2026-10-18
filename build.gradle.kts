@@ -45,3 +45,11 @@ tasks.register("coverageUnitTestAll") {
         }
     )
 }
+
+// Gradle 9 fails a Test task whose module has test sources but no discoverable test (e.g. only helpers).
+// Most modules have no tests yet, so that must not break `testDebugUnitTest` for the whole project.
+subprojects {
+    tasks.withType<Test>().configureEach {
+        failOnNoDiscoveredTests = false
+    }
+}

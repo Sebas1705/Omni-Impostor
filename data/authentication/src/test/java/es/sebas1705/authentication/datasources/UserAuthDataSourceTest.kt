@@ -55,6 +55,7 @@ class UserAuthDataSourceTest {
     @Test
     fun `isUserLogged returns true when currentUser not null`() {
         val user = mock(FirebaseUser::class.java)
+        `when`(user.uid).thenReturn("uid-123456")
         `when`(firebaseAuth.currentUser).thenReturn(user)
 
         assertTrue(dataSource.isUserLogged())
@@ -83,7 +84,7 @@ class UserAuthDataSourceTest {
             `when`(firebaseAuth.sendPasswordResetEmail(email))
                 .thenReturn(ImmediateSuccessTask(null))
 
-            val emission = dataSource.sendForgotPassword(email).first()
+            val emission = dataSource.sendForgotPassword(email).first { it !is ResponseState.Loading }
 
             assertTrue(emission is ResponseState.EmptySuccess)
             verify(firebaseAuth).sendPasswordResetEmail(email)

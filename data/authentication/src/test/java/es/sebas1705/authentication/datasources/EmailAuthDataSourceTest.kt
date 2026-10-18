@@ -12,6 +12,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito.mock
+import org.mockito.Mockito.never
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
 import org.robolectric.RobolectricTestRunner
@@ -42,7 +43,7 @@ class EmailAuthDataSourceTest {
             `when`(firebaseAuth.signInWithEmailAndPassword(email, password))
                 .thenReturn(ImmediateSuccessTask(authResult))
 
-            val emission = dataSource.signInWithEmail(email, password).first()
+            val emission = dataSource.signInWithEmail(email, password).first { it !is ResponseState.Loading }
 
             assertTrue(emission is ResponseState.EmptySuccess)
             verify(firebaseAuth).signInWithEmailAndPassword(email, password)
@@ -61,7 +62,7 @@ class EmailAuthDataSourceTest {
             `when`(firebaseAuth.signInWithEmailAndPassword(email, password))
                 .thenReturn(ImmediateSuccessTask(authResult))
 
-            val emission = dataSource.signInWithEmail(email, password).first()
+            val emission = dataSource.signInWithEmail(email, password).first { it !is ResponseState.Loading }
 
             assertTrue(emission is ResponseState.Error)
             verify(firebaseAuth).signInWithEmailAndPassword(email, password)
@@ -69,7 +70,7 @@ class EmailAuthDataSourceTest {
     }
 
     @Test
-    fun `signUpWithEmail emits EmptySuccess and sends verification when auth result has user`() {
+    fun `signUpWithEmail emits EmptySuccess without sending verification when auth result has user (viewmodel sends it)`() {
         runBlocking {
             val email = "user@example.com"
             val password = "pass123"
@@ -81,11 +82,11 @@ class EmailAuthDataSourceTest {
             `when`(firebaseAuth.createUserWithEmailAndPassword(email, password))
                 .thenReturn(ImmediateSuccessTask(authResult))
 
-            val emission = dataSource.signUpWithEmail(email, password).first()
+            val emission = dataSource.signUpWithEmail(email, password).first { it !is ResponseState.Loading }
 
             assertTrue(emission is ResponseState.EmptySuccess)
             verify(firebaseAuth).createUserWithEmailAndPassword(email, password)
-            verify(user).sendEmailVerification()
+            verify(user, never()).sendEmailVerification()
         }
     }
 
@@ -101,7 +102,7 @@ class EmailAuthDataSourceTest {
             `when`(firebaseAuth.createUserWithEmailAndPassword(email, password))
                 .thenReturn(ImmediateSuccessTask(authResult))
 
-            val emission = dataSource.signUpWithEmail(email, password).first()
+            val emission = dataSource.signUpWithEmail(email, password).first { it !is ResponseState.Loading }
 
             assertTrue(emission is ResponseState.Error)
             verify(firebaseAuth).createUserWithEmailAndPassword(email, password)
