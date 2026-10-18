@@ -11,7 +11,7 @@
  * in Doppler, and (5) creates the `testers` group with the given emails.
  * It reuses the OAuth login of the Firebase CLI (firebase-tools), so no extra credentials are needed.
  */
-const { execFileSync } = require('node:child_process');
+const { execFileSync, execSync } = require('node:child_process');
 const path = require('node:path');
 
 const PROJECT = 'impostor-1b6c2';
@@ -25,7 +25,7 @@ const APP_IDS = {
 };
 const testers = process.argv.slice(2);
 
-const globalRoot = execFileSync('npm', ['root', '-g'], { shell: true }).toString().trim();
+const globalRoot = execSync('npm root -g').toString().trim();
 const ft = (file) => require(path.join(globalRoot, 'firebase-tools', 'lib', file));
 const auth = ft('auth.js');
 const api = ft('apiv2.js');
