@@ -5,7 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -14,7 +15,8 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Button
+import androidx.compose.material.icons.outlined.CheckCircle
+import androidx.compose.material.icons.outlined.Warning
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -31,10 +33,15 @@ import es.sebas1705.categories.components.CategoryCard
 import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.models.Categories
 import es.sebas1705.core.resources.Sounds
+import es.sebas1705.ui.components.PrimaryActionButton
+import es.sebas1705.ui.components.StatusChip
+import es.sebas1705.ui.components.StatusChipVariant
 import es.sebas1705.ui.sound.LocalSoundPlayer
+import es.sebas1705.ui.theme.AppDimens
 import es.sebas1705.ui.theme.AppTheme
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.collections.immutable.toImmutableMap
 import es.sebas1705.core.resources.R as ResourceR
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -50,6 +57,7 @@ fun CategoriesDesign(
     onDone: () -> Unit = {},
 ) {
     val sound = LocalSoundPlayer.current
+    val spacing = AppDimens.spacing
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         modifier = modifier
@@ -69,46 +77,49 @@ fun CategoriesDesign(
             )
         },
         bottomBar = {
+            val selectedCount = categoriesStates.count { it.value }
+            val hasSelection = selectedCount > 0
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                    .padding(spacing.lg),
+                verticalArrangement = Arrangement.spacedBy(spacing.sm)
             ) {
+                StatusChip(
+                    text = stringResource(
+                        ResourceR.string.core_resources_categories_selected_summary,
+                        selectedCount,
+                        Categories.entries.size
+                    ),
+                    variant = if (hasSelection) StatusChipVariant.Ready else StatusChipVariant.Warning,
+                    icon = if (hasSelection) Icons.Outlined.CheckCircle else Icons.Outlined.Warning
+                )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    horizontalArrangement = Arrangement.spacedBy(spacing.sm)
                 ) {
                     FilledTonalButton(
                         onClick = { sound(Sounds.CLK_ARCADE); onSelectAll() },
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier
+                            .weight(1f)
+                            .heightIn(min = 48.dp)
                     ) {
                         Text(stringResource(ResourceR.string.core_resources_categories_select_all))
                     }
                     OutlinedButton(
                         onClick = { sound(Sounds.CLK_INSTANT); onClearSelection() },
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier
+                            .weight(1f)
+                            .heightIn(min = 48.dp)
                     ) {
                         Text(stringResource(ResourceR.string.core_resources_categories_clear))
                     }
                 }
-                Text(
-                    text = stringResource(
-                        ResourceR.string.core_resources_categories_selected_summary,
-                        categoriesStates.count { it.value },
-                        Categories.entries.size
-                    ),
-                    style = MaterialTheme.typography.titleSmall,
-                    color = MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.fillMaxWidth()
+                PrimaryActionButton(
+                    text = stringResource(ResourceR.string.core_resources_categories_done),
+                    onClick = onDone,
+                    enabled = hasSelection
                 )
-                Button(
-                    onClick = { sound(Sounds.CLK_ARCADE); onDone() },
-                    modifier = Modifier.fillMaxWidth(),
-                    enabled = categoriesStates.any { it.value }
-                ) {
-                    Text(stringResource(ResourceR.string.core_resources_categories_done))
-                }
             }
         }
     ) { paddingValues ->
@@ -116,17 +127,18 @@ fun CategoriesDesign(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(horizontal = 10.dp),
+                .padding(horizontal = spacing.md),
             columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+            contentPadding = PaddingValues(vertical = spacing.sm),
+            verticalArrangement = Arrangement.spacedBy(spacing.sm),
+            horizontalArrangement = Arrangement.spacedBy(spacing.sm)
         ) {
             items(
                 items = categoriesStates.toList(),
                 key = { it.first }
             ) { category ->
                 CategoryCard(
-                    modifier = Modifier.height(200.dp),
+                    modifier = Modifier.heightIn(min = 160.dp),
                     category = category.first,
                     isSelected = category.second,
                     onClick = { sound(Sounds.CLK_CASUAL); onCategoryClick(category.first) }
@@ -141,6 +153,8 @@ fun CategoriesDesign(
 @Composable
 private fun Preview() {
     AppTheme {
-        CategoriesDesign(categoriesStates = persistentMapOf())
+        CategoriesDesign(
+            categoriesStates = Categories.entries.mapIndexed { i, c -> c to (i % 2 == 0) }.toMap().toImmutableMap()
+        )
     }
 }
