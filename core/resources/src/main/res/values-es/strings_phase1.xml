@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_resources_phase1_face_subtitle">Elige categorías, jugadores y modo</string>
+    <string name="core_resources_phase1_ready_impostors">%1$d impostor(es) ✓</string>
+    <string name="core_resources_phase1_warn_impostors">Los impostores deben ser menos que los jugadores</string>
+    <string name="core_resources_phase1_start_title">¿Listos para jugar?</string>
+    <string name="core_resources_phase1_start_ready">Todo listo. Pulsa empezar cuando estéis preparados.</string>
+    <string name="core_resources_phase1_start_missing">Completa lo pendiente para empezar.</string>
+    <string name="core_resources_phase1_users_hint">Mínimo 3 jugadores. Los nombres vacíos se ignoran.</string>
+    <string name="core_resources_phase1_mode_select_subtitle">Cómo se eligen los impostores</string>
+    <string name="core_resources_phase1_impostors_hint">Menos impostores que jugadores</string>
+    <string name="core_resources_phase1_timer_hint">Se ajusta en pasos de 30 segundos</string>
+    <string name="core_resources_phase1_decrease_timer">Reducir tiempo de debate</string>
+    <string name="core_resources_phase1_increase_timer">Aumentar tiempo de debate</string>
+</resources>
