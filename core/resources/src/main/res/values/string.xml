@@ -349,4 +349,7 @@
     <string name="core_resources_cat_office_and_stationery_desc">Desk tools, stationery and workplace supplies.</string>
     <string name="core_resources_cat_emotions_and_feelings_desc">Emotional states, moods and inner reactions.</string>
     <string name="core_resources_cat_values_and_ethics_desc">Principles, morals and social values.</string>
+    <string name="core_resources_home_tab_play">Play</string>
+    <string name="core_resources_home_tab_ranking">Ranking</string>
+    <string name="core_resources_home_tab_profile">Profile</string>
 </resources>
