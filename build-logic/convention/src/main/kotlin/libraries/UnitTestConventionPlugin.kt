@@ -50,9 +50,6 @@ class UnitTestConventionPlugin : Plugin<Project> {
 
                 maxParallelForks = max(1, Runtime.getRuntime().availableProcessors() / 2)
                 failFast = false
-
-                // Gradle 9 fails modules whose test sources contain no discoverable test; that is not an error here.
-                failOnNoDiscoveredTests = false
             }
         }
     }
