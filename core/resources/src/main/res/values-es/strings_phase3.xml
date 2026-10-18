@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_resources_phase3_ranking_empty_title">Aún no hay ranking</string>
+    <string name="core_resources_phase3_ranking_empty_hint">Termina una partida y los ganadores aparecerán aquí.</string>
+    <string name="core_resources_phase3_ranking_podium_place">Puesto %1$d: %2$s, %3$d victorias</string>
+    <string name="core_resources_phase3_sorted_ascending">Orden ascendente</string>
+    <string name="core_resources_phase3_sorted_descending">Orden descendente</string>
+    <string name="core_resources_phase3_profile_empty_hint">Juega una partida y tu historial aparecerá aquí.</string>
+    <string name="core_resources_phase3_profile_stat_role">Rol preferido</string>
+    <string name="core_resources_phase3_profile_stat_category">Categoría favorita</string>
+    <string name="core_resources_phase3_profile_stat_matches">Partidas jugadas</string>
+    <string name="core_resources_phase3_profile_stat_streak">Racha actual</string>
+    <string name="core_resources_phase3_profile_stat_best_streak">Mejor racha</string>
+</resources>

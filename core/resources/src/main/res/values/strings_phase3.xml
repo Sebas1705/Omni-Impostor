@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_resources_phase3_ranking_empty_title">No ranking yet</string>
+    <string name="core_resources_phase3_ranking_empty_hint">Finish a match and the winners will show up here.</string>
+    <string name="core_resources_phase3_ranking_podium_place">Place %1$d: %2$s, %3$d wins</string>
+    <string name="core_resources_phase3_sorted_ascending">Sorted ascending</string>
+    <string name="core_resources_phase3_sorted_descending">Sorted descending</string>
+    <string name="core_resources_phase3_profile_empty_hint">Play a match and your record will appear here.</string>
+    <string name="core_resources_phase3_profile_stat_role">Role preference</string>
+    <string name="core_resources_phase3_profile_stat_category">Favorite category</string>
+    <string name="core_resources_phase3_profile_stat_matches">Matches played</string>
+    <string name="core_resources_phase3_profile_stat_streak">Current streak</string>
+    <string name="core_resources_phase3_profile_stat_best_streak">Best streak</string>
+</resources>
