@@ -147,7 +147,7 @@ Replication notes:
 3. Keep per-player reveal state isolated from discussion/voting state.
 4. End round when all impostors are voted out, impostors force win, tie condition is met, or impostors guess the word.
 
-## Flow 10: Ranking Split (Online Placeholder + Offline Collection)
+## Flow 10: Offline Ranking Collection
 
 - Entry: `feature/home/ranking/.../RankingScreen.kt`
 - ViewModel: `feature/home/ranking/.../viewmodel/RankingViewModel.kt`
@@ -164,9 +164,8 @@ Replication notes:
 
 Replication notes:
 
-1. Keep online ranking explicitly as placeholder UI until backend flow exists.
-2. Persist offline ranking by player with independent counters for civilian/impostor wins plus streak metrics (`currentStreak`, `bestStreak`).
-3. Update ranking counters only when a round reaches final result.
-4. Reset streak for non-winner players when a round result is recorded (including tie rounds).
-5. Render offline ranking as a table sorted by total wins.
-6. Persist user-selected table sort (column + direction) per screen using ViewModel `SavedStateHandle`.
+1. Persist offline ranking by player with independent counters for civilian/impostor wins plus streak metrics (`currentStreak`, `bestStreak`).
+2. Update ranking counters only when a round reaches final result.
+3. Reset streak for non-winner players when a round result is recorded (including tie rounds).
+4. Render offline ranking as a table sorted by total wins.
+5. Persist user-selected table sort (column + direction) per screen using ViewModel `SavedStateHandle`.

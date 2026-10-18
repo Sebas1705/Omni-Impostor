@@ -12,7 +12,7 @@ Built on **multi-module Clean Architecture** with Firebase, Hilt, and Material D
 
 | | |
 |---|---|
-| Offline & online game modes | Play locally or with real-time synced data |
+| Offline party game | Pass-the-phone play with a local word bank (ES/EN) |
 | Animated reveal card | 3D flip reveals each player's secret word privately |
 | Word categories | Powered by [OpenTriviaDB](https://opentdb.com/) + a local word bank (ES/EN) |
 | Ranking system | Persistent leaderboard with streaks across sessions |
@@ -28,7 +28,7 @@ Built on **multi-module Clean Architecture** with Firebase, Hilt, and Material D
 |---|---|
 | UI | Jetpack Compose · Material 3 · Navigation Compose |
 | DI | Hilt |
-| Data | Firebase Auth · Firestore · Realtime Database · Room · Couchbase Lite · Retrofit · DataStore |
+| Data | Firebase Auth · Firestore · Room · Couchbase Lite · Retrofit · DataStore |
 | Analytics | Firebase Analytics · Crashlytics |
 | Architecture | Multi-module Clean Architecture (`app / core / data / domain / feature`) |
 | Quality | Detekt · LeakCanary · Chucker · GitHub Actions CI |
@@ -40,7 +40,7 @@ Built on **multi-module Clean Architecture** with Firebase, Hilt, and Material D
 ```
 app/
 core/        ← common · designsystem · resources · ui
-data/        ← authentication · couchbase · datastore · files · firestore · realtime · repositories · retrofit · room
+data/        ← authentication · couchbase · datastore · files · firestore · repositories · retrofit · room
 domain/      ← managers · mappers · models · services · usecases (analytics · auth · game · ranking · opendb · settings)
 feature/     ← splash · login · main · home (face · ranking · profile) · offlinegame · settings · debug
 ```

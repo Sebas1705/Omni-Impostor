@@ -21,7 +21,6 @@ class FirebaseConventionPlugin : Plugin<Project> {
                 implementation(libs.findLibrary("firebase-messaging").get())
                 implementation(libs.findLibrary("firebase-auth").get())
                 implementation(libs.findLibrary("firebase-firestore").get())
-                implementation(libs.findLibrary("firebase-database").get())
                 implementation(libs.findLibrary("firebase-storage").get())
             }
         }

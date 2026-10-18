@@ -26,8 +26,7 @@ Quick module inventory grouped by layer. Source of truth: `settings.gradle.kts`.
 | `:data:couchbase` | Couchbase Lite data sources: words (ES/EN), ranking, debug snapshots |
 | `:data:datastore` | DataStore-backed settings and game preferences |
 | `:data:files` | JSON asset reader for default word collections |
-| `:data:firestore` | Firestore data source (user profiles, online game state) |
-| `:data:realtime` | Firebase Realtime Database data source (low-latency game sync) |
+| `:data:firestore` | Firestore data source (clue ratings telemetry) |
 | `:data:repositories` | Repository implementations and Hilt bindings for all domain interfaces |
 | `:data:retrofit` | OkHttp/Retrofit client + Open Trivia DB API data source |
 | `:data:room` | Room database (reserved for future local relational storage) |
@@ -58,7 +57,7 @@ Quick module inventory grouped by layer. Source of truth: `settings.gradle.kts`.
 | `:feature:home:face:nav` | Offline game runtime: Reveal → Discussion → Result screens |
 | `:feature:home:face:categories` | Category selection dialog |
 | `:feature:home:face:users` | Player management dialog |
-| `:feature:home:ranking` | Ranking screen (offline + online placeholder) |
+| `:feature:home:ranking` | Ranking screen (offline) |
 | `:feature:home:profile` | User profile screen |
 | `:feature:offlinegame` | Offline game reveal card and discussion timer |
 | `:feature:settings` | App settings screen (language, theme, contrast) |
