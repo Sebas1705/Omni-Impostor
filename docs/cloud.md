@@ -52,3 +52,14 @@ This generates `app/secrets.properties`, `app/google-services.json`, and `app/ke
 | Dependency drift | Monthly dependency report + Dependabot |
 | Secret leakage | Secrets in Doppler only; gitignore enforced |
 | Debug tooling in release | Variant-scoped dependencies (`debugImplementation`) |
+
+## Firestore rules
+
+`firestore.rules` only allows the exact writes the app makes to `clue_ratings` (three short strings and one counter that grows by 1);
+everything else is denied. Test them against the local emulator before deploying:
+
+```bash
+cd scripts/firestore-rules && npm install && npm test   # needs the Firebase CLI and a JDK
+```
+
+Rules are deployed manually (`firebase deploy --only firestore:rules`); nothing in CI deploys them.

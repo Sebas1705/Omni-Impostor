@@ -2,10 +2,41 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Clue rating telemetry — any authenticated user (including anonymous)
-    // can create or update a rating document; no reads or deletes allowed.
+    // Clue rating telemetry. Any authenticated user (including anonymous) may create or update a
+    // rating, but only with the exact shape the app writes: three short strings plus one counter that
+    // grows by exactly 1 per write. No reads, no deletes, no other fields.
     match /clue_ratings/{docId} {
-      allow create, update: if request.auth != null;
+
+      function incoming() { return request.resource.data; }
+
+      function shapeOk() {
+        return incoming().keys().hasOnly(['word', 'category', 'clue', 'positive', 'negative'])
+          && incoming().keys().hasAll(['word', 'category', 'clue'])
+          && incoming().word is string && incoming().word.size() <= 200
+          && incoming().category is string && incoming().category.size() <= 200
+          && incoming().clue is string && incoming().clue.size() <= 200
+          && incoming().get('positive', 0) is int
+          && incoming().get('negative', 0) is int
+          && incoming().get('positive', 0) >= 0
+          && incoming().get('negative', 0) >= 0;
+      }
+
+      // New document: exactly one vote.
+      allow create: if request.auth != null
+        && shapeOk()
+        && incoming().get('positive', 0) + incoming().get('negative', 0) == 1;
+
+      // Existing document: text unchanged, and exactly one counter went up by exactly 1.
+      allow update: if request.auth != null
+        && shapeOk()
+        && incoming().word == resource.data.word
+        && incoming().category == resource.data.category
+        && incoming().clue == resource.data.clue
+        && incoming().get('positive', 0) >= resource.data.get('positive', 0)
+        && incoming().get('negative', 0) >= resource.data.get('negative', 0)
+        && (incoming().get('positive', 0) - resource.data.get('positive', 0))
+           + (incoming().get('negative', 0) - resource.data.get('negative', 0)) == 1;
+
       allow read, delete: if false;
     }
 
