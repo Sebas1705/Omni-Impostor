@@ -1,5 +1,6 @@
 plugins {
     id("buildlogic.android.feature")
+    alias(libs.plugins.buildlogic.unit.test)
 }
 
 android {
@@ -15,5 +16,6 @@ dependencies {
     implementation(libs.lottie.compose)
 
     api(projects.feature.home.face.common)
-}
 
+    testImplementation(libs.junit.junit)
+}
