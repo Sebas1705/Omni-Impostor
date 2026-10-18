@@ -67,10 +67,16 @@ const dopplerSet = (name, value) => {
   if (!binding.members.includes(`serviceAccount:${SA_EMAIL}`)) binding.members.push(`serviceAccount:${SA_EMAIL}`);
   console.log('grant role', brief(await call(crm, 'POST', `/v1/projects/${PROJECT}:setIamPolicy`, { policy })));
 
-  r = await call('https://iam.googleapis.com', 'POST', `/v1/projects/${PROJECT}/serviceAccounts/${SA_EMAIL}/keys`, {
-    keyAlgorithm: 'KEY_ALG_RSA_2048',
-    privateKeyType: 'TYPE_GOOGLE_CREDENTIALS_FILE',
-  });
+  // A freshly created service account may take a few seconds to be visible to the keys API (404 until then).
+  for (let attempt = 1; attempt <= 8; attempt++) {
+    r = await call('https://iam.googleapis.com', 'POST', `/v1/projects/${PROJECT}/serviceAccounts/${SA_EMAIL}/keys`, {
+      keyAlgorithm: 'KEY_ALG_RSA_2048',
+      privateKeyType: 'TYPE_GOOGLE_CREDENTIALS_FILE',
+    });
+    if (r.status !== 404) break;
+    console.log(`service account not visible yet, retrying (${attempt}/8)...`);
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+  }
   if (r.status >= 300) throw new Error('create key failed: ' + brief(r));
   dopplerSet('FIREBASE_DISTRIBUTION_SERVICE_ACCOUNT_JSON', Buffer.from(r.body.privateKeyData, 'base64').toString('utf8'));
   console.log('service account key stored in Doppler (not printed)');
