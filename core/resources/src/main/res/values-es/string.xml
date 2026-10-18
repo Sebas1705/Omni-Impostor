@@ -86,18 +86,13 @@
     <string name="core_resources_profile_role_impostor_specialist">Especialista impostor</string>
     <string name="core_resources_profile_category_space_astronomy">Espacio y astronomía</string>
     <string name="core_resources_profile_tab_offline_record">Registro offline</string>
-    <string name="core_resources_profile_tab_online">Online</string>
     <string name="core_resources_profile_tab_data">Datos</string>
-    <string name="core_resources_profile_online_pending">Pendiente de implementar.</string>
     <string name="core_resources_profile_offline_empty">Todavía no hay datos de registro offline.</string>
     <string name="core_resources_profile_col_current_streak">Racha</string>
 
     <string name="core_resources_ranking_title">Ranking global</string>
     <string name="core_resources_ranking_subtitle">Sigue a los mejores equipos y compara el progreso de tu escuadrón.</string>
     <string name="core_resources_ranking_row_points">%1$d. %2$s - %3$d puntos</string>
-    <string name="core_resources_ranking_tab_offline">Offline</string>
-    <string name="core_resources_ranking_tab_online">Online</string>
-    <string name="core_resources_ranking_online_not_implemented">El ranking online todavía no está implementado.</string>
     <string name="core_resources_ranking_offline_empty">Todavía no hay partidas offline registradas.</string>
     <string name="core_resources_ranking_col_position">#</string>
     <string name="core_resources_ranking_col_player">Jugador</string>
@@ -177,12 +172,7 @@
     <string name="core_resources_game_mode_num_impostors_know">Número de impostores</string>
     <string name="core_resources_game_mode_num_impostors_know_desc">Ver el número de impostores</string>
 
-    <string name="core_resources_face_environment">Entorno</string>
     <string name="core_resources_face_edit_mode">Personaliza tu juego</string>
-    <string name="core_resources_face_offline_mode">Modo offline</string>
-    <string name="core_resources_face_offline_mode_desc">Partidas por turnos usando paquetes de palabras locales.</string>
-    <string name="core_resources_face_online_mode">Modo online</string>
-    <string name="core_resources_face_online_mode_desc">Juega con amigos en remoto y sesiones sincronizadas.</string>
     <string name="core_resources_face_categories">Categorías</string>
     <string name="core_resources_face_categories_selected">Categorías seleccionadas: %1$d</string>
     <string name="core_resources_face_open_categories">Abrir categorías</string>
@@ -193,7 +183,6 @@
     <string name="core_resources_face_mode">Modo</string>
     <string name="core_resources_face_mode_summary">%1$s - Impostores: %2$d</string>
     <string name="core_resources_face_open_mode">Abrir ajustes de modo</string>
-    <string name="core_resources_face_online_coming_soon">El modo online llegará pronto. Mientras tanto, disfruta el modo offline con tus amigos.</string>
 
     <string name="core_resources_offline_game_title">Juego offline</string>
     <string name="core_resources_player_progress">Jugador %1$d/%2$d: %3$s</string>
