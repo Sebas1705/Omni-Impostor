@@ -5,6 +5,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- Offline game: the discussion timer never started counting down (state read before the update ran); vote and guess side effects (sound, ranking) now run outside the state update.
+- Offline game: names that collapse below 3 players after trimming/de-duplicating are rejected instead of starting a degenerate game.
+
+### Added
+- Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
+
 ## [v1.2.0] - 2026-06-30
 
 <!-- Release notes generated using configuration in .github/release.yml at v1.2.0 -->
