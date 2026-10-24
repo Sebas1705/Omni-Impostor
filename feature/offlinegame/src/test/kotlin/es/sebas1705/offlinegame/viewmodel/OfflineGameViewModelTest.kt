@@ -1,5 +1,6 @@
 package es.sebas1705.offlinegame.viewmodel
 
+import android.content.res.Configuration
 import es.sebas1705.core.resources.R
 import es.sebas1705.core.resources.Sounds
 import es.sebas1705.domain.managers.MediaPlayerManager
@@ -26,6 +27,7 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -44,6 +46,7 @@ import org.mockito.kotlin.verifyNoInteractions
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
+import java.util.Locale
 
 /**
  * Main is a [StandardTestDispatcher], like the real Main dispatcher (not immediate): work launched
@@ -375,6 +378,33 @@ class OfflineGameViewModelTest {
 
         assertEquals(OfflineGameStep.Discussion, state.step)
         assertTrue(state.clueRatings.isEmpty())
+    }
+
+    // endregion
+
+    // region language
+
+    @Test
+    fun `texts built by the view model follow the app language and not the system one`() {
+        val previous = Locale.getDefault()
+        Locale.setDefault(Locale("es"))
+        try {
+            startDiscussion()
+
+            val speaker = state.players[state.currentSpeakerIndex]
+            val spanish = context.createConfigurationContext(
+                Configuration(context.resources.configuration).apply { setLocale(Locale("es")) }
+            )
+            val expected = spanish.getString(R.string.core_resources_game_starts_discussion, speaker)
+            assertEquals(expected, state.guessFeedback)
+            // The system (application) context stays in English, so the test proves the language is really switched.
+            assertNotEquals(
+                context.getString(R.string.core_resources_game_starts_discussion, speaker),
+                state.guessFeedback
+            )
+        } finally {
+            Locale.setDefault(previous)
+        }
     }
 
     // endregion
