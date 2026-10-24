@@ -54,6 +54,14 @@ Google Fonts are used to differentiate information hierarchy:
    - **Discussion:** Timed debate screen with countdown.
    - **Result:** Visual summary of winners and losers with score cards.
 
+### Discussion timer rules
+
+- The timer card changes color at 30 s (warning) and 10 s (urgent, red) and shows "Time is up!" at 0 s.
+- **At 0 s guessing the word is disabled, but voting stays enabled on purpose.** Disabling both would leave
+  nobody able to finish the round (the game has no automatic outcome on timeout), so the group is told to
+  vote and the round ends through the normal vote rules.
+- A game created with the timer set to 0 has no limit: no timer card and nothing is disabled.
+
 ### Key Components
 
 - **Reveal Card:** Card with pronounced shadow and Y-axis rotation animation (0 to 180 degrees).
