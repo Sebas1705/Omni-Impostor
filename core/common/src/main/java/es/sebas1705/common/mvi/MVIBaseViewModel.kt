@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import es.sebas1705.common.BuildConfig
 import es.sebas1705.common.utlis.extensions.composables.printTextInToast
+import es.sebas1705.common.utlis.extensions.composables.withAppLocale
 import es.sebas1705.common.utlis.extensions.types.logD
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +25,8 @@ import kotlin.coroutines.cancellation.CancellationException
  * @param S [MVIBaseState]: State of the viewModel
  * @param I [MVIBaseIntent]: Intent of the viewModel
  *
- * @property context [Context]: Context of the application
+ * @property context [Context]: Application context localized to the language chosen inside the app
+ *   (the application context itself keeps the system language), so strings built here match the UI
  * @property initialState [S]: Initial state of the viewModel
  * @property uiState [MutableStateFlow]<[S]>: UiState for the composable
  *
@@ -33,8 +35,11 @@ import kotlin.coroutines.cancellation.CancellationException
  */
 @SuppressLint("StaticFieldLeak")
 abstract class MVIBaseViewModel<S : MVIBaseState, I : MVIBaseIntent>(
-    protected val context: Context
+    private val appContext: Context
 ) : ViewModel() {
+
+    protected val context: Context
+        get() = appContext.withAppLocale()
 
     companion object {
         private val instances = mutableMapOf<Class<*>, Int>()

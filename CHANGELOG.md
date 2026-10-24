@@ -17,6 +17,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Each word category now has its own, more fitting icon.
 
 ### Fixed
+- Texts built outside the UI (e.g. "Player3 starts the discussion.", login and profile messages) now follow the language chosen in the app instead of the system language.
 - Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Offline game: the discussion timer never started counting down (state read before the update ran); vote and guess side effects (sound, ranking) now run outside the state update.
 - Offline game: names that collapse below 3 players after trimming/de-duplicating are rejected instead of starting a degenerate game.
