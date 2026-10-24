@@ -1,3 +1,5 @@
+@file:Suppress("TooManyFunctions")
+
 package es.sebas1705.offlinegame.viewmodel
 
 import android.content.Context
@@ -22,8 +24,8 @@ import es.sebas1705.offlinegame.models.OfflineGameStep
 import es.sebas1705.offlinegame.models.OfflineWinner
 import es.sebas1705.ranking.RecordOfflineMatchResultUseCase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.update
 import java.text.Normalizer
 import javax.inject.Inject
 import kotlin.random.Random
@@ -41,6 +43,7 @@ class OfflineGameViewModel @Inject constructor(
 
     private companion object {
         const val PREVIEW_MAX_ITEMS = 3
+        const val MIN_PLAYERS = 3
     }
 
     override fun initState(): OfflineGameState = OfflineGameState()
@@ -76,6 +79,18 @@ class OfflineGameViewModel @Inject constructor(
             .filter { it.isNotEmpty() }
             .distinct()
         logD("initialize sanitizedPlayers=${players.size} preview=${players.preview()}")
+
+        // The setup screen already requires 3 players, but trimming and de-duplicating names can leave fewer.
+        if (players.size < MIN_PLAYERS) {
+            logW("initialize aborted reason=not_enough_players players=${players.size}")
+            updateUi {
+                it.copy(
+                    isLoading = false,
+                    errorMessage = context.getString(R.string.core_resources_game_error_min_players)
+                )
+            }
+            return@execute
+        }
 
         updateUi {
             it.copy(isLoading = true, errorMessage = null)
@@ -148,15 +163,18 @@ class OfflineGameViewModel @Inject constructor(
         }
     }
 
-    private fun nextRevealPlayer(): Job {
+    private fun nextRevealPlayer() = execute {
+        // The flag is set while the transition is applied, in the same coroutine that starts the
+        // timer. Reset on every run because `update` may retry the lambda.
         var startTimer = false
-        val job = updateUi { state ->
+        _uiState.update { state ->
+            startTimer = false
             if (state.step != OfflineGameStep.Reveal || !state.revealedCurrentCard) {
                 logW(
                     "nextRevealPlayer ignored step=${state.step} " +
                         "revealedCurrentCard=${state.revealedCurrentCard}"
                 )
-                return@updateUi state
+                return@update state
             }
 
             if (!state.hasMoreRevealPlayers) {
@@ -165,7 +183,7 @@ class OfflineGameViewModel @Inject constructor(
                         "startingSpeaker=${state.players[state.currentSpeakerIndex]}"
                 )
                 startTimer = state.discussionTimerSeconds > 0
-                return@updateUi state.copy(
+                return@update state.copy(
                     step = OfflineGameStep.Discussion,
                     timerSecondsLeft = state.discussionTimerSeconds,
                     guessFeedback = context.getString(
@@ -187,24 +205,30 @@ class OfflineGameViewModel @Inject constructor(
             )
         }
         if (startTimer) startDiscussionTimer()
-        return job
     }
 
-    private fun startDiscussionTimer() = execute(Dispatchers.IO) {
+    // Only delays and cheap state updates, so it does not need Dispatchers.IO.
+    private fun startDiscussionTimer() = execute {
         logD("startDiscussionTimer started seconds=${_uiState.value.timerSecondsLeft}")
         while (true) {
             delay(1000L)
             val current = _uiState.value
             if (current.step != OfflineGameStep.Discussion || current.timerSecondsLeft <= 0) break
-            updateUi { it.copy(timerSecondsLeft = (it.timerSecondsLeft - 1).coerceAtLeast(0)) }
+            _uiState.update { it.copy(timerSecondsLeft = (it.timerSecondsLeft - 1).coerceAtLeast(0)) }
         }
         logD("startDiscussionTimer ended")
     }
 
+    // Side effects (sfx, ranking) run after `update` has settled: its lambda may be retried and must stay pure.
     @Suppress("LongMethod")
     private fun votePlayer(
         playerIndex: Int
-    ) = updateUi { state ->
+    ) = execute {
+        var sfx: Sounds? = null
+        var finished: OfflineGameState? = null
+        _uiState.update { state ->
+            sfx = null
+            finished = null
             logD(
                 "votePlayer attempt index=$playerIndex " +
                     "name=${state.players.getOrNull(playerIndex)} step=${state.step} alive=${state.alivePlayerIndexes.size}"
@@ -213,7 +237,7 @@ class OfflineGameViewModel @Inject constructor(
                 logW(
                     "votePlayer ignored reason=${if (state.step != OfflineGameStep.Discussion) "invalid_step" else "player_not_alive"}"
                 )
-                return@updateUi state
+                return@update state
             }
 
             val isImpostor = playerIndex in state.impostorPlayerIndexes
@@ -227,49 +251,21 @@ class OfflineGameViewModel @Inject constructor(
                     "aliveAfter=${newAlive.size} correctVotes=$correctVotes incorrectVotes=$incorrectVotes"
             )
 
-            runCatching { soundPoolManager.play(Sounds.CLK_CASUAL) }
-                .onFailure { logW("sfx vote failed: ${it.message}") }
-
             if (result == null) {
-                val voteFeedback = if (BuildConfig.DEBUG) {
-                    if (isImpostor) {
-                        context.getString(
-                            R.string.core_resources_game_vote_reveal_impostor,
-                            playerName
-                        )
-                    } else {
-                        context.getString(
-                            R.string.core_resources_game_vote_reveal_civilian,
-                            playerName
-                        )
-                    }
-                } else {
-                    context.getString(
-                        R.string.core_resources_game_vote_reveal_neutral,
-                        playerName
-                    )
-                }
-
+                sfx = Sounds.CLK_CASUAL
                 state.copy(
                     alivePlayerIndexes = newAlive,
                     correctVotes = correctVotes,
                     incorrectVotes = incorrectVotes,
-                    guessFeedback = voteFeedback
+                    guessFeedback = voteFeedback(playerName, isImpostor)
                 )
             } else {
                 logI("votePlayer finished result=${describeResult(result)}")
-                val resultSfx = when (result.winner) {
+                sfx = when (result.winner) {
                     OfflineWinner.Civilians -> Sounds.SND_WIN
                     OfflineWinner.Impostors -> Sounds.SND_LOSE
                     OfflineWinner.Tie -> Sounds.SND_BOWING
                 }
-                runCatching { soundPoolManager.play(resultSfx) }
-                    .onFailure { logW("sfx result failed: ${it.message}") }
-                recordRankingForWinner(
-                    players = state.players,
-                    impostorIndexes = state.impostorPlayerIndexes,
-                    winner = result.winner
-                )
                 state.copy(
                     alivePlayerIndexes = newAlive,
                     correctVotes = correctVotes,
@@ -277,39 +273,47 @@ class OfflineGameViewModel @Inject constructor(
                     step = OfflineGameStep.Result,
                     result = result,
                     guessFeedback = null
-                )
+                ).also { finished = it }
             }
         }
+        sfx?.let { sound ->
+            runCatching { soundPoolManager.play(sound) }
+                .onFailure { logW("sfx $sound failed: ${it.message}") }
+        }
+        finished?.let { done ->
+            recordRankingForWinner(
+                players = done.players,
+                impostorIndexes = done.impostorPlayerIndexes,
+                winner = requireNotNull(done.result).winner
+            )
+        }
+    }
 
     private fun submitGuess(
         value: String
-    ) = updateUi { state ->
+    ) = execute {
+        var impostorsWon: OfflineGameState? = null
+        _uiState.update { state ->
+            impostorsWon = null
             logD(
                 "submitGuess attempt raw='${value.trim()}' step=${state.step} hasWord=${state.wordEntry != null}"
             )
             if (state.step != OfflineGameStep.Discussion || state.wordEntry == null) {
                 logW("submitGuess ignored reason=invalid_state")
-                return@updateUi state
+                return@update state
             }
 
             val guess = normalize(value)
             val solution = normalize(state.wordEntry.word)
             if (guess.isBlank()) {
                 logW("submitGuess rejected reason=blank_guess")
-                return@updateUi state.copy(
+                return@update state.copy(
                     guessFeedback = context.getString(R.string.core_resources_game_guess_empty)
                 )
             }
 
             if (guess == solution) {
                 logI("submitGuess success winner=Impostors guessedWord='${state.wordEntry.word}'")
-                runCatching { soundPoolManager.play(Sounds.SND_LOSE) }
-                    .onFailure { logW("sfx guess-win failed: ${it.message}") }
-                recordRankingForWinner(
-                    players = state.players,
-                    impostorIndexes = state.impostorPlayerIndexes,
-                    winner = OfflineWinner.Impostors
-                )
                 state.copy(
                     step = OfflineGameStep.Result,
                     result = OfflineGameResult(
@@ -321,12 +325,22 @@ class OfflineGameViewModel @Inject constructor(
                         incorrectVotes = state.incorrectVotes
                     ),
                     guessFeedback = null
-                )
+                ).also { impostorsWon = it }
             } else {
                 logD("submitGuess failed normalizedGuess='$guess' solution='$solution'")
                 state.copy(guessFeedback = context.getString(R.string.core_resources_game_guess_wrong))
             }
         }
+        impostorsWon?.let { done ->
+            runCatching { soundPoolManager.play(Sounds.SND_LOSE) }
+                .onFailure { logW("sfx guess-win failed: ${it.message}") }
+            recordRankingForWinner(
+                players = done.players,
+                impostorIndexes = done.impostorPlayerIndexes,
+                winner = OfflineWinner.Impostors
+            )
+        }
+    }
 
     private fun goToRating() = updateUi { state ->
         if (state.step != OfflineGameStep.Result) {
@@ -430,6 +444,16 @@ class OfflineGameViewModel @Inject constructor(
         )
         return resolved
     }
+
+    // Role is only revealed in debug builds; release builds keep the vote result neutral.
+    private fun voteFeedback(playerName: String, isImpostor: Boolean): String = context.getString(
+        when {
+            !BuildConfig.DEBUG -> R.string.core_resources_game_vote_reveal_neutral
+            isImpostor -> R.string.core_resources_game_vote_reveal_impostor
+            else -> R.string.core_resources_game_vote_reveal_civilian
+        },
+        playerName
+    )
 
     private fun normalize(text: String): String {
         val normalized = Normalizer.normalize(text.trim(), Normalizer.Form.NFD)

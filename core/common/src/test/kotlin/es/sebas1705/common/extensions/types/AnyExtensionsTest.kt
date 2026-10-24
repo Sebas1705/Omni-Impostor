@@ -10,53 +10,28 @@ import es.sebas1705.common.utlis.extensions.types.logWTF
 import org.junit.Test
 import org.mockito.Mockito.mockStatic
 
+/**
+ * Logging is gated to the dev variant (process name contains ".dev"), which a JVM unit test is not,
+ * so every level must stay silent here. The messages are also decorated, so the raw text is never logged as is.
+ */
 class AnyExtensionsTest {
 
-    @Test fun `logI logs message with INFO level`() {
-        val instance = Any()
+    private fun assertSilent(log: Any.() -> Unit) {
         mockStatic(Log::class.java).use { logMock ->
-            instance.logI("Info message")
-            logMock.verify { Log.i(instance::class.java.simpleName, "Info message") }
+            Any().log()
+            logMock.verifyNoInteractions()
         }
     }
 
-    @Test fun `logE logs message with ERROR level`() {
-        val instance = Any()
-        mockStatic(Log::class.java).use { logMock ->
-            instance.logE("Error message")
-            logMock.verify { Log.e(instance::class.java.simpleName, "Error message") }
-        }
-    }
+    @Test fun `logI does not log outside the dev variant`() = assertSilent { logI("Info message") }
 
-    @Test fun `logD logs message with DEBUG level`() {
-        val instance = Any()
-        mockStatic(Log::class.java).use { logMock ->
-            instance.logD("Debug message")
-            logMock.verify { Log.d(instance::class.java.simpleName, "Debug message") }
-        }
-    }
+    @Test fun `logE does not log outside the dev variant`() = assertSilent { logE("Error message") }
 
-    @Test fun `logV logs message with VERBOSE level`() {
-        val instance = Any()
-        mockStatic(Log::class.java).use { logMock ->
-            instance.logV("Verbose message")
-            logMock.verify { Log.v(instance::class.java.simpleName, "Verbose message") }
-        }
-    }
+    @Test fun `logD does not log outside the dev variant`() = assertSilent { logD("Debug message") }
 
-    @Test fun `logW logs message with WARN level`() {
-        val instance = Any()
-        mockStatic(Log::class.java).use { logMock ->
-            instance.logW("Warn message")
-            logMock.verify { Log.w(instance::class.java.simpleName, "Warn message") }
-        }
-    }
+    @Test fun `logV does not log outside the dev variant`() = assertSilent { logV("Verbose message") }
 
-    @Test fun `logWTF logs message with WTF level`() {
-        val instance = Any()
-        mockStatic(Log::class.java).use { logMock ->
-            instance.logWTF("WTF message")
-            logMock.verify { Log.wtf(instance::class.java.simpleName, "WTF message") }
-        }
-    }
+    @Test fun `logW does not log outside the dev variant`() = assertSilent { logW("Warn message") }
+
+    @Test fun `logWTF does not log outside the dev variant`() = assertSilent { logWTF("WTF message") }
 }

@@ -7,8 +7,7 @@ Runtime services and secrets context for Omni-Impostor.
 | Service | Module | Purpose |
 |---|---|---|
 | Firebase Auth | `data:authentication` | Google Sign-In + anonymous auth |
-| Firebase Firestore | `data:firestore` | User profiles, online game state |
-| Firebase Realtime Database | `data:realtime` | Low-latency game sync |
+| Firebase Firestore | `data:firestore` | Post-game clue ratings (`clue_ratings`) |
 | Firebase Analytics | `data:analytics` | Event and user property tracking |
 | Firebase Crashlytics | `data:analytics` | Crash reporting |
 | Open Trivia DB | `data:retrofit` | Remote word/trivia question fetch |
@@ -53,3 +52,14 @@ This generates `app/secrets.properties`, `app/google-services.json`, and `app/ke
 | Dependency drift | Monthly dependency report + Dependabot |
 | Secret leakage | Secrets in Doppler only; gitignore enforced |
 | Debug tooling in release | Variant-scoped dependencies (`debugImplementation`) |
+
+## Firestore rules
+
+`firestore.rules` only allows the exact writes the app makes to `clue_ratings` (three short strings and one counter that grows by 1);
+everything else is denied. Test them against the local emulator before deploying:
+
+```bash
+cd scripts/firestore-rules && npm install && npm test   # needs the Firebase CLI and a JDK
+```
+
+Rules are deployed manually (`firebase deploy --only firestore:rules`); nothing in CI deploys them.

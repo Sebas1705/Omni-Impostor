@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_resources_phase1_face_subtitle">Choose categories, players and mode</string>
+    <string name="core_resources_phase1_ready_impostors">%1$d impostor(s)</string>
+    <string name="core_resources_phase1_warn_impostors">Impostors must be fewer than players</string>
+    <string name="core_resources_phase1_start_title">Ready to play?</string>
+    <string name="core_resources_phase1_start_ready">All set. Press start when everyone is ready.</string>
+    <string name="core_resources_phase1_start_missing">Complete the pending items to start.</string>
+    <string name="core_resources_phase1_users_hint">At least 3 players. Empty names are ignored.</string>
+    <string name="core_resources_phase1_mode_select_subtitle">How the impostors are chosen</string>
+    <string name="core_resources_phase1_impostors_hint">Fewer impostors than players</string>
+    <string name="core_resources_phase1_timer_hint">Adjust in steps of 30 seconds</string>
+    <string name="core_resources_phase1_decrease_timer">Decrease discussion time</string>
+    <string name="core_resources_phase1_increase_timer">Increase discussion time</string>
+</resources>

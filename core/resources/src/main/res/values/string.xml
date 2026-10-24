@@ -87,18 +87,13 @@
     <string name="core_resources_profile_role_impostor_specialist">Impostor Specialist</string>
     <string name="core_resources_profile_category_space_astronomy">Space and Astronomy</string>
     <string name="core_resources_profile_tab_offline_record">Offline record</string>
-    <string name="core_resources_profile_tab_online">Online</string>
     <string name="core_resources_profile_tab_data">Data</string>
-    <string name="core_resources_profile_online_pending">Pending implementation.</string>
     <string name="core_resources_profile_offline_empty">No offline record data yet.</string>
     <string name="core_resources_profile_col_current_streak">Streak</string>
 
     <string name="core_resources_ranking_title">Global ranking</string>
     <string name="core_resources_ranking_subtitle">Track top teams and compare your team progress.</string>
     <string name="core_resources_ranking_row_points">%1$d. %2$s - %3$d pts</string>
-    <string name="core_resources_ranking_tab_offline">Offline</string>
-    <string name="core_resources_ranking_tab_online">Online</string>
-    <string name="core_resources_ranking_online_not_implemented">Online ranking is not implemented yet.</string>
     <string name="core_resources_ranking_offline_empty">No offline matches recorded yet.</string>
     <string name="core_resources_ranking_col_position">#</string>
     <string name="core_resources_ranking_col_player">Player</string>
@@ -179,12 +174,7 @@
     <string name="core_resources_game_mode_num_impostors_know_desc">See the number of impostors with a chip</string>
 
 
-    <string name="core_resources_face_environment">Environment</string>
     <string name="core_resources_face_edit_mode">Modify your mode</string>
-    <string name="core_resources_face_offline_mode">Offline mode</string>
-    <string name="core_resources_face_offline_mode_desc">Pass-and-play rounds using local selected word packages.</string>
-    <string name="core_resources_face_online_mode">Online mode</string>
-    <string name="core_resources_face_online_mode_desc">Play with remote friends and synchronized sessions.</string>
     <string name="core_resources_face_categories">Categories</string>
     <string name="core_resources_face_categories_selected">Categories selected: %1$d</string>
     <string name="core_resources_face_open_categories">Open categories</string>
@@ -195,7 +185,6 @@
     <string name="core_resources_face_mode">Mode</string>
     <string name="core_resources_face_mode_summary">%1$s - Impostors: %2$d</string>
     <string name="core_resources_face_open_mode">Open mode settings</string>
-    <string name="core_resources_face_online_coming_soon">Online mode is coming soon! In the meantime, you can enjoy offline mode with your friends.</string>
 
     <string name="core_resources_offline_game_title">Offline game</string>
     <string name="core_resources_player_progress">Player %1$d/%2$d: %3$s</string>
@@ -220,9 +209,9 @@
     <string name="core_resources_info_eliminated">%1$d eliminated</string>
     <string name="core_resources_result_player_roles">Player roles</string>
     <string name="core_resources_result_vote_accuracy">Vote accuracy</string>
-    <string name="core_resources_face_ready_players">%1$d players ✓</string>
+    <string name="core_resources_face_ready_players">%1$d players</string>
     <string name="core_resources_face_warn_players">Need 3+ players</string>
-    <string name="core_resources_face_ready_categories">%1$d categories ✓</string>
+    <string name="core_resources_face_ready_categories">%1$d categories</string>
     <string name="core_resources_face_warn_categories">No category selected</string>
     <string name="core_resources_starts_player">Starts: %1$s</string>
     <string name="core_resources_unknown">Unknown</string>
@@ -360,4 +349,7 @@
     <string name="core_resources_cat_office_and_stationery_desc">Desk tools, stationery and workplace supplies.</string>
     <string name="core_resources_cat_emotions_and_feelings_desc">Emotional states, moods and inner reactions.</string>
     <string name="core_resources_cat_values_and_ethics_desc">Principles, morals and social values.</string>
+    <string name="core_resources_home_tab_play">Play</string>
+    <string name="core_resources_home_tab_ranking">Ranking</string>
+    <string name="core_resources_home_tab_profile">Profile</string>
 </resources>

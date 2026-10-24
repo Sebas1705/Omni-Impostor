@@ -1,31 +1,33 @@
 package es.sebas1705.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.AssistChipDefaults
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import es.sebas1705.common.theme.ThemeContrast
+import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.core.resources.R
+import es.sebas1705.ui.theme.AppDimens
+import es.sebas1705.ui.theme.AppTheme
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun ContrastChips(
     selected: ThemeContrast,
     onSelect: (ThemeContrast) -> Unit
 ) {
-    Row(
+    FlowRow(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(6.dp)
+        horizontalArrangement = Arrangement.spacedBy(AppDimens.spacing.sm)
     ) {
         ThemeContrast.entries.forEach { contrast ->
-            val isSelected = contrast == selected
-            AssistChip(
+            FilterChip(
+                selected = contrast == selected,
                 onClick = { onSelect(contrast) },
                 label = {
                     val labelRes = when (contrast) {
@@ -34,16 +36,16 @@ internal fun ContrastChips(
                         ThemeContrast.High -> R.string.core_resources_contrast_high
                     }
                     Text(stringResource(labelRes))
-                },
-                colors = AssistChipDefaults.assistChipColors(
-                    containerColor = if (isSelected) {
-                        MaterialTheme.colorScheme.primaryContainer
-                    } else {
-                        MaterialTheme.colorScheme.surfaceContainerHigh
-                    }
-                )
+                }
             )
         }
     }
 }
 
+@UiModePreviews
+@Composable
+private fun ContrastChipsPreview() {
+    AppTheme {
+        ContrastChips(selected = ThemeContrast.Medium, onSelect = {})
+    }
+}

@@ -3,6 +3,7 @@ package es.sebas1705.debug
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -18,7 +19,6 @@ import es.sebas1705.debug.viewmodel.DebugToolsViewModel
 import kotlinx.collections.immutable.toImmutableList
 import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
 import kotlin.math.roundToInt
 import es.sebas1705.core.resources.R as ResourceR
 
@@ -172,7 +172,7 @@ fun DebugToolsScreen(
     }.toImmutableList()
 
     val historyTable = if (uiState.selectedTab == DebugMetricsTab.History) {
-        val formatter = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        val formatter = SimpleDateFormat("HH:mm:ss", LocalConfiguration.current.locales[0])
         DebugTableData(
             headers = listOf(
                 stringResource(ResourceR.string.core_resources_debug_table_time),

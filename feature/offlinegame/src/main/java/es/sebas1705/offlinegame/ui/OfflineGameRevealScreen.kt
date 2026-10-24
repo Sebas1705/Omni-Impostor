@@ -19,7 +19,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -44,6 +46,8 @@ import es.sebas1705.offlinegame.ui.components.RevealGameInfoBar
 import es.sebas1705.offlinegame.ui.components.RevealHeader
 import es.sebas1705.offlinegame.ui.components.RevealProgressDots
 import es.sebas1705.offlinegame.viewmodel.OfflineGameState
+import es.sebas1705.ui.components.PrimaryActionButton
+import es.sebas1705.ui.theme.AppDimens
 
 private const val REVEALED_OFFSET_PX = -280f
 private val LANDSCAPE_BREAKPOINT = 600.dp
@@ -92,7 +96,7 @@ internal fun OfflineGameRevealScreen(
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
-                            .padding(end = 16.dp),
+                            .padding(end = AppDimens.spacing.lg),
                         verticalArrangement = Arrangement.SpaceEvenly,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
@@ -126,7 +130,7 @@ internal fun OfflineGameRevealScreen(
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
-                            .padding(start = 16.dp)
+                            .padding(start = AppDimens.spacing.lg)
                     ) {
                         RevealCard(
                             uiState = uiState,
@@ -153,7 +157,7 @@ internal fun OfflineGameRevealScreen(
                         playersSize = uiState.players.size,
                         currentPlayerName = uiState.currentPlayerName
                     )
-                    Spacer(Modifier.height(8.dp))
+                    Spacer(Modifier.height(AppDimens.spacing.sm))
                     RevealProgressDots(
                         currentRevealIndex = playerIndex,
                         totalPlayers = uiState.players.size
@@ -176,7 +180,7 @@ internal fun OfflineGameRevealScreen(
                         impostorCount = uiState.impostorPlayerIndexes.size,
                         showImpostorCount = uiState.showNumOfImpostors
                     )
-                    Spacer(Modifier.height(8.dp))
+                    Spacer(Modifier.height(AppDimens.spacing.sm))
                     RevealContinueButton(
                         hasMoreRevealPlayers = uiState.hasMoreRevealPlayers,
                         revealedCurrentCard = uiState.revealedCurrentCard,
@@ -210,15 +214,18 @@ private fun PassPhoneOverlay(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .navigationBarsPadding(),
+            .navigationBarsPadding()
+            // Swallow touches so the (already revealed) card underneath cannot be dragged.
+            .pointerInput(Unit) {},
         contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth(fraction = 0.85f)
-                .padding(32.dp),
+                .verticalScroll(rememberScrollState())
+                .padding(AppDimens.spacing.xxl),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(AppDimens.spacing.lg)
         ) {
             if (hasNextPlayer) {
                 Text(
@@ -245,13 +252,11 @@ private fun PassPhoneOverlay(
                     textAlign = TextAlign.Center
                 )
             }
-            Spacer(Modifier.height(8.dp))
-            Button(
-                onClick = onReady,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(stringResource(R.string.core_resources_ready))
-            }
+            Spacer(Modifier.height(AppDimens.spacing.sm))
+            PrimaryActionButton(
+                text = stringResource(R.string.core_resources_ready),
+                onClick = onReady
+            )
         }
     }
 }

@@ -22,8 +22,9 @@ android {
 
     defaultConfig {
         applicationId = "es.sebas1705.impostorandroidgame"
-        versionCode = 6
-        versionName = "1.2.0"
+        // CI intermediate builds (Firebase App Distribution) pass these to get a unique, increasing version.
+        versionCode = (project.findProperty("ci.versionCode") as String?)?.toIntOrNull() ?: 6
+        versionName = "1.2.0" + (project.findProperty("ci.versionNameSuffix") as String? ?: "")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

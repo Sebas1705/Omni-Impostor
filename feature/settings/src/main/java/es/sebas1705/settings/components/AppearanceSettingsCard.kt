@@ -1,30 +1,44 @@
 package es.sebas1705.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.AssistChipDefaults
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.selection.toggleable
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Palette
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import es.sebas1705.core.resources.R
 import es.sebas1705.models.DarkThemePreference
 import es.sebas1705.settings.models.AppSettingsDialogActions
 import es.sebas1705.settings.viewmodel.AppSettingsUiState
+import es.sebas1705.ui.theme.AppDimens
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun AppearanceSettingsCard(
     uiState: AppSettingsUiState,
-    actions: AppSettingsDialogActions
+    actions: AppSettingsDialogActions,
+    modifier: Modifier = Modifier
 ) {
     val settings = uiState.settings ?: return
 
-    SettingCard(title = stringResource(R.string.core_resources_settings_appearance_title)) {
+    SettingCard(
+        modifier = modifier,
+        title = stringResource(R.string.core_resources_settings_appearance_title),
+        icon = Icons.Outlined.Palette
+    ) {
         Text(
             text = stringResource(R.string.core_resources_settings_ui_contrast),
             style = MaterialTheme.typography.bodyMedium,
@@ -40,13 +54,13 @@ internal fun AppearanceSettingsCard(
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
-        Row(
+        FlowRow(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(6.dp)
+            horizontalArrangement = Arrangement.spacedBy(AppDimens.spacing.sm)
         ) {
             DarkThemePreference.entries.forEach { pref ->
-                val isSelected = pref == settings.darkThemePreference
-                AssistChip(
+                FilterChip(
+                    selected = pref == settings.darkThemePreference,
                     onClick = { actions.onUpdateDarkTheme(pref) },
                     label = {
                         val labelRes = when (pref) {
@@ -55,30 +69,32 @@ internal fun AppearanceSettingsCard(
                             DarkThemePreference.Dark -> R.string.core_resources_settings_theme_dark
                         }
                         Text(stringResource(labelRes))
-                    },
-                    colors = AssistChipDefaults.assistChipColors(
-                        containerColor = if (isSelected) {
-                            MaterialTheme.colorScheme.primaryContainer
-                        } else {
-                            MaterialTheme.colorScheme.surfaceContainerHigh
-                        }
-                    )
+                    }
                 )
             }
         }
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+            modifier = Modifier
+                .fillMaxWidth()
+                .heightIn(min = 48.dp)
+                .toggleable(
+                    value = settings.forceCompactTables,
+                    role = Role.Switch,
+                    onValueChange = actions.onUpdateCompactTables
+                ),
+            horizontalArrangement = Arrangement.spacedBy(AppDimens.spacing.md),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = stringResource(R.string.core_resources_settings_compact_tables),
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.weight(1f)
             )
             Switch(
                 checked = settings.forceCompactTables,
-                onCheckedChange = actions.onUpdateCompactTables
+                onCheckedChange = null
             )
         }
     }

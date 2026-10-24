@@ -23,7 +23,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ImpostorAndroidGame"
+rootProject.name = "Omni-Impostor"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 
@@ -37,7 +37,6 @@ include(":data")
 include(":data:analytics")
 include(":data:authentication")
 include(":data:firestore")
-include(":data:realtime")
 include(":data:room")
 include(":data:datastore")
 include(":data:files")

@@ -30,7 +30,6 @@ package "data" {
   component "datastore"
   component "files"
   component "firestore"
-  component "realtime"
   component "repositories"
   component "retrofit"
   component "room"

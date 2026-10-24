@@ -43,6 +43,7 @@ import es.sebas1705.common.utlis.extensions.primitives.pushAndFree
 import es.sebas1705.common.utlis.extensions.types.logD
 import es.sebas1705.common.utlis.extensions.types.logI
 import es.sebas1705.core.resources.Sounds
+import androidx.compose.ui.res.stringResource
 import es.sebas1705.ui.sound.LocalSoundPlayer
 import es.sebas1705.game.UserFullScreenDialog
 import es.sebas1705.home.nav.HomeGraph
@@ -152,6 +153,7 @@ fun HomeDesign(
             val sound = LocalSoundPlayer.current
             NavigationBar {
                 homeTabs.forEach { tab ->
+                    val tabLabel = stringResource(tab.labelRes)
                     val isSelected = backStack.lastOrNull() == tab.key
                     val scale by animateFloatAsState(
                         targetValue = if (isSelected) 1.15f else 1f,
@@ -211,7 +213,7 @@ fun HomeDesign(
                                 ) {
                                     Icon(
                                         imageVector = tab.icon,
-                                        contentDescription = tab.label,
+                                        contentDescription = tabLabel,
                                         modifier = iconModifier,
                                         tint = iconColor
                                     )
@@ -219,13 +221,13 @@ fun HomeDesign(
                             } else {
                                 Icon(
                                     imageVector = tab.icon,
-                                    contentDescription = tab.label,
+                                    contentDescription = tabLabel,
                                     modifier = iconModifier,
                                     tint = iconColor
                                 )
                             }
                         },
-                        label = { Text(tab.label, color = labelColor) },
+                        label = { Text(tabLabel, color = labelColor) },
                         colors = NavigationBarItemDefaults.colors(
                             indicatorColor = indicatorColor
                         )

@@ -43,7 +43,6 @@ firebase-analytics = "22.5.0"
 firebase-crashlytics = "19.4.4"
 firebaseAuthKtx = "23.2.1"
 firebaseFirestoreKtx = "25.1.4"
-firebaseDatabaseKtx = "21.0.0"
 firebaseStorageKtx = "21.0.2"
 firebase-messaging = "24.1.2"
 firebase-crashlytics-plugin = "3.0.6"
@@ -174,7 +173,6 @@ firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx"
 firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "firebase-messaging" }
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
-firebase-database = { module = "com.google.firebase:firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 firebase-storage = { module = "com.google.firebase:firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
 
 # ---------------------------

@@ -1,7 +1,13 @@
+@file:Suppress("LongMethod")
+
 package es.sebas1705.offlinegame.ui.components
 
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
@@ -16,22 +22,20 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.KeyboardArrowUp
 import androidx.compose.material.icons.outlined.People
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.TheaterComedy
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -43,22 +47,36 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import es.sebas1705.common.utlis.UiModePreviews
 import es.sebas1705.core.resources.R
 import es.sebas1705.offlinegame.viewmodel.OfflineGameState
-import es.sebas1705.core.resources.Sounds
-import es.sebas1705.ui.sound.LocalSoundPlayer
+import es.sebas1705.ui.components.PrimaryActionButton
+import es.sebas1705.ui.components.SectionHeader
+import es.sebas1705.ui.components.StatusChip
+import es.sebas1705.ui.components.StatusChipVariant
+import es.sebas1705.ui.theme.AppDimens
+import es.sebas1705.ui.theme.AppTheme
+import es.sebas1705.ui.theme.cardShape
 import kotlin.math.roundToInt
 
 private const val REVEAL_THRESHOLD_PX = -180f
 private const val REVEALED_OFFSET_PX = -280f
+private const val REVEAL_CARD_MIN_HEIGHT_DP = 260
+private const val ARROW_BOB_DP = 10f
+private const val ARROW_BOB_MS = 700
 
 @Composable
 internal fun RevealProgressDots(currentRevealIndex: Int, totalPlayers: Int) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
+        // The header already announces "player X of N", so the dots are decorative.
+        modifier = Modifier
+            .fillMaxWidth()
+            .clearAndSetSemantics {},
+        horizontalArrangement = Arrangement.spacedBy(AppDimens.spacing.sm, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically
     ) {
         repeat(totalPlayers) { index ->
@@ -99,48 +117,33 @@ internal fun RevealGameInfoBar(
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
+        horizontalArrangement = Arrangement.spacedBy(AppDimens.spacing.sm, Alignment.CenterHorizontally)
     ) {
-        AssistChip(
-            onClick = {},
-            label = { Text(stringResource(R.string.core_resources_info_players, totalPlayers)) },
-            leadingIcon = {
-                Icon(
-                    Icons.Outlined.People,
-                    contentDescription = null,
-                    modifier = Modifier.size(AssistChipDefaults.IconSize)
-                )
-            }
+        StatusChip(
+            text = stringResource(R.string.core_resources_info_players, totalPlayers),
+            icon = Icons.Outlined.People
         )
-        if(showImpostorCount) AssistChip(
-            onClick = {},
-            label = { Text(stringResource(R.string.core_resources_info_impostors, impostorCount)) },
-            leadingIcon = {
-                Icon(
-                    Icons.Outlined.TheaterComedy,
-                    contentDescription = null,
-                    modifier = Modifier.size(AssistChipDefaults.IconSize)
-                )
-            }
-        )
+        if (showImpostorCount) {
+            StatusChip(
+                text = stringResource(R.string.core_resources_info_impostors, impostorCount),
+                variant = StatusChipVariant.Warning,
+                icon = Icons.Outlined.TheaterComedy
+            )
+        }
     }
 }
 
 @Composable
 internal fun RevealHeader(playerIndex: Int, playersSize: Int, currentPlayerName: String) {
-    Text(
-        text = stringResource(
+    SectionHeader(
+        title = stringResource(
             R.string.core_resources_player_progress,
             playerIndex + 1,
             playersSize,
             currentPlayerName
         ),
-        style = MaterialTheme.typography.titleLarge
-    )
-    Text(
-        text = stringResource(R.string.core_resources_swipe_card_reveal),
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant
+        subtitle = stringResource(R.string.core_resources_swipe_card_reveal),
+        modifier = Modifier.fillMaxWidth()
     )
 }
 
@@ -171,7 +174,10 @@ internal fun RevealCard(
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .then(if (fillHeight) Modifier.fillMaxHeight() else Modifier.height(260.dp))
+                .then(
+                    if (fillHeight) Modifier.fillMaxHeight()
+                    else Modifier.heightIn(min = REVEAL_CARD_MIN_HEIGHT_DP.dp)
+                )
                 .offset { IntOffset(0, dragOffset.roundToInt()) }
                 .graphicsLayer {
                     this.rotationY = rotationY
@@ -201,7 +207,9 @@ internal fun RevealCard(
                     onRevealDone()
                 }
             },
-            colors = CardDefaults.cardColors(containerColor = cardColor)
+            shape = MaterialTheme.cardShape,
+            colors = CardDefaults.cardColors(containerColor = cardColor),
+            elevation = CardDefaults.cardElevation(defaultElevation = AppDimens.elevation.high)
         ) {
             RevealCardContent(
                 uiState = uiState,
@@ -222,71 +230,91 @@ private fun RevealCardContent(
     word: String,
     rotationY: Float
 ) {
+    val spacing = AppDimens.spacing
     val otherImpostorNames = if (isImpostor && uiState.impostorsKnowEachOther) {
         (uiState.impostorPlayerIndexes - uiState.currentRevealIndex)
             .mapNotNull { uiState.players.getOrNull(it) }
     } else emptyList()
+    val onFace = if (isImpostor) MaterialTheme.colorScheme.onErrorContainer
+    else MaterialTheme.colorScheme.onSecondaryContainer
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .graphicsLayer {
                 if (rotationY > 90f) this.rotationY = 180f
             }
-            .padding(20.dp),
+            .padding(spacing.xl),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         if (!uiState.revealedCurrentCard) {
+            val bob by rememberInfiniteTransition(label = "reveal_arrow").animateFloat(
+                initialValue = 0f,
+                targetValue = -ARROW_BOB_DP,
+                animationSpec = infiniteRepeatable(tween(ARROW_BOB_MS), RepeatMode.Reverse),
+                label = "reveal_arrow_bob"
+            )
+            Icon(
+                imageVector = Icons.Outlined.KeyboardArrowUp,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                modifier = Modifier
+                    .size(48.dp)
+                    .offset(y = bob.dp)
+            )
             Text(
                 text = uiState.currentPlayerName,
-                style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                textAlign = TextAlign.Center
             )
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(spacing.md))
             Text(
                 text = stringResource(R.string.core_resources_swipe_up_reveal),
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                textAlign = TextAlign.Center
             )
         } else {
             Icon(
                 imageVector = if (isImpostor) Icons.Outlined.TheaterComedy else Icons.Outlined.Person,
                 contentDescription = null,
                 modifier = Modifier.size(56.dp),
-                tint = if (isImpostor) MaterialTheme.colorScheme.error
-                       else MaterialTheme.colorScheme.secondary
+                tint = onFace
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(spacing.sm))
             Text(
                 text = if (isImpostor) {
                     stringResource(R.string.core_resources_role_impostor)
                 } else {
                     stringResource(R.string.core_resources_role_civilian)
                 },
-                style = MaterialTheme.typography.titleLarge,
-                color = if (isImpostor) MaterialTheme.colorScheme.onErrorContainer
-                        else MaterialTheme.colorScheme.onSecondaryContainer
+                style = MaterialTheme.typography.headlineSmall,
+                color = onFace,
+                textAlign = TextAlign.Center
             )
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(spacing.md))
             Text(
                 text = if (isImpostor) {
                     stringResource(R.string.core_resources_clue_prefix, clue)
                 } else {
                     stringResource(R.string.core_resources_word_prefix, word)
                 },
-                style = MaterialTheme.typography.bodyLarge,
-                color = if (isImpostor) MaterialTheme.colorScheme.onErrorContainer
-                        else MaterialTheme.colorScheme.onSecondaryContainer
+                style = MaterialTheme.typography.titleLarge,
+                color = onFace,
+                textAlign = TextAlign.Center
             )
             if (otherImpostorNames.isNotEmpty()) {
-                Spacer(Modifier.height(12.dp))
+                Spacer(Modifier.height(spacing.md))
                 Text(
                     text = stringResource(
                         R.string.core_resources_impostor_teammates,
                         otherImpostorNames.joinToString(", ")
                     ),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onErrorContainer
+                    color = MaterialTheme.colorScheme.onErrorContainer,
+                    textAlign = TextAlign.Center
                 )
             }
         }
@@ -299,19 +327,29 @@ internal fun RevealContinueButton(
     revealedCurrentCard: Boolean,
     onNextRevealPlayer: () -> Unit
 ) {
-    val sound = LocalSoundPlayer.current
-    FilledTonalButton(
-        onClick = { sound(Sounds.CLK_ARCADE); onNextRevealPlayer() },
-        enabled = revealedCurrentCard,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(
-            if (hasMoreRevealPlayers) {
-                stringResource(R.string.core_resources_next_player)
-            } else {
-                stringResource(R.string.core_resources_start_game)
-            }
-        )
-    }
+    PrimaryActionButton(
+        text = if (hasMoreRevealPlayers) {
+            stringResource(R.string.core_resources_next_player)
+        } else {
+            stringResource(R.string.core_resources_start_game)
+        },
+        onClick = onNextRevealPlayer,
+        enabled = revealedCurrentCard
+    )
 }
 
+@UiModePreviews
+@Composable
+private fun RevealChromePreview() {
+    AppTheme {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            RevealHeader(playerIndex = 1, playersSize = 4, currentPlayerName = "Ana")
+            RevealProgressDots(currentRevealIndex = 1, totalPlayers = 4)
+            RevealGameInfoBar(totalPlayers = 4, impostorCount = 1, showImpostorCount = true)
+            RevealContinueButton(hasMoreRevealPlayers = true, revealedCurrentCard = true, onNextRevealPlayer = {})
+        }
+    }
+}

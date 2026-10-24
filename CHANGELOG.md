@@ -5,11 +5,42 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- Intermediate builds: every push to develop builds the Dev release APK and distributes it to testers with Firebase App Distribution (distribute.yml; setup in docs/firebase-distribution.md).
+- Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
+- Unit tests guarding WCAG AA contrast of every color scheme and one distinct icon per category.
+
+### Changed
+- Visual refresh of the whole app (same palette and fonts): home/setup, categories, players and mode screens; reveal, discussion, result and rating screens; ranking and profile; settings, login and splash. Shared spacing/elevation tokens and base components (`AppCard`, `SectionHeader`, `StatusChip`, `PrimaryActionButton`) in `core/ui`.
+- Discussion timer shows urgency in the last 30 s and 10 s and a clear "time is up" state; the result screen highlights the winner.
+- Medium-contrast light theme: darker secondary/tertiary containers so their text meets WCAG AA.
+- Each word category now has its own, more fitting icon.
+
+### Fixed
+- Texts built outside the UI (e.g. "Player3 starts the discussion.", login and profile messages) now follow the language chosen in the app instead of the system language.
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
+- Offline game: the discussion timer never started counting down (state read before the update ran); vote and guess side effects (sound, ranking) now run outside the state update.
+- Offline game: names that collapse below 3 players after trimming/de-duplicating are rejected instead of starting a degenerate game.
+
+### Removed
+- Online game mode leftovers: mode selector and "coming soon" text on the setup screen, Online tabs in Ranking and Profile, the unused `:data:realtime` module and the Firebase Realtime Database dependency, plus their strings and docs. The offline game is unchanged.
+
 ## [v1.2.0] - 2026-06-30
 
-<!-- Release notes generated using configuration in .github/release.yml at v1.2.0 -->
+### Added
+- Minimum of 3 players to start a game, and a role visual indicator in the reveal screen (from tester feedback).
+- Post-game clue rating: players can rate the impostors' clues, stored anonymously in Firestore (`clue_ratings`).
+- Categories screen keeps a draft selection until you save it.
 
+### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
+- Game state is no longer lost on configuration changes (rotation, language, theme).
+- Reveal card snaps back to its color and rotation when moving to the next player.
+- Couchbase word documents: removed the `relatedWords` field and fixed default parameters when reading documents.
+- Firestore security rules allow authenticated writes to `clue_ratings`.
 
+### Changed
+- Gradle wrapper upgraded from 8.11.1 to 9.6.1; the release workflow now builds an AAB attached to the GitHub Release.
 
 **Full Changelog**: https://github.com/Sebas1705/Omni-Impostor/compare/v1.1.3...v1.2.0
 ## [1.1.3] - 2026-06-28
@@ -22,6 +53,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `gradle.properties` and `gradle-wrapper.properties` committed to repo.
 
 ### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Google sign-in (Credential Manager): pass `Activity` context through all layers for Android ≤ 13.
 - Google sign-in fallback: add `GetSignInWithGoogleOption` so sign-in works on all devices.
 - Rotation: `showPassPhoneOverlay` uses `rememberSaveable` — no longer dismissed on screen rotation.
@@ -34,6 +66,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.1.1] - 2026-05-20
 
 ### Fixed
+- Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Word collections: separate EN/ES lists so the language setting is respected during gameplay.
 - Music: pause background music when app goes to background.
 

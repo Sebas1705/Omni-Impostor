@@ -6,6 +6,7 @@ import com.google.firebase.firestore.SetOptions
 import es.sebas1705.common.managers.ClassLogData
 import es.sebas1705.models.ClueRating
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.cancellation.CancellationException
 import javax.inject.Inject
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
@@ -25,7 +26,7 @@ class ClueRatingFirestoreDataSource @Inject constructor(
 
     suspend fun submitRatings(ratings: List<ClueRating>): Boolean {
         if (ratings.isEmpty()) return true
-        return runCatching {
+        return try {
             val batch = firestore.batch()
             ratings.forEach { rating ->
                 val docId = buildDocId(rating.category, rating.word, rating.clue)
@@ -44,7 +45,12 @@ class ClueRatingFirestoreDataSource @Inject constructor(
                     .addOnSuccessListener { cont.resume(true) }
                     .addOnFailureListener { cont.resumeWithException(it) }
             }
-        }.getOrElse { false }
+        } catch (e: CancellationException) {
+            // Never swallow cancellation: the caller's coroutine must be able to stop.
+            throw e
+        } catch (_: Exception) {
+            false
+        }
     }
 
     private fun buildDocId(category: String, word: String, clue: String): String =

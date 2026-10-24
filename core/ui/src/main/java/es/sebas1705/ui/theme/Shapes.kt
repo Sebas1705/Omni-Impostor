@@ -1,7 +1,11 @@
 package es.sebas1705.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 
 /**
@@ -17,3 +21,7 @@ val appShapes = Shapes(
     large = RoundedCornerShape(16.dp),
     extraLarge = RoundedCornerShape(24.dp)
 )
+
+/** Shape used by cards: the theme's `large` shape, so it follows `appShapes`. */
+val MaterialTheme.cardShape: Shape
+    @Composable @ReadOnlyComposable get() = shapes.large

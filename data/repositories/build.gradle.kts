@@ -14,7 +14,6 @@ dependencies {
     api(projects.data.datastore)
     api(projects.data.files)
     api(projects.data.firestore)
-    api(projects.data.realtime)
     api(projects.data.retrofit)
     api(projects.data.room)
 }
