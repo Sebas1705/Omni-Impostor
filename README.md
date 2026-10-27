@@ -6,6 +6,13 @@ Built on **multi-module Clean Architecture** with Firebase, Hilt, and Material D
 
 [![Play Store](https://img.shields.io/badge/Play%20Store-Omni--Impostor-green)](https://play.google.com/store/apps/details?id=es.sebas1705.impostorandroidgame)
 
+<p align="center">
+  <img src="docs/screenshots/1.png" width="200" alt="Game setup: categories, players and mode" />
+  <img src="docs/screenshots/2.png" width="200" alt="Player list editor" />
+  <img src="docs/screenshots/3.png" width="200" alt="Secret role reveal card (impostor)" />
+  <img src="docs/screenshots/4.png" width="200" alt="Round result: civilians win" />
+</p>
+
 ---
 
 ## Features
