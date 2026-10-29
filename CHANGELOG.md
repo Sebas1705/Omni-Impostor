@@ -13,6 +13,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Intermediate builds: every push to develop builds the Dev release APK and distributes it to testers with Firebase App Distribution (distribute.yml; setup in docs/firebase-distribution.md).
 - Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
 - Unit tests guarding WCAG AA contrast of every color scheme and one distinct icon per category.
+- `jacocoMergedReport` merges every module's unit-test coverage into `build/reports/jacoco/merged`, and the validate workflow posts the total line coverage in the job summary.
 
 ### Changed
 - Visual refresh of the whole app (same palette and fonts): home/setup, categories, players and mode screens; reveal, discussion, result and rating screens; ranking and profile; settings, login and splash. Shared spacing/elevation tokens and base components (`AppCard`, `SectionHeader`, `StatusChip`, `PrimaryActionButton`) in `core/ui`.
@@ -21,6 +22,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Each word category now has its own, more fitting icon.
 
 ### Fixed
+- `coverageUnitTestAll` never ran any test (locally or in CI): the per-module `jacocoTestReport` looked up `testDebugUnitTest` before Android had created it, so every report was skipped with no execution data.
+- `MVIBaseViewModel.onInit()` ran inside the base constructor, before the subclass's injected dependencies were assigned (Profile, Face and Ranking ViewModels override it). The hook is now posted to the main dispatcher and runs once the ViewModel is fully constructed.
+- `OfflineGameViewModelTest` no longer busy-waits on the real `Dispatchers.IO` with `Thread.sleep`: the ViewModel takes its IO dispatcher as a constructor parameter and the test runs it on the shared test scheduler, so it is deterministic.
 - Settings and game-setup defaults are now written by DataStore migrations before the first read. They were written fire-and-forget from the data sources' `init` on a detached `Dispatchers.IO` scope, so the first read could see uninitialised values (0 volume, empty language, no players) and failures were silently swallowed.
 - Texts built outside the UI (e.g. "Player3 starts the discussion.", login and profile messages) now follow the language chosen in the app instead of the system language.
 - Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.

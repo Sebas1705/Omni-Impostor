@@ -39,7 +39,7 @@ import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.eq
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.stub
-import org.mockito.kotlin.timeout
+import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyBlocking
 import org.mockito.kotlin.verifyNoInteractions
@@ -51,7 +51,8 @@ import java.util.Locale
 /**
  * Main is a [StandardTestDispatcher], like the real Main dispatcher (not immediate): work launched
  * with `execute`/`updateUi` only runs when the test calls [settle]. That is what exposed the
- * discussion-timer race, so these tests must not use an unconfined Main.
+ * discussion-timer race, so these tests must not use an unconfined Main. The view model's IO
+ * dispatcher shares the same scheduler, so background work is just as deterministic.
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(RobolectricTestRunner::class)
@@ -169,7 +170,7 @@ class OfflineGameViewModelTest {
         assertEquals(1, result.correctVotes)
         assertEquals(0, result.incorrectVotes)
         verify(soundPool).play(Sounds.SND_WIN, 1f)
-        verifyBlocking(recordMatch, timeout(2_000).times(1)) {
+        verifyBlocking(recordMatch, times(1)) {
             invoke(
                 eq(names.toSet()),
                 eq(names.filterIndexed { i, _ -> i != impostor }.toSet()),
@@ -205,7 +206,7 @@ class OfflineGameViewModelTest {
         assertEquals(OfflineGameStep.Result, state.step)
         assertEquals(OfflineWinner.Tie, requireNotNull(state.result).winner)
         verify(soundPool).play(Sounds.SND_BOWING, 1f)
-        verifyBlocking(recordMatch, timeout(2_000).times(1)) {
+        verifyBlocking(recordMatch, times(1)) {
             invoke(eq(names.toSet()), eq(emptySet()), eq(emptySet()))
         }
     }
@@ -225,7 +226,7 @@ class OfflineGameViewModelTest {
         assertEquals(OfflineWinner.Impostors, requireNotNull(state.result).winner)
         verify(soundPool).play(Sounds.SND_LOSE, 1f)
         val impostorNames = state.impostorPlayerIndexes.map { state.players[it] }.toSet()
-        verifyBlocking(recordMatch, timeout(2_000).times(1)) {
+        verifyBlocking(recordMatch, times(1)) {
             invoke(eq(setOf("A", "B", "C", "D", "E")), eq(emptySet()), eq(impostorNames))
         }
     }
@@ -263,7 +264,7 @@ class OfflineGameViewModelTest {
         assertEquals("Árbol", result.word)
         verify(soundPool).play(Sounds.SND_LOSE, 1f)
         val impostorNames = state.impostorPlayerIndexes.map { state.players[it] }.toSet()
-        verifyBlocking(recordMatch, timeout(2_000).times(1)) {
+        verifyBlocking(recordMatch, times(1)) {
             invoke(eq(names.toSet()), eq(emptySet()), eq(impostorNames))
         }
     }
@@ -339,7 +340,6 @@ class OfflineGameViewModelTest {
         val first = state
 
         send(initialize(listOf("X", "Y", "Z")))
-        settleIo()
 
         assertEquals(first.players, state.players)
         assertEquals(first.impostorPlayerIndexes, state.impostorPlayerIndexes)
@@ -367,7 +367,7 @@ class OfflineGameViewModelTest {
         val expected = impostorClues.map {
             ClueRating(word = "Árbol", category = "ANIMALS", clue = it, isPositive = it != disliked)
         }
-        verifyBlocking(submitRatings, timeout(2_000).times(1)) { invoke(eq(expected)) }
+        verifyBlocking(submitRatings, times(1)) { invoke(eq(expected)) }
     }
 
     @Test
@@ -420,6 +420,7 @@ class OfflineGameViewModelTest {
         submitClueRatingsUseCase = submitRatings,
         mediaPlayerManager = mediaPlayer,
         soundPoolManager = soundPool,
+        ioDispatcher = StandardTestDispatcher(scheduler),
     ).also { created ->
         // uiState is a WhileSubscribed stateIn: without a subscriber `.value` never moves.
         collectors += CoroutineScope(Dispatchers.Unconfined).launch { created.uiState.collect() }
@@ -478,22 +479,13 @@ class OfflineGameViewModelTest {
         settle()
     }
 
-    /** `initialize` runs on Dispatchers.IO (real time); give it a moment, pumping Main meanwhile. */
-    private fun settleIo() {
-        val until = System.nanoTime() + 300_000_000L
-        while (System.nanoTime() < until) {
-            settle()
-            Thread.sleep(5)
-        }
-    }
-
+    /**
+     * Background work runs on a [StandardTestDispatcher] sharing [scheduler] with Main, so a single
+     * [settle] runs it deterministically: no real threads, no sleeping, no wall-clock deadlines.
+     */
     private fun awaitUntil(condition: (OfflineGameState) -> Boolean) {
-        val deadline = System.nanoTime() + 5_000_000_000L
-        while (!condition(state)) {
-            check(System.nanoTime() < deadline) { "Timed out waiting for state, last=$state" }
-            Thread.sleep(5)
-            settle()
-        }
+        settle()
+        check(condition(state)) { "State did not reach the expected condition, last=$state" }
     }
 
     // endregion

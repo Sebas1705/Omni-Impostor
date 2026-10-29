@@ -1,13 +1,30 @@
 package es.sebas1705.common.extensions.primitives
 
 import es.sebas1705.common.utlis.extensions.primitives.millisToFormatDate
+import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import java.util.TimeZone
 
 class LongExtensionsTest {
+
+    // millisToFormatDate uses the system zone; the expected strings below are Europe/Madrid times,
+    // so pin it instead of depending on the machine (CI runners are UTC).
+    private val previousZone = TimeZone.getDefault()
+
+    @Before
+    fun setUp() {
+        TimeZone.setDefault(TimeZone.getTimeZone("Europe/Madrid"))
+    }
+
+    @After
+    fun tearDown() {
+        TimeZone.setDefault(previousZone)
+    }
 
     @Test fun `millisToFormatDate formats epoch millis correctly`() {
         val epochMillis = 0L
