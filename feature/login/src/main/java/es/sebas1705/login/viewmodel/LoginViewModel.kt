@@ -161,7 +161,7 @@ class LoginViewModel @Inject constructor(
             onLoading = { startLoading() },
             onEmptySuccess = {
                 stopLoading()
-                logI("Password reset email sent to $email")
+                logI("Password reset email sent.")
                 updateUi { it.copy(resetEmailSent = true, errorMessage = null) }
             },
             onError = { message ->

@@ -1,53 +1,22 @@
 package es.sebas1705.datastore.datasources
 
-import android.content.Context
 import androidx.datastore.core.DataStore
-import dagger.hilt.android.qualifiers.ApplicationContext
 import es.sebas1705.datastore.SettingsPreferences
-import es.sebas1705.datastore.config.DefaultValuesDS
 import es.sebas1705.datastore.model.SettingsData
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Settings stored in Proto DataStore. The defaults (including the initial language from the
+ * device locale) are written by [es.sebas1705.datastore.migrations.SettingsDefaultsMigration],
+ * registered in the DataStore factory, before the first value is served.
+ */
 @Singleton
 class SettingsPreferencesDataSource @Inject constructor(
-    @param:ApplicationContext private val context: Context,
     private val settingsPreferences: DataStore<SettingsPreferences>
 ) {
-
-    init {
-        CoroutineScope(Dispatchers.IO + SupervisorJob()).launch {
-            runCatching {
-                settingsPreferences.updateData {
-                    if (it.defaultSet) it
-                    else it.toBuilder()
-                        .setContrast(DefaultValuesDS.APP_UI_CONTRAST)
-                        .setFirstTime(DefaultValuesDS.FIRST_TIME)
-                        .setMusicVolume(DefaultValuesDS.MUSIC_VOLUME)
-                        .setSoundVolume(DefaultValuesDS.SOUND_VOLUME)
-                        .setAppLanguage(resolveInitialLanguage())
-                        .setForceCompactTables(DefaultValuesDS.FORCE_COMPACT_TABLES)
-                        .setDefaultSet(true)
-                        .build()
-                }
-            }
-        }
-    }
-
-    private fun resolveInitialLanguage(): String {
-        val currentLanguage = context.resources.configuration.locales[0]?.language.orEmpty()
-        return if (currentLanguage.equals("es", ignoreCase = true)) {
-            "es"
-        } else {
-            DefaultValuesDS.APP_LANGUAGE
-        }
-    }
 
     /**
      * Settings data

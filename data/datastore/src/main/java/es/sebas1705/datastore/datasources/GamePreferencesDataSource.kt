@@ -2,50 +2,21 @@ package es.sebas1705.datastore.datasources
 
 import androidx.datastore.core.DataStore
 import es.sebas1705.datastore.GamePreferences
+import es.sebas1705.datastore.migrations.GameDefaultsMigration
+import es.sebas1705.datastore.migrations.GameDefaultsMigration.DEFAULT_IMPOSTORS
 import es.sebas1705.datastore.model.GameData
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Game setup stored in Proto DataStore. The defaults are written by [GameDefaultsMigration]
+ * (registered in the DataStore factory) before the first value is served.
+ */
 @Singleton
 class GamePreferencesDataSource @Inject constructor(
     private val gamePreferences: DataStore<GamePreferences>
 ) {
-
-    init {
-        CoroutineScope(Dispatchers.IO + SupervisorJob()).launch {
-            runCatching {
-                gamePreferences.updateData {
-                    if (it.defaultSet) {
-                        it
-                    } else {
-                        it.toBuilder()
-                            .apply {
-                                if (it.playersCount == 0) {
-                                    addAllPlayers(DEFAULT_PLAYERS)
-                                }
-                                if (it.mode.isEmpty()) {
-                                    mode = DEFAULT_MODE
-                                }
-                                if (it.impostors <= 0) {
-                                    impostors = DEFAULT_IMPOSTORS
-                                }
-                                showImpostorsInResult = DEFAULT_SHOW_IMPOSTORS_IN_RESULT
-                                if (it.discussionTimerSeconds <= 0) {
-                                    discussionTimerSeconds = DEFAULT_DISCUSSION_TIMER_SECONDS
-                                }
-                                setDefaultSet(true)
-                            }
-                            .build()
-                    }
-                }
-            }
-        }
-    }
 
     private val gameData = gamePreferences.data.map {
         GameData(
@@ -112,13 +83,4 @@ class GamePreferencesDataSource @Inject constructor(
     }
 
     fun getGameData() = gameData
-
-    private companion object {
-        val DEFAULT_PLAYERS = listOf("Player1", "Player2", "Player3", "Player4")
-        // Must match Modes.Classic.name — keep in sync if the enum is renamed
-        const val DEFAULT_MODE = "Classic"
-        const val DEFAULT_IMPOSTORS = 1
-        const val DEFAULT_SHOW_IMPOSTORS_IN_RESULT = true
-        const val DEFAULT_DISCUSSION_TIMER_SECONDS = 180
-    }
 }

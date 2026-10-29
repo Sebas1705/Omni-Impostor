@@ -23,7 +23,7 @@ class MyFirebaseMessagingService @Inject constructor() : FirebaseMessagingServic
      * @author Sebas1705 01/03/2025
      */
     private fun sendRegistrationToken(token: String) {
-        Log.d("Token", token)
+        // Never log the FCM registration token: it identifies the device/user.
     }
 
 }

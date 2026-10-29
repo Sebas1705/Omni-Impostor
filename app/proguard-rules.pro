@@ -34,3 +34,11 @@
 -keep class es.sebas1705.couchbase.datasources.** { *; }
 -keepattributes Signature,InnerClasses,EnclosingMethod,*Annotation*,MethodParameters
 
+
+# Strip verbose/debug/info logging from release builds so nothing logged at those levels
+# (user data, tokens, debug payloads) ever reaches logcat. Warnings and errors are kept.
+-assumenosideeffects class android.util.Log {
+    public static int v(...);
+    public static int d(...);
+    public static int i(...);
+}

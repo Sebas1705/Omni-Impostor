@@ -11,6 +11,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import es.sebas1705.datastore.GamePreferences
 import es.sebas1705.datastore.SettingsPreferences
+import es.sebas1705.datastore.migrations.GameDefaultsMigration
+import es.sebas1705.datastore.migrations.SettingsDefaultsMigration
 import es.sebas1705.datastore.serializers.GAME_PREFERENCES_FILE_NAME
 import es.sebas1705.datastore.serializers.GameSerializer
 import es.sebas1705.datastore.serializers.SETTINGS_PREFERENCES_FILE_NAME
@@ -42,6 +44,13 @@ object DatastoreDataModule {
         serializer = SettingsSerializer(),
         produceFile = { context.dataStoreFile(SETTINGS_PREFERENCES_FILE_NAME) },
         corruptionHandler = null,
+        migrations = listOf(
+            SettingsDefaultsMigration {
+                SettingsDefaultsMigration.languageFor(
+                    context.resources.configuration.locales[0]?.language
+                )
+            }
+        ),
         scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     )
 
@@ -53,6 +62,7 @@ object DatastoreDataModule {
         serializer = GameSerializer(),
         produceFile = { context.dataStoreFile(GAME_PREFERENCES_FILE_NAME) },
         corruptionHandler = null,
+        migrations = listOf(GameDefaultsMigration),
         scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     )
 }
