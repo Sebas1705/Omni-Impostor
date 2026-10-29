@@ -37,6 +37,7 @@ class UnitTestConventionPlugin : Plugin<Project> {
                 testImplementation(libs.findLibrary("test-runner").get())
                 testImplementation(libs.findLibrary("test-rules").get())
                 testImplementation(libs.findLibrary("turbine").get())
+                testImplementation(libs.findLibrary("kotlinx-test").get())
                 testImplementation(libs.findLibrary("reflections-test").get())
                 testImplementation(libs.findLibrary("robolectric").get())
             }

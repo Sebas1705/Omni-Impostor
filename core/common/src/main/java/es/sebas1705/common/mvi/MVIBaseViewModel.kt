@@ -61,7 +61,10 @@ abstract class MVIBaseViewModel<S : MVIBaseState, I : MVIBaseIntent>(
 
 
     /**
-     * Initialization function for the viewModel, called in the init block. It is used to log the number of instances of the viewModel in debug mode and to collect the uiState for logging purposes.
+     * Initialization hook for the viewModel. It runs on the main dispatcher right after the
+     * viewModel has been fully constructed, so every injected dependency is available here. The
+     * base implementation logs the number of instances in debug mode and collects the uiState for
+     * logging purposes; overrides should call `super.onInit()`.
      *
      * @since 0.1.0
      * @author Sebas1705 12/05/2026
@@ -85,8 +88,13 @@ abstract class MVIBaseViewModel<S : MVIBaseState, I : MVIBaseIntent>(
         }
     }
 
+    // Posted to Main instead of invoked here: this block runs inside the superclass constructor,
+    // before Kotlin has assigned the subclass's constructor properties. Calling onInit() directly
+    // let an override read a not-yet-injected dependency (null) or launch work that raced the rest
+    // of the constructor. Dispatchers.Main (not .immediate) always dispatches, so onInit() runs once
+    // construction is done.
     init {
-        onInit()
+        execute { onInit() }
     }
 
     override fun onCleared() {

@@ -23,6 +23,7 @@ import es.sebas1705.offlinegame.models.OfflineGameResult
 import es.sebas1705.offlinegame.models.OfflineGameStep
 import es.sebas1705.offlinegame.models.OfflineWinner
 import es.sebas1705.ranking.RecordOfflineMatchResultUseCase
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.update
@@ -32,14 +33,35 @@ import kotlin.random.Random
 
 @HiltViewModel
 @Suppress("TooManyFunctions")
-class OfflineGameViewModel @Inject constructor(
-    @ApplicationContext context: Context,
+class OfflineGameViewModel internal constructor(
+    context: Context,
     private val searchWordsUseCase: SearchWordsUseCase,
     private val recordOfflineMatchResultUseCase: RecordOfflineMatchResultUseCase,
     private val submitClueRatingsUseCase: SubmitClueRatingsUseCase,
     private val mediaPlayerManager: MediaPlayerManager,
     private val soundPoolManager: SoundPoolManager,
+    // Background work (word search, ranking and rating writes). Injectable so tests can run it on
+    // their own scheduler instead of the real Dispatchers.IO.
+    private val ioDispatcher: CoroutineDispatcher,
 ) : MVIBaseViewModel<OfflineGameState, OfflineGameIntent>(context) {
+
+    @Inject
+    constructor(
+        @ApplicationContext context: Context,
+        searchWordsUseCase: SearchWordsUseCase,
+        recordOfflineMatchResultUseCase: RecordOfflineMatchResultUseCase,
+        submitClueRatingsUseCase: SubmitClueRatingsUseCase,
+        mediaPlayerManager: MediaPlayerManager,
+        soundPoolManager: SoundPoolManager,
+    ) : this(
+        context,
+        searchWordsUseCase,
+        recordOfflineMatchResultUseCase,
+        submitClueRatingsUseCase,
+        mediaPlayerManager,
+        soundPoolManager,
+        Dispatchers.IO,
+    )
 
     private companion object {
         const val PREVIEW_MAX_ITEMS = 3
@@ -63,7 +85,7 @@ class OfflineGameViewModel @Inject constructor(
     @Suppress("LongMethod")
     private fun initialize(
         intent: OfflineGameIntent.Initialize
-    ) = execute(Dispatchers.IO) {
+    ) = execute(ioDispatcher) {
         if (_uiState.value.wordEntry != null) {
             logD("initialize skipped reason=already_initialized")
             return@execute
@@ -361,7 +383,7 @@ class OfflineGameViewModel @Inject constructor(
         state.copy(clueRatings = state.clueRatings + (clueText to isPositive))
     }
 
-    private fun submitRatings() = execute(Dispatchers.IO) {
+    private fun submitRatings() = execute(ioDispatcher) {
         val state = _uiState.value
         val word = state.wordEntry?.word.orEmpty()
         val category = state.wordEntry?.category?.name.orEmpty()
@@ -483,7 +505,7 @@ class OfflineGameViewModel @Inject constructor(
                 "civilianWinners=${civilianWinnerNames.preview()} impostorWinners=${impostorWinnerNames.preview()}"
         )
 
-        execute(Dispatchers.IO) {
+        execute(ioDispatcher) {
             runCatching {
                 recordOfflineMatchResultUseCase(
                     allPlayerNames = players.toSet(),

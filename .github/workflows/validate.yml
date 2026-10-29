@@ -53,6 +53,8 @@ jobs:
               - 'core/**'
               - 'domain/**'
               - 'data/**'
+              - 'build-logic/**'
+              - 'build.gradle.kts'
               - '.github/workflows/validate.yml'
   build_lint:
     name: Build + Lint
@@ -110,6 +112,37 @@ jobs:
         uses: ./.github/actions/android-ci-setup
       - name: Run Unit Tests and Coverage
         run: ./gradlew coverageUnitTestAll --stacktrace --no-daemon --build-cache
+      - name: Post coverage to job summary
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import os
+          import xml.etree.ElementTree as ET
+
+          report_path = "build/reports/jacoco/merged/jacocoMergedReport.xml"
+          out = open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8")
+          out.write("## Unit test coverage (JaCoCo, merged)\n\n")
+          if not os.path.exists(report_path):
+              out.write("Merged report not found: the tests failed before `jacocoMergedReport` ran.\n")
+              raise SystemExit(0)
+
+          report = ET.parse(report_path).getroot()
+          counters = {c.get("type"): (int(c.get("covered")), int(c.get("missed"))) for c in report.findall("counter")}
+
+          def pct(covered, missed):
+              total = covered + missed
+              return 0.0 if total == 0 else 100.0 * covered / total
+
+          line_covered, line_missed = counters.get("LINE", (0, 0))
+          out.write(f"**Total line coverage: {pct(line_covered, line_missed):.2f}%** "
+                    f"({line_covered}/{line_covered + line_missed} lines)\n\n")
+          out.write("| Counter | Covered | Missed | % |\n|---|---:|---:|---:|\n")
+          for name in ("INSTRUCTION", "BRANCH", "LINE", "METHOD", "CLASS"):
+              if name in counters:
+                  covered, missed = counters[name]
+                  out.write(f"| {name} | {covered} | {missed} | {pct(covered, missed):.2f} |\n")
+          out.write("\nPer-module and merged HTML reports are in the `test-coverage-reports` artifact.\n")
+          PY
       - name: Upload Test and Coverage Reports
         if: always()
         uses: actions/upload-artifact@v4
