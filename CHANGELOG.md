@@ -5,6 +5,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Security
+- Release builds strip `Log.v`/`Log.d`/`Log.i` with an R8 `-assumenosideeffects` rule (warnings and errors are kept).
+- Logs no longer contain personal data: the password-reset log no longer prints the email, MVI intent logs no longer dump the intent payload (credentials typed on the login screen), analytics logs print the bundle key count instead of its values and no longer print user-property values, and the (disabled) FCM service no longer logs the registration token.
+
 ### Added
 - Intermediate builds: every push to develop builds the Dev release APK and distributes it to testers with Firebase App Distribution (distribute.yml; setup in docs/firebase-distribution.md).
 - Unit tests for `OfflineGameViewModel` (reveal, timer, voting, guess, setup, rating).
@@ -17,6 +21,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Each word category now has its own, more fitting icon.
 
 ### Fixed
+- Settings and game-setup defaults are now written by DataStore migrations before the first read. They were written fire-and-forget from the data sources' `init` on a detached `Dispatchers.IO` scope, so the first read could see uninitialised values (0 volume, empty language, no players) and failures were silently swallowed.
 - Texts built outside the UI (e.g. "Player3 starts the discussion.", login and profile messages) now follow the language chosen in the app instead of the system language.
 - Bottom navigation labels (Play, Ranking, Profile) are now translated; they were hardcoded in English.
 - Offline game: the discussion timer never started counting down (state read before the update ran); vote and guess side effects (sound, ranking) now run outside the state update.

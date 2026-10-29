@@ -136,7 +136,7 @@ abstract class MVIBaseViewModel<S : MVIBaseState, I : MVIBaseIntent>(
             try {
                 val viewModelName = this::class.java.simpleName
                 val intentName = intent::class.simpleName ?: intent::class.java.simpleName
-                logD("[INTENT:$viewModelName] $intentName | payload=$intent")
+                logD("[INTENT:$viewModelName] $intentName")
             } catch (_: Exception) {
             }
         }

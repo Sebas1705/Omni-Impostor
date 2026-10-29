@@ -19,7 +19,7 @@ class SetUserPropertyUseCase @Inject constructor(
     private val analyticsRepository: IAnalyticsRepository
 ) {
     operator fun invoke(userProperty: UserProperty, value: String) {
-        logI("UserProperty: ${userProperty.tag}, Value: $value")
+        logI("UserProperty set: ${userProperty.tag}")
         analyticsRepository.setUserProperty(userProperty, value)
     }
 }

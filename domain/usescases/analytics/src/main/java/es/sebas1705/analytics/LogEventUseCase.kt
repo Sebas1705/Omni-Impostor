@@ -20,7 +20,7 @@ class LogEventUseCase @Inject constructor(
     private val analyticsRepository: IAnalyticsRepository
 ) {
     operator fun invoke(event: EventLog, bundle: Bundle) {
-        logI("Event: ${event.tag}, Bundle: $bundle")
+        logI("Event: ${event.tag}, bundleKeys: ${bundle.size()}")
         analyticsRepository.logEvent(event, bundle)
     }
 }
