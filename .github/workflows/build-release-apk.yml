@@ -26,10 +26,11 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - name: Checkout main
+      - name: Checkout tag commit
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: refs/tags/${{ github.event.inputs.release_tag }}
+          fetch-depth: 0
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
@@ -84,7 +85,11 @@ jobs:
 
       - name: Build Pro Release AAB
         if: github.event.inputs.build_type == 'release'
-        run: ./gradlew :app:bundleProRelease --stacktrace --no-daemon --build-cache
+        env:
+          RELEASE_TAG: ${{ github.event.inputs.release_tag }}
+        run: |
+          ./gradlew :app:bundleProRelease -Pci.versionName="${RELEASE_TAG#v}" -Pci.versionCode="$(git rev-list --count HEAD)" \
+            --stacktrace --no-daemon --build-cache
 
       - name: Build Dev Debug APK (smoke test)
         if: github.event.inputs.build_type == 'debug'

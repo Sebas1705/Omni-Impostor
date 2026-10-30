@@ -1,0 +1,35 @@
+name: Google Play (fastlane supply)
+description: >
+  Runs `fastlane supply` against es.sebas1705.impostorandroidgame with the PLAY_SERVICE_ACCOUNT_JSON
+  of Doppler (docs/play-release.md). A missing key is an error: this only runs when someone asked
+  for it (PLAY_TRACK set, or a manual promote), so it must never end green having done nothing.
+  Needs DOPPLER_TOKEN in the environment.
+inputs:
+  args:
+    description: Arguments for `fastlane supply` (package and key are added here)
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: dopplerhq/cli-action@v3
+
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: "3.3"
+
+    - name: fastlane supply
+      shell: bash
+      env:
+        SUPPLY_ARGS: ${{ inputs.args }}
+      run: |
+        gem install fastlane -v 2.241.0 --no-document --silent
+        trap 'rm -f "$RUNNER_TEMP/play-sa.json"' EXIT
+        doppler run -- bash -c '
+          if [ -z "$PLAY_SERVICE_ACCOUNT_JSON" ]; then
+            echo "::error::PLAY_SERVICE_ACCOUNT_JSON is not in Doppler (docs/play-release.md)"
+            exit 1
+          fi
+          umask 077
+          printf "%s" "$PLAY_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/play-sa.json"'
+        # shellcheck disable=SC2086
+        fastlane supply --package_name es.sebas1705.impostorandroidgame --json_key "$RUNNER_TEMP/play-sa.json" $SUPPLY_ARGS
