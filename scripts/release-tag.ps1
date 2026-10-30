@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateRange(0, 999)]
-    [int]$Patch,
+    [ValidatePattern('^\d+\.\d+\.\d+$')]
+    [string]$Version,
 
     [switch]$Push,
     [switch]$DryRun
@@ -39,8 +39,7 @@ if (-not $DryRun -and -not [string]::IsNullOrWhiteSpace(($status -join "").Trim(
 
 Exec-Git -Args @("fetch", "origin", "main", "--tags", "--quiet") | Out-Null
 
-$utcNow = [DateTime]::UtcNow
-$tag = "v{0}.{1}.{2}" -f $utcNow.Year, $utcNow.ToString("MM"), $Patch
+$tag = "v$Version"
 
 if ((& git rev-parse -q --verify "refs/tags/$tag") 2>$null) {
     throw "Local tag already exists: $tag"

@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateRange(0, 999)]
-    [int]$Patch,
+    [ValidatePattern('^\d+\.\d+\.\d+$')]
+    [string]$Version,
     [switch]$Push,
     [switch]$DryRun
 )
@@ -38,8 +38,7 @@ $tagScriptPath = Join-Path $repoRoot 'scripts/release-tag.ps1'
 if (-not (Test-Path $tagScriptPath)) {
     throw "Could not find release-tag.ps1 at $tagScriptPath"
 }
-$utcNow = [DateTime]::UtcNow
-$tag = "v{0}.{1}.{2}" -f $utcNow.Year, $utcNow.ToString('MM'), $Patch
+$tag = "v$Version"
 $originUrl = (Exec-Git -Args @('remote', 'get-url', 'origin')).Trim()
 $repoUrl = Get-GitHubRepoUrl -RemoteUrl $originUrl
 $releaseUrl = "$repoUrl/releases/tag/$tag"
@@ -60,7 +59,7 @@ finally {
     Pop-Location
 }
 $tagArgs = @{
-    Patch = $Patch
+    Version = $Version
 }
 if ($Push) {
     $tagArgs.Push = $true

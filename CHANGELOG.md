@@ -5,6 +5,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- Google Play automation, off until the repository variable `PLAY_TRACK` is set: a `v*` tag uploads the AAB, R8 mapping and release notes (en and es, all 10 listing locales, within Play's 500 characters) to that track as a draft, and `play-promote.yml` promotes between tracks and changes the rollout share. Setup in docs/play-release.md.
+
+### Changed
+- Tags no longer need a version bump: release builds take `versionName` from the tag and `versionCode` from `git rev-list --count HEAD`. `app/build.gradle.kts` only keeps the defaults of local builds.
+- The release moves the entries under `Unreleased` into the new version section instead of dropping them.
+- `release.yml` and `build-release-apk.yml` build the commit of the tag even when run by hand (they built `main`).
+- `scripts/new-release.ps1` and `scripts/release-tag.ps1` take `-Version 1.4.0` and create semantic tags (they created `vYYYY.MM.patch`).
+
 ## [v1.3.0] - 2026-10-30
 
 <!-- Release notes generated using configuration in .github/release.yml at v1.3.0 -->

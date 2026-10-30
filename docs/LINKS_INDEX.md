@@ -34,6 +34,7 @@ Centralized map of major documentation files.
 
 - `docs/governance.md`
 - `docs/release-policy.md`
+- `docs/play-release.md`
 - `docs/triage-workflow.md`
 - `docs/kpi-dashboard.md`
 - `docs/30-60-90-checklist.md`
