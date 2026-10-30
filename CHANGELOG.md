@@ -5,6 +5,23 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [v1.3.0] - 2026-10-30
+
+<!-- Release notes generated using configuration in .github/release.yml at v1.3.0 -->
+
+## What's Changed
+### Features
+* Prepare release 1.3.0 by @Sebas1705 in https://github.com/Sebas1705/Omni-Impostor/pull/20
+### Documentation
+* docs: add app screenshots to README by @Sebas1705 in https://github.com/Sebas1705/Omni-Impostor/pull/16
+### Bug fixes
+* fix: keep personal data out of release logs; DataStore defaults via migrations by @Sebas1705 in https://github.com/Sebas1705/Omni-Impostor/pull/18
+* fix: run onInit after construction, make coverage real, deflake offline game test by @Sebas1705 in https://github.com/Sebas1705/Omni-Impostor/pull/19
+
+## New Contributors
+* @Sebas1705 made their first contribution in https://github.com/Sebas1705/Omni-Impostor/pull/1
+
+**Full Changelog**: https://github.com/Sebas1705/Omni-Impostor/compare/v1.2.0...v1.3.0
 ## [1.3.0] - 2026-10-30
 
 ### Security
