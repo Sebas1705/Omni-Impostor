@@ -5,6 +5,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-10-30
+
 ### Security
 - Release builds strip `Log.v`/`Log.d`/`Log.i` with an R8 `-assumenosideeffects` rule (warnings and errors are kept).
 - Logs no longer contain personal data: the password-reset log no longer prints the email, MVI intent logs no longer dump the intent payload (credentials typed on the login screen), analytics logs print the bundle key count instead of its values and no longer print user-property values, and the (disabled) FCM service no longer logs the registration token.
