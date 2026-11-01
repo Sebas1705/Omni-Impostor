@@ -5,6 +5,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [v1.4.0] - 2026-11-01
+
 ### Added
 - Delete account in the Profile screen (es and en): confirmed, asks for the password or the Google account again when Firebase requires a recent sign-in, and is hidden for guests. Public page in docs/account-deletion.html for Google Play's data deletion section; the privacy policy now covers accounts and deletion.
 - Google Play automation, off until the repository variable `PLAY_TRACK` is set: a `v*` tag uploads the AAB, R8 mapping and release notes (en and es, all 10 listing locales, within Play's 500 characters) to that track as a draft, and `play-promote.yml` promotes between tracks and changes the rollout share. Setup in docs/play-release.md.
@@ -20,6 +22,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `release.yml` and `build-release-apk.yml` build the commit of the tag even when run by hand (they built `main`).
 - `scripts/new-release.ps1` and `scripts/release-tag.ps1` take `-Version 1.4.0` and create semantic tags (they created `vYYYY.MM.patch`).
 
+<!-- Release notes generated using configuration in .github/release.yml at v1.4.0 -->
+
+## What's Changed
+### Features
+* ci: upload tagged releases to Google Play by @Sebas1705 in https://github.com/Sebas1705/Omni-Impostor/pull/21
+### Bug fixes
+* fix: make email verification work, keep Cancel safe, add account deletion by @Sebas1705 in https://github.com/Sebas1705/Omni-Impostor/pull/22
+
+
+**Full Changelog**: https://github.com/Sebas1705/Omni-Impostor/compare/v1.3.0...v1.4.0
 ## [v1.3.0] - 2026-10-30
 
 <!-- Release notes generated using configuration in .github/release.yml at v1.3.0 -->
