@@ -6,7 +6,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- Delete account in the Profile screen (es and en): confirmed, asks for the password or the Google account again when Firebase requires a recent sign-in, and is hidden for guests. Public page in docs/account-deletion.html for Google Play's data deletion section; the privacy policy now covers accounts and deletion.
 - Google Play automation, off until the repository variable `PLAY_TRACK` is set: a `v*` tag uploads the AAB, R8 mapping and release notes (en and es, all 10 listing locales, within Play's 500 characters) to that track as a draft, and `play-promote.yml` promotes between tracks and changes the rollout share. Setup in docs/play-release.md.
+
+### Fixed
+- Email verification now works inside the session: the app reloads the user from the server before checking, instead of reading a cached value that said "not verified" after the link was clicked. The splash does the same, with a 3 s limit.
+- The verification panel's Cancel no longer deletes the account, which could already be verified. It signs out and is now labelled "Back to login".
+- Recreating the Activity (for example rotating the device) on the verification panel no longer signs the user out behind the panel, which left every check and resend failing.
 
 ### Changed
 - Tags no longer need a version bump: release builds take `versionName` from the tag and `versionCode` from `git rev-list --count HEAD`. `app/build.gradle.kts` only keeps the defaults of local builds.

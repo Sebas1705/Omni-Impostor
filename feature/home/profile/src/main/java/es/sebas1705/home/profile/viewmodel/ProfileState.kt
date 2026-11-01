@@ -16,8 +16,20 @@ data class ProfileState(
     val favoriteCategory: Categories? = null,
     val matchesPlayed: Int = 0,
     val currentStreak: Int = 0,
-    val bestStreak: Int = 0
+    val bestStreak: Int = 0,
+    val canDeleteAccount: Boolean = false,
+    val deleteAccountStep: DeleteAccountStep = DeleteAccountStep.Hidden,
+    val deleteAccountError: String? = null
 ) : MVIBaseState
+
+/** Dialog shown by the delete-account flow. */
+enum class DeleteAccountStep {
+    Hidden,
+    Confirm,
+    ReauthPassword,
+    ReauthGoogle,
+    InProgress
+}
 
 data class ProfileOfflineRecordSort(
     val column: ProfileOfflineRecordSortColumn = ProfileOfflineRecordSortColumn.TotalWins,

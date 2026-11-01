@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Context
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import es.sebas1705.authentication.DeleteCurrentUserUseCase
 import es.sebas1705.authentication.IsEmailVerifiedUseCase
 import es.sebas1705.authentication.IsUserLoggedUseCase
+import es.sebas1705.authentication.RefreshEmailVerifiedUseCase
 import es.sebas1705.authentication.SendPasswordResetUseCase
 import es.sebas1705.authentication.SendVerificationEmailUseCase
 import es.sebas1705.authentication.SetSessionExpectedUseCase
@@ -36,8 +36,8 @@ class LoginViewModel @Inject constructor(
     private val signInAsGuestUseCase: SignInAsGuestUseCase,
     private val sendVerificationEmailUseCase: SendVerificationEmailUseCase,
     private val isEmailVerifiedUseCase: IsEmailVerifiedUseCase,
+    private val refreshEmailVerifiedUseCase: RefreshEmailVerifiedUseCase,
     private val setSessionExpectedUseCase: SetSessionExpectedUseCase,
-    private val deleteCurrentUserUseCase: DeleteCurrentUserUseCase,
     private val signOutUseCase: SignOutUseCase,
     @ApplicationContext context: Context
 ) : MVIBaseViewModel<LoginState, LoginIntent>(context) {
@@ -64,7 +64,8 @@ class LoginViewModel @Inject constructor(
 
     private fun checkSession() = execute(Dispatchers.IO) {
         updateUi { it.copy(isCheckingSession = true) }
-        val isLogged = isUserLoggedUseCase()
+        // Recreating the Activity re-runs this check while the panel holds an unverified session.
+        val isLogged = isUserLoggedUseCase() && !_uiState.value.isWaitingEmailVerification
         logI("Login checkSession result. isLogged=$isLogged")
         updateUi {
             it.copy(
@@ -200,16 +201,31 @@ class LoginViewModel @Inject constructor(
 
     private fun checkEmailVerified() = execute(Dispatchers.IO) {
         updateUi { it.copy(errorMessage = null) }
-        if (isEmailVerifiedUseCase()) {
-            setSessionExpectedUseCase(true)
-            logI("Email verified. Navigating to Home.")
-            updateUi { it.copy(navigateToHome = true, isWaitingEmailVerification = false) }
-        } else {
-            logI("Email not verified yet.")
-            updateUi {
-                it.copy(errorMessage = context.getString(R.string.core_resources_login_email_not_verified))
+        // The cached user keeps the old value after the link is clicked, so ask the server.
+        refreshEmailVerifiedUseCase().catcher(
+            onLoading = { startLoading() },
+            onSuccess = { isVerified ->
+                stopLoading()
+                if (isVerified) {
+                    cooldownJob?.cancel()
+                    setSessionExpectedUseCase(true)
+                    logI("Email verified. Navigating to Home.")
+                    updateUi { it.copy(navigateToHome = true, isWaitingEmailVerification = false) }
+                } else {
+                    logI("Email not verified yet.")
+                    updateUi {
+                        it.copy(errorMessage = context.getString(R.string.core_resources_login_email_not_verified))
+                    }
+                }
+            },
+            onError = {
+                stopLoading()
+                logI("Could not refresh the email verification state.")
+                updateUi {
+                    it.copy(errorMessage = context.getString(R.string.core_resources_login_verification_check_failed))
+                }
             }
-        }
+        )
     }
 
     private fun signInAsGuest() = execute(Dispatchers.IO) {
@@ -227,38 +243,24 @@ class LoginViewModel @Inject constructor(
         )
     }
 
+    /**
+     * Leaves the verification panel. It only ends the session: the account may already be verified
+     * (from any device), so Cancel must never delete it. The user can sign in again later.
+     */
     private fun cancelEmailVerification() = execute(Dispatchers.IO) {
         startLoading()
         cooldownJob?.cancel()
-        deleteCurrentUserUseCase().catcher(
-            onLoading = {},
-            onEmptySuccess = {
-                logI("Unverified user deleted. Returning to login main screen.")
-                signOutUseCase()
-                stopLoading()
-                updateUi {
-                    it.copy(
-                        loginMode = LoginMode.Main,
-                        isWaitingEmailVerification = false,
-                        resendCooldownSeconds = 0,
-                        errorMessage = null
-                    )
-                }
-            },
-            onError = { message ->
-                logI("Delete user failed: $message. Signing out and returning to main.")
-                signOutUseCase()
-                stopLoading()
-                updateUi {
-                    it.copy(
-                        loginMode = LoginMode.Main,
-                        isWaitingEmailVerification = false,
-                        resendCooldownSeconds = 0,
-                        errorMessage = null
-                    )
-                }
-            }
-        )
+        signOutUseCase()
+        stopLoading()
+        logI("Email verification cancelled. Returning to login main screen.")
+        updateUi {
+            it.copy(
+                loginMode = LoginMode.Main,
+                isWaitingEmailVerification = false,
+                resendCooldownSeconds = 0,
+                errorMessage = null
+            )
+        }
     }
 
     private fun changeMode(mode: LoginMode) = execute {

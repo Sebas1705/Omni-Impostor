@@ -6,8 +6,10 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import es.sebas1705.authentication.IsEmailVerifiedUseCase
 import es.sebas1705.authentication.IsGuestUserUseCase
 import es.sebas1705.authentication.IsUserLoggedUseCase
+import es.sebas1705.authentication.RefreshEmailVerifiedUseCase
 import es.sebas1705.authentication.SignOutUseCase
 import es.sebas1705.common.mvi.MVIBaseViewModel
+import es.sebas1705.common.utlis.extensions.types.catcher
 import es.sebas1705.common.utlis.extensions.types.logI
 import es.sebas1705.common.utlis.extensions.types.logW
 import es.sebas1705.core.resources.Musics
@@ -17,6 +19,7 @@ import es.sebas1705.domain.managers.SoundPoolManager
 import es.sebas1705.game.words.ImportDefaultWordsUseCase
 import es.sebas1705.settings.ReadSettingsUseCase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withTimeoutOrNull
 import javax.inject.Inject
 
 /**
@@ -32,6 +35,7 @@ class MainViewModel @Inject constructor(
     private val isUserLoggedUseCase: IsUserLoggedUseCase,
     private val isGuestUserUseCase: IsGuestUserUseCase,
     private val isEmailVerifiedUseCase: IsEmailVerifiedUseCase,
+    private val refreshEmailVerifiedUseCase: RefreshEmailVerifiedUseCase,
     private val signOutUseCase: SignOutUseCase,
     private val readSettingsUseCase: ReadSettingsUseCase,
     private val importDefaultWordsUseCase: ImportDefaultWordsUseCase,
@@ -83,11 +87,14 @@ class MainViewModel @Inject constructor(
      * @see [MainIntent.ChargeData]
      */
     private fun chargeData() = execute(Dispatchers.IO) {
+        // AppNav sends this again whenever the Activity is recreated, and this view model survives
+        // that. Deciding twice would sign out the user waiting on the email verification panel.
+        if (_uiState.value.splashFinished) return@execute
         importDefaultWordsUseCase()
         val isUserLogged = isUserLoggedUseCase()
         val isGuest = isGuestUserUseCase()
         // A non-guest user whose email isn't verified shouldn't bypass login
-        if (isUserLogged && !isGuest && !isEmailVerifiedUseCase()) {
+        if (isUserLogged && !isGuest && !isEmailVerifiedNow()) {
             logI("Splash auth decision. User logged but email not verified — signing out.")
             signOutUseCase()
             updateUi { it.copy(splashFinished = true, isUserLogged = false, isGuestUser = false) }
@@ -103,5 +110,21 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * The cached value can be stale if the link was clicked while the app was closed. Only those
+     * sessions wait for the server, and the splash never hangs on it: if the check fails or times
+     * out the user is sent to login, which is recoverable.
+     */
+    private suspend fun isEmailVerifiedNow(): Boolean {
+        if (isEmailVerifiedUseCase()) return true
+        var isVerified = false
+        withTimeoutOrNull(EMAIL_REFRESH_TIMEOUT_MS) {
+            refreshEmailVerifiedUseCase().catcher(onSuccess = { isVerified = it })
+        }
+        return isVerified
+    }
 
+    private companion object {
+        const val EMAIL_REFRESH_TIMEOUT_MS = 3_000L
+    }
 }

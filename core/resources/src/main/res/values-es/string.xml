@@ -59,9 +59,9 @@
     <string name="core_resources_login_verify_title">Verifica tu email</string>
     <string name="core_resources_login_verify_body">Te hemos enviado un enlace de verificación. Revisa tu bandeja de entrada y haz clic en el enlace antes de iniciar sesión.</string>
     <string name="core_resources_login_resend_verification">Reenviar email de verificación</string>
-    <string name="core_resources_login_cancel_verification">Cancelar registro</string>
     <string name="core_resources_login_check_verified">Ya verifiqué mi email</string>
     <string name="core_resources_login_email_not_verified">Email no verificado aún. Haz clic en el enlace de tu bandeja de entrada.</string>
+    <string name="core_resources_login_verification_check_failed">No se pudo comprobar tu email. Revisa tu conexión e inténtalo de nuevo.</string>
     <string name="core_resources_login_guest_restricted">Esta función solo está disponible para usuarios registrados. Inicia sesión para acceder al ranking y perfil.</string>
 
     <string name="core_resources_categories_title">Categorías</string>
@@ -350,4 +350,19 @@
     <string name="core_resources_home_tab_play">Jugar</string>
     <string name="core_resources_home_tab_ranking">Ranking</string>
     <string name="core_resources_home_tab_profile">Perfil</string>
+    <string name="core_resources_profile_delete_account">Eliminar cuenta</string>
+    <string name="core_resources_profile_delete_account_title">¿Eliminar tu cuenta?</string>
+    <string name="core_resources_profile_delete_account_body">Tu cuenta y el email o acceso con Google vinculado se eliminarán para siempre. Esta acción no se puede deshacer. Los nombres de jugadores y el ranking guardados en este dispositivo no forman parte de tu cuenta y seguirán aquí hasta que borres los datos de la app o la desinstales.</string>
+    <string name="core_resources_profile_delete_account_confirm">Eliminar para siempre</string>
+    <string name="core_resources_profile_delete_account_cancel">Conservar mi cuenta</string>
+    <string name="core_resources_profile_delete_account_reauth_title">Confirma que eres tú</string>
+    <string name="core_resources_profile_delete_account_reauth_password_body">Por seguridad, introduce tu contraseña para eliminar tu cuenta.</string>
+    <string name="core_resources_profile_delete_account_reauth_google_body">Por seguridad, vuelve a elegir tu cuenta de Google para eliminar tu cuenta.</string>
+    <string name="core_resources_profile_delete_account_reauth_google_action">Continuar con Google</string>
+    <string name="core_resources_profile_delete_account_password_hint">Contraseña</string>
+    <string name="core_resources_profile_delete_account_in_progress">Eliminando tu cuenta…</string>
+    <string name="core_resources_profile_delete_account_wrong_credentials">La contraseña o la cuenta no coinciden. Inténtalo de nuevo.</string>
+    <string name="core_resources_profile_delete_account_error">No se pudo eliminar tu cuenta. Revisa tu conexión e inténtalo de nuevo.</string>
+    <string name="core_resources_profile_delete_account_relogin_needed">Por seguridad, cierra sesión, vuelve a iniciarla y reinténtalo.</string>
+    <string name="core_resources_profile_delete_account_done">Tu cuenta se ha eliminado.</string>
 </resources>

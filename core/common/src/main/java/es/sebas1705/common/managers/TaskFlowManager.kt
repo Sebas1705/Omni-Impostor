@@ -34,6 +34,8 @@ class TaskFlowManager(
      * @param assertChecker () -> String?: Function to check if the operation is valid
      * @param taskAction () -> Task<Q>: Function to get the data
      * @param onSuccessListener (Q) -> ResponseState<T>: Function to handle the onCompleteListener
+     * @param failureType (Exception) -> ErrorResponseType: Classifies a task failure, for callers that
+     *   must react to a specific one (the default keeps every failure as a bad request)
      *
      * @return [FlowResponse]<[T]>: Flow with the response of the operation
      *
@@ -43,7 +45,8 @@ class TaskFlowManager(
     fun <T, Q> taskFlowProducer(
         assertChecker: suspend () -> String? = { null },
         taskAction: suspend () -> Task<Q>,
-        onSuccessListener: (Q) -> ResponseState<T>
+        onSuccessListener: (Q) -> ResponseState<T>,
+        failureType: (Exception) -> ErrorResponseType = { ErrorResponseType.BAD_REQUEST }
     ): FlowResponse<T> = callbackFlow {
         logI("Starting task flow producer")
         val sender = this@callbackFlow::trySendBlocking
@@ -63,7 +66,7 @@ class TaskFlowManager(
                         sender(
                             ResponseState.Error(
                                 classLogData,
-                                ErrorResponseType.BAD_REQUEST,
+                                failureType(it),
                                 it.message ?: genericFailMessage,
                                 loggerAction
                             )
