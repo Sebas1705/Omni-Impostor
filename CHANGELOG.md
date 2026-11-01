@@ -5,6 +5,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- The Play tab (and Profile and Ranking) no longer stays on an endless spinner after updating from an older version. The loading flag was switched on from `onInit()`, which 1.4.0 posts to the main thread; with the saved game setup already cached, the first load finished before it ran and the spinner was then turned back on for good. It is now set in the constructor.
+
 ## [v1.4.0] - 2026-11-01
 
 ### Added

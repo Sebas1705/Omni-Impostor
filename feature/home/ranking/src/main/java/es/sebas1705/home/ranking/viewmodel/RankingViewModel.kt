@@ -22,8 +22,9 @@ class RankingViewModel @Inject constructor(
         offlineSort = readSavedRankingSort(savedStateHandle)
     )
 
-    override fun onInit() {
-        super.onInit()
+    // Not in onInit(): the base class posts that to Main, so it can run after the first Load has
+    // already finished (cached DataStore) and would switch the spinner back on for good.
+    init {
         startLoading()
     }
 

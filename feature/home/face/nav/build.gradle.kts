@@ -1,5 +1,6 @@
 plugins {
     id("buildlogic.android.feature")
+    alias(libs.plugins.buildlogic.unit.test)
 }
 
 android {
@@ -19,4 +20,7 @@ dependencies {
     api(projects.feature.home.ranking)
     api(projects.feature.home.profile)
     implementation(libs.material.icons.extended)
+
+    testImplementation(libs.kotlinx.test)
+    testImplementation(libs.mockito.kotlin)
 }
