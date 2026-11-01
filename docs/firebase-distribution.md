@@ -1,7 +1,7 @@
 # Intermediate builds with Firebase App Distribution
 
 Every push to `develop` runs `.github/workflows/distribute.yml`: it builds the **Dev release** APK
-(`es.sebas1705.impostorandroidgame.dev`, signed with the release key, version `1.2.0-dev.<run>` and
+(`es.sebas1705.impostorandroidgame.dev`, signed with the release key, version `<default>-dev.<run>` and
 `versionCode = run number`) and sends it to the **`testers`** group of the Firebase project `impostor-1b6c2`.
 Official versions (Pro) keep going through `release.yml` / Play Store. You can also run the workflow by hand
 from the Actions tab (`Run workflow`) choosing another group or custom release notes.

@@ -143,15 +143,18 @@ jobs:
           tag = os.environ['TAG_NAME']
           notes = Path('.release-notes.md').read_text(encoding='utf-8').strip()
           today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-          entry = f"## [{tag}] - {today}\n\n{notes}\n\n"
           unreleased = "## [Unreleased]\n\n"
           existing = changelog_path.read_text(encoding='utf-8')
           if f"## [{tag}] - " in existing:
             print(f"CHANGELOG already contains {tag}; skipping update.")
             raise SystemExit(0)
           pattern = re.compile(r"## \[Unreleased\].*?(?=\n## \[|\Z)", re.DOTALL)
-          if pattern.search(existing):
-            updated = pattern.sub(unreleased.rstrip(), existing, count=1)
+          match = pattern.search(existing)
+          # Whatever piled up under Unreleased moves into this version: there is no bump PR to do it.
+          pending = match.group(0)[len(unreleased.rstrip()):].strip() if match else ""
+          entry = f"## [{tag}] - {today}\n\n" + (f"{pending}\n\n" if pending else "") + f"{notes}\n\n"
+          if match:
+            updated = existing[:match.start()] + unreleased.rstrip() + existing[match.end():]
           else:
             updated = existing.rstrip() + "\n\n" + unreleased.rstrip() + "\n"
           marker = unreleased.rstrip()
@@ -191,10 +194,16 @@ jobs:
     if: needs.publish_release.outputs.released == 'true'
     permissions:
       contents: write
+    outputs:
+      version_name: ${{ steps.version.outputs.version_name }}
+      version_code: ${{ steps.version.outputs.version_code }}
     steps:
+      # Explicit ref: a manual run would otherwise build main. The full history is what the
+      # versionCode counts.
       - name: Checkout tag commit
         uses: actions/checkout@v4
         with:
+          ref: refs/tags/${{ needs.publish_release.outputs.tag }}
           fetch-depth: 0
 
       - name: Set up JDK 21
@@ -229,8 +238,29 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      # versionName is the tag, versionCode the commits of the tag: it grows with every tag, as tags
+      # must be on main. Play already has 7, and a shallow checkout would count far fewer commits.
+      - name: Resolve Version
+        id: version
+        shell: bash
+        env:
+          TAG: ${{ needs.publish_release.outputs.tag }}
+        run: |
+          CODE=$(git rev-list --count HEAD)
+          if [ "$(git rev-parse --is-shallow-repository)" = "true" ] || [ "$CODE" -le 7 ]; then
+            echo "::error::versionCode $CODE is not above 7 or the checkout is shallow"
+            exit 1
+          fi
+          echo "version_name=${TAG#v}" >> "$GITHUB_OUTPUT"
+          echo "version_code=$CODE" >> "$GITHUB_OUTPUT"
+
       - name: Build Pro Release AAB
-        run: ./gradlew :app:bundleProRelease --no-daemon --build-cache --stacktrace
+        env:
+          VERSION_NAME: ${{ steps.version.outputs.version_name }}
+          VERSION_CODE: ${{ steps.version.outputs.version_code }}
+        run: |
+          ./gradlew :app:bundleProRelease -Pci.versionName="$VERSION_NAME" -Pci.versionCode="$VERSION_CODE" \
+            --no-daemon --build-cache --stacktrace
 
       - name: Attach AAB to GitHub Release
         env:
@@ -240,3 +270,76 @@ jobs:
           tag_name: ${{ needs.publish_release.outputs.tag }}
           files: app/build/outputs/bundle/**/*.aab
           fail_on_unmatched_files: true
+
+      - name: Hand the bundle to the Play job
+        if: vars.PLAY_TRACK != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: play-bundle
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            app/build/outputs/bundle/ProRelease/*.aab
+            app/build/outputs/mapping/ProRelease/mapping.txt
+
+  # Nothing runs until the repository variable PLAY_TRACK names a track: docs/play-release.md. It is
+  # its own job so fastlane and its gems never share a runner with the signing key or a write token.
+  # The default status is draft because this is a live app: a tag must not reach users by itself,
+  # above all with PLAY_TRACK=production, where `completed` would mean 100 % at once. Publishing a
+  # draft is one run of play-promote.yml; PLAY_RELEASE_STATUS=completed is for testing tracks.
+  publish_play:
+    name: Upload to Google Play
+    runs-on: ubuntu-latest
+    needs: [publish_release, build_aab]
+    if: vars.PLAY_TRACK != ''
+    timeout-minutes: 20
+    concurrency:
+      group: play
+      cancel-in-progress: false
+    permissions:
+      contents: read
+    env:
+      DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+    steps:
+      - name: Checkout tag commit
+        uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ needs.publish_release.outputs.tag }}
+          persist-credentials: false
+
+      - name: Download the bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: play-bundle
+          path: play-bundle
+
+      - name: Prepare the upload
+        id: play
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.publish_release.outputs.tag }}
+          VERSION_NAME: ${{ needs.build_aab.outputs.version_name }}
+          VERSION_CODE: ${{ needs.build_aab.outputs.version_code }}
+          PLAY_TRACK: ${{ vars.PLAY_TRACK }}
+          PLAY_RELEASE_STATUS: ${{ vars.PLAY_RELEASE_STATUS || 'draft' }}
+        run: |
+          [[ "$PLAY_TRACK" =~ ^[a-z0-9:_.-]+$ ]] || { echo "::error::Invalid PLAY_TRACK"; exit 1; }
+          case "$PLAY_RELEASE_STATUS" in
+            draft|completed) ;;
+            *) echo "::error::PLAY_RELEASE_STATUS must be draft or completed"; exit 1 ;;
+          esac
+          AAB=$(find play-bundle/bundle -name '*.aab' | head -n 1)
+          test -n "$AAB" || { echo "::error::No AAB in the artifact"; exit 1; }
+          gh release view "$TAG" --json body -q .body > "$RUNNER_TEMP/release-body.md"
+          node scripts/release-notes.mjs "$VERSION_NAME" "$RUNNER_TEMP/release-body.md" "$RUNNER_TEMP/play-metadata" "$VERSION_CODE"
+          ARGS="--aab $AAB --track $PLAY_TRACK --release_status $PLAY_RELEASE_STATUS"
+          ARGS="$ARGS --metadata_path $RUNNER_TEMP/play-metadata --skip_upload_metadata true --skip_upload_images true --skip_upload_screenshots true"
+          MAPPING=play-bundle/mapping/ProRelease/mapping.txt
+          if [ -f "$MAPPING" ]; then ARGS="$ARGS --mapping $MAPPING"; fi
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+
+      - name: Upload to Google Play
+        uses: ./.github/actions/play
+        with:
+          args: ${{ steps.play.outputs.args }}

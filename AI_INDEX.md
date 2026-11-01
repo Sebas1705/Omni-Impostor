@@ -22,8 +22,9 @@ This file is the fastest entry point for AI assistants and maintainers.
 - CI, release, and governance:
   1. `docs/governance.md`
   2. `docs/release-policy.md`
-  3. `.github/workflows/*.yml`
-  4. `doppler.yaml` + `scripts/`
+  3. `docs/play-release.md`
+  4. `.github/workflows/*.yml`
+  5. `doppler.yaml` + `scripts/`
 - Runtime services and cloud dependencies:
   1. `docs/cloud.md`
   2. `docs/library-audit.md`

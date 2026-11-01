@@ -1,0 +1,72 @@
+name: Play promote
+
+# Moves a release from one Google Play track to another, optionally as a staged rollout (0.1 = 10 %
+# of users), or changes the rollout of a release inside a track by using the same track twice.
+# Track names as Play Console shows them: internal, alpha, beta, production, or a custom closed
+# track. Guide: docs/play-release.md.
+on:
+  workflow_dispatch:
+    inputs:
+      from:
+        description: "Track to take the release from"
+        required: true
+        default: internal
+      to:
+        description: "Track to put it in (same as 'from' to only change the rollout)"
+        required: true
+        default: production
+      rollout:
+        description: "Share of users, 0.01–1 (1 = everyone)"
+        required: true
+        default: "0.1"
+      version_code:
+        description: "Version code, only needed when the track holds several releases or to promote a draft"
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: play
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check the inputs
+        id: args
+        env:
+          FROM: ${{ inputs.from }}
+          TO: ${{ inputs.to }}
+          ROLLOUT: ${{ inputs.rollout }}
+          VERSION_CODE: ${{ inputs.version_code }}
+        run: |
+          [[ "$FROM" =~ ^[a-z0-9:_.-]+$ && "$TO" =~ ^[a-z0-9:_.-]+$ ]] || { echo "::error::Invalid track name"; exit 1; }
+          [[ "$ROLLOUT" =~ ^(1|1\.0+|0\.[0-9]+)$ ]] || { echo "::error::Rollout must be between 0.01 and 1"; exit 1; }
+          [[ -z "$VERSION_CODE" || "$VERSION_CODE" =~ ^[0-9]+$ ]] || { echo "::error::Invalid version code"; exit 1; }
+          # fastlane supply (2.241.0) reads these differently per mode, so --rollout is always passed:
+          # - promote (from != to): without --version_code it only finds a `completed` release of
+          #   `from`, so a draft needs --version_code (--release_status draft plus --rollout is
+          #   refused). A --rollout below 1 makes a staged release in `to`, 1 a completed one.
+          # - rollout only (from = to): picks the in-progress or draft release of the track and
+          #   gives it this status and share; 1 with completed finishes it.
+          SKIP="--skip_upload_apk true --skip_upload_aab true --skip_upload_metadata true --skip_upload_changelogs true --skip_upload_images true --skip_upload_screenshots true"
+          if [ "$FROM" != "$TO" ]; then
+            ARGS="--track $FROM --track_promote_to $TO --rollout $ROLLOUT"
+          elif [ "$ROLLOUT" = "1" ] || [[ "$ROLLOUT" =~ ^1\.0+$ ]]; then
+            ARGS="--track $FROM --release_status completed --rollout 1"
+          else
+            ARGS="--track $FROM --release_status inProgress --rollout $ROLLOUT"
+          fi
+          if [ -n "$VERSION_CODE" ]; then ARGS="$ARGS --version_code $VERSION_CODE"; fi
+          echo "args=$ARGS $SKIP" >> "$GITHUB_OUTPUT"
+      - uses: ./.github/actions/play
+        with:
+          args: ${{ steps.args.outputs.args }}
