@@ -2,8 +2,8 @@ function New-RepoReleaseTag {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateRange(0, 999)]
-        [int]$Patch,
+        [ValidatePattern('^\d+\.\d+\.\d+$')]
+        [string]$Version,
         [switch]$Push,
         [switch]$DryRun
     )
@@ -12,7 +12,7 @@ function New-RepoReleaseTag {
         throw "Could not find release-tag.ps1 at $scriptPath"
     }
     $arguments = @{
-        Patch = $Patch
+        Version = $Version
     }
     if ($Push) {
         $arguments.Push = $true
@@ -27,8 +27,8 @@ function New-RepoRelease {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateRange(0, 999)]
-        [int]$Patch,
+        [ValidatePattern('^\d+\.\d+\.\d+$')]
+        [string]$Version,
         [switch]$Push,
         [switch]$DryRun
     )
@@ -39,7 +39,7 @@ function New-RepoRelease {
     }
 
     $arguments = @{
-        Patch = $Patch
+        Version = $Version
     }
     if ($Push) {
         $arguments.Push = $true
@@ -57,13 +57,13 @@ Set-Alias -Name repo-release -Value New-RepoRelease -Scope Global
 Set-Alias -Name nrelease -Value New-RepoRelease -Scope Global
 
 Write-Host 'Loaded release tag commands:'
-Write-Host ' - New-RepoReleaseTag -Patch <n> [-Push] [-DryRun]'
-Write-Host ' - repo-release-tag -Patch <n> [-Push] [-DryRun]'
-Write-Host ' - rtag -Patch <n> [-Push] [-DryRun]'
+Write-Host ' - New-RepoReleaseTag -Version <x.y.z> [-Push] [-DryRun]'
+Write-Host ' - repo-release-tag -Version <x.y.z> [-Push] [-DryRun]'
+Write-Host ' - rtag -Version <x.y.z> [-Push] [-DryRun]'
 Write-Host 'Loaded one-shot release commands:'
-Write-Host ' - New-RepoRelease -Patch <n> [-Push] [-DryRun]'
-Write-Host ' - repo-release -Patch <n> [-Push] [-DryRun]'
-Write-Host ' - nrelease -Patch <n> [-Push] [-DryRun]'
+Write-Host ' - New-RepoRelease -Version <x.y.z> [-Push] [-DryRun]'
+Write-Host ' - repo-release -Version <x.y.z> [-Push] [-DryRun]'
+Write-Host ' - nrelease -Version <x.y.z> [-Push] [-DryRun]'
 Write-Host ''
 Write-Host 'This script only affects the current PowerShell session.'
 Write-Host 'To make it permanent, add the following line to your PowerShell profile manually:'
