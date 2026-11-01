@@ -87,6 +87,9 @@ class MainViewModel @Inject constructor(
      * @see [MainIntent.ChargeData]
      */
     private fun chargeData() = execute(Dispatchers.IO) {
+        // AppNav sends this again whenever the Activity is recreated, and this view model survives
+        // that. Deciding twice would sign out the user waiting on the email verification panel.
+        if (_uiState.value.splashFinished) return@execute
         importDefaultWordsUseCase()
         val isUserLogged = isUserLoggedUseCase()
         val isGuest = isGuestUserUseCase()

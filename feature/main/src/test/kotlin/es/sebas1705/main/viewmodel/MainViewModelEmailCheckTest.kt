@@ -151,6 +151,26 @@ class MainViewModelEmailCheckTest {
         verify(isGuest).invoke()
     }
 
+    @Test
+    fun `recreating the Activity does not sign out the user on the verification panel`() {
+        whenever(isEmailVerified.invoke()).thenReturn(false)
+        stubRefresh(flowOf(ResponseState.Loading, ResponseState.Success(true)))
+        charge()
+        whenever(refreshEmailVerified.invoke())
+            .thenReturn(flowOf(ResponseState.Loading, ResponseState.Success(false)))
+
+        vm.eventHandler(MainIntent.ChargeData).let { job ->
+            val deadline = System.currentTimeMillis() + TIMEOUT_MS
+            while (!job.isCompleted) {
+                check(System.currentTimeMillis() < deadline) { "ChargeData did not finish" }
+                Thread.sleep(POLL_MS)
+            }
+        }
+
+        assertTrue(vm.uiState.value.isUserLogged)
+        verifyBlocking(signOut, never()) { invoke() }
+    }
+
     private fun stubRefresh(response: FlowResponse<Boolean>) {
         whenever(refreshEmailVerified.invoke()).thenReturn(response)
     }
