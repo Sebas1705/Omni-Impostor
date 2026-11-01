@@ -60,9 +60,9 @@
     <string name="core_resources_login_verify_title">Verify your email</string>
     <string name="core_resources_login_verify_body">We sent a verification link to your email. Please check your inbox and click the link before signing in.</string>
     <string name="core_resources_login_resend_verification">Resend verification email</string>
-    <string name="core_resources_login_cancel_verification">Cancel registration</string>
     <string name="core_resources_login_check_verified">I\'ve verified my email</string>
     <string name="core_resources_login_email_not_verified">Email not verified yet. Please click the link in your inbox.</string>
+    <string name="core_resources_login_verification_check_failed">Could not check your email. Check your connection and try again.</string>
     <string name="core_resources_login_guest_restricted">This feature is only available for registered users. Sign in to access ranking and profile.</string>
 
     <string name="core_resources_categories_title">Categories</string>
@@ -352,4 +352,19 @@
     <string name="core_resources_home_tab_play">Play</string>
     <string name="core_resources_home_tab_ranking">Ranking</string>
     <string name="core_resources_home_tab_profile">Profile</string>
+    <string name="core_resources_profile_delete_account">Delete account</string>
+    <string name="core_resources_profile_delete_account_title">Delete your account?</string>
+    <string name="core_resources_profile_delete_account_body">Your account and the email or Google sign-in linked to it will be permanently deleted. This cannot be undone. Player names and the ranking saved on this device are not part of your account and stay here until you clear the app data or uninstall it.</string>
+    <string name="core_resources_profile_delete_account_confirm">Delete permanently</string>
+    <string name="core_resources_profile_delete_account_cancel">Keep my account</string>
+    <string name="core_resources_profile_delete_account_reauth_title">Confirm it\'s you</string>
+    <string name="core_resources_profile_delete_account_reauth_password_body">For security, enter your password to delete your account.</string>
+    <string name="core_resources_profile_delete_account_reauth_google_body">For security, choose your Google account again to delete your account.</string>
+    <string name="core_resources_profile_delete_account_reauth_google_action">Continue with Google</string>
+    <string name="core_resources_profile_delete_account_password_hint">Password</string>
+    <string name="core_resources_profile_delete_account_in_progress">Deleting your account…</string>
+    <string name="core_resources_profile_delete_account_wrong_credentials">The password or account does not match. Please try again.</string>
+    <string name="core_resources_profile_delete_account_error">Could not delete your account. Check your connection and try again.</string>
+    <string name="core_resources_profile_delete_account_relogin_needed">For security, sign out, sign in again and retry.</string>
+    <string name="core_resources_profile_delete_account_done">Your account has been deleted.</string>
 </resources>

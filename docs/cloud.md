@@ -6,7 +6,7 @@ Runtime services and secrets context for Omni-Impostor.
 
 | Service | Module | Purpose |
 |---|---|---|
-| Firebase Auth | `data:authentication` | Google Sign-In + anonymous auth |
+| Firebase Auth | `data:authentication` | Google Sign-In + email/password + anonymous auth |
 | Firebase Firestore | `data:firestore` | Post-game clue ratings (`clue_ratings`) |
 | Firebase Analytics | `data:analytics` | Event and user property tracking |
 | Firebase Crashlytics | `data:analytics` | Crash reporting |
@@ -52,6 +52,23 @@ This generates `app/secrets.properties`, `app/google-services.json`, and `app/ke
 | Dependency drift | Monthly dependency report + Dependabot |
 | Secret leakage | Secrets in Doppler only; gitignore enforced |
 | Debug tooling in release | Variant-scoped dependencies (`debugImplementation`) |
+
+## Account deletion
+
+Profile > Delete account deletes the Firebase Auth user (`DeleteCurrentUserUseCase`). Firebase rejects it unless the sign-in is
+recent, so the view model asks for the password or the Google account and retries once.
+
+There is no per-user server data to delete: `clue_ratings` holds anonymous counters with no uid, Analytics and Crashlytics never
+get a user id, and everything else is local to the device. **If a per-user collection is ever added, delete its documents in
+`DeleteCurrentUserUseCase` before the account, and update `docs/account-deletion.html` and the privacy policy.**
+
+Requests from people without the app arrive by email: delete the user by hand in Firebase Console > Authentication.
+
+The public page is `docs/account-deletion.html`, served by GitHub Pages from `main:/docs`
+(<https://sebas1705.github.io/Omni-Impostor/account-deletion.html>). Play Console declares that URL in App content > Data safety.
+
+Cancel on the email verification panel only signs out, so unverified accounts stay in Firebase Auth. Signing in again resumes
+the verification.
 
 ## Firestore rules
 

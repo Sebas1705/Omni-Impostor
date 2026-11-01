@@ -1,9 +1,11 @@
 package es.sebas1705.authentication.datasources
 
 import androidx.credentials.CredentialManager
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import es.sebas1705.analytics.datasources.LogEventDataSource
 import es.sebas1705.authentication.config.SettingsAuth
+import es.sebas1705.authentication.config.reauthFailureType
 import es.sebas1705.common.managers.ClassLogData
 import es.sebas1705.common.managers.TaskFlowManager
 import es.sebas1705.common.responses.ErrorResponseType
@@ -86,5 +88,22 @@ class EmailAuthDataSource @Inject constructor(
                 SettingsAuth.NOT_LOGGED_USER
             )
         }
+    )
+
+    /**
+     * Confirms the current user's password so Firebase accepts a sensitive operation.
+     *
+     * @param password [String]: The password typed by the user.
+     *
+     * @return [FlowResponseNothing]: fails with [ErrorResponseType.FORBIDDEN] on a wrong password.
+     */
+    fun reauthenticate(password: String): FlowResponseNothing = taskFlowManager.taskFlowProducer(
+        taskAction = {
+            val user = firebaseAuth.currentUser ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+            val email = user.email ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+            user.reauthenticate(EmailAuthProvider.getCredential(email, password))
+        },
+        onSuccessListener = { ResponseState.EmptySuccess },
+        failureType = ::reauthFailureType
     )
 }

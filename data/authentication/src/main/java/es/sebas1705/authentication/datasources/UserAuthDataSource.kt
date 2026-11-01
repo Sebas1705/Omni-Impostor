@@ -2,13 +2,17 @@ package es.sebas1705.authentication.datasources
 
 import androidx.credentials.CredentialManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthRecentLoginRequiredException
 import com.google.firebase.auth.FirebaseUser
 import es.sebas1705.analytics.datasources.LogEventDataSource
+import es.sebas1705.authentication.config.AccountProvider
 import es.sebas1705.authentication.config.SettingsAuth
+import es.sebas1705.authentication.config.accountProviderOf
 import es.sebas1705.common.managers.ClassLogData
 import es.sebas1705.common.managers.TaskFlowManager
 import es.sebas1705.common.responses.ResponseState
 import es.sebas1705.common.responses.ErrorResponseType
+import es.sebas1705.common.utlis.alias.FlowResponse
 import es.sebas1705.common.utlis.alias.FlowResponseNothing
 import es.sebas1705.common.utlis.extensions.types.logI
 import javax.inject.Inject
@@ -69,7 +73,25 @@ class UserAuthDataSource @Inject constructor(
 
     fun isAnonymous(): Boolean = firebaseAuth.currentUser?.isAnonymous ?: false
 
+    /** Reads the locally cached user: it stays false after the link is clicked until [refreshEmailVerified]. */
     fun isEmailVerified(): Boolean = firebaseAuth.currentUser?.isEmailVerified ?: false
+
+    /**
+     * Reloads the user from the server and reports whether the email is verified now.
+     *
+     * @return [FlowResponse]<[Boolean]>: an error means the state is unknown, not that it is unverified
+     */
+    fun refreshEmailVerified(): FlowResponse<Boolean> = taskFlowManager.taskFlowProducer(
+        taskAction = {
+            firebaseAuth.currentUser?.reload()
+                ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+        },
+        onSuccessListener = { ResponseState.Success(firebaseAuth.currentUser?.isEmailVerified ?: false) }
+    )
+
+    /** Sign-in method to confirm before a sensitive operation on the current user. */
+    fun getAccountProvider(): AccountProvider =
+        accountProviderOf(firebaseAuth.currentUser?.providerData?.map { it.providerId }.orEmpty())
 
     fun signInAnonymously(): FlowResponseNothing = taskFlowManager.taskFlowProducer(
         taskAction = { firebaseAuth.signInAnonymously() },
@@ -87,12 +109,22 @@ class UserAuthDataSource @Inject constructor(
         onSuccessListener = { ResponseState.EmptySuccess }
     )
 
+    /**
+     * Deletes the current user from Firebase Authentication.
+     *
+     * @return [FlowResponseNothing]: fails with [ErrorResponseType.UNAUTHORIZED] when Firebase needs a
+     *   recent sign-in first: reauthenticate and call this again
+     */
     fun deleteCurrentUser(): FlowResponseNothing = taskFlowManager.taskFlowProducer(
         taskAction = {
             firebaseAuth.currentUser?.delete()
                 ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
         },
-        onSuccessListener = { ResponseState.EmptySuccess }
+        onSuccessListener = { ResponseState.EmptySuccess },
+        failureType = {
+            if (it is FirebaseAuthRecentLoginRequiredException) ErrorResponseType.UNAUTHORIZED
+            else ErrorResponseType.BAD_REQUEST
+        }
     )
 
     private fun maskUid(uid: String): String =

@@ -6,13 +6,17 @@ import androidx.credentials.Credential
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import androidx.credentials.exceptions.NoCredentialException
+import com.google.android.gms.tasks.Task
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
 import es.sebas1705.analytics.datasources.LogEventDataSource
 import es.sebas1705.authentication.config.SettingsAuth
 import es.sebas1705.authentication.config.getCredentialRequestGoogle
+import es.sebas1705.authentication.config.reauthFailureType
 import es.sebas1705.common.managers.ClassLogData
 import es.sebas1705.common.managers.TaskFlowManager
 import es.sebas1705.common.responses.ErrorResponseType
@@ -43,7 +47,26 @@ class GoogleAuthDataSource @Inject constructor(
      * An Activity context is required so that CredentialManager can present the
      * sign-in UI on Android 13 (API 33) and below.
      */
-    suspend fun signWithGoogle(activity: Activity): FlowResponseNothing {
+    suspend fun signWithGoogle(activity: Activity): FlowResponseNothing =
+        authenticateWithGoogle(activity) { firebaseAuth.signInWithCredential(it) }
+
+    /**
+     * Confirms the current user's Google account so Firebase accepts a sensitive operation.
+     *
+     * @return [FlowResponseNothing]: fails with [ErrorResponseType.FORBIDDEN] when the chosen Google
+     *   account is not the signed-in one.
+     */
+    suspend fun reauthenticateWithGoogle(activity: Activity): FlowResponseNothing =
+        authenticateWithGoogle(activity, ::reauthFailureType) { credential ->
+            val user = firebaseAuth.currentUser ?: throw Exception(SettingsAuth.NOT_LOGGED_USER)
+            user.reauthenticateAndRetrieveData(credential)
+        }
+
+    private suspend fun authenticateWithGoogle(
+        activity: Activity,
+        failureType: (Exception) -> ErrorResponseType = { ErrorResponseType.BAD_REQUEST },
+        firebaseAction: (AuthCredential) -> Task<AuthResult>
+    ): FlowResponseNothing {
         logI("auth.google signIn start")
         credentialManager = CredentialManager.create(context)
         var credential: Credential? = null
@@ -76,7 +99,7 @@ class GoogleAuthDataSource @Inject constructor(
                     GoogleIdTokenCredential.createFrom(credential!!.data)
                 val authCredential =
                     GoogleAuthProvider.getCredential(googleIdTokenCredential.idToken, null)
-                firebaseAuth.signInWithCredential(authCredential)
+                firebaseAction(authCredential)
             },
             onSuccessListener = {
                 if (it.user != null) {
@@ -87,7 +110,8 @@ class GoogleAuthDataSource @Inject constructor(
                     ErrorResponseType.INTERNAL,
                     SettingsAuth.NOT_LOGGED_USER
                 )
-            }
+            },
+            failureType = failureType
         )
     }
 

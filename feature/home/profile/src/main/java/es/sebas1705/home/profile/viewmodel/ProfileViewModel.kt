@@ -1,11 +1,23 @@
 package es.sebas1705.home.profile.viewmodel
 
+import android.app.Activity
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import es.sebas1705.authentication.DeleteCurrentUserUseCase
+import es.sebas1705.authentication.GetAccountProviderUseCase
+import es.sebas1705.authentication.IsGuestUserUseCase
+import es.sebas1705.authentication.ReauthenticateWithGoogleUseCase
+import es.sebas1705.authentication.ReauthenticateWithPasswordUseCase
 import es.sebas1705.authentication.SignOutUseCase
+import es.sebas1705.authentication.config.AccountProvider
 import es.sebas1705.common.mvi.MVIBaseViewModel
+import es.sebas1705.common.responses.ErrorResponseType
+import es.sebas1705.common.responses.ResponseState
+import es.sebas1705.common.utlis.alias.FlowResponseNothing
+import es.sebas1705.common.utlis.extensions.composables.printTextInToast
+import es.sebas1705.common.utlis.extensions.types.logI
 import es.sebas1705.core.resources.R
 import es.sebas1705.game.settings.ReadGameUseCase
 import es.sebas1705.home.profile.models.OfflineProfileRecordRowUi
@@ -16,11 +28,18 @@ import es.sebas1705.ranking.ReadOfflineRankingUseCase
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
+@Suppress("TooManyFunctions", "LongParameterList")
 class ProfileViewModel @Inject constructor(
     private val signOutUseCase: SignOutUseCase,
+    private val isGuestUserUseCase: IsGuestUserUseCase,
+    private val getAccountProviderUseCase: GetAccountProviderUseCase,
+    private val deleteCurrentUserUseCase: DeleteCurrentUserUseCase,
+    private val reauthenticateWithPasswordUseCase: ReauthenticateWithPasswordUseCase,
+    private val reauthenticateWithGoogleUseCase: ReauthenticateWithGoogleUseCase,
     private val readOfflineRankingUseCase: ReadOfflineRankingUseCase,
     private val readGameUseCase: ReadGameUseCase,
     private val savedStateHandle: SavedStateHandle,
@@ -41,13 +60,20 @@ class ProfileViewModel @Inject constructor(
             ProfileIntent.Load -> loadProfileData()
             ProfileIntent.SignOut -> signOut()
             ProfileIntent.ConsumeSignOutNavigation -> consumeSignOutNavigation()
+            ProfileIntent.RequestDeleteAccount -> showDeleteAccountStep(DeleteAccountStep.Confirm)
+            ProfileIntent.DismissDeleteAccount -> showDeleteAccountStep(DeleteAccountStep.Hidden)
+            ProfileIntent.ConfirmDeleteAccount -> deleteAccount(DeleteAccountStep.Confirm)
+            is ProfileIntent.ReauthenticateWithPassword -> reauthenticateAndDelete(
+                DeleteAccountStep.ReauthPassword
+            ) { reauthenticateWithPasswordUseCase(intent.password) }
+            is ProfileIntent.ReauthenticateWithGoogle -> reauthenticateWithGoogle(intent.activity)
             is ProfileIntent.SelectTab -> updateUi { it.copy(selectedTab = intent.tab) }
             is ProfileIntent.ToggleOfflineRecordSort -> toggleOfflineSort(intent.column)
         }
 
     private fun loadProfileData() = execute(Dispatchers.IO) {
         startLoading()
-        updateUi { it.copy(errorMessage = null) }
+        updateUi { it.copy(errorMessage = null, canDeleteAccount = !isGuestUserUseCase()) }
 
         runCatching {
             val game = readGameUseCase().first()
@@ -151,6 +177,107 @@ class ProfileViewModel @Inject constructor(
 
     private fun consumeSignOutNavigation() = execute {
         updateUi { it.copy(navigateToLogin = false) }
+    }
+
+    private fun showDeleteAccountStep(step: DeleteAccountStep) = execute {
+        _uiState.update {
+            // A running deletion can't be dismissed: it finishes on the server regardless.
+            if (it.deleteAccountStep == DeleteAccountStep.InProgress) it
+            else it.copy(deleteAccountStep = step, deleteAccountError = null)
+        }
+    }
+
+    private fun deleteAccount(stepOnFailure: DeleteAccountStep) = execute(Dispatchers.IO) {
+        showProgress()
+        runDeletion(stepOnFailure)
+    }
+
+    private fun reauthenticateWithGoogle(activity: Activity) =
+        reauthenticateAndDelete(DeleteAccountStep.ReauthGoogle) {
+            reauthenticateWithGoogleUseCase(activity)
+        }
+
+    private fun reauthenticateAndDelete(
+        stepOnFailure: DeleteAccountStep,
+        reauthenticate: suspend () -> FlowResponseNothing
+    ) = execute(Dispatchers.IO) {
+        showProgress()
+        reauthenticate().collect { response ->
+            when (response) {
+                is ResponseState.EmptySuccess -> runDeletion(stepOnFailure)
+                is ResponseState.Error -> showDeleteFailure(
+                    step = stepOnFailure,
+                    messageRes = if (response.type == ErrorResponseType.FORBIDDEN) {
+                        R.string.core_resources_profile_delete_account_wrong_credentials
+                    } else {
+                        R.string.core_resources_profile_delete_account_error
+                    }
+                )
+                else -> Unit
+            }
+        }
+    }
+
+    private suspend fun runDeletion(stepOnFailure: DeleteAccountStep) {
+        deleteCurrentUserUseCase().collect { response ->
+            when (response) {
+                is ResponseState.EmptySuccess -> onAccountDeleted()
+                is ResponseState.Error ->
+                    if (response.type == ErrorResponseType.UNAUTHORIZED) {
+                        onRecentLoginRequired(stepOnFailure)
+                    } else {
+                        showDeleteFailure(stepOnFailure, R.string.core_resources_profile_delete_account_error)
+                    }
+                else -> Unit
+            }
+        }
+    }
+
+    private fun onRecentLoginRequired(stepOnFailure: DeleteAccountStep) {
+        when {
+            // Already confirmed once and Firebase still refuses: asking again would loop.
+            stepOnFailure != DeleteAccountStep.Confirm -> showDeleteFailure(
+                stepOnFailure,
+                R.string.core_resources_profile_delete_account_relogin_needed
+            )
+            else -> when (getAccountProviderUseCase()) {
+                AccountProvider.Password -> showReauthStep(DeleteAccountStep.ReauthPassword)
+                AccountProvider.Google -> showReauthStep(DeleteAccountStep.ReauthGoogle)
+                AccountProvider.Other -> showDeleteFailure(
+                    stepOnFailure,
+                    R.string.core_resources_profile_delete_account_relogin_needed
+                )
+            }
+        }
+    }
+
+    private suspend fun onAccountDeleted() {
+        // Clears the session flag too; Firebase has already dropped the deleted user.
+        signOutUseCase()
+        logI("Account deleted. Navigating to login.")
+        _uiState.update {
+            it.copy(
+                deleteAccountStep = DeleteAccountStep.Hidden,
+                deleteAccountError = null,
+                navigateToLogin = true
+            )
+        }
+        execute { context.printTextInToast(context.getString(R.string.core_resources_profile_delete_account_done)) }
+    }
+
+    private fun showProgress() {
+        _uiState.update {
+            it.copy(deleteAccountStep = DeleteAccountStep.InProgress, deleteAccountError = null)
+        }
+    }
+
+    private fun showReauthStep(step: DeleteAccountStep) {
+        _uiState.update { it.copy(deleteAccountStep = step, deleteAccountError = null) }
+    }
+
+    private fun showDeleteFailure(step: DeleteAccountStep, messageRes: Int) {
+        val message = context.getString(messageRes)
+        _uiState.update { it.copy(deleteAccountStep = step, deleteAccountError = message) }
     }
 }
 

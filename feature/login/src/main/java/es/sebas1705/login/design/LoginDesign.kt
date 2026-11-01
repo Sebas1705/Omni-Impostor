@@ -446,10 +446,7 @@ private fun EmailVerificationPanel(
             .fillMaxWidth()
             .heightIn(min = MinTouchTarget)
     ) {
-        Text(
-            text = stringResource(ResourceR.string.core_resources_login_cancel_verification),
-            color = MaterialTheme.colorScheme.error
-        )
+        Text(text = stringResource(ResourceR.string.core_resources_login_back_to_login))
     }
     ErrorSection(errorMessage = errorMessage, sound = sound, onDismissError = onDismissError)
 }

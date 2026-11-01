@@ -47,6 +47,7 @@ import androidx.compose.material3.PrimaryScrollableTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -127,6 +128,8 @@ fun ProfileDesign(
     onSelectTab: (ProfileTab) -> Unit = {},
     onToggleOfflineRecordSort: (ProfileOfflineRecordSortColumn) -> Unit = {},
     onSignOut: () -> Unit = {},
+    canDeleteAccount: Boolean = false,
+    onDeleteAccount: () -> Unit = {},
     onDebugNav: () -> Unit = {}
 ) {
     val spacing = AppDimens.spacing
@@ -302,6 +305,22 @@ fun ProfileDesign(
                     )
                 ) {
                     Text(stringResource(ResourceR.string.core_resources_settings_sign_out))
+                }
+            }
+
+            if (canDeleteAccount) {
+                item(contentType = "deleteAccount") {
+                    TextButton(
+                        onClick = { sound(Sounds.CLK_TAP); onDeleteAccount() },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(min = MinRowHeight),
+                        colors = ButtonDefaults.textButtonColors(
+                            contentColor = MaterialTheme.colorScheme.error
+                        )
+                    ) {
+                        Text(stringResource(ResourceR.string.core_resources_profile_delete_account))
+                    }
                 }
             }
 

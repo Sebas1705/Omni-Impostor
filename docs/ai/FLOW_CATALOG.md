@@ -15,6 +15,8 @@ Replication notes:
 1. Splash checks persisted/remote auth state through domain use cases.
 2. Login screen triggers Google sign-in use case and updates UI state via MVI intents.
 3. Avoid calling Firebase SDK directly from feature modules.
+4. `isEmailVerified` is a cached value: use `RefreshEmailVerifiedUseCase` to know the current state.
+5. Never delete an account outside the confirmed flow in `feature/home/profile` (see `docs/cloud.md`).
 
 ## Flow 2: Settings Read/Write + Localization
 

@@ -5,6 +5,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- Delete account in the Profile screen (es and en): confirmed, asks for the password or the Google account again when Firebase requires a recent sign-in, and is hidden for guests. Public page in docs/account-deletion.html for Google Play's data deletion section; the privacy policy now covers accounts and deletion.
+
+### Fixed
+- Email verification now works inside the session: the app reloads the user from the server before checking, instead of reading a cached value that said "not verified" after the link was clicked. The splash does the same, with a 3 s limit.
+- The verification panel's Cancel no longer deletes the account, which could already be verified. It signs out and is now labelled "Back to login".
+- Recreating the login screen (for example rotating the device) on the verification panel no longer lets an unverified user into Home.
+
 ## [v1.3.0] - 2026-10-30
 
 <!-- Release notes generated using configuration in .github/release.yml at v1.3.0 -->
