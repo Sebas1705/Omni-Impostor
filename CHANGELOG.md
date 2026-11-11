@@ -5,6 +5,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- Submitting clue ratings while offline no longer leaves the rating screen waiting forever, and tapping Submit twice no longer queues the ratings twice.
+- The privacy policy now has an English version and uses the app name Omni-Impostor.
+
 ## [v1.4.1] - 2026-11-01
 
 ### Fixed
