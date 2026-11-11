@@ -24,9 +24,10 @@ android {
         applicationId = "es.sebas1705.impostorandroidgame"
         // CI passes these: releases take the version from the tag and the code from the commit count
         // (release.yml), intermediate builds a unique, increasing code (distribute.yml). The values
-        // below are only the defaults of local builds, there is nothing to bump before tagging.
-        versionCode = (project.findProperty("ci.versionCode") as String?)?.toIntOrNull() ?: 7
-        versionName = (project.findProperty("ci.versionName") as String? ?: "1.3.0") +
+        // below are only the defaults of local builds (the last shipped release, v1.4.1 = code 180),
+        // so there is nothing to bump before tagging.
+        versionCode = (project.findProperty("ci.versionCode") as String?)?.toIntOrNull() ?: 180
+        versionName = (project.findProperty("ci.versionName") as String? ?: "1.4.1") +
             (project.findProperty("ci.versionNameSuffix") as String? ?: "")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
