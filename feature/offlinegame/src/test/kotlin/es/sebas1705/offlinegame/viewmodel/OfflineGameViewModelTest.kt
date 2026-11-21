@@ -355,7 +355,8 @@ class OfflineGameViewModelTest {
         send(OfflineGameIntent.SubmitGuess("arbol"))
         send(OfflineGameIntent.GoToRating)
 
-        val impostorClues = state.impostorPlayerIndexes.map { word.clue[it % word.clue.size] }
+        val arranged = state.wordEntry!!.clue
+        val impostorClues = state.impostorPlayerIndexes.map { arranged[it % arranged.size] }
         assertEquals(OfflineGameStep.Rating, state.step)
         assertEquals(impostorClues.associateWith { true }, state.clueRatings)
 

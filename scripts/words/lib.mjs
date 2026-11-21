@@ -28,10 +28,34 @@ export function readJsonl(file) {
   return readFileSync(file, 'utf8').replace(/^﻿/, '').split(/\r?\n/).filter((l) => l.trim()).map((l) => JSON.parse(l));
 }
 
+/**
+ * Player ratings of clues (data/files/concepts/ratings.jsonl, written by ratings.mjs): one line per
+ * {id, lang, clue, pos, neg}. Fewer than RATING.minVotes votes say nothing, so they leave the clue alone.
+ */
+export const RATING = { minVotes: 5, z: 1.645, floor: 0.25 };
+
+/** Lower bound of the Wilson interval of the share of positive votes. */
+export function wilsonLowerBound(pos, total, z = RATING.z) {
+  if (total <= 0) return 0;
+  const p = pos / total;
+  const z2 = z * z;
+  return (p + z2 / (2 * total) - z * Math.sqrt((p * (1 - p) + z2 / (4 * total)) / total)) / (1 + z2 / total);
+}
+
+/** 1 until there are enough votes; then 0.25 + lower bound, capped at 1 (so a clue players dislike sinks to 0.25). */
+export function ratingFactor(pos, neg) {
+  const total = pos + neg;
+  if (total < RATING.minVotes) return 1;
+  return Math.min(1, RATING.floor + wilsonLowerBound(pos, total));
+}
+
 export function loadMap(dir = conceptsDir) {
   const concepts = readJsonl(join(dir, 'concepts.jsonl'));
   const links = readJsonl(join(dir, 'links.jsonl'));
-  return { concepts, links, byId: new Map(concepts.map((c) => [c.id, c])) };
+  const ratings = new Map(
+    readJsonl(join(dir, 'ratings.jsonl')).map((r) => [`${r.id}|${r.lang}|${norm(r.clue)}`, ratingFactor(r.pos ?? 0, r.neg ?? 0)])
+  );
+  return { concepts, links, ratings, byId: new Map(concepts.map((c) => [c.id, c])) };
 }
 
 const approved = (x) => (x.status ?? 'approved') === 'approved';
@@ -47,6 +71,8 @@ export function inDegrees(links) {
  * Compiles one concept for one language: returns { clues, notes } or null when the concept has no label there.
  * clues = ranked clue texts (spec section 6); fewer than minClues means the concept cannot be emitted.
  */
+const rated = (map, id, lang, text) => map.ratings?.get(`${id}|${lang}|${norm(text)}`) ?? 1;
+
 export function compileConcept(concept, lang, level, map, inDeg) {
   const label = concept.labels[lang];
   if (!label) return null;
@@ -57,10 +83,10 @@ export function compileConcept(concept, lang, level, map, inDeg) {
     const target = map.byId.get(l.to)?.labels[lang];
     if (!target) continue;
     const factor = Math.min(1, Math.sqrt(LIMITS.hubK / Math.max(inDeg.get(l.to) ?? 1, 1)));
-    candidates.push({ text: target.text, type: l.type ?? 'association', w: l.w ?? 3, factor });
+    candidates.push({ text: target.text, type: l.type ?? 'association', w: l.w ?? 3, factor: factor * rated(map, concept.id, lang, target.text) });
   }
   for (const h of concept.hints?.[lang] ?? []) {
-    if (approved(h)) candidates.push({ text: h.t, type: h.type ?? 'association', w: h.w ?? 3, factor: 1 });
+    if (approved(h)) candidates.push({ text: h.t, type: h.type ?? 'association', w: h.w ?? 3, factor: rated(map, concept.id, lang, h.t) });
   }
   const seen = new Set();
   const usable = candidates

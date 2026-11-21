@@ -55,6 +55,10 @@ words. CI runs `node scripts/words/compile.mjs --check`, `ConceptSourcesValidati
 word, no duplicates in a list). `scripts/words/migrate.mjs` was the one-off migration from the old flat lists and refuses to
 run again.
 
+Clue ratings from players: with your own Google credentials run `node scripts/words/ratings.mjs fetch <file>` (see its header),
+then `ratings.mjs import <file>` and `compile.mjs`; `ratings.mjs report` lists the best and worst rated clues. `node --test scripts/words`
+runs the tooling tests.
+
 Proposals (AI-written Spanish labels and clue types) live in `data/files/concepts/proposals/` and are not part of the map
 until reviewed: `node scripts/words/proposals.mjs review <file>` shows a batch, delete a line to reject it or edit a value to
 correct it, then `node scripts/words/proposals.mjs apply <file>` merges it and `compile.mjs` regenerates the lists.

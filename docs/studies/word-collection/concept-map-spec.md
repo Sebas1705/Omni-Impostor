@@ -1,6 +1,6 @@
 # Concept map: detailed design
 
-Status: phases 1 and 2 implemented (see sections 12 and 13). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
+Status: phases 1 to 3 implemented, with open parts (see sections 12 to 14). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
 document. The sizes quoted come from `data/concept-dry-run.md` (script `scripts/word-study/concept-dry-run.mjs`), the rules
 can be tried with `scripts/word-study/concept-compile-prototype.mjs` on `concept-map-example/`.
 
@@ -284,3 +284,26 @@ change the lists only by adding `reveal`; the labels alone fail `ConceptSourcesV
 Tested on the emulator (Spanish, debug build with the clue types applied): the Settings > Gameplay chips render and persist, and
 over 30 games the number of clues given matched the expected count for each word at low, normal and high (including the
 fallback to all clues when fewer than 3 would remain).
+
+## 14. Phase 3 as built
+
+| Piece | Where |
+|---|---|
+| `ratingFactor` from player ratings (lower bound of the Wilson interval of the share of positive votes, neutral below 5 votes, floor 0.25) | `scripts/words/lib.mjs` |
+| Download, import and report of `clue_ratings` | `scripts/words/ratings.mjs` (`ratings.jsonl` is the aggregated result) |
+| Weighted clue draw at game start | `ClueArrangement` + `ClueArrangementTest` (feature:offlinegame) |
+| Tooling tests, run in CI | `node --test scripts/words` |
+
+- **Ratings.** The app only records a rating when the player finishes the rating screen, and ratings start positive (a player taps a
+  clue to dislike it). A low factor is therefore a strong signal and a high one a weak one, which is why the factor floor is
+  0.25 and the neutral zone starts at 5 votes. A clue that falls under the compile floor is dropped while 4 or more remain, so
+  a disliked clue stops shipping instead of only moving down. `ratings.jsonl` does not exist yet: fetching the collection needs
+  the owner's own Google credentials (the rules deny client reads), so that step is the owner's. The import maps a rating to a
+  concept by word, category and clue text, and reports the documents that no longer match.
+- **Weighted draw.** The clues of a word come ranked best first from the compiler. At game start the positions the impostors
+  map to (`player % size`) are filled by a draw with weight `0.75^rank` without replacement; the rest keep their order. The
+  screens and the rating still read `clue[player % size]`, so nothing else changed. Two impostors that share a position still
+  share a clue, as before.
+- **Not built:** the optional "similar word" impostor mode (the impostor receives a related concept instead of a clue). It
+  needs a product decision (rules, how to keep it fair, UI) more than data work; the map already has what it needs (links with
+  type and weight).
