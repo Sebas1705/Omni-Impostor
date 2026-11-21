@@ -15,7 +15,13 @@ import java.text.Normalizer
  */
 class WordAssetsValidationTest {
 
-    private class Entry(val file: String, val word: String, val clues: List<String>, val category: String)
+    private class Entry(
+        val file: String,
+        val word: String,
+        val clues: List<String>,
+        val category: String,
+        val reveal: String? = null
+    )
 
     private val assetsDir: File = listOf("src/main/assets", "data/files/src/main/assets")
         .map(::File)
@@ -25,7 +31,7 @@ class WordAssetsValidationTest {
         val json = Json { ignoreUnknownKeys = true }
         assetsDir.listFiles { f -> f.name.matches(FILE_NAME) }.orEmpty().sortedBy { it.name }.flatMap { file ->
             json.decodeFromString<WordsJson>(file.readText().removePrefix("﻿")).words
-                .map { Entry(file.name, it.word, it.clues, it.category) }
+                .map { Entry(file.name, it.word, it.clues, it.category, it.reveal) }
         }
     }
 
@@ -118,6 +124,15 @@ class WordAssetsValidationTest {
         assertNone(
             "Clue with leading/trailing spaces",
             entries.flatMap { e -> e.clues.filter { it != it.trim() }.map { "${e.label()} -> \"$it\"" } }
+        )
+    }
+
+    @Test
+    fun `reveal has one digit from 1 to 3 per clue`() {
+        assertNone(
+            "reveal must match the clues",
+            entries.filter { e -> e.reveal != null && (e.reveal.length != e.clues.size || e.reveal.any { it !in '1'..'3' }) }
+                .map { "${it.label()} reveal=${it.reveal} clues=${it.clues.size}" }
         )
     }
 

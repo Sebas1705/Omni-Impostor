@@ -14,7 +14,7 @@ import { spawnSync } from 'node:child_process';
 import { assetsDir, compileAll, loadMap, root, serialize } from './lib.mjs';
 
 const check = process.argv.includes('--check');
-const { files, underfilled } = compileAll(loadMap());
+const { files, underfilled, weakAtNormal } = compileAll(loadMap());
 
 const expected = new Map(Object.entries(files).map(([name, entries]) => [`${name}.json`, serialize(entries)]));
 const existing = readdirSync(assetsDir).filter((f) => /_(en|es)\.json$/.test(f));
@@ -27,6 +27,8 @@ for (const [name, content] of expected) {
 for (const name of existing) if (!expected.has(name)) problems.push(`${name} (no longer produced)`);
 
 if (underfilled.length) console.log(`not emitted (fewer than 3 clues): ${underfilled.length}\n - ${underfilled.slice(0, 15).join('\n - ')}`);
+
+if (weakAtNormal.length) console.log(`fewer than 3 clues at help level normal (the app falls back to all clues): ${weakAtNormal.length}`);
 
 if (check) {
   if (problems.length) {

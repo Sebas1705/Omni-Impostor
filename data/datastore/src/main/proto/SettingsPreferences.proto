@@ -15,4 +15,6 @@ message SettingsPreferences {
     int32 darkTheme = 9;
     // Version of the bundled word lists that is currently loaded in the word database ("" = unknown).
     string defaultWordsVersion = 10;
+    // How much the impostor clues give away: 0 normal, 1 low, 2 high.
+    int32 clueHelp = 11;
 }

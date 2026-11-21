@@ -52,6 +52,9 @@ fun AppSettingsDialog(
             onUpdateDarkTheme = {
                 appSettingsViewModel.eventHandler(AppSettingsIntent.UpdateDarkTheme(it))
             },
+            onUpdateClueHelp = {
+                appSettingsViewModel.eventHandler(AppSettingsIntent.UpdateClueHelp(it))
+            },
             onResetDefaults = {
                 appSettingsViewModel.eventHandler(AppSettingsIntent.ResetDefaults)
             }

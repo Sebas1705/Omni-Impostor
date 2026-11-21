@@ -71,7 +71,13 @@ export function compileConcept(concept, lang, level, map, inDeg) {
     .sort((a, b) => b.score - a.score || a.text.localeCompare(b.text));
   const clues = usable.slice(0, LIMITS.maxClues);
   while (clues.length > 4 && clues[clues.length - 1].score < LIMITS.floor) clues.pop();
-  return { label: label.text, clues: clues.map((c) => c.text), available: usable.length };
+  return {
+    label: label.text,
+    clues: clues.map((c) => c.text),
+    reveal: clues.map((c) => REVEAL[c.type]),
+    available: usable.length,
+    atNormal: usable.filter((c) => REVEAL[c.type] <= MAX_REVEAL.normal).length,
+  };
 }
 
 export function indexMap(map) {
@@ -84,27 +90,31 @@ export function indexMap(map) {
 }
 
 /** Flat files content: { "category_lang": [ {word, clues, category, conceptId} ] }, entries sorted by word. */
-export function compileAll(map, level = 'normal') {
+export function compileAll(map, level = 'high') {
   const indexed = indexMap(map);
   const inDeg = inDegrees(map.links);
   const files = {};
   const underfilled = [];
+  const weakAtNormal = [];
   for (const concept of map.concepts.filter(approved)) {
     for (const lang of LANGS) {
       const r = compileConcept(concept, lang, level, indexed, inDeg);
       if (!r) continue;
       if (r.clues.length < LIMITS.minClues) { underfilled.push(`${concept.id} (${lang}): ${r.clues.length}`); continue; }
+      if (r.atNormal < LIMITS.minClues) weakAtNormal.push(`${concept.id} (${lang}): ${r.atNormal}`);
+      // `reveal` (one digit per clue: 1 weak, 2 medium, 3 strong giveaway) is only written when some clue is not level 1
+      const reveal = r.reveal.every((x) => x === 1) ? undefined : r.reveal.join('');
       for (const category of concept.categories) {
-        (files[`${category}_${lang}`] ??= []).push({ word: r.label, clues: r.clues, category, conceptId: concept.id });
+        (files[`${category}_${lang}`] ??= []).push({ word: r.label, clues: r.clues, reveal, category, conceptId: concept.id });
       }
     }
   }
   for (const list of Object.values(files)) list.sort((a, b) => a.word.localeCompare(b.word) || a.conceptId.localeCompare(b.conceptId));
-  return { files, underfilled };
+  return { files, underfilled, weakAtNormal };
 }
 
 /** Same layout as the hand-written files: CRLF, 2/4 space indent, one entry per line, no BOM. */
 export function serialize(entries) {
-  const lines = entries.map((e) => `    ${JSON.stringify({ word: e.word, clues: e.clues, category: e.category, conceptId: e.conceptId })}`);
+  const lines = entries.map((e) => `    ${JSON.stringify({ word: e.word, clues: e.clues, ...(e.reveal ? { reveal: e.reveal } : {}), category: e.category, conceptId: e.conceptId })}`);
   return `{\r\n  "words": [\r\n${lines.join(',\r\n')}\r\n  ]\r\n}`;
 }

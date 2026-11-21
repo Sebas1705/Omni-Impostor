@@ -26,6 +26,11 @@
     <string name="core_resources_settings_theme_dark">Oscuro</string>
     <string name="core_resources_settings_gameplay_title">Jugabilidad</string>
     <string name="core_resources_settings_language">Idioma</string>
+    <string name="core_resources_settings_clue_help">Ayuda al impostor</string>
+    <string name="core_resources_settings_clue_help_low">Baja</string>
+    <string name="core_resources_settings_clue_help_normal">Normal</string>
+    <string name="core_resources_settings_clue_help_high">Alta</string>
+    <string name="core_resources_settings_clue_help_hint">Cuánto delata la pista del impostor la palabra. Alta puede usar casi-sinónimos.</string>
     <string name="core_resources_language_english">Inglés</string>
     <string name="core_resources_language_spanish">Español</string>
     <string name="core_resources_settings_show_tutorial">Mostrar tutorial en el próximo inicio</string>

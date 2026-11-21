@@ -21,4 +21,5 @@ data class SettingsModel (
     val appLanguage: AppLanguage,
     val forceCompactTables: Boolean,
     val darkThemePreference: DarkThemePreference = DarkThemePreference.System,
+    val clueHelp: ClueHelp = ClueHelp.Normal,
 )

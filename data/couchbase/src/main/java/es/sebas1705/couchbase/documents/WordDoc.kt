@@ -11,5 +11,6 @@ data class WordDoc(
     val clue: List<String>,
     val category: String,
     val conceptId: String? = null,
+    val reveal: String? = null,
 ) : Document(id)
 

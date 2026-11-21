@@ -9,4 +9,5 @@ data class SettingsData(
     val appLanguage: String,
     val forceCompactTables: Boolean,
     val darkTheme: Int = 0,
+    val clueHelp: Int = 0,
 )

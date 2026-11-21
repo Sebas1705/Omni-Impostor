@@ -3,6 +3,7 @@ package es.sebas1705.game.words
 import es.sebas1705.couchbase.documents.WordDoc
 import es.sebas1705.datastore.model.SettingsData
 import es.sebas1705.models.Categories
+import es.sebas1705.models.ClueHelp
 import es.sebas1705.repositories.interfaces.IAppSettingsRepository
 import es.sebas1705.repositories.interfaces.IWordRepository
 import kotlinx.coroutines.flow.flowOf
@@ -76,5 +77,41 @@ class SearchWordsUseCaseTest {
         val result = useCase(setOf(Categories.FOOD_AND_DRINKS, Categories.ADULT_18_PLUS))
 
         assertEquals(2, result.size)
+    }
+}
+
+/** The impostor help setting decides which clues of a word can be given (reveal 1 weak, 2 medium, 3 strong). */
+class SelectCluesTest {
+
+    private val clues = listOf("Roof", "Door", "Home", "Garden", "Window")
+    private val reveal = "11311"
+
+    @Test
+    fun `without reveal data every clue stays`() {
+        assertEquals(clues, SearchWordsUseCase.selectClues(clues, null, ClueHelp.Low))
+    }
+
+    @Test
+    fun `a reveal string of the wrong length is ignored`() {
+        assertEquals(clues, SearchWordsUseCase.selectClues(clues, "11", ClueHelp.Low))
+    }
+
+    @Test
+    fun `normal and low hide the strong clue, high keeps it`() {
+        val withoutHome = listOf("Roof", "Door", "Garden", "Window")
+        assertEquals(withoutHome, SearchWordsUseCase.selectClues(clues, reveal, ClueHelp.Normal))
+        assertEquals(withoutHome, SearchWordsUseCase.selectClues(clues, reveal, ClueHelp.Low))
+        assertEquals(clues, SearchWordsUseCase.selectClues(clues, reveal, ClueHelp.High))
+    }
+
+    @Test
+    fun `low help falls back to every clue when fewer than three would remain`() {
+        assertEquals(clues, SearchWordsUseCase.selectClues(clues, "12222", ClueHelp.Low))
+        assertEquals(clues, SearchWordsUseCase.selectClues(clues, "33311", ClueHelp.Normal))
+    }
+
+    @Test
+    fun `an unreadable digit counts as level one`() {
+        assertEquals(clues, SearchWordsUseCase.selectClues(clues, "1x111", ClueHelp.Low))
     }
 }
