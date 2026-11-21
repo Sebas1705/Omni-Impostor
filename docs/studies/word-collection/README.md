@@ -6,6 +6,9 @@ study lives in this repository.
 | File | What it is |
 |---|---|
 | [`word-model-study.md`](word-model-study.md) | The study: word shape (max 3), clues as a map, words in many categories, options, recommendation, decisions needed |
+| [`concept-map-spec.md`](concept-map-spec.md) | Detailed design of the concept map: entities and files, link types, languages, compiler to the flat files, validation, review workflow, migration, phases |
+| [`concept-map-example/`](concept-map-example) | Small example of the source files (`concepts.jsonl`, `links.jsonl`) used to try the compiler rules |
+| [`data/concept-dry-run.md`](data/concept-dry-run.md) | What the migration would produce from today's lists (generated) |
 | [`collection-summary.md`](collection-summary.md) | Entries per category and language (generated) |
 | [`data/issues.csv`](data/issues.csv) | Entries that break a shape rule: clue equals word, fewer than 3 clues, repeated clue, duplicate in a list, parentheses, more than 3 words |
 | [`data/duplicate-words.csv`](data/duplicate-words.csv) | Words listed in several categories, with whether their clue lists look like the same sense or a homonym |

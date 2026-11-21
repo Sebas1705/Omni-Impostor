@@ -121,7 +121,13 @@ useful review queue but **not an auto-apply rule** (roughly half are right):
 | 2 | Introduce edges with type and weight (derive from current clues + hub weights), review queue for category candidates and reverse links | medium (curation effort) |
 | 3 | Tooling: LLM-assisted proposals reviewed by hand, edge weights calibrated with `clue_ratings`, optional new game modes (difficulty, "similar word" impostor) | open |
 
-## Decisions needed
+## Decisions taken
+
+Shape rule and articles kept, concept map (option C) as the target, one map with Spanish mandatory and optional translations,
+synonyms gated by a difficulty setting, AI proposals reviewed by the owner in batches. The detailed design is in
+[`concept-map-spec.md`](concept-map-spec.md).
+
+## Decisions needed (as asked at the time)
 
 1. Approve the shape rule and the validator (phase 0). Do articles stay in the displayed name?
 2. Option C (concept map) as the target? Or stop at B?
