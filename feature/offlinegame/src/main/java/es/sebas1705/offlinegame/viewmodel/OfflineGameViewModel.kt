@@ -23,10 +23,13 @@ import es.sebas1705.offlinegame.models.OfflineGameResult
 import es.sebas1705.offlinegame.models.OfflineGameStep
 import es.sebas1705.offlinegame.models.OfflineWinner
 import es.sebas1705.ranking.RecordOfflineMatchResultUseCase
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.withTimeoutOrNull
 import java.text.Normalizer
 import javax.inject.Inject
 import kotlin.random.Random
@@ -66,7 +69,17 @@ class OfflineGameViewModel internal constructor(
     private companion object {
         const val PREVIEW_MAX_ITEMS = 3
         const val MIN_PLAYERS = 3
+
+        // Firestore only completes a commit once the server acknowledges it. Offline the write is
+        // queued in the local cache and the task never finishes, so waiting forever would leave the
+        // rating screen stuck. After this long we let the player go on; the write stays queued and
+        // is sent when the connection returns.
+        const val RATINGS_SUBMIT_TIMEOUT_MS = 5_000L
     }
+
+    // Set synchronously on the first submit so a second tap cannot queue a second batch (each batch
+    // increments the counters again once it is finally delivered).
+    private var ratingsSubmitStarted = false
 
     override fun initState(): OfflineGameState = OfflineGameState()
 
@@ -376,6 +389,7 @@ class OfflineGameViewModel internal constructor(
         }.distinct()
         val initialRatings = impostorClues.associateWith { true }
         logD("goToRating impostorClues=$impostorClues")
+        ratingsSubmitStarted = false
         state.copy(step = OfflineGameStep.Rating, clueRatings = initialRatings, ratingsSubmitted = false)
     }
 
@@ -383,7 +397,16 @@ class OfflineGameViewModel internal constructor(
         state.copy(clueRatings = state.clueRatings + (clueText to isPositive))
     }
 
-    private fun submitRatings() = execute(ioDispatcher) {
+    private fun submitRatings(): Job {
+        if (ratingsSubmitStarted) {
+            logW("submitRatings ignored reason=already_submitted")
+            return Job().apply { complete() }
+        }
+        ratingsSubmitStarted = true
+        return execute(ioDispatcher) { doSubmitRatings() }
+    }
+
+    private suspend fun doSubmitRatings() {
         val state = _uiState.value
         val word = state.wordEntry?.word.orEmpty()
         val category = state.wordEntry?.category?.name.orEmpty()
@@ -391,8 +414,18 @@ class OfflineGameViewModel internal constructor(
             ClueRating(word = word, category = category, clue = clue, isPositive = positive)
         }
         logI("submitRatings count=${ratings.size} word='$word'")
-        runCatching { submitClueRatingsUseCase(ratings) }
-            .onFailure { logW("submitRatings failed: ${it.message}") }
+        val finished = withTimeoutOrNull(RATINGS_SUBMIT_TIMEOUT_MS) {
+            // Not runCatching: it would swallow the timeout's cancellation.
+            try {
+                submitClueRatingsUseCase(ratings)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                logW("submitRatings failed: ${e.message}")
+                false
+            }
+        }
+        if (finished == null) logW("submitRatings timed out, the write stays queued offline")
         updateUi { it.copy(ratingsSubmitted = true) }
     }
 

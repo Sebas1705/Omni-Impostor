@@ -18,6 +18,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -36,6 +37,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.kotlin.any
 import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.doSuspendableAnswer
 import org.mockito.kotlin.eq
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.stub
@@ -368,6 +370,24 @@ class OfflineGameViewModelTest {
             ClueRating(word = "Árbol", category = "ANIMALS", clue = it, isPositive = it != disliked)
         }
         verifyBlocking(submitRatings, times(1)) { invoke(eq(expected)) }
+    }
+
+    @Test
+    fun `a submit that never finishes offline lets the player go on and is not queued twice`() {
+        submitRatings.stub { onBlocking { invoke(any()) } doSuspendableAnswer { awaitCancellation() } }
+        startDiscussion()
+        send(OfflineGameIntent.SubmitGuess("arbol"))
+        send(OfflineGameIntent.GoToRating)
+
+        send(OfflineGameIntent.SubmitRatings)
+        assertFalse(state.ratingsSubmitted)
+        // A second tap while the first batch is still pending must not queue another one.
+        send(OfflineGameIntent.SubmitRatings)
+
+        tick(10_000)
+
+        assertTrue(state.ratingsSubmitted)
+        verifyBlocking(submitRatings, times(1)) { invoke(any()) }
     }
 
     @Test
