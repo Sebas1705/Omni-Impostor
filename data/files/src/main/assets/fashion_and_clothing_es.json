@@ -75,9 +75,9 @@
     {"word":"Overalls","clues":["Denim","Pantalones con Petos","Casual","Ropa"],"category":"fashion_and_clothing"},
     {"word":"Poncho","clues":["Impermeable","Ajuste Holgado","Capa con Capucha"],"category":"fashion_and_clothing"},
     {"word":"Sarong","clues":["Falda Envuelta","Ropa de Playa","Tela Ligera"],"category":"fashion_and_clothing"},
-    {"word":"Kilt","clues":["Falda Tradicional Escocesa","Patrón de Tartán"],"category":"fashion_and_clothing"},
+    {"word":"Kilt","clues":["Falda Tradicional Escocesa","Patrón de Tartán","Escocia","Gaita","Cuadros"],"category":"fashion_and_clothing"},
     {"word":"Fez","clues":["Sombrero Rojo","Parte Superior Plana","Tradicional"],"category":"fashion_and_clothing"},
     {"word":"Boret","clues":["Sombrero Redondo","Suave","Estilo Francés"],"category":"fashion_and_clothing"},
-    {"word":"Top Hat","clues":["Sombrero Alto","Ropa Formal"],"category":"fashion_and_clothing"}
+    {"word":"Top Hat","clues":["Sombrero Alto","Ropa Formal","Chistera","Mago","Esmoquin"],"category":"fashion_and_clothing"}
   ]
 }

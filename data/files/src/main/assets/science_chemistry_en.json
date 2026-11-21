@@ -87,7 +87,7 @@
     {"word":"Diastereomer","clues":["Stereochemistry","Not Mirror Image","Molecules","Chemistry"],"category":"science_chemistry"},
     {"word":"Racemic Mixture","clues":["Equal Enantiomers","Chirality","Chemistry"],"category":"science_chemistry"},
     {"word":"Nucleic Acid","clues":["DNA","RNA","Genetic Material","Chemistry"],"category":"science_chemistry"},
-    {"word":"Amino Acid","clues":["Protein Building Block","Chemistry"],"category":"science_chemistry"},
+    {"word":"Amino Acid","clues":["Protein Building Block","Chemistry","Biochemistry","Peptide","Nutrition"],"category":"science_chemistry"},
     {"word":"Peptide Bond","clues":["Amino Acids","Protein Synthesis","Chemistry"],"category":"science_chemistry"},
     {"word":"Protein Folding","clues":["3D Structure","Function","Chemistry"],"category":"science_chemistry"}
   ]

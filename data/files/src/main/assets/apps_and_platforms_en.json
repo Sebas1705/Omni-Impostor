@@ -42,7 +42,7 @@
     {"word":"Steam","clues":["Games","PC","Store","Library","Gaming"],"category":"apps_and_platforms"},
     {"word":"SoundCloud","clues":["Music","Cloud","Audio","Artists","Orange"],"category":"apps_and_platforms"},
     {"word":"TripAdvisor","clues":["Travel","Review","Hotel","Restaurant","Owl"],"category":"apps_and_platforms"},
-    {"word":"Booking","clues":["Hotel","Travel","Booking","Accommodation","Blue"],"category":"apps_and_platforms"},
+    {"word":"Booking","clues":["Hotel","Travel","Accommodation","Blue"],"category":"apps_and_platforms"},
     {"word":"Deliveroo","clues":["Food","Delivery","Order","Bicycle","Kangaroo"],"category":"apps_and_platforms"},
     {"word":"Gmail","clues":["Mail","Message","Google","Inbox","Email"],"category":"apps_and_platforms"},
     {"word":"Outlook","clues":["Mail","Microsoft","Work","Email","Inbox"],"category":"apps_and_platforms"},

@@ -44,7 +44,7 @@
     {"word":"Intel","clues":["Processor","Computer","Chip","Technology","Blue"],"category":"brands"},
     {"word":"Nivea","clues":["Cream","Skin","Blue","Beauty","Care"],"category":"brands"},
     {"word":"Dove","clues":["Soap","Bird","Beauty","Skin","Care"],"category":"brands"},
-    {"word":"Shell","clues":["Gasoline","Shell","Oil","Energy","Yellow"],"category":"brands"},
+    {"word":"Shell","clues":["Gasoline","Oil","Energy","Yellow"],"category":"brands"},
     {"word":"Canon","clues":["Camera","Photos","Japan","Lens","Image"],"category":"brands"},
     {"word":"HP","clues":["Printer","Computer","Technology","Office","Logo"],"category":"brands"},
     {"word":"Heineken","clues":["Beer","Star","Green","Drink","Holland"],"category":"brands"},

@@ -47,7 +47,7 @@
     {"word":"Emma Watson","clues":["Actriz","Magia","Hermione","Libros","Inglaterra"],"category":"celebrities"},
     {"word":"Jackie Chan","clues":["Artes Marciales","Actor","Acción","China","Comedia"],"category":"celebrities"},
     {"word":"Arnold Schwarzenegger","clues":["Músculos","Terminator","Actor","Acción","Gobernador"],"category":"celebrities"},
-    {"word":"Pele","clues":["Fútbol","Brasil","Leyenda","Goles","Rey"],"category":"celebrities"},
+    {"word":"Pelé","clues":["Fútbol","Brasil","Leyenda","Goles","Rey"],"category":"celebrities"},
     {"word":"Dalai Lama","clues":["Paz","Tíbet","Líder","Religión","Gafas"],"category":"celebrities"},
     {"word":"Walt Disney","clues":["Dibujos","Ratón","Parque","Cine","Magia"],"category":"celebrities"},
     {"word":"Charlie Chaplin","clues":["Silente","Cine","Comedia","Bigote","Vagabundo"],"category":"celebrities"},
@@ -63,7 +63,6 @@
     {"word":"Oprah","clues":["Televisión","Entrevista","Libros","Poderosa","Talk Show"],"category":"celebrities"},
     {"word":"Zuckerberg","clues":["Facebook","Meta","Redes","Programador","Harvard"],"category":"celebrities"},
     {"word":"Beckham","clues":["Fútbol","Inglaterra","Moda","Tatuajes","Elegante"],"category":"celebrities"},
-    {"word":"Downey Jr.","clues":["Iron Man","Actor","Vengadores","Cine","Gafas"],"category":"celebrities"},
-    {"word":"Pelé","clues":["Fútbol","Brasil","Leyenda","Goles","Rey"],"category":"celebrities"}
+    {"word":"Downey Jr.","clues":["Iron Man","Actor","Vengadores","Cine","Gafas"],"category":"celebrities"}
   ]
 }

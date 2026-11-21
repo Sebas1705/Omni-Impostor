@@ -133,7 +133,7 @@
     {"word":"Rama","clues":["Hinduism","Avatar of Vishnu","Bow and Arrow","Sita","Ramayana"],"category":"mythology_and_fantasy"},
     {"word":"Sita","clues":["Hinduism","Wife of Rama","Virtue","Abduction by Ravana","Ramayana"],"category":"mythology_and_fantasy"},
     {"word":"Ravana","clues":["Hinduism","Demon King","Ten Heads","Abduction of Sita","Ramayana"],"category":"mythology_and_fantasy"},
-    {"word":"Ra","clues":["Egyptian Mythology","Sun God"],"category":"mythology_and_fantasy"},
-    {"word":"Pentagram","clues":["Occultism","Five-Pointed Star Symbol"],"category":"mythology_and_fantasy"}
+    {"word":"Ra","clues":["Egyptian Mythology","Sun God","Pharaoh","Eye of Ra","Falcon"],"category":"mythology_and_fantasy"},
+    {"word":"Pentagram","clues":["Occultism","Five-Pointed Star Symbol","Witchcraft","Wicca","Circle"],"category":"mythology_and_fantasy"}
   ]
 }

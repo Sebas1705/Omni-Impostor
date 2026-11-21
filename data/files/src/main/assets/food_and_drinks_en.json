@@ -20,7 +20,7 @@
     {"word":"Bread","clues":["Flour","Oven","Loaf","Wheat","Sandwich"],"category":"food_and_drinks"},
     {"word":"Cheese","clues":["Dairy","Mouse","Aged","Holes","Yellow"],"category":"food_and_drinks"},
     {"word":"Egg","clues":["Chicken","Yolk","White","Shell","Fried"],"category":"food_and_drinks"},
-    {"word":"Rice","clues":["Grain","White","Chinese","Grain","Cereal"],"category":"food_and_drinks"},
+    {"word":"Rice","clues":["Grain","White","Chinese","Cereal"],"category":"food_and_drinks"},
     {"word":"French Fries","clues":["Oil","Salt","Tuber","Bag","Crunchy"],"category":"food_and_drinks"},
     {"word":"Chicken","clues":["Bird","Roasted","Farm","Feathers","Wings"],"category":"food_and_drinks"},
     {"word":"Fish","clues":["Sea","Scales","Bones","Net","Fried"],"category":"food_and_drinks"},

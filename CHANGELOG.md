@@ -5,6 +5,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- A unit test (`WordAssetsValidationTest`) that checks the shape of the bundled word lists: at most 3 words per word, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a list.
+
+### Fixed
+- Word lists: 78 clues that gave the secret word away to the impostor were removed, 7 glued clues were split, 4 duplicate words were merged, aliases were moved out of parentheses and about 85 entries with too few clues got new ones. Devices that already have the word database keep their old copy until the words are re-imported.
+
 ## [v1.4.1] - 2026-11-01
 
 ### Fixed

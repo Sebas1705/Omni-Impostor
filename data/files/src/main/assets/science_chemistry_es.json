@@ -2,7 +2,7 @@
   "words": [
     {"word":"Tabla Periódica","clues":["Elementos","Mendeleiev","Química","Metales","Gases"],"category":"science_chemistry"},
     {"word":"Oxígeno","clues":["Aire","Respirar","Elemento","Vida","Gas"],"category":"science_chemistry"},
-    {"word":"Hidrógeno","clues":["Primero","Agua","Gas","Sol","Ligero"],"category":"science_chemistry"},
+    {"word":"Hidrógeno","clues":["Primero","Agua","Gas","Sol","Ligero","Combustible","Elemento"],"category":"science_chemistry"},
     {"word":"Carbono","clues":["Vida","Diamante","Orgánica","Grafito","Elemento"],"category":"science_chemistry"},
     {"word":"Nitrógeno","clues":["Aire","Gas","Fertilizante","Atmósfera","Líquido"],"category":"science_chemistry"},
     {"word":"Oro","clues":["Metal","Amarillo","Joyas","Valioso","Brillante"],"category":"science_chemistry"},
@@ -65,7 +65,6 @@
     {"word":"Química Verde","clues":["Sostenible","Medio Ambiente","Reacción","Química","Ecológica"],"category":"science_chemistry"},
     {"word":"Termodinámica","clues":["Energía","Calor","Trabajo","Sistema","Química"],"category":"science_chemistry"},
     {"word":"Electroquímica","clues":["Electricidad","Reacción","Química","Batería","Corriente"],"category":"science_chemistry"},
-    {"word":"Hidrogeno","clues":["Gas","Agua","Combustible","Ligero","Elemento"],"category":"science_chemistry"},
     {"word":"Energía Nuclear","clues":["Átomo","Reacción","Química","Energía","Radioactivo"],"category":"science_chemistry"},
     {"word":"Fusión Nuclear","clues":["Átomos","Energía","Química","Sol","Reacción"],"category":"science_chemistry"},
     {"word":"Fisión Nuclear","clues":["Átomo","Energía","Química","Nuclear","Reacción"],"category":"science_chemistry"},

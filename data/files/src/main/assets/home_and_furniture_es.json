@@ -15,7 +15,7 @@
     {"word":"Espejo","clues":["Reflejo","Baño","Verse","Cristal","Pared"],"category":"home_and_furniture"},
     {"word":"Ducha","clues":["Baño","Agua","Limpio","Jabón","Cuerpo"],"category":"home_and_furniture"},
     {"word":"Bañera","clues":["Baño","Agua","Relajarse","Llenar","Jabón"],"category":"home_and_furniture"},
-    {"word":"Inodoro","clues":["Baño","Agua","Papel","Taza","Baño"],"category":"home_and_furniture"},
+    {"word":"Inodoro","clues":["Baño","Agua","Papel","Taza"],"category":"home_and_furniture"},
     {"word":"Lavabo","clues":["Manos","Grifo","Baño","Agua","Jabón"],"category":"home_and_furniture"},
     {"word":"Alfombra","clues":["Suelo","Tejido","Suave","Decoración","Pisar"],"category":"home_and_furniture"},
     {"word":"Cortina","clues":["Ventana","Luz","Tela","Privacidad","Colgar"],"category":"home_and_furniture"},

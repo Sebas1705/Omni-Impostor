@@ -63,13 +63,13 @@
     {"word":"Proyector","clues":["Presentación","Pantalla","Clase Visual"],"category":"school_and_education"},
     {"word":"Microscopio","clues":["Ciencia","Pequeño","Laboratorio"],"category":"school_and_education"},
     {"word":"Telescopio","clues":["Astronomía","Lejos","Cielo Estrellado"],"category":"school_and_education"},
-    {"word":"Impresora 3D","clues":["Tecnología","Crear Objetos Físicos"],"category":"school_and_education"},
+    {"word":"Impresora 3D","clues":["Tecnología","Crear Objetos Físicos","Filamento","Plástico","Capas"],"category":"school_and_education"},
     {"word":"Patio","clues":["Recreo","Jugar","Escuela","Descanso","Niños"],"category":"school_and_education"},
     {"word":"Uniforme Escolar","clues":["Ropa","Colegio","Identidad","Estudiantes"],"category":"school_and_education"},
     {"word":"Tutoría","clues":["Apoyo","Estudiante","Profesor","Ayuda"],"category":"school_and_education"},
     {"word":"Manualidades","clues":["Arte","Hacer","Papel","Tijeras","Creatividad"],"category":"school_and_education"},
     {"word":"Proyecto Escolar","clues":["Trabajo en Grupo","Investigar","Presentar"],"category":"school_and_education"},
-    {"word":"Exposición Oral","clues":["Hablar en Público","Presentar Tema"],"category":"school_and_education"},
+    {"word":"Exposición Oral","clues":["Hablar en Público","Presentar Tema","Diapositivas","Nervios","Clase"],"category":"school_and_education"},
     {"word":"Trabajo en Equipo","clues":["Colaborar","Grupo","Compartir Ideas"],"category":"school_and_education"}
   ]
 }

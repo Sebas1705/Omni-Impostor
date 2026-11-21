@@ -53,7 +53,7 @@
     {"word":"Pole Vault","clues":["Pole","Bar","Jump","Track","Flight"],"category":"sports"},
     {"word":"Discus Throw","clues":["Discus","Throw","Circle","Track","Distance"],"category":"sports"},
     {"word":"Hammer Throw","clues":["Hammer","Throw","Circle","Track","Distance"],"category":"sports"},
-    {"word":"Shot Put","clues":["Shot Put","Throw","Circle","Track","Distance"],"category":"sports"},
+    {"word":"Shot Put","clues":["Throw","Circle","Track","Distance"],"category":"sports"},
     {"word":"Decathlon","clues":["Ten Events","Track and Field","Endurance","Versatility","Finish Line"],"category":"sports"},
     {"word":"Heptathlon","clues":["Seven Events","Track and Field","Endurance","Versatility","Finish Line"],"category":"sports"},
     {"word":"Pentathlon","clues":["Five Events","Track and Field","Endurance","Versatility","Finish Line"],"category":"sports"},

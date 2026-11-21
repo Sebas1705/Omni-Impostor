@@ -37,8 +37,8 @@
     {"word":"Globetrotter","clues":["Globe","Trotter","Travel","World","Explore"],"category":"travel_and_tourism"},
     {"word":"Staycation","clues":["Stay","Vacation","Home","Relaxation","Local"],"category":"travel_and_tourism"},
     {"word":"Ecotourism","clues":["Eco","Tourism","Nature","Sustainable","Travel"],"category":"travel_and_tourism"},
-    {"word":"Couchsurfing","clues":["Couchsurfing","Host","Travel","Stay","Community"],"category":"travel_and_tourism"},
-    {"word":"Airbnb","clues":["Airbnb","Accommodation","Travel","Host","Rent"],"category":"travel_and_tourism"},
+    {"word":"Couchsurfing","clues":["Host","Travel","Stay","Community"],"category":"travel_and_tourism"},
+    {"word":"Airbnb","clues":["Accommodation","Travel","Host","Rent"],"category":"travel_and_tourism"},
     {"word":"Hiking Trail","clues":["Hiking","Trail","Nature","Walk","Adventure"],"category":"travel_and_tourism"},
     {"word":"Beach Resort","clues":["Beach","Resort","Vacation","Relaxation","Pool"],"category":"travel_and_tourism"},
     {"word":"City Tour","clues":["City","Tour","Guide","Sightseeing","Travel"],"category":"travel_and_tourism"},
@@ -48,12 +48,12 @@
     {"word":"Wildlife Safari","clues":["Wildlife","Safari","Travel","Animals","Adventure"],"category":"travel_and_tourism"},
     {"word":"Historical Site","clues":["History","Site","Travel","Monument","Famous"],"category":"travel_and_tourism"},
     {"word":"Ski Resort","clues":["Skiing","Resort","Snow","Vacation","Mountain"],"category":"travel_and_tourism"},
-    {"word":"National Park","clues":["National Park","Nature","Travel","Wildlife","Hiking"],"category":"travel_and_tourism"},
-    {"word":"Cultural Heritage Site","clues":["Cultural Heritage Site","History","Travel","Monument","Famous"],"category":"travel_and_tourism"},
-    {"word":"Adventure Sports","clues":["Adventure Sports","Travel","Extreme","Fun","Adrenaline"],"category":"travel_and_tourism"},
-    {"word":"Luxury Cruise","clues":["Luxury Cruise","Ship","Travel","Vacation","Relaxation"],"category":"travel_and_tourism"},
-    {"word":"Backcountry Camping","clues":["Backcountry Camping","Nature","Travel","Camping Gear","Adventure"],"category":"travel_and_tourism"},
-    {"word":"Cultural Exchange Program","clues":["Cultural Exchange Program","Culture","Travel","Experience","Learning"],"category":"travel_and_tourism"},
-    {"word":"Volunteer Tourism","clues":["Volunteer Tourism","Help Others","Travel","Community"],"category":"travel_and_tourism"}
+    {"word":"National Park","clues":["Nature","Travel","Wildlife","Hiking"],"category":"travel_and_tourism"},
+    {"word":"Cultural Heritage Site","clues":["History","Travel","Monument","Famous"],"category":"travel_and_tourism"},
+    {"word":"Adventure Sports","clues":["Travel","Extreme","Fun","Adrenaline"],"category":"travel_and_tourism"},
+    {"word":"Luxury Cruise","clues":["Ship","Travel","Vacation","Relaxation"],"category":"travel_and_tourism"},
+    {"word":"Backcountry Camping","clues":["Nature","Travel","Camping Gear","Adventure"],"category":"travel_and_tourism"},
+    {"word":"Cultural Exchange Program","clues":["Culture","Travel","Experience","Learning"],"category":"travel_and_tourism"},
+    {"word":"Volunteer Tourism","clues":["Help Others","Travel","Community","Charity"],"category":"travel_and_tourism"}
   ]
 }

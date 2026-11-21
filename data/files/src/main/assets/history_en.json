@@ -57,7 +57,7 @@
     {"word":"Tribune","clues":["Rome","Official","Representative","Plebeian","Ancient"],"category":"history"},
     {"word":"Legionnaire","clues":["Rome","Soldier","Legion","Military","Ancient"],"category":"history"},
     {"word":"Consul","clues":["Rome","Leader","Government official"],"category":"history"},
-    {"word":"Senator","clues":["Rome","Government official"],"category":"history"},
+    {"word":"Senator","clues":["Rome","Government official","Senate","Toga","Law","Republic"],"category":"history"},
     {"word":"Emperor Nero","clues":["Rome","Emperor","Fire of Rome"],"category":"history"},
     {"word":"Genghis Khan","clues":["Mongol Empire","Conqueror","Asia","Horseman","Military leader"],"category":"history"},
     {"word":"Leonardo da Vinci","clues":["Renaissance","Artist","Inventor","Mona Lisa","Italy"],"category":"history"},

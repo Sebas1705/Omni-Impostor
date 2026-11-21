@@ -70,16 +70,16 @@
     {"word":"Educational Game","clues":["Game","Learn","Interactive","Education","Fun"],"category":"school_and_education"},
     {"word":"Coding Bootcamp","clues":["Programming","Intensive Course","Education","Technology","Bootcamp"],"category":"school_and_education"},
     {"word":"Language Learning App","clues":["Mobile","Learn Languages","Interactive","Education","App"],"category":"school_and_education"},
-    {"word":"Virtual Classroom Software","clues":["Online Meeting Software","Education","Virtual Classroom Software","Remote Learning Software","Video Conferencing Software"],"category":"school_and_education"},
+    {"word":"Virtual Classroom Software","clues":["Online Meeting Software","Education","Remote Learning Software","Video Conferencing Software"],"category":"school_and_education"},
     {"word":"Online Tutoring Service","clues":["Online","Tutoring","Education","Remote Learning","Help"],"category":"school_and_education"},
     {"word":"Educational Podcast","clues":["Audio","Learn","Education","Podcast","Knowledge"],"category":"school_and_education"},
-    {"word":"E-learning Authoring Tool","clues":["Create Online Courses","Education","E-learning Authoring Tool","Course Creation Software","Instructional Design Software"],"category":"school_and_education"},
-    {"word":"Digital Assessment Tool","clues":["Online Testing Software","Education","Digital Assessment Tool","Online Exam Software","Assessment Platform"],"category":"school_and_education"},
+    {"word":"E-learning Authoring Tool","clues":["Create Online Courses","Education","Course Creation Software","Instructional Design Software"],"category":"school_and_education"},
+    {"word":"Digital Assessment Tool","clues":["Online Testing Software","Education","Online Exam Software","Assessment Platform"],"category":"school_and_education"},
     {"word":"Artificial Intelligence Tutor","clues":["AI","Personalized Learning","Technology","Education","Tutor"],"category":"school_and_education"},
-    {"word":"Gamified Learning Platform","clues":["Game Elements","Learn","Education","Gamified Learning Platform","Fun"],"category":"school_and_education"},
-    {"word":"Adaptive Learning Technology","clues":["Personalized Learning","Technology","Education","Adaptive Learning Technology","AI"],"category":"school_and_education"},
+    {"word":"Gamified Learning Platform","clues":["Game Elements","Learn","Education","Fun"],"category":"school_and_education"},
+    {"word":"Adaptive Learning Technology","clues":["Personalized Learning","Technology","Education","AI"],"category":"school_and_education"},
     {"word":"Online Discussion Forum","clues":["Online","Discussion","Education","Forum","Community"],"category":"school_and_education"},
-    {"word":"Digital Note-taking App","clues":["Mobile","Notes","Education","Digital Note-taking App","Organization"],"category":"school_and_education"},
-    {"word":"Adaptive Learning Platform","clues":["Personalized Learning","Technology","Education","Adaptive Learning Platform","AI"],"category":"school_and_education"}
+    {"word":"Digital Note-taking App","clues":["Mobile","Notes","Education","Organization"],"category":"school_and_education"},
+    {"word":"Adaptive Learning Platform","clues":["Personalized Learning","Technology","Education","AI"],"category":"school_and_education"}
   ]
 }

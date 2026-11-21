@@ -57,7 +57,7 @@
     {"word":"Hatchback","clues":["Puerta Trasera","Coche","Compacto","Práctico","Diseño"],"category":"cars_and_motorsport"},
     {"word":"Minivan","clues":["Familiar","Van","Espacioso","Puertas","Coche"],"category":"cars_and_motorsport"},
     {"word":"Pickup Truck","clues":["Camioneta de Carga","Vehículo Utilitario","Carga","Todoterreno","Coche"],"category":"cars_and_motorsport"},
-    {"word":"Vehículo Eléctrico (EV)","clues":["Motor Eléctrico","Batería Recargable","Emisiones Cero","Estación de Carga","Coche"],"category":"cars_and_motorsport"},
+    {"word":"Vehículo Eléctrico","clues":["Motor Eléctrico","Batería Recargable","Emisiones Cero","Estación de Carga","Coche","EV"],"category":"cars_and_motorsport"},
     {"word":"Autopista","clues":["Carretera","Velocidad","Peaje","Tráfico","Viaje"],"category":"cars_and_motorsport"},
     {"word":"Semáforo","clues":["Luz","Tráfico","Rojo","Verde","Amarillo"],"category":"cars_and_motorsport"},
     {"word":"Cruce de Peatones","clues":["Cebra","Peatones","Seguridad","Calle","Paso"],"category":"cars_and_motorsport"},

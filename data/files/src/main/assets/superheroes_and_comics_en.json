@@ -57,7 +57,7 @@
     {"word":"Telekinesis","clues":["Move","Object","Mind","Power","Psychic"],"category":"superheroes_and_comics"},
     {"word":"Shape-shifting","clues":["Change","Form","Appearance","Power","Mimic"],"category":"superheroes_and_comics"},
     {"word":"Regeneration","clues":["Heal","Body","Power","Recover","Injury"],"category":"superheroes_and_comics"},
-    {"word":"Energy Blast","clues":["Powerful Attack","Energy Projection"],"category":"superheroes_and_comics"},
+    {"word":"Energy Blast","clues":["Powerful Attack","Energy Projection","Beam","Superpower","Explosion"],"category":"superheroes_and_comics"},
     {"word":"Mind Control","clues":["Control","Thoughts","Power","Psychic","Manipulation"],"category":"superheroes_and_comics"},
     {"word":"Force Field","clues":["Protection","Energy Barrier","Power","Shield","Defense"],"category":"superheroes_and_comics"},
     {"word":"Super Intelligence","clues":["Genius","Smart","Power","Brain","Knowledge"],"category":"superheroes_and_comics"},
@@ -116,7 +116,7 @@
     {"word":"Green Arrow","clues":["Bow and Arrow","Hero","DC","Oliver Queen"],"category":"superheroes_and_comics"},
     {"word":"Martian Manhunter","clues":["Martian","Shape-shifting","Hero","DC"],"category":"superheroes_and_comics"},
     {"word":"Supergirl","clues":["Kryptonian","Heroine","DC","Superman’s Cousin"],"category":"superheroes_and_comics"},
-    {"word":"Silver Surfer","clues":["Cosmic Power","Marvel"],"category":"superheroes_and_comics"},
+    {"word":"Silver Surfer","clues":["Cosmic Power","Marvel","Surfboard","Galactus","Herald"],"category":"superheroes_and_comics"},
     {"word":"Daredevil","clues":["Blind","Hero","Marvel","Radar Sense"],"category":"superheroes_and_comics"},
     {"word":"Punisher","clues":["Vigilante","Antihero","Marvel","Revenge"],"category":"superheroes_and_comics"},
     {"word":"Ghost Rider","clues":["Motorcycle","Skull","Hero","Marvel","Flames"],"category":"superheroes_and_comics"},
@@ -138,9 +138,9 @@
     {"word":"The Killing Joke","clues":["Joker","Batman","Psychological","DC Comics"],"category":"superheroes_and_comics"},
     {"word":"All-Star Superman","clues":["Superman","Epic","DC Comics"],"category":"superheroes_and_comics"},
     {"word":"The Infinity Gauntlet","clues":["Thanos","Infinity Stones","Marvel Comics"],"category":"superheroes_and_comics"},
-    {"word":"Civil War","clues":["Superhero Conflict","Marvel Comics"],"category":"superheroes_and_comics"},
-    {"word":"Secret Wars","clues":["Superhero Battle","Marvel Comics"],"category":"superheroes_and_comics"},
-    {"word":"House of M","clues":["Alternate Reality","Marvel Comics"],"category":"superheroes_and_comics"},
-    {"word":"Age of Apocalypse","clues":["Alternate Reality","Marvel Comics"],"category":"superheroes_and_comics"}
+    {"word":"Civil War","clues":["Superhero Conflict","Marvel Comics","Iron Man","Captain America","Registration Act"],"category":"superheroes_and_comics"},
+    {"word":"Secret Wars","clues":["Superhero Battle","Marvel Comics","Beyonder","Battleworld","Crossover"],"category":"superheroes_and_comics"},
+    {"word":"House of M","clues":["Alternate Reality","Marvel Comics","Scarlet Witch","Mutants","No More Mutants"],"category":"superheroes_and_comics"},
+    {"word":"Age of Apocalypse","clues":["Alternate Reality","Marvel Comics","X-Men","Mutants","Magneto"],"category":"superheroes_and_comics"}
   ]
 }
