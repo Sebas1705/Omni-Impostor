@@ -79,6 +79,13 @@ function check(files) {
   const indexed = indexMap(map);
   const inDeg = inDegrees(map.links);
   const problems = [];
+  const esLabels = new Map();
+  for (const o of map.concepts) if (o.labels.es) {
+    const k = norm(o.labels.es.text);
+    if (!esLabels.has(k)) esLabels.set(k, []);
+    esLabels.get(k).push(o);
+  }
+  const proposedLabels = new Map();
   for (const file of files) {
     const kind = kindOf(file);
     const seen = new Set();
@@ -96,10 +103,16 @@ function check(files) {
         const ns = hints.map(norm);
         if (new Set(ns).size !== ns.length) problems.push(`${where}: repeated hint`);
         if (ns.includes(norm(es.text))) problems.push(`${where}: a hint equals the label`);
-        const twin = [...map.concepts].find((o) => o.id !== r.id && o.labels.es && norm(o.labels.es.text) === norm(es.text));
-        if (twin && !twin.categories.some((x) => c.categories.includes(x))) {
-          problems.push(`${where}: "${es.text}" is already the Spanish label of ${twin.id} (different categories): pick another label`);
+        const twins = (esLabels.get(norm(es.text)) ?? []).filter((o) => o.id !== r.id);
+        for (const twin of twins) {
+          const mergeable = !twin.labels.en && twin.categories.some((x) => c.categories.includes(x));
+          if (!mergeable) {
+            problems.push(`${where}: "${es.text}" is already the Spanish label of ${twin.id}${twin.labels.en ? ` (${twin.labels.en.text})` : ''}: same concept (merge by hand) or pick another label`);
+          }
         }
+        const clash = proposedLabels.get(norm(es.text));
+        if (clash && clash !== r.id) problems.push(`${where}: "${es.text}" is also proposed for ${clash}`);
+        proposedLabels.set(norm(es.text), r.id);
         for (const h of hints) if (typeof h !== 'string' || !h.trim() || tokens(h).length > 3 || /[()「」|;]/.test(h)) problems.push(`${where}: bad hint "${h}"`);
       } else {
         const key = `${r.id}|${r.lang}`;
