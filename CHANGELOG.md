@@ -9,6 +9,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The bundled word lists are versioned (`words_version.txt`): when an update ships different lists, the app replaces the words stored on the device instead of keeping the old copy forever. An unreadable list never leaves the game without words. `node scripts/word-study/update-words-version.mjs` refreshes the version after editing a list.
 - A unit test (`WordAssetsValidationTest`) that checks the shape of the bundled word lists: at most 3 words per word, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a list.
 
+### Changed
+- The word lists are now generated from a concept map (`data/files/concepts`): a word that fits several categories is one concept instead of several copies, and the game picks the round word uniformly over concepts, so it is no longer twice as likely when two of its categories are selected. Words and clues stay the same for players apart from merged duplicates; the new `conceptId` field is ignored by older builds.
+
 ### Fixed
 - Word lists: 78 clues that gave the secret word away to the impostor were removed, 7 glued clues were split, 4 duplicate words were merged, aliases were moved out of parentheses and about 85 entries with too few clues got new ones. Existing installs receive them through the new word list versioning.
 

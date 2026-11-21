@@ -1,6 +1,6 @@
 # Concept map: detailed design
 
-Status: design for review. Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
+Status: phase 1 implemented (see section 12). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
 document. The sizes quoted come from `data/concept-dry-run.md` (script `scripts/word-study/concept-dry-run.mjs`), the rules
 can be tried with `scripts/word-study/concept-compile-prototype.mjs` on `concept-map-example/`.
 
@@ -41,7 +41,7 @@ JSON Lines keeps diffs and review batches line based, like the current one-entry
 
 | Field | Type | Rules |
 |---|---|---|
-| `id` | string | Stable forever. `slug` of the Spanish label (`leon`); homonyms add a sense tag: `espacio~universo`, `espacio~casilla`. Pattern `^[a-z0-9]+(-[a-z0-9]+)*(~[a-z0-9]+(-[a-z0-9]+)*)?$`. Labels may change, the id never does (links and ratings point at it). |
+| `id` | string | Stable forever. `slug` of the Spanish label (`leon`; of the English one while the concept is `todo`); homonyms add a sense tag: `espacio~universo`, `espacio~casilla`. Pattern `^[a-z0-9]+(-[a-z0-9]+)*(~[a-z0-9]+(-[a-z0-9]+)*)?$`. Labels may change, the id never does (links and ratings point at it). |
 | `labels` | map lang to label | `es` required (see `todo`). Other keys are ISO 639-1 codes. A concept without a label in a language is **not a word in that language** and cannot be a clue there. |
 | `labels.<l>.text` | string | 1 to 3 words, no parentheses, not blank. This is what players see. |
 | `labels.<l>.aliases` | string[] | Optional. Never shown. Used only to reject clues that give the word away. |
@@ -118,7 +118,7 @@ The dry run found that, once a clue that is a word is turned into a link, hub co
 109 EN / 117 ES and make up about 15 % of the clue slots. The hub factor only *reorders* a concept's clues. Because the app
 gives an impostor `clue[playerIndex % size]`, reordering alone changes nothing; the policy is therefore:
 
-1. Rank by score, keep at most 6.
+1. Rank by score, keep at most 8.
 2. While more than 4 clues remain, drop the ones scoring under 0.2 (a hub used as weak association).
 3. Never go below 3. A concept that cannot reach 3 usable clues is reported and not emitted for that language/help level.
 
@@ -149,8 +149,9 @@ For each concept `C`, language `L` that `C` labels, and level `normal`:
 Why a field per entry and one entry per category: existing ratings use the key `category_word_clue`, which therefore keeps
 working for every migrated word and clue text; the extra field is ignored by today's parser (`ignoreUnknownKeys`).
 
-**The app change in phase 1** (one line plus a test): the round word is `words.random()` over entries, which counts a
-multi-category concept once per selected category. Pick uniformly over distinct `conceptId` instead.
+**The app change in phase 1:** the round word is `words.random()` over entries, which counts a multi-category concept once
+per selected category. `SearchWordsUseCase` now returns one entry per distinct `conceptId` (entries without one are never
+merged), so the pick is uniform over concepts; `WordJson`, `WordDoc` and `WordModel` carry the nullable `conceptId`.
 
 **Impostor help in the app (phase 2):** the compiler emits all clues up to level `high` and a parallel array `reveal`
 (`"clues":["Jardín","Hogar"],"reveal":[1,3]`); the app filters by the setting. Old builds ignore `reveal`.
@@ -219,3 +220,29 @@ both emulators (es and en, upgrade from the current release thanks to the versio
 
 Limits: the dry-run figures use the v1.4.1 lists and string matching without lemmas; the hub constants (`8`, `0.2`) and the
 reveal values per type are starting points to calibrate with reviewed data and ratings.
+
+## 12. Phase 1 as built
+
+| Piece | Where |
+|---|---|
+| Shared rules (ranking, caps, serialization) | `scripts/words/lib.mjs` |
+| One-off migration (refuses to run again) | `scripts/words/migrate.mjs` |
+| Compiler, `--check` for CI | `scripts/words/compile.mjs` |
+| Before/after comparison of two list directories | `scripts/words/compare.mjs` |
+| Source validator | `ConceptSourcesValidationTest` (data:files) |
+| Uniform sampling test | `SearchWordsUseCaseTest` (domain:usescases:game) |
+| CI | job `word_lists` in `validate.yml` |
+
+Differences from the design found while building it:
+
+- The clue cap is 8, not 6: with 6, merging duplicate entries dropped about 520 clues per language; with 8 only the hub
+  floor drops anything (about 160 EN / 170 ES clues, mostly `alcohol`, `water`, `glass`). They stay in the sources as links or
+  hints, so raising a weight brings them back.
+- Several English senses of one word that all match the same Spanish sense are merged into one concept (a brand listed in
+  two categories with different clues, for example `Puma`); otherwise the compiled list had the word twice.
+- A clue with a parenthetical (`Hierbas (Anís)`) is split into two clues.
+
+Result on the v1.4.1 lists after the phase 0 cleanup: 5,256 concepts (719 paired EN/ES, 2,116 Spanish only, 2,421 English
+only with `todo: ["es"]`), 8,970 links, 20,736 hints, 0 clues lost (31,609 checked). Compared with the lists before, 594 EN
+and 592 ES entries changed (merged duplicates and extra categories after pairing), 21 EN and 25 ES entries were added (a
+paired word gained the categories of its other-language side), none removed.

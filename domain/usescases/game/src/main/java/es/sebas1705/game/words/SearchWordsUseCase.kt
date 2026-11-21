@@ -47,9 +47,11 @@ class SearchWordsUseCase @Inject constructor(
                     word = document.word,
                     clue = document.clue,
                     category = category,
-
+                    conceptId = document.conceptId
                 )
             }
+            // A concept in several selected categories is one word: pick uniformly over concepts, not entries.
+            .distinctBy { it.conceptId ?: "${it.category}:${it.word}" }
     }
 }
 
