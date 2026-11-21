@@ -167,8 +167,10 @@ compiled files, so both layers are covered.
 
 ## 8. Review workflow
 
-1. A generator (AI-assisted, run by the owner or a session) writes records with `status: "proposed"`: Spanish labels for
-   English-only words, link types and weights, category candidates, reverse-link suggestions, homonym disambiguation.
+1. A generator (AI-assisted, run by the owner or a session) writes proposal records into `data/files/concepts/proposals/`:
+   Spanish labels (with translated clues) for English-only words, clue types, later category candidates, reverse-link
+   suggestions and homonym disambiguation. Proposals live in their own files, so `concepts.jsonl` and `links.jsonl` only hold
+   approved data (phase 2 therefore did not need the `status` field in the sources).
 2. Records are grouped in batches of about 50 in one file per kind (`proposals/<kind>-<n>.jsonl`) with the evidence next to
    each (neighbours, source entries).
 3. The owner accepts, edits or rejects each line. A small tool applies the decisions (`status` removed or the record

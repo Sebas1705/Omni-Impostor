@@ -1,0 +1,295 @@
+{"id":"religion","lang":"es","clues":{"Fe":"synonym"}}
+{"id":"religion","lang":"en","clues":{"Faith":"synonym"}}
+{"id":"religious-festival","lang":"en","clues":{"Event":"broader"}}
+{"id":"reloj","lang":"es","clues":{"Accesorio":"broader"}}
+{"id":"reloj-de-pared","lang":"es","clues":{"Agujas":"part","Pared":"context"}}
+{"id":"remo","lang":"es","clues":{"Bote":"context","Palas":"part"}}
+{"id":"remolque","lang":"es","clues":{"Enganche":"part"}}
+{"id":"remordimiento","lang":"es","clues":{"Arrepentirse":"synonym"}}
+{"id":"remorse","lang":"en","clues":{"Regret":"synonym"}}
+{"id":"renewable-energy~technology","lang":"en","clues":{"Green Energy":"synonym"}}
+{"id":"reptil","lang":"es","clues":{"Animal":"broader","Escamas":"part","Frío Corporal":"part","Sangre Fría":"part"}}
+{"id":"reptile","lang":"en","clues":{"Animal":"broader","Cold-blooded":"part","Scales":"part"}}
+{"id":"republica-dominicana","lang":"es","clues":{"País":"broader"}}
+{"id":"resentimiento","lang":"es","clues":{"Rencor":"synonym"}}
+{"id":"resentment","lang":"en","clues":{"Grudge":"synonym"}}
+{"id":"resignacion","lang":"es","clues":{"Sentimiento":"broader"}}
+{"id":"resignation","lang":"en","clues":{"Feeling":"broader"}}
+{"id":"respect","lang":"en","clues":{"Consideration":"synonym"}}
+{"id":"respeto","lang":"es","clues":{"Consideración":"synonym"}}
+{"id":"responsabilidad","lang":"es","clues":{"Deber":"synonym"}}
+{"id":"responsibility","lang":"en","clues":{"Duty":"synonym"}}
+{"id":"reumatologo","lang":"es","clues":{"Articulaciones":"context"}}
+{"id":"revelry","lang":"en","clues":{"Party":"synonym"}}
+{"id":"revolucion","lang":"es","clues":{"Levantamiento":"synonym"}}
+{"id":"revolution","lang":"en","clues":{"Uprising":"synonym"}}
+{"id":"rey","lang":"es","clues":{"Corona":"part"}}
+{"id":"rheumatologist","lang":"en","clues":{"Doctor":"broader","Joints Doctor":"synonym","Hospital":"context"}}
+{"id":"rhino","lang":"en","clues":{"Horn":"part"}}
+{"id":"rhythm","lang":"en","clues":{"Beat":"synonym"}}
+{"id":"rhythmic-gymnastics","lang":"en","clues":{"Ball":"part","Club":"part","Hoop":"part","Ribbon":"part"}}
+{"id":"rice","lang":"en","clues":{"Cereal":"broader","Grain":"broader"}}
+{"id":"rice-cooker","lang":"en","clues":{"Appliance":"broader","Kitchen":"context"}}
+{"id":"rick-and-morty","lang":"es","clues":{"Animación":"broader","Ciencia Ficción":"broader"}}
+{"id":"rickroll","lang":"es","clues":{"Bromas":"broader","Canción":"part","Enlace":"part"}}
+{"id":"rickroll","lang":"en","clues":{"Prank":"broader","Song":"part","Link":"part"}}
+{"id":"ride-hailing","lang":"es","clues":{"Transporte":"broader"}}
+{"id":"ride-sharing","lang":"en","clues":{"Carpooling":"synonym"}}
+{"id":"rihanna","lang":"es","clues":{"Cantante":"broader"}}
+{"id":"rihanna","lang":"en","clues":{"Singer":"broader"}}
+{"id":"ring","lang":"en","clues":{"Jewelry":"broader","Finger":"context"}}
+{"id":"rinoceronte","lang":"es","clues":{"Cuerno":"part"}}
+{"id":"rio","lang":"es","clues":{"Cauce":"part","Corriente":"part","Desembocadura":"part"}}
+{"id":"rito","lang":"es","clues":{"Ceremonia":"synonym"}}
+{"id":"ritual","lang":"en","clues":{"Ceremony":"synonym"}}
+{"id":"rituales","lang":"es","clues":{"Ceremonia":"synonym"}}
+{"id":"rituals","lang":"en","clues":{"Ceremony":"synonym"}}
+{"id":"river","lang":"en","clues":{"Channel":"part","Course":"part","Mouth":"part"}}
+{"id":"road-trip","lang":"en","clues":{"Travel":"broader"}}
+{"id":"robert-downey-jr","lang":"es","clues":{"Actor":"broader"}}
+{"id":"robert-downey-jr","lang":"en","clues":{"Actor":"broader"}}
+{"id":"roblox","lang":"es","clues":{"Plataforma":"broader"}}
+{"id":"roblox","lang":"en","clues":{"Platform":"broader"}}
+{"id":"robot","lang":"es","clues":{"Android":"synonym","Máquina":"broader"}}
+{"id":"robot","lang":"en","clues":{"Android":"synonym","Machine":"broader"}}
+{"id":"robot-aspirador","lang":"es","clues":{"Electrodoméstico":"broader"}}
+{"id":"rocket-launcher","lang":"en","clues":{"Weapon":"broader","Rocket":"part"}}
+{"id":"rolex","lang":"es","clues":{"Reloj":"broader","Corona":"part"}}
+{"id":"rolex","lang":"en","clues":{"Watch":"broader","Watches":"broader","Crown":"part"}}
+{"id":"ron","lang":"es","clues":{"Bebida":"broader","Destilado":"broader","Caña de Azúcar":"part"}}
+{"id":"ronald-reagan","lang":"es","clues":{"Presidente":"broader"}}
+{"id":"ronda","lang":"es","clues":{"Vuelta":"synonym"}}
+{"id":"roner","lang":"es","clues":{"Sous-vide":"synonym"}}
+{"id":"rooster","lang":"en","clues":{"Comb":"part"}}
+{"id":"ropa-de-cama","lang":"es","clues":{"Almohada":"part","Manta":"part","Sábana":"part"}}
+{"id":"rosalia","lang":"es","clues":{"Cantante":"broader","Cantante de Flamenco/Pop":"broader"}}
+{"id":"rosalia","lang":"en","clues":{"Singer":"broader"}}
+{"id":"rotonda","lang":"es","clues":{"Glorieta":"synonym"}}
+{"id":"rotulador","lang":"es","clues":{"Marcador":"synonym","Pizarra blanca":"context"}}
+{"id":"roulette","lang":"en","clues":{"Casino":"context","Ball":"part"}}
+{"id":"roundworm","lang":"en","clues":{"Worm":"broader"}}
+{"id":"rowing","lang":"en","clues":{"Oars":"part","Boat":"context"}}
+{"id":"rubber-band","lang":"en","clues":{"Rubber":"part"}}
+{"id":"rubber-gloves","lang":"en","clues":{"Gloves":"broader"}}
+{"id":"rubber-stamp","lang":"en","clues":{"Stamp":"synonym","Ink":"part"}}
+{"id":"rueda-para-hamster","lang":"es","clues":{"Juguete":"broader","Hámster":"context"}}
+{"id":"rug","lang":"en","clues":{"Floor":"context"}}
+{"id":"rugby","lang":"es","clues":{"Ensayo":"part","Haches":"part","Melé":"part","Placaje":"part"}}
+{"id":"rugby","lang":"en","clues":{"Posts":"part","Scrum":"part","Tackle":"part","Try":"part"}}
+{"id":"rulebook","lang":"en","clues":{"Book":"broader"}}
+{"id":"ruler","lang":"en","clues":{"Centimeters":"part"}}
+{"id":"ruleta","lang":"es","clues":{"Bola":"part","Casino":"context"}}
+{"id":"rum","lang":"en","clues":{"Cane":"part","Drink":"broader","Alcohol":"broader"}}
+{"id":"rum-punch","lang":"en","clues":{"Fruit Juice":"part","Rum":"part","Cocktail":"broader"}}
+{"id":"runway","lang":"en","clues":{"Airport":"context","Plane":"context"}}
+{"id":"rusia","lang":"es","clues":{"País":"broader"}}
+{"id":"sabana~geography","lang":"es","clues":{"Hierba":"part","Llanura":"broader"}}
+{"id":"sabana~home-and-furniture","lang":"es","clues":{"Cama":"context"}}
+{"id":"sacacorchos","lang":"es","clues":{"Vino":"context"}}
+{"id":"sacapuntas","lang":"es","clues":{"Cuchilla":"part","Lápiz":"context"}}
+{"id":"sadness","lang":"en","clues":{"Grief":"synonym","Feeling":"broader"}}
+{"id":"sadomasoquismo","lang":"es","clues":{"BDSM":"synonym","Masochismo":"part","Sadismo":"part"}}
+{"id":"saga~books-and-literature","lang":"es","clues":{"Serie":"synonym"}}
+{"id":"saga~mythology-and-fantasy","lang":"en","clues":{"Story":"broader"}}
+{"id":"sagittarius-a","lang":"en","clues":{"Black Hole":"broader"}}
+{"id":"sagrada-familia","lang":"es","clues":{"Iglesia":"broader"}}
+{"id":"sagrada-familia","lang":"en","clues":{"Church":"broader"}}
+{"id":"sai","lang":"en","clues":{"Weapon":"broader","Three Prongs":"part"}}
+{"id":"sailing","lang":"en","clues":{"Mast":"part"}}
+{"id":"sailor","lang":"en","clues":{"Ship":"context","Sea":"context"}}
+{"id":"saitama","lang":"es","clues":{"Héroe":"broader","One Punch Man":"synonym"}}
+{"id":"saitama","lang":"en","clues":{"Hero":"broader","One Punch":"synonym","Caped Baldy":"synonym"}}
+{"id":"sakura","lang":"es","clues":{"Flor":"broader"}}
+{"id":"sal","lang":"es","clues":{"Sodio":"part"}}
+{"id":"salad","lang":"en","clues":{"Lettuce":"part"}}
+{"id":"salad-spinner","lang":"en","clues":{"Kitchen":"context"}}
+{"id":"salario","lang":"es","clues":{"Sueldo":"synonym"}}
+{"id":"salary","lang":"en","clues":{"Wage":"synonym"}}
+{"id":"salero","lang":"es","clues":{"Agujeros":"part","Mesa":"context"}}
+{"id":"salesperson","lang":"en","clues":{"Shop":"context"}}
+{"id":"salomon","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"salon","lang":"es","clues":{"Estar":"synonym"}}
+{"id":"salt","lang":"en","clues":{"Sodium":"part"}}
+{"id":"salt-shaker","lang":"en","clues":{"Holes":"part","Table":"context"}}
+{"id":"saltamontes","lang":"es","clues":{"Insecto":"broader","Antenas":"part"}}
+{"id":"salto-de-altura","lang":"es","clues":{"Salto":"broader","Listón":"part","Colchoneta":"part"}}
+{"id":"salto-de-longitud","lang":"es","clues":{"Salto":"broader","Arena":"part"}}
+{"id":"salvatore-ferragamo","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"samba","lang":"es","clues":{"Baile":"broader"}}
+{"id":"samurai","lang":"es","clues":{"Guerrero":"broader","Katana":"part","Armadura":"part"}}
+{"id":"samurai","lang":"en","clues":{"Warrior":"broader","Katana":"part","Armor":"part"}}
+{"id":"san-valentin","lang":"es","clues":{"Febrero":"context"}}
+{"id":"sanciones","lang":"es","clues":{"Castigo":"synonym"}}
+{"id":"sand","lang":"en","clues":{"Grains":"part"}}
+{"id":"sandalias","lang":"es","clues":{"Verano":"context"}}
+{"id":"sandals","lang":"en","clues":{"Summer":"context"}}
+{"id":"sandwich","lang":"es","clues":{"Relleno":"part"}}
+{"id":"sandwich","lang":"en","clues":{"Bread":"part","Filling":"part"}}
+{"id":"sangria","lang":"es","clues":{"Vino":"part","Fruta":"part"}}
+{"id":"sangria","lang":"en","clues":{"Wine":"part","Fruit":"part"}}
+{"id":"sanguijuela","lang":"es","clues":{"Gusano":"broader","Parásito":"broader"}}
+{"id":"sanna-marin","lang":"en","clues":{"Prime Minister":"broader"}}
+{"id":"sari","lang":"es","clues":{"Ropa Tradicional":"broader","India":"context"}}
+{"id":"sari","lang":"en","clues":{"Traditional Indian Garment":"broader","Draped Cloth":"broader","India":"context"}}
+{"id":"sarong","lang":"es","clues":{"Falda Envuelta":"broader"}}
+{"id":"sarong","lang":"en","clues":{"Wrap Skirt":"broader","Beachwear":"context"}}
+{"id":"sarten","lang":"es","clues":{"Mango":"part","Freír":"context","Cocina":"context"}}
+{"id":"sashimi","lang":"en","clues":{"Raw Fish":"part"}}
+{"id":"saucony","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"satanas","lang":"es","clues":{"Adversario":"synonym","Demonio Supremo":"synonym"}}
+{"id":"satisfaccion","lang":"es","clues":{"Placer":"synonym"}}
+{"id":"satisfaction","lang":"en","clues":{"Pleasure":"synonym"}}
+{"id":"saturn","lang":"en","clues":{"Planet":"broader","Rings":"part"}}
+{"id":"saturno","lang":"es","clues":{"Planeta":"broader","Anillos":"part"}}
+{"id":"saucepan","lang":"en","clues":{"Handle":"part"}}
+{"id":"savanna","lang":"en","clues":{"Plain":"broader","Grass":"part"}}
+{"id":"saxofon","lang":"es","clues":{"Viento":"broader","Boquilla":"part","Caña":"part"}}
+{"id":"saxophone","lang":"en","clues":{"Wind":"broader","Mouthpiece":"part","Reed":"part"}}
+{"id":"sazerac","lang":"en","clues":{"Cocktail":"broader","Whiskey":"part","Absinthe":"part","Bitters":"part"}}
+{"id":"scarf","lang":"en","clues":{"Accessory":"broader","Neck":"context"}}
+{"id":"scented-candle","lang":"en","clues":{"Candle":"broader","Scented":"part"}}
+{"id":"schedule","lang":"en","clues":{"Agenda":"synonym"}}
+{"id":"schrodinger-s-cat","lang":"en","clues":{"Thought Experiment":"broader","Cat":"part"}}
+{"id":"scientist","lang":"en","clues":{"Laboratory":"context"}}
+{"id":"scissors","lang":"en","clues":{"Handle":"part"}}
+{"id":"scooter","lang":"en","clues":{"Handlebars":"part"}}
+{"id":"scorpion","lang":"en","clues":{"Arachnid":"broader","Claws":"part","Sting":"part","Tail":"part"}}
+{"id":"scrabble","lang":"es","clues":{"Letras":"part","Tablero":"part"}}
+{"id":"scrabble","lang":"en","clues":{"Letters":"part","Board":"part"}}
+{"id":"screwdriver","lang":"en","clues":{"Cocktail":"broader","Orange Juice":"part","Vodka":"part"}}
+{"id":"script","lang":"en","clues":{"Dialogue":"part"}}
+{"id":"sculpture","lang":"en","clues":{"Statue":"synonym"}}
+{"id":"scythe","lang":"en","clues":{"Blade":"part","Harvest":"context","Long Handle":"part","Weapon":"broader"}}
+{"id":"sea","lang":"en","clues":{"Ocean":"synonym","Waves":"part"}}
+{"id":"sea-lion","lang":"en","clues":{"Pinniped":"broader","Flippers":"part"}}
+{"id":"sea-turtle","lang":"en","clues":{"Reptile":"broader","Shell":"part"}}
+{"id":"seahorse","lang":"en","clues":{"Marine":"broader","Ocean":"context"}}
+{"id":"seal","lang":"en","clues":{"Blubber":"part","Flippers":"part","Pinniped":"broader"}}
+{"id":"seat-belt","lang":"en","clues":{"Buckle":"part","Car":"context"}}
+{"id":"sech","lang":"es","clues":{"Cantante de Reggaeton/Trap":"broader"}}
+{"id":"secret-wars","lang":"en","clues":{"Crossover":"broader"}}
+{"id":"security-system","lang":"en","clues":{"Alarm":"part","Camera":"part"}}
+{"id":"seda","lang":"es","clues":{"Tela":"broader"}}
+{"id":"sedan","lang":"es","clues":{"Coche":"broader","Cuatro Puertas":"part"}}
+{"id":"sedan","lang":"en","clues":{"Car":"broader","Four Doors":"part"}}
+{"id":"segunda-guerra-mundial","lang":"es","clues":{"Conflicto":"broader"}}
+{"id":"seguro","lang":"es","clues":{"Póliza":"synonym"}}
+{"id":"segway","lang":"en","clues":{"Personal Transport":"broader","Two Wheels":"part"}}
+{"id":"selena-gomez","lang":"es","clues":{"Actriz":"broader","Cantante":"broader"}}
+{"id":"selena-gomez","lang":"en","clues":{"Actress":"broader","Singer":"broader","Singer-songwriter":"broader"}}
+{"id":"selfie","lang":"es","clues":{"Autorretrato":"synonym","Foto":"broader"}}
+{"id":"selfie","lang":"en","clues":{"Photo":"broader"}}
+{"id":"sello","lang":"es","clues":{"Tinta":"part"}}
+{"id":"selva","lang":"es","clues":{"Árboles":"part"}}
+{"id":"semaforo","lang":"es","clues":{"Amarillo":"part","Rojo":"part","Verde":"part","Luz":"part","Tráfico":"context"}}
+{"id":"semana-santa","lang":"es","clues":{"Procesión":"part"}}
+{"id":"semester","lang":"en","clues":{"Period":"broader"}}
+{"id":"semestre","lang":"es","clues":{"Periodo":"broader"}}
+{"id":"senator","lang":"en","clues":{"Government official":"broader"}}
+{"id":"senderismo","lang":"es","clues":{"Caminar":"broader","Botas":"part","Mochila":"part"}}
+{"id":"senor","lang":"es","clues":{"Título":"broader"}}
+{"id":"senora","lang":"es","clues":{"Título":"broader"}}
+{"id":"sensor","lang":"es","clues":{"Dispositivo":"broader"}}
+{"id":"sensor","lang":"en","clues":{"Device":"broader"}}
+{"id":"sephora","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"sephora","lang":"en","clues":{"Store":"broader"}}
+{"id":"serenidad","lang":"es","clues":{"Calma":"synonym","Paz":"synonym","Tranquilidad":"synonym"}}
+{"id":"serenity","lang":"en","clues":{"Calm":"synonym","Peace":"synonym"}}
+{"id":"sergio-mattarella","lang":"es","clues":{"Presidente":"broader"}}
+{"id":"serpiente","lang":"es","clues":{"Escamas":"part","Lengua":"part","Veneno":"part"}}
+{"id":"server","lang":"en","clues":{"Host":"synonym"}}
+{"id":"set","lang":"es","clues":{"Dios del Caos":"broader","Enemigo de Horus":"contrast"}}
+{"id":"setup","lang":"es","clues":{"Escritorio":"part","Silla":"part","Cámara":"part"}}
+{"id":"setup","lang":"en","clues":{"Chair":"part","Desk":"part","Camera":"part"}}
+{"id":"shakira","lang":"es","clues":{"Cantante":"broader"}}
+{"id":"shakira","lang":"en","clues":{"Singer":"broader"}}
+{"id":"shark","lang":"en","clues":{"Fin":"part","Jaw":"part"}}
+{"id":"sharpener","lang":"en","clues":{"Blade":"part"}}
+{"id":"shazam~superheroes-and-comics","lang":"en","clues":{"Hero":"broader","Lightning Bolt":"part","Magic Word":"part"}}
+{"id":"sheep","lang":"en","clues":{"Wool":"part"}}
+{"id":"sheet","lang":"en","clues":{"Bed":"context"}}
+{"id":"sheet-music","lang":"en","clues":{"Notes":"part","Staff":"part"}}
+{"id":"shell","lang":"es","clues":{"Concha":"synonym"}}
+{"id":"sherlock-holmes","lang":"es","clues":{"Detective":"broader","Lupa":"part"}}
+{"id":"sherlock-holmes","lang":"en","clues":{"Detective":"broader","Magnifier":"part"}}
+{"id":"ship","lang":"en","clues":{"Hull":"part"}}
+{"id":"shiva","lang":"en","clues":{"Trident":"part","Third Eye":"part","Hinduism":"context"}}
+{"id":"shoe-rack","lang":"en","clues":{"Entryway":"context"}}
+{"id":"shoes","lang":"en","clues":{"Laces":"part","Sole":"part"}}
+{"id":"short-story","lang":"en","clues":{"Fiction":"broader","Narrative":"broader","Tale":"synonym"}}
+{"id":"shot","lang":"en","clues":{"Drink":"broader","Alcohol":"broader"}}
+{"id":"shot-put","lang":"en","clues":{"Throw":"broader","Circle":"part"}}
+{"id":"shoutout","lang":"es","clues":{"Mención":"synonym"}}
+{"id":"shower","lang":"en","clues":{"Bathroom":"context"}}
+{"id":"shrek","lang":"es","clues":{"Ogro":"broader"}}
+{"id":"shrek","lang":"en","clues":{"Ogre":"broader"}}
+{"id":"shuffle","lang":"en","clues":{"Mix":"synonym"}}
+{"id":"shuriken","lang":"en","clues":{"Throwing Star":"synonym","Weapon":"broader"}}
+{"id":"sia","lang":"es","clues":{"Cantante":"broader"}}
+{"id":"sia","lang":"en","clues":{"Singer-songwriter":"broader"}}
+{"id":"sidekick","lang":"es","clues":{"Ayudante":"synonym","Compañero":"synonym"}}
+{"id":"sidekick","lang":"en","clues":{"Helper":"synonym","Partner":"synonym"}}
+{"id":"siete-pecados-capitales","lang":"es","clues":{"Avaricia":"part","Envidia":"part","Gula":"part","Ira":"part","Lujuria":"part","Pereza":"part","Soberbia":"part"}}
+{"id":"silicio","lang":"es","clues":{"Elemento":"broader"}}
+{"id":"silicon","lang":"en","clues":{"Element":"broader"}}
+{"id":"silk","lang":"en","clues":{"Fabric":"broader"}}
+{"id":"silla","lang":"es","clues":{"Cuatro Patas":"part","Mueble":"broader","Respaldo":"part"}}
+{"id":"silla-de-oficina","lang":"es","clues":{"Ruedas":"part"}}
+{"id":"silver","lang":"en","clues":{"Metal":"broader"}}
+{"id":"silver-surfer","lang":"en","clues":{"Surfboard":"part"}}
+{"id":"simbiosis","lang":"es","clues":{"Relación":"broader"}}
+{"id":"simon-bolivar","lang":"es","clues":{"Libertador":"synonym"}}
+{"id":"sinceridad","lang":"es","clues":{"Honesto":"synonym","Mentira":"contrast"}}
+{"id":"sincerity","lang":"en","clues":{"Honest":"synonym","Lie":"contrast"}}
+{"id":"sinfonia","lang":"es","clues":{"Movimientos":"part"}}
+{"id":"singapore","lang":"en","clues":{"City-State":"broader"}}
+{"id":"sink","lang":"en","clues":{"Faucet":"part","Bathroom":"context"}}
+{"id":"sintetizador","lang":"es","clues":{"Teclado":"part"}}
+{"id":"sintoma","lang":"es","clues":{"Señal":"synonym"}}
+{"id":"sirena","lang":"es","clues":{"Cola":"part"}}
+{"id":"sireno","lang":"es","clues":{"Cola":"part"}}
+{"id":"sistema-nervioso","lang":"es","clues":{"Cerebro":"part","Nervios":"part"}}
+{"id":"sistema-operativo","lang":"es","clues":{"Software":"broader"}}
+{"id":"sistine-chapel","lang":"en","clues":{"Ceiling":"part"}}
+{"id":"skadi","lang":"en","clues":{"Goddess":"broader"}}
+{"id":"skateboard","lang":"en","clues":{"Skate":"synonym","Sport":"broader","Wheels":"part","Board":"part"}}
+{"id":"skateboarding","lang":"es","clues":{"Patineta":"synonym"}}
+{"id":"skating","lang":"en","clues":{"Blade":"part"}}
+{"id":"skechers","lang":"es","clues":{"Zapatillas Cómodas":"broader","Tienda":"broader"}}
+{"id":"skechers","lang":"en","clues":{"Shoes":"broader","Store":"broader"}}
+{"id":"skeleton~science-biology","lang":"en","clues":{"Bones":"part","Skull":"part"}}
+{"id":"skeleton~sports","lang":"en","clues":{"Skeleton Sled":"part"}}
+{"id":"sketch","lang":"en","clues":{"Drawing":"broader"}}
+{"id":"ski-jumping","lang":"en","clues":{"Ski":"part"}}
+{"id":"ski-resort","lang":"en","clues":{"Resort":"broader"}}
+{"id":"skibidi-toilet","lang":"es","clues":{"Animación":"broader","Cabeza":"part","Inodoro":"part"}}
+{"id":"skibidi-toilet","lang":"en","clues":{"Animation":"broader","Head":"part","Toilet":"part"}}
+{"id":"skiing","lang":"en","clues":{"Poles":"part"}}
+{"id":"skin","lang":"en","clues":{"Organ":"broader"}}
+{"id":"skirt","lang":"en","clues":{"Clothing":"broader"}}
+{"id":"slackline","lang":"es","clues":{"Cinta":"part"}}
+{"id":"sleep","lang":"en","clues":{"Rest":"synonym"}}
+{"id":"sleipnir","lang":"en","clues":{"Eight Legs":"part","Horse":"broader"}}
+{"id":"slot-machine","lang":"en","clues":{"Machine":"broader","Coins":"part","Fruits":"part","Casino":"context"}}
+{"id":"slow-cooker","lang":"en","clues":{"Appliance":"broader","Cooker":"broader","Kitchen":"context"}}
+{"id":"smart-agriculture-technology","lang":"en","clues":{"Precision Farming":"synonym","Smart Agriculture":"synonym"}}
+{"id":"smart-city-technology","lang":"en","clues":{"Smart City":"synonym"}}
+{"id":"smart-grid-technology","lang":"en","clues":{"Smart Grid":"synonym"}}
+{"id":"smart-light","lang":"en","clues":{"Light Fixture":"broader"}}
+{"id":"smartphone","lang":"es","clues":{"Móvil":"synonym","Teléfono":"broader","Pantalla":"part"}}
+{"id":"smartphone","lang":"en","clues":{"Mobile":"synonym","Phone":"broader","Screen":"part"}}
+{"id":"smoke-detector","lang":"en","clues":{"Alarm":"broader"}}
+{"id":"smoothie","lang":"en","clues":{"Fruit":"part","Yogurt":"part"}}
+{"id":"snake","lang":"en","clues":{"Scales":"part","Venom":"part"}}
+{"id":"snapchat","lang":"es","clues":{"Fantasma":"part","Filtros":"part","Racha":"part"}}
+{"id":"snapchat","lang":"en","clues":{"Ghost":"part","Filters":"part","Streak":"part"}}
+{"id":"sneakers","lang":"en","clues":{"Rubber":"part"}}
+{"id":"snowboard","lang":"es","clues":{"Tabla":"part"}}
+{"id":"snowboarding","lang":"en","clues":{"Board":"part"}}
+{"id":"snowshoeing","lang":"en","clues":{"Shoes":"part"}}
+{"id":"soba","lang":"en","clues":{"Buckwheat Noodles":"synonym"}}
+{"id":"soberania","lang":"es","clues":{"Autonomía":"synonym","Poder Supremo":"synonym"}}
+{"id":"sobre","lang":"es","clues":{"Carta":"context"}}
+{"id":"soccer","lang":"en","clues":{"Goal":"part"}}
+{"id":"socialism","lang":"en","clues":{"Economic System":"broader"}}
+{"id":"socialismo","lang":"es","clues":{"Economía Planificada":"part","Propiedad Pública":"part"}}

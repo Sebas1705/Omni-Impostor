@@ -1,0 +1,238 @@
+{"id":"croupier","lang":"en","clues":{"Dealer":"synonym","Casino":"context"}}
+{"id":"crown","lang":"en","clues":{"Headpiece":"broader"}}
+{"id":"cruce-de-peatones","lang":"es","clues":{"Cebra":"synonym"}}
+{"id":"crucero","lang":"es","clues":{"Barco":"broader"}}
+{"id":"cruceros","lang":"es","clues":{"Barco":"broader"}}
+{"id":"cruise","lang":"en","clues":{"Ship":"broader"}}
+{"id":"cruise-ship","lang":"en","clues":{"Ship":"broader"}}
+{"id":"crupier","lang":"es","clues":{"Casino":"context"}}
+{"id":"crusades","lang":"en","clues":{"War":"broader"}}
+{"id":"cruzadas","lang":"es","clues":{"Guerra":"broader"}}
+{"id":"cryptocurrency","lang":"en","clues":{"Money":"broader"}}
+{"id":"cryptography","lang":"en","clues":{"Cipher":"part","Encryption":"part"}}
+{"id":"crystallization","lang":"en","clues":{"Process":"broader"}}
+{"id":"cuaderno","lang":"es","clues":{"Hojas":"part","Espiral":"part"}}
+{"id":"cuadro","lang":"es","clues":{"Pintura":"synonym","Marco":"part"}}
+{"id":"cuba-libre","lang":"es","clues":{"Cóctel":"broader","Cola":"part","Ron":"part","Limón":"part"}}
+{"id":"cubiertos","lang":"es","clues":{"Cuchara":"part","Cuchillo":"part","Tenedor":"part"}}
+{"id":"cubism","lang":"en","clues":{"Art Movement":"broader"}}
+{"id":"cubismo","lang":"es","clues":{"Estilo":"broader"}}
+{"id":"cuchara","lang":"es","clues":{"Cubierto":"broader","Cubiertos":"broader"}}
+{"id":"cuchillo","lang":"es","clues":{"Cubiertos":"broader","Hoja":"part","Mango":"part","Filo":"part"}}
+{"id":"cuento","lang":"es","clues":{"Narración":"broader","Historia":"synonym"}}
+{"id":"cuero","lang":"es","clues":{"Piel":"synonym","Material":"broader"}}
+{"id":"cueva","lang":"es","clues":{"Gruta":"synonym"}}
+{"id":"cufflinks","lang":"en","clues":{"Accessory":"broader"}}
+{"id":"cultural-festival","lang":"en","clues":{"Festival":"broader"}}
+{"id":"cultural-heritage-site","lang":"en","clues":{"Monument":"broader"}}
+{"id":"cumpleanos","lang":"es","clues":{"Velas":"part","Pastel":"part","Fiesta":"broader"}}
+{"id":"curiosidad","lang":"es","clues":{"Interés":"synonym"}}
+{"id":"curiosity","lang":"en","clues":{"Interest":"synonym"}}
+{"id":"curling","lang":"en","clues":{"Stone":"part","Ice":"context"}}
+{"id":"curtain","lang":"en","clues":{"Window":"context"}}
+{"id":"custom","lang":"en","clues":{"Habit":"synonym","Tradition":"synonym"}}
+{"id":"customs","lang":"en","clues":{"Habit":"synonym","Tradition":"synonym"}}
+{"id":"cuter","lang":"es","clues":{"Hoja":"part","Filo":"part"}}
+{"id":"cutlery","lang":"en","clues":{"Fork":"part","Knife":"part","Spoon":"part"}}
+{"id":"cutter","lang":"en","clues":{"Blade":"part","Edge":"part"}}
+{"id":"cvs","lang":"es","clues":{"Farmacia":"broader","Tienda":"broader"}}
+{"id":"cvs","lang":"en","clues":{"Pharmacy":"broader","Store":"broader"}}
+{"id":"cyclops","lang":"en","clues":{"Giant":"broader","Eye":"part"}}
+{"id":"cyprus","lang":"en","clues":{"Island":"broader"}}
+{"id":"cyril-ramaphosa","lang":"en","clues":{"President":"broader"}}
+{"id":"d20-dice","lang":"en","clues":{"Faces":"part"}}
+{"id":"daddy-yankee","lang":"es","clues":{"Cantante de Reggaeton":"broader"}}
+{"id":"dados","lang":"es","clues":{"Puntos":"part"}}
+{"id":"dados-cargados","lang":"es","clues":{"Peso":"part"}}
+{"id":"dados-d20","lang":"es","clues":{"Caras":"part"}}
+{"id":"dados-de-poker","lang":"es","clues":{"Símbolos":"part"}}
+{"id":"daiquiri","lang":"es","clues":{"Cóctel Cubano":"broader","Ron Blanco":"part","Limón":"part","Azúcar":"part"}}
+{"id":"daiquiri","lang":"en","clues":{"Cocktail":"broader","Rum":"part","Lime":"part","Sugar":"part"}}
+{"id":"dalai-lama","lang":"es","clues":{"Líder":"broader"}}
+{"id":"dalai-lama","lang":"en","clues":{"Leader":"broader"}}
+{"id":"damas","lang":"es","clues":{"Fichas":"part","Tablero":"part"}}
+{"id":"danza","lang":"es","clues":{"Baile":"synonym"}}
+{"id":"dardos","lang":"es","clues":{"Diana":"part","Plumas":"part","Punta":"part"}}
+{"id":"daredevil","lang":"es","clues":{"Matt Murdock":"synonym","Héroe de Barrio":"broader"}}
+{"id":"daredevil","lang":"en","clues":{"Hero":"broader","Radar Sense":"part"}}
+{"id":"dark-and-stormy","lang":"en","clues":{"Cocktail":"broader","Rum":"part","Ginger Beer":"part","Lime":"part"}}
+{"id":"dark-n-stormy","lang":"en","clues":{"Cocktail":"broader","Rum":"part","Ginger Beer":"part","Lime":"part"}}
+{"id":"darts","lang":"en","clues":{"Target":"part","Tip":"part","Feathers":"part"}}
+{"id":"database","lang":"en","clues":{"Tables":"part"}}
+{"id":"david-bisbal","lang":"es","clues":{"Cantante de Pop/Rock":"broader"}}
+{"id":"deadpool","lang":"es","clues":{"Mercenario":"broader"}}
+{"id":"deadpool","lang":"en","clues":{"Antihero":"broader","Mercenary":"broader"}}
+{"id":"debt","lang":"en","clues":{"Money Owed.":"synonym"}}
+{"id":"decathlon~sports","lang":"en","clues":{"Ten Events":"part","Track and Field":"broader"}}
+{"id":"decathlon~stores-and-retail","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"decathlon~stores-and-retail","lang":"en","clues":{"Store":"broader"}}
+{"id":"decatlon","lang":"es","clues":{"Atletismo":"broader","Diez Pruebas":"part"}}
+{"id":"deck","lang":"en","clues":{"Cards":"part"}}
+{"id":"deep-learning","lang":"en","clues":{"Machine Learning":"broader","AI":"broader","Neural Networks":"part"}}
+{"id":"deezer","lang":"es","clues":{"Streaming":"broader"}}
+{"id":"defeat","lang":"en","clues":{"Lose":"synonym"}}
+{"id":"dehumidifier","lang":"en","clues":{"Appliance":"broader"}}
+{"id":"delantal","lang":"es","clues":{"Ropa":"broader","Cocinero":"context"}}
+{"id":"delantal-de-cocina","lang":"es","clues":{"Ropa":"broader"}}
+{"id":"delfin","lang":"es","clues":{"Mamífero":"broader"}}
+{"id":"delta","lang":"es","clues":{"Desembocadura":"synonym","Río":"context"}}
+{"id":"delta","lang":"en","clues":{"Outflow":"synonym","River":"context"}}
+{"id":"demagogue","lang":"en","clues":{"Populist":"synonym","Leader":"broader"}}
+{"id":"demeter","lang":"en","clues":{"Goddess":"broader"}}
+{"id":"democracia","lang":"es","clues":{"Sistema":"broader"}}
+{"id":"democracy","lang":"en","clues":{"System":"broader"}}
+{"id":"demonio","lang":"es","clues":{"Ser Maligno":"broader","Infierno":"context"}}
+{"id":"denim-jacket","lang":"es","clues":{"Chaqueta":"broader"}}
+{"id":"denim-jacket","lang":"en","clues":{"Jacket":"broader"}}
+{"id":"dentist","lang":"en","clues":{"Doctor":"broader"}}
+{"id":"dentista","lang":"es","clues":{"Médico":"broader"}}
+{"id":"deposition","lang":"en","clues":{"Phase Change":"broader"}}
+{"id":"depresion","lang":"es","clues":{"Enfermedad":"broader"}}
+{"id":"dermatologist","lang":"en","clues":{"Skin Doctor":"synonym","Doctor":"broader"}}
+{"id":"desanimo","lang":"es","clues":{"Falta de motivación":"synonym"}}
+{"id":"deseo","lang":"es","clues":{"Anhelar":"synonym","Querer":"synonym"}}
+{"id":"desire","lang":"en","clues":{"Crave":"synonym","Want":"synonym"}}
+{"id":"desk-lamp","lang":"en","clues":{"Light":"broader","Desk":"context"}}
+{"id":"despair","lang":"en","clues":{"Hope":"contrast"}}
+{"id":"despedida-de-soltero","lang":"es","clues":{"Fiesta":"broader","Boda":"context"}}
+{"id":"destination","lang":"en","clues":{"Place":"broader"}}
+{"id":"destino","lang":"es","clues":{"Lugar":"broader"}}
+{"id":"destructora","lang":"es","clues":{"Máquina":"broader"}}
+{"id":"dia","lang":"es","clues":{"Supermercado":"broader"}}
+{"id":"dia","lang":"en","clues":{"Supermarket":"broader"}}
+{"id":"dia-de-muertos","lang":"es","clues":{"Noviembre":"context"}}
+{"id":"dia-de-reyes","lang":"es","clues":{"Enero":"context","Roscón":"part"}}
+{"id":"dia-del-padre","lang":"es","clues":{"Marzo":"context"}}
+{"id":"dia-del-trabajo","lang":"es","clues":{"Mayo":"context"}}
+{"id":"diabetes","lang":"es","clues":{"Enfermedad":"broader"}}
+{"id":"dialogo","lang":"es","clues":{"Conversación":"synonym"}}
+{"id":"dibujo","lang":"es","clues":{"Boceto":"synonym"}}
+{"id":"diccionario","lang":"es","clues":{"Libro":"broader","Definición":"part"}}
+{"id":"dice","lang":"en","clues":{"Dots":"part"}}
+{"id":"dicha","lang":"es","clues":{"Felicidad":"synonym","Alegría":"synonym"}}
+{"id":"dictadura","lang":"es","clues":{"Régimen":"synonym"}}
+{"id":"dictionary","lang":"en","clues":{"Book":"broader","Definition":"part"}}
+{"id":"diesel","lang":"en","clues":{"Store":"broader"}}
+{"id":"diffuser","lang":"en","clues":{"Aromatherapy":"context"}}
+{"id":"digestion","lang":"es","clues":{"Proceso":"broader"}}
+{"id":"digestion","lang":"en","clues":{"Process":"broader"}}
+{"id":"digital-assessment-tool","lang":"en","clues":{"Assessment Platform":"synonym","Online Exam Software":"synonym","Online Testing Software":"synonym"}}
+{"id":"digital-textbook","lang":"en","clues":{"E-book":"synonym","Textbook":"broader"}}
+{"id":"dinero","lang":"es","clues":{"Billetes":"part","Monedas":"part"}}
+{"id":"dinosaurio","lang":"es","clues":{"Reptil Gigante":"broader"}}
+{"id":"dionisio","lang":"es","clues":{"Dios del Vino":"synonym"}}
+{"id":"dionysus","lang":"en","clues":{"God":"broader"}}
+{"id":"dioxido-de-carbono","lang":"es","clues":{"CO2":"synonym","Gas":"broader"}}
+{"id":"diploma","lang":"es","clues":{"Título":"synonym"}}
+{"id":"diploma","lang":"en","clues":{"Degree":"synonym"}}
+{"id":"disappointment","lang":"en","clues":{"Let Down":"synonym"}}
+{"id":"discord","lang":"es","clues":{"Servidor":"part","Canales":"part"}}
+{"id":"discord","lang":"en","clues":{"Server":"part","Channels":"part"}}
+{"id":"discord-nitro","lang":"en","clues":{"Subscription":"broader"}}
+{"id":"disfraz","lang":"es","clues":{"Ropa":"broader"}}
+{"id":"disgust","lang":"en","clues":{"Repulsion":"synonym"}}
+{"id":"dishwasher","lang":"en","clues":{"Machine":"broader"}}
+{"id":"disney-plus","lang":"es","clues":{"Streaming":"broader"}}
+{"id":"disney-plus","lang":"en","clues":{"Streaming":"broader"}}
+{"id":"diversity","lang":"en","clues":{"Variety":"synonym"}}
+{"id":"dividend","lang":"en","clues":{"Profit Sharing.":"synonym"}}
+{"id":"divisa","lang":"es","clues":{"Moneda":"synonym"}}
+{"id":"diwali~culture-and-traditions","lang":"es","clues":{"Festival":"broader"}}
+{"id":"diwali~holidays-and-celebrations","lang":"en","clues":{"Festival of Lights":"synonym","Celebration":"broader"}}
+{"id":"dm","lang":"es","clues":{"Mensaje":"synonym"}}
+{"id":"dm","lang":"en","clues":{"Message":"synonym"}}
+{"id":"dna","lang":"en","clues":{"Helix":"part"}}
+{"id":"doctor","lang":"en","clues":{"MD":"synonym"}}
+{"id":"doctor-strange","lang":"en","clues":{"Sorcerer":"broader","Hero":"broader"}}
+{"id":"dog","lang":"en","clues":{"Pet":"broader"}}
+{"id":"doge","lang":"es","clues":{"Perro":"broader","Shiba":"broader"}}
+{"id":"doge","lang":"en","clues":{"Dog":"broader","Shiba":"broader"}}
+{"id":"doja-cat","lang":"es","clues":{"Cantante/Rapera":"broader"}}
+{"id":"doja-cat","lang":"en","clues":{"Singer-songwriter":"broader"}}
+{"id":"dolor","lang":"es","clues":{"Grief":"synonym","Sorrow":"synonym"}}
+{"id":"dolor-de-cabeza","lang":"es","clues":{"Migraña":"synonym"}}
+{"id":"dolphin","lang":"en","clues":{"Mammal":"broader"}}
+{"id":"domino","lang":"es","clues":{"Fichas":"part"}}
+{"id":"dominoes","lang":"en","clues":{"Tiles":"part","Dots":"part"}}
+{"id":"donald-trump","lang":"es","clues":{"Empresario":"broader","Presidente":"broader"}}
+{"id":"donald-trump","lang":"en","clues":{"Businessman":"broader","President":"broader"}}
+{"id":"donkey","lang":"en","clues":{"Ears":"part"}}
+{"id":"donkey-kong","lang":"es","clues":{"Gorila":"broader"}}
+{"id":"donkey-kong","lang":"en","clues":{"Gorilla":"broader"}}
+{"id":"donut","lang":"es","clues":{"Agujero":"part","Masa":"part"}}
+{"id":"donut","lang":"en","clues":{"Hole":"part","Dough":"part"}}
+{"id":"door","lang":"en","clues":{"Knob":"part","Lock":"part"}}
+{"id":"doormat","lang":"en","clues":{"Door":"context"}}
+{"id":"dorayaki","lang":"en","clues":{"Red Bean Pancake":"broader"}}
+{"id":"dormitorio","lang":"es","clues":{"Habitación":"broader","Cama":"part"}}
+{"id":"double-bass","lang":"en","clues":{"Strings":"broader"}}
+{"id":"double-decker-bus","lang":"en","clues":{"Bus":"broader"}}
+{"id":"double-down","lang":"en","clues":{"Bet":"broader","Blackjack":"context"}}
+{"id":"douglas","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"douglas","lang":"en","clues":{"Store":"broader"}}
+{"id":"downey-jr","lang":"es","clues":{"Actor":"broader"}}
+{"id":"dr-martens","lang":"en","clues":{"Boots":"broader"}}
+{"id":"dracula","lang":"es","clues":{"Vampiro":"broader"}}
+{"id":"dragon","lang":"es","clues":{"Alas":"part","Escamas":"part"}}
+{"id":"dragon","lang":"en","clues":{"Mythical Creature":"broader","Wings":"part","Scales":"part"}}
+{"id":"dragonfly","lang":"en","clues":{"Insect":"broader","Wings":"part"}}
+{"id":"drake-equation","lang":"en","clues":{"Equation":"broader"}}
+{"id":"drake~music","lang":"es","clues":{"Rapero":"broader"}}
+{"id":"drake~music","lang":"en","clues":{"Rapper":"broader"}}
+{"id":"drawer","lang":"en","clues":{"Furniture":"broader"}}
+{"id":"drawing","lang":"en","clues":{"Sketch":"synonym"}}
+{"id":"dread","lang":"en","clues":{"Terror":"synonym","Fear":"synonym"}}
+{"id":"dress","lang":"en","clues":{"Clothing":"broader"}}
+{"id":"drift","lang":"es","clues":{"Derrape":"synonym"}}
+{"id":"drift","lang":"en","clues":{"Slide":"synonym"}}
+{"id":"driver-s-license","lang":"en","clues":{"Permit":"synonym","Document":"broader"}}
+{"id":"dron","lang":"es","clues":{"Hélices":"part","Cámara":"part"}}
+{"id":"drone","lang":"en","clues":{"Propellers":"part","Camera":"part"}}
+{"id":"drones-de-reparto","lang":"es","clues":{"Dron":"broader"}}
+{"id":"dropbox","lang":"es","clues":{"Carpeta":"part"}}
+{"id":"drums","lang":"en","clues":{"Cymbals":"part","Sticks":"part","Percussion":"broader"}}
+{"id":"dry-erase-markers","lang":"en","clues":{"Markers":"broader"}}
+{"id":"dua-lipa","lang":"es","clues":{"Cantante":"broader"}}
+{"id":"dua-lipa","lang":"en","clues":{"Singer-songwriter":"broader"}}
+{"id":"ducha","lang":"es","clues":{"Baño":"context"}}
+{"id":"duelo","lang":"es","clues":{"Mourning":"synonym"}}
+{"id":"dugong","lang":"en","clues":{"Aquatic Mammal":"broader","Sea Cow":"synonym"}}
+{"id":"duki","lang":"es","clues":{"Rapero de Trap/Reggaeton":"broader"}}
+{"id":"dwayne-johnson","lang":"es","clues":{"Roca":"synonym","Actor":"broader"}}
+{"id":"dwayne-johnson","lang":"en","clues":{"Rock":"synonym","Actor":"broader"}}
+{"id":"e-book-reader","lang":"en","clues":{"Screen":"part"}}
+{"id":"e-learning-authoring-tool","lang":"en","clues":{"Course Creation Software":"synonym"}}
+{"id":"e-mc-2","lang":"en","clues":{"Mass":"part","Energy":"part"}}
+{"id":"eagle","lang":"en","clues":{"Beak":"part","Claw":"part","Feathers":"part"}}
+{"id":"earrings","lang":"en","clues":{"Jewelry":"broader","Accessory":"broader"}}
+{"id":"earth","lang":"en","clues":{"Planet":"broader"}}
+{"id":"earth-day","lang":"en","clues":{"April 22nd":"context"}}
+{"id":"ecotourism","lang":"en","clues":{"Tourism":"broader"}}
+{"id":"ecstasy","lang":"en","clues":{"Euphoria":"synonym"}}
+{"id":"ed-sheeran","lang":"es","clues":{"Cantante":"broader"}}
+{"id":"ed-sheeran","lang":"en","clues":{"Singer-songwriter":"broader"}}
+{"id":"edge-ai","lang":"en","clues":{"Artificial Intelligence":"broader"}}
+{"id":"edge-computing","lang":"en","clues":{"Computing":"broader"}}
+{"id":"edison-bulb","lang":"en","clues":{"Light Fixture":"broader"}}
+{"id":"educational-game","lang":"en","clues":{"Game":"broader"}}
+{"id":"educational-podcast","lang":"en","clues":{"Podcast":"broader"}}
+{"id":"egg","lang":"en","clues":{"Shell":"part","Yolk":"part","White":"part"}}
+{"id":"egg-poacher","lang":"en","clues":{"Appliance":"broader"}}
+{"id":"egg-slicer","lang":"en","clues":{"Slicer":"broader"}}
+{"id":"eiffel-tower","lang":"en","clues":{"Monument":"broader"}}
+{"id":"el-alfa","lang":"es","clues":{"Rapero de Dembow/Trap":"broader"}}
+{"id":"el-barrio","lang":"es","clues":{"Cantante de Flamenco/Pop":"broader"}}
+{"id":"el-cairo","lang":"es","clues":{"Capital":"broader"}}
+{"id":"el-cairo","lang":"en","clues":{"Capital":"broader"}}
+{"id":"el-corte-ingles","lang":"es","clues":{"Almacenes":"broader"}}
+{"id":"el-corte-ingles","lang":"en","clues":{"Department Store":"broader"}}
+{"id":"el-principito","lang":"es","clues":{"Pequeño Príncipe":"synonym"}}
+{"id":"elated","lang":"en","clues":{"Happy":"synonym","Joyful":"synonym","Excited":"synonym"}}
+{"id":"elecciones","lang":"es","clues":{"Urna":"part"}}
+{"id":"election","lang":"en","clues":{"Ballot box":"part"}}
+{"id":"electric-skillet","lang":"en","clues":{"Frying Pan":"broader","Skillet":"synonym"}}
+{"id":"electric-tram","lang":"en","clues":{"Tram":"broader"}}
+{"id":"electric-vehicle","lang":"en","clues":{"EV":"synonym","Battery Powered":"part","Battery":"part","Electric Motor":"part","Charging Station":"context"}}
+{"id":"electrico","lang":"es","clues":{"Batería":"part"}}
+{"id":"electron","lang":"es","clues":{"Carga":"part"}}
+{"id":"electron","lang":"en","clues":{"Charge":"part"}}
