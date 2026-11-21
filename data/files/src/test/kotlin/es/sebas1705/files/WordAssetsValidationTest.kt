@@ -5,6 +5,7 @@ import kotlinx.serialization.json.Json
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
+import java.security.MessageDigest
 import java.text.Normalizer
 
 /**
@@ -52,6 +53,22 @@ class WordAssetsValidationTest {
         val missing = categories.flatMap { c -> LANGUAGES.map { "${c}_$it.json" } }.filter { it !in files }
         assertNone("Each category must exist in en and es", missing)
         assertTrue("No word lists found in $assetsDir", files.isNotEmpty())
+    }
+
+    @Test
+    fun `words_version matches the content of the word lists`() {
+        val digest = MessageDigest.getInstance("SHA-256")
+        assetsDir.listFiles { f -> f.name.matches(FILE_NAME) }.orEmpty().sortedBy { it.name }.forEach { file ->
+            val content = file.readText().removePrefix("﻿").replace("\r", "")
+            digest.update("${file.name}\n$content\n".toByteArray(Charsets.UTF_8))
+        }
+        val expected = digest.digest().joinToString("") { "%02x".format(it) }.take(VERSION_LENGTH)
+        val actual = File(assetsDir, "words_version.txt").takeIf { it.isFile }?.readText()?.trim()
+        assertTrue(
+            "words_version.txt is out of date (has \"$actual\", expected \"$expected\"). " +
+                "Run: node scripts/word-study/update-words-version.mjs",
+            actual == expected
+        )
     }
 
     @Test
@@ -129,5 +146,6 @@ class WordAssetsValidationTest {
         const val MAX_WORDS = 3
         const val MIN_CLUES = 3
         const val MAX_LISTED = 30
+        const val VERSION_LENGTH = 16
     }
 }

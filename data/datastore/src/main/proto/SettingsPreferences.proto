@@ -13,4 +13,6 @@ message SettingsPreferences {
     string appLanguage = 7;
     bool forceCompactTables = 8;
     int32 darkTheme = 9;
+    // Version of the bundled word lists that is currently loaded in the word database ("" = unknown).
+    string defaultWordsVersion = 10;
 }

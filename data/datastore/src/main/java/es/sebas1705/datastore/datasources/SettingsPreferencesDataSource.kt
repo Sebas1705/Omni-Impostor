@@ -4,6 +4,7 @@ import androidx.datastore.core.DataStore
 import es.sebas1705.datastore.SettingsPreferences
 import es.sebas1705.datastore.model.SettingsData
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -131,6 +132,15 @@ class SettingsPreferencesDataSource @Inject constructor(
 
     fun getAuthSessionExpected(): Flow<Boolean> = settingsPreferences.data.map {
         it.authSessionExpected
+    }
+
+    /** Version of the bundled word lists loaded in the word database; empty when it was never recorded. */
+    suspend fun readDefaultWordsVersion(): String = settingsPreferences.data.first().defaultWordsVersion
+
+    suspend fun saveDefaultWordsVersion(
+        version: String
+    ) = settingsPreferences.updateData {
+        it.toBuilder().setDefaultWordsVersion(version).build()
     }
 
     /**

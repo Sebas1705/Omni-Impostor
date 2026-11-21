@@ -39,6 +39,18 @@ This repository contains the **Omni-Impostor** Android app and its CI/CD automat
 - Apply at least one label: `bug`, `enhancement`, `documentation`, `ci`, `security`, or `breaking-change`.
 - Ensure CI is green before requesting review.
 
+## Word lists
+
+The game words live in `data/files/src/main/assets/*_{en,es}.json`. After editing any of them run:
+
+```powershell
+node scripts/word-study/update-words-version.mjs
+```
+
+It refreshes `words_version.txt`, which is how installed apps know they must replace their stored words.
+`WordAssetsValidationTest` fails when the version is out of date or a list breaks the shape rules
+(at most 3 words, at least 3 distinct clues, no clue equal to the word, no duplicates in a list).
+
 ## Commit Style
 
 Short scoped messages:

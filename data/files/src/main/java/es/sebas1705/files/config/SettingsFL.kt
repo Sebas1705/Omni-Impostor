@@ -13,4 +13,7 @@ import es.sebas1705.files.config.SettingsFL.ASSET_NAME_REGEX
  */
 object SettingsFL {
     val ASSET_NAME_REGEX = Regex(".*_(en|es)\\.json$")
+
+    /** Asset holding the version (content hash) of the bundled word lists. */
+    const val WORDS_VERSION_ASSET = "words_version.txt"
 }

@@ -5,6 +5,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import es.sebas1705.analytics.datasources.LogEventDataSource
 import es.sebas1705.common.managers.ClassLogData
 import es.sebas1705.files.config.SettingsFL.ASSET_NAME_REGEX
+import es.sebas1705.files.config.SettingsFL.WORDS_VERSION_ASSET
 import es.sebas1705.files.json.WordJson
 import es.sebas1705.files.json.WordsJson
 import kotlinx.serialization.json.Json
@@ -25,6 +26,18 @@ class WordFileDataSource @Inject constructor(
 ) : ClassLogData() {
 
     private val jsonParser = Json { ignoreUnknownKeys = true }
+
+    /**
+     * Version of the bundled word lists (`words_version.txt`, a hash of their content kept in sync by a unit test),
+     * or null when the file is missing or unreadable.
+     */
+    fun readWordsVersion(): String? =
+        try {
+            context.assets.open(WORDS_VERSION_ASSET).bufferedReader().use { it.readText() }.trim().ifEmpty { null }
+        } catch (ex: java.io.IOException) {
+            logEventDataSource.logError(this, "words version unavailable: ${ex.message}")
+            null
+        }
 
     fun readDefaultWords(): Map<String, List<WordJson>> =
         try {
