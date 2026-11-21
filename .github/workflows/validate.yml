@@ -11,6 +11,29 @@ concurrency:
 permissions:
   contents: read
 jobs:
+  # Chooses where the heavy Linux jobs run: the owner's PC (self-hosted runner, see Sebas1705/ci-runner) when its
+  # heartbeat variable is under 3 minutes old, otherwise a GitHub-hosted runner. Only push and workflow_dispatch
+  # events may use the PC: pull requests and every other event stay on GitHub-hosted runners.
+  pick-runner:
+    name: Pick the runner
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      runner: ${{ steps.pick.outputs.runner }}
+    steps:
+      - id: pick
+        env:
+          HEARTBEAT: ${{ vars.PC_RUNNER_HEARTBEAT }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          runner='"ubuntu-latest"'
+          if { [ "$EVENT" = push ] || [ "$EVENT" = workflow_dispatch ]; } && [ -n "${HEARTBEAT:-}" ]; then
+            age=$(( $(date +%s) - HEARTBEAT ))
+            if [ "$age" -ge 0 ] && [ "$age" -lt 180 ]; then runner='["self-hosted","pc"]'; fi
+          fi
+          echo "Runner: $runner"
+          echo "runner=$runner" >> "$GITHUB_OUTPUT"
+
   release_notes:
     name: Release Notes
     runs-on: ubuntu-latest
@@ -67,9 +90,9 @@ jobs:
               - '.github/workflows/validate.yml'
   build_lint:
     name: Build + Lint
-    needs: changes
+    needs: [changes, pick-runner]
     if: needs.changes.outputs.android == 'true' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(needs.pick-runner.outputs.runner) }}
     timeout-minutes: 30
     steps:
       - name: Checkout Code
@@ -89,9 +112,9 @@ jobs:
             **/build/reports/lint-results*.xml
   detekt:
     name: Detekt
-    needs: changes
+    needs: [changes, pick-runner]
     if: needs.changes.outputs.detekt == 'true' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(needs.pick-runner.outputs.runner) }}
     timeout-minutes: 30
     steps:
       - name: Checkout Code
@@ -110,9 +133,9 @@ jobs:
             **/build/reports/detekt/
   unit_tests:
     name: Unit Tests + Coverage
-    needs: changes
+    needs: [changes, pick-runner]
     if: needs.changes.outputs.tests == 'true' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(needs.pick-runner.outputs.runner) }}
     timeout-minutes: 35
     steps:
       - name: Checkout Code
@@ -121,6 +144,9 @@ jobs:
         uses: ./.github/actions/android-ci-setup
       - name: Run Unit Tests and Coverage
         run: ./gradlew coverageUnitTestAll --stacktrace --no-daemon --build-cache
+      - name: Ensure python3 (self-hosted image)
+        if: runner.environment == 'self-hosted'
+        run: command -v python3 >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq python3; }
       - name: Post coverage to job summary
         if: always()
         run: |
