@@ -1,6 +1,6 @@
 # Concept map: detailed design
 
-Status: phase 1 implemented (see section 12). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
+Status: phases 1 and 2 implemented (see sections 12 and 13). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
 document. The sizes quoted come from `data/concept-dry-run.md` (script `scripts/word-study/concept-dry-run.mjs`), the rules
 can be tried with `scripts/word-study/concept-compile-prototype.mjs` on `concept-map-example/`.
 
@@ -248,3 +248,39 @@ Result on the v1.4.1 lists after the phase 0 cleanup: 5,256 concepts (719 paired
 only with `todo: ["es"]`), 8,970 links, 20,736 hints, 0 clues lost (31,609 checked). Compared with the lists before, 594 EN
 and 592 ES entries changed (merged duplicates and extra categories after pairing), 21 EN and 25 ES entries were added (a
 paired word gained the categories of its other-language side), none removed.
+
+## 13. Phase 2 as built
+
+| Piece | Where |
+|---|---|
+| `reveal` digit per clue in the compiled lists (only written when some clue is not level 1) | `scripts/words/lib.mjs`, `WordJson`, `WordDoc` |
+| Impostor help setting (low / normal / high), stored in DataStore | `ClueHelp`, Settings > Gameplay |
+| Clue filter by help level (falls back to all clues when fewer than 3 remain) | `SearchWordsUseCase.selectClues` + `SelectCluesTest` |
+| Proposal pipeline: export, check, review, apply | `scripts/words/proposals.mjs` |
+| AI proposals waiting for review | `data/files/concepts/proposals/` (10 label files, 14 type files) |
+
+The proposals are **not applied**: `concepts.jsonl` and `links.jsonl` are unchanged, so the shipped lists and the app behave exactly as
+after phase 1 until the owner reviews and applies batches. Until clue types are applied every clue is level 1, so the help
+setting has no visible effect yet.
+
+What the proposals contain (written by sonnet subagents, validated by `proposals.mjs check`):
+
+- **Spanish labels** for the 2,421 English-only concepts, with their clues translated. Applying all of them would give 1,170 new
+  Spanish concepts and merge another 1,251 into Spanish-only concepts that already exist (the same word seen from both
+  lists), leaving no `todo`. `check` flags 33 labels that cannot be applied blindly: the translation is already the label of
+  another concept (e.g. `Fuerza`, `Batería`, `Mercurio`: homonyms that need a sense tag or a merge by hand) or two English words
+  translate to the same Spanish one (`burger`/`hamburger`). The agents worked around some clashes with forced labels
+  (`Energía física`, `Batería musical`, `Médico urólogo`); those are better fixed by merging. Labels over 3 words were shortened
+  (`Estatua Libertad`, `Día del Planeta`).
+- **Clue types**: 4,327 concept/language lines with 8,663 typed clues (2,667 broader, 2,598 part, 2,172 context, 1,194
+  synonym, 32 contrast). This is far more than the conservative pass asked for; `context` and `part` are the weakest signals and the
+  first to prune, `synonym` and `broader` are what the help level really needs. Note the reveal table makes `part` level 2, so
+  `low` hides parts.
+
+Checked by applying the proposals in a scratch copy and reverting: the clue types alone compile, pass every validator and
+change the lists only by adding `reveal`; the labels alone fail `ConceptSourcesValidationTest` (35 same-label concepts) and
+`WordAssetsValidationTest` (21 duplicate words), which is exactly what the 33 flagged labels would cause.
+
+Tested on the emulator (Spanish, debug build with the clue types applied): the Settings > Gameplay chips render and persist, and
+over 30 games the number of clues given matched the expected count for each word at low, normal and high (including the
+fallback to all clues when fewer than 3 would remain).
