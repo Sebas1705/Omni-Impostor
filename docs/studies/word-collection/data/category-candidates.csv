@@ -1,0 +1,282 @@
+﻿language,word,current_categories,candidate_category,supporting_neighbours,neighbours_checked
+en,"Kitchen","home_and_furniture",kitchen_and_cookware,56,61
+es,"Historia","school_and_education",professions,45,98
+es,"Idioma","culture_and_traditions + school_and_education",geography,38,41
+en,"Space","board_games_and_tabletop + science_physics",space_and_astronomy,36,58
+en,"Clothing","culture_and_traditions",stores_and_retail,32,61
+en,"Fashion","fashion_and_clothing",stores_and_retail,32,47
+en,"Science","school_and_education",science_biology,32,39
+en,"Car","transport",cars_and_motorsport,32,52
+es,"Ciencia","school_and_education",professions,32,55
+es,"Coche","transport",cars_and_motorsport,31,52
+en,"The Office","movies_and_series",office_and_stationery,28,33
+es,"Moda","fashion_and_clothing",stores_and_retail,28,37
+es,"Espacio","science_physics",space_and_astronomy,28,50
+en,"Clothing","culture_and_traditions",fashion_and_clothing,26,61
+es,"Papel","school_and_education",office_and_stationery,25,52
+en,"Japan","geography",food_and_drinks,24,36
+en,"Glass","home_and_furniture + kitchen_and_cookware",adult_18_plus,22,41
+es,"Deseo","emotions_and_feelings",adult_18_plus,21,21
+en,"Hospital","health_and_medicine",professions,20,25
+en,"Glass","home_and_furniture + kitchen_and_cookware",food_and_drinks,20,41
+es,"Alcohol","science_chemistry",adult_18_plus,19,25
+es,"Tradición","holidays_and_celebrations",culture_and_traditions,18,21
+es,"Cocina","home_and_furniture",kitchen_and_cookware,18,22
+en,"Game","stores_and_retail",board_games_and_tabletop,17,22
+en,"God","superheroes_and_comics",mythology_and_fantasy,17,20
+es,"Roma","cities_and_landmarks",history,17,20
+en,"Alcohol","science_chemistry",adult_18_plus,16,17
+es,"Presidente","politics_and_law",history,16,18
+es,"Estados Unidos","geography",history,15,17
+en,"Rome","cities_and_landmarks",history,14,19
+en,"President","politics_and_law",history,14,18
+es,"Expansión","board_games_and_tabletop",video_games,14,19
+es,"Italia","geography",stores_and_retail,14,28
+es,"Insecto","nature_and_weather",animals,14,15
+en,"President","politics_and_law",celebrities,13,18
+en,"Fly","superheroes_and_comics",transport,13,29
+es,"Alcohol","science_chemistry",food_and_drinks,13,25
+en,"Ocean","geography + nature_and_weather",animals,12,22
+en,"Pop","music",celebrities,12,21
+es,"Actor","movies_and_series + professions",celebrities,12,18
+es,"Guerra","politics_and_law",history,12,18
+es,"Poder","superheroes_and_comics",history,12,25
+en,"Actor","movies_and_series + professions",celebrities,11,16
+es,"Pista","board_games_and_tabletop",sports,11,12
+en,"Code","history",technology,10,16
+en,"Tradition","holidays_and_celebrations",culture_and_traditions,10,13
+en,"Parasite","movies_and_series + science_biology",animals,10,14
+es,"Zapatillas","fashion_and_clothing",stores_and_retail,10,10
+es,"Cámara","movies_and_series",social_media_and_streamers,10,21
+es,"Parásito","science_biology",animals,10,11
+es,"Dios","superheroes_and_comics",mythology_and_fantasy,10,13
+en,"Camera","movies_and_series",social_media_and_streamers,9,20
+en,"Athletics","sports",stores_and_retail,9,10
+es,"Código","history",technology,9,14
+es,"Horno","home_and_furniture + kitchen_and_cookware",food_and_drinks,9,13
+es,"Transporte","travel_and_tourism",transport,9,13
+en,"Shoes","fashion_and_clothing",stores_and_retail,8,15
+en,"Switzerland","geography",stores_and_retail,8,10
+en,"Wind","nature_and_weather",music,8,20
+en,"Universe","nature_and_weather + space_and_astronomy",science_physics,8,10
+en,"Alcohol","science_chemistry",food_and_drinks,8,17
+es,"Copa","kitchen_and_cookware",adult_18_plus,8,8
+es,"Viento","nature_and_weather",music,8,18
+es,"Vida","nature_and_weather",science_biology,8,20
+es,"Literatura","school_and_education",books_and_literature,8,8
+es,"Avión","transport",travel_and_tourism,8,16
+en,"Science Fiction","books_and_literature",transport,7,8
+en,"Desert","geography + nature_and_weather",cities_and_landmarks,7,17
+en,"Mexico","geography",food_and_drinks,7,13
+en,"Oven","home_and_furniture + kitchen_and_cookware",food_and_drinks,7,11
+en,"Reptile","science_biology",animals,7,8
+en,"Horse","animals",mythology_and_fantasy,6,11
+en,"Fantasy","books_and_literature + mythology_and_fantasy",transport,6,14
+en,"Roll","food_and_drinks",board_games_and_tabletop,6,10
+en,"Egypt","geography",history,6,11
+en,"Sustainability","values_and_ethics",technology,6,8
+es,"Gato","animals",home_and_furniture,6,14
+es,"Desierto","geography + nature_and_weather",cities_and_landmarks,6,15
+es,"Reino Unido","geography",history,6,15
+es,"Egipto","geography",history,6,12
+es,"Gafas","health_and_medicine",celebrities,6,10
+es,"Órgano","music + science_biology",health_and_medicine,6,9
+es,"Invierno","nature_and_weather",fashion_and_clothing,6,13
+es,"Fútbol","sports",celebrities,6,12
+en,"Shell","brands",animals,5,10
+en,"Boots","fashion_and_clothing",stores_and_retail,5,8
+en,"Capital","geography",cities_and_landmarks,5,7
+en,"Glasses","health_and_medicine",celebrities,5,9
+en,"Organ","music + science_biology",health_and_medicine,5,9
+en,"Communism","politics_and_law",history,5,7
+en,"Politician","professions",politics_and_law,5,9
+en,"Gravity","science_physics + space_and_astronomy",nature_and_weather,5,8
+en,"Meme","social_media_and_streamers",internet_and_memes,5,7
+es,"Caballo","animals",mythology_and_fantasy,5,11
+es,"Capital","geography",cities_and_landmarks,5,6
+es,"Colombia","geography",music,5,6
+es,"Princesa","history",mythology_and_fantasy,5,7
+es,"Copa","kitchen_and_cookware",food_and_drinks,5,8
+es,"Pantalla","office_and_stationery",technology,5,12
+es,"Político","professions",politics_and_law,5,5
+es,"Átomo","science_physics",science_chemistry,5,9
+es,"Resistencia","science_physics",sports,5,11
+es,"Meme","social_media_and_streamers",internet_and_memes,5,7
+es,"Tren","transport",travel_and_tourism,5,10
+es,"Vuelo","travel_and_tourism",animals,5,9
+en,"Lion","animals",mythology_and_fantasy,4,6
+en,"Cat","animals",internet_and_memes,4,10
+en,"Harry Potter","books_and_literature + movies_and_series",mythology_and_fantasy,4,5
+en,"Google","brands",apps_and_platforms,4,6
+en,"Gasoline","cars_and_motorsport",transport,4,5
+en,"Language","culture_and_traditions + school_and_education",technology,4,7
+en,"Sneakers","fashion_and_clothing",stores_and_retail,4,4
+en,"Jeans","fashion_and_clothing",stores_and_retail,4,6
+en,"Jewelry","fashion_and_clothing",stores_and_retail,4,9
+en,"Soup","food_and_drinks",kitchen_and_cookware,4,7
+en,"Greece","geography",history,4,10
+en,"Greece","geography",mythology_and_fantasy,4,10
+en,"Patient","health_and_medicine",professions,4,6
+en,"Sleep","health_and_medicine",home_and_furniture,4,9
+en,"Stress","health_and_medicine",emotions_and_feelings,4,6
+en,"Pan","home_and_furniture",food_and_drinks,4,9
+en,"Forest","nature_and_weather",animals,4,8
+en,"Painter","professions",art_and_design,4,4
+en,"Soccer","sports",celebrities,4,10
+en,"Radiation","superheroes_and_comics",science_physics,4,7
+en,"Airplane","transport",travel_and_tourism,4,7
+en,"Ticket","travel_and_tourism",transport,4,7
+en,"Freedom","values_and_ethics",history,4,8
+en,"Freedom","values_and_ethics",politics_and_law,4,8
+es,"León","animals",mythology_and_fantasy,4,6
+es,"Cerámica","art_and_design",home_and_furniture,4,4
+es,"Cartas","board_games_and_tabletop",adult_18_plus,4,10
+es,"Google","brands",apps_and_platforms,4,5
+es,"Visa","brands",business_and_finance,4,4
+es,"Autopista","cars_and_motorsport",transport,4,4
+es,"Zapatillas","fashion_and_clothing",brands,4,10
+es,"Perfume","fashion_and_clothing",stores_and_retail,4,4
+es,"Sopa","food_and_drinks",kitchen_and_cookware,4,5
+es,"Selva","geography + nature_and_weather",animals,4,10
+es,"República Dominicana","geography",music,4,5
+es,"Paciente","health_and_medicine",professions,4,7
+es,"Suelo","home_and_furniture",nature_and_weather,4,9
+es,"Sartén","home_and_furniture + kitchen_and_cookware",food_and_drinks,4,9
+es,"Espada","mythology_and_fantasy",video_games,4,8
+es,"Bosque","nature_and_weather",animals,4,8
+es,"Planta","nature_and_weather",science_biology,4,8
+es,"Enfermero","professions",health_and_medicine,4,4
+es,"Pintor","professions",art_and_design,4,5
+es,"Dictador","professions",history,4,6
+es,"Bicicleta","transport",sports,4,9
+es,"Estación","transport + travel_and_tourism",nature_and_weather,4,8
+es,"Tráfico","transport",cars_and_motorsport,4,8
+en,"Moscow Mule","adult_18_plus",food_and_drinks,3,3
+en,"Dark and Stormy","adult_18_plus",food_and_drinks,3,4
+en,"Museum","art_and_design + culture_and_traditions",cities_and_landmarks,3,6
+en,"Character","books_and_literature",board_games_and_tabletop,3,6
+en,"Microsoft","brands",technology,3,6
+en,"Visa","brands + travel_and_tourism",business_and_finance,3,4
+en,"Mastercard","brands",business_and_finance,3,3
+en,"Interest","business_and_finance",emotions_and_feelings,3,7
+en,"Battery","cars_and_motorsport",science_physics,3,7
+en,"Rihanna","celebrities + music",fashion_and_clothing,3,5
+en,"Cairo","cities_and_landmarks",geography,3,3
+en,"Iguazu Falls","cities_and_landmarks",geography,3,4
+en,"Pride","emotions_and_feelings",values_and_ethics,3,5
+en,"Dress","fashion_and_clothing",holidays_and_celebrations,3,7
+en,"Button","fashion_and_clothing",social_media_and_streamers,3,4
+en,"Perfume","fashion_and_clothing",stores_and_retail,3,4
+en,"Uniform","fashion_and_clothing",professions,3,6
+en,"Pizza","food_and_drinks",kitchen_and_cookware,3,6
+en,"Pasta","food_and_drinks",kitchen_and_cookware,3,4
+en,"Salad","food_and_drinks",kitchen_and_cookware,3,4
+en,"Tea","food_and_drinks",kitchen_and_cookware,3,7
+en,"Bread","food_and_drinks",kitchen_and_cookware,3,6
+en,"Cake","food_and_drinks + holidays_and_celebrations",kitchen_and_cookware,3,7
+en,"Martini","food_and_drinks",adult_18_plus,3,3
+en,"Vesper Martini","food_and_drinks",adult_18_plus,3,3
+en,"Steppe","geography",nature_and_weather,3,4
+en,"Fiord","geography",nature_and_weather,3,4
+en,"Spring","geography + nature_and_weather",space_and_astronomy,3,6
+en,"Australia","geography",animals,3,6
+en,"United Kingdom","geography",cities_and_landmarks,3,5
+en,"Canada","geography",celebrities,3,7
+en,"Cuba","geography",adult_18_plus,3,3
+en,"Colombia","geography",celebrities,3,4
+en,"Surgery","health_and_medicine",professions,3,5
+en,"Knight","history + mythology_and_fantasy",superheroes_and_comics,3,7
+en,"Independence","history",values_and_ethics,3,6
+en,"French Revolution","history",values_and_ethics,3,3
+en,"Cutlery","home_and_furniture",kitchen_and_cookware,3,4
+en,"Pot","home_and_furniture + kitchen_and_cookware",food_and_drinks,3,4
+en,"Piano","music",celebrities,3,5
+en,"Festival","music",holidays_and_celebrations,3,5
+en,"Grass","nature_and_weather",geography,3,5
+en,"Fog","nature_and_weather",cities_and_landmarks,3,6
+en,"Temperature","nature_and_weather",science_chemistry,3,7
+en,"Programmer","professions",technology,3,5
+en,"Soldier","professions",video_games,3,7
+en,"Economist","professions",business_and_finance,3,3
+en,"Oxygen","science_chemistry",science_biology,3,5
+en,"Uranium","science_chemistry",science_physics,3,3
+en,"Lead","science_chemistry",office_and_stationery,3,4
+en,"Cosmology","science_physics + space_and_astronomy",nature_and_weather,3,7
+en,"Space Exploration","science_physics + technology",space_and_astronomy,3,3
+en,"Skiing","sports",geography,3,7
+en,"Hiking","sports",travel_and_tourism,3,4
+en,"Victoria's Secret","stores_and_retail",fashion_and_clothing,3,3
+en,"Web","superheroes_and_comics",technology,3,5
+en,"Social Media Platform","technology",social_media_and_streamers,3,3
+en,"Baggage","transport",travel_and_tourism,3,3
+en,"Suitcase","travel_and_tourism",transport,3,4
+en,"Equality","values_and_ethics",politics_and_law,3,5
+en,"Wisdom","values_and_ethics",mythology_and_fantasy,3,5
+es,"Champán","adult_18_plus + food_and_drinks",holidays_and_celebrations,3,6
+es,"Despedida de Soltero","adult_18_plus",holidays_and_celebrations,3,4
+es,"Serpiente","animals",mythology_and_fantasy,3,6
+es,"Booking","apps_and_platforms",travel_and_tourism,3,3
+es,"Puzzle","board_games_and_tabletop",video_games,3,4
+es,"Toyota","brands + cars_and_motorsport",transport,3,4
+es,"Microsoft","brands",technology,3,6
+es,"Tesla","brands + cars_and_motorsport",transport,3,5
+es,"Mastercard","brands",business_and_finance,3,3
+es,"Gasolina","cars_and_motorsport",transport,3,4
+es,"Rihanna","celebrities + music",fashion_and_clothing,3,3
+es,"El Cairo","cities_and_landmarks",geography,3,3
+es,"Cataratas del Iguazú","cities_and_landmarks",geography,3,4
+es,"Orgullo","emotions_and_feelings",values_and_ethics,3,6
+es,"Sopa","food_and_drinks",home_and_furniture,3,5
+es,"Café","food_and_drinks",kitchen_and_cookware,3,7
+es,"Té","food_and_drinks",kitchen_and_cookware,3,6
+es,"Huevo","food_and_drinks",nature_and_weather,3,6
+es,"Tarta","food_and_drinks",holidays_and_celebrations,3,5
+es,"Aceite","food_and_drinks",home_and_furniture,3,5
+es,"Aceite","food_and_drinks",kitchen_and_cookware,3,5
+es,"Frontera","geography",travel_and_tourism,3,4
+es,"Estepa","geography",nature_and_weather,3,4
+es,"Fiordo","geography",nature_and_weather,3,3
+es,"Cuba","geography",adult_18_plus,3,7
+es,"Cuba","geography",food_and_drinks,3,7
+es,"Cirugía","health_and_medicine",professions,3,7
+es,"Independencia","history",values_and_ethics,3,6
+es,"Newton","history",science_physics,3,4
+es,"Cuadro","home_and_furniture",art_and_design,3,6
+es,"Cubiertos","home_and_furniture",kitchen_and_cookware,3,4
+es,"Pinzas","kitchen_and_cookware",animals,3,4
+es,"Piano","music",celebrities,3,5
+es,"Álbum","music",celebrities,3,6
+es,"Salsa","music",food_and_drinks,3,6
+es,"Reino","mythology_and_fantasy",history,3,5
+es,"Árbol","nature_and_weather",animals,3,6
+es,"Hierba","nature_and_weather",geography,3,7
+es,"Niebla","nature_and_weather",cities_and_landmarks,3,6
+es,"Energía Nuclear","nature_and_weather + science_chemistry",science_physics,3,3
+es,"Conservación","nature_and_weather",science_biology,3,6
+es,"Reptil","nature_and_weather + science_biology",animals,3,4
+es,"Programador","professions",office_and_stationery,3,7
+es,"Programador","professions",technology,3,7
+es,"Soldado","professions",video_games,3,7
+es,"Cajero","professions",business_and_finance,3,4
+es,"Economista","professions",business_and_finance,3,3
+es,"Ecólogo","professions + science_biology",nature_and_weather,3,5
+es,"Virólogo","professions",health_and_medicine,3,4
+es,"Matemáticas","school_and_education",office_and_stationery,3,5
+es,"Manualidades","school_and_education",office_and_stationery,3,4
+es,"Ecología","science_biology",nature_and_weather,3,6
+es,"Oxígeno","science_chemistry",science_biology,3,6
+es,"Mezcla","science_chemistry",adult_18_plus,3,6
+es,"Uranio","science_chemistry",science_physics,3,3
+es,"Isótopo Radiactivo","science_chemistry",science_physics,3,3
+es,"Cráter","space_and_astronomy",nature_and_weather,3,3
+es,"Año Luz","space_and_astronomy",science_physics,3,3
+es,"Exoplaneta","space_and_astronomy",nature_and_weather,3,3
+es,"Dia","stores_and_retail",space_and_astronomy,3,5
+es,"Mango","stores_and_retail",kitchen_and_cookware,3,5
+es,"Martillo","superheroes_and_comics",mythology_and_fantasy,3,6
+es,"Invisible","superheroes_and_comics",nature_and_weather,3,7
+es,"Armadura","superheroes_and_comics",video_games,3,7
+es,"Animación","superheroes_and_comics",movies_and_series,3,5
+es,"Carretera","transport",cars_and_motorsport,3,7
+es,"Pasaje","travel_and_tourism",transport,3,3
+es,"Igualdad","values_and_ethics",politics_and_law,3,6

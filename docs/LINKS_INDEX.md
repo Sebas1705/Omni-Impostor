@@ -17,6 +17,7 @@ Centralized map of major documentation files.
 - `docs/module-map.md`
 - `docs/cloud.md`
 - `docs/design.md`
+- `docs/studies/word-collection/README.md` (study of the word collection: shape, clue graph, categories)
 - `docs/module-standards.md`
 - `docs/module-checklist.md`
 - `docs/logging-guide.md`
