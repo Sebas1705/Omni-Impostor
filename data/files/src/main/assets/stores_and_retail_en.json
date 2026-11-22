@@ -28,7 +28,7 @@
     {"word":"Costco","clues":["Family","Large","Membership","Warehouse","Wholesale"],"reveal":"11112","category":"stores_and_retail","conceptId":"costco"},
     {"word":"Crocs","clues":["Colorful","Comfortable","Plastic","Store","Shoes"],"reveal":"11112","category":"stores_and_retail","conceptId":"crocs"},
     {"word":"DKNY","clues":["Luxury","New York","Store","Fashion","Clothing"],"category":"stores_and_retail","conceptId":"dkny"},
-    {"word":"Decathlon","clues":["Blue","Equipment","Sports","Store","Clothing"],"reveal":"11121","category":"stores_and_retail","conceptId":"decathlon~stores-and-retail"},
+    {"word":"Decathlon","clues":["Blue","Endurance","Equipment","Finish Line","Sports","Store","Ten Events","Track and Field"],"reveal":"11111212","category":"stores_and_retail","conceptId":"decathlon~stores-and-retail"},
     {"word":"Dia","clues":["Cheap","Groceries","Nearby","Supermarket","Spain"],"reveal":"11121","category":"stores_and_retail","conceptId":"dia"},
     {"word":"Diesel","clues":["Jeans","Store","Italy","Fashion","Clothing"],"category":"stores_and_retail","conceptId":"diesel"},
     {"word":"Douglas","clues":["Beauty","Makeup","Perfume","Store","Germany"],"reveal":"11121","category":"stores_and_retail","conceptId":"douglas"},

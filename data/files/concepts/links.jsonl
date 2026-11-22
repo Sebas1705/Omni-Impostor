@@ -953,6 +953,8 @@
 {"from":"calcetines","to":"zapatos","type":"association","w":3,"langs":["en","es"]}
 {"from":"calcio","to":"leche","type":"association","w":3,"langs":["en","es"]}
 {"from":"calculadora","to":"matematicas","type":"association","w":3,"langs":["es"]}
+{"from":"calendario","to":"horario","type":"association","w":3,"langs":["en"]}
+{"from":"calendario","to":"pared","type":"association","w":3,"langs":["en"]}
 {"from":"calentamiento-global","to":"cambio-climatico","type":"synonym","w":3,"langs":["es"]}
 {"from":"calentamiento-global","to":"clima","type":"association","w":3,"langs":["es"]}
 {"from":"calentamiento-global","to":"planeta","type":"association","w":3,"langs":["es"]}
@@ -1688,9 +1690,9 @@
 {"from":"debito","to":"banco","type":"association","w":3,"langs":["es"]}
 {"from":"debito","to":"dinero","type":"association","w":3,"langs":["es"]}
 {"from":"debito","to":"tarjeta","type":"association","w":3,"langs":["es"]}
+{"from":"decathlon~stores-and-retail","to":"atletismo","type":"broader","w":3,"langs":["es"]}
+{"from":"decathlon~stores-and-retail","to":"resistencia","type":"association","w":3,"langs":["es"]}
 {"from":"decathlon~stores-and-retail","to":"vestimenta","type":"association","w":3,"langs":["en"]}
-{"from":"decatlon~sports","to":"atletismo","type":"broader","w":3,"langs":["es"]}
-{"from":"decatlon~sports","to":"resistencia","type":"association","w":3,"langs":["es"]}
 {"from":"decepcion","to":"tristeza","type":"association","w":3,"langs":["en","es"]}
 {"from":"deck","to":"barajar","type":"association","w":3,"langs":["en"]}
 {"from":"deck","to":"cartas","type":"association","w":3,"langs":["en"]}
@@ -1914,8 +1916,8 @@
 {"from":"drake-hotline-bling","to":"chaqueta","type":"association","w":3,"langs":["en","es"]}
 {"from":"drake-hotline-bling","to":"dance","type":"association","w":3,"langs":["en"]}
 {"from":"drake~celebrities","to":"canada","type":"association","w":3,"langs":["en","es"]}
+{"from":"drake~celebrities","to":"hip-hop","type":"association","w":3,"langs":["en"]}
 {"from":"drake~celebrities","to":"rap","type":"association","w":3,"langs":["en","es"]}
-{"from":"drake~music","to":"hip-hop","type":"association","w":3,"langs":["en"]}
 {"from":"dread","to":"ansiedad","type":"association","w":3,"langs":["en"]}
 {"from":"dread","to":"miedo","type":"broader","w":3,"langs":["en"]}
 {"from":"dress-code","to":"boda","type":"association","w":3,"langs":["en"]}
@@ -4028,10 +4030,10 @@
 {"from":"mexico","to":"idioma","type":"association","w":3,"langs":["es"]}
 {"from":"mezcla","to":"solucion","type":"association","w":3,"langs":["es"]}
 {"from":"mezcla","to":"solution","type":"association","w":3,"langs":["en"]}
+{"from":"michael-jackson~celebrities","to":"bailarin","type":"broader","w":3,"langs":["es"]}
 {"from":"michael-jackson~celebrities","to":"dance","type":"association","w":3,"langs":["en"]}
 {"from":"michael-jackson~celebrities","to":"pop","type":"association","w":3,"langs":["en"]}
 {"from":"michael-jackson~celebrities","to":"rey","type":"association","w":3,"langs":["es"]}
-{"from":"michael-jackson~music","to":"bailarin","type":"broader","w":3,"langs":["es"]}
 {"from":"michael-kors","to":"moda","type":"association","w":3,"langs":["en"]}
 {"from":"michael-kors","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"microbiologia","to":"bacteria","type":"association","w":3,"langs":["en"]}
@@ -4067,7 +4069,7 @@
 {"from":"miguel-angel","to":"capilla-sixtina","type":"association","w":3,"langs":["es"]}
 {"from":"miguel-angel","to":"renacimiento","type":"association","w":3,"langs":["es"]}
 {"from":"mikasa","to":"soldado","type":"broader","w":3,"langs":["en"]}
-{"from":"miley-cyrus~music","to":"pop","type":"association","w":3,"langs":["en"]}
+{"from":"miley-cyrus~celebrities","to":"pop","type":"association","w":3,"langs":["en"]}
 {"from":"milkshake","to":"batidora","type":"association","w":3,"langs":["en"]}
 {"from":"milkshake","to":"helado","type":"association","w":3,"langs":["en"]}
 {"from":"milkshake","to":"leche","type":"association","w":3,"langs":["en"]}
@@ -6607,8 +6609,6 @@
 {"from":"waffles","to":"horno","type":"association","w":3,"langs":["es"]}
 {"from":"walgreens","to":"farmacia","type":"broader","w":3,"langs":["en","es"]}
 {"from":"walgreens","to":"medicine","type":"association","w":3,"langs":["en"]}
-{"from":"wall-calendar","to":"horario","type":"association","w":3,"langs":["en"]}
-{"from":"wall-calendar","to":"pared","type":"association","w":3,"langs":["en"]}
 {"from":"wall-sconce","to":"pared","type":"association","w":3,"langs":["en"]}
 {"from":"wallapop","to":"espana","type":"association","w":3,"langs":["en","es"]}
 {"from":"walmart","to":"gigante","type":"association","w":3,"langs":["en","es"]}

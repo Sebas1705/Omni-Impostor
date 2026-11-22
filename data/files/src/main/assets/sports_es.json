@@ -32,7 +32,7 @@
     {"word":"Culturismo","clues":["Dieta","Exhibición","Gimnasio","Músculo","Pesas"],"category":"sports","conceptId":"culturismo"},
     {"word":"Curling","clues":["Casa","Equipo","Escoba","Hielo","Piedra"],"category":"sports","conceptId":"curling"},
     {"word":"Dardos","clues":["Diana","Lanzar","Plumas","Punta","Puntería"],"category":"sports","conceptId":"dardos"},
-    {"word":"Decatlón","clues":["Diez Pruebas","Meta","Versatilidad","Resistencia","Atletismo"],"reveal":"11112","category":"sports","conceptId":"decatlon~sports"},
+    {"word":"Decathlon","clues":["Azul","Deporte","Diez Pruebas","Material","Meta","Ropa","Tienda","Versatilidad"],"reveal":"11111121","category":"sports","conceptId":"decathlon~stores-and-retail"},
     {"word":"Equitación","clues":["Caballo","Jinete","Obstáculo","Salto","Silla"],"category":"sports","conceptId":"horse-riding"},
     {"word":"Escalada","clues":["Agarre","Arnés","Cuerda","Roca","Montaña"],"category":"sports","conceptId":"escalada"},
     {"word":"Escalada en hielo","clues":["Crampones","Escalar","Hielo","Montaña","Piolet"],"category":"sports","conceptId":"ice-climbing"},

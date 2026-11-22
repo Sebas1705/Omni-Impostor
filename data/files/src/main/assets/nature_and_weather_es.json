@@ -74,7 +74,7 @@
     {"word":"Meteorito","clues":["Caer","Fuego","Impacto","Roca","Cielo","Espacio","Tierra"],"reveal":"1112111","category":"nature_and_weather","conceptId":"meteorito"},
     {"word":"Microorganismo","clues":["Bacteria","Invisible","Pequeño","Ser Vivo","Virus"],"reveal":"11121","category":"nature_and_weather","conceptId":"microorganismo"},
     {"word":"Montaña","clues":["Alto","Cordillera","Cumbre","Elevación","Escalar","Naturaleza","Pico","Roca"],"reveal":"11121111","category":"nature_and_weather","conceptId":"montana"},
-    {"word":"Multiverso","clues":["Cosmología","Física teórica","Múltiples","Realidades","Realidades alternativas","Teoría","Universos paralelos","Universo"],"reveal":"11113131","category":"nature_and_weather","conceptId":"multiverso~nature-and-weather"},
+    {"word":"Multiverso","clues":["Cosmología","Dimensiones","Física teórica","Muchos","Mundos","Múltiples","Realidad","Realidades"],"category":"nature_and_weather","conceptId":"multiverso~nature-and-weather"},
     {"word":"Nebulosa","clues":["Colorida","Estrellas","Estrellas Nuevas","Gas","Nube","Polvo","Color","Espacio"],"category":"nature_and_weather","conceptId":"nebulosa"},
     {"word":"Niebla","clues":["Gris","Humedad","Nube","Ver","Suelo"],"reveal":"11211","category":"nature_and_weather","conceptId":"niebla"},
     {"word":"Nieve","clues":["Blanco","Frío","Hielo","Invierno","Montaña"],"category":"nature_and_weather","conceptId":"nieve"},

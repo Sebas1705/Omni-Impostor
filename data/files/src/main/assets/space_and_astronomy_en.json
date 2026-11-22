@@ -43,7 +43,7 @@
     {"word":"Meteorite","clues":["Fall","Fire","Rock","Sky","Earth"],"category":"space_and_astronomy","conceptId":"meteorito"},
     {"word":"Milky Way","clues":["Galaxy","Spiral","Stars","Milk","Earth"],"reveal":"21111","category":"space_and_astronomy","conceptId":"via-lactea"},
     {"word":"Moon","clues":["Night","Phases","Satellite","White","Sky","Earth"],"reveal":"112111","category":"space_and_astronomy","conceptId":"luna"},
-    {"word":"Multiverse","clues":["Multiple","Parallel","Theory","Universe"],"category":"space_and_astronomy","conceptId":"multiverso~nature-and-weather"},
+    {"word":"Multiverse","clues":["Dimensions","Many","Multiple","Parallel","Reality","Theory","Travel","Worlds"],"category":"space_and_astronomy","conceptId":"multiverso~nature-and-weather"},
     {"word":"Nebula","clues":["Cloud","Dust","Gas","Stars","Color"],"category":"space_and_astronomy","conceptId":"nebulosa"},
     {"word":"Neptune","clues":["Blue","Cold","Far","Wind","Planet"],"reveal":"11112","category":"space_and_astronomy","conceptId":"neptuno"},
     {"word":"Observatory","clues":["Look","Place","Telescope","Sky","Mountain"],"category":"space_and_astronomy","conceptId":"observatorio"},

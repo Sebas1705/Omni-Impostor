@@ -48,7 +48,7 @@
     {"word":"Mercurio","clues":["Pequeño","Primero","Rápido","Planeta","Sol"],"reveal":"11121","category":"space_and_astronomy","conceptId":"mercurio~space-and-astronomy"},
     {"word":"Meteorito","clues":["Caer","Fuego","Impacto","Roca","Cielo","Espacio","Tierra"],"reveal":"1112111","category":"space_and_astronomy","conceptId":"meteorito"},
     {"word":"Meteoro","clues":["Caer","Cielo","Fuego","Roca","Tierra"],"category":"space_and_astronomy","conceptId":"meteoro"},
-    {"word":"Multiverso","clues":["Cosmología","Física teórica","Múltiples","Realidades","Realidades alternativas","Teoría","Universos paralelos","Universo"],"reveal":"11113131","category":"space_and_astronomy","conceptId":"multiverso~nature-and-weather"},
+    {"word":"Multiverso","clues":["Cosmología","Dimensiones","Física teórica","Muchos","Mundos","Múltiples","Realidad","Realidades"],"category":"space_and_astronomy","conceptId":"multiverso~nature-and-weather"},
     {"word":"Nave Espacial","clues":["Astronauta","Vehículo","Viajar","Transporte","Espacio"],"reveal":"12111","category":"space_and_astronomy","conceptId":"nave-espacial"},
     {"word":"Nebulosa","clues":["Colorida","Estrellas","Estrellas Nuevas","Gas","Nube","Polvo","Color","Espacio"],"category":"space_and_astronomy","conceptId":"nebulosa"},
     {"word":"Nebulosa Venus Atrapamoscas","clues":["Atrapamoscas","Colorida","Espacio","Nebulosa","Nube de gas"],"reveal":"11121","category":"space_and_astronomy","conceptId":"venus-flytrap-nebula"},

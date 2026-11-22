@@ -47,7 +47,7 @@
     {"word":"Meteorite","clues":["Fall","Fire","Rock","Sky","Earth"],"category":"nature_and_weather","conceptId":"meteorito"},
     {"word":"Moon","clues":["Night","Phases","Satellite","White","Sky","Earth"],"reveal":"112111","category":"nature_and_weather","conceptId":"luna"},
     {"word":"Mountain","clues":["Climb","Elevation","High","Nature","Peak","Range","Summit","Rock"],"category":"nature_and_weather","conceptId":"montana"},
-    {"word":"Multiverse","clues":["Multiple","Parallel","Theory","Universe"],"category":"nature_and_weather","conceptId":"multiverso~nature-and-weather"},
+    {"word":"Multiverse","clues":["Dimensions","Many","Multiple","Parallel","Reality","Theory","Travel","Worlds"],"category":"nature_and_weather","conceptId":"multiverso~nature-and-weather"},
     {"word":"Nebula","clues":["Cloud","Dust","Gas","Stars","Color"],"category":"nature_and_weather","conceptId":"nebulosa"},
     {"word":"Ocean","clues":["Big","Blue","Pacific","Salty","World","Planet"],"category":"nature_and_weather","conceptId":"oceano"},
     {"word":"Parallel Universe","clues":["Alternate Reality","Another Dimension","Fiction","Multiverse","Physics"],"reveal":"33111","category":"nature_and_weather","conceptId":"parallel-universe"},

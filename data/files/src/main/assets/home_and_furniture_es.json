@@ -25,7 +25,7 @@
     {"word":"Caja de herramientas","clues":["Almacenaje","Arreglar","Herramientas"],"category":"home_and_furniture","conceptId":"toolbox"},
     {"word":"Cajón","clues":["Abrir","Cerrar","Guardar","Mueble","Tirar"],"reveal":"11121","category":"home_and_furniture","conceptId":"cajon"},
     {"word":"Calefactor","clues":["Aire caliente","Aparato","Control de temperatura","Invierno"],"category":"home_and_furniture","conceptId":"heater"},
-    {"word":"Calendario de pared","clues":["Año","Días","Fechas","Meses","Planificar"],"category":"home_and_furniture","conceptId":"wall-calendar"},
+    {"word":"Calendario","clues":["Año","Días","Fechas","Meses","Planear","Planificar"],"category":"home_and_furniture","conceptId":"calendario"},
     {"word":"Cama","clues":["Almohada","Colchón","Dormir","Habitación","Noche"],"category":"home_and_furniture","conceptId":"cama"},
     {"word":"Cama para Mascotas","clues":["Casa","Dormir","Mascotas","Perro","Gato"],"category":"home_and_furniture","conceptId":"cama-para-mascotas"},
     {"word":"Caseta de Gato","clues":["Casa","Exterior","Mascota","Pequeña","Gato"],"reveal":"21111","category":"home_and_furniture","conceptId":"caseta-de-gato"},

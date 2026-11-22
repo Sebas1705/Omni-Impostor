@@ -38,7 +38,7 @@
     {"word":"Crocs","clues":["Colorido","Cómodo","Plástico","Tienda","Zapatos"],"category":"stores_and_retail","conceptId":"crocs"},
     {"word":"Céline","clues":["Lujo","Tienda","Francia"],"category":"stores_and_retail","conceptId":"celine"},
     {"word":"DKNY","clues":["Lujo","Moda","Nueva York","Ropa","Tienda"],"reveal":"11112","category":"stores_and_retail","conceptId":"dkny"},
-    {"word":"Decathlon","clues":["Azul","Deporte","Material","Ropa","Tienda"],"reveal":"11112","category":"stores_and_retail","conceptId":"decathlon~stores-and-retail"},
+    {"word":"Decathlon","clues":["Azul","Deporte","Diez Pruebas","Material","Meta","Ropa","Tienda","Versatilidad"],"reveal":"11111121","category":"stores_and_retail","conceptId":"decathlon~stores-and-retail"},
     {"word":"Dia","clues":["Alimentación","Barato","Cerca","Supermercado","España"],"reveal":"11121","category":"stores_and_retail","conceptId":"dia"},
     {"word":"Diesel","clues":["Italia","Moda","Ropa","Tienda","Vaqueros"],"reveal":"11121","category":"stores_and_retail","conceptId":"diesel"},
     {"word":"Dior","clues":["Logo","Lujo","Tienda","Francia","Moda"],"category":"stores_and_retail","conceptId":"dior"},

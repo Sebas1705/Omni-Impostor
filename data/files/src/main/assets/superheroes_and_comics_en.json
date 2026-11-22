@@ -72,7 +72,7 @@
     {"word":"Metropolis","clues":["Buildings","City","Large","Place","Superman"],"reveal":"12111","category":"superheroes_and_comics","conceptId":"metropolis"},
     {"word":"Mind Control","clues":["Control","Manipulation","Psychic","Thoughts"],"category":"superheroes_and_comics","conceptId":"mind-control"},
     {"word":"Mission","clues":["Card","Complete","Danger","Goal","Hero","Save","Task","Points"],"reveal":"11111131","category":"superheroes_and_comics","conceptId":"mision"},
-    {"word":"Multiverse","clues":["Dimensions","Many","Reality","Travel","Worlds"],"category":"superheroes_and_comics","conceptId":"multiverse~superheroes-and-comics"},
+    {"word":"Multiverse","clues":["Dimensions","Many","Multiple","Parallel","Reality","Theory","Travel","Worlds"],"category":"superheroes_and_comics","conceptId":"multiverso~nature-and-weather"},
     {"word":"Mutant","clues":["Born","Powers","X-Men","Evolution","Genetics"],"category":"superheroes_and_comics","conceptId":"mutante"},
     {"word":"Nunchaku","clues":["Bruce Lee","Chain","Martial Arts","Two Sticks","Weapon"],"reveal":"11112","category":"superheroes_and_comics","conceptId":"nunchaku"},
     {"word":"Onomatopoeia","clues":["Action","Boom","Text","Comic","Sound"],"category":"superheroes_and_comics","conceptId":"onomatopeya"},

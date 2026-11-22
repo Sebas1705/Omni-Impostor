@@ -78,7 +78,7 @@
     {"word":"Momento","clues":["Física","Impulso","Movimiento","Masa","Velocidad"],"category":"science_physics","conceptId":"momento"},
     {"word":"Momento Angular","clues":["Física","Movimiento","Rotación","Masa","Velocidad"],"category":"science_physics","conceptId":"momento-angular"},
     {"word":"Momento lineal","clues":["Física","Impulso","Masa","Movimiento","Velocidad"],"category":"science_physics","conceptId":"momentum"},
-    {"word":"Multiverso","clues":["Cosmología","Física teórica","Múltiples","Realidades","Realidades alternativas","Teoría","Universos paralelos","Universo"],"reveal":"11113131","category":"science_physics","conceptId":"multiverso~nature-and-weather"},
+    {"word":"Multiverso","clues":["Cosmología","Dimensiones","Física teórica","Muchos","Mundos","Múltiples","Realidad","Realidades"],"category":"science_physics","conceptId":"multiverso~nature-and-weather"},
     {"word":"Nanotecnología","clues":["Escala","Futuro","Materia","Materiales","Pequeño","Química","Tecnología","Átomo"],"reveal":"11111121","category":"science_physics","conceptId":"nanotecnologia"},
     {"word":"Neutrón","clues":["Carga","Neutra","Núcleo","Átomo","Masa"],"category":"science_physics","conceptId":"neutron"},
     {"word":"Paradoja","clues":["Contradicción","Lógica","Schrodinger","Gato","Tiempo"],"reveal":"31111","category":"science_physics","conceptId":"paradoja"},

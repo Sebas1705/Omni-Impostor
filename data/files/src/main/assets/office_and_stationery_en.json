@@ -6,7 +6,7 @@
     {"word":"Blackboard","clues":["Chalk","Class","Green","Write","Wall"],"category":"office_and_stationery","conceptId":"pizarra"},
     {"word":"Business Card Holder","clues":["Contacts","Name","Store","Cards","The Office"],"category":"office_and_stationery","conceptId":"tarjetero"},
     {"word":"Calculator","clues":["Add","Buttons","Calculation","Counts","Math","Numbers"],"category":"office_and_stationery","conceptId":"calculadora"},
-    {"word":"Calendar","clues":["Dates","Days","Months","Plan","Year"],"category":"office_and_stationery","conceptId":"calendario"},
+    {"word":"Calendar","clues":["Date","Dates","Days","Months","Plan","Schedule","Year","Wall"],"category":"office_and_stationery","conceptId":"calendario"},
     {"word":"Cardstock","clues":["Colors","Crafts","Paper","Thick","Drawing"],"reveal":"11211","category":"office_and_stationery","conceptId":"cartulina"},
     {"word":"Clipboard","clues":["Hold","Paper","Write","Board","The Office"],"category":"office_and_stationery","conceptId":"clipboard"},
     {"word":"Compass","clues":["Angle","Circle","Geometry","Lead","Math","Point","Drawing"],"category":"office_and_stationery","conceptId":"compas~office-and-stationery"},
@@ -72,7 +72,6 @@
     {"word":"Staples","clues":["Join","Metal","Paper","Refill","Stapler"],"category":"office_and_stationery","conceptId":"grapas"},
     {"word":"Tape","clues":["Adhesive","Paper","Stick","Transparent","Roll"],"category":"office_and_stationery","conceptId":"cinta-adhesiva"},
     {"word":"Time Clock","clues":["Employee Time Tracking","Punch In","Work Hours"],"category":"office_and_stationery","conceptId":"time-clock"},
-    {"word":"Wall Calendar","clues":["Date","Dates","Days","Months","Plan","Schedule","Year","Wall"],"category":"office_and_stationery","conceptId":"wall-calendar"},
     {"word":"Wastebasket","clues":["Basket","Paper","Throw","Trash","The Office"],"category":"office_and_stationery","conceptId":"papelera"},
     {"word":"White-out","clues":["Correction","Fluid","Mistake","Cover","The Office"],"category":"office_and_stationery","conceptId":"corrector"},
     {"word":"Whiteboard","clues":["Classroom","Erase","Explain","Marker","Meeting","White","Write","Board"],"reveal":"11111112","category":"office_and_stationery","conceptId":"pizarra-blanca"}

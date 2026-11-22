@@ -49,7 +49,7 @@
     {"word":"Magnetism","clues":["Attraction","Field","Magnet","Metal","Pole"],"category":"science_physics","conceptId":"magnetismo"},
     {"word":"Mass","clues":["Body","Inertia","Kilograms","Matter","Weight"],"category":"science_physics","conceptId":"masa"},
     {"word":"Momentum","clues":["Impulse","Motion","Physics","Mass","Speed"],"category":"science_physics","conceptId":"momentum"},
-    {"word":"Multiverse","clues":["Multiple","Parallel","Theory","Universe"],"category":"science_physics","conceptId":"multiverso~nature-and-weather"},
+    {"word":"Multiverse","clues":["Dimensions","Many","Multiple","Parallel","Reality","Theory","Travel","Worlds"],"category":"science_physics","conceptId":"multiverso~nature-and-weather"},
     {"word":"Nanotechnology","clues":["Future","Material","Matter","Nano","Scale","Small","Technology","Tiny"],"reveal":"11111121","category":"science_physics","conceptId":"nanotecnologia"},
     {"word":"Neutron","clues":["Charge","Neutral","Nucleus","Atom","Mass"],"category":"science_physics","conceptId":"neutron"},
     {"word":"Non-renewable Energy","clues":["Coal","Fossil Fuels","Limited","Nuclear","Energy"],"category":"science_physics","conceptId":"non-renewable-energy"},

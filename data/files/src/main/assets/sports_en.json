@@ -22,7 +22,7 @@
     {"word":"Curling","clues":["Broom","House","Team","Stone","Ice"],"category":"sports","conceptId":"curling"},
     {"word":"Cycling","clues":["Helmet","Pedal","Peloton","Route","Bicycle"],"category":"sports","conceptId":"ciclismo"},
     {"word":"Darts","clues":["Aim","Feathers","Target","Throw","Tip"],"category":"sports","conceptId":"dardos"},
-    {"word":"Decathlon","clues":["Endurance","Finish Line","Ten Events","Track and Field","Versatility"],"reveal":"11121","category":"sports","conceptId":"decatlon~sports"},
+    {"word":"Decathlon","clues":["Blue","Endurance","Equipment","Finish Line","Sports","Store","Ten Events","Track and Field"],"reveal":"11111212","category":"sports","conceptId":"decathlon~stores-and-retail"},
     {"word":"Discus Throw","clues":["Circle","Discus","Distance","Throw","Track"],"category":"sports","conceptId":"lanzamiento-de-disco"},
     {"word":"Fencing","clues":["Duel","Thrust","White","Sword","Mask"],"category":"sports","conceptId":"esgrima"},
     {"word":"Formula 1","clues":["Circuit","Pit Stop","Podium","Racing","Single Seater","Engine","Speed"],"reveal":"1112111","category":"sports","conceptId":"formula-1"},
