@@ -60,6 +60,19 @@ export function loadMap(dir = conceptsDir) {
 
 const approved = (x) => (x.status ?? 'approved') === 'approved';
 
+/**
+ * The label of a concept in a language. A concept marked `translatable: false` is a proper name (Spiderman, The Beatles):
+ * a language without its own label uses the text of another one, unless it carries an explicit label of its own
+ * (Los Beatles).
+ */
+export function labelOf(concept, lang) {
+  if (!concept) return undefined;
+  const own = concept.labels[lang];
+  if (own) return own;
+  if (concept.translatable === false) return concept.labels.es ?? concept.labels.en ?? Object.values(concept.labels)[0];
+  return undefined;
+}
+
 /** In-degree of every concept over approved links (language neutral). */
 export function inDegrees(links) {
   const m = new Map();
@@ -74,13 +87,13 @@ export function inDegrees(links) {
 const rated = (map, id, lang, text) => map.ratings?.get(`${id}|${lang}|${norm(text)}`) ?? 1;
 
 export function compileConcept(concept, lang, level, map, inDeg) {
-  const label = concept.labels[lang];
+  const label = labelOf(concept, lang);
   if (!label) return null;
   const own = new Set([label.text, ...(label.aliases ?? [])].map(norm));
   const candidates = [];
   for (const l of map.outgoing.get(concept.id) ?? []) {
     if (l.langs && !l.langs.includes(lang)) continue;
-    const target = map.byId.get(l.to)?.labels[lang];
+    const target = labelOf(map.byId.get(l.to), lang);
     if (!target) continue;
     const factor = Math.min(1, Math.sqrt(LIMITS.hubK / Math.max(inDeg.get(l.to) ?? 1, 1)));
     candidates.push({ text: target.text, type: l.type ?? 'association', w: l.w ?? 3, factor: factor * rated(map, concept.id, lang, target.text) });

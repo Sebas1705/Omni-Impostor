@@ -19,7 +19,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
-import { LANGS, REVEAL, compileConcept, conceptsDir, indexMap, inDegrees, loadMap, norm, readJsonl, tokens } from './lib.mjs';
+import { LANGS, REVEAL, compileConcept, conceptsDir, indexMap, inDegrees, labelOf, loadMap, norm, readJsonl, tokens } from './lib.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2);
 const TYPES = new Set(Object.keys(REVEAL));
@@ -48,10 +48,10 @@ function exportBatches(kind, outDir, size) {
       }));
   } else if (kind === 'types') {
     items = map.concepts.flatMap((c) =>
-      LANGS.filter((l) => c.labels[l]).map((lang) => ({
+      LANGS.filter((l) => labelOf(c, l)).map((lang) => ({
         id: c.id,
         lang,
-        word: c.labels[lang].text,
+        word: labelOf(c, lang).text,
         categories: c.categories,
         clues: clueCandidates(map, indexed, inDeg, c, lang),
       })).filter((x) => x.clues.length)
@@ -95,7 +95,8 @@ function check(files) {
       if (!c) { problems.push(`${where}: unknown concept`); continue; }
       if (kind === 'labels') {
         if (c.labels.es) problems.push(`${where}: already has a Spanish label`);
-        const es = r.es;
+        // a proper name (`"translatable": false`) may leave out the text: it is the English one
+        const es = { text: r.es?.text ?? (r.translatable === false ? c.labels.en?.text : undefined), hints: r.es?.hints };
         if (!es?.text || !es.text.trim()) { problems.push(`${where}: missing text`); continue; }
         if (tokens(es.text).length > 3 || /[()「」|;]/.test(es.text)) problems.push(`${where}: label "${es.text}" is not 1-3 clean words`);
         const hints = es.hints ?? [];
@@ -118,7 +119,7 @@ function check(files) {
         const key = `${r.id}|${r.lang}`;
         if (seen.has(key)) problems.push(`${where}: duplicate record for ${r.lang}`);
         seen.add(key);
-        if (!c.labels[r.lang]) { problems.push(`${where}: no ${r.lang} label`); continue; }
+        if (!labelOf(c, r.lang)) { problems.push(`${where}: no ${r.lang} label`); continue; }
         const known = new Set(clueCandidates(map, indexed, inDeg, c, r.lang).map(norm));
         for (const [clue, type] of Object.entries(r.clues ?? {})) {
           if (!TYPED.has(type)) problems.push(`${where}: type "${type}" for "${clue}"`);
@@ -148,13 +149,13 @@ function review(file) {
     out.push('| id | English | Spanish proposal | Spanish hints |', '|---|---|---|---|');
     for (const r of readProposals(file)) {
       const c = map.byId.get(r.id);
-      out.push(`| ${r.id} | ${c?.labels.en?.text} | ${r.es.text} | ${r.es.hints.join(', ')} |`);
+      out.push(`| ${r.id} | ${c?.labels.en?.text} | ${r.es.text ?? '(same name)'} | ${r.es.hints.join(', ')} |`);
     }
   } else {
     out.push('| id | lang | word | typed clues |', '|---|---|---|---|');
     for (const r of readProposals(file)) {
       const c = map.byId.get(r.id);
-      out.push(`| ${r.id} | ${r.lang} | ${c?.labels[r.lang]?.text} | ${Object.entries(r.clues).map(([k, v]) => `${k} (${v})`).join(', ')} |`);
+      out.push(`| ${r.id} | ${r.lang} | ${labelOf(c, r.lang)?.text} | ${Object.entries(r.clues).map(([k, v]) => `${k} (${v})`).join(', ')} |`);
     }
   }
   console.log(out.join('\n'));
@@ -215,19 +216,23 @@ function apply(files) {
     for (const r of readProposals(file)) {
       const c = map.byId.get(r.id);
       if (kind === 'labels') {
-        const twin = uniqueTwin(map, c, r.es.text);
-        const target = twin ?? labelTargets.get(norm(r.es.text));
+        const text = r.es?.text ?? c.labels.en.text;
+        const isName = r.translatable === false || norm(text) === norm(c.labels.en.text);
+        const twin = uniqueTwin(map, c, text);
+        const target = twin ?? labelTargets.get(norm(text));
         if (target) {
           mergeInto(map, target, c);
           if (!twin) target.hints.es = unionHints(target.hints.es, r.es.hints.map((t) => ({ t }))).slice(0, 8);
+          if (isName && target.translatable === undefined) target.translatable = false;
           merges++;
           continue;
         }
-        c.labels = { es: { text: r.es.text }, ...c.labels };
+        if (isName) c.translatable = false;
+        else c.labels = { es: { text }, ...c.labels };
         c.hints = { ...(c.hints ?? {}), es: r.es.hints.map((t) => ({ t })) };
         c.todo = (c.todo ?? []).filter((l) => l !== 'es');
         if (!c.todo.length) delete c.todo;
-        labelTargets.set(norm(r.es.text), c);
+        labelTargets.set(norm(text), c);
         labels++;
       } else {
         for (const [clue, type] of Object.entries(r.clues)) {
@@ -235,7 +240,7 @@ function apply(files) {
           const hint = (c.hints?.[r.lang] ?? []).find((h) => norm(h.t) === n);
           if (hint) { hint.type = type; typedHints++; continue; }
           const link = links.find((l) => l.from === c.id && (!l.langs || l.langs.includes(r.lang)) &&
-            map.byId.get(l.to)?.labels[r.lang] && norm(map.byId.get(l.to).labels[r.lang].text) === n);
+            labelOf(map.byId.get(l.to), r.lang) && norm(labelOf(map.byId.get(l.to), r.lang).text) === n);
           if (link) { link.type = type; typedLinks++; }
         }
       }
@@ -248,7 +253,43 @@ function apply(files) {
   console.log(`applied: ${labels} Spanish labels, ${merges} merged into an existing Spanish concept, ${typedLinks} typed links, ${typedHints} typed hints. Now run: node scripts/words/compile.mjs`);
 }
 
+/** Removes type proposals whose concept or clue no longer exists (after labels were applied and concepts merged). */
+function prune(files) {
+  const map = loadMap();
+  const indexed = indexMap(map);
+  const inDeg = inDegrees(map.links);
+  let kept = 0, dropped = 0;
+  for (const file of files) {
+    if (kindOf(file) !== 'types') continue;
+    const rows = [];
+    for (const r of readProposals(file)) {
+      const c = map.byId.get(r.id);
+      const known = c && labelOf(c, r.lang) ? new Set(clueCandidates(map, indexed, inDeg, c, r.lang).map(norm)) : new Set();
+      const clues = Object.fromEntries(Object.entries(r.clues).filter(([k]) => known.has(norm(k))));
+      dropped += Object.keys(r.clues).length - Object.keys(clues).length;
+      kept += Object.keys(clues).length;
+      if (Object.keys(clues).length) rows.push({ id: r.id, lang: r.lang, clues });
+    }
+    writeFileSync(file, jsonl(rows));
+  }
+  console.log(`type proposals pruned: ${kept} typed clues kept, ${dropped} dropped`);
+}
+
+/** Merge by hand: `merge <from> <into>` folds an English-only concept into another one (alias, clues, categories, links). */
+function mergeCommand(fromId, intoId) {
+  const map = loadMap();
+  const from = map.byId.get(fromId), into = map.byId.get(intoId);
+  if (!from || !into) throw new Error('unknown concept');
+  if (!from.labels.en || from.labels.es) throw new Error('only an English-only concept can be merged');
+  mergeInto(map, into, from);
+  writeFileSync(join(conceptsDir, 'concepts.jsonl'), jsonl(map.concepts.filter((c) => !c.merged).sort((a, b) => a.id.localeCompare(b.id))));
+  writeFileSync(join(conceptsDir, 'links.jsonl'), jsonl(map.links));
+  console.log(`${fromId} merged into ${intoId}`);
+}
+
 switch (cmd) {
+  case 'merge': mergeCommand(rest[0], rest[1]); break;
+  case 'prune': prune(rest); break;
   case 'export': exportBatches(rest[0], rest[1], Number(rest[2] ?? 250)); break;
   case 'check': process.exit(check(rest) ? 0 : 1); break;
   case 'review': review(rest[0]); break;

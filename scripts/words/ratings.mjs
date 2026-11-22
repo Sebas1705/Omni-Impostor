@@ -19,7 +19,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { conceptsDir, loadMap, norm, ratingFactor, RATING, readJsonl } from './lib.mjs';
+import { conceptsDir, labelOf, loadMap, norm, ratingFactor, RATING, readJsonl } from './lib.mjs';
 
 const ratingsFile = join(conceptsDir, 'ratings.jsonl');
 
@@ -35,7 +35,7 @@ export function mapRatings(docs, map) {
     const own = (c.hints?.[lang] ?? []).map((h) => norm(h.t));
     const linked = map.links
       .filter((l) => l.from === c.id && (!l.langs || l.langs.includes(lang)))
-      .map((l) => map.byId.get(l.to)?.labels[lang]?.text)
+      .map((l) => labelOf(map.byId.get(l.to), lang)?.text)
       .filter(Boolean)
       .map(norm);
     return new Set([...own, ...linked]);
