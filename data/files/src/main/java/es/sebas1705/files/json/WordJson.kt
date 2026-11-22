@@ -9,7 +9,8 @@ data class WordJson(
     @SerialName("clues")
     val clues: List<String>,
     val category: String,
-
+    /** Id of the concept in `data/files/concepts` the entry was compiled from (absent in hand-written lists). */
+    val conceptId: String? = null,
 )
 
 

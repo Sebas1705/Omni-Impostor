@@ -17,7 +17,7 @@ const includeProposed = process.argv.includes('--include-proposed');
 
 const MAX_REVEAL = { low: 1, normal: 2, high: 3 };
 const REVEAL = { association: 1, context: 1, contrast: 2, broader: 2, part: 2, synonym: 3 };
-const MAX_CLUES = 6; // cap per entry
+const MAX_CLUES = 8; // cap per entry
 const MIN_CLUES = 3; // never drop below this
 const FLOOR = 0.2; // clues scoring under this are dropped while more than MIN_CLUES remain
 const HUB_K = 8;

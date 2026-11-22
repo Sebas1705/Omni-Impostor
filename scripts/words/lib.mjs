@@ -1,0 +1,113 @@
+/**
+ * Shared helpers of the word tooling (docs/studies/word-collection/concept-map-spec.md).
+ * Source of truth: data/files/concepts/{concepts,links}.jsonl. Output: data/files/src/main/assets/{category}_{lang}.json.
+ */
+import { readFileSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+export const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+export const conceptsDir = join(root, 'data/files/concepts');
+export const assetsDir = join(root, 'data/files/src/main/assets');
+
+export const LANGS = ['es', 'en'];
+
+/** Code unit order: the same on every machine (localeCompare depends on the OS locale and the ICU data). */
+export const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+export const REVEAL = { association: 1, context: 1, contrast: 2, broader: 2, part: 2, synonym: 3 };
+export const MAX_REVEAL = { low: 1, normal: 2, high: 3 };
+export const LIMITS = { maxClues: 8, minClues: 3, floor: 0.2, hubK: 8 };
+
+export const norm = (s) =>
+  s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim().replace(/\s+/g, ' ').replace(/^(the|el|la|los|las|un|una)\s/, '');
+export const tokens = (s) => s.trim().split(/\s+/).filter(Boolean);
+
+export function slug(s) {
+  return s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+export function readJsonl(file) {
+  if (!existsSync(file)) return [];
+  return readFileSync(file, 'utf8').replace(/^﻿/, '').split(/\r?\n/).filter((l) => l.trim()).map((l) => JSON.parse(l));
+}
+
+export function loadMap(dir = conceptsDir) {
+  const concepts = readJsonl(join(dir, 'concepts.jsonl'));
+  const links = readJsonl(join(dir, 'links.jsonl'));
+  return { concepts, links, byId: new Map(concepts.map((c) => [c.id, c])) };
+}
+
+const approved = (x) => (x.status ?? 'approved') === 'approved';
+
+/** In-degree of every concept over approved links (language neutral). */
+export function inDegrees(links) {
+  const m = new Map();
+  for (const l of links.filter(approved)) m.set(l.to, (m.get(l.to) ?? 0) + 1);
+  return m;
+}
+
+/**
+ * Compiles one concept for one language: returns { clues, notes } or null when the concept has no label there.
+ * clues = ranked clue texts (spec section 6); fewer than minClues means the concept cannot be emitted.
+ */
+export function compileConcept(concept, lang, level, map, inDeg) {
+  const label = concept.labels[lang];
+  if (!label) return null;
+  const own = new Set([label.text, ...(label.aliases ?? [])].map(norm));
+  const candidates = [];
+  for (const l of map.outgoing.get(concept.id) ?? []) {
+    if (l.langs && !l.langs.includes(lang)) continue;
+    const target = map.byId.get(l.to)?.labels[lang];
+    if (!target) continue;
+    const factor = Math.min(1, Math.sqrt(LIMITS.hubK / Math.max(inDeg.get(l.to) ?? 1, 1)));
+    candidates.push({ text: target.text, type: l.type ?? 'association', w: l.w ?? 3, factor });
+  }
+  for (const h of concept.hints?.[lang] ?? []) {
+    if (approved(h)) candidates.push({ text: h.t, type: h.type ?? 'association', w: h.w ?? 3, factor: 1 });
+  }
+  const seen = new Set();
+  const usable = candidates
+    .filter((x) => REVEAL[x.type] <= MAX_REVEAL[level])
+    .filter((x) => !own.has(norm(x.text)))
+    .filter((x) => !seen.has(norm(x.text)) && seen.add(norm(x.text)))
+    .map((x) => ({ ...x, score: (x.w / 5) * x.factor }))
+    .sort((a, b) => b.score - a.score || cmp(a.text, b.text));
+  const clues = usable.slice(0, LIMITS.maxClues);
+  while (clues.length > 4 && clues[clues.length - 1].score < LIMITS.floor) clues.pop();
+  return { label: label.text, clues: clues.map((c) => c.text), available: usable.length };
+}
+
+export function indexMap(map) {
+  const outgoing = new Map();
+  for (const l of map.links.filter(approved)) {
+    if (!outgoing.has(l.from)) outgoing.set(l.from, []);
+    outgoing.get(l.from).push(l);
+  }
+  return { ...map, outgoing };
+}
+
+/** Flat files content: { "category_lang": [ {word, clues, category, conceptId} ] }, entries sorted by word. */
+export function compileAll(map, level = 'normal') {
+  const indexed = indexMap(map);
+  const inDeg = inDegrees(map.links);
+  const files = {};
+  const underfilled = [];
+  for (const concept of map.concepts.filter(approved)) {
+    for (const lang of LANGS) {
+      const r = compileConcept(concept, lang, level, indexed, inDeg);
+      if (!r) continue;
+      if (r.clues.length < LIMITS.minClues) { underfilled.push(`${concept.id} (${lang}): ${r.clues.length}`); continue; }
+      for (const category of concept.categories) {
+        (files[`${category}_${lang}`] ??= []).push({ word: r.label, clues: r.clues, category, conceptId: concept.id });
+      }
+    }
+  }
+  for (const list of Object.values(files)) list.sort((a, b) => cmp(a.word, b.word) || cmp(a.conceptId, b.conceptId));
+  return { files, underfilled };
+}
+
+/** Same layout as the hand-written files: CRLF, 2/4 space indent, one entry per line, no BOM. */
+export function serialize(entries) {
+  const lines = entries.map((e) => `    ${JSON.stringify({ word: e.word, clues: e.clues, category: e.category, conceptId: e.conceptId })}`);
+  return `{\r\n  "words": [\r\n${lines.join(',\r\n')}\r\n  ]\r\n}`;
+}

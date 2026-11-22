@@ -97,7 +97,7 @@ class WordRepository @Inject constructor(
                     word = it.word,
                     clue = it.clues,
                     category = it.category,
-
+                    conceptId = it.conceptId
                 )
             }
 
