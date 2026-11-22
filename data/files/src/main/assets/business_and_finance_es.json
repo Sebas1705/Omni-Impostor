@@ -3,7 +3,7 @@
     {"word":"Acción","clues":["Parte","Título","Inversión","Bolsa","Empresa"],"reveal":"13111","category":"business_and_finance","conceptId":"accion"},
     {"word":"Acciones blue chip","clues":["Empresas estables","Inversión fiable","Líderes del mercado"],"category":"business_and_finance","conceptId":"blue-chip-stocks"},
     {"word":"Accionista","clues":["Acciones","Ganancia","Propietario","Inversión","Empresa"],"category":"business_and_finance","conceptId":"accionista"},
-    {"word":"Adquisición","clues":["Competencia","Compra","Negocio","Empresa","Expansión"],"reveal":"13111","category":"business_and_finance","conceptId":"adquisicion"},
+    {"word":"Adquisición","clues":["Competencia","Compra","Expansión","Negocio","Empresa"],"reveal":"13111","category":"business_and_finance","conceptId":"adquisicion"},
     {"word":"Ahorro","clues":["Futuro","Guardar","Hucha","Banco","Dinero"],"category":"business_and_finance","conceptId":"ahorro"},
     {"word":"Ahorros","clues":["Ahorrar","Banco","Dinero","Futuro","Hucha"],"category":"business_and_finance","conceptId":"savings"},
     {"word":"Análisis financiero","clues":["Evaluación","Finanzas","Riesgo","Inversión","Empresa"],"category":"business_and_finance","conceptId":"analisis-financiero"},

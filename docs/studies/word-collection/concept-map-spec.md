@@ -362,4 +362,4 @@ tooling tests pass, and on the emulator the clues given at low help matched the 
   influencer); seven crime roles (Cibercriminal, Corrupto, Extorsionista, Lavador de dinero, Narcotraficante, Secuestrador,
   Terrorista internacional) move to `adult_18_plus`; Mercenario, Espía cibernético, Hacker, Influencer, Streamer and Vlogger stay.
   `professions_es` now has 152 words, `social_media_and_streamers_es` 87 and `adult_18_plus_es` 138.
-- Still open: the generic clue `Expansión` on 13 Spanish video game entries (Doom Eternal, Fallout 4, Portal 2...).
+- The generic clue `Expansión` was removed from the 14 Spanish video game entries that had it (links to the concept `expansion`); it stays on Big Bang, Energía Oscura, Gigante Roja and Adquisición, where it means something. Their clue order changed slightly because the concept has fewer incoming links now.

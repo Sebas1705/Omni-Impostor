@@ -18,7 +18,7 @@
     {"word":"Cosmonaut","clues":["Astronaut","Journey","Person","Space","Russia"],"reveal":"31111","category":"space_and_astronomy","conceptId":"cosmonauta"},
     {"word":"Cosmos","clues":["Order","Space","Stars","Study","Universe"],"reveal":"11113","category":"space_and_astronomy","conceptId":"cosmos"},
     {"word":"Crater","clues":["Hole","Impact","Surface","Moon","Rock"],"reveal":"21111","category":"space_and_astronomy","conceptId":"crater"},
-    {"word":"Dark Energy","clues":["Accelerate","Cosmology","Unknown","Universe","Expansion"],"category":"space_and_astronomy","conceptId":"energia-oscura"},
+    {"word":"Dark Energy","clues":["Accelerate","Cosmology","Expansion","Unknown","Universe"],"category":"space_and_astronomy","conceptId":"energia-oscura"},
     {"word":"Dark Matter","clues":["Invisible","Mystery","Unknown","Gravity","Universe","Mass","Space"],"category":"space_and_astronomy","conceptId":"materia-oscura"},
     {"word":"Drake Equation","clues":["Aliens","Drake","Equation","Probability","Space"],"reveal":"11211","category":"space_and_astronomy","conceptId":"drake-equation"},
     {"word":"Earth","clues":["Blue","Home","Life","Planet"],"reveal":"1112","category":"space_and_astronomy","conceptId":"tierra"},

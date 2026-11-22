@@ -408,7 +408,6 @@
 {"from":"asma","to":"pulmones","type":"association","w":3,"langs":["es"]}
 {"from":"assassin-s-creed","to":"historia","type":"association","w":3,"langs":["en","es"]}
 {"from":"assassin-s-creed","to":"capo","type":"association","w":3,"langs":["en"]}
-{"from":"assassin-s-creed-valhalla","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"assassin-s-creed-valhalla","to":"historia","type":"association","w":3,"langs":["es"]}
 {"from":"asteroide","to":"cinturon","type":"association","w":3,"langs":["en","es"]}
 {"from":"asteroide","to":"rock","type":"association","w":3,"langs":["en"]}
@@ -766,7 +765,6 @@
 {"from":"bioshock","to":"agua","type":"association","w":3,"langs":["en","es"]}
 {"from":"bioshock","to":"historia","type":"association","w":3,"langs":["es"]}
 {"from":"bioshock-the-collection","to":"agua","type":"association","w":3,"langs":["es"]}
-{"from":"bioshock-the-collection","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"bioshock-the-collection","to":"historia","type":"association","w":3,"langs":["es"]}
 {"from":"biotecnologia","to":"genetica","type":"association","w":3,"langs":["en","es"]}
 {"from":"biotecnologia","to":"ciencia","type":"association","w":3,"langs":["en","es"]}
@@ -1630,7 +1628,6 @@
 {"from":"cowgirl","to":"deseo","type":"association","w":3,"langs":["es"]}
 {"from":"cangrejo","to":"shell","type":"association","w":3,"langs":["en"]}
 {"from":"crash-bandicoot","to":"mascara","type":"association","w":3,"langs":["en","es"]}
-{"from":"crash-bandicoot-4","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"crash-bandicoot-4","to":"mascara","type":"association","w":3,"langs":["es"]}
 {"from":"crater","to":"luna","type":"association","w":3,"langs":["en","es"]}
 {"from":"crater","to":"rock","type":"association","w":3,"langs":["en"]}
@@ -1768,7 +1765,6 @@
 {"from":"dark-n-stormy","to":"ron","type":"association","w":3,"langs":["en"]}
 {"from":"dark-souls","to":"caballero","type":"association","w":3,"langs":["en","es"]}
 {"from":"dark-souls-trilogy","to":"caballero","type":"association","w":3,"langs":["es"]}
-{"from":"dark-souls-trilogy","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"dardos","to":"target","type":"association","w":3,"langs":["en"]}
 {"from":"data-science","to":"big-data","type":"association","w":3,"langs":["en"]}
 {"from":"data-science","to":"machine-learning","type":"association","w":3,"langs":["en"]}
@@ -1982,7 +1978,6 @@
 {"from":"doom","to":"sangre","type":"association","w":3,"langs":["en","es"]}
 {"from":"doom","to":"infierno","type":"association","w":3,"langs":["es"]}
 {"from":"doom","to":"marte","type":"association","w":3,"langs":["en","es"]}
-{"from":"doom-eternal","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"doom-eternal","to":"infierno","type":"association","w":3,"langs":["es"]}
 {"from":"doom-eternal","to":"sangre","type":"association","w":3,"langs":["es"]}
 {"from":"doorbell","to":"anillo","type":"association","w":3,"langs":["en"]}
@@ -2485,7 +2480,6 @@
 {"from":"fairytale","to":"fantasy","type":"association","w":3,"langs":["en"]}
 {"from":"fajitas","to":"mexico","type":"association","w":3,"langs":["en"]}
 {"from":"fallout","to":"radiacion","type":"association","w":3,"langs":["en","es"]}
-{"from":"fallout-4","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"fallout-4","to":"radiacion","type":"association","w":3,"langs":["es"]}
 {"from":"falsificador","to":"historia","type":"association","w":3,"langs":["es"]}
 {"from":"fan","to":"verano","type":"association","w":3,"langs":["en"]}
@@ -3222,7 +3216,6 @@
 {"from":"hollow-knight","to":"espada","type":"association","w":3,"langs":["en","es"]}
 {"from":"hollow-knight","to":"mapa","type":"association","w":3,"langs":["en","es"]}
 {"from":"hollow-knight-silksong","to":"espada","type":"association","w":3,"langs":["es"]}
-{"from":"hollow-knight-silksong","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"hollow-knight-silksong","to":"mapa","type":"association","w":3,"langs":["es"]}
 {"from":"holocausto","to":"segunda-guerra-mundial","type":"association","w":3,"langs":["es"]}
 {"from":"semana-santa","to":"pascua","type":"association","w":3,"langs":["en","es"]}
@@ -4033,7 +4026,6 @@
 {"from":"mass-effect","to":"espacio~science-physics","type":"association","w":3,"langs":["es"]}
 {"from":"mass-effect","to":"barco","type":"association","w":3,"langs":["en"]}
 {"from":"mass-effect-legendary","to":"espacio~science-physics","type":"association","w":3,"langs":["es"]}
-{"from":"mass-effect-legendary","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"massimo-dutti","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"massimo-dutti","to":"espana","type":"association","w":3,"langs":["en","es"]}
 {"from":"massimo-dutti","to":"moda","type":"association","w":3,"langs":["en","es"]}
@@ -4153,7 +4145,6 @@
 {"from":"metroid","to":"espacio~science-physics","type":"association","w":3,"langs":["es"]}
 {"from":"metroid-dread","to":"armadura","type":"association","w":3,"langs":["es"]}
 {"from":"metroid-dread","to":"espacio~science-physics","type":"association","w":3,"langs":["es"]}
-{"from":"metroid-dread","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"metropolis","to":"superman","type":"association","w":3,"langs":["en","es"]}
 {"from":"mexico","to":"ciudad-de-mexico","type":"association","w":3,"langs":["es"]}
 {"from":"mexico","to":"idioma","type":"association","w":3,"langs":["es"]}
@@ -4624,7 +4615,6 @@
 {"from":"horno","to":"tarta","type":"association","w":3,"langs":["en"]}
 {"from":"oven-mitt","to":"cocina","type":"association","w":3,"langs":["en"]}
 {"from":"overalls","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
-{"from":"overwatch-2","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"oxidacion","to":"color","type":"association","w":3,"langs":["en","es"]}
 {"from":"oxidacion","to":"oxigeno","type":"association","w":3,"langs":["en","es"]}
 {"from":"oxigeno","to":"vida","type":"association","w":3,"langs":["es"]}
@@ -5024,7 +5014,6 @@
 {"from":"portada","to":"dibujo","type":"association","w":3,"langs":["es"]}
 {"from":"portafolios","to":"carpeta","type":"synonym","w":3,"langs":["es"]}
 {"from":"portafolios","to":"papel","type":"association","w":3,"langs":["es"]}
-{"from":"portal-2","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"portal-2","to":"puzzle","type":"association","w":3,"langs":["es"]}
 {"from":"portal-2","to":"robot","type":"association","w":3,"langs":["es"]}
 {"from":"portal-2","to":"tarta","type":"association","w":3,"langs":["es"]}
@@ -5872,7 +5861,6 @@
 {"from":"spyro","to":"dragon","type":"broader","w":3,"langs":["en","es"]}
 {"from":"spyro","to":"volar","type":"association","w":3,"langs":["en","es"]}
 {"from":"spyro-reignited","to":"dragon","type":"broader","w":3,"langs":["es"]}
-{"from":"spyro-reignited","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"spyro-reignited","to":"volar","type":"association","w":3,"langs":["es"]}
 {"from":"squash","to":"pared","type":"association","w":3,"langs":["en","es"]}
 {"from":"squid-game","to":"dinero","type":"association","w":3,"langs":["en","es"]}
@@ -6162,7 +6150,6 @@
 {"from":"the-simpsons","to":"donut","type":"association","w":3,"langs":["en","es"]}
 {"from":"the-simpsons","to":"television","type":"broader","w":3,"langs":["es"]}
 {"from":"the-sims","to":"vida","type":"association","w":3,"langs":["es"]}
-{"from":"the-sims-4","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"the-sims-4","to":"vida","type":"association","w":3,"langs":["es"]}
 {"from":"the-walking-dead","to":"apocalipsis","type":"association","w":3,"langs":["es"]}
 {"from":"the-weeknd","to":"pop","type":"association","w":3,"langs":["en"]}
@@ -6170,7 +6157,6 @@
 {"from":"the-witcher","to":"espada","type":"association","w":3,"langs":["en","es"]}
 {"from":"the-witcher","to":"hunter","type":"association","w":3,"langs":["en"]}
 {"from":"the-witcher","to":"netflix","type":"association","w":3,"langs":["es"]}
-{"from":"the-witcher-3","to":"expansion","type":"association","w":3,"langs":["es"]}
 {"from":"thegrefg","to":"espana","type":"association","w":3,"langs":["en","es"]}
 {"from":"thegrefg","to":"fortnite","type":"association","w":3,"langs":["en","es"]}
 {"from":"thegrefg","to":"streamer","type":"broader","w":3,"langs":["en","es"]}
