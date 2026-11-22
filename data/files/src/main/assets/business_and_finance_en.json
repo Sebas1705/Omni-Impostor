@@ -1,6 +1,6 @@
 {
   "words": [
-    {"word":"Bank","clues":["Account","ATM","Loan","Save","Money"],"category":"business_and_finance","conceptId":"bank"},
+    {"word":"Bank","clues":["ATM","Account","Loan","Save","Money"],"category":"business_and_finance","conceptId":"bank"},
     {"word":"Bear Market","clues":["Falling Prices.","Pessimism.","Weak Economy."],"category":"business_and_finance","conceptId":"bear-market"},
     {"word":"Blue Chip Stocks","clues":["Market Leaders.","Reliable Investment.","Stable Companies."],"category":"business_and_finance","conceptId":"blue-chip-stocks"},
     {"word":"Budget","clues":["Calculation","Expenses","Limit","Plan","Money"],"category":"business_and_finance","conceptId":"budget"},

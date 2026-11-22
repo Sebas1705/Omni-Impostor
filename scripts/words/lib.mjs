@@ -11,6 +11,9 @@ export const conceptsDir = join(root, 'data/files/concepts');
 export const assetsDir = join(root, 'data/files/src/main/assets');
 
 export const LANGS = ['es', 'en'];
+
+/** Code unit order: the same on every machine (localeCompare depends on the OS locale and the ICU data). */
+export const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 export const REVEAL = { association: 1, context: 1, contrast: 2, broader: 2, part: 2, synonym: 3 };
 export const MAX_REVEAL = { low: 1, normal: 2, high: 3 };
 export const LIMITS = { maxClues: 8, minClues: 3, floor: 0.2, hubK: 8 };
@@ -68,7 +71,7 @@ export function compileConcept(concept, lang, level, map, inDeg) {
     .filter((x) => !own.has(norm(x.text)))
     .filter((x) => !seen.has(norm(x.text)) && seen.add(norm(x.text)))
     .map((x) => ({ ...x, score: (x.w / 5) * x.factor }))
-    .sort((a, b) => b.score - a.score || a.text.localeCompare(b.text));
+    .sort((a, b) => b.score - a.score || cmp(a.text, b.text));
   const clues = usable.slice(0, LIMITS.maxClues);
   while (clues.length > 4 && clues[clues.length - 1].score < LIMITS.floor) clues.pop();
   return { label: label.text, clues: clues.map((c) => c.text), available: usable.length };
@@ -99,7 +102,7 @@ export function compileAll(map, level = 'normal') {
       }
     }
   }
-  for (const list of Object.values(files)) list.sort((a, b) => a.word.localeCompare(b.word) || a.conceptId.localeCompare(b.conceptId));
+  for (const list of Object.values(files)) list.sort((a, b) => cmp(a.word, b.word) || cmp(a.conceptId, b.conceptId));
   return { files, underfilled };
 }
 

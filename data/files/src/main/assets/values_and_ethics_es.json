@@ -15,7 +15,6 @@
     {"word":"Empoderamiento","clues":["Capacidad","Confianza","Fortalecer","Independencia","Poder"],"category":"values_and_ethics","conceptId":"empoderamiento"},
     {"word":"Equidad","clues":["Igualdad","Necesidad","Rectitud","Reparto","Justicia"],"category":"values_and_ethics","conceptId":"equidad"},
     {"word":"Esfuerzo","clues":["Energía","Lograr","Meta","Sacrificio","Trabajo"],"category":"values_and_ethics","conceptId":"esfuerzo"},
-    {"word":"Ética","clues":["Bien","Comportamiento","Filosofía","Mal","Moral"],"category":"values_and_ethics","conceptId":"etica"},
     {"word":"Excelencia","clues":["Calidad","Esfuerzo","Logro","Mejor","Perfección"],"category":"values_and_ethics","conceptId":"excelencia"},
     {"word":"Fidelidad","clues":["Confianza","Estar","Lealtad","Pareja","Promesa"],"category":"values_and_ethics","conceptId":"fidelidad"},
     {"word":"Fraternidad","clues":["Afecto","Grupo","Hermano","Solidaridad","Unión"],"category":"values_and_ethics","conceptId":"fraternidad"},
@@ -28,11 +27,11 @@
     {"word":"Humildad","clues":["Aprender","Ego","Modestia","Orgullo","Sencillez"],"category":"values_and_ethics","conceptId":"humildad"},
     {"word":"Igualdad","clues":["Derechos","Equidad","Género","Mismo","Justicia"],"category":"values_and_ethics","conceptId":"igualdad"},
     {"word":"Inclusión","clues":["Aceptar","Diversidad","Igualdad","Integrar","Participar"],"category":"values_and_ethics","conceptId":"inclusion"},
-    {"word":"Integridad","clues":["Entero","Ética","Honradez","Moral","Rectitud"],"category":"values_and_ethics","conceptId":"integridad"},
+    {"word":"Integridad","clues":["Entero","Honradez","Moral","Rectitud","Ética"],"category":"values_and_ethics","conceptId":"integridad"},
     {"word":"Justicia","clues":["Balanza","Bien","Derecho","Equidad","Héroe","Igualdad","Juez","Ley"],"category":"values_and_ethics","conceptId":"justicia"},
     {"word":"Lealtad","clues":["Amigo","Compromiso","Confianza","Fidelidad","Traición"],"category":"values_and_ethics","conceptId":"lealtad"},
     {"word":"Libertad","clues":["Decisión","Derecho","Elegir","Independencia","Preso"],"category":"values_and_ethics","conceptId":"libertad"},
-    {"word":"Moral","clues":["Conducta","Ética","Normas","Sociedad","Valores"],"category":"values_and_ethics","conceptId":"moral"},
+    {"word":"Moral","clues":["Conducta","Normas","Sociedad","Valores","Ética"],"category":"values_and_ethics","conceptId":"moral"},
     {"word":"Paciencia","clues":["Calma","Control","Esperar","Serenidad","Tranquilo","Tiempo"],"category":"values_and_ethics","conceptId":"paciencia"},
     {"word":"Paz","clues":["Armonía","Blanco","Mundo","Tranquilidad","Guerra"],"category":"values_and_ethics","conceptId":"paz~values-and-ethics"},
     {"word":"Perdón","clues":["Disculpa","Error","Olvidar","Paz","Rencor"],"category":"values_and_ethics","conceptId":"perdon"},
@@ -52,6 +51,7 @@
     {"word":"Transparencia","clues":["Claridad","Cuentas","Honestidad","Público","Verdad"],"category":"values_and_ethics","conceptId":"transparencia"},
     {"word":"Valentía","clues":["Atreverse","Coraje","Fuerza","Héroe","Miedo"],"category":"values_and_ethics","conceptId":"valentia"},
     {"word":"Veracidad","clues":["Hechos","Honestidad","Prueba","Realidad","Verdad"],"category":"values_and_ethics","conceptId":"veracidad"},
-    {"word":"Vocación","clues":["Llamado","Pasión","Servicio","Trabajo","Vida"],"category":"values_and_ethics","conceptId":"vocacion"}
+    {"word":"Vocación","clues":["Llamado","Pasión","Servicio","Trabajo","Vida"],"category":"values_and_ethics","conceptId":"vocacion"},
+    {"word":"Ética","clues":["Bien","Comportamiento","Filosofía","Mal","Moral"],"category":"values_and_ethics","conceptId":"etica"}
   ]
 }
