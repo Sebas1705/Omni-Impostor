@@ -42,5 +42,7 @@ if (check) {
   for (const name of existing) if (!expected.has(name)) unlinkSync(join(assetsDir, name));
   const r = spawnSync(process.execPath, [join(root, 'scripts/word-study/update-words-version.mjs')], { stdio: 'inherit' });
   if (r.status !== 0) process.exit(r.status ?? 1);
+  const v = spawnSync(process.execPath, [join(root, 'scripts/words/export-viewer.mjs')], { stdio: 'inherit' }); // keep docs/word-map in step
+  if (v.status !== 0) process.exit(v.status ?? 1);
   console.log(`wrote ${expected.size} files, ${[...expected.values()].length} lists`);
 }
