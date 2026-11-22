@@ -9,6 +9,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The bundled word lists are versioned (`words_version.txt`): when an update ships different lists, the app replaces the words stored on the device instead of keeping the old copy forever. An unreadable list never leaves the game without words. `node scripts/word-study/update-words-version.mjs` refreshes the version after editing a list.
 - A unit test (`WordAssetsValidationTest`) that checks the shape of the bundled word lists: at most 3 words per word, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a list.
 
+### Added (clue types)
+- About 2,500 clues are now typed as synonym, more general category or opposite, so the "Impostor help" setting changes which clue the impostor gets: low and normal hide synonyms, low also hides the more general categories.
+
 ### Added (more Spanish words)
 - About 1,150 words that only existed in English are now also available in Spanish, and about 1,260 English synonyms were folded into the Spanish word they translate to (one word, one concept). Proper names are flagged as not translatable.
 

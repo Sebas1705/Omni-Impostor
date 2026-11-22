@@ -329,3 +329,18 @@ concepts). `proposals.mjs` gained `merge <from> <into>` and `prune`; the clue-ty
 that no longer exist (6,754 remain, still to be reviewed; the new Spanish concepts have no type proposals yet).
 Checked on the emulator: upgrade from the previous build re-imports 7,938 words and a Spanish game with all categories sees
 3,989 concepts.
+
+## 16. Clue types reviewed and applied
+
+Decisions taken with the owner: only the types that really give the word away are applied (**synonym, broader, contrast**); the
+weaker `part` and `context` proposals (3,661 clues) were discarded, so those clues stay plain associations. The 3,093 remaining
+proposals went through an independent second pass (four sonnet reviewers, strict, "when in doubt drop"): 2,535 kept, 527 dropped
+(genres taken for categories such as `Katy Perry -> Pop`, brands taken for stores, derived forms of the same word such as
+`Velocidad -> Rápido`), 31 retyped (mostly synonym to broader, e.g. `Gmail -> Email`).
+
+Applied: 2,566 typed clues (1,933 broader, 618 synonym, 15 contrast) = 723 links and 1,843 hints. The compiled lists now carry a
+`reveal` string on 2,561 entries (clue levels: 10,048 weak, 2,314 medium, 709 strong). 62 entries have fewer than 3 clues at
+level normal and fall back to all their clues. Tested on the emulator in Spanish: at low and normal the number of clues given
+matched the expected count for every word played. The impostor help setting now has a visible effect.
+
+Not typed yet: the 1,154 new Spanish concepts and any clue added later; `proposals.mjs export types` produces new batches.
