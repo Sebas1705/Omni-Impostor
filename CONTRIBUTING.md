@@ -56,7 +56,7 @@ word, no duplicates in a list). `scripts/words/migrate.mjs` was the one-off migr
 run again.
 
 Clue ratings from players: with your own Google credentials run `node scripts/words/ratings.mjs fetch <file>` (see its header),
-then `ratings.mjs import <file>` and `compile.mjs`; `ratings.mjs report` lists the best and worst rated clues. `node --test scripts/words`
+then `ratings.mjs import <file>` and `compile.mjs`; `ratings.mjs report` lists the best and worst rated clues. `node --test scripts/words/words.test.mjs`
 runs the tooling tests.
 
 Proposals (AI-written Spanish labels and clue types) live in `data/files/concepts/proposals/` and are not part of the map

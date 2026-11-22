@@ -293,7 +293,7 @@ fallback to all clues when fewer than 3 would remain).
 | `ratingFactor` from player ratings (lower bound of the Wilson interval of the share of positive votes, neutral below 5 votes, floor 0.25) | `scripts/words/lib.mjs` |
 | Download, import and report of `clue_ratings` | `scripts/words/ratings.mjs` (`ratings.jsonl` is the aggregated result) |
 | Weighted clue draw at game start | `ClueArrangement` + `ClueArrangementTest` (feature:offlinegame) |
-| Tooling tests, run in CI | `node --test scripts/words` |
+| Tooling tests, run in CI | `node --test scripts/words/words.test.mjs` |
 
 - **Ratings.** The app only records a rating when the player finishes the rating screen, and ratings start positive (a player taps a
   clue to dislike it). A low factor is therefore a strong signal and a high one a weak one, which is why the factor floor is
