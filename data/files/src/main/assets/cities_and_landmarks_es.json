@@ -71,7 +71,7 @@
     {"word":"Stonehenge","clues":["Antiguo","Círculo","Inglaterra","Misterio","Piedras"],"category":"cities_and_landmarks","conceptId":"stonehenge"},
     {"word":"Sídney","clues":["Australia","Canguro","Oceanía","Puerto","Ópera"],"category":"cities_and_landmarks","conceptId":"sidney"},
     {"word":"Taj Mahal","clues":["Blanco","India","Mármol","Tumba","Amor"],"reveal":"11121","category":"cities_and_landmarks","conceptId":"taj-mahal"},
-    {"word":"Times Square","clues":["Broadway","Luces","Multitudes","Publicidad","Nueva York"],"category":"cities_and_landmarks","conceptId":"times-square"},
+    {"word":"Times Square","clues":["Broadway","Luces","Multitudes","Nueva York","Publicidad"],"category":"cities_and_landmarks","conceptId":"times-square"},
     {"word":"Tokio","clues":["Anime","Capital","Neón","Tecnología","Japón"],"reveal":"12111","category":"cities_and_landmarks","conceptId":"tokio"},
     {"word":"Toronto","clues":["Canadá","Frío","Lago","Norte","Torre CN"],"category":"cities_and_landmarks","conceptId":"toronto"},
     {"word":"Torre Eiffel","clues":["Antena","Hierro","Monumento","París","Francia"],"reveal":"11211","category":"cities_and_landmarks","conceptId":"torre-eiffel"},

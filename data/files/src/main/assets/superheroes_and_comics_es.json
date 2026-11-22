@@ -135,7 +135,7 @@
     {"word":"Sidekick","clues":["Ayudante","Compañero","Equipo","Joven","Robin"],"reveal":"33111","category":"superheroes_and_comics","conceptId":"sidekick"},
     {"word":"Sin City","clues":["Crimen","Dark Horse Comics","Noir"],"category":"superheroes_and_comics","conceptId":"sin-city"},
     {"word":"Spawn","clues":["Antihéroe","Image Comics","Poderes infernales"],"category":"superheroes_and_comics","conceptId":"spawn"},
-    {"word":"Spiderman","clues":["Paredes","Peter Parker","Telaraña","Volar"],"reveal":"1311","category":"superheroes_and_comics","conceptId":"spiderman~superheroes-and-comics"},
+    {"word":"Spiderman","clues":["Araña","Ciudad","Héroe","Marvel","Nueva York","Paredes","Peter Parker","Red"],"reveal":"11211131","category":"superheroes_and_comics","conceptId":"spiderman"},
     {"word":"Spin-off","clues":["Derivado","Nueva Serie","Personaje Secundario","Historia"],"reveal":"3111","category":"superheroes_and_comics","conceptId":"spin-off"},
     {"word":"Superaliento","clues":["Aire","Aliento","Congelar","Poder","Viento"],"category":"superheroes_and_comics","conceptId":"super-breath"},
     {"word":"Superfuerza","clues":["Fuerte","Levantar","Músculos","Poder","Puñetazo"],"category":"superheroes_and_comics","conceptId":"super-strength"},

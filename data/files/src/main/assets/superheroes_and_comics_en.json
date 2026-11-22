@@ -110,7 +110,7 @@
     {"word":"Spear","clues":["Long","Pierce","Sharp","Throw","Weapon"],"reveal":"11112","category":"superheroes_and_comics","conceptId":"spear"},
     {"word":"Speech Bubble","clues":["Balloon","Talk","Text","Words","Comic"],"reveal":"31111","category":"superheroes_and_comics","conceptId":"speech-bubble"},
     {"word":"Speed","clues":["Distance","Fast","Flash","Limit","Meter","Motion","Movement","Run"],"category":"superheroes_and_comics","conceptId":"velocidad"},
-    {"word":"Spiderman","clues":["City","Hero","Jump","Marvel","Spider","Tom","Web","New York"],"reveal":"12111111","category":"superheroes_and_comics","conceptId":"spiderman~movies-and-series-2"},
+    {"word":"Spiderman","clues":["City","Hero","Jump","Marvel","New York","Spider","Tom","Web"],"reveal":"12111111","category":"superheroes_and_comics","conceptId":"spiderman"},
     {"word":"Squad","clues":["Group","Heroes","Mission","Team","Together"],"reveal":"31131","category":"superheroes_and_comics","conceptId":"escuadron"},
     {"word":"Strength","clues":["Lift","Muscles","Punch","Strong"],"category":"superheroes_and_comics","conceptId":"strength"},
     {"word":"Super Breath","clues":["Air","Breath","Freeze","Wind"],"category":"superheroes_and_comics","conceptId":"super-breath"},

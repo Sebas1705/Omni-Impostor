@@ -30,7 +30,7 @@
     {"word":"Script","clues":["Dialogue","Paper","Story","Text","Writer"],"category":"movies_and_series","conceptId":"guion"},
     {"word":"Sherlock Holmes","clues":["Detective","London","Magnifier","Mystery","Sidekick"],"reveal":"21111","category":"movies_and_series","conceptId":"sherlock-holmes"},
     {"word":"Shrek","clues":["Donkey","Fairytale","Green","Ogre","Swamp"],"reveal":"11121","category":"movies_and_series","conceptId":"shrek"},
-    {"word":"Spiderman","clues":["City","Hero","Jump","Marvel","Spider","Tom","Web","New York"],"reveal":"12111111","category":"movies_and_series","conceptId":"spiderman~movies-and-series-2"},
+    {"word":"Spiderman","clues":["City","Hero","Jump","Marvel","New York","Spider","Tom","Web"],"reveal":"12111111","category":"movies_and_series","conceptId":"spiderman"},
     {"word":"Squid Game","clues":["Games","Korea","Number","Survival","Money"],"category":"movies_and_series","conceptId":"squid-game"},
     {"word":"Star Wars","clues":["Galaxy","Robots","Saber","Space","Force"],"category":"movies_and_series","conceptId":"star-wars"},
     {"word":"Stranger Things","clues":["Bicycles","Eighties","Kids","Monster","Upside Down"],"category":"movies_and_series","conceptId":"stranger-things"},

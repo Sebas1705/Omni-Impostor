@@ -81,6 +81,7 @@
     {"word":"Sombrero","clues":["Accesorio","Ala","Cabeza","Gorra","Sol"],"reveal":"21111","category":"fashion_and_clothing","conceptId":"sombrero"},
     {"word":"Sombrero Homburg","clues":["Ala curvada","Churchill","Fieltro","Sombrero formal","Una hendidura"],"reveal":"11121","category":"fashion_and_clothing","conceptId":"homburg-hat"},
     {"word":"Sombrero cloche","clues":["Ajustado","Art Déco","Estilo años 20","Flapper","Sombrero de campana"],"reveal":"11113","category":"fashion_and_clothing","conceptId":"cloche-hat"},
+    {"word":"Sombrero de vestir","clues":["Accesorio","Ala","Cabeza"],"category":"fashion_and_clothing","conceptId":"hat"},
     {"word":"Sombrero fedora","clues":["Accesorio","Ala","Clásico","Elegante","Sombrero"],"category":"fashion_and_clothing","conceptId":"fedora"},
     {"word":"Sombrero panamá","clues":["Ala ancha","Ecuador","Sombrero de paja","Tropical","Verano"],"reveal":"11211","category":"fashion_and_clothing","conceptId":"panama-hat"},
     {"word":"Sombrero pastillero","clues":["Cilíndrico","Copa plana","Jackie Kennedy","Sombrero pequeño","Velo"],"category":"fashion_and_clothing","conceptId":"pillbox-hat"},
