@@ -3,7 +3,7 @@
     {"word":"Airbnb","clues":["Accommodation","App","Host","House","Rent","Travel","Vacation"],"reveal":"1211111","category":"apps_and_platforms","conceptId":"airbnb"},
     {"word":"AliExpress","clues":["Buy","Cheap","Shipping","Store","China"],"reveal":"11121","category":"apps_and_platforms","conceptId":"aliexpress"},
     {"word":"Amazon","clues":["Package","Prime","Shipping","Shopping","Smile","Store","Internet"],"reveal":"1111121","category":"apps_and_platforms","conceptId":"amazon"},
-    {"word":"App Store","clues":["Apple","Application","Download","iPhone","Store"],"reveal":"11112","category":"apps_and_platforms","conceptId":"app-store"},
+    {"word":"App Store","clues":["Apple","Application","Download","Store","iPhone"],"reveal":"11121","category":"apps_and_platforms","conceptId":"app-store"},
     {"word":"Asana","clues":["Management","Projects","Tasks","Team","Work"],"category":"apps_and_platforms","conceptId":"asana"},
     {"word":"Booking","clues":["Accommodation","Blue","Confirm","Hotel","Name","Place","Restaurant","Travel"],"category":"apps_and_platforms","conceptId":"booking"},
     {"word":"Canva","clues":["Creativity","Design","Edit","Graphic","Template"],"category":"apps_and_platforms","conceptId":"canva"},
@@ -14,7 +14,6 @@
     {"word":"Disney Plus","clues":["Marvel","Mickey","Movies","Star Wars","Streaming"],"reveal":"11112","category":"apps_and_platforms","conceptId":"disney-plus"},
     {"word":"Dropbox","clues":["Cloud","Files","Folder","Share","Storage"],"category":"apps_and_platforms","conceptId":"dropbox"},
     {"word":"Duolingo","clues":["Languages","Learn","Lesson","Owl","Streak"],"category":"apps_and_platforms","conceptId":"duolingo"},
-    {"word":"eBay","clues":["Auction","Buy","Old","Sale","Second Hand","Sell","Internet"],"category":"apps_and_platforms","conceptId":"ebay"},
     {"word":"Facebook","clues":["Blue","Friends","Groups","Network","Wall"],"reveal":"11121","category":"apps_and_platforms","conceptId":"facebook"},
     {"word":"Figma","clues":["Collaboration","Design","Interface","Prototyping","Tools"],"reveal":"11112","category":"apps_and_platforms","conceptId":"figma"},
     {"word":"GitHub","clues":["Developers","Open Source","Repository","Version Control","Code"],"category":"apps_and_platforms","conceptId":"github"},
@@ -54,6 +53,7 @@
     {"word":"Wetransfer","clues":["Big","Cloud","Download","Files","Send"],"category":"apps_and_platforms","conceptId":"wetransfer"},
     {"word":"WhatsApp","clues":["Call","Calls","Chat","Green","Message","Messages","Mobile","Status"],"reveal":"11211111","category":"apps_and_platforms","conceptId":"whatsapp"},
     {"word":"YouTube","clues":["Button","Channel","Google","Live","Play","Subscribe","Subscribers","Videos"],"category":"apps_and_platforms","conceptId":"youtube"},
-    {"word":"Zoom","clues":["Meeting","Online","Video Call","Work","Camera"],"reveal":"11211","category":"apps_and_platforms","conceptId":"zoom"}
+    {"word":"Zoom","clues":["Meeting","Online","Video Call","Work","Camera"],"reveal":"11211","category":"apps_and_platforms","conceptId":"zoom"},
+    {"word":"eBay","clues":["Auction","Buy","Old","Sale","Second Hand","Sell","Internet"],"category":"apps_and_platforms","conceptId":"ebay"}
   ]
 }

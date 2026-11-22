@@ -3,9 +3,9 @@
     {"word":"Adidas","clues":["Sports","Sportswear","Store","Stripes","Three Stripes","Athletics","Soccer","Shoes"],"reveal":"12111111","category":"brands","conceptId":"adidas"},
     {"word":"Airbnb","clues":["Accommodation","App","Host","House","Rent","Travel","Vacation"],"reveal":"1211111","category":"brands","conceptId":"airbnb"},
     {"word":"Amazon","clues":["Package","Prime","Shipping","Shopping","Smile","Store","Internet"],"reveal":"1111121","category":"brands","conceptId":"amazon"},
-    {"word":"Apple","clues":["Fruit","iPhone","Logo","Mac","Technology"],"category":"brands","conceptId":"apple"},
+    {"word":"Apple","clues":["Fruit","Logo","Mac","Technology","iPhone"],"category":"brands","conceptId":"apple"},
     {"word":"Audi","clues":["Luxury","Quattro","Rings","Technology","Engine","Germany","Car"],"reveal":"1111112","category":"brands","conceptId":"audi"},
-    {"word":"BMW","clues":["Blue and White","Blue White","Luxury","M3","Rear Wheel Drive","Engine","Germany","Car"],"reveal":"11111112","category":"brands","conceptId":"bmw"},
+    {"word":"BMW","clues":["Blue White","Blue and White","Luxury","M3","Rear Wheel Drive","Engine","Germany","Car"],"reveal":"11111112","category":"brands","conceptId":"bmw"},
     {"word":"Burger King","clues":["Burger","Crown","Food","Grill","King"],"category":"brands","conceptId":"burger-king"},
     {"word":"Canon","clues":["Image","Lens","Photos","Camera","Japan"],"category":"brands","conceptId":"canon"},
     {"word":"Chanel","clues":["Luxury","Perfume","Woman","Paris","Fashion"],"category":"brands","conceptId":"chanel"},
@@ -13,15 +13,14 @@
     {"word":"Colgate","clues":["Hygiene","Mouth","Paste","Red","Teeth"],"category":"brands","conceptId":"colgate"},
     {"word":"Disney","clues":["Magic","Mouse","Movies","Parks","Castle"],"category":"brands","conceptId":"disney"},
     {"word":"Dove","clues":["Beauty","Bird","Care","Soap","Skin"],"category":"brands","conceptId":"dove"},
-    {"word":"eBay","clues":["Auction","Buy","Old","Sale","Second Hand","Sell","Internet"],"category":"brands","conceptId":"ebay"},
     {"word":"Ferrari","clues":["Formula 1","Red","Horse","Italy","Speed","Car"],"reveal":"111112","category":"brands","conceptId":"ferrari"},
     {"word":"Ford","clues":["American","Blue","Focus","Henry","Mustang","USA","Engine","Car"],"reveal":"11111112","category":"brands","conceptId":"ford"},
     {"word":"Gatorade","clues":["Drink","Electrolytes","Gator","Sports","Thirst"],"reveal":"21111","category":"brands","conceptId":"gatorade"},
     {"word":"Google","clues":["Alphabet","Colors","Information","Search","Internet"],"category":"brands","conceptId":"google"},
     {"word":"Gucci","clues":["Design","Logo","Luxury","Italy","Fashion"],"category":"brands","conceptId":"gucci"},
     {"word":"H&M","clues":["Affordable","Cheap","Store","Sweden","Fashion","Clothing"],"reveal":"112111","category":"brands","conceptId":"h-m"},
-    {"word":"Heineken","clues":["Drink","Green","Holland","Beer","Star"],"reveal":"21121","category":"brands","conceptId":"heineken"},
     {"word":"HP","clues":["Logo","Printer","Technology","Computer","The Office"],"category":"brands","conceptId":"hp"},
+    {"word":"Heineken","clues":["Drink","Green","Holland","Beer","Star"],"reveal":"21121","category":"brands","conceptId":"heineken"},
     {"word":"IKEA","clues":["Assemble","Assembly","Blue","Furniture","Home","Maze","Store","Sweden"],"reveal":"11111121","category":"brands","conceptId":"ikea"},
     {"word":"Instagram","clues":["Filters","Influencer","Logo","Photos","Post","Reels","Social Network","Stories"],"reveal":"11111121","category":"brands","conceptId":"instagram"},
     {"word":"Intel","clues":["Blue","Chip","Processor","Technology","Computer"],"category":"brands","conceptId":"intel"},
@@ -53,6 +52,7 @@
     {"word":"Uber","clues":["App","Driver","Transport","Trip","Car"],"reveal":"21111","category":"brands","conceptId":"uber"},
     {"word":"Vans","clues":["Logo","Off The Wall","Skate","Skateboarding","Store","Stripes","USA","Sneakers"],"reveal":"11111112","category":"brands","conceptId":"vans"},
     {"word":"Visa","clues":["Card","Credit","Payment","Bank","Money"],"reveal":"21111","category":"brands","conceptId":"visa~brands"},
-    {"word":"Zara","clues":["Inditex","Store","Trendy","Spain","Fashion","Clothing"],"reveal":"121112","category":"brands","conceptId":"zara"}
+    {"word":"Zara","clues":["Inditex","Store","Trendy","Spain","Fashion","Clothing"],"reveal":"121112","category":"brands","conceptId":"zara"},
+    {"word":"eBay","clues":["Auction","Buy","Old","Sale","Second Hand","Sell","Internet"],"category":"brands","conceptId":"ebay"}
   ]
 }

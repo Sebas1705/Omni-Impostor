@@ -3,7 +3,7 @@
     {"word":"Actor","clues":["Character","Famous","Movie","Role","Scene","Script","Theater","Camera"],"category":"movies_and_series","conceptId":"actor"},
     {"word":"Alf","clues":["Alien","Comedy","Eighties","Cat","Ship"],"category":"movies_and_series","conceptId":"alf"},
     {"word":"Avatar","clues":["Blue","Body","Future","Nature","Planet"],"category":"movies_and_series","conceptId":"avatar"},
-    {"word":"Batman","clues":["Bat","Billionaire","Cape","Dark","DC","Detective","Gotham","Hero"],"category":"movies_and_series","conceptId":"batman"},
+    {"word":"Batman","clues":["Bat","Billionaire","Cape","DC","Dark","Detective","Gotham","Hero"],"category":"movies_and_series","conceptId":"batman"},
     {"word":"Black Mirror","clues":["Dark","Future","Screen","Society","Technology"],"category":"movies_and_series","conceptId":"black-mirror"},
     {"word":"Breaking Bad","clues":["Blue","Chemistry","Crystal","Van","Desert"],"category":"movies_and_series","conceptId":"breaking-bad"},
     {"word":"Camera","clues":["Cinema","Filming","Image","Lens","Record"],"category":"movies_and_series","conceptId":"camara"},

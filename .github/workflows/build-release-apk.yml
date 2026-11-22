@@ -20,9 +20,33 @@ permissions:
   contents: write
 
 jobs:
+  # Chooses where the heavy Linux jobs run: the owner's PC (self-hosted runner, see Sebas1705/ci-runner) when its
+  # heartbeat variable is under 3 minutes old, otherwise a GitHub-hosted runner. Only push and workflow_dispatch
+  # events may use the PC: pull requests and every other event stay on GitHub-hosted runners.
+  pick-runner:
+    name: Pick the runner
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      runner: ${{ steps.pick.outputs.runner }}
+    steps:
+      - id: pick
+        env:
+          HEARTBEAT: ${{ vars.PC_RUNNER_HEARTBEAT }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          runner='"ubuntu-latest"'
+          if { [ "$EVENT" = push ] || [ "$EVENT" = workflow_dispatch ]; } && [ -n "${HEARTBEAT:-}" ]; then
+            age=$(( $(date +%s) - HEARTBEAT ))
+            if [ "$age" -ge 0 ] && [ "$age" -lt 180 ]; then runner='["self-hosted","pc"]'; fi
+          fi
+          echo "Runner: $runner"
+          echo "runner=$runner" >> "$GITHUB_OUTPUT"
+
   build_aab:
     name: Build AAB
-    runs-on: ubuntu-latest
+    needs: pick-runner
+    runs-on: ${{ fromJSON(needs.pick-runner.outputs.runner) }}
     timeout-minutes: 60
 
     steps:
@@ -121,3 +145,8 @@ jobs:
           name: ${{ github.event.inputs.build_type }}-aab-${{ github.event.inputs.release_tag }}
           path: ${{ steps.output.outputs.path }}
           retention-days: 30
+
+      # The PC runner keeps its workspace between runs: do not leave the signing key and the Firebase config on it.
+      - name: Remove credentials
+        if: always() && runner.environment == 'self-hosted'
+        run: rm -f app/secrets.properties app/google-services.json app/keystore.jks

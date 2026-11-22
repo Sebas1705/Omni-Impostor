@@ -3,7 +3,6 @@
     {"word":"Ajedrez","clues":["Blanco Negro","Estrategia","Fichas","Mente","Piezas","Reloj","Rey","Tablero"],"category":"board_games_and_tabletop","conceptId":"ajedrez"},
     {"word":"Alianza","clues":["Amigos","Ayuda","Equipo","Jugadores","Pacto","Países","Trato","Unión"],"reveal":"11113113","category":"board_games_and_tabletop","conceptId":"alianza"},
     {"word":"Amigos","clues":["Diversión","Gente","Grupo","Jugar","Reunión"],"category":"board_games_and_tabletop","conceptId":"amigos~board-games-and-tabletop"},
-    {"word":"Árbitro","clues":["Juego","Juez","Jugadores","Justicia","Reglas"],"category":"board_games_and_tabletop","conceptId":"referee"},
     {"word":"Azar","clues":["Aleatorio","Dados","Incierto","Suerte","Cartas"],"reveal":"11131","category":"board_games_and_tabletop","conceptId":"azar"},
     {"word":"Baraja","clues":["Barajar","Cartas","Juego","Montón","Robar"],"category":"board_games_and_tabletop","conceptId":"deck"},
     {"word":"Barajar","clues":["Jugar","Mano","Mazo","Mezclar","Cartas"],"reveal":"11131","category":"board_games_and_tabletop","conceptId":"barajar"},
@@ -21,10 +20,10 @@
     {"word":"Dado d20","clues":["Caras","Crítico","Número","Rol","Tirar"],"category":"board_games_and_tabletop","conceptId":"d20-dice"},
     {"word":"Dado de parchís","clues":["Fichas","Mover","Parchís","Suerte","Tirar"],"category":"board_games_and_tabletop","conceptId":"ludo-dice"},
     {"word":"Dados","clues":["Azar","Cubo","Lanzar","Números","Puntos"],"category":"board_games_and_tabletop","conceptId":"dados"},
-    {"word":"Dados cargados","clues":["Engaño","Ganar","Número","Peso","Trampa"],"category":"board_games_and_tabletop","conceptId":"dados-cargados"},
     {"word":"Dados D20","clues":["Caras","Crítico","Lanzar","Número","Rol"],"category":"board_games_and_tabletop","conceptId":"dados-d20"},
-    {"word":"Dados de colores","clues":["Azar","Fichas","Lanzar","Mover","Parchís"],"category":"board_games_and_tabletop","conceptId":"dados-de-colores"},
+    {"word":"Dados cargados","clues":["Engaño","Ganar","Número","Peso","Trampa"],"category":"board_games_and_tabletop","conceptId":"dados-cargados"},
     {"word":"Dados de Póker","clues":["Apuesta","Juego","Lanzar","Símbolos","Cartas"],"category":"board_games_and_tabletop","conceptId":"dados-de-poker"},
+    {"word":"Dados de colores","clues":["Azar","Fichas","Lanzar","Mover","Parchís"],"category":"board_games_and_tabletop","conceptId":"dados-de-colores"},
     {"word":"Dados de póquer","clues":["Apostar","Cartas","Juego","Símbolos","Tirar"],"category":"board_games_and_tabletop","conceptId":"poker-dice"},
     {"word":"Dados trucados","clues":["Ganar","Hacer trampa","Número","Peso","Truco"],"category":"board_games_and_tabletop","conceptId":"loaded-dice"},
     {"word":"Damas","clues":["Comer","Fichas","Mover","Negro Rojo","Tablero"],"category":"board_games_and_tabletop","conceptId":"damas"},
@@ -40,7 +39,6 @@
     {"word":"Jugador","clues":["Ganar","Partida","Persona","Turno","Mesa"],"reveal":"11211","category":"board_games_and_tabletop","conceptId":"jugador"},
     {"word":"Libro de reglas","clues":["Aprender","Instrucciones","Leer","Libro","Reglas"],"reveal":"11121","category":"board_games_and_tabletop","conceptId":"rulebook"},
     {"word":"Ludoteca","clues":["Casa","Colección","Estantería","Juegos","Muchos"],"category":"board_games_and_tabletop","conceptId":"ludoteca"},
-    {"word":"Máster","clues":["Guía","Narrador","Rol","Mesa"],"reveal":"3311","category":"board_games_and_tabletop","conceptId":"master"},
     {"word":"Mazmorra","clues":["Explorar","Lugar","Monstruos","Peligro","Rol"],"category":"board_games_and_tabletop","conceptId":"mazmorra"},
     {"word":"Mazo","clues":["Barajar","Juego","Pila","Robar","Cartas"],"category":"board_games_and_tabletop","conceptId":"mazo"},
     {"word":"Mecánica","clues":["Diseño","Forma","Funcionamiento","Juego","Reglas"],"category":"board_games_and_tabletop","conceptId":"mecanica"},
@@ -50,6 +48,7 @@
     {"word":"Miniatura","clues":["Figura","Pequeña","Personaje","Pintar","Mesa"],"reveal":"21111","category":"board_games_and_tabletop","conceptId":"miniatura"},
     {"word":"Misión","clues":["Carta","Cumplir","Héroe","Juego","Objetivo","Peligro","Salvar","Tarea"],"reveal":"11113113","category":"board_games_and_tabletop","conceptId":"mision"},
     {"word":"Monopoly","clues":["Calles","Hoteles","Propiedad","Tablero","Dinero"],"category":"board_games_and_tabletop","conceptId":"monopoly"},
+    {"word":"Máster","clues":["Guía","Narrador","Rol","Mesa"],"reveal":"3311","category":"board_games_and_tabletop","conceptId":"master"},
     {"word":"Parchís","clues":["Casa","Colores","Comer","Dados","Meta"],"category":"board_games_and_tabletop","conceptId":"parchis"},
     {"word":"Pista","clues":["Ayuda","Juego","Reglas","Resolver","Sugerencia"],"reveal":"11113","category":"board_games_and_tabletop","conceptId":"pista"},
     {"word":"Puntos","clues":["Final","Ganar","Marcador","Número","Sumar"],"category":"board_games_and_tabletop","conceptId":"puntos"},
@@ -70,6 +69,7 @@
     {"word":"Torre de dados","clues":["Aleatorio","Dados","Juego","Tirar","Torre"],"category":"board_games_and_tabletop","conceptId":"dice-tower"},
     {"word":"Trampa","clues":["Engañar","Ganar","Mal","Ocultar","Reglas"],"category":"board_games_and_tabletop","conceptId":"trampa"},
     {"word":"Turno","clues":["Esperar","Jugar","Orden","Siguiente","Tiempo"],"category":"board_games_and_tabletop","conceptId":"turno"},
-    {"word":"Victoria","clues":["Celebrar","Final","Ganar","Meta","Puntos"],"category":"board_games_and_tabletop","conceptId":"victoria"}
+    {"word":"Victoria","clues":["Celebrar","Final","Ganar","Meta","Puntos"],"category":"board_games_and_tabletop","conceptId":"victoria"},
+    {"word":"Árbitro","clues":["Juego","Juez","Jugadores","Justicia","Reglas"],"category":"board_games_and_tabletop","conceptId":"referee"}
   ]
 }

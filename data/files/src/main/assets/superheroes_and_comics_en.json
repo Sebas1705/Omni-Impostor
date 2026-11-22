@@ -10,7 +10,7 @@
     {"word":"Armor","clues":["Iron Man","Metal","Protection","Technology","Suit"],"category":"superheroes_and_comics","conceptId":"armadura"},
     {"word":"Axe","clues":["Battle","Chop","Handle","Sharp","Weapon"],"reveal":"11112","category":"superheroes_and_comics","conceptId":"axe"},
     {"word":"Base","clues":["Headquarters","Hero","Hideout","Lair","Secret"],"reveal":"31331","category":"superheroes_and_comics","conceptId":"base~superheroes-and-comics"},
-    {"word":"Batman","clues":["Bat","Billionaire","Cape","Dark","DC","Detective","Gotham","Hero"],"category":"superheroes_and_comics","conceptId":"batman"},
+    {"word":"Batman","clues":["Bat","Billionaire","Cape","DC","Dark","Detective","Gotham","Hero"],"category":"superheroes_and_comics","conceptId":"batman"},
     {"word":"Black Panther","clues":["Hero","King","Marvel","Wakanda","Cat"],"category":"superheroes_and_comics","conceptId":"black-panther"},
     {"word":"Black Widow","clues":["Assassin","Heroine","Marvel","Red Hair","Spy"],"category":"superheroes_and_comics","conceptId":"black-widow"},
     {"word":"Blade","clues":["Hero","Marvel","Vampire Hunter","Sword"],"category":"superheroes_and_comics","conceptId":"blade"},
