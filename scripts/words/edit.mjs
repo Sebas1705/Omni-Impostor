@@ -27,7 +27,7 @@ export function run(argv, dir = conceptsDir) {
   const need = (cond, msg) => { if (!cond) throw new Error(msg); };
   const cleanText = (t) => { need(t && t.trim() && tokens(t).length <= 3 && !/[()「」|;]/.test(t), `"${t}" must be 1 to 3 words without parentheses`); return t.trim(); };
   const isType = (t) => t in REVEAL;
-  if (cmd !== 'link' && cmd !== 'unlink') need(c, `unknown concept "${id}"`);
+  if (cmd !== 'link' && cmd !== 'unlink' && cmd !== 'add') need(c, `unknown concept "${id}"`);
   let message = 'ok';
   switch (cmd) {
     case 'show':
@@ -88,7 +88,73 @@ export function run(argv, dir = conceptsDir) {
       message = `deleted ${id} and ${n - map.links.length} link(s)`;
       break;
     }
-    default: throw new Error('usage: edit.mjs show|label|categories|translatable|add-hint|remove-hint|type|link|unlink|delete <id> ...');
+    case 'rename': {
+      const [newId] = a;
+      need(newId && !map.byId.has(newId), `id "${newId}" is missing or already used`);
+      c.id = newId;
+      for (const l of map.links) { if (l.from === id) l.from = newId; if (l.to === id) l.to = newId; }
+      message = `renamed ${id} to ${newId}`;
+      break;
+    }
+    case 'merge': {
+      const [dropId] = a;
+      const d = map.byId.get(dropId);
+      need(d && dropId !== id, 'both concepts must exist and differ');
+      c.categories = [...new Set([...c.categories, ...d.categories])].sort(cmp);
+      for (const [lang, l] of Object.entries(d.labels)) {
+        if (!c.labels[lang]) { c.labels[lang] = l; continue; }
+        const have = new Set([c.labels[lang].text, ...(c.labels[lang].aliases ?? [])].map(norm));
+        const extra = [l.text, ...(l.aliases ?? [])].filter((t) => !have.has(norm(t)));
+        if (extra.length) c.labels[lang].aliases = [...(c.labels[lang].aliases ?? []), ...extra];
+      }
+      for (const [lang, hs] of Object.entries(d.hints ?? {})) {
+        c.hints ??= {};
+        c.hints[lang] ??= [];
+        for (const h of hs) if (!c.hints[lang].some((x) => norm(x.t) === norm(h.t))) c.hints[lang].push(h);
+      }
+      const seen = new Set();
+      map.links = map.links
+        .map((l) => ({ ...l, from: l.from === dropId ? id : l.from, to: l.to === dropId ? id : l.to }))
+        .filter((l) => l.from !== l.to && !seen.has(l.from + '>' + l.to) && seen.add(l.from + '>' + l.to));
+      map.concepts = map.concepts.filter((x) => x.id !== dropId);
+      message = `merged ${dropId} into ${id}`;
+      break;
+    }
+    case 'add': {
+      const spec = JSON.parse(a[0]);
+      need(id && !map.byId.has(id), `id "${id}" is missing or already used`);
+      need(spec.labels?.es || spec.labels?.en, 'a label is required');
+      need(spec.categories?.length, 'at least one category');
+      const labels = {};
+      for (const [lang, t] of Object.entries(spec.labels)) {
+        const text = cleanText(typeof t === 'string' ? t : t.text);
+        for (const o of map.concepts) {
+          const ol = o.labels[lang];
+          need(!ol || ![ol.text, ...(ol.aliases ?? [])].some((x) => norm(x) === norm(text)) || spec.allowHomonym, `"${text}" (${lang}) already exists as ${o.id}`);
+        }
+        labels[lang] = { text };
+      }
+      const hints = {};
+      for (const [lang, list] of Object.entries(spec.hints ?? {})) {
+        const lab = labels[lang]?.text ?? labels.es?.text ?? labels.en?.text;
+        hints[lang] = [];
+        for (const h of list) {
+          const o = typeof h === 'string' ? { t: h } : h;
+          o.t = cleanText(o.t);
+          need(norm(o.t) !== norm(lab) && !norm(lab).split(' ').includes(norm(o.t)) && !norm(o.t).split(' ').includes(norm(lab)), `clue "${o.t}" gives the word away (${lab})`);
+          need(!o.type || isType(o.type), `unknown type ${o.type}`);
+          if (!hints[lang].some((x) => norm(x.t) === norm(o.t))) hints[lang].push(o);
+        }
+        need(hints[lang].length >= 3, `${lang}: at least 3 clues`);
+      }
+      need(labels.es || spec.translatable === false, 'Spanish label is required');
+      const nc = { id, labels, categories: [...new Set(spec.categories)].sort(cmp), hints };
+      if (spec.translatable === false) nc.translatable = false;
+      map.concepts.push(nc);
+      message = `added ${id}`;
+      break;
+    }
+    default: throw new Error('usage: edit.mjs show|label|categories|translatable|add-hint|remove-hint|type|link|unlink|delete|merge|rename|add <id> ...');
   }
   const line = (o) => JSON.stringify(o);
   writeFileSync(join(dir, 'concepts.jsonl'), [...map.concepts].sort((x, y) => cmp(x.id, y.id)).map(line).join('\n') + '\n');

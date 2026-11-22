@@ -57,3 +57,30 @@ test('bad input is rejected', () => {
   assert.throws(() => run(['type', 'casa', 'es', 'Puerta', 'nonsense'], dir), /unknown type/);
   assert.throws(() => run(['show', 'nope'], dir), /unknown concept/);
 });
+
+test('merge folds a concept into another and add validates new concepts', () => {
+  const dir = setup();
+  run(['categories', 'hogar', 'music'], dir);
+  assert.match(run(['merge', 'casa', 'hogar'], dir), /merged hogar into casa/);
+  const [casa] = read(dir, 'concepts.jsonl');
+  assert.deepEqual(casa.categories, ['home_and_furniture', 'music']);
+  assert.equal(casa.labels.es.aliases[0], 'Hogar');
+  assert.ok(casa.hints.es.some((h) => h.t === 'Familia'));
+  assert.equal(read(dir, 'links.jsonl').length, 0, 'a link between the merged concepts disappears');
+
+  const spec = JSON.stringify({ labels: { es: 'Jardín', en: 'Garden' }, categories: ['home_and_furniture'], hints: { es: ['Flores', 'Césped', 'Riego'], en: ['Flowers', 'Lawn', 'Hose'] } });
+  run(['add', 'garden', spec], dir);
+  assert.equal(read(dir, 'concepts.jsonl').length, 2);
+  assert.throws(() => run(['add', 'garden2', spec], dir), /already exists as garden/);
+  const leaky = JSON.stringify({ labels: { es: 'Piscina' }, categories: ['home_and_furniture'], hints: { es: ['Piscina', 'Agua', 'Nadar'] } });
+  assert.throws(() => run(['add', 'pool', leaky], dir), /gives the word away/);
+  const thin = JSON.stringify({ labels: { es: 'Piscina' }, categories: ['home_and_furniture'], hints: { es: ['Agua', 'Nadar'] } });
+  assert.throws(() => run(['add', 'pool', thin], dir), /at least 3 clues/);
+});
+
+test('rename changes an id and the links that point at it', () => {
+  const dir = setup();
+  run(['rename', 'hogar', 'hogar~home'], dir);
+  assert.equal(read(dir, 'links.jsonl')[0].to, 'hogar~home');
+  assert.throws(() => run(['rename', 'casa', 'hogar~home'], dir), /already used/);
+});
