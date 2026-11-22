@@ -104,15 +104,15 @@ function check(files) {
         if (new Set(ns).size !== ns.length) problems.push(`${where}: repeated hint`);
         if (ns.includes(norm(es.text))) problems.push(`${where}: a hint equals the label`);
         const twins = (esLabels.get(norm(es.text)) ?? []).filter((o) => o.id !== r.id);
-        for (const twin of twins) {
-          const mergeable = !twin.labels.en && twin.categories.some((x) => c.categories.includes(x));
-          if (!mergeable) {
-            problems.push(`${where}: "${es.text}" is already the Spanish label of ${twin.id}${twin.labels.en ? ` (${twin.labels.en.text})` : ''}: same concept (merge by hand) or pick another label`);
+        if (twins.length) {
+          if (!uniqueTwin(map, c, es.text)) {
+            problems.push(`${where}: "${es.text}" is already the Spanish label of ${twins.map((t) => t.id + (t.labels.en ? ` (${t.labels.en.text})` : '')).join(', ')} and there is no single unpaired concept of the same category to merge into: rename this label`);
           }
+        } else {
+          const k = norm(es.text);
+          if (!proposedLabels.has(k)) proposedLabels.set(k, []);
+          proposedLabels.get(k).push({ where, c });
         }
-        const clash = proposedLabels.get(norm(es.text));
-        if (clash && clash !== r.id) problems.push(`${where}: "${es.text}" is also proposed for ${clash}`);
-        proposedLabels.set(norm(es.text), r.id);
         for (const h of hints) if (typeof h !== 'string' || !h.trim() || tokens(h).length > 3 || /[()「」|;]/.test(h)) problems.push(`${where}: bad hint "${h}"`);
       } else {
         const key = `${r.id}|${r.lang}`;
@@ -124,6 +124,14 @@ function check(files) {
           if (!TYPED.has(type)) problems.push(`${where}: type "${type}" for "${clue}"`);
           if (!known.has(norm(clue))) problems.push(`${where}: "${clue}" is not a clue of this concept in ${r.lang}`);
         }
+      }
+    }
+  }
+  // several English words proposed with the same Spanish label are one concept (aliases of each other): they must share a category
+  for (const group of proposedLabels.values()) {
+    for (const m of group.slice(1)) {
+      if (!m.c.categories.some((x) => group[0].c.categories.includes(x))) {
+        problems.push(`${m.where}: same Spanish label as ${group[0].c.id} but no shared category (homonym?): rename one of them`);
       }
     }
   }
@@ -152,11 +160,32 @@ function review(file) {
   console.log(out.join('\n'));
 }
 
-/** Folds the English-only concept `from` into the Spanish concept `into`: they are the same concept. */
+/** The one unpaired concept with the same Spanish label and a shared category that an English-only concept can merge into. */
+function uniqueTwin(map, c, esText) {
+  const found = map.concepts.filter((o) => o.id !== c.id && !o.merged && o.labels.es && !o.labels.en &&
+    norm(o.labels.es.text) === norm(esText) && o.categories.some((x) => c.categories.includes(x)));
+  return found.length === 1 ? found[0] : null;
+}
+
+const unionHints = (a = [], b = []) => {
+  const seen = new Set(a.map((h) => norm(h.t)));
+  return [...a, ...b.filter((h) => !seen.has(norm(h.t)))];
+};
+
+/**
+ * Folds the English-only concept `from` into `into`: they are the same concept. When `into` already has an English label the
+ * second English word becomes an alias of it (never shown, only used to reject clues that give the word away) and its
+ * clues are merged.
+ */
 function mergeInto(map, into, from) {
-  into.labels = { ...into.labels, en: from.labels.en };
+  if (into.labels.en) {
+    const en = into.labels.en;
+    en.aliases = [...new Set([...(en.aliases ?? []), from.labels.en.text])];
+  } else {
+    into.labels = { ...into.labels, en: from.labels.en };
+  }
   into.categories = [...new Set([...into.categories, ...from.categories])].sort();
-  if (from.hints?.en) into.hints = { ...(into.hints ?? {}), en: from.hints.en };
+  if (from.hints?.en) into.hints = { ...(into.hints ?? {}), en: unionHints(into.hints?.en, from.hints.en) };
   const rewritten = new Map();
   for (const l of map.links) {
     const a = l.from === from.id ? into.id : l.from;
@@ -180,18 +209,25 @@ function apply(files) {
   const links = map.links;
   map.linksRef = links;
   let labels = 0, typedLinks = 0, typedHints = 0, merges = 0;
+  const labelTargets = new Map(); // Spanish label (normalised) -> concept that received it in this run
   for (const file of files) {
     const kind = kindOf(file);
     for (const r of readProposals(file)) {
       const c = map.byId.get(r.id);
       if (kind === 'labels') {
-        const twin = map.concepts.find((o) => o.id !== c.id && o.labels.es && !o.labels.en && norm(o.labels.es.text) === norm(r.es.text) &&
-          o.categories.some((x) => c.categories.includes(x)));
-        if (twin) { mergeInto(map, twin, c); merges++; continue; }
+        const twin = uniqueTwin(map, c, r.es.text);
+        const target = twin ?? labelTargets.get(norm(r.es.text));
+        if (target) {
+          mergeInto(map, target, c);
+          if (!twin) target.hints.es = unionHints(target.hints.es, r.es.hints.map((t) => ({ t }))).slice(0, 8);
+          merges++;
+          continue;
+        }
         c.labels = { es: { text: r.es.text }, ...c.labels };
         c.hints = { ...(c.hints ?? {}), es: r.es.hints.map((t) => ({ t })) };
         c.todo = (c.todo ?? []).filter((l) => l !== 'es');
         if (!c.todo.length) delete c.todo;
+        labelTargets.set(norm(r.es.text), c);
         labels++;
       } else {
         for (const [clue, type] of Object.entries(r.clues)) {
