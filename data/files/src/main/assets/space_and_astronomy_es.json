@@ -4,7 +4,7 @@
     {"word":"Agujero de gusano","clues":["Atajo","Ciencia ficción","Espacio-tiempo","Física","Gravedad","Teoría","Teórico","Viaje rápido"],"category":"space_and_astronomy","conceptId":"wormhole"},
     {"word":"Antimateria","clues":["Aniquilar","Anulación","Carga","Energía","Misterio","Opuestas","Opuesto","Partícula"],"category":"space_and_astronomy","conceptId":"antimateria"},
     {"word":"Apolo 11","clues":["1969","Armstrong","Luna","NASA","Primer paso"],"category":"space_and_astronomy","conceptId":"apollo-11"},
-    {"word":"Ascensor espacial","clues":["Ascensor","Cable","Espacio","Futuro","Transporte","Transporte futuro"],"category":"space_and_astronomy","conceptId":"space-elevator"},
+    {"word":"Ascensor espacial","clues":["Ascensor","Cable","Cuerda","Futuro","Transporte futuro","Gravedad","Transporte","Espacio"],"reveal":"11111121","category":"space_and_astronomy","conceptId":"space-elevator"},
     {"word":"Asteroide","clues":["Cinturón","Cinturón de Asteroides","Dinosaurios","Impacto","Peligro","Pequeño","Roca","Espacio"],"category":"space_and_astronomy","conceptId":"asteroide"},
     {"word":"Astrobiología","clues":["Espacio","Estudio","Exoplanetas","Extraterrestre","Microorganismos","Planetas","Vida","Vida espacial"],"category":"space_and_astronomy","conceptId":"astrobiology"},
     {"word":"Astrofísica","clues":["Cosmología","Cosmos","Espacio","Estrellas","Física","Galaxias"],"category":"space_and_astronomy","conceptId":"astrophysics"},

@@ -28,6 +28,7 @@
     {"word":"Dragonfly","clues":["Insect","Long Body","Wings","Flight"],"reveal":"2111","category":"animals","conceptId":"libelula"},
     {"word":"Dugong","clues":["Aquatic Mammal","Sea Cow","Slow","Vegetarian","Ocean"],"reveal":"23111","category":"animals","conceptId":"dugong"},
     {"word":"Eagle","clues":["Beak","Claw","Feathers","Sight","Flight"],"category":"animals","conceptId":"aguila"},
+    {"word":"Earthworm","clues":["Bait","Fishing","Garden","Soil","Wriggly"],"category":"animals","conceptId":"lombriz"},
     {"word":"Elephant","clues":["Ears","Ivory","Memory","Savanna","Trunk"],"category":"animals","conceptId":"elefante"},
     {"word":"Ferret","clues":["Carnivore","Fur","Long Body","Pet","Playful"],"reveal":"21111","category":"animals","conceptId":"huron"},
     {"word":"Field Cricket","clues":["Antennae","Chirp","Insect","Jump","Night"],"category":"animals","conceptId":"grillo"},
@@ -117,6 +118,7 @@
     {"word":"Whale","clues":["Blue","Cetacean","Giant","Ocean","Song","Spout"],"category":"animals","conceptId":"whale"},
     {"word":"Whipworm","clues":["Intestine","Parasite","Suck","Whip","Worm"],"reveal":"12112","category":"animals","conceptId":"whipworm"},
     {"word":"Wolf","clues":["Fangs","Howl","Pack","Forest","Moon"],"category":"animals","conceptId":"lobo"},
-    {"word":"Zebra","clues":["Africa","Black","Savanna","Stripes","White"],"category":"animals","conceptId":"cebra"}
+    {"word":"Zebra","clues":["Africa","Black","Savanna","Stripes","White"],"category":"animals","conceptId":"cebra"},
+    {"word":"Zoo","clues":["Animals","Cage","Fun","Keeper","Visit"],"category":"animals","conceptId":"zoologico"}
   ]
 }

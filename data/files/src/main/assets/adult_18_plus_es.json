@@ -35,7 +35,7 @@
     {"word":"Club de striptease","clues":["Baile","Barra","Barra de baile","Desnudo","Noche","Propinas"],"category":"adult_18_plus","conceptId":"strip-club"},
     {"word":"Coctelera","clues":["Agitar","Barman","Barra","Mezcla","Cóctel"],"category":"adult_18_plus","conceptId":"coctelera"},
     {"word":"Copa de Champán","clues":["Brindis","Burbujas","Champán","Cristal","Celebración"],"category":"adult_18_plus","conceptId":"copa-de-champan"},
-    {"word":"Copa de Vino","clues":["Bebida","Brindis","Cristal","Tinto","Vino"],"category":"adult_18_plus","conceptId":"copa-de-vino"},
+    {"word":"Copa para vino","clues":["Beber","Bebida","Brindis","Cristal","Elegante","Pie","Tinto","Vino"],"category":"adult_18_plus","conceptId":"wine-glass"},
     {"word":"Corrupto","clues":["Corrupción","Político","Soborno","Dinero","Poder"],"category":"adult_18_plus","conceptId":"corrupto"},
     {"word":"Cosmopolitan","clues":["Arándano","Carrie Bradshaw","Chic","Cointreau","Limón","Rosa","Vodka","Cóctel"],"reveal":"11111112","category":"adult_18_plus","conceptId":"cosmopolitan"},
     {"word":"Cowgirl","clues":["Encima","Montar","Posición","Sexo","Vaquera","Deseo"],"category":"adult_18_plus","conceptId":"cowgirl"},

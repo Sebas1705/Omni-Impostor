@@ -34,7 +34,10 @@ export function run(argv, dir = conceptsDir) {
       return JSON.stringify({ concept: c, linksOut: map.links.filter((l) => l.from === id), linksIn: map.links.filter((l) => l.to === id).map((l) => l.from) }, null, 1);
     case 'label': {
       const [lang, text] = a;
-      c.labels[lang] = { ...(c.labels[lang] ?? {}), text: cleanText(text) };
+      const clean = cleanText(text);
+      const clash = map.concepts.find((o) => o !== c && [o.labels[lang]?.text, ...(o.labels[lang]?.aliases ?? [])].some((x) => x && norm(x) === norm(clean)));
+      need(!clash, `"${clean}" (${lang}) already belongs to ${clash?.id}: merge the two or tag both ids with a sense (rename)`);
+      c.labels[lang] = { ...(c.labels[lang] ?? {}), text: clean };
       if (c.todo) { c.todo = c.todo.filter((l) => l !== lang); if (!c.todo.length) delete c.todo; }
       break;
     }

@@ -9,7 +9,7 @@
     {"word":"Ambulancia","clues":["Emergencia","Rápido","Sirena","Vehículo","Hospital","Médico","Coche"],"reveal":"1112111","category":"health_and_medicine","conceptId":"ambulancia"},
     {"word":"Anemia","clues":["Cansancio","Debilidad","Hierro","Palidez","Sangre"],"category":"health_and_medicine","conceptId":"anemia"},
     {"word":"Anestesia","clues":["Cirugía","Dolor","Dormir","Inyección","Paciente","Quirófano","Sedación","Médico"],"category":"health_and_medicine","conceptId":"anestesia"},
-    {"word":"Anestesista","clues":["Anestesia","Anestesiología","Cirugía","Dolor","Hospital","Médico","Salud"],"reveal":"1111121","category":"health_and_medicine","conceptId":"anesthesiologist"},
+    {"word":"Anestesista","clues":["Anestesia","Anestesiología","Cirugía","Dolor","Dormir","Hospital","Médico","Quirófano"],"reveal":"11111121","category":"health_and_medicine","conceptId":"anesthesiologist"},
     {"word":"Anorexia","clues":["Peso Insalubre","Restricción de Comida","Trastorno Alimenticio","Salud Mental"],"reveal":"1121","category":"health_and_medicine","conceptId":"anorexia"},
     {"word":"Ansiedad","clues":["Estrés","Futuro","Inquietud","Nervios","Preocupación"],"reveal":"11313","category":"health_and_medicine","conceptId":"ansiedad"},
     {"word":"Antibiótico","clues":["Bacteria","Bacterias","Curar","Infección","Medicamento","Pastilla","Receta"],"reveal":"1111211","category":"health_and_medicine","conceptId":"antibiotico"},

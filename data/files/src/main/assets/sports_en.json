@@ -116,6 +116,7 @@
     {"word":"Water Polo","clues":["Buoy","Cap","Goal","Pool","Swim"],"category":"sports","conceptId":"waterpolo"},
     {"word":"Weightlifting","clues":["Barbell","Olympic","Plates","Snatch","Strength"],"category":"sports","conceptId":"weightlifting"},
     {"word":"Windsurfing","clues":["Balance","Board","Sail","Sea","Wind"],"category":"sports","conceptId":"windsurfing"},
-    {"word":"Yoga","clues":["Body","Mat","Mind","Pose","Relaxation"],"category":"sports","conceptId":"yoga"}
+    {"word":"Yoga","clues":["Body","Mat","Mind","Pose","Relaxation"],"category":"sports","conceptId":"yoga"},
+    {"word":"Zumba","clues":["Dance Class","Dance Fitness","Latin Music","Latin Rhythm","Workout"],"category":"sports","conceptId":"zumba~music"}
   ]
 }

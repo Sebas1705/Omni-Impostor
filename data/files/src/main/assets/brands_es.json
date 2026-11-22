@@ -83,7 +83,7 @@
     {"word":"Spotify","clues":["Canciones","Canción","Lista","Listas","Música","Podcast","Streaming","Verde"],"reveal":"11111121","category":"brands","conceptId":"spotify"},
     {"word":"Sprite","clues":["Burbujas","Limón","Refresco","Transparente","Verde"],"category":"brands","conceptId":"sprite"},
     {"word":"Starbucks","clues":["Bebida","Cafetería","Frappuccino","Sirena","Verde","Café","Vaso"],"category":"brands","conceptId":"starbucks"},
-    {"word":"Tesla","clues":["Autopilot","Batería","Cybertruck","Elon Musk","Eléctrico","Futuro","Modelo S","Vehículos Autónomos"],"category":"brands","conceptId":"tesla"},
+    {"word":"Tesla","clues":["Autopilot","Batería","Cybertruck","Elon Musk","Eléctrico","Futuro","Modelo S","Vehículo autónomo"],"category":"brands","conceptId":"tesla"},
     {"word":"Toblerone","clues":["Chocolate","Montaña","Suiza","Triángulo","Turrón"],"category":"brands","conceptId":"toblerone"},
     {"word":"Toyota","clues":["Corolla","Fiable","Vehículo híbrido","Ventas","Motor","Japón","Coche"],"reveal":"1111112","category":"brands","conceptId":"toyota"},
     {"word":"Uber","clues":["App","Conductor","Viaje","Transporte","Coche"],"reveal":"21111","category":"brands","conceptId":"uber"},

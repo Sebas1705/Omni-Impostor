@@ -8,6 +8,7 @@
     {"word":"Breaking Bad","clues":["Blue","Chemistry","Crystal","Heisenberg","Van","Walter White","Desert"],"category":"movies_and_series","conceptId":"breaking-bad"},
     {"word":"Bridgerton","clues":["Balls","Gowns","Lady Whistledown","Netflix","Regency","Romance"],"category":"movies_and_series","conceptId":"bridgerton"},
     {"word":"Camera","clues":["Cinema","Filming","Image","Lens","Record"],"category":"movies_and_series","conceptId":"camara"},
+    {"word":"Caribbean Pirates","clues":["Black Pearl","Davy Jones","Jack Sparrow","Johnny Depp"],"category":"movies_and_series","conceptId":"piratas-del-caribe"},
     {"word":"Cars","clues":["Lightning McQueen","Mater","Pixar","Race Track","Route 66","Speed"],"category":"movies_and_series","conceptId":"cars"},
     {"word":"Coco","clues":["Dead","Family","Music","Skeleton","Guitar","Mexico"],"category":"movies_and_series","conceptId":"coco"},
     {"word":"Director","clues":["Command","Set","Shout","Chair","Camera"],"category":"movies_and_series","conceptId":"director"},

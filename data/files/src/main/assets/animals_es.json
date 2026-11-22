@@ -99,7 +99,7 @@
     {"word":"Piojo","clues":["Cabello","Cabeza","Picazón","Parásito","Insecto"],"reveal":"11122","category":"animals","conceptId":"piojo"},
     {"word":"Pulga","clues":["Mascota","Salto","Parásito","Sangre","Insecto"],"reveal":"11212","category":"animals","conceptId":"pulga"},
     {"word":"Pulpo","clues":["Ocho","Tentáculos","Ventosas","Tinta","Océano"],"category":"animals","conceptId":"pulpo"},
-    {"word":"Pájaro","clues":["Cantar","Cielo","Nido","Pico","Plumas"],"category":"animals","conceptId":"pajaro"},
+    {"word":"Pájaro","clues":["Animal","Cantar","Cielo","Huevo","Nido","Pico","Plumas","Volar"],"reveal":"21111111","category":"animals","conceptId":"pajaro"},
     {"word":"Rana","clues":["Anfibio","Charca","Lengua","Salto","Verde"],"reveal":"21111","category":"animals","conceptId":"rana"},
     {"word":"Rinoceronte","clues":["Carga","Cuerno","Gris","África","Piel"],"category":"animals","conceptId":"rinoceronte"},
     {"word":"Saltamontes","clues":["Antenas","Campo","Salto","Verde","Insecto"],"reveal":"11112","category":"animals","conceptId":"saltamontes"},
