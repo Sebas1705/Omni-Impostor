@@ -1,6 +1,6 @@
 {"id":"online-course-platform","es":{"text":"Plataforma de cursos","hints":["Educación","Aprender","Plataforma","Vídeo","Internet"]}}
 {"id":"online-discussion-forum","es":{"text":"Foro de debate","hints":["Comunidad","Debate","Educación","Foro","En línea"]}}
-{"id":"online-learning-platform","es":{"text":"Plataforma de aprendizaje","hints":["Educación","Aprender","Plataforma","Vídeo","Internet"]}}
+{"id":"online-learning-platform","es":{"text":"Plataforma online","hints":["Educación","Aprender","Plataforma","Vídeo","Internet"]}}
 {"id":"online-tutoring-service","es":{"text":"Tutoría en línea","hints":["Educación","Ayuda","En línea","Aprendizaje remoto","Tutoría"]}}
 {"id":"onomatopoeia","es":{"text":"Onomatopeya","hints":["Acción","Boom","Texto","Cómic","Sonido"]}}
 {"id":"operating-room","es":{"text":"Quirófano","hints":["Luces","Estéril","Cirujano","Cirugía","Hospital"]}}
@@ -179,7 +179,7 @@
 {"id":"pressure-cooker","es":{"text":"Olla a presión","hints":["Electrodoméstico","Rápida","Presión","Cocina"]}}
 {"id":"pride","es":{"text":"Orgullo","hints":["Logro","Bueno","Satisfacción","Uno mismo","Éxito"]}}
 {"id":"pride-and-prejudice","es":{"text":"Orgullo y prejuicio","hints":["Clásico","Elizabeth Bennet","Jane Austen","Matrimonio","Amor"]}}
-{"id":"principal","es":{"text":"Director","hints":["Jefe","Cabeza","Líder","Colegio","La Oficina"]}}
+{"id":"principal","es":{"text":"Director escolar","hints":["Jefe","Cabeza","Líder","Colegio","La Oficina"]}}
 {"id":"printer","es":{"text":"Impresora","hints":["Copiar","Documento","Máquina","Papel","Escáner","Tinta"]}}
 {"id":"prison","es":{"text":"Prisión","hints":["Celdas","Crimen","Preso","Cárcel","Castigo"]}}
 {"id":"private-transport","es":{"text":"Transporte privado","hints":["Bicicleta","Conducir","Moto","Personal","Coche"]}}

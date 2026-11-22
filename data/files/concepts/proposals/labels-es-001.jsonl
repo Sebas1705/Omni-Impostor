@@ -213,7 +213,7 @@
 {"id":"big-ben","es":{"text":"Big Ben","hints":["Reloj","Inglaterra","Londres","Parlamento","Torre"]}}
 {"id":"billiards","es":{"text":"Billar","hints":["Bolas","Paño","Taco","Tronera","Mesa"]}}
 {"id":"binary","es":{"text":"Binaria","hints":["Pareja","Órbita","Estrellas","Sistema","Dos"]}}
-{"id":"binder","es":{"text":"Carpeta","hints":["Documentos","Grande","Organizar","Papel","Anillas"]}}
+{"id":"binder","es":{"text":"Archivador","hints":["Documentos","Grande","Organizar","Papel","Anillas"]}}
 {"id":"binder-clips","es":{"text":"Pinzas sujetapapeles","hints":["Pinza","Sujetar","Metal","Papel","The Office"]}}
 {"id":"biochemistry","es":{"text":"Bioquímica","hints":["Biología","Células","Química","Vida","Moléculas"]}}
 {"id":"biodiversity","es":{"text":"Biodiversidad","hints":["Vida","Naturaleza","Variedad","Especies","Planeta"]}}

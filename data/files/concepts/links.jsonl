@@ -1220,8 +1220,8 @@
 {"from":"calcio","to":"leche","type":"association","w":3,"langs":["es"]}
 {"from":"calcium","to":"milk","type":"association","w":3,"langs":["en"]}
 {"from":"calculadora","to":"matematicas","type":"association","w":3,"langs":["es"]}
-{"from":"calendar~home-and-furniture","to":"schedule","type":"association","w":3,"langs":["en"]}
-{"from":"calendar~home-and-furniture","to":"wall","type":"association","w":3,"langs":["en"]}
+{"from":"wall-calendar","to":"schedule","type":"association","w":3,"langs":["en"]}
+{"from":"wall-calendar","to":"wall","type":"association","w":3,"langs":["en"]}
 {"from":"calentamiento-global","to":"cambio-climatico","type":"association","w":3,"langs":["es"]}
 {"from":"calentamiento-global","to":"clima","type":"association","w":3,"langs":["es"]}
 {"from":"calentamiento-global","to":"planeta","type":"association","w":3,"langs":["es"]}
@@ -8061,7 +8061,6 @@
 {"from":"the-avengers","to":"stone","type":"association","w":3,"langs":["en"]}
 {"from":"the-beatles","to":"concierto","type":"association","w":3,"langs":["es"]}
 {"from":"the-beatles","to":"rock","type":"association","w":3,"langs":["en","es"]}
-{"from":"the-beetles","to":"rock","type":"association","w":3,"langs":["en"]}
 {"from":"the-crown","to":"historia","type":"association","w":3,"langs":["es"]}
 {"from":"the-crown","to":"history","type":"association","w":3,"langs":["en"]}
 {"from":"the-crown","to":"queen","type":"association","w":3,"langs":["en"]}

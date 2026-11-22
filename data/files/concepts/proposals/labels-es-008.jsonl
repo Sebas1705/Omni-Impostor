@@ -186,7 +186,7 @@
 {"id":"smart-home-device","es":{"text":"Dispositivo domótico","hints":["Conectado","Domótica","IoT","Altavoz inteligente","Control por voz"]}}
 {"id":"smart-light","es":{"text":"Luz inteligente","hints":["Conectada","Control","Luminaria"]}}
 {"id":"smoke-detector","es":{"text":"Detector de humo","hints":["Alarma","Batería","Techo","Fuego","Seguridad"]}}
-{"id":"smoothie","es":{"text":"Batido","hints":["Batidora","Fruta","Saludable","Espeso","Yogur"]}}
+{"id":"smoothie","es":{"text":"Smoothie","hints":["Batidora","Fruta","Saludable","Espeso","Yogur"]}}
 {"id":"snake","es":{"text":"Serpiente","hints":["Escamas","Reptar","Lengua","Veneno","Piel"]}}
 {"id":"sneakers","es":{"text":"Zapatillas","hints":["Cómodas","Pies","Goma","Correr","Deporte"]}}
 {"id":"snow","es":{"text":"Nieve","hints":["Frío","Blanca","Hielo","Invierno","Montaña"]}}

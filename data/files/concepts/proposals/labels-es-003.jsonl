@@ -231,7 +231,7 @@
 {"id":"epidemic","es":{"text":"Epidemia","hints":["Enfermedad","Salud","Brote","Población","Propagación"]}}
 {"id":"epilogue","es":{"text":"Epílogo","hints":["Después","Libro","Conclusión","Final","Fin"]}}
 {"id":"equality","es":{"text":"Igualdad","hints":["Equidad","Género","Derechos","Mismo","Justicia"]}}
-{"id":"equator","es":{"text":"Ecuador","hints":["Centro","Imaginario","Latitud","Línea","Tierra"]}}
+{"id":"equator","es":{"text":"Línea del Ecuador","hints":["Centro","Imaginario","Latitud","Línea","Tierra"]}}
 {"id":"equilibrium","es":{"text":"Equilibrio","hints":["Balance","Química","Directa","Reacción","Inversa"]}}
 {"id":"equinox","es":{"text":"Equinoccio","hints":["Otoño","Día","Igual","Noche","Primavera"]}}
 {"id":"equity","es":{"text":"Equidad","hints":["Distribución","Igualdad","Imparcialidad","Necesidad","Justicia"]}}

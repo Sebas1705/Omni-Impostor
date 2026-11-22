@@ -204,6 +204,38 @@ function mergeInto(map, into, from) {
   from.merged = true;
 }
 
+/**
+ * Two concepts with the same label in a language are homonyms and their ids must carry a sense tag (`espacio~universo`).
+ * Concepts that applying labels made clash get `~<first category>`; links follow the new id. Returns how many were renamed.
+ */
+function ensureSenseTags(map) {
+  const live = map.concepts.filter((c) => !c.merged);
+  const groups = new Map();
+  for (const c of live) for (const lang of LANGS) {
+    const l = labelOf(c, lang);
+    if (!l) continue;
+    const k = lang + '|' + norm(l.text);
+    if (!groups.has(k)) groups.set(k, new Set());
+    groups.get(k).add(c);
+  }
+  const taken = new Set(live.map((c) => c.id));
+  const renames = new Map();
+  for (const group of groups.values()) {
+    if (group.size < 2) continue;
+    for (const c of group) {
+      if (c.id.includes('~') || renames.has(c.id)) continue;
+      const tag = [...c.categories].sort()[0].replace(/_/g, '-');
+      let id = `${c.id}~${tag}`, n = 2;
+      while (taken.has(id)) id = `${c.id}~${tag}-${n++}`;
+      taken.add(id);
+      renames.set(c.id, id);
+    }
+  }
+  for (const c of live) if (renames.has(c.id)) c.id = renames.get(c.id);
+  for (const l of map.links) { l.from = renames.get(l.from) ?? l.from; l.to = renames.get(l.to) ?? l.to; }
+  return renames.size;
+}
+
 function apply(files) {
   if (!check(files)) process.exit(1);
   const map = loadMap();
@@ -221,6 +253,7 @@ function apply(files) {
         const twin = uniqueTwin(map, c, text);
         const target = twin ?? labelTargets.get(norm(text));
         if (target) {
+          labelTargets.set(norm(text), target);
           mergeInto(map, target, c);
           if (!twin) target.hints.es = unionHints(target.hints.es, r.es.hints.map((t) => ({ t }))).slice(0, 8);
           if (isName && target.translatable === undefined) target.translatable = false;
@@ -246,11 +279,12 @@ function apply(files) {
       }
     }
   }
+  const retagged = ensureSenseTags(map);
   const sortedConcepts = map.concepts.filter((c) => !c.merged).sort((a, b) => a.id.localeCompare(b.id));
   writeFileSync(join(conceptsDir, 'concepts.jsonl'), jsonl(sortedConcepts));
   writeFileSync(join(conceptsDir, 'links.jsonl'), jsonl(links));
   files.forEach((f) => unlinkSync(f));
-  console.log(`applied: ${labels} Spanish labels, ${merges} merged into an existing Spanish concept, ${typedLinks} typed links, ${typedHints} typed hints. Now run: node scripts/words/compile.mjs`);
+  console.log(`applied: ${labels} Spanish labels, ${merges} merged into an existing Spanish concept, ${retagged} ids given a sense tag, ${typedLinks} typed links, ${typedHints} typed hints. Now run: node scripts/words/compile.mjs`);
 }
 
 /** Removes type proposals whose concept or clue no longer exists (after labels were applied and concepts merged). */

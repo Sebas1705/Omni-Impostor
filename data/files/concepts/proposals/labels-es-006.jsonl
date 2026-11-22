@@ -37,7 +37,7 @@
 {"id":"mace","es":{"text":"Maza","hints":["Contundente","Pesada","Medieval","Con púas","Arma"]}}
 {"id":"machine-learning","es":{"text":"Aprendizaje automático","hints":["IA","Algoritmo","Datos","Aprender","Modelo"]}}
 {"id":"magic-broomstick","es":{"text":"Escoba mágica","hints":["Magia","Fantasía","Volar"]}}
-{"id":"magician","es":{"text":"Mago","hints":["Sombrero","Ilusión","Magia","Conejo","Truco"]}}
+{"id":"magician","es":{"text":"Ilusionista","hints":["Sombrero","Ilusión","Magia","Conejo","Truco"]}}
 {"id":"maglev-train","es":{"text":"Tren maglev","hints":["Alta velocidad","Levitación magnética","Tren"]}}
 {"id":"magnetism","es":{"text":"Magnetismo","hints":["Atracción","Campo","Imán","Metal","Polo"]}}
 {"id":"mai-tai","es":{"text":"Mai Tai","hints":["Lima","Orgeat","Tropical","Ron","Cóctel"]}}

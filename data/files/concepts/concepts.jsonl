@@ -725,7 +725,6 @@
 {"id":"calculadora-cientifica","labels":{"es":{"text":"Calculadora Científica"}},"categories":["school_and_education"],"hints":{"es":[{"t":"Números"},{"t":"Funciones Avanzadas"},{"t":"Matemáticas Complejas"}]}}
 {"id":"calculator","labels":{"en":{"text":"Calculator"}},"categories":["office_and_stationery","school_and_education"],"hints":{"en":[{"t":"Numbers"},{"t":"Add"},{"t":"Math"},{"t":"Counts"},{"t":"Buttons"},{"t":"Calculation"}]},"todo":["es"]}
 {"id":"calculator-app","labels":{"en":{"text":"Calculator App"}},"categories":["school_and_education"],"hints":{"en":[{"t":"Phone"},{"t":"Numbers"},{"t":"Math"},{"t":"Digital"},{"t":"Calculate"}]},"todo":["es"]}
-{"id":"calendar~home-and-furniture","labels":{"en":{"text":"Calendar"}},"categories":["home_and_furniture"],"hints":{"en":[{"t":"Date"}]},"todo":["es"]}
 {"id":"calendar~office-and-stationery","labels":{"en":{"text":"Calendar"}},"categories":["office_and_stationery"],"hints":{"en":[{"t":"Dates"},{"t":"Days"},{"t":"Months"},{"t":"Plan"},{"t":"Year"}]},"todo":["es"]}
 {"id":"calendario","labels":{"es":{"text":"Calendario"}},"categories":["office_and_stationery"],"hints":{"es":[{"t":"Fechas"},{"t":"Días"},{"t":"Meses"},{"t":"Planear"},{"t":"Año"}]}}
 {"id":"calentamiento-global","labels":{"es":{"text":"Calentamiento Global"}},"categories":["nature_and_weather"],"hints":{"es":[{"t":"Calor"},{"t":"Problema"}]}}
@@ -4701,8 +4700,7 @@
 {"id":"thanksgiving","labels":{"en":{"text":"Thanksgiving"}},"categories":["holidays_and_celebrations"],"hints":{"en":[{"t":"November"},{"t":"Dinner"},{"t":"Thanks"},{"t":"Family"}]},"todo":["es"]}
 {"id":"thanos","labels":{"es":{"text":"Thanos"}},"categories":["superheroes_and_comics"],"hints":{"es":[{"t":"Guantelete del Infinito"},{"t":"Mad Titan"},{"t":"Poderoso"},{"t":"Destruir"}]}}
 {"id":"the-avengers","labels":{"en":{"text":"The Avengers"}},"categories":["movies_and_series"],"hints":{"en":[{"t":"Heroes"},{"t":"Team"},{"t":"Comics"},{"t":"Powers"}]},"todo":["es"]}
-{"id":"the-beatles","labels":{"es":{"text":"The Beatles"},"en":{"text":"The Beatles"}},"categories":["music"],"hints":{"es":[{"t":"Banda"},{"t":"Álbumes"},{"t":"Liverpool"}],"en":[{"t":"Band"},{"t":"British"},{"t":"1960s"},{"t":"Songs"}]}}
-{"id":"the-beetles","labels":{"en":{"text":"The Beetles"}},"categories":["music"],"hints":{"en":[{"t":"Band"},{"t":"British"},{"t":"1960s"},{"t":"Songs"}]},"todo":["es"]}
+{"id":"the-beatles","labels":{"es":{"text":"The Beatles"},"en":{"text":"The Beatles","aliases":["The Beetles"]}},"categories":["music"],"hints":{"es":[{"t":"Banda"},{"t":"Álbumes"},{"t":"Liverpool"}],"en":[{"t":"Band"},{"t":"British"},{"t":"1960s"},{"t":"Songs"}]}}
 {"id":"the-crown","labels":{"es":{"text":"The Crown"},"en":{"text":"The Crown"}},"categories":["movies_and_series"],"hints":{"es":[{"t":"Inglaterra"},{"t":"Familia"},{"t":"Palacio"}],"en":[{"t":"England"},{"t":"Family"},{"t":"Palace"}]}}
 {"id":"the-divine-comedy","labels":{"en":{"text":"The Divine Comedy"}},"categories":["books_and_literature"],"hints":{"en":[{"t":"Dante Alighieri"},{"t":"Inferno Purgatorio Paradiso."},{"t":"Afterlife Journey."},{"t":"Italian Literature."}]},"todo":["es"]}
 {"id":"the-exorcist","labels":{"en":{"text":"The Exorcist"}},"categories":["movies_and_series"],"hints":{"en":[{"t":"Girl"},{"t":"Possession"}]},"todo":["es"]}
@@ -5124,7 +5122,7 @@
 {"id":"waiter","labels":{"en":{"text":"Waiter"}},"categories":["professions"],"hints":{"en":[{"t":"Restaurant"},{"t":"Serve"},{"t":"Drink"}]},"todo":["es"]}
 {"id":"walgreens","labels":{"es":{"text":"Walgreens"},"en":{"text":"Walgreens"}},"categories":["stores_and_retail"],"hints":{"es":[{"t":"EEUU"},{"t":"Salud"},{"t":"Tienda"},{"t":"Medicinas"}],"en":[{"t":"USA"},{"t":"Health"},{"t":"Store"}]}}
 {"id":"wall","labels":{"en":{"text":"Wall"}},"categories":["home_and_furniture"],"hints":{"en":[{"t":"Brick"},{"t":"Vertical"},{"t":"Paint"},{"t":"House"}]},"todo":["es"]}
-{"id":"wall-calendar","labels":{"en":{"text":"Wall Calendar"}},"categories":["office_and_stationery"],"hints":{"en":[{"t":"Dates"},{"t":"Days"},{"t":"Months"},{"t":"Plan"},{"t":"Year"}]},"todo":["es"]}
+{"id":"wall-calendar","labels":{"en":{"text":"Wall Calendar","aliases":["Calendar"]}},"categories":["home_and_furniture","office_and_stationery"],"hints":{"en":[{"t":"Dates"},{"t":"Days"},{"t":"Months"},{"t":"Plan"},{"t":"Year"},{"t":"Date"}]},"todo":["es"]}
 {"id":"wall-clock","labels":{"en":{"text":"Wall Clock"}},"categories":["home_and_furniture"],"hints":{"en":[{"t":"Hour"},{"t":"Hands"},{"t":"Tick Tock"}]},"todo":["es"]}
 {"id":"wall-sconce","labels":{"en":{"text":"Wall Sconce"}},"categories":["home_and_furniture"],"hints":{"en":[{"t":"Light Fixture"},{"t":"Decorative"}]},"todo":["es"]}
 {"id":"wallapop","labels":{"es":{"text":"Wallapop"},"en":{"text":"Wallapop"}},"categories":["apps_and_platforms"],"hints":{"es":[{"t":"Segunda Mano"},{"t":"Vender"},{"t":"Comprar"},{"t":"Chat"}],"en":[{"t":"Second Hand"},{"t":"Sell"},{"t":"Buy"},{"t":"Chat"}]}}
