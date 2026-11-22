@@ -2,7 +2,7 @@
   "words": [
     {"word":"Among Us","clues":["Betrayal","Impostor","Tasks","Vote","Ship"],"category":"video_games","conceptId":"among-us"},
     {"word":"Animal Crossing","clues":["Fishing","House","Island","Relaxing","Villagers"],"category":"video_games","conceptId":"animal-crossing"},
-    {"word":"Assassin's Creed","clues":["Hood","Jump","Past","Stealth","History"],"category":"video_games","conceptId":"assassin-s-creed"},
+    {"word":"Assassin's Creed","clues":["Hood","Jump","Past","Stealth"],"category":"video_games","conceptId":"assassin-s-creed"},
     {"word":"Bioshock","clues":["City","Lighthouse","Powers","Story"],"category":"video_games","conceptId":"bioshock"},
     {"word":"Call of Duty","clues":["Guns","Missions","Shooting","Soldier","War"],"category":"video_games","conceptId":"call-of-duty"},
     {"word":"Counter-Strike","clues":["Bomb","Guns","Round","Shooting","Terrorists"],"category":"video_games","conceptId":"counter-strike"},
@@ -13,7 +13,7 @@
     {"word":"Donkey Kong","clues":["Bananas","Barrels","Gorilla","Tie","Jungle"],"category":"video_games","conceptId":"donkey-kong"},
     {"word":"Doom","clues":["Demons","Hell","Mars","Shooting","Blood"],"category":"video_games","conceptId":"doom"},
     {"word":"Elden Ring","clues":["Boss","Difficulty","Open World","Horse","Fantasy"],"category":"video_games","conceptId":"elden-ring"},
-    {"word":"Fallout","clues":["Bunker","Future","Mutants","Radiation","Scrap"],"category":"video_games","conceptId":"fallout"},
+    {"word":"Fallout","clues":["Bunker","Future","Mutants","Scrap","Radiation"],"category":"video_games","conceptId":"fallout"},
     {"word":"FIFA","clues":["Ball","Goal","Stadium","Team","Soccer"],"category":"video_games","conceptId":"fifa"},
     {"word":"Final Fantasy","clues":["Crystal","Magic","Roleplay","Story","Sword"],"category":"video_games","conceptId":"final-fantasy"},
     {"word":"Fortnite","clues":["Build","Bus","Island","Shoot","Dance"],"category":"video_games","conceptId":"fortnite"},

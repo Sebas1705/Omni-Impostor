@@ -1,14 +1,11 @@
-{"id":"fuel","lang":"en","clues":{"Energy":"broader"}}
 {"id":"fuente-de-agua","lang":"es","clues":{"Decoración":"broader","Jardín":"context"}}
-{"id":"fuerza~superheroes-and-comics","lang":"es","clues":{"Fuerte":"synonym","Poder":"synonym"}}
+{"id":"fuerza~superheroes-and-comics","lang":"es","clues":{"Fuerte":"synonym"}}
 {"id":"full-house","lang":"es","clues":{"Mano":"broader","Póker":"context","Tres y Dos":"part"}}
 {"id":"full-house","lang":"en","clues":{"Hand":"broader","Poker":"context","Three Two":"part"}}
 {"id":"fullerene","lang":"en","clues":{"Buckyball":"synonym","Carbon":"part","Molecule":"broader"}}
 {"id":"funeral","lang":"es","clues":{"Cementerio":"context"}}
 {"id":"funeral","lang":"en","clues":{"Cemetery":"context"}}
-{"id":"fungus","lang":"en","clues":{"Kingdom":"broader","Mushroom":"synonym","Spores":"part"}}
 {"id":"funicular","lang":"en","clues":{"Cable Car":"synonym","Mountain":"context","Steep Slope":"context"}}
-{"id":"funnel","lang":"en","clues":{"Bottle":"context","Narrow":"part"}}
 {"id":"furgoneta","lang":"es","clues":{"Coche":"broader","Reparto":"context"}}
 {"id":"fusion","lang":"es","clues":{"Unión":"synonym"}}
 {"id":"fusion-nuclear","lang":"es","clues":{"Unión":"synonym","Sol":"context"}}
@@ -21,9 +18,7 @@
 {"id":"gafas","lang":"es","clues":{"Lentes":"synonym","Oculista":"context"}}
 {"id":"gafas-de-sol","lang":"es","clues":{"Accesorio":"broader","Cristales":"part","Verano":"context"}}
 {"id":"gaita","lang":"es","clues":{"Bolsa":"part","Tubo":"part"}}
-{"id":"gala-dinner","lang":"en","clues":{"Event":"broader"}}
 {"id":"galaxia","lang":"es","clues":{"Estrellas":"part","Universo":"context"}}
-{"id":"galaxy","lang":"en","clues":{"Stars":"part","Universe":"context"}}
 {"id":"galeries-lafayette","lang":"es","clues":{"Almacenes":"broader","París":"context"}}
 {"id":"galeries-lafayette","lang":"en","clues":{"Department Store":"broader","Paris":"context"}}
 {"id":"galleta","lang":"es","clues":{"Pepitas":"part","Horno":"context"}}
@@ -34,56 +29,41 @@
 {"id":"game-master","lang":"en","clues":{"Guide":"synonym","Narrator":"synonym","RPG":"context"}}
 {"id":"ganancia","lang":"es","clues":{"Beneficio":"synonym"}}
 {"id":"ganesha","lang":"en","clues":{"Elephant Head":"part","God of Wisdom":"broader","Hinduism":"context"}}
-{"id":"garage","lang":"en","clues":{"Door":"part","Park":"context"}}
 {"id":"garaje","lang":"es","clues":{"Aparcar":"context","Puerta":"part"}}
-{"id":"garden","lang":"en","clues":{"Lawn":"part"}}
 {"id":"gargola","lang":"es","clues":{"Edificio":"context","Monstruo":"broader"}}
-{"id":"gargoyle","lang":"en","clues":{"Building":"context"}}
-{"id":"garland","lang":"en","clues":{"Decoration":"broader"}}
 {"id":"garrapata","lang":"es","clues":{"Parásito":"broader"}}
-{"id":"gas-station","lang":"en","clues":{"Fuel":"context","Tank":"part"}}
 {"id":"gasolina","lang":"es","clues":{"Combustible":"broader","Octanaje":"part"}}
-{"id":"gasoline","lang":"en","clues":{"Fuel":"broader","Octane":"part"}}
 {"id":"gasolinera","lang":"es","clues":{"Bomba de Gasolina":"part","Repostar":"context"}}
 {"id":"gastrobar","lang":"es","clues":{"Bar":"broader"}}
 {"id":"gastroenterologist","lang":"en","clues":{"Digestive System":"context","Doctor":"broader"}}
 {"id":"gastroenterologo","lang":"es","clues":{"Sistema digestivo":"context"}}
 {"id":"gastronomia","lang":"es","clues":{"Cocina":"synonym"}}
-{"id":"gastronomy","lang":"en","clues":{"Cooking":"synonym"}}
 {"id":"gato","lang":"es","clues":{"Bigotes":"part"}}
 {"id":"gato-con-botas","lang":"es","clues":{"Botas":"part","Cuento de Hadas":"broader"}}
 {"id":"gatorade","lang":"es","clues":{"Bebida":"broader"}}
 {"id":"gatorade","lang":"en","clues":{"Drink":"broader"}}
-{"id":"gatsby-cap","lang":"en","clues":{"Newsboy Cap":"synonym"}}
-{"id":"gearbox","lang":"en","clues":{"Gears":"part","Lever":"part","Transmission":"synonym"}}
 {"id":"genero","lang":"es","clues":{"Clase":"synonym","Tipo":"synonym"}}
 {"id":"generosidad","lang":"es","clues":{"Egoísmo":"contrast"}}
-{"id":"generosity","lang":"en","clues":{"Selfishness":"contrast"}}
 {"id":"genetic-engineering","lang":"en","clues":{"Biology":"broader"}}
 {"id":"genghis-khan","lang":"es","clues":{"Conquistador":"broader"}}
 {"id":"genghis-khan","lang":"en","clues":{"Conqueror":"broader","Military leader":"broader","Mongol Empire":"context"}}
-{"id":"genie","lang":"en","clues":{"Bottle":"context","Lamp":"context"}}
 {"id":"genio","lang":"es","clues":{"Botella":"context","Lámpara":"context"}}
 {"id":"genoma","lang":"es","clues":{"ADN":"part","Genes":"part"}}
 {"id":"genos","lang":"es","clues":{"Cyborg":"broader","Héroe":"broader"}}
 {"id":"genos","lang":"en","clues":{"Cyborg":"broader"}}
 {"id":"genre","lang":"en","clues":{"Class":"synonym","Type":"synonym"}}
-{"id":"geologia","lang":"es","clues":{"Ciencia":"broader","Rocas":"part"}}
-{"id":"geology","lang":"en","clues":{"Science":"broader"}}
+{"id":"geologia","lang":"es","clues":{"Rocas":"part"}}
 {"id":"george-washington","lang":"es","clues":{"Primer Presidente":"broader"}}
 {"id":"george-washington","lang":"en","clues":{"First President":"broader"}}
 {"id":"geothermal-energy","lang":"en","clues":{"Renewable":"broader"}}
 {"id":"gerbil","lang":"en","clues":{"Rodent":"broader"}}
 {"id":"gerbo","lang":"es","clues":{"Roedor":"broader"}}
 {"id":"geriatra","lang":"es","clues":{"Ciencia":"broader"}}
-{"id":"geriatrician","lang":"en","clues":{"Doctor":"broader","Elderly Doctor":"broader"}}
 {"id":"gerrymandering","lang":"en","clues":{"Manipulation":"broader"}}
 {"id":"ghana","lang":"es","clues":{"País":"broader"}}
-{"id":"ghost","lang":"en","clues":{"Spirit":"synonym"}}
 {"id":"ghost-rider","lang":"en","clues":{"Hero":"broader"}}
 {"id":"ghosting","lang":"es","clues":{"Desaparecer":"synonym"}}
 {"id":"ghosting","lang":"en","clues":{"Disappear":"synonym"}}
-{"id":"giant","lang":"en","clues":{"Big":"synonym","Huge":"synonym"}}
 {"id":"giant-eagle","lang":"en","clues":{"Large Bird":"broader"}}
 {"id":"gigachad","lang":"es","clues":{"Mandíbula":"part"}}
 {"id":"gigachad","lang":"en","clues":{"Jaw":"part"}}
@@ -91,7 +71,6 @@
 {"id":"gigante-roja","lang":"es","clues":{"Estrella":"broader"}}
 {"id":"gigi-hadid","lang":"es","clues":{"Modelo Internacional":"broader"}}
 {"id":"gimlet","lang":"en","clues":{"Cocktail":"broader","Gin":"part","Lime":"part","Simple Syrup":"part"}}
-{"id":"gin","lang":"en","clues":{"Alcohol":"broader","Drink":"broader","Juniper":"part"}}
 {"id":"gin-and-tonic","lang":"en","clues":{"Gin":"part","Tonic":"part"}}
 {"id":"gin-tonic","lang":"es","clues":{"Cóctel Refrescante":"broader","Combinado":"broader","Ginebra":"part","Tónica":"part"}}
 {"id":"ginebra","lang":"es","clues":{"Bebida":"broader","Destilado":"broader","Enebro":"part"}}
@@ -99,25 +78,14 @@
 {"id":"ginger-beer","lang":"en","clues":{"Ginger":"part","Soda":"broader"}}
 {"id":"ginnungagap","lang":"en","clues":{"GAP":"synonym","Void":"synonym"}}
 {"id":"gintama","lang":"es","clues":{"Comedia":"broader","Parodia":"broader"}}
-{"id":"giraffe","lang":"en","clues":{"Africa":"context","Neck":"part","Spots":"part","Tongue":"part"}}
 {"id":"github","lang":"en","clues":{"Repository":"part","Version Control":"broader"}}
 {"id":"gladiador","lang":"es","clues":{"Arena":"context","Coliseo":"context","Roma":"context"}}
-{"id":"gladiator","lang":"en","clues":{"Arena":"context","Coliseum":"context","Colosseum":"context","Rome":"context"}}
-{"id":"glass","lang":"en","clues":{"Crystal":"synonym","Drink":"context","Kitchen":"context"}}
-{"id":"glasses","lang":"en","clues":{"Lenses":"part","Optometrist":"context"}}
-{"id":"glee","lang":"en","clues":{"Happiness":"synonym","Joy":"synonym"}}
 {"id":"globe-light","lang":"en","clues":{"Light Fixture":"broader"}}
 {"id":"globo-aerostatico","lang":"es","clues":{"Cesta":"part"}}
-{"id":"gloves","lang":"en","clues":{"Fingers":"part","Hands":"context","Winter":"context"}}
-{"id":"glue","lang":"en","clues":{"Adhesive":"synonym"}}
 {"id":"gmail","lang":"es","clues":{"Bandeja":"part","Correo":"synonym","Email":"synonym"}}
 {"id":"gmail","lang":"en","clues":{"Email":"synonym","Inbox":"part","Mail":"synonym"}}
-{"id":"gnome","lang":"en","clues":{"Beard":"part","Cap":"part","Garden":"context"}}
 {"id":"gnomo","lang":"es","clues":{"Barba":"part","Gorro":"part","Jardín":"context"}}
-{"id":"god","lang":"en","clues":{"Olympus":"context"}}
 {"id":"gofres","lang":"es","clues":{"Bélgica":"context","Cuadrados con Rejilla":"part"}}
-{"id":"gold","lang":"en","clues":{"Metal":"broader"}}
-{"id":"golden-gate-bridge","lang":"en","clues":{"Bridge":"broader","San Francisco":"context"}}
 {"id":"golf","lang":"es","clues":{"Bandera":"part","Campo":"context","Hoyo":"part","Palo":"part"}}
 {"id":"golf","lang":"en","clues":{"Club":"part","Course":"context","Flag":"part","Hole":"part"}}
 {"id":"golf-cart","lang":"en","clues":{"Golf Course":"context","Small Vehicle":"broader"}}
@@ -133,7 +101,6 @@
 {"id":"google-play","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"google-play","lang":"en","clues":{"Store":"broader"}}
 {"id":"gorila","lang":"es","clues":{"Primates":"broader","Selva":"context"}}
-{"id":"gorilla","lang":"en","clues":{"Jungle":"context","Primates":"broader"}}
 {"id":"gorra","lang":"es","clues":{"Visera":"part"}}
 {"id":"gotham","lang":"es","clues":{"Batman":"context","Ciudad":"broader"}}
 {"id":"gotham","lang":"en","clues":{"Batman":"context","City":"broader"}}
@@ -141,34 +108,22 @@
 {"id":"grabado","lang":"es","clues":{"Arte":"broader"}}
 {"id":"graciousness","lang":"en","clues":{"Courtesy":"synonym","Kindness":"synonym"}}
 {"id":"graduacion","lang":"es","clues":{"Birrete":"part"}}
-{"id":"graduation","lang":"en","clues":{"Cap":"part"}}
 {"id":"grafeno","lang":"es","clues":{"Carbono":"part","Lámina":"part"}}
 {"id":"graffiti","lang":"en","clues":{"Spray Paint":"part","Wall":"context"}}
 {"id":"gramatica","lang":"es","clues":{"Reglas":"part"}}
-{"id":"grammar","lang":"en","clues":{"Rules":"part"}}
 {"id":"gran-canon","lang":"es","clues":{"Arizona":"context"}}
-{"id":"grand-canyon","lang":"en","clues":{"Arizona":"context"}}
 {"id":"grapadora","lang":"es","clues":{"Grapas":"part"}}
 {"id":"grapadora-electrica","lang":"es","clues":{"Grapas":"part"}}
 {"id":"grapas","lang":"es","clues":{"Grapadora":"context"}}
-{"id":"graphene","lang":"en","clues":{"Carbon":"part","Sheet":"part"}}
-{"id":"graphic-design","lang":"en","clues":{"Advertising":"context"}}
-{"id":"grass","lang":"en","clues":{"Lawn":"synonym","Plant":"broader"}}
-{"id":"grasshopper","lang":"en","clues":{"Antennae":"part","Insect":"broader"}}
-{"id":"grater","lang":"en","clues":{"Cheese":"context"}}
 {"id":"gratitud","lang":"es","clues":{"Agradecer":"synonym","Gracias":"synonym","Sentimiento":"broader","Valor":"broader"}}
-{"id":"gratitude","lang":"en","clues":{"Appreciate":"synonym","Feeling":"broader","Thankful":"synonym","Thanks":"synonym"}}
 {"id":"gravedad","lang":"es","clues":{"Atracción":"synonym","Fuerza":"broader"}}
 {"id":"gravedad-cero","lang":"es","clues":{"Astronauta":"context","Espacio":"context"}}
 {"id":"graviton","lang":"es","clues":{"Partícula":"broader"}}
-{"id":"gravity","lang":"en","clues":{"Attraction":"synonym","Force":"broader"}}
 {"id":"greco-roman-wrestling","lang":"en","clues":{"Wrestling":"broader"}}
 {"id":"green-arrow","lang":"en","clues":{"Bow and Arrow":"part","Hero":"broader"}}
 {"id":"green-lantern","lang":"es","clues":{"Anillo de Poder":"part","Héroe del Espacio":"broader","Linterna Verde":"synonym"}}
 {"id":"green-lantern","lang":"en","clues":{"Hero":"broader","Power Ring":"part"}}
 {"id":"grenade","lang":"en","clues":{"Bomb":"broader","Explosive":"broader","Weapon":"broader"}}
-{"id":"grief","lang":"en","clues":{"Mourning":"synonym","Sadness":"broader"}}
-{"id":"griffin","lang":"en","clues":{"Creature":"broader","Eagle":"part","Lion":"part","Wings":"part"}}
 {"id":"grifo","lang":"es","clues":{"Alas":"part","Águila":"part","Criatura":"broader","León":"part"}}
 {"id":"grillo","lang":"es","clues":{"Antenas":"part","Chirrido":"part","Insecto":"broader"}}
 {"id":"gripe","lang":"es","clues":{"Enfermedad":"broader"}}
@@ -189,20 +144,15 @@
 {"id":"guerra-fria","lang":"es","clues":{"Conflicto":"broader"}}
 {"id":"guerra-mundial","lang":"es","clues":{"Conflicto":"broader"}}
 {"id":"guess","lang":"en","clues":{"Store":"broader"}}
-{"id":"guest","lang":"en","clues":{"Invited":"synonym","Person":"broader"}}
 {"id":"guggenheim-museum","lang":"en","clues":{"Museum":"broader"}}
-{"id":"guilt","lang":"en","clues":{"Feeling":"broader","Regret":"synonym"}}
 {"id":"guinea-pig","lang":"en","clues":{"Rodent":"broader"}}
 {"id":"guion","lang":"es","clues":{"Diálogo":"part","Texto":"broader"}}
 {"id":"guirnalda","lang":"es","clues":{"Decoración":"broader"}}
-{"id":"guitar","lang":"en","clues":{"Frets":"part","Strings":"part"}}
 {"id":"guitarra","lang":"es","clues":{"Cuerdas":"part","Trastes":"part"}}
-{"id":"gulf","lang":"en","clues":{"Bay":"synonym"}}
 {"id":"gullinbursti","lang":"en","clues":{"Boar":"broader"}}
 {"id":"gumbo","lang":"en","clues":{"Stew":"broader"}}
 {"id":"gun","lang":"en","clues":{"Firearm":"synonym","Weapon":"broader"}}
 {"id":"gustavo-petro","lang":"en","clues":{"President":"broader"}}
-{"id":"gynecologist","lang":"en","clues":{"Doctor":"broader"}}
 {"id":"gyoza","lang":"en","clues":{"Dumplings":"broader","Japan":"context"}}
 {"id":"h-m","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"h-m","lang":"en","clues":{"Store":"broader"}}
@@ -214,22 +164,17 @@
 {"id":"halfpipe-snowboarding","lang":"en","clues":{"Snowboard":"broader"}}
 {"id":"halogen-light","lang":"en","clues":{"Light Fixture":"broader"}}
 {"id":"halsey","lang":"es","clues":{"Cantante/Rapera":"broader"}}
-{"id":"hamburger","lang":"en","clues":{"Bun":"part","Fast Food":"broader"}}
 {"id":"hamburguesa","lang":"es","clues":{"Carne":"part","Pan":"part"}}
 {"id":"hamster","lang":"es","clues":{"Mascota":"broader"}}
 {"id":"hamster","lang":"en","clues":{"Pet":"broader"}}
-{"id":"handbag","lang":"en","clues":{"Accessory":"broader"}}
 {"id":"hansel-y-gretel","lang":"es","clues":{"Cuento de Hadas":"broader"}}
 {"id":"hanukkah","lang":"es","clues":{"Fiesta":"broader","Judío":"context","Menorá":"part","Velas":"part"}}
 {"id":"hanukkah","lang":"en","clues":{"Candles":"part","Festival":"broader"}}
 {"id":"hanuman","lang":"en","clues":{"Hinduism":"context","Monkey God":"broader"}}
-{"id":"happiness","lang":"en","clues":{"Joy":"synonym"}}
 {"id":"happy-hour","lang":"es","clues":{"Bar":"context"}}
 {"id":"happy-hour","lang":"en","clues":{"Bar":"context"}}
 {"id":"harambe","lang":"es","clues":{"Gorila":"broader"}}
 {"id":"harambe","lang":"en","clues":{"Gorilla":"broader"}}
-{"id":"harmonica","lang":"en","clues":{"Wind":"broader"}}
-{"id":"harp","lang":"en","clues":{"Strings":"part"}}
 {"id":"harrods","lang":"es","clues":{"Almacenes":"broader","Londres":"context"}}
 {"id":"harrods","lang":"en","clues":{"Department Store":"broader","London":"context"}}
 {"id":"harry-potter","lang":"es","clues":{"Cicatriz":"part","Escuela":"context","Gafas":"part","Varita":"part"}}
@@ -244,33 +189,24 @@
 {"id":"hawking-radiation","lang":"en","clues":{"Black Hole":"context"}}
 {"id":"hbo-max","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"hbo-max","lang":"en","clues":{"Streaming":"broader"}}
-{"id":"headlights","lang":"en","clues":{"Light":"broader"}}
-{"id":"heart","lang":"en","clues":{"Organ":"broader"}}
 {"id":"heater","lang":"en","clues":{"Appliance":"broader","Winter":"context"}}
 {"id":"hechizo","lang":"es","clues":{"Encantamiento":"synonym","Magia":"broader","Palabras":"part"}}
 {"id":"hedgehog","lang":"en","clues":{"Mammal":"broader","Spines":"part"}}
-{"id":"heels","lang":"en","clues":{"Shoes":"broader"}}
 {"id":"hefesto","lang":"es","clues":{"Dios del Fuego":"broader","Forja":"context"}}
 {"id":"heineken","lang":"es","clues":{"Bebida":"broader","Cerveza":"broader","Estrella":"part"}}
 {"id":"heineken","lang":"en","clues":{"Beer":"broader","Drink":"broader","Star":"part"}}
 {"id":"hel","lang":"en","clues":{"Goddess":"broader","Underworld":"context"}}
 {"id":"hela","lang":"en","clues":{"Goddess":"broader"}}
 {"id":"helado","lang":"es","clues":{"Cucurucho":"part"}}
-{"id":"helicopter","lang":"en","clues":{"Blades":"part"}}
 {"id":"helicoptero","lang":"es","clues":{"Hélices":"part"}}
 {"id":"helio","lang":"es","clues":{"Gas":"broader","Noble":"broader"}}
-{"id":"helium","lang":"en","clues":{"Gas":"broader","Noble":"broader"}}
 {"id":"hematologist","lang":"en","clues":{"Blood Doctor":"synonym","Doctor":"broader"}}
-{"id":"hephaestus","lang":"en","clues":{"Forge":"context","God":"broader"}}
-{"id":"heptathlon","lang":"en","clues":{"Seven Events":"part","Track and Field":"broader"}}
 {"id":"heptatlon","lang":"es","clues":{"Atletismo":"broader","Siete Pruebas":"part"}}
 {"id":"hera","lang":"en","clues":{"Goddess":"broader"}}
 {"id":"heracles","lang":"en","clues":{"Demigod":"broader","Hercules":"synonym","Hero":"broader"}}
-{"id":"herbivore","lang":"en","clues":{"Animal":"broader"}}
 {"id":"herbivoro","lang":"es","clues":{"Animal":"broader"}}
 {"id":"hercules","lang":"es","clues":{"Héroe":"broader","Semidiós":"broader"}}
 {"id":"hercules","lang":"en","clues":{"Demigod":"broader","Hero":"broader"}}
-{"id":"heritage","lang":"en","clues":{"Inheritance":"synonym"}}
 {"id":"hermes~mythology-and-fantasy","lang":"es","clues":{"Caduceo":"part","Dios Mensajero":"broader"}}
 {"id":"hermes~mythology-and-fantasy","lang":"en","clues":{"Caduceus":"part","God":"broader","Winged Sandals":"part"}}
 {"id":"hestia","lang":"es","clues":{"Diosa del Hogar":"broader"}}
@@ -279,27 +215,19 @@
 {"id":"hidrogeno","lang":"es","clues":{"Elemento":"broader","Gas":"broader"}}
 {"id":"hielo","lang":"es","clues":{"Congelado":"synonym"}}
 {"id":"hierba","lang":"es","clues":{"Césped":"synonym","Planta":"broader"}}
-{"id":"hieroglyphic","lang":"en","clues":{"Symbols":"broader","Writing":"broader"}}
-{"id":"hierro","lang":"es","clues":{"Metal":"broader"}}
-{"id":"higgs-boson","lang":"en","clues":{"Particle":"broader"}}
-{"id":"high-jump","lang":"en","clues":{"Bar":"part"}}
 {"id":"high-roller","lang":"en","clues":{"Casino":"context","Gambler":"synonym"}}
 {"id":"high-school","lang":"en","clues":{"Institute":"synonym"}}
 {"id":"high-speed-train","lang":"en","clues":{"Train":"broader"}}
 {"id":"highlighter","lang":"en","clues":{"Fluorescent":"part"}}
 {"id":"highway","lang":"en","clues":{"Road":"broader"}}
-{"id":"hiking","lang":"en","clues":{"Trail":"context","Walking":"synonym"}}
 {"id":"hiking-trail","lang":"en","clues":{"Trail":"synonym"}}
 {"id":"hildr","lang":"en","clues":{"Valkyrie":"broader"}}
 {"id":"hipertension","lang":"es","clues":{"Enfermedad":"broader","Presión Arterial Alta":"synonym","Tensión":"synonym"}}
 {"id":"hipica","lang":"es","clues":{"Jinete":"part"}}
 {"id":"hipnoterapia","lang":"es","clues":{"Hipnosis para Sanar":"synonym"}}
 {"id":"hipopotamo","lang":"es","clues":{"África":"context","Boca":"part","Río":"context"}}
-{"id":"hippo","lang":"en","clues":{"Africa":"context","Mouth":"part","River":"context"}}
 {"id":"historia","lang":"es","clues":{"Pasado":"synonym"}}
-{"id":"historical-monument","lang":"en","clues":{"Building":"broader"}}
 {"id":"historical-site","lang":"en","clues":{"Monument":"synonym","Site":"broader"}}
-{"id":"history","lang":"en","clues":{"Past":"synonym"}}
 {"id":"hitchhiking","lang":"en","clues":{"Thumbs up":"part"}}
 {"id":"ho-chi-minh","lang":"es","clues":{"Líder":"broader"}}
 {"id":"hockey","lang":"es","clues":{"Disco":"part","Hielo":"context","Portería":"part","Stick":"part"}}
@@ -307,15 +235,12 @@
 {"id":"hole-puncher","lang":"en","clues":{"Binder":"context","Tool":"broader"}}
 {"id":"hollister","lang":"en","clues":{"Store":"broader"}}
 {"id":"holocausto","lang":"es","clues":{"Genocidio":"broader"}}
-{"id":"holy-week","lang":"en","clues":{"Procession":"part"}}
 {"id":"hombre-lobo","lang":"es","clues":{"Luna Llena":"context"}}
 {"id":"homburg-hat","lang":"en","clues":{"Formal Hat":"broader"}}
 {"id":"homeopatia","lang":"es","clues":{"Medicina Alternativa":"broader"}}
 {"id":"homework","lang":"en","clues":{"Assignment":"synonym"}}
 {"id":"honduras","lang":"es","clues":{"País":"broader"}}
 {"id":"honestidad","lang":"es","clues":{"Sinceridad":"synonym","Valor":"broader"}}
-{"id":"honesty","lang":"en","clues":{"Sincerity":"synonym","Value":"broader"}}
-{"id":"honey","lang":"en","clues":{"Bee":"context","Hive":"context"}}
 {"id":"hongo","lang":"es","clues":{"Esporas":"part","Seta":"synonym"}}
 {"id":"honor","lang":"es","clues":{"Dignidad":"synonym"}}
 {"id":"honor","lang":"en","clues":{"Dignity":"synonym"}}

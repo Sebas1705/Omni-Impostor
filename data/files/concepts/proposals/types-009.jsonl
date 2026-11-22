@@ -1,58 +1,40 @@
 {"id":"montana","lang":"es","clues":{"Elevación":"broader","Cumbre":"part","Pico":"part","Escalar":"context"}}
 {"id":"monte-everest","lang":"es","clues":{"Montaña":"broader","Cima":"part","Himalaya":"context"}}
-{"id":"moon","lang":"en","clues":{"Satellite":"broader","Phases":"part"}}
 {"id":"moon-jae-in","lang":"en","clues":{"President":"broader"}}
 {"id":"moonshine","lang":"en","clues":{"Spirit":"broader","Alcohol":"broader"}}
-{"id":"moose","lang":"en","clues":{"Antlers":"part","Horns":"part"}}
 {"id":"mop","lang":"en","clues":{"Floor":"context","Clean":"context"}}
 {"id":"moped","lang":"en","clues":{"Motorized Bicycle":"synonym","Small Engine":"part"}}
 {"id":"moral","lang":"es","clues":{"Ética":"synonym"}}
 {"id":"morality","lang":"en","clues":{"Ethics":"synonym"}}
 {"id":"mortal-kombat","lang":"es","clues":{"Lucha":"broader","Fatalidad":"part"}}
 {"id":"mortal-kombat","lang":"en","clues":{"Fighting":"broader","Fatality":"part"}}
-{"id":"mortar","lang":"en","clues":{"Crush":"context","Kitchen":"context"}}
 {"id":"mortero","lang":"es","clues":{"Machacar":"context","Cocina":"context"}}
 {"id":"mortification","lang":"en","clues":{"Embarrassment":"synonym","Humiliation":"synonym","Shame":"synonym","Feeling":"broader"}}
 {"id":"mosaic","lang":"en","clues":{"Tiles":"part","Art":"broader"}}
-{"id":"moscow","lang":"en","clues":{"Kremlin":"part","Red Square":"part","Russia":"context"}}
 {"id":"moscow-mule","lang":"en","clues":{"Cocktail":"broader","Copper Mug":"part","Ginger Beer":"part","Vodka":"part","Lime":"part"}}
 {"id":"moscu","lang":"es","clues":{"Kremlin":"part","Plaza Roja":"part","Rusia":"context"}}
-{"id":"mother-teresa","lang":"en","clues":{"Nun":"broader","Saint":"broader","Missionary":"broader"}}
 {"id":"motion-sensor-light","lang":"en","clues":{"Light Fixture":"broader","Motion Activated":"part","Security":"context"}}
 {"id":"motocicleta","lang":"es","clues":{"Motor":"part","Dos Ruedas":"part"}}
 {"id":"motor","lang":"es","clues":{"Pistón":"part","Cilindros":"part"}}
 {"id":"motorcycle","lang":"en","clues":{"Motor":"part","Two Wheels":"part"}}
-{"id":"mount-everest","lang":"en","clues":{"Mountain":"broader","Peak":"part","Himalaya":"context"}}
 {"id":"mount-rushmore","lang":"en","clues":{"Presidents":"part","South Dakota":"context"}}
-{"id":"mountain","lang":"en","clues":{"Peak":"part","Summit":"part","Elevation":"broader","Climb":"context"}}
-{"id":"mountain-range","lang":"en","clues":{"Chain":"synonym","Sierra":"synonym","Peaks":"part","Mountains":"part"}}
 {"id":"mountain-retreat","lang":"en","clues":{"Retreat":"broader","Mountain":"part"}}
-{"id":"mouse","lang":"en","clues":{"Peripheral":"broader","Computer":"context"}}
-{"id":"mouse-pad","lang":"en","clues":{"Mouse":"context"}}
 {"id":"mozambique","lang":"es","clues":{"País":"broader","Maputo":"part"}}
 {"id":"muay-thai","lang":"en","clues":{"Elbows":"part","Knees":"part","Fight":"broader","Ring":"context"}}
-{"id":"mug","lang":"en","clues":{"Handle":"part"}}
-{"id":"multiverse~nature-and-weather","lang":"en","clues":{"Universe":"broader"}}
 {"id":"multiverso~nature-and-weather","lang":"es","clues":{"Universos paralelos":"synonym","Realidades alternativas":"synonym","Universo":"broader"}}
-{"id":"mummy","lang":"en","clues":{"Bandages":"part","Tomb":"context","Egypt":"context"}}
 {"id":"muralla-china","lang":"es","clues":{"Piedra":"part","China":"context"}}
 {"id":"murallas-de-avila","lang":"es","clues":{"Murallas":"synonym","Ávila":"context"}}
 {"id":"murcielago","lang":"es","clues":{"Alas":"part","Cueva":"context"}}
-{"id":"muscle","lang":"en","clues":{"Fiber":"part"}}
 {"id":"musculo","lang":"es","clues":{"Fibra":"part"}}
 {"id":"museo","lang":"es","clues":{"Galería":"synonym","Exposición":"part","Cuadros":"part"}}
 {"id":"museo-del-louvre","lang":"es","clues":{"Museo":"broader","París":"context","Mona Lisa":"part","Francia":"context"}}
-{"id":"museum","lang":"en","clues":{"Gallery":"synonym","Exhibition":"part","Paintings":"part"}}
 {"id":"muspelheim","lang":"en","clues":{"Fire":"part","Norse":"context"}}
-{"id":"mutual-fund","lang":"en","clues":{"Investment Pool.":"synonym"}}
 {"id":"myke-towers","lang":"es","clues":{"Rapero de Trap/Reggaeton":"broader"}}
 {"id":"myth","lang":"en","clues":{"Story":"broader"}}
-{"id":"mythology","lang":"en","clues":{"Myth":"part"}}
 {"id":"nachos","lang":"en","clues":{"Tortilla Chips":"part","Cheese Sauce":"part","Jalapenos":"part","Appetizer":"broader"}}
 {"id":"nadador","lang":"es","clues":{"Natación":"context","Piscina":"context"}}
 {"id":"nami","lang":"es","clues":{"Navegante":"broader","Pirata":"broader","One Piece":"context"}}
 {"id":"nami","lang":"en","clues":{"Navigator":"broader","One Piece":"context","Straw Hat Crew":"context"}}
-{"id":"nanotechnology","lang":"en","clues":{"Technology":"broader"}}
 {"id":"nanotecnologia","lang":"es","clues":{"Tecnología":"broader"}}
 {"id":"napoleon-bonaparte","lang":"es","clues":{"Emperador":"broader","General":"broader","Francia":"context"}}
 {"id":"napoleon-bonaparte","lang":"en","clues":{"Emperor":"broader","France":"context"}}
@@ -65,10 +47,7 @@
 {"id":"nave-espacial","lang":"es","clues":{"Vehículo":"broader","Espacio":"context","Astronauta":"context"}}
 {"id":"navegante","lang":"es","clues":{"Barco":"context","Mar":"context"}}
 {"id":"navidad","lang":"es","clues":{"Diciembre":"context"}}
-{"id":"navigator","lang":"en","clues":{"Ship":"context","Sea":"context"}}
-{"id":"nebula","lang":"en","clues":{"Gas":"part","Dust":"part"}}
 {"id":"nebulosa","lang":"es","clues":{"Gas":"part","Polvo":"part","Espacio":"context"}}
-{"id":"necklace","lang":"en","clues":{"Jewelry":"broader","Accessory":"broader","Chain":"part","Pearls":"part","Neck":"context"}}
 {"id":"negroni","lang":"es","clues":{"Cóctel Italiano":"broader","Campari":"part","Ginebra":"part","Vermut Rojo":"part"}}
 {"id":"negroni","lang":"en","clues":{"Cocktail":"broader","Campari":"part","Vermouth":"part","Gin":"part","Italy":"context"}}
 {"id":"nelson-mandela","lang":"en","clues":{"President":"broader"}}
@@ -76,26 +55,18 @@
 {"id":"neon","lang":"es","clues":{"Gas":"broader","Noble":"broader","Luz":"context","Cartel":"context"}}
 {"id":"neon","lang":"en","clues":{"Gas":"broader","Noble":"broader","Light":"context","Sign":"context"}}
 {"id":"nephrologist","lang":"en","clues":{"Kidney Doctor":"synonym","Doctor":"broader","Kidneys":"context","Hospital":"context"}}
-{"id":"neptune","lang":"en","clues":{"Planet":"broader"}}
 {"id":"neptuno","lang":"es","clues":{"Planeta":"broader"}}
 {"id":"neron","lang":"es","clues":{"Emperador":"broader","Roma":"context"}}
-{"id":"nervous-system","lang":"en","clues":{"Nerves":"part","Brain":"part","Impulses":"part"}}
 {"id":"nestle","lang":"es","clues":{"Alimentos":"broader"}}
 {"id":"netflix","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"netflix","lang":"en","clues":{"Streaming":"broader"}}
 {"id":"neumologo","lang":"es","clues":{"Pulmones":"context"}}
-{"id":"neurologist","lang":"en","clues":{"Brain Doctor":"synonym","Doctor":"broader","Brain":"context","Hospital":"context"}}
 {"id":"neurologo","lang":"es","clues":{"Sistema Nervioso":"context","Cerebro":"context"}}
-{"id":"neuron","lang":"en","clues":{"Cell":"broader"}}
 {"id":"neurona","lang":"es","clues":{"Célula":"broader"}}
-{"id":"neuroscience","lang":"en","clues":{"Science":"broader"}}
 {"id":"neutron","lang":"es","clues":{"Núcleo":"context","Átomo":"context"}}
 {"id":"neutron","lang":"en","clues":{"Nucleus":"context","Atom":"context"}}
 {"id":"nevera","lang":"es","clues":{"Electrodoméstico":"broader","Cocina":"context","Conservar":"context"}}
-{"id":"new-york","lang":"en","clues":{"Apple":"synonym","Manhattan":"part","Statue":"part","Liberty":"part"}}
 {"id":"new-zealand","lang":"en","clues":{"Wellington":"part"}}
-{"id":"newsboy-cap","lang":"en","clues":{"Flat Cap":"synonym","Tweed":"part","Round Crown":"part"}}
-{"id":"niagara-falls","lang":"en","clues":{"Canada":"context","USA":"context"}}
 {"id":"nicaragua","lang":"en","clues":{"Managua":"part"}}
 {"id":"nicky-jam","lang":"es","clues":{"Cantante de Reggaeton":"broader"}}
 {"id":"niebla","lang":"es","clues":{"Nube":"broader"}}
@@ -109,44 +80,31 @@
 {"id":"nirvana","lang":"en","clues":{"Band":"broader","Grunge":"broader"}}
 {"id":"nissan","lang":"es","clues":{"Coche":"broader","Japón":"context"}}
 {"id":"nissan","lang":"en","clues":{"Car":"broader","Japan":"context"}}
-{"id":"nitrogen","lang":"en","clues":{"Gas":"broader","Air":"context","Atmosphere":"context"}}
 {"id":"nitrogeno","lang":"es","clues":{"Gas":"broader","Aire":"context","Atmósfera":"context"}}
 {"id":"njord","lang":"en","clues":{"God":"broader","Norse":"context","Sea":"context","Wind":"context"}}
-{"id":"noble-gas","lang":"en","clues":{"Inert":"part"}}
-{"id":"non-fiction","lang":"en","clues":{"Book":"broader"}}
 {"id":"nordic-combined","lang":"en","clues":{"Cross Country Skiing":"part","Ski Jumping":"part"}}
 {"id":"north-korea","lang":"en","clues":{"Pyongyang":"part"}}
-{"id":"north-pole","lang":"en","clues":{"Arctic":"context"}}
 {"id":"norway","lang":"en","clues":{"Oslo":"part"}}
-{"id":"notebook","lang":"en","clues":{"Pages":"part","Sheets":"part","Spiral":"part","Paper":"part"}}
 {"id":"notre-dame","lang":"en","clues":{"Cathedral":"broader","Paris":"context","France":"context"}}
 {"id":"notre-dame-cathedral","lang":"en","clues":{"Cathedral":"broader","Paris":"context","France":"context"}}
-{"id":"novel","lang":"en","clues":{"Book":"broader","Chapters":"part","Fiction":"broader"}}
 {"id":"novela","lang":"es","clues":{"Libro":"broader","Capítulos":"part","Ficción":"broader"}}
 {"id":"nube~nature-and-weather","lang":"es","clues":{"Cielo":"context","Lluvia":"context"}}
-{"id":"nuclear-fission","lang":"en","clues":{"Split":"synonym","Uranium":"context"}}
-{"id":"nuclear-fusion","lang":"en","clues":{"Union":"synonym","Sun":"context"}}
 {"id":"nueva-york","lang":"es","clues":{"Manzana":"synonym","Manhattan":"part","Estatua":"part","Libertad":"part"}}
 {"id":"nuggets","lang":"es","clues":{"Pollo":"part","Frito":"part"}}
 {"id":"nuggets","lang":"en","clues":{"Chicken":"part","Fried":"part"}}
 {"id":"nunchaku","lang":"en","clues":{"Weapon":"broader","Two Sticks":"part","Chain":"part","Martial Arts":"context"}}
-{"id":"nurse","lang":"en","clues":{"Hospital":"context"}}
 {"id":"nyan-cat","lang":"es","clues":{"Gato":"broader","Arcoíris":"part","Píxel":"part"}}
 {"id":"nyan-cat","lang":"en","clues":{"Cat":"broader","Rainbow":"part","Pixel":"part"}}
 {"id":"oasis","lang":"es","clues":{"Desierto":"context","Palmeras":"part"}}
 {"id":"oasis","lang":"en","clues":{"Desert":"context","Palms":"part"}}
 {"id":"observatorio","lang":"es","clues":{"Telescopio":"part","Cielo":"context"}}
-{"id":"observatory","lang":"en","clues":{"Telescope":"part","Sky":"context"}}
 {"id":"obstetra","lang":"es","clues":{"Parto":"context","Embarazo":"context"}}
-{"id":"ocean","lang":"en","clues":{"Salty":"part"}}
 {"id":"ocean-trench","lang":"en","clues":{"Ocean":"context","Deep":"part"}}
 {"id":"oceano","lang":"es","clues":{"Salada":"part","Salado":"part"}}
-{"id":"oceanografo","lang":"es","clues":{"Océano":"context","Mar":"context","Ciencia":"broader"}}
-{"id":"octopus","lang":"en","clues":{"Tentacles":"part","Suckers":"part","Ink":"part","Ocean":"context"}}
+{"id":"oceanografo","lang":"es","clues":{"Océano":"context","Mar":"context"}}
 {"id":"odin","lang":"es","clues":{"Dios":"broader","Nórdico":"context"}}
 {"id":"odin","lang":"en","clues":{"God":"broader","Norse":"context"}}
 {"id":"oftalmologo","lang":"es","clues":{"Ojos":"context"}}
-{"id":"oil-dispenser","lang":"en","clues":{"Oil":"context","Kitchen":"context"}}
 {"id":"okonomiyaki","lang":"en","clues":{"Savory Pancake":"broader","Japan":"context"}}
 {"id":"oktoberfest~culture-and-traditions","lang":"es","clues":{"Festival":"broader","Múnich":"context","Alemania":"context"}}
 {"id":"oktoberfest~holidays-and-celebrations","lang":"en","clues":{"Festival":"broader","Germany":"context"}}
@@ -155,69 +113,49 @@
 {"id":"olimpo","lang":"es","clues":{"Montaña":"broader","Dioses":"context","Grecia":"context"}}
 {"id":"olivia-rodrigo","lang":"es","clues":{"Cantante/Actriz":"broader"}}
 {"id":"olla","lang":"es","clues":{"Tapa":"part","Cocinar":"context","Hervir":"context"}}
-{"id":"olympus","lang":"en","clues":{"Mountain":"broader","Gods":"context","Greece":"context"}}
-{"id":"omelette","lang":"en","clues":{"Egg":"part","Pan":"context"}}
-{"id":"omnivore","lang":"en","clues":{"Everything":"part"}}
 {"id":"omnivoro","lang":"es","clues":{"Todo":"part"}}
 {"id":"omurice","lang":"en","clues":{"Omelette Rice":"synonym","Japan":"context"}}
-{"id":"oncologist","lang":"en","clues":{"Cancer Specialist":"synonym","Doctor":"broader","Cancer":"context","Hospital":"context"}}
 {"id":"oncologo","lang":"es","clues":{"Cáncer":"context","Tratamiento":"context"}}
 {"id":"onigiri","lang":"en","clues":{"Rice Ball":"synonym","Seaweed Wrap":"part","Japan":"context"}}
 {"id":"online-course-platform","lang":"en","clues":{"Platform":"broader"}}
 {"id":"online-discussion-forum","lang":"en","clues":{"Forum":"synonym"}}
 {"id":"online-learning-platform","lang":"en","clues":{"Platform":"broader"}}
 {"id":"onomatopeya","lang":"es","clues":{"Cómic":"context"}}
-{"id":"onomatopoeia","lang":"en","clues":{"Comic":"context"}}
 {"id":"opera","lang":"es","clues":{"Teatro":"context","Escenario":"context"}}
 {"id":"opera","lang":"en","clues":{"Theater":"context","Stage":"context"}}
-{"id":"operating-room","lang":"en","clues":{"Surgery":"context","Hospital":"context","Lights":"part"}}
-{"id":"operating-system","lang":"en","clues":{"Software":"broader"}}
-{"id":"optimism","lang":"en","clues":{"Hopeful":"synonym","Hope":"synonym","Positive":"synonym"}}
 {"id":"optimismo","lang":"es","clues":{"Esperanza":"synonym","Positivo":"synonym"}}
 {"id":"oral","lang":"es","clues":{"Sexo":"broader"}}
-{"id":"oral-tradition","lang":"en","clues":{"Spoken":"part"}}
-{"id":"orbit","lang":"en","clues":{"Path":"synonym","Satellite":"context","Planet":"context"}}
 {"id":"orbita","lang":"es","clues":{"Camino":"synonym","Satélite":"context","Planeta":"context"}}
 {"id":"orbita-geosincronica","lang":"es","clues":{"Satélite":"context"}}
-{"id":"orc","lang":"en","clues":{"Monster":"broader","Green":"part"}}
 {"id":"orca","lang":"es","clues":{"Ballena":"broader","Océano":"context","Blanco":"part","Negro":"part"}}
 {"id":"orca","lang":"en","clues":{"Whale":"broader","Ocean":"context","Black":"part","White":"part"}}
 {"id":"orco","lang":"es","clues":{"Monstruo":"broader"}}
 {"id":"ordenador","lang":"es","clues":{"Pantalla":"part","Teclado":"part","Procesador":"part"}}
-{"id":"organ~music","lang":"en","clues":{"Pipes":"part","Pedals":"part","Keyboard":"part","Church":"context"}}
 {"id":"organ~science-biology","lang":"en","clues":{"Tissue":"part"}}
 {"id":"organic-chemistry","lang":"en","clues":{"Chemistry":"broader","Carbon Compounds":"part"}}
 {"id":"organo~music","lang":"es","clues":{"Tubos":"part","Pedales":"part","Teclado":"part","Iglesia":"context"}}
 {"id":"organo~science-biology","lang":"es","clues":{"Tejido":"part"}}
-{"id":"orgasm","lang":"en","clues":{"Climax":"synonym"}}
 {"id":"orgasmo","lang":"es","clues":{"Culminación":"synonym"}}
 {"id":"orienteering","lang":"en","clues":{"Compass":"part","Map":"part","Forest":"context"}}
 {"id":"origen","lang":"es","clues":{"Principio":"synonym"}}
-{"id":"origin","lang":"en","clues":{"Beginning":"synonym"}}
 {"id":"oro","lang":"es","clues":{"Metal":"broader","Joyas":"context"}}
 {"id":"orpheus","lang":"en","clues":{"Lyre":"part","Underworld":"context","Music":"context"}}
-{"id":"orthopedist","lang":"en","clues":{"Bone Doctor":"synonym","Doctor":"broader","Bones":"context","Hospital":"context"}}
 {"id":"oscars","lang":"es","clues":{"Premio":"broader","Estatua":"part","Alfombra":"part","Cine":"context"}}
 {"id":"oscars","lang":"en","clues":{"Award":"broader","Statue":"part","Carpet":"part","Cinema":"context"}}
 {"id":"oso","lang":"es","clues":{"Pelaje":"part","Garra":"part","Cueva":"context","Hibernar":"context"}}
 {"id":"osteoporosis","lang":"es","clues":{"Enfermedad Ósea":"broader","Huesos Frágiles":"part"}}
-{"id":"ostrich","lang":"en","clues":{"Feathers":"part","Neck":"part"}}
 {"id":"otono","lang":"es","clues":{"Estación":"broader"}}
 {"id":"otorrinolaringologo","lang":"es","clues":{"Oídos":"context"}}
 {"id":"outdoor-light","lang":"en","clues":{"Light Fixture":"broader"}}
 {"id":"outlook","lang":"es","clues":{"Correo":"broader","Email":"broader","Bandeja":"part"}}
 {"id":"outlook","lang":"en","clues":{"Email":"broader","Mail":"broader","Inbox":"part"}}
 {"id":"oveja","lang":"es","clues":{"Lana":"part","Rebaño":"context","Prado":"context"}}
-{"id":"oven","lang":"en","clues":{"Bake":"context","Cook":"context","Kitchen":"context"}}
 {"id":"oven-mitt","lang":"en","clues":{"Glove":"broader","Heat":"context","Protect":"context","Kitchen":"context"}}
 {"id":"overalls","lang":"es","clues":{"Pantalones con Petos":"synonym","Ropa":"broader","Denim":"part"}}
 {"id":"overalls","lang":"en","clues":{"Pants with Bib":"synonym","Clothing":"broader","Denim":"part"}}
-{"id":"owl","lang":"en","clues":{"Feathers":"part","Eyes":"part","Night":"context"}}
 {"id":"oxidacion","lang":"es","clues":{"Reacción":"broader"}}
-{"id":"oxidation","lang":"en","clues":{"Reaction":"broader"}}
 {"id":"oxigeno","lang":"es","clues":{"Gas":"broader","Elemento":"broader","Respirar":"context","Aire":"context"}}
 {"id":"oxiuro","lang":"es","clues":{"Gusano":"broader","Parásito":"broader","Intestino":"context"}}
-{"id":"oxygen","lang":"en","clues":{"Gas":"broader","Element":"broader","Breathe":"context","Air":"context"}}
 {"id":"ozuna","lang":"es","clues":{"Cantante de Reggaeton/Trap":"broader"}}
 {"id":"pablo-alboran","lang":"es","clues":{"Cantante de Pop/Rock":"broader"}}
 {"id":"paciencia","lang":"es","clues":{"Calma":"synonym","Serenidad":"synonym","Tranquilo":"synonym"}}
@@ -225,22 +163,13 @@
 {"id":"padel","lang":"es","clues":{"Pala":"part","Red":"part","Muro":"part","Cristal":"part"}}
 {"id":"padel","lang":"en","clues":{"Paddle":"part","Net":"part","Wall":"part","Glass":"part"}}
 {"id":"paella","lang":"es","clues":{"Arroz":"part","Azafrán":"part","Marisco":"part","Sartén":"context","España":"context"}}
-{"id":"paella","lang":"en","clues":{"Rice":"part","Saffron":"part","Seafood":"part","Pan":"context","Spain":"context"}}
-{"id":"paintbrush","lang":"en","clues":{"Bristles":"part","Tool":"broader","Paint":"context"}}
-{"id":"painter","lang":"en","clues":{"Brush":"context","Canvas":"context","Painting":"context"}}
-{"id":"painting~art-and-design","lang":"en","clues":{"Picture":"synonym","Canvas":"part","Museum":"context"}}
-{"id":"painting~home-and-furniture","lang":"en","clues":{"Frame":"part","Wall":"context"}}
+{"id":"paella","lang":"en","clues":{"Rice":"part","Saffron":"part","Seafood":"part","Spain":"context"}}
 {"id":"paisaje","lang":"es","clues":{"Vista":"synonym"}}
-{"id":"pajamas","lang":"en","clues":{"Clothing":"broader","Sleep":"context","Bed":"context","Night":"context"}}
 {"id":"pajaro","lang":"es","clues":{"Pico":"part","Plumas":"part","Nido":"context"}}
 {"id":"palacio-de-versalles","lang":"es","clues":{"Jardines":"part","Espejos":"part","Reyes":"context","Francia":"context"}}
-{"id":"paleontologia","lang":"es","clues":{"Ciencia":"broader"}}
-{"id":"paleontology","lang":"en","clues":{"Science":"broader"}}
 {"id":"paleta","lang":"es","clues":{"Mezclar":"context","Pintor":"context"}}
-{"id":"palette","lang":"en","clues":{"Mix":"context","Painter":"context"}}
 {"id":"palomitas","lang":"es","clues":{"Maíz":"part","Cine":"context"}}
 {"id":"pan~food-and-drinks","lang":"es","clues":{"Harina":"part","Trigo":"part","Horno":"context"}}
-{"id":"pan~home-and-furniture","lang":"en","clues":{"Kitchen":"context","Cook":"context"}}
 {"id":"panadero","lang":"es","clues":{"Pan":"context","Harina":"part","Horno":"context"}}
 {"id":"panama","lang":"en","clues":{"Canal":"part","Isthmus":"broader"}}
 {"id":"panama-hat","lang":"en","clues":{"Straw Hat":"broader","Wide Brim":"part"}}
@@ -248,11 +177,8 @@
 {"id":"panda","lang":"es","clues":{"Oso":"broader","Bambú":"context","China":"context","Blanco":"part","Negro":"part"}}
 {"id":"panda","lang":"en","clues":{"Bear":"broader","Bamboo":"context","China":"context","Black":"part","White":"part"}}
 {"id":"pandemia","lang":"es","clues":{"Epidemia Global":"synonym","Contagio Masivo":"synonym","Virus":"context"}}
-{"id":"pandemic","lang":"en","clues":{"Disease":"broader","Global":"part"}}
 {"id":"pandereta","lang":"es","clues":{"Cascabeles":"part","Parche":"part"}}
-{"id":"panel","lang":"en","clues":{"Comic":"context","Page":"context","Square":"part"}}
 {"id":"panel-light","lang":"en","clues":{"Light Fixture":"broader","Flat":"part"}}
-{"id":"panic","lang":"en","clues":{"Terror":"synonym","Fear":"broader"}}
 {"id":"panico","lang":"es","clues":{"Terror":"synonym","Miedo":"broader"}}
 {"id":"panini-press","lang":"en","clues":{"Grill":"broader","Sandwich":"context"}}
 {"id":"pano","lang":"es","clues":{"Secar":"context","Limpiar":"context","Cocina":"context"}}
@@ -261,33 +187,23 @@
 {"id":"pantalones","lang":"es","clues":{"Ropa":"broader","Bolsillos":"part","Cinturón":"part","Piernas":"context"}}
 {"id":"pantalones-cortos","lang":"es","clues":{"Ropa":"broader","Cintura":"part","Verano":"context"}}
 {"id":"pantheon","lang":"en","clues":{"Temple":"broader","Dome":"part","Rome":"context","Italy":"context"}}
-{"id":"pants","lang":"en","clues":{"Clothing":"broader","Pockets":"part","Belt":"part","Legs":"context"}}
 {"id":"panuelo","lang":"es","clues":{"Accesorio":"broader","Tela":"part","Cuello":"context","Cabeza":"context"}}
 {"id":"papel","lang":"es","clues":{"Escribir":"context"}}
 {"id":"papelera","lang":"es","clues":{"Cesto":"synonym","Basura":"context","Tirar":"context"}}
 {"id":"paper-sheet","lang":"en","clues":{"Sheet":"synonym","Write":"context","Print":"context"}}
 {"id":"paper-shredder","lang":"en","clues":{"Machine":"broader","Destroy":"context","Secrets":"context"}}
-{"id":"paperclip","lang":"en","clues":{"Hold":"context","Metal":"part","Paper":"context"}}
 {"id":"paperweight","lang":"en","clues":{"Hold":"context","Paper":"context","Desk":"context"}}
 {"id":"papiro","lang":"es","clues":{"Planta":"part","Egipto":"context","Papel":"broader","Escribir":"context"}}
-{"id":"papyrus","lang":"en","clues":{"Plant":"part","Egypt":"context","Paper":"broader","Write":"context"}}
 {"id":"parable","lang":"en","clues":{"Short Story":"broader","Lesson":"part","Moral":"part"}}
 {"id":"parabrisas","lang":"es","clues":{"Cristal":"part","Coche":"context","Limpiar":"context","Delantero":"part"}}
-{"id":"parade","lang":"en","clues":{"Street":"context","Floats":"part"}}
 {"id":"paradoja","lang":"es","clues":{"Contradicción":"synonym"}}
-{"id":"paradox","lang":"en","clues":{"Contradiction":"synonym"}}
 {"id":"paraguas","lang":"es","clues":{"Accesorio":"broader","Lluvia":"context"}}
 {"id":"paraguay","lang":"es","clues":{"Asunción":"part","País":"broader"}}
 {"id":"paraguay","lang":"en","clues":{"Asunción":"part"}}
 {"id":"paralelo","lang":"es","clues":{"Línea":"broader","Latitud":"context"}}
-{"id":"parallel","lang":"en","clues":{"Line":"broader","Latitude":"context"}}
 {"id":"parallel-universe","lang":"en","clues":{"Alternate Reality":"synonym","Another Dimension":"synonym"}}
 {"id":"parallel-universe-travel","lang":"en","clues":{"Travel":"broader","Parallel Universe":"part","Science Fiction":"context"}}
 {"id":"paramedic","lang":"en","clues":{"Ambulance":"context","Emergency":"context","First Aid":"context"}}
-{"id":"parasite~movies-and-series","lang":"en","clues":{"Korea":"context"}}
-{"id":"parasite~science-biology","lang":"en","clues":{"Host":"context","Harm":"part"}}
-{"id":"parasito","lang":"es","clues":{"Huésped":"context"}}
-{"id":"parasitos","lang":"es","clues":{"Corea":"context"}}
 {"id":"parasol-de-jardin","lang":"es","clues":{"Sombra":"context","Sol":"context","Exterior":"context","Jardín":"context"}}
 {"id":"parchis","lang":"es","clues":{"Dados":"part","Meta":"part","Casa":"part","Colores":"part"}}
 {"id":"pared","lang":"es","clues":{"Ladrillo":"part","Casa":"context","Cuadro":"context","Pintura":"context"}}
@@ -296,11 +212,9 @@
 {"id":"parkinson","lang":"es","clues":{"Enfermedad Neurodegenerativa":"broader","Temblor":"part","Rigidez":"part","Dopamina":"part"}}
 {"id":"parkour","lang":"es","clues":{"Salto":"part","Obstáculos":"part","Ciudad":"context"}}
 {"id":"parlamento","lang":"es","clues":{"Congreso":"synonym","Cámara":"part","Leyes":"context"}}
-{"id":"parliament","lang":"en","clues":{"Congress":"synonym","Chamber":"part","Laws":"context"}}
 {"id":"parodia","lang":"es","clues":{"Imitación":"synonym","Literatura":"context"}}
 {"id":"parranda","lang":"es","clues":{"Fiesta":"synonym","Noche":"context"}}
 {"id":"partenon","lang":"es","clues":{"Templo":"broader","Atenas":"context","Grecia":"context","Acrópolis":"context","Columnas":"part"}}
-{"id":"parthenon","lang":"en","clues":{"Temple":"broader","Athens":"context","Greece":"context","Acropolis":"context","Columns":"part"}}
 {"id":"particle-accelerator","lang":"en","clues":{"CERN":"context"}}
 {"id":"partitura","lang":"es","clues":{"Pentagrama":"part","Notas":"part","Músico":"context"}}
 {"id":"pasaje","lang":"es","clues":{"Billete":"synonym","Viaje":"context"}}
@@ -309,15 +223,11 @@
 {"id":"pascal","lang":"es","clues":{"Unidad":"broader","Presión":"context","Física":"context"}}
 {"id":"pascal","lang":"en","clues":{"Unit":"broader","Pressure":"context","Physics":"context"}}
 {"id":"pasillo","lang":"es","clues":{"Habitaciones":"context","Conectar":"context"}}
-{"id":"passenger","lang":"en","clues":{"Person":"broader","Ticket":"context","Seat":"context"}}
-{"id":"passport","lang":"en","clues":{"Document":"broader","Border":"context","Customs":"context"}}
 {"id":"pasta","lang":"es","clues":{"Trigo":"part","Tenedor":"context"}}
 {"id":"pasta","lang":"en","clues":{"Wheat":"part","Fork":"context"}}
 {"id":"pasta-maker","lang":"en","clues":{"Roller":"part","Cutting Blades":"part","Pasta":"context"}}
 {"id":"pastel","lang":"es","clues":{"Velas":"part","Cumpleaños":"context","Celebración":"context"}}
 {"id":"pathologist","lang":"en","clues":{"Doctor":"broader","Disease":"context"}}
-{"id":"patience","lang":"en","clues":{"Calm":"synonym","Serenity":"synonym"}}
-{"id":"patient","lang":"en","clues":{"Sick":"synonym","Person":"broader","Hospital":"context","Checkup":"context"}}
 {"id":"patinaje","lang":"es","clues":{"Ruedas":"part","Cuchilla":"part","Hielo":"context"}}
 {"id":"patinete","lang":"es","clues":{"Ruedas":"part","Manillar":"part","Ciudad":"context"}}
 {"id":"patio","lang":"es","clues":{"Escuela":"context","Recreo":"context","Jugar":"context"}}
@@ -331,21 +241,15 @@
 {"id":"peace","lang":"en","clues":{"Harmony":"synonym","Tranquility":"synonym","War":"contrast"}}
 {"id":"peacoat","lang":"es","clues":{"Doble Botonadura":"part","Lana":"part"}}
 {"id":"peacoat","lang":"en","clues":{"Double-breasted":"part","Wool":"part"}}
-{"id":"peacock","lang":"en","clues":{"Feathers":"part","Tail":"part","Fan":"part"}}
 {"id":"peaje","lang":"es","clues":{"Pago":"synonym","Autopista":"context","Carretera":"context","Barrera":"part"}}
 {"id":"pedestrian-crossing","lang":"en","clues":{"Crosswalk":"synonym","Walkway":"synonym","Street Lights":"part"}}
 {"id":"pediatra","lang":"es","clues":{"Niños":"context"}}
-{"id":"pediatrician","lang":"en","clues":{"Child Doctor":"synonym","Doctor":"broader","Children":"context","Hospital":"context"}}
 {"id":"pedicab","lang":"en","clues":{"Passenger":"context"}}
 {"id":"pedro-sanchez","lang":"es","clues":{"Presidente del Gobierno":"broader"}}
 {"id":"peeler","lang":"en","clues":{"Skin":"context","Potatoes":"context","Vegetable":"context"}}
 {"id":"pegamento","lang":"es","clues":{"Adhesivo":"synonym","Pegar":"context","Unir":"context"}}
 {"id":"pegaso","lang":"es","clues":{"Caballo":"broader","Alas":"part","Volar":"context"}}
-{"id":"pegasus","lang":"en","clues":{"Winged Horse":"synonym","Horse":"broader","Wings":"part"}}
 {"id":"pelador","lang":"es","clues":{"Piel":"context","Patatas":"context"}}
 {"id":"pele","lang":"es","clues":{"Rey":"synonym","Fútbol":"context"}}
 {"id":"pele","lang":"en","clues":{"King":"synonym","Soccer":"context"}}
 {"id":"peluquero","lang":"es","clues":{"Tijeras":"part","Pelo":"context","Salón":"context"}}
-{"id":"pen","lang":"en","clues":{"Ink":"part","Write":"context"}}
-{"id":"pencil","lang":"en","clues":{"Graphite":"part","Eraser":"part","Wood":"part","Draw":"context","Write":"context"}}
-{"id":"pencil-case","lang":"en","clues":{"Zipper":"part","School":"context"}}

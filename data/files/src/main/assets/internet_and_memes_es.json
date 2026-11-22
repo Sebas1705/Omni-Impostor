@@ -1,6 +1,6 @@
 {
   "words": [
-    {"word":"Ancient Aliens","clues":["Extraterrestres","Manos","Pelo","Televisión","Historia"],"category":"internet_and_memes","conceptId":"ancient-aliens"},
+    {"word":"Ancient Aliens","clues":["Extraterrestres","Manos","Pelo","Televisión"],"category":"internet_and_memes","conceptId":"ancient-aliens"},
     {"word":"Baby Yoda","clues":["Orejas","Sopa","Star Wars","Tierno","Verde"],"category":"internet_and_memes","conceptId":"baby-yoda"},
     {"word":"Bad Luck Brian","clues":["Aparato","Chaleco","Meme","Pelirrojo","Suerte"],"category":"internet_and_memes","conceptId":"bad-luck-brian"},
     {"word":"Bernie Sanders Mittens","clues":["Frío","Guantes","Inauguración","Política","Silla"],"category":"internet_and_memes","conceptId":"bernie-sanders-mittens"},
@@ -19,7 +19,7 @@
     {"word":"Gigachad","clues":["Blanco y negro","Mandíbula","Modelo","Músculos","Perfecto"],"category":"internet_and_memes","conceptId":"gigachad"},
     {"word":"Grumpy Cat","clues":["Cara","Enfado","Famoso","Meme","Gato"],"category":"internet_and_memes","conceptId":"grumpy-cat"},
     {"word":"Harambe","clues":["Gorila","Homenaje","Tragedia","Zoológico","Internet"],"category":"internet_and_memes","conceptId":"harambe"},
-    {"word":"John Cena","clues":["Inesperado","Lucha","Música","Trompetas","Invisible"],"category":"internet_and_memes","conceptId":"john-cena"},
+    {"word":"John Cena","clues":["Inesperado","Invisible","Lucha","Música","Trompetas"],"category":"internet_and_memes","conceptId":"john-cena"},
     {"word":"Kappa","clues":["Cara","Chat","Gris","Sarcasmo","Twitch"],"category":"internet_and_memes","conceptId":"kappa"},
     {"word":"Karen","clues":["Estereotipo","Gerente","Gritos","Pelo","Queja"],"category":"internet_and_memes","conceptId":"karen"},
     {"word":"Kermit the Frog","clues":["Marioneta","Meme","Rana","Reflexión","Té"],"category":"internet_and_memes","conceptId":"kermit-the-frog"},
@@ -31,19 +31,21 @@
     {"word":"PogChamp","clues":["Boca","Emote","Gaming","Sorpresa","Twitch"],"category":"internet_and_memes","conceptId":"pogchamp"},
     {"word":"Rickroll","clues":["Baile","Bromas","Canción","Engaño","Enlace"],"category":"internet_and_memes","conceptId":"rickroll"},
     {"word":"Roll Safe","clues":["Dedo","Lógica","Pensar","Cerebro","Actor"],"category":"internet_and_memes","conceptId":"roll-safe"},
-    {"word":"Sad Keanu","clues":["Comida","Parque","Triste","Banco","Actor"],"category":"internet_and_memes","conceptId":"sad-keanu"},
+    {"word":"Sad Keanu","clues":["Comida","Parque","Triste","Actor","Banco"],"category":"internet_and_memes","conceptId":"sad-keanu"},
     {"word":"Shrek is love","clues":["Cultura","Extraño","Ogro","Verde","Internet"],"category":"internet_and_memes","conceptId":"shrek-is-love"},
     {"word":"Side Eye Chloe","clues":["Dientes","Duda","Mirada","Niña","Coche"],"category":"internet_and_memes","conceptId":"side-eye-chloe"},
     {"word":"Skibidi Toilet","clues":["Animación","Cabeza","Inodoro","Niños","Viral"],"category":"internet_and_memes","conceptId":"skibidi-toilet"},
-    {"word":"Spiderman Señalando","clues":["Copia","Dedo","Disfraz","Idéntico","Multiverso"],"category":"internet_and_memes","conceptId":"spiderman-senalando"},
+    {"word":"Spiderman Señalando","clues":["Copia","Dedo","Idéntico","Multiverso","Disfraz"],"category":"internet_and_memes","conceptId":"spiderman-senalando"},
     {"word":"SpongeBob Mocking","clues":["Bob","Burla","Pollo","Postura","Repetir"],"category":"internet_and_memes","conceptId":"spongebob-mocking"},
-    {"word":"Stinks","clues":["Flecha","Maniquí","Negocios","Economía","Inversión"],"category":"internet_and_memes","conceptId":"stinks"},
+    {"word":"Stinks","clues":["Flecha","Maniquí","Negocios","Inversión","Economía"],"category":"internet_and_memes","conceptId":"stinks"},
+    {"word":"Stonks","clues":["Economía","Flecha","Inversión","Maniquí","Negocios"],"category":"internet_and_memes","conceptId":"stonks"},
     {"word":"Success Kid","clues":["Bebé","Logro","Puño","Arena","Playa"],"category":"internet_and_memes","conceptId":"success-kid"},
     {"word":"Surprised Pikachu","clues":["Abierto","Boca","Obvio","Píxel","Sorpresa"],"category":"internet_and_memes","conceptId":"surprised-pikachu"},
     {"word":"Thinking Guy","clues":["Cabeza","Dedo","Idea","Lógica","Meme"],"category":"internet_and_memes","conceptId":"thinking-guy"},
     {"word":"This is Fine","clues":["Calma","Fuego","Taza","Cómic","Perro"],"category":"internet_and_memes","conceptId":"this-is-fine"},
     {"word":"Trollface","clues":["Blanco y Negro","Broma","Clásico","Sonrisa","Dibujo"],"category":"internet_and_memes","conceptId":"trollface"},
     {"word":"Vibe Check","clues":["Energía","Estado","Golpe","Prueba","Internet"],"category":"internet_and_memes","conceptId":"vibe-check"},
-    {"word":"Wojak","clues":["Calvo","Sentimientos","Triste","Dibujo","Internet"],"category":"internet_and_memes","conceptId":"wojak"}
+    {"word":"Wojak","clues":["Calvo","Sentimientos","Triste","Dibujo","Internet"],"category":"internet_and_memes","conceptId":"wojak"},
+    {"word":"Yee","clues":["Animación","Dinosaurio","Meme","Sonido","Viral"],"category":"internet_and_memes","conceptId":"yee"}
   ]
 }
