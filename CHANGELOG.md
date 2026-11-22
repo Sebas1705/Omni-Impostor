@@ -9,6 +9,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The bundled word lists are versioned (`words_version.txt`): when an update ships different lists, the app replaces the words stored on the device instead of keeping the old copy forever. An unreadable list never leaves the game without words. `node scripts/word-study/update-words-version.mjs` refreshes the version after editing a list.
 - A unit test (`WordAssetsValidationTest`) that checks the shape of the bundled word lists: at most 3 words per word, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a list.
 
+### Added (more Spanish words)
+- About 1,150 words that only existed in English are now also available in Spanish, and about 1,260 English synonyms were folded into the Spanish word they translate to (one word, one concept). Proper names are flagged as not translatable.
+
+### Fixed (database)
+- Replacing the stored words when the bundled lists change really deletes the old ones now (`deleteAll` and `deleteByParam` never purged anything).
+
 ### Added (clue quality)
 - The clue an impostor gets is now a weighted draw over the word's ranked clues (best ranked clues are likelier, every impostor still gets a different one) instead of always the first ones. Player ratings can feed the ranking: `scripts/words/ratings.mjs` imports the `clue_ratings` counters and `compile.mjs` lowers the weight of clues players dislike.
 

@@ -48,6 +48,7 @@ JSON Lines keeps diffs and review batches line based, like the current one-entry
 | `categories` | string[] | At least 1, each an existing category slug. A word belongs to every category where it fits; the first is the primary one. |
 | `hints` | map lang to hint[] | Plain-text clues that are not concepts (yet). Per language, because text is language specific. |
 | `kind` | `"thing"` (default) or `"topic"` | `topic` marks very general words (`Historia`, `Ciencia`, `Space`) that are labels of a topic more than things; they are valid targets of `broader` links but are reviewed before being a secret word. |
+| `translatable` | boolean, default `true` | `false` marks a proper name (Spiderman, The Beatles): a language without its own label uses the text of another one, so no translation is needed; a language may still carry an explicit label (`Los Beatles`). Hints are still per language. |
 | `todo` | string[] | Languages still missing while the concept is being completed, e.g. `["es"]` for a migrated English-only word. The release check fails if any concept has `todo`. |
 | `status` | `approved` (default) / `proposed` | `proposed` = written by the AI, not reviewed. |
 
@@ -159,7 +160,7 @@ merged), so the pick is uniform over concepts; `WordJson`, `WordDoc` and `WordMo
 ## 7. Validation (CI, extends `WordAssetsValidationTest`)
 
 On the source files: unique ids and id pattern; links reference existing concepts; no self or duplicate links; `es` label
-present unless `todo`; label and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
+present unless `todo` or `translatable: false`; label and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
 and are non-empty; weights 1 to 5; known link types; two concepts with the same label in a language must differ by a sense
 tag; every `(concept, language)` compiles to at least 3 clues at `normal`; `proposed` records are never compiled.
 Release check: no `todo`, and `words_version.txt` matches the compiled output. The existing validator keeps checking the
@@ -307,3 +308,24 @@ fallback to all clues when fewer than 3 would remain).
 - **Not built:** the optional "similar word" impostor mode (the impostor receives a related concept instead of a clue). It
   needs a product decision (rules, how to keep it fair, UI) more than data work; the map already has what it needs (links with
   type and weight).
+
+## 15. Spanish labels reviewed and applied
+
+The owner reviewed the Spanish label proposals together with the assistant and approved applying them, with these decisions:
+
+- English words that mean the same in Spanish are **one concept**: the first English word keeps the label, the others become
+  aliases of it and their clues are merged (equipaje = baggage + luggage; hamburguesa, fetiche, libertad, sartén, sirena,
+  chincheta, tranvía, velocidad, reloj, Gorra Gatsby, satisfacción). Words that only look alike stay separate with their own label
+  (spirit → Destilado, magician → Ilusionista, binder → Archivador, smoothie → Smoothie, the two learning platforms).
+- `translatable: false` for proper names (see section 2.1). Proposals whose Spanish text equals the English one set it
+  automatically; the label is then not stored twice.
+- Left English-only for now: `hat` (Spanish `Sombrero` already exists with its own English label) and the second
+  `Spiderman`. The typo `The Beetles` was folded into `The Beatles`.
+- Applying labels renames ids that became homonyms to `<id>~<first category>` (23 ids) and links follow.
+
+Result: 1,154 new Spanish concepts and 1,263 English words folded into existing Spanish ones, no concept left without Spanish
+except the two above. Spanish went from 3,144 to 4,407 words (3,989 concepts), English from 3,484 to 3,531 entries (3,125
+concepts). `proposals.mjs` gained `merge <from> <into>` and `prune`; the clue-type proposals were pruned of 1,909 typed clues
+that no longer exist (6,754 remain, still to be reviewed; the new Spanish concepts have no type proposals yet).
+Checked on the emulator: upgrade from the previous build re-imports 7,938 words and a Spanish game with all categories sees
+3,989 concepts.
