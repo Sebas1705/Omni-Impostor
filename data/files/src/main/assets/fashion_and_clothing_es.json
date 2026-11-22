@@ -3,8 +3,8 @@
     {"word":"Abrigo","clues":["Frío","Largo","Ropa","Lana","Invierno"],"category":"fashion_and_clothing","conceptId":"abrigo"},
     {"word":"Algodón","clues":["Camiseta","Material","Planta","Suave","Tela"],"category":"fashion_and_clothing","conceptId":"algodon"},
     {"word":"Anillo","clues":["Círculo","Dedo","Joyas","Mano","Oro"],"category":"fashion_and_clothing","conceptId":"anillo"},
-    {"word":"Bañador","clues":["Nadar","Piscina","Playa","Verano"],"category":"fashion_and_clothing","conceptId":"banador"},
     {"word":"Bata de Laboratorio","clues":["Blanca","Científico","Manga Larga","Protección","Trabajo"],"category":"fashion_and_clothing","conceptId":"bata-de-laboratorio"},
+    {"word":"Bañador","clues":["Nadar","Piscina","Playa","Verano"],"category":"fashion_and_clothing","conceptId":"banador"},
     {"word":"Bikini","clues":["Dos Piezas","Mujer","Nadar","Playa","Verano"],"category":"fashion_and_clothing","conceptId":"bikini"},
     {"word":"Bolsillo","clues":["Guardar","Interior","Mano","Pantalón","Tela"],"category":"fashion_and_clothing","conceptId":"bolsillo"},
     {"word":"Bolso","clues":["Accesorio","Cosas","Llevar","Mano","Mujer"],"category":"fashion_and_clothing","conceptId":"bolso"},
@@ -51,8 +51,8 @@
     {"word":"Overalls","clues":["Casual","Denim","Pantalones con Petos","Ropa"],"category":"fashion_and_clothing","conceptId":"overalls"},
     {"word":"Pantalones","clues":["Bolsillos","Cinturón","Piernas","Ropa","Vaqueros"],"category":"fashion_and_clothing","conceptId":"pantalones"},
     {"word":"Pantalones Cortos","clues":["Cintura","Cortos","Piernas","Ropa","Verano"],"category":"fashion_and_clothing","conceptId":"pantalones-cortos"},
-    {"word":"Pañuelo","clues":["Accesorio","Cabeza","Cuello","Tela","Lana"],"category":"fashion_and_clothing","conceptId":"panuelo"},
     {"word":"Paraguas","clues":["Abierto","Accesorio","Mano","Lluvia"],"category":"fashion_and_clothing","conceptId":"paraguas"},
+    {"word":"Pañuelo","clues":["Accesorio","Cabeza","Cuello","Tela","Lana"],"category":"fashion_and_clothing","conceptId":"panuelo"},
     {"word":"Peacoat","clues":["Caliente","Doble Botonadura","Estilo Marino","Lana"],"category":"fashion_and_clothing","conceptId":"peacoat"},
     {"word":"Pendientes","clues":["Accesorio","Colgar","Joyas","Orejas","Par"],"category":"fashion_and_clothing","conceptId":"pendientes"},
     {"word":"Perfume","clues":["Cuerpo","Fragancia","Frasco","Olor","Pulverizar"],"category":"fashion_and_clothing","conceptId":"perfume"},
@@ -77,7 +77,7 @@
     {"word":"Uniforme","clues":["Identificar","Igual","Ropa","Trabajo","Escuela"],"category":"fashion_and_clothing","conceptId":"uniforme"},
     {"word":"Vaqueros","clues":["Azul","Denim","Pantalón","Resistente","Ropa"],"category":"fashion_and_clothing","conceptId":"vaqueros"},
     {"word":"Vestido","clues":["Elegante","Mujer","Ropa","Una Pieza","Fiesta"],"category":"fashion_and_clothing","conceptId":"vestido"},
-    {"word":"Zapatillas","clues":["Cómodo","Correr","Deporte","Goma","Pies"],"category":"fashion_and_clothing","conceptId":"zapatillas"},
+    {"word":"Zapatillas","clues":["Correr","Cómodo","Deporte","Goma","Pies"],"category":"fashion_and_clothing","conceptId":"zapatillas"},
     {"word":"Zapatos","clues":["Caminar","Cordones","Cuero","Pies","Suela"],"category":"fashion_and_clothing","conceptId":"zapatos"}
   ]
 }

@@ -19,7 +19,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
-import { LANGS, REVEAL, compileConcept, conceptsDir, indexMap, inDegrees, loadMap, norm, readJsonl, tokens } from './lib.mjs';
+import { LANGS, REVEAL, cmp, compileConcept, conceptsDir, indexMap, inDegrees, loadMap, norm, readJsonl, tokens } from './lib.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2);
 const TYPES = new Set(Object.keys(REVEAL));
@@ -205,7 +205,7 @@ function apply(files) {
       }
     }
   }
-  const sortedConcepts = map.concepts.filter((c) => !c.merged).sort((a, b) => a.id.localeCompare(b.id));
+  const sortedConcepts = map.concepts.filter((c) => !c.merged).sort((a, b) => cmp(a.id, b.id));
   writeFileSync(join(conceptsDir, 'concepts.jsonl'), jsonl(sortedConcepts));
   writeFileSync(join(conceptsDir, 'links.jsonl'), jsonl(links));
   files.forEach((f) => unlinkSync(f));

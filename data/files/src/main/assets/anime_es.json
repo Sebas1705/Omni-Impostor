@@ -40,7 +40,7 @@
     {"word":"Sword Art Online","clues":["Asuna","Aventura","Kirito","MMORPG","Realidad Virtual"],"category":"anime","conceptId":"sword-art-online"},
     {"word":"Tanjiro Kamado","clues":["Demon Slayer","Demonio","Espada Nichirin","Familia Asesinada","Respiración del Agua"],"category":"anime","conceptId":"tanjiro-kamado"},
     {"word":"The Promised Neverland","clues":["Emma","Escape","Norman","Orfanato","Ray"],"category":"anime","conceptId":"the-promised-neverland"},
-    {"word":"Tokyo Ghoul","clues":["Café Anteiku","Ghouls","Kaneki Ken","Máscara de Ghoul","Misterioso"],"category":"anime","conceptId":"tokyo-ghoul"},
+    {"word":"Tokyo Ghoul","clues":["Café Anteiku","Ghouls","Kaneki Ken","Misterioso","Máscara de Ghoul"],"category":"anime","conceptId":"tokyo-ghoul"},
     {"word":"Vegeta","clues":["Dragon Ball","Orgullo","Rival","Saiyan","Super"],"category":"anime","conceptId":"vegeta"},
     {"word":"Violet Evergarden","clues":["Aventura","Emociones","Violet","Cartas","Guerra"],"category":"anime","conceptId":"violet-evergarden"}
   ]

@@ -1,10 +1,10 @@
 {
   "words": [
     {"word":"Antepasados","clues":["Abuelos","Familia","Pasado","Raíces","Historia"],"category":"culture_and_traditions","conceptId":"antepasados"},
-    {"word":"Año Nuevo","clues":["Brindis","Calendario","Doce","Enero","Fuegos Artificiales","Uvas","Celebración","Tradición"],"category":"culture_and_traditions","conceptId":"ano-nuevo"},
-    {"word":"Año Nuevo Chino","clues":["Dragón","Lunar","Celebración","China","Tradición"],"category":"culture_and_traditions","conceptId":"ano-nuevo-chino"},
     {"word":"Arte Folklórico","clues":["Artesanía","Cultura","Hecho a mano","Pueblo","Tradicional"],"category":"culture_and_traditions","conceptId":"arte-folklorico"},
     {"word":"Artesanía","clues":["Arte","Hecho","Mano","Objeto","Tradicional"],"category":"culture_and_traditions","conceptId":"artesania"},
+    {"word":"Año Nuevo","clues":["Brindis","Calendario","Doce","Enero","Fuegos Artificiales","Uvas","Celebración","Tradición"],"category":"culture_and_traditions","conceptId":"ano-nuevo"},
+    {"word":"Año Nuevo Chino","clues":["Dragón","Lunar","Celebración","China","Tradición"],"category":"culture_and_traditions","conceptId":"ano-nuevo-chino"},
     {"word":"Carnaval","clues":["Desfile","Disfraz","Febrero","Música","Máscara","Tradición","Fiesta"],"category":"culture_and_traditions","conceptId":"carnaval"},
     {"word":"Ceremonia","clues":["Acto","Celebrar","Evento","Formal","Rito"],"category":"culture_and_traditions","conceptId":"ceremonia"},
     {"word":"Costumbre","clues":["Cultura","Hábito","Repetir","Social","Tradición"],"category":"culture_and_traditions","conceptId":"costumbre"},
@@ -26,7 +26,7 @@
     {"word":"Monumento Histórico","clues":["Cultura","Edificio","Famoso","Piedra","Historia"],"category":"culture_and_traditions","conceptId":"monumento-historico"},
     {"word":"Museo","clues":["Arte","Cuadros","Cultura","Exposición","Galería","Visita","Historia"],"category":"culture_and_traditions","conceptId":"museo"},
     {"word":"Música Folklórica","clues":["Canciones","Cultura","Instrumentos","Pueblo","Tradicional"],"category":"culture_and_traditions","conceptId":"musica-folklorica"},
-    {"word":"Navidad","clues":["Árbol","Diciembre","Familia","Papá Noel","Regalos","Tradición"],"category":"culture_and_traditions","conceptId":"navidad"},
+    {"word":"Navidad","clues":["Diciembre","Familia","Papá Noel","Regalos","Árbol","Tradición"],"category":"culture_and_traditions","conceptId":"navidad"},
     {"word":"Oktoberfest","clues":["Cerveza","Festival","Múnich","Alemania","Tradición"],"category":"culture_and_traditions","conceptId":"oktoberfest~culture-and-traditions"},
     {"word":"Pascua","clues":["Chocolate","Conejo","Cristiana","Domingo","Huevos","Primavera","Resurrección","Tradición"],"category":"culture_and_traditions","conceptId":"pascua"},
     {"word":"Patrimonio","clues":["Cultura","Herencia","Monumento","Valor","Historia"],"category":"culture_and_traditions","conceptId":"patrimonio"},

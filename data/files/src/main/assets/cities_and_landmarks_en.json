@@ -68,7 +68,7 @@
     {"word":"Taj Mahal","clues":["India","Marble","Tomb","White","Love"],"category":"cities_and_landmarks","conceptId":"taj-mahal"},
     {"word":"Times Square","clues":["Advertising","Broadway","Crowds","Lights","New York"],"category":"cities_and_landmarks","conceptId":"times-square"},
     {"word":"Tokyo","clues":["Anime","Capital","Neon","Technology","Japan"],"category":"cities_and_landmarks","conceptId":"tokyo"},
-    {"word":"Toronto","clues":["Canada","CN Tower","Cold","Lake","North"],"category":"cities_and_landmarks","conceptId":"toronto"},
+    {"word":"Toronto","clues":["CN Tower","Canada","Cold","Lake","North"],"category":"cities_and_landmarks","conceptId":"toronto"},
     {"word":"Venice","clues":["Bridge","Canals","Gondola","Italy"],"category":"cities_and_landmarks","conceptId":"venice"},
     {"word":"Versailles Palace","clues":["Gardens","Hall of Mirrors","Louis XIV","Royal","France"],"category":"cities_and_landmarks","conceptId":"versailles-palace"},
     {"word":"Vienna","clues":["Austria","Danube","Music","Opera","Waltz"],"category":"cities_and_landmarks","conceptId":"vienna"}

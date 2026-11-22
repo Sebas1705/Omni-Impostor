@@ -30,9 +30,33 @@ permissions:
   contents: read
 
 jobs:
+  # Chooses where the heavy Linux jobs run: the owner's PC (self-hosted runner, see Sebas1705/ci-runner) when its
+  # heartbeat variable is under 3 minutes old, otherwise a GitHub-hosted runner. Only push and workflow_dispatch
+  # events may use the PC: pull requests and every other event stay on GitHub-hosted runners.
+  pick-runner:
+    name: Pick the runner
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      runner: ${{ steps.pick.outputs.runner }}
+    steps:
+      - id: pick
+        env:
+          HEARTBEAT: ${{ vars.PC_RUNNER_HEARTBEAT }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          runner='"ubuntu-latest"'
+          if { [ "$EVENT" = push ] || [ "$EVENT" = workflow_dispatch ]; } && [ -n "${HEARTBEAT:-}" ]; then
+            age=$(( $(date +%s) - HEARTBEAT ))
+            if [ "$age" -ge 0 ] && [ "$age" -lt 180 ]; then runner='["self-hosted","pc"]'; fi
+          fi
+          echo "Runner: $runner"
+          echo "runner=$runner" >> "$GITHUB_OUTPUT"
+
   distribute:
     name: Build Dev release and distribute
-    runs-on: ubuntu-latest
+    needs: pick-runner
+    runs-on: ${{ fromJSON(needs.pick-runner.outputs.runner) }}
     timeout-minutes: 45
     steps:
       - name: Checkout
@@ -92,6 +116,12 @@ jobs:
             -Pci.versionCode=${{ github.run_number }} \
             -Pci.versionNameSuffix=-dev.${{ github.run_number }} \
             --stacktrace --no-daemon
+
+      - name: Set up Node.js (self-hosted image)
+        if: steps.secrets.outputs.configured == 'true' && runner.environment == 'self-hosted'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Distribute to Firebase App Distribution
         if: steps.secrets.outputs.configured == 'true'

@@ -8,8 +8,8 @@
     {"word":"Challenge","clues":["Participar","Reto","TikTok","Vídeo","Viral"],"category":"social_media_and_streamers","conceptId":"challenge"},
     {"word":"Clickbait","clues":["Clic","Engaño","Miniatura","Título","YouTube"],"category":"social_media_and_streamers","conceptId":"clickbait"},
     {"word":"Collab","clues":["Colaboración","Contenido","Juntos","Redes","Unión"],"category":"social_media_and_streamers","conceptId":"collab"},
-    {"word":"Discord","clues":["Canales","Chat","Comunidad","Gaming","Servidor","Voz"],"category":"social_media_and_streamers","conceptId":"discord"},
     {"word":"DM","clues":["Chat","Directo","Mensaje","Privado","Redes"],"category":"social_media_and_streamers","conceptId":"dm"},
+    {"word":"Discord","clues":["Canales","Chat","Comunidad","Gaming","Servidor","Voz"],"category":"social_media_and_streamers","conceptId":"discord"},
     {"word":"Donación","clues":["Alerta","Apoyo","Bits","Streamer","Dinero"],"category":"social_media_and_streamers","conceptId":"donacion"},
     {"word":"ElRubius","clues":["Gaming","Icono","Streamer","YouTube","España"],"category":"social_media_and_streamers","conceptId":"elrubius"},
     {"word":"Emoji","clues":["Cara","Mensaje","Símbolo","Dibujo","Color"],"category":"social_media_and_streamers","conceptId":"emoji"},
@@ -41,7 +41,7 @@
     {"word":"Setup","clues":["Escritorio","Luces","PC","Silla","Cámara"],"category":"social_media_and_streamers","conceptId":"setup"},
     {"word":"Shoutout","clues":["Agradecimiento","Apoyo","Mención","Redes","Visibilidad"],"category":"social_media_and_streamers","conceptId":"shoutout"},
     {"word":"Snapchat","clues":["Efímero","Fantasma","Filtros","Fotos","Racha"],"category":"social_media_and_streamers","conceptId":"snapchat"},
-    {"word":"Spotify","clues":["Canción","Canciones","Lista","Listas","Música","Podcast","Streaming","Verde"],"category":"social_media_and_streamers","conceptId":"spotify"},
+    {"word":"Spotify","clues":["Canciones","Canción","Lista","Listas","Música","Podcast","Streaming","Verde"],"category":"social_media_and_streamers","conceptId":"spotify"},
     {"word":"Sticker","clues":["Chat","Gracia","Imagen","Pegatina","WhatsApp"],"category":"social_media_and_streamers","conceptId":"sticker"},
     {"word":"Story","clues":["Efímero","Fotos","Instagram","Vídeos","Historia"],"category":"social_media_and_streamers","conceptId":"story"},
     {"word":"Streamer","clues":["Audiencia","Directo","En vivo","Seguidores","Streaming","Videojuegos","Twitch","Cámara"],"category":"social_media_and_streamers","conceptId":"streamer"},
@@ -54,7 +54,7 @@
     {"word":"Twitter","clues":["Azul","Hashtag","Hilos","Mensajes","Noticias","Pájaro","Seguidores","Tendencia"],"category":"social_media_and_streamers","conceptId":"twitter"},
     {"word":"Viral","clues":["Compartir","Popular","Rápido","Tendencia","Internet"],"category":"social_media_and_streamers","conceptId":"viral"},
     {"word":"Vlog","clues":["Diario","Vídeo","YouTube","Vida","Cámara"],"category":"social_media_and_streamers","conceptId":"vlog"},
-    {"word":"Vlogger","clues":["Canal","Diario","Viajes","Vídeo diario","Vlog","Vlogging","YouTube","Vida"],"category":"social_media_and_streamers","conceptId":"vlogger"},
+    {"word":"Vlogger","clues":["Canal","Diario","Viajes","Vlog","Vlogging","Vídeo diario","YouTube","Vida"],"category":"social_media_and_streamers","conceptId":"vlogger"},
     {"word":"WhatsApp","clues":["Chat","Estados","Llamada","Llamadas","Mensaje","Mensajes","Móvil","Verde"],"category":"social_media_and_streamers","conceptId":"whatsapp"},
     {"word":"YouTube","clues":["Botón","Canal","Directo","Google","Reproducir","Suscribirse","Suscriptores","Vídeos"],"category":"social_media_and_streamers","conceptId":"youtube"}
   ]
