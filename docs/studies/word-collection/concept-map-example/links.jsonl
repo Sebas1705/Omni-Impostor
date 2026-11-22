@@ -1,0 +1,7 @@
+{"from":"casa","to":"hogar","type":"synonym","w":4}
+{"from":"hogar","to":"casa","type":"synonym","w":4}
+{"from":"leon","to":"felino","type":"broader","w":4}
+{"from":"espacio~universo","to":"planeta","type":"association","w":3}
+{"from":"espacio~casilla","to":"tablero","type":"context","w":3}
+{"from":"planeta","to":"espacio~universo","type":"broader","w":3}
+{"from":"felino","to":"leon","type":"association","w":1,"status":"proposed"}
