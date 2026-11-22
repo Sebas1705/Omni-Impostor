@@ -11,7 +11,7 @@
     {"word":"Auditoría","clues":["Contabilidad","Finanzas","Legal","Revisión","Empresa"],"reveal":"11131","category":"business_and_finance","conceptId":"auditoria"},
     {"word":"Banca en línea","clues":["App","Cuenta","Transferencia","Banco","Internet"],"category":"business_and_finance","conceptId":"banca-en-linea"},
     {"word":"Banco","clues":["Ahorrar","Cajero","Cuenta","Préstamo","Dinero"],"category":"business_and_finance","conceptId":"banco"},
-    {"word":"Beneficio","clues":["Dinero","Ganancia","Más","Negocio","Vender"],"category":"business_and_finance","conceptId":"profit"},
+    {"word":"Beneficio","clues":["Dinero","Ganancia","Más","Negocio","Vender"],"reveal":"13111","category":"business_and_finance","conceptId":"profit"},
     {"word":"Bolsa","clues":["Acciones","Invertir","Mercado","Valores","Dinero"],"category":"business_and_finance","conceptId":"bolsa"},
     {"word":"Bolsa de valores","clues":["Acciones","Dinero","Invertir","Mercado","Valores"],"category":"business_and_finance","conceptId":"stock-market"},
     {"word":"Capital de riesgo","clues":["Emprendedor","Financiación","Riesgo","Start-up","Inversión"],"category":"business_and_finance","conceptId":"capital-de-riesgo"},
@@ -53,7 +53,7 @@
     {"word":"Seguro","clues":["Accidente","Pagar","Póliza","Protección","Coche"],"reveal":"11311","category":"business_and_finance","conceptId":"seguro"},
     {"word":"Start-up","clues":["Crecimiento","Emprendedor","Empresa nueva","Innovadora","Tecnología"],"reveal":"11311","category":"business_and_finance","conceptId":"start-up"},
     {"word":"Tarjeta","clues":["Cajero","Crédito","Pagar","Plástico","Banco"],"category":"business_and_finance","conceptId":"tarjeta"},
-    {"word":"Tasa de paro","clues":["Indicador económico","Porcentaje de parados","Sin empleo"],"category":"business_and_finance","conceptId":"unemployment-rate"},
+    {"word":"Tasa de paro","clues":["Indicador económico","Porcentaje de parados","Sin empleo"],"reveal":"211","category":"business_and_finance","conceptId":"unemployment-rate"},
     {"word":"Valor neto","clues":["Activos","Finanzas personales","Pasivos","Riqueza","Dinero"],"reveal":"11131","category":"business_and_finance","conceptId":"valor-neto"}
   ]
 }

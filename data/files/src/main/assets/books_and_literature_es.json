@@ -53,13 +53,13 @@
     {"word":"Poesía","clues":["Estrofa","Poema","Rima","Sentimiento","Verso"],"category":"books_and_literature","conceptId":"poesia"},
     {"word":"Portada","clues":["Cara","Exterior","Libro","Título","Dibujo"],"category":"books_and_literature","conceptId":"portada"},
     {"word":"Prólogo","clues":["Antes","Introducción","Libro","Principio","Texto"],"reveal":"13111","category":"books_and_literature","conceptId":"prologo"},
-    {"word":"Relato corto","clues":["Corto","Cuento","Ficción","Narrativa","Niños"],"category":"books_and_literature","conceptId":"short-story"},
+    {"word":"Relato corto","clues":["Corto","Cuento","Ficción","Narrativa","Niños"],"reveal":"13111","category":"books_and_literature","conceptId":"short-story"},
     {"word":"Saga","clues":["Continuación","Épica","Historia Continua","Libros","Parte","Serie","Trilogía"],"reveal":"1111131","category":"books_and_literature","conceptId":"saga~books-and-literature"},
     {"word":"Sátira","clues":["Crítica","Exageración","Humorística","Literatura","Ridículo"],"category":"books_and_literature","conceptId":"satira"},
     {"word":"Similitud","clues":["Como","Comparar","Figurativa","Literatura","Metáfora"],"category":"books_and_literature","conceptId":"similitud"},
     {"word":"Terror","clues":["Espeluznante","Miedo","Monstruos","Oscuridad","Suspense"],"category":"books_and_literature","conceptId":"horror"},
     {"word":"The Maze Runner","clues":["James Dashner","Laberinto postapocalíptico","Supervivencia y misterio"],"category":"books_and_literature","conceptId":"the-maze-runner"},
-    {"word":"Thriller","clues":["Emocionante","Ritmo rápido","Situaciones peligrosas","Suspense"],"category":"books_and_literature","conceptId":"thriller"},
+    {"word":"Thriller","clues":["Emocionante","Ritmo rápido","Situaciones peligrosas","Suspense"],"reveal":"1113","category":"books_and_literature","conceptId":"thriller"},
     {"word":"Trama","clues":["Argumento","Intriga","Libro","Sucesos"],"reveal":"3111","category":"books_and_literature","conceptId":"trama"}
   ]
 }

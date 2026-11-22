@@ -343,4 +343,12 @@ Applied: 2,566 typed clues (1,933 broader, 618 synonym, 15 contrast) = 723 links
 level normal and fall back to all their clues. Tested on the emulator in Spanish: at low and normal the number of clues given
 matched the expected count for every word played. The impostor help setting now has a visible effect.
 
-Not typed yet: the 1,154 new Spanish concepts and any clue added later; `proposals.mjs export types` produces new batches.
+The new Spanish concepts were typed afterwards, see section 17.
+
+## 17. Clue types of the new Spanish concepts
+
+The 2,464 concept/language pairs that the label merge had created or changed (1,195 Spanish, 1,269 English) went through the same
+two passes: four strict typing agents (779 typed clues) and two independent reviewers (7 dropped, 7 retyped, because the first pass
+already used the strict definitions). Applied: 772 typed clues (540 broader, 227 synonym, 5 contrast) = 121 links and 651 hints; the
+compiled lists were regenerated (78 entries have fewer than 3 clues at level normal and fall back to all of them). Validators and
+tooling tests pass, and on the emulator the clues given at low help matched the expected count for every word played.

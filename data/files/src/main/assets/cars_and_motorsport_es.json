@@ -1,11 +1,11 @@
 {
   "words": [
-    {"word":"Accidente de coche","clues":["Choque","Colisión","Emergencia","Herida","Parte al seguro"],"category":"cars_and_motorsport","conceptId":"car-accident"},
+    {"word":"Accidente de coche","clues":["Choque","Colisión","Emergencia","Herida","Parte al seguro"],"reveal":"33111","category":"cars_and_motorsport","conceptId":"car-accident"},
     {"word":"Airbag","clues":["Aire","Choque","Seguridad","Bolsa","Coche"],"category":"cars_and_motorsport","conceptId":"airbag"},
-    {"word":"Alquiler de coches","clues":["Agencia","Alquilar","Conducir","Empresa de alquiler","Rent a car","Temporal","Uso temporal","Viaje por carretera"],"category":"cars_and_motorsport","conceptId":"car-rental"},
+    {"word":"Alquiler de coches","clues":["Agencia","Alquilar","Conducir","Empresa de alquiler","Rent a car","Temporal","Uso temporal","Viaje por carretera"],"reveal":"11113111","category":"cars_and_motorsport","conceptId":"car-rental"},
     {"word":"Aparcamiento","clues":["Estacionamiento","Garaje","Parking","Plaza","Coche"],"reveal":"31311","category":"cars_and_motorsport","conceptId":"aparcamiento"},
     {"word":"Aston Martin","clues":["Deportivo","Elegante","James Bond","Lujo","Reino Unido"],"category":"cars_and_motorsport","conceptId":"aston-martin"},
-    {"word":"Atasco","clues":["Bloqueo","Carretera cortada","Congestión","Hora punta","Retraso"],"category":"cars_and_motorsport","conceptId":"traffic-jam~cars-and-motorsport"},
+    {"word":"Atasco","clues":["Bloqueo","Carretera cortada","Congestión","Hora punta","Retraso"],"reveal":"11311","category":"cars_and_motorsport","conceptId":"traffic-jam~cars-and-motorsport"},
     {"word":"Audi","clues":["Aros","Lujo","Quattro","Tecnología","Motor","Alemania","Coche"],"reveal":"1111112","category":"cars_and_motorsport","conceptId":"audi"},
     {"word":"Audio del coche","clues":["Altavoces","Equipo estéreo","Música"],"category":"cars_and_motorsport","conceptId":"car-audio-system"},
     {"word":"Autopista","clues":["Peaje","Tráfico","Viaje","Carretera","Velocidad"],"reveal":"11121","category":"cars_and_motorsport","conceptId":"autopista"},
@@ -78,11 +78,11 @@
     {"word":"Tesla","clues":["Autónomo","Batería","Eléctrico","Elon Musk","Futuro","Coche"],"reveal":"111112","category":"cars_and_motorsport","conceptId":"tesla"},
     {"word":"Toyota","clues":["Corolla","Fiable","Híbrido","Ventas","Motor","Japón","Coche"],"reveal":"1111112","category":"cars_and_motorsport","conceptId":"toyota"},
     {"word":"Tubo de escape","clues":["Humo","Motor","Sonido","Trasero","Tubo"],"category":"cars_and_motorsport","conceptId":"exhaust"},
-    {"word":"Tuning","clues":["Cultura del motor","Modificaciones","Personalización","Piezas aftermarket","Tuneo"],"category":"cars_and_motorsport","conceptId":"car-customization"},
+    {"word":"Tuning","clues":["Cultura del motor","Modificaciones","Personalización","Piezas aftermarket","Tuneo"],"reveal":"11113","category":"cars_and_motorsport","conceptId":"car-customization"},
     {"word":"Turbo","clues":["Aceleración","Aire","Compresor","Potencia","Motor"],"reveal":"11211","category":"cars_and_motorsport","conceptId":"turbo"},
-    {"word":"Vehículo autónomo","clues":["Coche autónomo","Conducción autónoma","Futuro","Futuro del transporte","IA","Inteligencia artificial","Sensores","Sin conductor"],"category":"cars_and_motorsport","conceptId":"autonomous-vehicle"},
+    {"word":"Vehículo autónomo","clues":["Coche autónomo","Conducción autónoma","Futuro","Futuro del transporte","IA","Inteligencia artificial","Sensores","Sin conductor"],"reveal":"31111111","category":"cars_and_motorsport","conceptId":"autonomous-vehicle"},
     {"word":"Vehículo Eléctrico","clues":["Batería Recargable","Emisiones Cero","Estación de Carga","EV","Motor Eléctrico","Coche"],"reveal":"111312","category":"cars_and_motorsport","conceptId":"vehiculo-electrico"},
-    {"word":"Viaje por carretera","clues":["Aventura","Coche","Mapa","Paradas de alojamiento","Ruta","Ruta panorámica","Viajar","Viaje en coche"],"category":"cars_and_motorsport","conceptId":"road-trip"},
+    {"word":"Viaje por carretera","clues":["Aventura","Coche","Mapa","Paradas de alojamiento","Ruta","Ruta panorámica","Viajar","Viaje en coche"],"reveal":"11111113","category":"cars_and_motorsport","conceptId":"road-trip"},
     {"word":"Volante","clues":["Conducir","Dirección","Girar","Manos","Rueda","Coche"],"category":"cars_and_motorsport","conceptId":"volante"},
     {"word":"Williams","clues":["Azul","Equipo","F1","Reino Unido"],"reveal":"1211","category":"cars_and_motorsport","conceptId":"williams"}
   ]

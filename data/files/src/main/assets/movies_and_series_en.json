@@ -35,7 +35,7 @@
     {"word":"Star Wars","clues":["Galaxy","Robots","Saber","Space","Force"],"category":"movies_and_series","conceptId":"star-wars"},
     {"word":"Stranger Things","clues":["Bicycles","Eighties","Kids","Monster","Upside Down"],"category":"movies_and_series","conceptId":"stranger-things"},
     {"word":"Super Mario Bros","clues":["Animation","Jump","Mushroom","Plumber","Video Game"],"reveal":"11112","category":"movies_and_series","conceptId":"super-mario-bros"},
-    {"word":"The Avengers","clues":["Comics","Heroes","Powers","Team","Stone"],"category":"movies_and_series","conceptId":"los-vengadores"},
+    {"word":"The Avengers","clues":["Comics","Heroes","Powers","Team","Stone"],"reveal":"11121","category":"movies_and_series","conceptId":"los-vengadores"},
     {"word":"The Crown","clues":["England","Family","Palace","Queen"],"category":"movies_and_series","conceptId":"the-crown~movies-and-series"},
     {"word":"The Exorcist","clues":["Girl","Horror","Possession","Fear","Bed"],"category":"movies_and_series","conceptId":"el-exorcista"},
     {"word":"The Godfather","clues":["Crime","Family","Mafia","Offer","Italy"],"category":"movies_and_series","conceptId":"el-padrino"},
@@ -50,6 +50,6 @@
     {"word":"Up","clues":["Balloons","House","Old","Dog","Fly"],"category":"movies_and_series","conceptId":"up"},
     {"word":"Vampire","clues":["Bat","Coffin","Fangs","Garlic","Night","Blood"],"category":"movies_and_series","conceptId":"vampiro"},
     {"word":"Wednesday","clues":["Black","Cold","Hand","School","Dance"],"category":"movies_and_series","conceptId":"wednesday"},
-    {"word":"Zombie","clues":["Dead","Horror","Hunger","Scary","Slow","Undead","Walk","Brain"],"category":"movies_and_series","conceptId":"zombi~movies-and-series"}
+    {"word":"Zombie","clues":["Dead","Horror","Hunger","Scary","Slow","Undead","Walk","Brain"],"reveal":"11111211","category":"movies_and_series","conceptId":"zombi~movies-and-series"}
   ]
 }

@@ -30,7 +30,7 @@
 {"from":"abraham-lincoln","to":"presidente","type":"association","w":3,"langs":["en","es"]}
 {"from":"abrigo","to":"invierno","type":"association","w":3,"langs":["en","es"]}
 {"from":"abrigo","to":"lana","type":"association","w":3,"langs":["en","es"]}
-{"from":"absenta","to":"alcohol","type":"association","w":3,"langs":["en","es"]}
+{"from":"absenta","to":"alcohol","type":"broader","w":3,"langs":["en","es"]}
 {"from":"absenta","to":"hada","type":"association","w":3,"langs":["en","es"]}
 {"from":"aburrimiento","to":"interes","type":"contrast","w":3,"langs":["en","es"]}
 {"from":"aburrimiento","to":"tiempo","type":"association","w":3,"langs":["en","es"]}
@@ -319,7 +319,7 @@
 {"from":"antropologia","to":"ciencia","type":"association","w":3,"langs":["en","es"]}
 {"from":"antibiotico","to":"bacteria","type":"association","w":3,"langs":["en","es"]}
 {"from":"antibiotico","to":"infeccion","type":"association","w":3,"langs":["en","es"]}
-{"from":"antibiotico","to":"medicine","type":"association","w":3,"langs":["en"]}
+{"from":"antibiotico","to":"medicine","type":"broader","w":3,"langs":["en"]}
 {"from":"antibiotico","to":"medicina","type":"broader","w":3,"langs":["es"]}
 {"from":"antigua-and-barbuda","to":"sailing","type":"association","w":3,"langs":["en"]}
 {"from":"antimateria","to":"energia~science-physics","type":"association","w":3,"langs":["es"]}
@@ -336,7 +336,7 @@
 {"from":"afrodita","to":"mitologia","type":"association","w":3,"langs":["en"]}
 {"from":"apocalipsis","to":"infierno","type":"association","w":3,"langs":["es"]}
 {"from":"apocalipsis","to":"juicio-final","type":"association","w":3,"langs":["es"]}
-{"from":"apolo","to":"dios","type":"association","w":3,"langs":["en"]}
+{"from":"apolo","to":"dios","type":"broader","w":3,"langs":["en"]}
 {"from":"apolo","to":"mitologia","type":"association","w":3,"langs":["en"]}
 {"from":"apolo","to":"profecia","type":"association","w":3,"langs":["en","es"]}
 {"from":"apolo","to":"sol","type":"association","w":3,"langs":["en"]}
@@ -351,7 +351,7 @@
 {"from":"appletini","to":"vodka","type":"association","w":3,"langs":["en"]}
 {"from":"april-fools-day","to":"sorpresa","type":"association","w":3,"langs":["en"]}
 {"from":"delantal","to":"chef","type":"association","w":3,"langs":["en"]}
-{"from":"delantal","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"delantal","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"apuestas-deportivas","to":"dinero","type":"association","w":3,"langs":["en","es"]}
 {"from":"apuestas-deportivas","to":"futbol","type":"association","w":3,"langs":["en","es"]}
 {"from":"aquaman","to":"trident","type":"association","w":3,"langs":["en"]}
@@ -632,7 +632,7 @@
 {"from":"bastilla","to":"francia","type":"association","w":3,"langs":["en","es"]}
 {"from":"bastilla","to":"paris","type":"association","w":3,"langs":["en","es"]}
 {"from":"bastilla","to":"revolucion","type":"association","w":3,"langs":["en","es"]}
-{"from":"bastilla","to":"prison","type":"association","w":3,"langs":["en"]}
+{"from":"bastilla","to":"prison","type":"broader","w":3,"langs":["en"]}
 {"from":"murcielago","to":"cueva","type":"association","w":3,"langs":["en","es"]}
 {"from":"murcielago","to":"vampiro","type":"association","w":3,"langs":["en","es"]}
 {"from":"bata-de-laboratorio","to":"cientifico","type":"association","w":3,"langs":["es"]}
@@ -679,7 +679,7 @@
 {"from":"dormitorio","to":"sueno","type":"association","w":3,"langs":["en"]}
 {"from":"beelzebub","to":"infierno","type":"association","w":3,"langs":["es"]}
 {"from":"beelzebub","to":"satanas","type":"synonym","w":3,"langs":["es"]}
-{"from":"cerveza","to":"alcohol","type":"association","w":3,"langs":["en","es"]}
+{"from":"cerveza","to":"alcohol","type":"broader","w":3,"langs":["en","es"]}
 {"from":"behavioral-ecology","to":"ecologia","type":"broader","w":3,"langs":["en"]}
 {"from":"behavioral-ecology","to":"ciencia","type":"association","w":3,"langs":["en"]}
 {"from":"behavioral-genetics","to":"adn","type":"association","w":3,"langs":["en"]}
@@ -873,7 +873,7 @@
 {"from":"borrachera","to":"alcohol","type":"association","w":3,"langs":["es"]}
 {"from":"borrachera","to":"fiesta","type":"association","w":3,"langs":["es"]}
 {"from":"boson-de-higgs","to":"ciencia","type":"association","w":3,"langs":["es"]}
-{"from":"boson-de-higgs","to":"dios","type":"association","w":3,"langs":["en","es"]}
+{"from":"boson-de-higgs","to":"dios","type":"synonym","w":3,"langs":["en","es"]}
 {"from":"boson-de-higgs","to":"masa","type":"association","w":3,"langs":["en","es"]}
 {"from":"botanica","to":"ciencia","type":"association","w":3,"langs":["en","es"]}
 {"from":"botanico","to":"ciencia","type":"association","w":3,"langs":["es"]}
@@ -902,7 +902,7 @@
 {"from":"bragi","to":"odin","type":"association","w":3,"langs":["en"]}
 {"from":"bragi","to":"poesia","type":"association","w":3,"langs":["en"]}
 {"from":"cerebro","to":"neurona","type":"association","w":3,"langs":["en","es"]}
-{"from":"cerebro","to":"organ~science-biology","type":"association","w":3,"langs":["en"]}
+{"from":"cerebro","to":"organ~science-biology","type":"broader","w":3,"langs":["en"]}
 {"from":"brain-computer-interface","to":"cerebro","type":"association","w":3,"langs":["en"]}
 {"from":"brain-computer-interface","to":"ordenador","type":"association","w":3,"langs":["en"]}
 {"from":"freno","to":"coche","type":"association","w":3,"langs":["en","es"]}
@@ -1087,7 +1087,7 @@
 {"from":"capa~fashion-and-clothing","to":"traje","type":"association","w":3,"langs":["en","es"]}
 {"from":"capa~fashion-and-clothing","to":"volar","type":"association","w":3,"langs":["en","es"]}
 {"from":"capcut","to":"tiktok","type":"association","w":3,"langs":["en","es"]}
-{"from":"capa~fashion-and-clothing","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"capa~fashion-and-clothing","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"capilla-sixtina","to":"miguel-angel","type":"association","w":3,"langs":["es"]}
 {"from":"capilla-sixtina","to":"roma","type":"association","w":3,"langs":["en","es"]}
 {"from":"capilla-sixtina","to":"techo","type":"association","w":3,"langs":["en","es"]}
@@ -1125,7 +1125,7 @@
 {"from":"cardigan","to":"boton","type":"association","w":3,"langs":["en"]}
 {"from":"cardigan","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"cardigan","to":"jersey","type":"broader","w":3,"langs":["en"]}
-{"from":"cardiologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"cardiologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"cardiologo","to":"corazon","type":"association","w":3,"langs":["en","es"]}
 {"from":"cardiologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"cardiologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
@@ -1219,7 +1219,7 @@
 {"from":"cellular-biology","to":"celula","type":"association","w":3,"langs":["en"]}
 {"from":"cellular-biology","to":"microscopio","type":"association","w":3,"langs":["en"]}
 {"from":"cellular-biology","to":"ciencia","type":"association","w":3,"langs":["en"]}
-{"from":"celos","to":"envidia","type":"association","w":3,"langs":["en","es"]}
+{"from":"celos","to":"envidia","type":"synonym","w":3,"langs":["en","es"]}
 {"from":"celos","to":"miedo","type":"association","w":3,"langs":["en","es"]}
 {"from":"celula","to":"vida","type":"association","w":3,"langs":["es"]}
 {"from":"cena-de-gala","to":"vestido","type":"association","w":3,"langs":["en","es"]}
@@ -1275,7 +1275,7 @@
 {"from":"cheems","to":"perro","type":"broader","w":3,"langs":["en","es"]}
 {"from":"queso","to":"raton","type":"association","w":3,"langs":["en","es"]}
 {"from":"cheeseburger","to":"queso","type":"association","w":3,"langs":["en"]}
-{"from":"cheeseburger","to":"hamburguesa","type":"association","w":3,"langs":["en"]}
+{"from":"cheeseburger","to":"hamburguesa","type":"broader","w":3,"langs":["en"]}
 {"from":"chef","to":"cocina","type":"association","w":3,"langs":["en"]}
 {"from":"chef","to":"sarten","type":"association","w":3,"langs":["en"]}
 {"from":"enlace-quimico","to":"fuerza~science-physics","type":"association","w":3,"langs":["en"]}
@@ -1287,7 +1287,7 @@
 {"from":"chichen-itza","to":"maya","type":"association","w":3,"langs":["en","es"]}
 {"from":"chichen-itza","to":"mexico","type":"association","w":3,"langs":["en","es"]}
 {"from":"chichen-itza","to":"piramide","type":"association","w":3,"langs":["en","es"]}
-{"from":"pollo","to":"pajaro","type":"association","w":3,"langs":["en"]}
+{"from":"pollo","to":"pajaro","type":"broader","w":3,"langs":["en"]}
 {"from":"chile","to":"idioma","type":"association","w":3,"langs":["es"]}
 {"from":"chili-con-carne","to":"mexico","type":"association","w":3,"langs":["en"]}
 {"from":"quimera","to":"leon","type":"association","w":3,"langs":["en","es"]}
@@ -1312,7 +1312,7 @@
 {"from":"christopher-columbus","to":"espana","type":"association","w":3,"langs":["en"]}
 {"from":"cromosoma","to":"adn","type":"association","w":3,"langs":["en","es"]}
 {"from":"cromosoma","to":"genetica","type":"association","w":3,"langs":["en","es"]}
-{"from":"chupito","to":"alcohol","type":"association","w":3,"langs":["en","es"]}
+{"from":"chupito","to":"alcohol","type":"broader","w":3,"langs":["en","es"]}
 {"from":"chupito","to":"vaso","type":"association","w":3,"langs":["en","es"]}
 {"from":"churros","to":"espana","type":"association","w":3,"langs":["es"]}
 {"from":"cibercriminal","to":"internet","type":"association","w":3,"langs":["es"]}
@@ -1404,7 +1404,7 @@
 {"from":"club-soda","to":"refresco","type":"broader","w":3,"langs":["en"]}
 {"from":"club-soda","to":"agua","type":"association","w":3,"langs":["en"]}
 {"from":"coach","to":"cuero","type":"association","w":3,"langs":["en"]}
-{"from":"abrigo","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"abrigo","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"cobre","to":"electricidad","type":"association","w":3,"langs":["en","es"]}
 {"from":"coca-cola","to":"navidad","type":"association","w":3,"langs":["en","es"]}
 {"from":"coca-cola","to":"refresco","type":"broader","w":3,"langs":["en","es"]}
@@ -1451,7 +1451,7 @@
 {"from":"coliseo","to":"italia","type":"association","w":3,"langs":["en","es"]}
 {"from":"coliseo","to":"roma","type":"association","w":3,"langs":["en","es"]}
 {"from":"collage","to":"pegamento","type":"association","w":3,"langs":["en"]}
-{"from":"collar","to":"joyas","type":"association","w":3,"langs":["en","es"]}
+{"from":"collar","to":"joyas","type":"broader","w":3,"langs":["en","es"]}
 {"from":"colombia","to":"cafe","type":"association","w":3,"langs":["en"]}
 {"from":"colombia","to":"idioma","type":"association","w":3,"langs":["es"]}
 {"from":"colombia","to":"shakira","type":"association","w":3,"langs":["en"]}
@@ -1485,7 +1485,7 @@
 {"from":"compasion","to":"bondad","type":"association","w":3,"langs":["en","es"]}
 {"from":"compasion","to":"dolor","type":"association","w":3,"langs":["es"]}
 {"from":"compas~office-and-stationery","to":"plomo","type":"association","w":3,"langs":["en"]}
-{"from":"compasion","to":"lastima","type":"association","w":3,"langs":["en"]}
+{"from":"compasion","to":"lastima","type":"synonym","w":3,"langs":["en"]}
 {"from":"ordenador","to":"escritorio","type":"association","w":3,"langs":["en"]}
 {"from":"ordenador","to":"internet","type":"association","w":3,"langs":["en","es"]}
 {"from":"ordenador","to":"teclado","type":"association","w":3,"langs":["en","es"]}
@@ -1659,7 +1659,7 @@
 {"from":"crossover","to":"historia","type":"association","w":3,"langs":["es"]}
 {"from":"crupier","to":"cartas","type":"association","w":3,"langs":["en","es"]}
 {"from":"crupier","to":"casino","type":"association","w":3,"langs":["en","es"]}
-{"from":"crupier","to":"dealer","type":"association","w":3,"langs":["en"]}
+{"from":"crupier","to":"dealer","type":"synonym","w":3,"langs":["en"]}
 {"from":"crupier","to":"mesa","type":"association","w":3,"langs":["en","es"]}
 {"from":"cruce-de-peatones","to":"cebra","type":"synonym","w":3,"langs":["es"]}
 {"from":"crucero","to":"barco","type":"broader","w":3,"langs":["en","es"]}
@@ -1680,7 +1680,7 @@
 {"from":"cuaderno","to":"lapiz","type":"association","w":3,"langs":["en","es"]}
 {"from":"cuaderno","to":"papel","type":"association","w":3,"langs":["es"]}
 {"from":"cuadro~home-and-furniture","to":"pared","type":"association","w":3,"langs":["en","es"]}
-{"from":"cuadro~home-and-furniture","to":"pintura~art-and-design","type":"association","w":3,"langs":["es"]}
+{"from":"cuadro~home-and-furniture","to":"pintura~art-and-design","type":"synonym","w":3,"langs":["es"]}
 {"from":"cuba","to":"idioma","type":"association","w":3,"langs":["es"]}
 {"from":"cuba-libre","to":"coctel","type":"broader","w":3,"langs":["es"]}
 {"from":"cuba-libre","to":"cuba","type":"association","w":3,"langs":["es"]}
@@ -1785,7 +1785,7 @@
 {"from":"debito","to":"dinero","type":"association","w":3,"langs":["es"]}
 {"from":"debito","to":"tarjeta","type":"association","w":3,"langs":["es"]}
 {"from":"decathlon~stores-and-retail","to":"vestimenta","type":"association","w":3,"langs":["en"]}
-{"from":"decatlon~sports","to":"atletismo","type":"association","w":3,"langs":["es"]}
+{"from":"decatlon~sports","to":"atletismo","type":"broader","w":3,"langs":["es"]}
 {"from":"decatlon~sports","to":"resistencia","type":"association","w":3,"langs":["es"]}
 {"from":"decepcion","to":"tristeza","type":"association","w":3,"langs":["en","es"]}
 {"from":"deck","to":"cartas","type":"association","w":3,"langs":["en"]}
@@ -1829,7 +1829,7 @@
 {"from":"depresion","to":"salud-mental","type":"association","w":3,"langs":["es"]}
 {"from":"derechos-humanos","to":"igualdad","type":"association","w":3,"langs":["en","es"]}
 {"from":"derechos-humanos","to":"libertad","type":"association","w":3,"langs":["en","es"]}
-{"from":"dermatologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"dermatologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"dermatologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"dermatologo","to":"piel","type":"association","w":3,"langs":["en","es"]}
 {"from":"dermatologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
@@ -1841,7 +1841,7 @@
 {"from":"desierto","to":"dune","type":"association","w":3,"langs":["en"]}
 {"from":"desierto","to":"arena","type":"association","w":3,"langs":["en","es"]}
 {"from":"desierto","to":"sol","type":"association","w":3,"langs":["en","es"]}
-{"from":"desesperacion","to":"esperanza","type":"association","w":3,"langs":["en","es"]}
+{"from":"desesperacion","to":"esperanza","type":"contrast","w":3,"langs":["en","es"]}
 {"from":"desesperacion","to":"tristeza","type":"association","w":3,"langs":["en","es"]}
 {"from":"disenador","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"disenador","to":"dibujo","type":"association","w":3,"langs":["en","es"]}
@@ -2022,7 +2022,7 @@
 {"from":"drake~music","to":"hip-hop","type":"association","w":3,"langs":["en"]}
 {"from":"dread","to":"ansiedad","type":"association","w":3,"langs":["en"]}
 {"from":"dread","to":"miedo","type":"broader","w":3,"langs":["en"]}
-{"from":"vestido","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"vestido","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"vestido","to":"fiesta","type":"association","w":3,"langs":["en","es"]}
 {"from":"dress-code","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"dress-code","to":"fiesta","type":"association","w":3,"langs":["en"]}
@@ -2246,7 +2246,7 @@
 {"from":"enana-blanca","to":"estrella","type":"broader","w":3,"langs":["en","es"]}
 {"from":"enantiomer","to":"chirality","type":"association","w":3,"langs":["en"]}
 {"from":"enchiladas","to":"mexico","type":"association","w":3,"langs":["en"]}
-{"from":"endocrinologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"endocrinologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"endocrinologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"endocrinologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
 {"from":"endothermic","to":"energy","type":"association","w":3,"langs":["en"]}
@@ -2301,7 +2301,7 @@
 {"from":"entropia","to":"termodinamica","type":"association","w":3,"langs":["en","es"]}
 {"from":"entropia","to":"energy","type":"association","w":3,"langs":["en"]}
 {"from":"entusiasmo","to":"energia~emotions-and-feelings","type":"association","w":3,"langs":["es"]}
-{"from":"envidia","to":"celos","type":"association","w":3,"langs":["en","es"]}
+{"from":"envidia","to":"celos","type":"synonym","w":3,"langs":["en","es"]}
 {"from":"medio-ambiente","to":"tierra","type":"association","w":3,"langs":["en","es"]}
 {"from":"medio-ambiente","to":"ecologia","type":"association","w":3,"langs":["en","es"]}
 {"from":"medio-ambiente","to":"planeta","type":"association","w":3,"langs":["en","es"]}
@@ -2514,7 +2514,7 @@
 {"from":"fenix","to":"pajaro","type":"broader","w":3,"langs":["en","es"]}
 {"from":"fenrir","to":"loki","type":"association","w":3,"langs":["en"]}
 {"from":"fenrir","to":"lobo","type":"broader","w":3,"langs":["en"]}
-{"from":"paradoja-de-fermi","to":"paradoja","type":"association","w":3,"langs":["en"]}
+{"from":"paradoja-de-fermi","to":"paradoja","type":"broader","w":3,"langs":["en"]}
 {"from":"ferrari","to":"caballo","type":"association","w":3,"langs":["en","es"]}
 {"from":"ferrari","to":"coche","type":"broader","w":3,"langs":["en","es"]}
 {"from":"ferrari","to":"formula-1","type":"association","w":3,"langs":["en","es"]}
@@ -2855,13 +2855,13 @@
 {"from":"george-washington","to":"estados-unidos","type":"association","w":3,"langs":["en","es"]}
 {"from":"geothermal-energy","to":"electricidad","type":"association","w":3,"langs":["en"]}
 {"from":"geriatra","to":"ciencia","type":"association","w":3,"langs":["es"]}
-{"from":"geriatra","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"geriatra","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"geriatra","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"alemania","to":"cerveza","type":"association","w":3,"langs":["en"]}
 {"from":"alemania","to":"brandenburg-gate","type":"association","w":3,"langs":["en"]}
 {"from":"alemania","to":"oktoberfest~holidays-and-celebrations","type":"association","w":3,"langs":["en"]}
 {"from":"ghana","to":"idioma","type":"association","w":3,"langs":["es"]}
-{"from":"fantasma","to":"spirit","type":"association","w":3,"langs":["en"]}
+{"from":"fantasma","to":"spirit","type":"synonym","w":3,"langs":["en"]}
 {"from":"ghost-rider","to":"motorcycle","type":"association","w":3,"langs":["en"]}
 {"from":"giant-eagle","to":"fantasy","type":"association","w":3,"langs":["en"]}
 {"from":"giant-eagle","to":"volar","type":"association","w":3,"langs":["en"]}
@@ -3042,7 +3042,7 @@
 {"from":"gustavo-petro","to":"colombia","type":"association","w":3,"langs":["en"]}
 {"from":"gustavo-petro","to":"presidente","type":"broader","w":3,"langs":["en"]}
 {"from":"gimnasio","to":"tren","type":"association","w":3,"langs":["en"]}
-{"from":"ginecologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"ginecologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"ginecologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"ginecologo","to":"embarazo","type":"association","w":3,"langs":["en"]}
 {"from":"gyoza","to":"japon","type":"association","w":3,"langs":["en"]}
@@ -3113,7 +3113,7 @@
 {"from":"hawking-radiation","to":"agujero-negro","type":"association","w":3,"langs":["en"]}
 {"from":"hawking-radiation","to":"radiacion","type":"association","w":3,"langs":["en"]}
 {"from":"hawking-radiation","to":"stephen-hawking","type":"association","w":3,"langs":["en"]}
-{"from":"corazon","to":"organ~science-biology","type":"association","w":3,"langs":["en"]}
+{"from":"corazon","to":"organ~science-biology","type":"broader","w":3,"langs":["en"]}
 {"from":"heater","to":"invierno","type":"association","w":3,"langs":["en"]}
 {"from":"heavy-metal","to":"bateria~music","type":"association","w":3,"langs":["es"]}
 {"from":"heavy-metal","to":"drums","type":"association","w":3,"langs":["en"]}
@@ -3141,7 +3141,7 @@
 {"from":"hematologist","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"hematologist","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"hemisferio","to":"tierra","type":"association","w":3,"langs":["en","es"]}
-{"from":"hefesto","to":"dios","type":"association","w":3,"langs":["en"]}
+{"from":"hefesto","to":"dios","type":"broader","w":3,"langs":["en"]}
 {"from":"hefesto","to":"mitologia","type":"association","w":3,"langs":["en"]}
 {"from":"heptatlon","to":"atletismo","type":"broader","w":3,"langs":["es"]}
 {"from":"heptatlon","to":"resistencia","type":"association","w":3,"langs":["es"]}
@@ -3383,7 +3383,7 @@
 {"from":"inflation-theory","to":"cosmology","type":"association","w":3,"langs":["en"]}
 {"from":"inflation-theory","to":"universo","type":"association","w":3,"langs":["en"]}
 {"from":"inyeccion","to":"enfermero","type":"association","w":3,"langs":["en"]}
-{"from":"inyeccion","to":"chupito","type":"association","w":3,"langs":["en"]}
+{"from":"inyeccion","to":"chupito","type":"synonym","w":3,"langs":["en"]}
 {"from":"inyeccion","to":"vacuna","type":"association","w":3,"langs":["en","es"]}
 {"from":"tinta","to":"color","type":"association","w":3,"langs":["en","es"]}
 {"from":"tinta","to":"boligrafo","type":"association","w":3,"langs":["en","es"]}
@@ -3412,7 +3412,7 @@
 {"from":"intel","to":"ordenador","type":"association","w":3,"langs":["en","es"]}
 {"from":"intel","to":"procesador","type":"association","w":3,"langs":["en","es"]}
 {"from":"inteligencia-artificial","to":"algoritmo","type":"association","w":3,"langs":["es"]}
-{"from":"pizarra-digital","to":"tablero","type":"association","w":3,"langs":["en"]}
+{"from":"pizarra-digital","to":"tablero","type":"broader","w":3,"langs":["en"]}
 {"from":"pizarra-digital","to":"aula","type":"association","w":3,"langs":["en"]}
 {"from":"pizarra-digital","to":"pantalla-tactil","type":"association","w":3,"langs":["en"]}
 {"from":"interes","to":"banco","type":"association","w":3,"langs":["en","es"]}
@@ -3487,7 +3487,7 @@
 {"from":"itinerario","to":"horario","type":"association","w":3,"langs":["en"]}
 {"from":"j-balvin","to":"colombia","type":"association","w":3,"langs":["es"]}
 {"from":"jacinda-ardern","to":"new-zealand","type":"association","w":3,"langs":["en"]}
-{"from":"chaqueta","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"chaqueta","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"jackie-chan","to":"accion","type":"association","w":3,"langs":["es"]}
 {"from":"jackie-chan","to":"actor","type":"broader","w":3,"langs":["en","es"]}
 {"from":"jackie-chan","to":"china","type":"association","w":3,"langs":["en","es"]}
@@ -3521,7 +3521,7 @@
 {"from":"jd-sports","to":"moda","type":"association","w":3,"langs":["en","es"]}
 {"from":"jd-sports","to":"zapatillas","type":"association","w":3,"langs":["en","es"]}
 {"from":"vaqueros","to":"vestimenta","type":"association","w":3,"langs":["en"]}
-{"from":"vaqueros","to":"pantalones","type":"association","w":3,"langs":["en"]}
+{"from":"vaqueros","to":"pantalones","type":"broader","w":3,"langs":["en"]}
 {"from":"jeep","to":"montana","type":"association","w":3,"langs":["en","es"]}
 {"from":"medusa~animals","to":"mar","type":"association","w":3,"langs":["en","es"]}
 {"from":"jennifer-lopez","to":"dance","type":"association","w":3,"langs":["en"]}
@@ -3779,7 +3779,7 @@
 {"from":"licencia-de-conducir","to":"coche","type":"association","w":3,"langs":["es"]}
 {"from":"licencia-de-conducir","to":"examen","type":"association","w":3,"langs":["es"]}
 {"from":"matricula","to":"coche","type":"association","w":3,"langs":["en","es"]}
-{"from":"matricula","to":"plato","type":"association","w":3,"langs":["en"]}
+{"from":"matricula","to":"plato","type":"synonym","w":3,"langs":["en"]}
 {"from":"licor","to":"alcohol","type":"association","w":3,"langs":["en","es"]}
 {"from":"licor","to":"chupito","type":"association","w":3,"langs":["en","es"]}
 {"from":"licor-de-hierbas","to":"alcohol","type":"association","w":3,"langs":["es"]}
@@ -3842,7 +3842,7 @@
 {"from":"lobo","to":"luna","type":"association","w":3,"langs":["en","es"]}
 {"from":"lobo-feroz","to":"cuento","type":"association","w":3,"langs":["es"]}
 {"from":"lobo-feroz","to":"lobo","type":"broader","w":3,"langs":["es"]}
-{"from":"locomotora","to":"motor","type":"association","w":3,"langs":["en","es"]}
+{"from":"locomotora","to":"motor","type":"synonym","w":3,"langs":["en","es"]}
 {"from":"locomotora","to":"steam","type":"association","w":3,"langs":["en"]}
 {"from":"locomotora","to":"tren","type":"association","w":3,"langs":["en","es"]}
 {"from":"loki","to":"dios","type":"broader","w":3,"langs":["en"]}
@@ -3903,7 +3903,7 @@
 {"from":"lunar-eclipse","to":"luna","type":"association","w":3,"langs":["en"]}
 {"from":"lunar-eclipse","to":"sky","type":"association","w":3,"langs":["en"]}
 {"from":"lunar-lander","to":"luna","type":"association","w":3,"langs":["en"]}
-{"from":"pulmones","to":"organ~science-biology","type":"association","w":3,"langs":["en"]}
+{"from":"pulmones","to":"organ~science-biology","type":"broader","w":3,"langs":["en"]}
 {"from":"pulmones","to":"oxigeno","type":"association","w":3,"langs":["en","es"]}
 {"from":"luxury-cruise","to":"barco","type":"association","w":3,"langs":["en"]}
 {"from":"luxury-cruise","to":"vacaciones","type":"broader","w":3,"langs":["en"]}
@@ -4229,7 +4229,7 @@
 {"from":"espejo","to":"vaso","type":"association","w":3,"langs":["en"]}
 {"from":"espejo","to":"reflexion","type":"association","w":3,"langs":["en"]}
 {"from":"mision","to":"puntos","type":"association","w":3,"langs":["en","es"]}
-{"from":"mision","to":"tarea","type":"association","w":3,"langs":["es"]}
+{"from":"mision","to":"tarea","type":"synonym","w":3,"langs":["es"]}
 {"from":"mision-imposible","to":"accion","type":"association","w":3,"langs":["es"]}
 {"from":"mision-imposible","to":"disfraz","type":"association","w":3,"langs":["en","es"]}
 {"from":"mision-imposible","to":"espia","type":"association","w":3,"langs":["es"]}
@@ -4438,7 +4438,7 @@
 {"from":"neumologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
 {"from":"neumologo","to":"pulmones","type":"association","w":3,"langs":["en","es"]}
 {"from":"neurologo","to":"cerebro","type":"association","w":3,"langs":["en","es"]}
-{"from":"neurologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"neurologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"neurologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"neurologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
 {"from":"neurologo","to":"sistema-nervioso","type":"association","w":3,"langs":["es"]}
@@ -4566,7 +4566,7 @@
 {"from":"tortilla","to":"espana","type":"association","w":3,"langs":["en","es"]}
 {"from":"omnivoro","to":"dieta","type":"association","w":3,"langs":["en","es"]}
 {"from":"omurice","to":"japon","type":"association","w":3,"langs":["en"]}
-{"from":"oncologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"oncologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"oncologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"oncologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
 {"from":"one-piece","to":"tesoro","type":"association","w":3,"langs":["es"]}
@@ -4618,7 +4618,7 @@
 {"from":"oro","to":"brillante","type":"association","w":3,"langs":["es"]}
 {"from":"orpheus","to":"amor","type":"association","w":3,"langs":["en"]}
 {"from":"orpheus","to":"mitologia","type":"association","w":3,"langs":["en"]}
-{"from":"traumatologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"traumatologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"traumatologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"oscars","to":"alfombra","type":"association","w":3,"langs":["es"]}
 {"from":"otono","to":"estacion","type":"broader","w":3,"langs":["es"]}
@@ -4653,7 +4653,7 @@
 {"from":"pintura~art-and-design","to":"museo","type":"association","w":3,"langs":["en","es"]}
 {"from":"paisaje","to":"cuadro~home-and-furniture","type":"association","w":3,"langs":["es"]}
 {"from":"pijama","to":"cama","type":"association","w":3,"langs":["en","es"]}
-{"from":"pijama","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"pijama","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"pijama","to":"sueno","type":"association","w":3,"langs":["en"]}
 {"from":"palacio-de-versalles","to":"francia","type":"association","w":3,"langs":["en","es"]}
 {"from":"paleontologia","to":"ciencia","type":"association","w":3,"langs":["en","es"]}
@@ -4694,7 +4694,7 @@
 {"from":"pantalones-cortos","to":"verano","type":"association","w":3,"langs":["es"]}
 {"from":"pantheon","to":"italia","type":"association","w":3,"langs":["en"]}
 {"from":"pantheon","to":"roma","type":"association","w":3,"langs":["en"]}
-{"from":"pantalones","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"pantalones","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"panuelo","to":"lana","type":"association","w":3,"langs":["es"]}
 {"from":"papel","to":"cuaderno","type":"association","w":3,"langs":["es"]}
 {"from":"papelera","to":"papel","type":"association","w":3,"langs":["es"]}
@@ -4794,7 +4794,7 @@
 {"from":"peaje","to":"carretera","type":"association","w":3,"langs":["en","es"]}
 {"from":"peaje","to":"trafico","type":"association","w":3,"langs":["es"]}
 {"from":"pediatra","to":"ciencia","type":"association","w":3,"langs":["es"]}
-{"from":"pediatra","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"pediatra","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"pediatra","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"pedicab","to":"bicicleta","type":"association","w":3,"langs":["en"]}
 {"from":"pedicab","to":"pasajero","type":"association","w":3,"langs":["en"]}
@@ -5073,7 +5073,7 @@
 {"from":"primark","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"primark","to":"moda","type":"association","w":3,"langs":["en","es"]}
 {"from":"primark","to":"ireland","type":"association","w":3,"langs":["en"]}
-{"from":"primavera~nature-and-weather","to":"estacion","type":"association","w":3,"langs":["es"]}
+{"from":"primavera~nature-and-weather","to":"estacion","type":"broader","w":3,"langs":["es"]}
 {"from":"primavera~nature-and-weather","to":"sol","type":"association","w":3,"langs":["en","es"]}
 {"from":"primeros-auxilios","to":"botiquin","type":"association","w":3,"langs":["es"]}
 {"from":"princesa","to":"corona~fashion-and-clothing","type":"association","w":3,"langs":["es"]}
@@ -5123,7 +5123,7 @@
 {"from":"psiquiatra","to":"ciencia","type":"association","w":3,"langs":["es"]}
 {"from":"psiquiatra","to":"paciente","type":"association","w":3,"langs":["en","es"]}
 {"from":"psiquiatra","to":"salud-mental","type":"association","w":3,"langs":["en","es"]}
-{"from":"psiquiatra","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"psiquiatra","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"pub","to":"cerveza","type":"association","w":3,"langs":["en","es"]}
 {"from":"public-transit-card","to":"autobus","type":"association","w":3,"langs":["en"]}
 {"from":"public-transit-card","to":"tarjeta","type":"association","w":3,"langs":["en"]}
@@ -5138,7 +5138,7 @@
 {"from":"pull-bear","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"pull-bear","to":"moda","type":"association","w":3,"langs":["en","es"]}
 {"from":"pulmones","to":"organo~science-biology","type":"broader","w":3,"langs":["es"]}
-{"from":"neumologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"neumologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"neumologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"pulsar","to":"estrella","type":"broader","w":3,"langs":["en","es"]}
 {"from":"puma","to":"atletismo","type":"association","w":3,"langs":["en"]}
@@ -5197,7 +5197,7 @@
 {"from":"radioactivity","to":"radiacion","type":"association","w":3,"langs":["en"]}
 {"from":"radioactivity","to":"uranio","type":"association","w":3,"langs":["en"]}
 {"from":"radiografia","to":"rayos-x","type":"association","w":3,"langs":["es"]}
-{"from":"radiologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"radiologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"radiologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"radiologo","to":"radiografia","type":"association","w":3,"langs":["en"]}
 {"from":"radiologo","to":"ciencia","type":"association","w":3,"langs":["es"]}
@@ -5357,13 +5357,13 @@
 {"from":"rey","to":"monarquia","type":"association","w":3,"langs":["es"]}
 {"from":"rey","to":"poder","type":"association","w":3,"langs":["es"]}
 {"from":"rey","to":"reina","type":"association","w":3,"langs":["es"]}
-{"from":"reumatologo","to":"medico","type":"association","w":3,"langs":["en"]}
+{"from":"reumatologo","to":"medico","type":"broader","w":3,"langs":["en"]}
 {"from":"reumatologo","to":"hospital","type":"association","w":3,"langs":["en"]}
 {"from":"rinoceronte","to":"piel","type":"association","w":3,"langs":["en","es"]}
 {"from":"ritmo","to":"dance","type":"association","w":3,"langs":["en"]}
 {"from":"ritmo","to":"drums","type":"association","w":3,"langs":["en"]}
 {"from":"ritmo","to":"sonido","type":"association","w":3,"langs":["en","es"]}
-{"from":"arroz","to":"cereales","type":"association","w":3,"langs":["en"]}
+{"from":"arroz","to":"cereales","type":"broader","w":3,"langs":["en"]}
 {"from":"rice-cooker","to":"cocina","type":"association","w":3,"langs":["en"]}
 {"from":"rice-cooker","to":"arroz","type":"association","w":3,"langs":["en"]}
 {"from":"rice-cooker","to":"steam","type":"association","w":3,"langs":["en"]}
@@ -5433,7 +5433,7 @@
 {"from":"roma","to":"italia","type":"association","w":3,"langs":["en","es"]}
 {"from":"romance","to":"corazon","type":"association","w":3,"langs":["en"]}
 {"from":"romance","to":"amor","type":"association","w":3,"langs":["en"]}
-{"from":"ron","to":"alcohol","type":"association","w":3,"langs":["en","es"]}
+{"from":"ron","to":"alcohol","type":"broader","w":3,"langs":["en","es"]}
 {"from":"ron","to":"coctel","type":"association","w":3,"langs":["es"]}
 {"from":"ron","to":"cuba","type":"association","w":3,"langs":["en","es"]}
 {"from":"ron","to":"pirata","type":"association","w":3,"langs":["es"]}
@@ -5718,7 +5718,7 @@
 {"from":"skibidi-toilet","to":"inodoro","type":"association","w":3,"langs":["en","es"]}
 {"from":"skibidi-toilet","to":"viral","type":"association","w":3,"langs":["en","es"]}
 {"from":"piel","to":"portada","type":"association","w":3,"langs":["en"]}
-{"from":"falda","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"falda","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"sky","to":"sol","type":"association","w":3,"langs":["en"]}
 {"from":"skyrim","to":"fantasy","type":"association","w":3,"langs":["en"]}
 {"from":"skyrim","to":"nieve","type":"association","w":3,"langs":["en","es"]}
@@ -5917,7 +5917,7 @@
 {"from":"stock-market","to":"mercado","type":"association","w":3,"langs":["en"]}
 {"from":"stock-market","to":"dinero","type":"association","w":3,"langs":["en"]}
 {"from":"estocolmo","to":"sweden","type":"association","w":3,"langs":["en"]}
-{"from":"piedra","to":"rock","type":"association","w":3,"langs":["en"]}
+{"from":"piedra","to":"rock","type":"synonym","w":3,"langs":["en"]}
 {"from":"stonehenge","to":"mystery","type":"association","w":3,"langs":["en"]}
 {"from":"stonks","to":"economia","type":"association","w":3,"langs":["en"]}
 {"from":"stonks","to":"inversion","type":"association","w":3,"langs":["en"]}
@@ -6035,7 +6035,7 @@
 {"from":"svartalfheim","to":"mitologia","type":"association","w":3,"langs":["en"]}
 {"from":"swarovski","to":"cisne","type":"association","w":3,"langs":["en","es"]}
 {"from":"swarovski","to":"joyas","type":"association","w":3,"langs":["en","es"]}
-{"from":"jersey","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"jersey","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"sweden","to":"ikea","type":"association","w":3,"langs":["en"]}
 {"from":"sweden","to":"estocolmo","type":"association","w":3,"langs":["en"]}
 {"from":"swingers-party","to":"fiesta","type":"broader","w":3,"langs":["en"]}
@@ -6048,7 +6048,7 @@
 {"from":"synthetic-biology","to":"ciencia","type":"association","w":3,"langs":["en"]}
 {"from":"jarabe","to":"medicine","type":"association","w":3,"langs":["en"]}
 {"from":"systems-biology","to":"ciencia","type":"association","w":3,"langs":["en"]}
-{"from":"camiseta","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"camiseta","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"tabas","to":"suelo","type":"association","w":3,"langs":["es"]}
 {"from":"table-lamp","to":"mesa","type":"association","w":3,"langs":["en"]}
 {"from":"table-tennis","to":"mesa","type":"association","w":3,"langs":["en"]}
@@ -6106,7 +6106,7 @@
 {"from":"television","to":"reloj","type":"association","w":3,"langs":["en"]}
 {"from":"temperatura","to":"termometro","type":"association","w":3,"langs":["en","es"]}
 {"from":"tempura","to":"japon","type":"association","w":3,"langs":["en"]}
-{"from":"ternura","to":"affection","type":"association","w":3,"langs":["en"]}
+{"from":"ternura","to":"affection","type":"synonym","w":3,"langs":["en"]}
 {"from":"ternura","to":"amor","type":"association","w":3,"langs":["en","es"]}
 {"from":"tenia","to":"parasito~science-biology","type":"broader","w":3,"langs":["es"]}
 {"from":"tenis","to":"pista","type":"association","w":3,"langs":["es"]}
@@ -6285,7 +6285,7 @@
 {"from":"totalitarianism","to":"dictadura","type":"synonym","w":3,"langs":["en"]}
 {"from":"totalitarianism","to":"poder","type":"association","w":3,"langs":["en"]}
 {"from":"pantalla-tactil","to":"vaso","type":"association","w":3,"langs":["en"]}
-{"from":"guia-turistico","to":"guia","type":"association","w":3,"langs":["en"]}
+{"from":"guia-turistico","to":"guia","type":"broader","w":3,"langs":["en"]}
 {"from":"turista","to":"camara","type":"association","w":3,"langs":["en","es"]}
 {"from":"turista","to":"mapa","type":"association","w":3,"langs":["en","es"]}
 {"from":"town-fair","to":"fiesta","type":"association","w":3,"langs":["en"]}
@@ -6340,7 +6340,7 @@
 {"from":"arbol","to":"maletero","type":"association","w":3,"langs":["en"]}
 {"from":"trello","to":"tablero","type":"association","w":3,"langs":["en","es"]}
 {"from":"trello","to":"cartas","type":"association","w":3,"langs":["en"]}
-{"from":"gabardina","to":"abrigo","type":"association","w":3,"langs":["en"]}
+{"from":"gabardina","to":"abrigo","type":"broader","w":3,"langs":["en"]}
 {"from":"gabardina","to":"moda","type":"association","w":3,"langs":["en"]}
 {"from":"trend","to":"moda","type":"association","w":3,"langs":["en","es"]}
 {"from":"trend","to":"viral","type":"association","w":3,"langs":["en","es"]}
@@ -6394,7 +6394,7 @@
 {"from":"turtle","to":"shell","type":"association","w":3,"langs":["en"]}
 {"from":"turtle","to":"agua","type":"association","w":3,"langs":["en"]}
 {"from":"tutoria","to":"profesor","type":"association","w":3,"langs":["es"]}
-{"from":"esmoquin","to":"traje","type":"association","w":3,"langs":["en"]}
+{"from":"esmoquin","to":"traje","type":"broader","w":3,"langs":["en"]}
 {"from":"twitch","to":"live","type":"association","w":3,"langs":["en"]}
 {"from":"twitch","to":"streamer","type":"association","w":3,"langs":["en","es"]}
 {"from":"twitch-drops","to":"twitch","type":"association","w":3,"langs":["en"]}
@@ -6426,7 +6426,7 @@
 {"from":"unfollow","to":"boton","type":"association","w":3,"langs":["en"]}
 {"from":"unicornio","to":"fantasy","type":"association","w":3,"langs":["en"]}
 {"from":"unicornio","to":"caballo","type":"association","w":3,"langs":["en","es"]}
-{"from":"uniforme","to":"vestimenta","type":"association","w":3,"langs":["en"]}
+{"from":"uniforme","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
 {"from":"uniforme","to":"escuela","type":"association","w":3,"langs":["en","es"]}
 {"from":"uniforme-escolar","to":"identidad","type":"association","w":3,"langs":["es"]}
 {"from":"uniqlo","to":"vestimenta","type":"broader","w":3,"langs":["en"]}
@@ -6457,7 +6457,7 @@
 {"from":"vaccination","to":"inmunidad","type":"association","w":3,"langs":["en"]}
 {"from":"vaccination","to":"vacuna","type":"association","w":3,"langs":["en"]}
 {"from":"vacuna","to":"inmunidad","type":"association","w":3,"langs":["en","es"]}
-{"from":"vacuna","to":"chupito","type":"association","w":3,"langs":["en"]}
+{"from":"vacuna","to":"chupito","type":"synonym","w":3,"langs":["en"]}
 {"from":"vacuna","to":"virus","type":"association","w":3,"langs":["en","es"]}
 {"from":"vacheron-constantin","to":"switzerland","type":"association","w":3,"langs":["en"]}
 {"from":"vacuna","to":"inyeccion","type":"association","w":3,"langs":["es"]}
@@ -6656,7 +6656,7 @@
 {"from":"white-russian","to":"coctel","type":"broader","w":3,"langs":["en"]}
 {"from":"white-russian","to":"vaso","type":"association","w":3,"langs":["en"]}
 {"from":"white-russian","to":"vodka","type":"association","w":3,"langs":["en"]}
-{"from":"pizarra-blanca","to":"tablero","type":"association","w":3,"langs":["en"]}
+{"from":"pizarra-blanca","to":"tablero","type":"broader","w":3,"langs":["en"]}
 {"from":"pizarra-blanca","to":"aula","type":"association","w":3,"langs":["en"]}
 {"from":"wi-fi","to":"internet","type":"association","w":3,"langs":["en","es"]}
 {"from":"wi-fi","to":"router","type":"association","w":3,"langs":["en","es"]}

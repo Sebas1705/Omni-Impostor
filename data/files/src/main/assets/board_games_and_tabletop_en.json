@@ -1,13 +1,13 @@
 {
   "words": [
-    {"word":"Alliance","clues":["Countries","Deal","Friends","Help","Pact","Players","Team","Union"],"category":"board_games_and_tabletop","conceptId":"alianza"},
+    {"word":"Alliance","clues":["Countries","Deal","Friends","Help","Pact","Players","Team","Union"],"reveal":"11113113","category":"board_games_and_tabletop","conceptId":"alianza"},
     {"word":"Auction","clues":["Bid","Buy","Price","Game","Money"],"category":"board_games_and_tabletop","conceptId":"subasta"},
     {"word":"Block","clues":["Move","Path","Piece","Prevent","Rival"],"category":"board_games_and_tabletop","conceptId":"block"},
     {"word":"Board","clues":["Cardboard","Pieces","Surface","Game","Table"],"category":"board_games_and_tabletop","conceptId":"tablero"},
     {"word":"Box","clues":["Cardboard","Content","Store","Cover","Game"],"category":"board_games_and_tabletop","conceptId":"caja"},
     {"word":"Capture","clues":["Chess","Piece","Remove","Take","Board"],"reveal":"11131","category":"board_games_and_tabletop","conceptId":"capture"},
     {"word":"Cards","clues":["Deck","Hand","Play","Shuffle","Suit"],"category":"board_games_and_tabletop","conceptId":"cartas"},
-    {"word":"Chance","clues":["Dice","Luck","Random","Uncertain","Cards"],"category":"board_games_and_tabletop","conceptId":"azar"},
+    {"word":"Chance","clues":["Dice","Luck","Random","Uncertain","Cards"],"reveal":"13111","category":"board_games_and_tabletop","conceptId":"azar"},
     {"word":"Cheat","clues":["Bad","Hide","Rules","Trick","Win"],"category":"board_games_and_tabletop","conceptId":"cheat"},
     {"word":"Checkers","clues":["Black Red","Jump","Move","Pieces","Board"],"category":"board_games_and_tabletop","conceptId":"damas"},
     {"word":"Chess","clues":["Black White","King","Mind","Pieces","Strategy","Clock","Board"],"category":"board_games_and_tabletop","conceptId":"ajedrez"},
@@ -32,7 +32,7 @@
     {"word":"Mechanic","clues":["Design","Function","Rules","Way","Game"],"category":"board_games_and_tabletop","conceptId":"mechanic~board-games-and-tabletop"},
     {"word":"Meeple","clues":["Piece","Player","Wooden","Board","Game"],"reveal":"21111","category":"board_games_and_tabletop","conceptId":"meeple"},
     {"word":"Miniature","clues":["Character","Figure","Paint","Small","Table"],"category":"board_games_and_tabletop","conceptId":"miniatura"},
-    {"word":"Mission","clues":["Card","Complete","Danger","Goal","Hero","Save","Task","Points"],"category":"board_games_and_tabletop","conceptId":"mision"},
+    {"word":"Mission","clues":["Card","Complete","Danger","Goal","Hero","Save","Task","Points"],"reveal":"11111131","category":"board_games_and_tabletop","conceptId":"mision"},
     {"word":"Monopoly","clues":["Hotels","Property","Streets","Board","Money"],"category":"board_games_and_tabletop","conceptId":"monopoly"},
     {"word":"Player","clues":["Match","Person","Turn","Win","Table"],"category":"board_games_and_tabletop","conceptId":"jugador"},
     {"word":"Playmat","clues":["Design","Protect","Surface","Game","Table"],"category":"board_games_and_tabletop","conceptId":"playmat"},
@@ -45,16 +45,16 @@
     {"word":"Rulebook","clues":["Book","Instructions","Learn","Read","Rules"],"reveal":"21111","category":"board_games_and_tabletop","conceptId":"rulebook"},
     {"word":"Scorepad","clues":["Paper","Score","Write","Points","Game"],"category":"board_games_and_tabletop","conceptId":"scorepad"},
     {"word":"Scrabble","clues":["Crossword","Letters","Words","Points","Board"],"category":"board_games_and_tabletop","conceptId":"scrabble"},
-    {"word":"Shuffle","clues":["Deck","Hand","Mix","Play","Cards"],"category":"board_games_and_tabletop","conceptId":"barajar"},
+    {"word":"Shuffle","clues":["Deck","Hand","Mix","Play","Cards"],"reveal":"11311","category":"board_games_and_tabletop","conceptId":"barajar"},
     {"word":"Skill","clues":["Character","Dexterity","Hands","Think"],"category":"board_games_and_tabletop","conceptId":"habilidad"},
     {"word":"Solitaire","clues":["Alone","No People","One","Cards","Game"],"category":"board_games_and_tabletop","conceptId":"solitario"},
     {"word":"Space","clues":["Location","Move","Piece","Square","Board"],"category":"board_games_and_tabletop","conceptId":"casilla~board-games-and-tabletop"},
-    {"word":"Strategy","clues":["Mind","Plan","Tactic","Think","Win"],"category":"board_games_and_tabletop","conceptId":"estrategia"},
-    {"word":"Table","clues":["Chairs","Eat","Furniture","Legs","Location","Play","Surface","Wood"],"category":"board_games_and_tabletop","conceptId":"mesa"},
+    {"word":"Strategy","clues":["Mind","Plan","Tactic","Think","Win"],"reveal":"13311","category":"board_games_and_tabletop","conceptId":"estrategia"},
+    {"word":"Table","clues":["Chairs","Eat","Furniture","Legs","Location","Play","Surface","Wood"],"reveal":"11211111","category":"board_games_and_tabletop","conceptId":"mesa"},
     {"word":"Timer","clues":["Limit","Measure","Clock","Game","Time"],"category":"board_games_and_tabletop","conceptId":"timer"},
-    {"word":"Token","clues":["Move","Piece","Player","Board","Color"],"category":"board_games_and_tabletop","conceptId":"ficha"},
+    {"word":"Token","clues":["Move","Piece","Player","Board","Color"],"reveal":"13111","category":"board_games_and_tabletop","conceptId":"ficha"},
     {"word":"Treasure","clues":["Chest","Coins","Dragon","Dungeon","Item","Pirate","RPG","Win"],"category":"board_games_and_tabletop","conceptId":"tesoro"},
     {"word":"Turn","clues":["Next","Order","Play","Wait","Time"],"category":"board_games_and_tabletop","conceptId":"turno"},
-    {"word":"Victory","clues":["Celebrate","End","Goal","Win","Points"],"category":"board_games_and_tabletop","conceptId":"victoria"}
+    {"word":"Victory","clues":["Celebrate","End","Goal","Win","Points"],"reveal":"11131","category":"board_games_and_tabletop","conceptId":"victoria"}
   ]
 }

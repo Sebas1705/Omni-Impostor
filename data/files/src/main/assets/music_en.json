@@ -6,7 +6,7 @@
     {"word":"Ariana Grande","clues":["American","High Notes","Ponytail","Singer","Small","Songs","Voice","Pop"],"reveal":"11121111","category":"music","conceptId":"ariana-grande"},
     {"word":"Bad Bunny","clues":["Music","Puerto Rico","Rabbit","Trap","Glasses"],"category":"music","conceptId":"bad-bunny"},
     {"word":"Bagpipes","clues":["Air","Bag","Pipe","Scotland","Tradition"],"category":"music","conceptId":"gaita"},
-    {"word":"Ballad","clues":["Feeling","Slow","Song","Voice","Love"],"category":"music","conceptId":"balada"},
+    {"word":"Ballad","clues":["Feeling","Slow","Song","Voice","Love"],"reveal":"11211","category":"music","conceptId":"balada"},
     {"word":"Banjo","clues":["Circle","Finger","Strings","Wood","Country"],"category":"music","conceptId":"banjo"},
     {"word":"Bass","clues":["Amplifier","Deep","Electric","Strings","Rhythm"],"category":"music","conceptId":"bajo"},
     {"word":"Beyoncé","clues":["American","Diva","Queen","R&B","Singer","Voice","Pop","Dance"],"reveal":"11312111","category":"music","conceptId":"beyonce"},
@@ -17,7 +17,7 @@
     {"word":"Cardi B","clues":["American","Hip Hop","Rapper","Songs","Unique Style"],"reveal":"11211","category":"music","conceptId":"cardi-b"},
     {"word":"Castanets","clues":["Hands","Wood","Rhythm","Dance","Spain"],"category":"music","conceptId":"castanuelas"},
     {"word":"Cello","clues":["Deep","Large","Orchestra","Sitting","Strings"],"category":"music","conceptId":"violonchelo"},
-    {"word":"Choir","clues":["Church","Group","Harmony","Singing","Voices"],"category":"music","conceptId":"coro"},
+    {"word":"Choir","clues":["Church","Group","Harmony","Singing","Voices"],"reveal":"12111","category":"music","conceptId":"coro"},
     {"word":"Clarinet","clues":["Black","Orchestra","Reed","Tube","Wind"],"reveal":"11112","category":"music","conceptId":"clarinete"},
     {"word":"Classical","clues":["Composer","Opera","Orchestra","Piano","Symphony"],"category":"music","conceptId":"classical"},
     {"word":"Coldplay","clues":["2000s-Present Day","Alternative Rock/Pop Rock","Band","British","Songs"],"reveal":"11211","category":"music","conceptId":"coldplay"},
@@ -66,7 +66,7 @@
     {"word":"R&B","clues":["Groove","Rhythm and Blues","Soulful","Voice","Love"],"reveal":"13111","category":"music","conceptId":"r-b"},
     {"word":"Rap","clues":["Beat","Rhyme","Street","Urban","Voice"],"category":"music","conceptId":"rap"},
     {"word":"Reggaeton","clues":["Beat","Puerto Rico","Urban","Dance","Party"],"category":"music","conceptId":"reggaeton"},
-    {"word":"Rhythm","clues":["Beat","Drums","Tempo","Sound","Dance"],"category":"music","conceptId":"ritmo"},
+    {"word":"Rhythm","clues":["Beat","Drums","Tempo","Sound","Dance"],"reveal":"31111","category":"music","conceptId":"ritmo"},
     {"word":"Rihanna","clues":["Barbadian","Barbados","Makeup","Singer","Songs","Umbrella","Pop","Fashion"],"reveal":"11121111","category":"music","conceptId":"rihanna"},
     {"word":"Rock","clues":["Band","Distortion","Electric","Group","Stadium"],"category":"music","conceptId":"rock"},
     {"word":"Rosalía","clues":["Flamenco","Motomami","Nails","Singer","Spain"],"reveal":"11121","category":"music","conceptId":"rosalia"},
@@ -84,12 +84,12 @@
     {"word":"The Beatles","clues":["1960s","Band","British","Songs","Rock"],"reveal":"12111","category":"music","conceptId":"the-beatles"},
     {"word":"The Weekend","clues":["Canadian","R&B","Songs","Voice","Pop"],"category":"music","conceptId":"the-weeknd"},
     {"word":"Travis Scott","clues":["American","Hip Hop","Producer","Rapper","Songs"],"reveal":"11121","category":"music","conceptId":"travis-scott"},
-    {"word":"Triangle","clues":["Metal","Percussion","Rod","Shape","Sound"],"category":"music","conceptId":"triangulo"},
-    {"word":"Trombone","clues":["Brass","Deep","Orchestra","Slide","Wind"],"reveal":"11112","category":"music","conceptId":"trombon"},
-    {"word":"Trumpet","clues":["Brass","Jazz","Mouthpiece","Valves","Wind"],"reveal":"11112","category":"music","conceptId":"trompeta"},
+    {"word":"Triangle","clues":["Metal","Percussion","Rod","Shape","Sound"],"reveal":"12111","category":"music","conceptId":"triangulo"},
+    {"word":"Trombone","clues":["Brass","Deep","Orchestra","Slide","Wind"],"reveal":"21112","category":"music","conceptId":"trombon"},
+    {"word":"Trumpet","clues":["Brass","Jazz","Mouthpiece","Valves","Wind"],"reveal":"21112","category":"music","conceptId":"trompeta"},
     {"word":"Tuba","clues":["Brass","Deep","Large","Mouthpiece","Wind"],"reveal":"21112","category":"music","conceptId":"tuba"},
     {"word":"Ukulele","clues":["Happy","Hawaii","Small","Strings","Wood"],"category":"music","conceptId":"ukelele"},
     {"word":"Violin","clues":["Bow","High Pitch","Orchestra","Shoulder","Strings"],"reveal":"11112","category":"music","conceptId":"violin"},
-    {"word":"Xylophone","clues":["Bars","Mallets","Notes","Percussion","Wood"],"category":"music","conceptId":"xilofono"}
+    {"word":"Xylophone","clues":["Bars","Mallets","Notes","Percussion","Wood"],"reveal":"11121","category":"music","conceptId":"xilofono"}
   ]
 }
