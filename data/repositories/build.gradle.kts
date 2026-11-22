@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.buildlogic.data)
+    alias(libs.plugins.buildlogic.unit.test)
 }
 
 android {
@@ -16,4 +17,8 @@ dependencies {
     api(projects.data.firestore)
     api(projects.data.retrofit)
     api(projects.data.room)
+
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.kotlinx.test)
+    testImplementation(libs.mockito.kotlin)
 }

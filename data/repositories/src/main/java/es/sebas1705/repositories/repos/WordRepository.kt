@@ -1,10 +1,13 @@
 package es.sebas1705.repositories.repos
 
 import es.sebas1705.common.utlis.extensions.types.logI
+import es.sebas1705.common.utlis.extensions.types.logW
 import es.sebas1705.couchbase.datasources.WordsEnCBDataSource
 import es.sebas1705.couchbase.datasources.WordsEsCBDataSource
 import es.sebas1705.couchbase.documents.WordDoc
+import es.sebas1705.datastore.datasources.SettingsPreferencesDataSource
 import es.sebas1705.files.datasource.WordFileDataSource
+import es.sebas1705.files.json.WordJson
 import es.sebas1705.repositories.interfaces.IWordRepository
 import java.util.UUID
 import javax.inject.Inject
@@ -12,7 +15,8 @@ import javax.inject.Inject
 class WordRepository @Inject constructor(
     private val wordsEnCBDataSource: WordsEnCBDataSource,
     private val wordsEsCBDataSource: WordsEsCBDataSource,
-    private val wordFileDataSource: WordFileDataSource
+    private val wordFileDataSource: WordFileDataSource,
+    private val settingsPreferencesDataSource: SettingsPreferencesDataSource
 ) : IWordRepository {
 
     companion object {
@@ -40,15 +44,47 @@ class WordRepository @Inject constructor(
         wordsEnCBDataSource.upsertAll(entries)
     else wordsEsCBDataSource.upsertAll(entries)
 
+    /**
+     * Loads the bundled word lists into the database.
+     *
+     * An empty database is filled. A database that already has words is kept as long as it holds the bundled
+     * version (`words_version.txt`); when the app ships different lists (or the version was never recorded, as on
+     * installs that predate it) the old words are replaced. The files are read before anything is deleted, so an
+     * unreadable asset never leaves the player without words, and the version is only recorded after a complete
+     * import, so an interrupted import is simply redone on the next launch.
+     */
     override suspend fun importDefaultFromFiles(): Boolean {
-
-        if(wordsEnCBDataSource.count() > 0 || wordsEsCBDataSource.count() > 0) {
-            logI("Default words already exist in the database, skipping import")
+        val assetsVersion = wordFileDataSource.readWordsVersion()
+        val hasWords = wordsEnCBDataSource.count() > 0 || wordsEsCBDataSource.count() > 0
+        if (hasWords && isUpToDate(assetsVersion)) {
+            logI("Default words already exist in the database (version=$assetsVersion), skipping import")
             return true
         }
 
-        val wordMap = wordFileDataSource
-            .readDefaultWords()
+        val wordMap = wordFileDataSource.readDefaultWords()
+        val readyToImport = if (wordMap.isEmpty()) {
+            logW("Default words could not be read from the files, keeping the database as it is")
+            false
+        } else {
+            !hasWords || clearStoredWords(assetsVersion)
+        }
+        val imported = readyToImport && upsertDefaultWords(wordMap)
+        if (imported && assetsVersion != null) settingsPreferencesDataSource.saveDefaultWordsVersion(assetsVersion)
+        return imported
+    }
+
+    /** The stored words are current when the bundle has no version to compare or it equals the recorded one. */
+    private suspend fun isUpToDate(assetsVersion: String?): Boolean =
+        assetsVersion == null || settingsPreferencesDataSource.readDefaultWordsVersion() == assetsVersion
+
+    private fun clearStoredWords(assetsVersion: String?): Boolean {
+        logI("Bundled word lists changed (version=$assetsVersion), replacing the words in the database")
+        val cleared = wordsEnCBDataSource.deleteAll() && wordsEsCBDataSource.deleteAll()
+        if (!cleared) logW("Could not clear the old words, the import will be retried on the next launch")
+        return cleared
+    }
+
+    private fun upsertDefaultWords(wordMap: Map<String, List<WordJson>>): Boolean {
         var jsonsUpserted = 0
         var totalToUpsert = 0
 

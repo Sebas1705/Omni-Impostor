@@ -57,7 +57,7 @@
     {"word":"Hatchback","clues":["Rear Door","Car","Compact","Practical","Design"],"category":"cars_and_motorsport"},
     {"word":"Minivan","clues":["Family","Van","Spacious","Doors","Car"],"category":"cars_and_motorsport"},
     {"word":"Pickup Truck","clues":["Truck Bed","Utility Vehicle","Cargo","Off-road","Car"],"category":"cars_and_motorsport"},
-    {"word":"Electric Vehicle (EV)","clues":["Electric Motor","Battery Powered","Zero Emissions","Charging Station","Car"],"category":"cars_and_motorsport"},
+    {"word":"Electric Vehicle","clues":["Electric Motor","Battery Powered","Zero Emissions","Charging Station","Car","EV"],"category":"cars_and_motorsport"},
     {"word":"Autonomous Vehicle","clues":["Self-driving Car","Sensors","Artificial Intelligence","Driverless","Future of Transportation"],"category":"cars_and_motorsport"},
     {"word":"Car Show","clues":["Exhibition","New Models","Concept Cars","Auto Industry","Event"],"category":"cars_and_motorsport"},
     {"word":"Car Dealership","clues":["Sales","Showroom","Test Drive","Financing","Cars for Sale"],"category":"cars_and_motorsport"},

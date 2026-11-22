@@ -83,7 +83,7 @@
     {"word":"Astrobiology","clues":["Life in Space","Exoplanets","Microorganisms"],"category":"science_physics"},
     {"word":"Space Colonization","clues":["Mars Colony","Moon Base","Space Habitat"],"category":"science_physics"},
     {"word":"Interstellar Travel","clues":["Stars","Spacecraft","Future Technology"],"category":"science_physics"},
-    {"word":"Time Travel Paradox","clues":["Time Travel","Grandfather Paradox"],"category":"science_physics"},
+    {"word":"Time Travel Paradox","clues":["Time Travel","Grandfather Paradox","Causality","Loop","Past"],"category":"science_physics"},
     {"word":"Schrodinger's Cat","clues":["Quantum Mechanics","Cat","Alive and Dead","Thought Experiment"],"category":"science_physics"},
     {"word":"Heisenberg's Uncertainty Principle","clues":["Quantum Mechanics","Uncertainty","Position and Momentum"],"category":"science_physics"},
     {"word":"E=mc^2","clues":["Einstein","Energy","Mass","Speed of Light"],"category":"science_physics"},
@@ -93,6 +93,6 @@
     {"word":"Pauli Exclusion Principle","clues":["Quantum Mechanics","Fermions","No Two Particles"],"category":"science_physics"},
     {"word":"Hawking Radiation","clues":["Black Hole","Radiation","Stephen Hawking"],"category":"science_physics"},
     {"word":"Cosmic Microwave Background","clues":["Big Bang","Radiation","Universe"],"category":"science_physics"},
-    {"word":"Inflation Theory","clues":["Big Bang","Rapid Expansion"],"category":"science_physics"}
+    {"word":"Inflation Theory","clues":["Big Bang","Rapid Expansion","Universe","Cosmology","Alan Guth"],"category":"science_physics"}
   ]
 }

@@ -5,6 +5,7 @@ import com.couchbase.lite.DataSource
 import com.couchbase.lite.Database
 import com.couchbase.lite.Expression
 import com.couchbase.lite.ListenerToken
+import com.couchbase.lite.Meta
 import com.couchbase.lite.MutableDocument
 import com.couchbase.lite.QueryBuilder
 import com.couchbase.lite.SelectResult
@@ -300,13 +301,11 @@ internal class CouchbaseManager @Inject constructor(
                 return false
             }
             val collection = getAndCreateIfNotExist(collectionName)
-            val query = QueryBuilder.select(SelectResult.all())
+            // The document id is read from the metadata: a `SelectResult.all()` row is keyed by collection name, so the
+            // previous lookup of a top level field never found an id and nothing was purged.
+            val query = QueryBuilder.select(SelectResult.expression(Meta.id))
                 .from(DataSource.collection(collection))
-            query.execute().allResults().forEach { result ->
-                (result.toMap()["uniqueId"] as? String)?.let {
-                    collection.purge(it)
-                }
-            }
+            query.execute().allResults().mapNotNull { it.getString(0) }.forEach(collection::purge)
             logResult("deleteAll", true)
             true
         } catch (e: Exception) {
@@ -328,14 +327,10 @@ internal class CouchbaseManager @Inject constructor(
                 return false
             }
             val collection = getAndCreateIfNotExist(collectionName)
-            val query = QueryBuilder.select(SelectResult.all())
+            val query = QueryBuilder.select(SelectResult.expression(Meta.id))
                 .from(DataSource.collection(collection))
                 .where(Expression.property(param).equalTo(Expression.value(value)))
-            query.execute().allResults().forEach { result ->
-                (result.toMap()["uniqueId"] as? String)?.let {
-                    collection.purge(it)
-                }
-            }
+            query.execute().allResults().mapNotNull { it.getString(0) }.forEach(collection::purge)
             logResult("deleteByParam", true)
             true
         } catch (e: Exception) {

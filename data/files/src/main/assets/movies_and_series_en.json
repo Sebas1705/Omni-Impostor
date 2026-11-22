@@ -7,7 +7,7 @@
     {"word":"Jurassic Park","clues":["Dinosaurs","Island","Park","DNA","Mosquito"],"category":"movies_and_series"},
     {"word":"Toy Story","clues":["Toys","Cowboy","Space","Boy","Animation"],"category":"movies_and_series"},
     {"word":"The Godfather","clues":["Mafia","Family","Italy","Offer","Crime"],"category":"movies_and_series"},
-    {"word":"Friends","clues":["Couch","Coffee Shop","Friends","Apartment","New York"],"category":"movies_and_series"},
+    {"word":"Friends","clues":["Couch","Coffee Shop","Apartment","New York"],"category":"movies_and_series"},
     {"word":"Stranger Things","clues":["Kids","Eighties","Monster","Bicycles","Upside Down"],"category":"movies_and_series"},
     {"word":"Game of Thrones","clues":["Dragons","Throne","Wall","Winter","Families"],"category":"movies_and_series"},
     {"word":"Avatar","clues":["Blue","Planet","Nature","Body","Future"],"category":"movies_and_series"},

@@ -82,7 +82,7 @@
     {"word":"Luke Cage","clues":["Piel Indestructible","Héroe de Barrio","Marvel"],"category":"superheroes_and_comics"},
     {"word":"Iron Fist","clues":["Puño de Hierro","Héroe de Barrio","Marvel"],"category":"superheroes_and_comics"},
     {"word":"Punisher","clues":["Venganza","Justiciero","Armas","Marvel"],"category":"superheroes_and_comics"},
-    {"word":"Jessica Drew (Spider-Woman)","clues":["Spider-Woman","Poderes de Araña","Marvel","Héroe"],"category":"superheroes_and_comics"},
+    {"word":"Jessica Drew","clues":["Spider-Woman","Poderes de Araña","Marvel","Héroe"],"category":"superheroes_and_comics"},
     {"word":"Venom","clues":["Simbiote","Anti-Héroe","Marvel","Poderes de Araña"],"category":"superheroes_and_comics"},
     {"word":"Green Lantern","clues":["Anillo de Poder","Héroe del Espacio","DC","Linterna Verde"],"category":"superheroes_and_comics"},
     {"word":"Flash","clues":["Velocidad Sobrehumana","DC","Barry Allen","Rayo"],"category":"superheroes_and_comics"},

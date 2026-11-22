@@ -59,7 +59,7 @@
     {"word":"Meteor Shower","clues":["Sky","Stars","Night","Space","Light"],"category":"nature_and_weather"},
     {"word":"Solar Eclipse","clues":["Sun","Moon","Sky","Darkness","Rare"],"category":"nature_and_weather"},
     {"word":"Lunar Eclipse","clues":["Moon","Earth Shadow","Sky","Darkness","Rare"],"category":"nature_and_weather"},
-    {"word":"Asteroid Belt","clues":["Space","Rock"],"category":"nature_and_weather"},
+    {"word":"Asteroid Belt","clues":["Space","Rock","Jupiter","Mars","Ceres"],"category":"nature_and_weather"},
     {"word":"Black Hole","clues":["Space","Gravity","Darkness","Singularity","Event Horizon"],"category":"nature_and_weather"},
     {"word":"Supernova","clues":["Star","Explosion","Space","Bright","Death"],"category":"nature_and_weather"},
     {"word":"Galaxy","clues":["Stars","Space","Milky Way","Cluster","Universe"],"category":"nature_and_weather"},
@@ -73,6 +73,6 @@
     {"word":"Relativity","clues":["Einstein","Space-Time","Gravity","Theory","Physics"],"category":"nature_and_weather"},
     {"word":"Time Dilation","clues":["Relativity","Time","Gravity","Speed","Theory"],"category":"nature_and_weather"},
     {"word":"Wormhole","clues":["Space-Time","Shortcut","Theory"],"category":"nature_and_weather"},
-    {"word":"Parallel Universe","clues":["Multiverse","Alternate Reality"],"category":"nature_and_weather"}
+    {"word":"Parallel Universe","clues":["Multiverse","Alternate Reality","Fiction","Physics","Another Dimension"],"category":"nature_and_weather"}
   ]
 }

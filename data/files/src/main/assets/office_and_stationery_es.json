@@ -27,7 +27,7 @@
     {"word":"Ordenador","clues":["Pantalla","Trabajar","Teclado","Internet","Digital"],"category":"office_and_stationery"},
     {"word":"Impresora","clues":["Papel","Tinta","Copia","Máquina","Documento"],"category":"office_and_stationery"},
     {"word":"Escáner","clues":["Digitalizar","Documento","Copia","Imagen","Luz"],"category":"office_and_stationery"},
-    {"word":"Teclado","clues":["Escribir","Teclas","Letras","Ordenador","Escribir"],"category":"office_and_stationery"},
+    {"word":"Teclado","clues":["Escribir","Teclas","Letras","Ordenador"],"category":"office_and_stationery"},
     {"word":"Ratón","clues":["Clic","Mover","Ordenador","Cursor","Mano"],"category":"office_and_stationery"},
     {"word":"Pantalla","clues":["Ver","Monitor","Ordenador","Imagen","Luz"],"category":"office_and_stationery"},
     {"word":"Sello","clues":["Tinta","Papel","Marca","Oficial","Estampar"],"category":"office_and_stationery"},
