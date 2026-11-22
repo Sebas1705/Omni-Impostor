@@ -4,7 +4,7 @@
 
 | Workflow | Trigger | Purpose |
 |---|---|---|
-| `validate.yml` | Push/PR to `main`, `develop` | Build + lint, Detekt, unit tests + coverage |
+| `validate.yml` | Push/PR to `main`, `develop` | Build + lint, Detekt, unit tests + coverage (heavy jobs may run on the PC, see [Runner choice](#runner-choice-pc-or-github-hosted)) |
 | `security.yml` | Push to `main`, PR, weekly | Dependency review, CodeQL analysis |
 | `build-release-apk.yml` | Manual dispatch | Rebuild the signed AAB of a tag (`bundleProRelease`) or a dev APK |
 | `release.yml` | Tag push `v*`, manual dispatch | Update CHANGELOG, publish GitHub Release, build and attach the signed AAB, upload it to the `PLAY_TRACK` Play track when that variable is set |
@@ -12,6 +12,15 @@
 | `dependency-report-monthly.yml` | 1st of month, manual | Generate outdated-dependency report |
 | `changelog-label-gate.yml` | PR to `main` | Block merge if no changelog label is set |
 | `label-sync.yml` | Push to `.github/labels.json` | Sync labels from file to repository |
+
+## Runner choice (PC or GitHub-hosted)
+
+The heavy Linux jobs can run on the owner's PC, a Docker self-hosted runner (labels `self-hosted, Linux, X64, pc, android`, image and watcher in `Sebas1705/ci-runner`). Each workflow starts with a small `pick-runner` job on `ubuntu-latest` that chooses the runner of those jobs:
+
+- A watcher writes the repository variable `PC_RUNNER_HEARTBEAT` (epoch seconds, UTC) every minute, only while the PC is free and idle. When the heartbeat is under 180 seconds old the job gets `["self-hosted","pc"]`; otherwise (missing, stale or in the future) it gets `"ubuntu-latest"`. Nothing to configure: the fallback to GitHub-hosted runners is automatic.
+- Only `push` (tag pushes included) and `workflow_dispatch` events may use the PC. Pull requests and every other event (`pull_request_target`, `schedule`, `workflow_run`, `issue_comment`, ...) always stay on `ubuntu-latest`, so the PC never runs untrusted fork code.
+- Jobs that move: `build_lint`, `detekt` and `unit_tests` in `validate.yml`, the build in `distribute.yml`, `build_aab` in `release.yml` and `build_aab` in `build-release-apk.yml`. Everything else (release notes check, path filter, GitHub Release publishing, Play upload and promote, CodeQL, dependency review, labels, monthly report) stays on GitHub-hosted runners.
+- Steps that only make sense on a GitHub-hosted image are guarded with `if: runner.environment == 'github-hosted'`; steps that only the PC image needs (Node.js for `npx firebase-tools`, python3 for the coverage summary, removing the signing files from the persistent workspace) are guarded with `'self-hosted'`. The PC image brings JDK 21 and the Android command-line tools (`ANDROID_HOME=/opt/android-sdk`); it has no Docker socket, so a job that needs Docker or service containers must not move.
 
 ## Composite Action — `android-ci-setup`
 
