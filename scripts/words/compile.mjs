@@ -22,7 +22,8 @@ const problems = [];
 for (const [name, content] of expected) {
   let current = null;
   try { current = readFileSync(join(assetsDir, name), 'utf8').replace(/^﻿/, ''); } catch { /* missing */ }
-  if (current !== content) problems.push(name);
+  // the repository stores LF and a Windows checkout may turn it into CRLF: compare without line endings
+  if (current === null || current.replace(/\r\n/g, '\n') !== content.replace(/\r\n/g, '\n')) problems.push(name);
 }
 for (const name of existing) if (!expected.has(name)) problems.push(`${name} (no longer produced)`);
 
