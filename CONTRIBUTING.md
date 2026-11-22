@@ -41,6 +41,7 @@ This repository contains the **Omni-Impostor** Android app and its CI/CD automat
 
 ## Word lists
 
+Browse the data in `docs/word-map/index.html` and fix small things with `node scripts/words/edit.mjs` (see `docs/word-map/README.md`).
 The words are authored as a concept map in `data/files/concepts/{concepts,links}.jsonl` (design:
 `docs/studies/word-collection/concept-map-spec.md`). The files in `data/files/src/main/assets/*_{en,es}.json` are
 **generated** from it: edit the concepts, never the assets. After editing run:

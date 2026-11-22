@@ -19,6 +19,8 @@ Centralized map of major documentation files.
 - `docs/design.md`
 - `docs/studies/word-collection/README.md` (study of the word collection: shape, clue graph, categories)
 - `docs/studies/word-collection/concept-map-spec.md` (detailed design of the concept map for words and clues)
+- `docs/studies/word-collection/migration-report.md` (what the word migration produced and what is unreviewed)
+- `docs/word-map/README.md` (browse and correct the word data)
 - `docs/module-standards.md`
 - `docs/module-checklist.md`
 - `docs/logging-guide.md`

@@ -55,7 +55,7 @@ jobs:
       - name: Check the words version
         run: node scripts/word-study/update-words-version.mjs --check
       - name: Test the word tooling
-        run: node --test scripts/words/words.test.mjs
+        run: node --test scripts/words/words.test.mjs scripts/words/edit.test.mjs
   changes:
     name: Detect Changed Paths
     runs-on: ubuntu-latest
