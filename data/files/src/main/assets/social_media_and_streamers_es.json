@@ -7,6 +7,7 @@
     {"word":"Ban","clues":["Bloqueo","Cuenta","Expulsión","Prohibido","Reglas"],"reveal":"31311","category":"social_media_and_streamers","conceptId":"ban"},
     {"word":"BeReal","clues":["Foto","Momento","Notificación","Real","Cámara"],"category":"social_media_and_streamers","conceptId":"bereal"},
     {"word":"Bio","clues":["Descripción","Enlace","Información","Perfil","Texto"],"category":"social_media_and_streamers","conceptId":"bio"},
+    {"word":"Blogger","clues":["Artículos","Blog","Blogging","Escribir","Internet"],"category":"social_media_and_streamers","conceptId":"blogger"},
     {"word":"Challenge","clues":["Participar","Reto","TikTok","Vídeo","Viral"],"reveal":"13111","category":"social_media_and_streamers","conceptId":"challenge"},
     {"word":"Clickbait","clues":["Clic","Engaño","Miniatura","Título","YouTube"],"category":"social_media_and_streamers","conceptId":"clickbait"},
     {"word":"Collab","clues":["Colaboración","Contenido","Juntos","Redes","Unión"],"reveal":"31111","category":"social_media_and_streamers","conceptId":"collab"},
@@ -33,6 +34,7 @@
     {"word":"Influencer","clues":["Contenido","Famoso","Fotos","Marcas","Publicidad","Redes","Redes sociales","Seguidores"],"category":"social_media_and_streamers","conceptId":"influencer"},
     {"word":"Instagram","clues":["Filtros","Fotos","Historias","Influencer","Logo","Post","Red Social","Reels"],"reveal":"11111121","category":"social_media_and_streamers","conceptId":"instagram"},
     {"word":"Instagram Reels","clues":["Cortos","Instagram","Música","Reels","Vídeo"],"category":"social_media_and_streamers","conceptId":"instagram-reels"},
+    {"word":"Instagrammer","clues":["Filtros","Fotos","Instagram","Seguidores","Stories"],"category":"social_media_and_streamers","conceptId":"instagrammer"},
     {"word":"Khaby Lame","clues":["Manos","Mudo","Sencillo","TikTok","Viral"],"category":"social_media_and_streamers","conceptId":"khaby-lame"},
     {"word":"Like","clues":["Botón","Dedo","Interacción","Me gusta","Corazón"],"reveal":"11231","category":"social_media_and_streamers","conceptId":"like"},
     {"word":"LinkedIn","clues":["Contactos","Currículum","Perfil","Profesional","Red","Trabajo","Empresa"],"reveal":"1111211","category":"social_media_and_streamers","conceptId":"linkedin"},
@@ -48,7 +50,9 @@
     {"word":"Pie de foto","clues":["Descripción","Foto","Historia","Instagram","Texto"],"category":"social_media_and_streamers","conceptId":"caption"},
     {"word":"Pinterest","clues":["Fotos","Ideas","Inspiración","Pin","Tablero"],"category":"social_media_and_streamers","conceptId":"pinterest"},
     {"word":"Podcast","clues":["Audio","Episodio","Escuchar","Micrófono","Spotify"],"reveal":"21111","category":"social_media_and_streamers","conceptId":"podcast"},
+    {"word":"Podcaster","clues":["Audio","Entrevistas","Episodios","Micrófono","Podcasting"],"category":"social_media_and_streamers","conceptId":"podcaster"},
     {"word":"Reddit","clues":["Comunidad","Foro","Hilos","Karma","Votos","Internet"],"reveal":"121111","category":"social_media_and_streamers","conceptId":"reddit"},
+    {"word":"Redditor","clues":["Comunidad","Foros","Reddit","Subreddit","Votos"],"category":"social_media_and_streamers","conceptId":"redditor"},
     {"word":"Reel","clues":["Corto","Instagram","Música","Vertical","Vídeo"],"reveal":"11112","category":"social_media_and_streamers","conceptId":"reel"},
     {"word":"Reto hashtag","clues":["Hashtag","Participar","Reto","TikTok","Viral"],"category":"social_media_and_streamers","conceptId":"hashtag-challenge"},
     {"word":"Selfie","clues":["Autorretrato","Brazo","Cara","Foto","Cámara"],"reveal":"31121","category":"social_media_and_streamers","conceptId":"selfie"},
@@ -67,7 +71,9 @@
     {"word":"TheGrefg","clues":["Contador","Fortnite","Récord","Streamer","España"],"reveal":"11121","category":"social_media_and_streamers","conceptId":"thegrefg"},
     {"word":"Thread","clues":["Hilo","Mensajes","Texto","Twitter"],"reveal":"3111","category":"social_media_and_streamers","conceptId":"thread"},
     {"word":"TikTok","clues":["Baile","Cortos","Música","Vertical","Vídeos","Viral"],"category":"social_media_and_streamers","conceptId":"tiktok"},
+    {"word":"TikToker","clues":["Bailes","Móvil","Tendencias","TikTok","Vídeos cortos"],"category":"social_media_and_streamers","conceptId":"tiktoker"},
     {"word":"Trend","clues":["Popular","Redes","Tendencia","Viral","Moda"],"reveal":"11311","category":"social_media_and_streamers","conceptId":"trend"},
+    {"word":"Troll de internet","clues":["Burlas","Foros","Provocar","Redes sociales","Trolleo"],"category":"social_media_and_streamers","conceptId":"troll-de-internet"},
     {"word":"Twitch","clues":["Chat","Directo","Gaming","Morado","Streamer","Streaming"],"reveal":"111112","category":"social_media_and_streamers","conceptId":"twitch"},
     {"word":"Twitch Drops","clues":["Drops","Recompensas","Stream","Twitch","Videojuegos"],"category":"social_media_and_streamers","conceptId":"twitch-drops"},
     {"word":"Twitch Prime","clues":["Amazon","Beneficios","Suscripción","Twitch","Videojuegos"],"category":"social_media_and_streamers","conceptId":"twitch-prime"},
@@ -79,6 +85,7 @@
     {"word":"WhatsApp","clues":["Chat","Estados","Llamada","Llamadas","Mensaje","Mensajes","Móvil","Verde"],"reveal":"21111111","category":"social_media_and_streamers","conceptId":"whatsapp"},
     {"word":"YouTube","clues":["Botón","Canal","Directo","Google","Reproducir","Suscribirse","Suscriptores","Vídeos"],"category":"social_media_and_streamers","conceptId":"youtube"},
     {"word":"YouTube Premium","clues":["Música","Sin anuncios","Sin conexión","Suscripción","YouTube"],"category":"social_media_and_streamers","conceptId":"youtube-premium"},
-    {"word":"YouTube Shorts","clues":["Música","Shorts","Vertical","Vídeo","YouTube"],"category":"social_media_and_streamers","conceptId":"youtube-shorts"}
+    {"word":"YouTube Shorts","clues":["Música","Shorts","Vertical","Vídeo","YouTube"],"category":"social_media_and_streamers","conceptId":"youtube-shorts"},
+    {"word":"Youtuber","clues":["Canal","Suscriptores","Vídeos","YouTube","Cámara"],"category":"social_media_and_streamers","conceptId":"youtuber"}
   ]
 }

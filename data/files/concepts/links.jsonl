@@ -2479,8 +2479,6 @@
 {"from":"facebook","to":"pared","type":"association","w":3,"langs":["en"]}
 {"from":"facebook-live","to":"facebook","type":"association","w":3,"langs":["en"]}
 {"from":"facebook-live","to":"live","type":"association","w":3,"langs":["en"]}
-{"from":"facebooker","to":"amigos~board-games-and-tabletop","type":"association","w":3,"langs":["es"]}
-{"from":"facebooker","to":"facebook","type":"association","w":3,"langs":["es"]}
 {"from":"facepalm","to":"verguenza","type":"association","w":3,"langs":["en","es"]}
 {"from":"factura","to":"papel","type":"association","w":3,"langs":["es"]}
 {"from":"hada","to":"volar","type":"association","w":3,"langs":["en","es"]}
@@ -2893,8 +2891,6 @@
 {"from":"gintama","to":"samurai","type":"association","w":3,"langs":["es"]}
 {"from":"giorgio-armani","to":"italia","type":"association","w":3,"langs":["es"]}
 {"from":"github","to":"code","type":"association","w":3,"langs":["en"]}
-{"from":"github-contributor","to":"codigo","type":"association","w":3,"langs":["es"]}
-{"from":"github-contributor","to":"programacion","type":"association","w":3,"langs":["es"]}
 {"from":"givenchy","to":"francia","type":"association","w":3,"langs":["es"]}
 {"from":"glaciar","to":"agua","type":"association","w":3,"langs":["en","es"]}
 {"from":"glaciar","to":"hielo","type":"association","w":3,"langs":["en","es"]}
@@ -3805,7 +3801,6 @@
 {"from":"lingerie","to":"vestimenta","type":"association","w":3,"langs":["en"]}
 {"from":"lingerie","to":"ropa-interior","type":"synonym","w":3,"langs":["en"]}
 {"from":"linkedin","to":"empresa","type":"association","w":3,"langs":["en","es"]}
-{"from":"linkedin-influencer","to":"linkedin","type":"association","w":3,"langs":["es"]}
 {"from":"linkedin-learning","to":"linkedin","type":"association","w":3,"langs":["en"]}
 {"from":"linux","to":"code","type":"association","w":3,"langs":["en"]}
 {"from":"linux","to":"codigo","type":"association","w":3,"langs":["es"]}
@@ -4885,7 +4880,6 @@
 {"from":"ping-pong","to":"mesa","type":"association","w":3,"langs":["es"]}
 {"from":"pink-floyd","to":"rock","type":"association","w":3,"langs":["en"]}
 {"from":"pinterest","to":"tablero","type":"association","w":3,"langs":["en","es"]}
-{"from":"pinterest-user","to":"pinterest","type":"association","w":3,"langs":["es"]}
 {"from":"pintor","to":"cuadro~home-and-furniture","type":"association","w":3,"langs":["es"]}
 {"from":"pintor","to":"pincel","type":"association","w":3,"langs":["es"]}
 {"from":"pintura~art-and-design","to":"cuadro~home-and-furniture","type":"association","w":3,"langs":["es"]}
@@ -5745,8 +5739,6 @@
 {"from":"smoothie","to":"fruta","type":"association","w":3,"langs":["en"]}
 {"from":"smoothie","to":"yogur","type":"association","w":3,"langs":["en"]}
 {"from":"snapchat","to":"fantasma","type":"association","w":3,"langs":["en","es"]}
-{"from":"snapchatter","to":"amigos~board-games-and-tabletop","type":"association","w":3,"langs":["es"]}
-{"from":"snapchatter","to":"snapchat","type":"association","w":3,"langs":["es"]}
 {"from":"snapseed","to":"google","type":"association","w":3,"langs":["en","es"]}
 {"from":"snowboard","to":"montana","type":"association","w":3,"langs":["en","es"]}
 {"from":"snowboard","to":"nieve","type":"association","w":3,"langs":["en","es"]}
@@ -5886,8 +5878,6 @@
 {"from":"squid-game","to":"dinero","type":"association","w":3,"langs":["en","es"]}
 {"from":"st-patrick-s-day","to":"ireland","type":"association","w":3,"langs":["en"]}
 {"from":"st-patrick-s-day","to":"desfile","type":"association","w":3,"langs":["en"]}
-{"from":"stack-overflow-user","to":"codigo","type":"association","w":3,"langs":["es"]}
-{"from":"stack-overflow-user","to":"programacion","type":"association","w":3,"langs":["es"]}
 {"from":"escaleras","to":"up","type":"association","w":3,"langs":["en"]}
 {"from":"grapadora","to":"the-office","type":"association","w":3,"langs":["en"]}
 {"from":"estrella","to":"sky","type":"association","w":3,"langs":["en"]}
@@ -6371,7 +6361,6 @@
 {"from":"tsunami","to":"agua","type":"association","w":3,"langs":["en"]}
 {"from":"tuba","to":"viento","type":"broader","w":3,"langs":["en","es"]}
 {"from":"tubo-de-ensayo","to":"laboratorio","type":"association","w":3,"langs":["es"]}
-{"from":"tumblr-user","to":"tumblr","type":"association","w":3,"langs":["es"]}
 {"from":"tundra","to":"bioma","type":"broader","w":3,"langs":["es"]}
 {"from":"tundra","to":"suelo","type":"association","w":3,"langs":["es"]}
 {"from":"tunica","to":"vestimenta","type":"broader","w":3,"langs":["es"]}
@@ -6405,8 +6394,6 @@
 {"from":"twitter","to":"trend","type":"association","w":3,"langs":["en"]}
 {"from":"twitter-spaces","to":"live","type":"association","w":3,"langs":["en"]}
 {"from":"twitter-spaces","to":"twitter","type":"association","w":3,"langs":["en"]}
-{"from":"twittero","to":"hashtag","type":"association","w":3,"langs":["es"]}
-{"from":"twittero","to":"twitter","type":"association","w":3,"langs":["es"]}
 {"from":"tyr","to":"dios","type":"broader","w":3,"langs":["en"]}
 {"from":"tyr","to":"mitologia","type":"association","w":3,"langs":["en"]}
 {"from":"uber","to":"coche","type":"association","w":3,"langs":["en","es"]}

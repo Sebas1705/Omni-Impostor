@@ -352,3 +352,14 @@ two passes: four strict typing agents (779 typed clues) and two independent revi
 already used the strict definitions). Applied: 772 typed clues (540 broader, 227 synonym, 5 contrast) = 121 links and 651 hints; the
 compiled lists were regenerated (78 entries have fewer than 3 clues at level normal and fall back to all of them). Validators and
 tooling tests pass, and on the emulator the clues given at low help matched the expected count for every word played.
+
+## 18. Phase 0 clues and professions_es reviewed
+
+- The 87 entries with clues proposed in phase 0 (`phase0-review.md`) were reviewed with the owner and accepted as they are.
+- `professions_es` had 28 entries that were not professions. Decided with the owner: Blogger, Podcaster and Youtuber also join
+  `social_media_and_streamers`; TikToker, Instagrammer, Redditor and Troll de internet move there; eight hard-to-guess ones
+  were deleted (Facebooker, Snapchatter, Twittero, Pinterest user, Tumblr user, Stack Overflow user, GitHub contributor, LinkedIn
+  influencer); seven crime roles (Cibercriminal, Corrupto, Extorsionista, Lavador de dinero, Narcotraficante, Secuestrador,
+  Terrorista internacional) move to `adult_18_plus`; Mercenario, Espía cibernético, Hacker, Influencer, Streamer and Vlogger stay.
+  `professions_es` now has 152 words, `social_media_and_streamers_es` 87 and `adult_18_plus_es` 138.
+- Still open: the generic clue `Expansión` on 13 Spanish video game entries (Doom Eternal, Fallout 4, Portal 2...).
