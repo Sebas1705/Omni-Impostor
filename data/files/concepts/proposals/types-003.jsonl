@@ -1,0 +1,267 @@
+{"id":"car-maintenance","lang":"en","clues":{"Upkeep":"synonym"}}
+{"id":"car-navigation-system","lang":"en","clues":{"GPS":"synonym","In-car Technology":"broader"}}
+{"id":"car-rental","lang":"en","clues":{"Rent a Car":"synonym","Rent":"synonym"}}
+{"id":"car-restoration","lang":"en","clues":{"Refurbishment":"synonym"}}
+{"id":"car-safety","lang":"en","clues":{"Airbags":"part","Crumple Zones":"part","Seat Belts":"part"}}
+{"id":"car-show","lang":"en","clues":{"Exhibition":"synonym","Event":"broader"}}
+{"id":"carbon","lang":"en","clues":{"Element":"broader"}}
+{"id":"carbon-dioxide","lang":"en","clues":{"CO2":"synonym","Gas":"broader"}}
+{"id":"carbon-monoxide-detector","lang":"en","clues":{"Alarm":"broader","Battery":"part"}}
+{"id":"carbono","lang":"es","clues":{"Elemento":"broader"}}
+{"id":"carcel","lang":"es","clues":{"Prisión":"synonym","Celdas":"part"}}
+{"id":"cardi-b","lang":"es","clues":{"Rapera":"broader"}}
+{"id":"cardi-b","lang":"en","clues":{"Rapper":"broader"}}
+{"id":"cardigan","lang":"es","clues":{"Jersey con Botones":"broader"}}
+{"id":"cardigan","lang":"en","clues":{"Sweater":"broader","Button":"part","Clothing":"broader"}}
+{"id":"cardiologist","lang":"en","clues":{"Heart Specialist":"synonym","Doctor":"broader"}}
+{"id":"cards","lang":"en","clues":{"Deck":"part","Suit":"part"}}
+{"id":"cardstock","lang":"en","clues":{"Paper":"broader","Thick":"part"}}
+{"id":"cargador-inalambrico","lang":"es","clues":{"Base":"part"}}
+{"id":"cargo-pants","lang":"en","clues":{"Pockets":"part","Clothing":"broader"}}
+{"id":"cargo-pants","lang":"es","clues":{"Bolsillos":"part","Ropa":"broader"}}
+{"id":"carnaval","lang":"es","clues":{"Fiesta":"broader","Desfile":"part","Disfraz":"part","Febrero":"context"}}
+{"id":"carnival","lang":"en","clues":{"Party":"broader","Parade":"part","Costume":"part","February":"context"}}
+{"id":"carnivore","lang":"en","clues":{"Animal":"broader"}}
+{"id":"carnivoro","lang":"es","clues":{"Animal":"broader"}}
+{"id":"carpenter","lang":"en","clues":{"Workshop":"context"}}
+{"id":"carpintero","lang":"es","clues":{"Taller":"context"}}
+{"id":"carpool-lane","lang":"en","clues":{"Lane":"broader","Highway":"context"}}
+{"id":"carrefour","lang":"es","clues":{"Supermercado":"broader","Hipermercado":"broader","Logo":"part"}}
+{"id":"carrefour","lang":"en","clues":{"Supermarket":"broader","Hypermarket":"broader","Logo":"part"}}
+{"id":"carreras-de-barcos","lang":"es","clues":{"Regata":"synonym","Competición":"broader"}}
+{"id":"carreras-de-caballos","lang":"es","clues":{"Hipódromo":"context"}}
+{"id":"carreras-de-coches","lang":"es","clues":{"Circuito":"context"}}
+{"id":"carreras-de-motos","lang":"es","clues":{"Carrera":"broader","Circuito":"context"}}
+{"id":"carretera","lang":"es","clues":{"Ruta":"synonym"}}
+{"id":"carroza","lang":"es","clues":{"Vehículo":"broader","Desfile":"context"}}
+{"id":"carsharing","lang":"es","clues":{"Compartir coche":"synonym"}}
+{"id":"cartas","lang":"es","clues":{"Mazo":"part","Palo":"part"}}
+{"id":"cartero","lang":"es","clues":{"Correo":"context"}}
+{"id":"cartulina","lang":"es","clues":{"Papel":"broader","Grueso":"part"}}
+{"id":"cascada","lang":"es","clues":{"Salto":"synonym"}}
+{"id":"caseta-de-gato","lang":"es","clues":{"Casa":"broader"}}
+{"id":"caseta-de-perro","lang":"es","clues":{"Casa":"broader"}}
+{"id":"casino","lang":"es","clues":{"Juego":"broader"}}
+{"id":"casino","lang":"en","clues":{"Gambling":"broader"}}
+{"id":"castillo","lang":"es","clues":{"Fortaleza":"synonym","Fuerte":"synonym","Muralla":"part","Torre":"part","Foso":"part","Edad Media":"context"}}
+{"id":"castle","lang":"en","clues":{"Fort":"synonym","Fortress":"synonym","Moat":"part","Tower":"part","Middle Ages":"context"}}
+{"id":"cat","lang":"en","clues":{"Pet":"broader","Whiskers":"part"}}
+{"id":"catalizador","lang":"es","clues":{"Sustancia":"broader"}}
+{"id":"catalyst","lang":"en","clues":{"Substance":"broader"}}
+{"id":"catarata","lang":"es","clues":{"Salto":"synonym"}}
+{"id":"catedral-de-colonia","lang":"es","clues":{"Catedral":"broader"}}
+{"id":"cave","lang":"en","clues":{"Grotto":"synonym"}}
+{"id":"cazo","lang":"es","clues":{"Mango":"part"}}
+{"id":"cazzu","lang":"es","clues":{"Rapera de Trap/Reggaeton":"broader"}}
+{"id":"cebra","lang":"es","clues":{"Rayas":"part"}}
+{"id":"celebracion","lang":"es","clues":{"Fiesta":"synonym","Evento":"broader"}}
+{"id":"cell","lang":"en","clues":{"Unit":"broader","Nucleus":"part"}}
+{"id":"cello","lang":"en","clues":{"Strings":"broader","Orchestra":"context"}}
+{"id":"celo","lang":"es","clues":{"Cinta":"broader"}}
+{"id":"celula","lang":"es","clues":{"Unidad":"broader","Núcleo":"part"}}
+{"id":"cena-de-gala","lang":"es","clues":{"Evento":"broader"}}
+{"id":"centaur","lang":"en","clues":{"Creature":"broader"}}
+{"id":"centauro","lang":"es","clues":{"Criatura":"broader"}}
+{"id":"centripeta","lang":"es","clues":{"Fuerza":"broader"}}
+{"id":"centurion","lang":"es","clues":{"Soldado":"broader","Roma":"context"}}
+{"id":"centurion","lang":"en","clues":{"Soldier":"broader","Rome":"context"}}
+{"id":"cerdo","lang":"es","clues":{"Hocico":"part","Granja":"context"}}
+{"id":"cereal","lang":"en","clues":{"Breakfast":"context"}}
+{"id":"cereales","lang":"es","clues":{"Desayuno":"context"}}
+{"id":"cerebro","lang":"es","clues":{"Órgano":"broader","Neurona":"part"}}
+{"id":"ceremonia","lang":"es","clues":{"Rito":"synonym","Acto":"synonym","Evento":"broader"}}
+{"id":"ceremony","lang":"en","clues":{"Ritual":"synonym","Act":"synonym","Event":"broader"}}
+{"id":"cerveceria","lang":"es","clues":{"Bar":"broader","Grifo":"part"}}
+{"id":"cerveza","lang":"es","clues":{"Bebida":"broader","Caña":"synonym","Espuma":"part","Lúpulo":"part"}}
+{"id":"cerveza-artesanal","lang":"es","clues":{"Cerveza":"broader"}}
+{"id":"cerveza-de-barril","lang":"es","clues":{"Cerveza":"broader"}}
+{"id":"cerveza-sin-alcohol","lang":"es","clues":{"Cerveza":"broader","Bebida":"broader"}}
+{"id":"cesar","lang":"es","clues":{"Emperador":"broader"}}
+{"id":"cesar-augusto","lang":"es","clues":{"Emperador":"broader"}}
+{"id":"cfl-light","lang":"en","clues":{"Compact Fluorescent":"synonym","Light Fixture":"broader"}}
+{"id":"chair","lang":"en","clues":{"Furniture":"broader","Backrest":"part","Four Legs":"part"}}
+{"id":"chaleco","lang":"es","clues":{"Ropa":"broader","Sin Mangas":"part"}}
+{"id":"challenge","lang":"es","clues":{"Reto":"synonym"}}
+{"id":"chameleon","lang":"en","clues":{"Reptile":"broader","Tongue":"part"}}
+{"id":"chance","lang":"en","clues":{"Luck":"synonym"}}
+{"id":"chandelier","lang":"en","clues":{"Light Fixture":"broader","Ceiling":"context"}}
+{"id":"chapter","lang":"en","clues":{"Section":"synonym","Part":"synonym"}}
+{"id":"chaqueta","lang":"es","clues":{"Abrigo":"broader","Cremallera":"part","Ropa":"broader"}}
+{"id":"character","lang":"en","clues":{"Role":"synonym"}}
+{"id":"chasis","lang":"es","clues":{"Bastidor":"synonym"}}
+{"id":"chassis","lang":"en","clues":{"Frame":"synonym"}}
+{"id":"chatgpt","lang":"es","clues":{"IA":"broader"}}
+{"id":"chatgpt","lang":"en","clues":{"AI":"broader"}}
+{"id":"chawanmushi","lang":"en","clues":{"Savory Egg Custard":"broader"}}
+{"id":"checkers","lang":"en","clues":{"Pieces":"part","Board":"part"}}
+{"id":"cheems","lang":"es","clues":{"Shiba":"broader","Perro":"broader"}}
+{"id":"cheems","lang":"en","clues":{"Shiba":"broader","Dog":"broader"}}
+{"id":"cheese","lang":"en","clues":{"Dairy":"broader"}}
+{"id":"cheeseburger","lang":"en","clues":{"Hamburger":"broader","Fast Food":"broader","Bun":"part","Beef":"part","Cheese":"part"}}
+{"id":"chef","lang":"en","clues":{"Restaurant":"context","Kitchen":"context"}}
+{"id":"chemical-bond","lang":"en","clues":{"Union":"synonym","Force":"broader"}}
+{"id":"chemical-reaction","lang":"en","clues":{"Process":"broader"}}
+{"id":"chess","lang":"en","clues":{"Board":"part","Pieces":"part"}}
+{"id":"chevrolet","lang":"es","clues":{"Coche":"broader"}}
+{"id":"chevrolet","lang":"en","clues":{"Car":"broader"}}
+{"id":"chicken","lang":"en","clues":{"Bird":"broader","Wings":"part","Feathers":"part"}}
+{"id":"children-s-literature","lang":"en","clues":{"Books for Kids.":"synonym"}}
+{"id":"chile","lang":"es","clues":{"País":"broader"}}
+{"id":"chili-con-carne","lang":"en","clues":{"Spicy Stew":"broader","Beans and Meat":"part"}}
+{"id":"chimera","lang":"en","clues":{"Monster":"broader"}}
+{"id":"china","lang":"es","clues":{"País":"broader"}}
+{"id":"chinche-de-cama","lang":"es","clues":{"Insecto":"broader","Parásito":"broader"}}
+{"id":"chinchilla","lang":"es","clues":{"Roedor":"broader","Pelo":"part"}}
+{"id":"chinchilla","lang":"en","clues":{"Rodent":"broader","Fur":"part"}}
+{"id":"chinese-new-year","lang":"en","clues":{"Lunar New Year":"synonym"}}
+{"id":"chlorine","lang":"en","clues":{"Gas":"broader"}}
+{"id":"chocolate","lang":"es","clues":{"Cacao":"part"}}
+{"id":"chocolate","lang":"en","clues":{"Cocoa":"part"}}
+{"id":"choir","lang":"en","clues":{"Group":"broader"}}
+{"id":"chopper","lang":"en","clues":{"Doctor":"broader","Reindeer":"broader"}}
+{"id":"christ-the-redeemer","lang":"en","clues":{"Statue":"broader"}}
+{"id":"christopher-columbus","lang":"en","clues":{"Explorer":"broader"}}
+{"id":"chromosome","lang":"en","clues":{"DNA":"part"}}
+{"id":"chronic-illness","lang":"en","clues":{"Disease":"broader","Condition":"broader","Long-term":"part"}}
+{"id":"chupito","lang":"es","clues":{"Bebida":"broader"}}
+{"id":"cianuro","lang":"es","clues":{"Veneno":"broader"}}
+{"id":"ciclope~mythology-and-fantasy","lang":"es","clues":{"Gigante":"broader","Ojo":"part"}}
+{"id":"ciclope~superheroes-and-comics","lang":"es","clues":{"Héroe":"broader","Mutante":"broader","Scott Summers":"synonym","Visión Láser":"part"}}
+{"id":"cielo~mythology-and-fantasy","lang":"es","clues":{"Paraíso":"synonym"}}
+{"id":"cinta-adhesiva","lang":"es","clues":{"Celo":"synonym","Rollo":"part"}}
+{"id":"cinturon","lang":"es","clues":{"Hebilla":"part"}}
+{"id":"cirugia","lang":"es","clues":{"Operación":"synonym","Quirófano":"context"}}
+{"id":"cirujano","lang":"es","clues":{"Médico":"broader","Quirófano":"context"}}
+{"id":"cisne","lang":"es","clues":{"Cuello":"part","Plumas":"part","Lago":"context"}}
+{"id":"city-tour","lang":"en","clues":{"Tour":"synonym","Sightseeing":"synonym"}}
+{"id":"ciudad-de-mexico","lang":"es","clues":{"Metrópoli":"broader"}}
+{"id":"ciudad-prohibida","lang":"es","clues":{"Palacio":"broader"}}
+{"id":"clam-chowder","lang":"en","clues":{"Soup":"broader","Clams":"part"}}
+{"id":"clarinet","lang":"en","clues":{"Wind":"broader","Reed":"part"}}
+{"id":"clarinete","lang":"es","clues":{"Viento":"broader","Caña":"part"}}
+{"id":"clarks","lang":"en","clues":{"Shoes":"broader"}}
+{"id":"classroom","lang":"en","clues":{"Room":"broader","Desks":"part"}}
+{"id":"cleopatra","lang":"es","clues":{"Reina":"broader"}}
+{"id":"clickbait","lang":"es","clues":{"Miniatura":"part","Título":"part"}}
+{"id":"clickbait","lang":"en","clues":{"Thumbnail":"part","Title":"part"}}
+{"id":"cloche-hat","lang":"en","clues":{"Bell-shaped Hat":"broader"}}
+{"id":"clonacion","lang":"es","clues":{"Copia":"synonym"}}
+{"id":"cloning","lang":"en","clues":{"Copy":"synonym"}}
+{"id":"cloro","lang":"es","clues":{"Gas":"broader"}}
+{"id":"clothing","lang":"en","clues":{"Clothes":"synonym"}}
+{"id":"clown","lang":"en","clues":{"Circus":"context","Red Nose":"part"}}
+{"id":"club-soda","lang":"en","clues":{"Soda":"broader"}}
+{"id":"clutch","lang":"en","clues":{"Pedal":"part","Disc":"part"}}
+{"id":"coat","lang":"en","clues":{"Clothing":"broader"}}
+{"id":"cobaya","lang":"es","clues":{"Rodente":"broader","Jaula":"context"}}
+{"id":"cobre","lang":"es","clues":{"Metal":"broader"}}
+{"id":"coca-cola","lang":"es","clues":{"Refresco":"broader","Bebida":"broader"}}
+{"id":"coca-cola","lang":"en","clues":{"Soda":"broader","Drink":"broader"}}
+{"id":"coche","lang":"es","clues":{"Ruedas":"part","Volante":"part","Motor":"part"}}
+{"id":"coche-de-policia","lang":"es","clues":{"Patrulla":"synonym","Sirena":"part"}}
+{"id":"cocinero","lang":"es","clues":{"Chef":"synonym"}}
+{"id":"cocktail","lang":"en","clues":{"Drink":"broader"}}
+{"id":"cocodrilo","lang":"es","clues":{"Reptil":"broader","Escamas":"part"}}
+{"id":"coctel","lang":"es","clues":{"Bebida":"broader"}}
+{"id":"coctel-molotov","lang":"es","clues":{"Bomba":"broader"}}
+{"id":"coding-bootcamp","lang":"en","clues":{"Intensive Course":"broader"}}
+{"id":"coffee-maker","lang":"en","clues":{"Appliance":"broader","Machine":"broader"}}
+{"id":"cohete","lang":"es","clues":{"Nave":"broader"}}
+{"id":"cointreau","lang":"es","clues":{"Destilado":"broader"}}
+{"id":"colador","lang":"es","clues":{"Agujeros":"part"}}
+{"id":"colchon","lang":"es","clues":{"Cama":"context"}}
+{"id":"coldplay","lang":"en","clues":{"Band":"broader"}}
+{"id":"colesterol","lang":"es","clues":{"Grasa":"broader"}}
+{"id":"coliseo","lang":"es","clues":{"Arena":"part"}}
+{"id":"collab","lang":"es","clues":{"Colaboración":"synonym"}}
+{"id":"collar","lang":"es","clues":{"Accesorio":"broader","Cadena":"part"}}
+{"id":"colon","lang":"es","clues":{"Explorador":"broader"}}
+{"id":"colony","lang":"en","clues":{"Settlement":"synonym"}}
+{"id":"colosseum","lang":"en","clues":{"Arena":"part"}}
+{"id":"combustion","lang":"es","clues":{"Quemar":"synonym"}}
+{"id":"combustion","lang":"en","clues":{"Burn":"synonym"}}
+{"id":"comet","lang":"en","clues":{"Tail":"part","Ice":"part"}}
+{"id":"cometa","lang":"es","clues":{"Cola":"part"}}
+{"id":"comic","lang":"es","clues":{"Viñetas":"part","Bocadillos":"part"}}
+{"id":"comic","lang":"en","clues":{"Panels":"part","Bubbles":"part"}}
+{"id":"comic-de-superheroes","lang":"es","clues":{"Historieta":"broader"}}
+{"id":"commitment","lang":"en","clues":{"Promise":"synonym"}}
+{"id":"communism","lang":"en","clues":{"Economic System":"broader"}}
+{"id":"comoda","lang":"es","clues":{"Mueble":"broader","Cajones":"part"}}
+{"id":"company","lang":"en","clues":{"Business":"synonym"}}
+{"id":"compas","lang":"es","clues":{"Punta":"part","Mina":"part"}}
+{"id":"compasion","lang":"es","clues":{"Piedad":"synonym"}}
+{"id":"compass~geography","lang":"en","clues":{"Needle":"part"}}
+{"id":"compass~office-and-stationery","lang":"en","clues":{"Point":"part","Lead":"part"}}
+{"id":"compassion","lang":"en","clues":{"Pity":"synonym"}}
+{"id":"compressed-air-vehicle","lang":"en","clues":{"Vehicle":"broader"}}
+{"id":"compromiso","lang":"es","clues":{"Promesa":"synonym"}}
+{"id":"computer","lang":"en","clues":{"Keyboard":"part","Screen":"part","Processor":"part"}}
+{"id":"computer-vision","lang":"en","clues":{"AI":"broader"}}
+{"id":"concert","lang":"en","clues":{"Stage":"context"}}
+{"id":"concierto","lang":"es","clues":{"Escenario":"context"}}
+{"id":"condensation","lang":"en","clues":{"Phase Change":"broader"}}
+{"id":"conejo","lang":"es","clues":{"Orejas":"part","Madriguera":"context"}}
+{"id":"conferencia","lang":"es","clues":{"Charla":"synonym"}}
+{"id":"conservacion","lang":"es","clues":{"Proteger":"synonym"}}
+{"id":"constantino-el-grande","lang":"es","clues":{"Emperador":"broader"}}
+{"id":"constelacion","lang":"es","clues":{"Grupo":"broader","Estrellas":"part"}}
+{"id":"constellation","lang":"en","clues":{"Group":"broader","Stars":"part"}}
+{"id":"constitucion","lang":"es","clues":{"Ley":"broader"}}
+{"id":"constitution","lang":"en","clues":{"Law":"broader"}}
+{"id":"constructivismo","lang":"es","clues":{"Arte Abstracto":"broader"}}
+{"id":"consul","lang":"es","clues":{"Roma":"context"}}
+{"id":"consul","lang":"en","clues":{"Rome":"context"}}
+{"id":"content-creator","lang":"en","clues":{"Influencer":"synonym"}}
+{"id":"contentment","lang":"en","clues":{"Satisfaction":"synonym"}}
+{"id":"contrabajo","lang":"es","clues":{"Cuerdas":"broader","Orquesta":"context"}}
+{"id":"contract","lang":"en","clues":{"Agreement":"synonym","Signature":"part"}}
+{"id":"contrato","lang":"es","clues":{"Acuerdo":"synonym","Firma":"part"}}
+{"id":"convencion-de-comics","lang":"es","clues":{"Evento":"broader"}}
+{"id":"converse","lang":"es","clues":{"Zapatillas":"broader"}}
+{"id":"converse","lang":"en","clues":{"Sneakers":"broader"}}
+{"id":"convertible","lang":"es","clues":{"Techo":"part","Coche":"broader"}}
+{"id":"convertible","lang":"en","clues":{"Roof":"part","Car":"broader"}}
+{"id":"cookie","lang":"en","clues":{"Snack":"broader","Chips":"part"}}
+{"id":"coordenadas","lang":"es","clues":{"Latitud":"part","Longitud":"part"}}
+{"id":"coordinates","lang":"en","clues":{"Latitude":"part","Longitude":"part"}}
+{"id":"copa","lang":"es","clues":{"Pie":"part"}}
+{"id":"corazon","lang":"es","clues":{"Órgano":"broader"}}
+{"id":"corbata","lang":"es","clues":{"Nudo":"part"}}
+{"id":"cordillera","lang":"es","clues":{"Montañas":"broader","Sierra":"synonym","Picos":"part"}}
+{"id":"coro","lang":"es","clues":{"Grupo":"broader"}}
+{"id":"correction-fluid","lang":"en","clues":{"Wite-Out":"synonym"}}
+{"id":"corrector","lang":"es","clues":{"Tipex":"synonym"}}
+{"id":"corredor-de-maraton","lang":"es","clues":{"Atleta":"broader"}}
+{"id":"cosmic-microwave-background","lang":"en","clues":{"Radiation":"broader"}}
+{"id":"cosmonaut","lang":"en","clues":{"Astronaut":"synonym"}}
+{"id":"cosmonauta","lang":"es","clues":{"Astronauta":"synonym"}}
+{"id":"cosmopolitan","lang":"es","clues":{"Cóctel":"broader"}}
+{"id":"cosmopolitan","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"cosmos","lang":"es","clues":{"Universo":"synonym"}}
+{"id":"cosmos","lang":"en","clues":{"Universe":"synonym"}}
+{"id":"costco","lang":"es","clues":{"Mayorista":"broader"}}
+{"id":"costco","lang":"en","clues":{"Wholesale":"broader"}}
+{"id":"costumbre","lang":"es","clues":{"Hábito":"synonym","Tradición":"synonym"}}
+{"id":"costumbres","lang":"es","clues":{"Hábito":"synonym","Tradición":"synonym"}}
+{"id":"costume","lang":"en","clues":{"Clothing":"broader"}}
+{"id":"cotton","lang":"en","clues":{"Fabric":"broader","Material":"broader"}}
+{"id":"coup-d-etat","lang":"en","clues":{"Overthrow":"synonym"}}
+{"id":"coupe","lang":"es","clues":{"Coche":"broader","Dos Puertas":"part"}}
+{"id":"coupe","lang":"en","clues":{"Car":"broader","Two Doors":"part"}}
+{"id":"cow","lang":"en","clues":{"Horns":"part"}}
+{"id":"crab","lang":"en","clues":{"Claws":"part","Shell":"part"}}
+{"id":"crater","lang":"es","clues":{"Agujero":"synonym"}}
+{"id":"crater","lang":"en","clues":{"Hole":"synonym"}}
+{"id":"credito","lang":"es","clues":{"Préstamo":"synonym"}}
+{"id":"cremallera","lang":"es","clues":{"Dientes":"part"}}
+{"id":"cricket","lang":"en","clues":{"Bat":"part","Insect":"broader"}}
+{"id":"criptomoneda","lang":"es","clues":{"Dinero virtual":"synonym"}}
+{"id":"criquet","lang":"es","clues":{"Bate":"part","Wicket":"part"}}
+{"id":"crocodile","lang":"en","clues":{"Reptile":"broader","Teeth":"part","Scales":"part"}}
+{"id":"crocs","lang":"en","clues":{"Shoes":"broader"}}
+{"id":"croissant","lang":"en","clues":{"Pastry":"broader"}}
+{"id":"cromosoma","lang":"es","clues":{"ADN":"part"}}
+{"id":"cross-country","lang":"en","clues":{"Running":"broader"}}
+{"id":"crossbow","lang":"en","clues":{"Weapon":"broader","Trigger":"part"}}
+{"id":"crossfit","lang":"es","clues":{"Entrenamiento Funcional":"broader"}}

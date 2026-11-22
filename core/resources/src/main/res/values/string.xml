@@ -27,6 +27,11 @@
     <string name="core_resources_settings_theme_dark">Dark</string>
     <string name="core_resources_settings_gameplay_title">Gameplay</string>
     <string name="core_resources_settings_language">Language</string>
+    <string name="core_resources_settings_clue_help">Impostor help</string>
+    <string name="core_resources_settings_clue_help_low">Low</string>
+    <string name="core_resources_settings_clue_help_normal">Normal</string>
+    <string name="core_resources_settings_clue_help_high">High</string>
+    <string name="core_resources_settings_clue_help_hint">How much the impostor\'s clue gives the word away. High can use near-synonyms.</string>
     <string name="core_resources_language_english">English</string>
     <string name="core_resources_language_spanish">Spanish</string>
     <string name="core_resources_settings_show_tutorial">Show tutorial on next launch</string>

@@ -33,6 +33,7 @@ class SettingsPreferencesDataSource @Inject constructor(
             it.appLanguage,
             it.forceCompactTables,
             it.darkTheme,
+            it.clueHelp,
         )
     }
 
@@ -119,6 +120,7 @@ class SettingsPreferencesDataSource @Inject constructor(
             .setAppLanguage(settingsData.appLanguage)
             .setForceCompactTables(settingsData.forceCompactTables)
             .setDarkTheme(settingsData.darkTheme)
+            .setClueHelp(settingsData.clueHelp)
             .build()
     }
 

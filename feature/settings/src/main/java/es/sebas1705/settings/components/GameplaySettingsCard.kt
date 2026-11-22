@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import es.sebas1705.core.resources.R
 import es.sebas1705.models.AppLanguage
+import es.sebas1705.models.ClueHelp
 import es.sebas1705.settings.models.AppSettingsDialogActions
 import es.sebas1705.settings.viewmodel.AppSettingsUiState
 import es.sebas1705.ui.theme.AppDimens
@@ -56,5 +57,36 @@ internal fun GameplaySettingsCard(
                 )
             }
         }
+
+        Text(
+            text = stringResource(R.string.core_resources_settings_clue_help),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        FlowRow(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(AppDimens.spacing.sm)
+        ) {
+            listOf(ClueHelp.Low, ClueHelp.Normal, ClueHelp.High).forEach { help ->
+                FilterChip(
+                    selected = settings.clueHelp == help,
+                    onClick = { actions.onUpdateClueHelp(help) },
+                    label = {
+                        Text(
+                            text = when (help) {
+                                ClueHelp.Low -> stringResource(R.string.core_resources_settings_clue_help_low)
+                                ClueHelp.Normal -> stringResource(R.string.core_resources_settings_clue_help_normal)
+                                ClueHelp.High -> stringResource(R.string.core_resources_settings_clue_help_high)
+                            }
+                        )
+                    }
+                )
+            }
+        }
+        Text(
+            text = stringResource(R.string.core_resources_settings_clue_help_hint),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }
