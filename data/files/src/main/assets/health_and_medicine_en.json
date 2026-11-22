@@ -12,7 +12,7 @@
     {"word":"Ambulance","clues":["Emergency","Fast","Medical","Mermaid","Vehicle","Hospital","Car"],"reveal":"1111211","category":"health_and_medicine","conceptId":"ambulancia"},
     {"word":"Anemia","clues":["Blood","Iron","Pale","Tiredness","Weakness"],"category":"health_and_medicine","conceptId":"anemia"},
     {"word":"Anesthesia","clues":["Injection","Numb","Sleep","Surgery"],"category":"health_and_medicine","conceptId":"anestesia"},
-    {"word":"Anesthesiologist","clues":["Anesthesia","Anesthesiology","Health","Pain","Surgery","Hospital","Doctor"],"reveal":"1111112","category":"health_and_medicine","conceptId":"anesthesiologist"},
+    {"word":"Anesthesiologist","clues":["Anesthesia","Anesthesiology","Health","Pain","Hospital","Doctor"],"reveal":"111112","category":"health_and_medicine","conceptId":"anesthesiologist"},
     {"word":"Anorexia","clues":["Eating Disorder","Food","Mental Health","Thin"],"category":"health_and_medicine","conceptId":"anorexia"},
     {"word":"Antibiotic","clues":["Bacteria","Cure","Infection","Pill","Prescription"],"category":"health_and_medicine","conceptId":"antibiotico"},
     {"word":"Anxiety","clues":["Future","Nervous","Restless","Stress","Worry"],"category":"health_and_medicine","conceptId":"ansiedad"},

@@ -3,6 +3,7 @@
     {"word":"Binder","clues":["Documents","Drawers","Files","Large","Organize","Paper","Rings","Store"],"category":"office_and_stationery","conceptId":"archivador"},
     {"word":"Binder Clips","clues":["Clip","Hold","Metal","Paper","The Office"],"reveal":"21111","category":"office_and_stationery","conceptId":"binder-clips"},
     {"word":"Blackboard","clues":["Chalk","Class","Green","Write","Wall"],"category":"office_and_stationery","conceptId":"pizarra"},
+    {"word":"Briefcase","clues":["Business","Carry","Documents","Handle","Office"],"category":"office_and_stationery","conceptId":"portafolios"},
     {"word":"Business Card","clues":["Cardstock","Company","Contact","Name","Networking","Phone"],"category":"office_and_stationery","conceptId":"business-card"},
     {"word":"Business Card Holder","clues":["Contacts","Name","Store","The Office"],"category":"office_and_stationery","conceptId":"tarjetero"},
     {"word":"Calculator","clues":["Add","Buttons","Calculation","Counts","Math","Numbers"],"category":"office_and_stationery","conceptId":"calculadora"},
@@ -24,6 +25,7 @@
     {"word":"Desk Organizer","clues":["Organize","Paperclips","Pens","Tidy","The Office"],"category":"office_and_stationery","conceptId":"desk-organizer"},
     {"word":"Desk Stapler","clues":["Classic","Metal","Paper","Press","Staples","Table"],"category":"office_and_stationery","conceptId":"desk-stapler"},
     {"word":"Dry Erase Markers","clues":["Markers","Whiteboard","Write","The Office"],"reveal":"2111","category":"office_and_stationery","conceptId":"dry-erase-markers"},
+    {"word":"Electric Stapler","clues":["Automatic","Join","Metal","Office"],"category":"office_and_stationery","conceptId":"grapadora-electrica"},
     {"word":"Envelope","clues":["Address","Letter","Mail","Paper","Send"],"category":"office_and_stationery","conceptId":"sobre"},
     {"word":"Erasable Pens","clues":["Erasable","Pen","The Office"],"reveal":"121","category":"office_and_stationery","conceptId":"erasable-pens"},
     {"word":"Eraser","clues":["Clean","Mistake","Paper","Pencil","Rub","Rubber"],"reveal":"111113","category":"office_and_stationery","conceptId":"goma-de-borrar"},
@@ -64,6 +66,7 @@
     {"word":"Pencil Case","clues":["Pencils","Pens","Store","Zipper","School"],"category":"office_and_stationery","conceptId":"estuche"},
     {"word":"Pencil Holder","clues":["Cup","Desk","Organize","Pencils","Pens","Table"],"category":"office_and_stationery","conceptId":"pencil-holder"},
     {"word":"Pencil Sharpener","clues":["Lead","Pencil","Point","Sharp","Wood"],"category":"office_and_stationery","conceptId":"sacapuntas"},
+    {"word":"Permanent Marker","clues":["Felt tip","Ink","Sharpie","Waterproof","Write"],"category":"office_and_stationery","conceptId":"rotulador-permanente"},
     {"word":"Photocopier","clues":["Copies","Jam","Light","Machine","Office","Paper"],"category":"office_and_stationery","conceptId":"photocopier"},
     {"word":"Planner","clues":["Appointments","Days","Meeting","Organize","Write"],"category":"office_and_stationery","conceptId":"agenda"},
     {"word":"Post-it","clues":["Note","Reminder","Small","Stick","Yellow"],"reveal":"31111","category":"office_and_stationery","conceptId":"post-it"},
@@ -77,7 +80,9 @@
     {"word":"Ruler","clues":["Centimeters","Line","Measure","Plastic","Straight"],"category":"office_and_stationery","conceptId":"regla"},
     {"word":"Scanner","clues":["Copy","Digitize","Document","Image","Light"],"category":"office_and_stationery","conceptId":"escaner"},
     {"word":"Scissors","clues":["Crafts","Cut","Handle","Paper","Sharp","Sheets","The Office"],"category":"office_and_stationery","conceptId":"tijeras"},
+    {"word":"Screen","clues":["Display","Glass","Image","Monitor","Pixels"],"category":"office_and_stationery","conceptId":"pantalla"},
     {"word":"Set Square","clues":["Drafting","Geometry","Plastic","Right Angle","Ruler","Triangle"],"category":"office_and_stationery","conceptId":"set-square"},
+    {"word":"Sleeve Folder","clues":["Documents","Filing","Organize","Plastic Pockets"],"category":"office_and_stationery","conceptId":"carpeta-de-fundas"},
     {"word":"Spiral Notebook","clues":["Notes","Pages","Rings","School","Wire","Write"],"category":"office_and_stationery","conceptId":"spiral-notebook"},
     {"word":"Stamp","clues":["Mark","Official","Paper","Ink","The Office"],"category":"office_and_stationery","conceptId":"sello"},
     {"word":"Staple Remover","clues":["Fangs","Metal","Office","Remove","Staples","Teeth"],"category":"office_and_stationery","conceptId":"staple-remover"},
@@ -89,6 +94,7 @@
     {"word":"Typewriter","clues":["Keys","Noisy","Old","Paper","Retro","Ribbon"],"category":"office_and_stationery","conceptId":"typewriter"},
     {"word":"Wastebasket","clues":["Basket","Paper","Throw","Trash","The Office"],"category":"office_and_stationery","conceptId":"papelera"},
     {"word":"Water Cooler","clues":["Break","Cold Water","Cups","Gossip","Jug","Office"],"category":"office_and_stationery","conceptId":"water-cooler"},
-    {"word":"Whiteboard","clues":["Classroom","Erase","Explain","Marker","Meeting","White","Write","Board"],"reveal":"11111112","category":"office_and_stationery","conceptId":"pizarra-blanca"}
+    {"word":"Whiteboard","clues":["Classroom","Erase","Explain","Marker","Meeting","White","Write","Board"],"reveal":"11111112","category":"office_and_stationery","conceptId":"pizarra-blanca"},
+    {"word":"Wireless Mouse","clues":["Batteries","Click","Cordless","Cursor","Scroll"],"category":"office_and_stationery","conceptId":"raton-inalambrico"}
   ]
 }

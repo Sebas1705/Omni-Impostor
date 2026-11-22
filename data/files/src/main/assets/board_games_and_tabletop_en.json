@@ -61,6 +61,7 @@
     {"word":"Points","clues":["Add","End","Number","Scoreboard","Win"],"category":"board_games_and_tabletop","conceptId":"puntos"},
     {"word":"Poker Dice","clues":["Bet","Cards","Dice","Game","Symbols"],"reveal":"11121","category":"board_games_and_tabletop","conceptId":"poker-dice"},
     {"word":"Puzzle","clues":["Fit","Image","Jigsaw","Pieces","Table"],"reveal":"11311","category":"board_games_and_tabletop","conceptId":"puzzle"},
+    {"word":"RPG","clues":["Adventure","Character","Dice","Dungeon Master","Levels","Story","Tabletop"],"category":"board_games_and_tabletop","conceptId":"rpg"},
     {"word":"Referee","clues":["Fairness","Judge","Players","Rules"],"category":"board_games_and_tabletop","conceptId":"referee"},
     {"word":"Resources","clues":["Game","Manage","Pieces","Wood","Stone"],"category":"board_games_and_tabletop","conceptId":"recursos"},
     {"word":"Risk","clues":["Armies","Conquer","Dice","Strategy","Territories","World"],"category":"board_games_and_tabletop","conceptId":"risk"},

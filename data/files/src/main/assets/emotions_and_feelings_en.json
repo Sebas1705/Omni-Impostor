@@ -24,6 +24,7 @@
     {"word":"Desire","clues":["Crave","Feeling","Need","Passion","Want"],"reveal":"11113","category":"emotions_and_feelings","conceptId":"deseo"},
     {"word":"Despair","clues":["Anguish","Helpless","Hope","Hopeless","Shout","Sadness"],"reveal":"112111","category":"emotions_and_feelings","conceptId":"desesperacion"},
     {"word":"Disappointment","clues":["Bad","Expectation","Feeling","Let Down","Sadness"],"reveal":"11131","category":"emotions_and_feelings","conceptId":"decepcion"},
+    {"word":"Discouragement","clues":["Feeling down","Hopelessness","Lack of motivation","Low energy"],"category":"emotions_and_feelings","conceptId":"desanimo"},
     {"word":"Disgust","clues":["Bad","Food","Rejection","Repulsion","Smell"],"reveal":"11131","category":"emotions_and_feelings","conceptId":"asco"},
     {"word":"Distrust","clues":["Betrayal","Caution","Doubt","Suspicion","Wary"],"category":"emotions_and_feelings","conceptId":"distrust"},
     {"word":"Dread","clues":["Anticipation","Anxiety","Feeling","Terror","Fear"],"reveal":"11112","category":"emotions_and_feelings","conceptId":"dread"},
@@ -89,8 +90,10 @@
     {"word":"Stage Fright","clues":["Audience","Freeze","Nerves","Perform","Theater"],"category":"emotions_and_feelings","conceptId":"stage-fright"},
     {"word":"Surprise","clues":["Astonishment","Face","Gift","Reaction","Scare","Shock","Unexpected","Party"],"reveal":"31111111","category":"emotions_and_feelings","conceptId":"sorpresa"},
     {"word":"Tenderness","clues":["Affection","Baby","Feeling","Soft","Love"],"reveal":"31111","category":"emotions_and_feelings","conceptId":"ternura"},
+    {"word":"Tranquility","clues":["Balance","Calm","Mind","Peace"],"category":"emotions_and_feelings","conceptId":"tranquilidad"},
     {"word":"Trust","clues":["Believe","Faith","Friend","Reliable","Safety"],"category":"emotions_and_feelings","conceptId":"trust"},
     {"word":"Unease","clues":["Doubt","Nervous","Night","Something Wrong","Uneasy"],"category":"emotions_and_feelings","conceptId":"unease"},
+    {"word":"Vitality","clues":["Liveliness","Motivation","Movement","Strength"],"category":"emotions_and_feelings","conceptId":"energia~emotions-and-feelings"},
     {"word":"Vulnerability","clues":["Feel","Hurt","Open","Weak","Fear"],"category":"emotions_and_feelings","conceptId":"vulnerabilidad"},
     {"word":"Worry","clues":["Anxiety","Concern","Future","Nervous","Stress"],"reveal":"33111","category":"emotions_and_feelings","conceptId":"worry"},
     {"word":"Zeal","clues":["Eager","Enthusiasm","Feeling","Passion","Energy"],"reveal":"13131","category":"emotions_and_feelings","conceptId":"zeal"}

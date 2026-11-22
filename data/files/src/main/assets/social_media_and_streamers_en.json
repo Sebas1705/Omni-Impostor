@@ -6,6 +6,7 @@
     {"word":"Ban","clues":["Account","Blocking","Expelled","Forbidden","Rules"],"reveal":"13111","category":"social_media_and_streamers","conceptId":"ban"},
     {"word":"BeReal","clues":["Authentic","Moment","Notification","Photo","Unfiltered","Camera"],"category":"social_media_and_streamers","conceptId":"bereal"},
     {"word":"Bio","clues":["Description","Information","Link","Profile","Text"],"category":"social_media_and_streamers","conceptId":"bio"},
+    {"word":"Blogger","clues":["Blog","Internet","Opinions","Posts","Writing"],"category":"social_media_and_streamers","conceptId":"blogger"},
     {"word":"Blue Checkmark","clues":["Badge","Famous","Official Account","Twitter","Verified"],"category":"social_media_and_streamers","conceptId":"blue-checkmark"},
     {"word":"Caption","clues":["Description","Instagram","Photo","Story","Text"],"category":"social_media_and_streamers","conceptId":"caption"},
     {"word":"Challenge","clues":["Participate","Task","TikTok","Video","Viral"],"category":"social_media_and_streamers","conceptId":"challenge"},
@@ -55,6 +56,7 @@
     {"word":"PewDiePie","clues":["Gaming","King","Subscribers","Sweden","YouTube"],"category":"social_media_and_streamers","conceptId":"pewdiepie"},
     {"word":"Pinterest","clues":["Ideas","Inspiration","Photos","Pin","Board"],"category":"social_media_and_streamers","conceptId":"pinterest"},
     {"word":"Podcast","clues":["Audio","Episode","Listen","Microphone","Spotify"],"reveal":"21111","category":"social_media_and_streamers","conceptId":"podcast"},
+    {"word":"Podcaster","clues":["Audio","Episodes","Interviews","Microphone","Show"],"category":"social_media_and_streamers","conceptId":"podcaster"},
     {"word":"Pokimane","clues":["Canadian","Gaming","Livestreams","Streamer","Twitch"],"category":"social_media_and_streamers","conceptId":"pokimane"},
     {"word":"Prank","clues":["Hidden Camera","Joke","Scare","Video","YouTube"],"category":"social_media_and_streamers","conceptId":"prank"},
     {"word":"Reaction Video","clues":["Commentary","Faces","React","Watching","YouTube"],"category":"social_media_and_streamers","conceptId":"reaction-video"},
@@ -98,10 +100,12 @@
     {"word":"Viral","clues":["Content","Popular","Share","Spread","Internet"],"category":"social_media_and_streamers","conceptId":"viral"},
     {"word":"Viral Dance","clues":["Challenge","Choreography","Music","TikTok","Trend","Viral","Dance"],"category":"social_media_and_streamers","conceptId":"viral-dance"},
     {"word":"Vlog","clues":["Diary","Life","Routine","Video","Youtuber","YouTube","Camera"],"reveal":"3112111","category":"social_media_and_streamers","conceptId":"vlog"},
+    {"word":"Vlogger","clues":["Channel","Daily video","Diary","Travel","Webcam"],"category":"social_media_and_streamers","conceptId":"vlogger"},
     {"word":"WhatsApp","clues":["Call","Calls","Chat","Green","Message","Messages","Mobile","Status"],"reveal":"11211111","category":"social_media_and_streamers","conceptId":"whatsapp"},
     {"word":"Xokas","clues":["Humor","Livestreams","Spanish","Streamer","Twitch"],"category":"social_media_and_streamers","conceptId":"xokas"},
     {"word":"YouTube","clues":["Channel","Google","Live","Play","Subscribe","Subscribers","Videos"],"category":"social_media_and_streamers","conceptId":"youtube"},
     {"word":"YouTube Premium","clues":["Ad-free","Music","Offline","Subscription","YouTube"],"reveal":"11121","category":"social_media_and_streamers","conceptId":"youtube-premium"},
-    {"word":"YouTube Shorts","clues":["Music","Short Clips","Vertical","Video","YouTube"],"reveal":"11121","category":"social_media_and_streamers","conceptId":"youtube-shorts"}
+    {"word":"YouTube Shorts","clues":["Music","Short Clips","Vertical","Video","YouTube"],"reveal":"11121","category":"social_media_and_streamers","conceptId":"youtube-shorts"},
+    {"word":"YouTuber","clues":["Channel","Monetize","Subscribers","Thumbnails","Videos"],"category":"social_media_and_streamers","conceptId":"youtuber"}
   ]
 }

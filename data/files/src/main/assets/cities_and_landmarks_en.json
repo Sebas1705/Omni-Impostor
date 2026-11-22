@@ -2,6 +2,7 @@
   "words": [
     {"word":"Acropolis","clues":["Ancient","Athens","Hill","Parthenon","Greece"],"category":"cities_and_landmarks","conceptId":"acropolis"},
     {"word":"Alcatraz","clues":["Al Capone","Escape","Island","Prison","San Francisco"],"category":"cities_and_landmarks","conceptId":"alcatraz"},
+    {"word":"Alcázar of Segovia","clues":["Castle","Disney","Kings","Tower"],"category":"cities_and_landmarks","conceptId":"alcazar-de-segovia"},
     {"word":"Alhambra","clues":["Arabic","Gardens","Granada","Castle","Spain"],"reveal":"11121","category":"cities_and_landmarks","conceptId":"alhambra"},
     {"word":"Amsterdam","clues":["Bicycles","Canals","Museums","Netherlands","Tulips"],"category":"cities_and_landmarks","conceptId":"amsterdam"},
     {"word":"Angkor Wat","clues":["Cambodia","Jungle","Khmer","Ruins","Temple"],"category":"cities_and_landmarks","conceptId":"angkor-wat"},
@@ -21,9 +22,11 @@
     {"word":"Burj Khalifa","clues":["Building","Dubai","High","Tower","Sky"],"reveal":"21121","category":"cities_and_landmarks","conceptId":"burj-khalifa"},
     {"word":"Cairo","clues":["Capital","Nile","Pyramids","Egypt","Desert"],"reveal":"21111","category":"cities_and_landmarks","conceptId":"el-cairo"},
     {"word":"Cape Town","clues":["Coast","Penguins","South Africa","Table Mountain","Wine"],"category":"cities_and_landmarks","conceptId":"cape-town"},
+    {"word":"Charles Bridge","clues":["Medieval","Prague","Statues","Vltava River"],"category":"cities_and_landmarks","conceptId":"puente-de-carlos"},
     {"word":"Chicago","clues":["Illinois","Mafia","Pizza","Skyscrapers","Wind"],"category":"cities_and_landmarks","conceptId":"chicago"},
     {"word":"Chichen Itza","clues":["Maya","Pyramid","Ruins","Yucatan","Mexico"],"category":"cities_and_landmarks","conceptId":"chichen-itza"},
     {"word":"Christ the Redeemer","clues":["Brazil","Christianity","Corcovado","Rio","Statue"],"reveal":"11112","category":"cities_and_landmarks","conceptId":"christ-the-redeemer"},
+    {"word":"Cologne Cathedral","clues":["Gothic","Relics","Rhine River","Spires"],"category":"cities_and_landmarks","conceptId":"catedral-de-colonia"},
     {"word":"Colosseum","clues":["Ancient","Arches","Arena","Ruins","Show","Rome","Italy"],"category":"cities_and_landmarks","conceptId":"coliseo"},
     {"word":"Copenhagen","clues":["Bicycles","Denmark","Design","Mermaid","Nordic"],"category":"cities_and_landmarks","conceptId":"copenhague"},
     {"word":"Dubai","clues":["Burj Khalifa","Emirates","Luxury","Palm Islands","Shopping Malls","Skyscrapers","Gold","Desert"],"category":"cities_and_landmarks","conceptId":"dubai"},
@@ -35,6 +38,7 @@
     {"word":"Forbidden City","clues":["Beijing","Emperor","Palace","China"],"reveal":"1121","category":"cities_and_landmarks","conceptId":"ciudad-prohibida"},
     {"word":"Golden Gate Bridge","clues":["Bay","California","Fog","Red","San Francisco","Suspension"],"category":"cities_and_landmarks","conceptId":"puente-golden-gate"},
     {"word":"Grand Canyon","clues":["Arizona","Cliffs","Colorado River","GAP","Hiking","River","Desert","Rock"],"category":"cities_and_landmarks","conceptId":"gran-canon"},
+    {"word":"Great Wall","clues":["Defense","Dynasty","Long","Tourism"],"category":"cities_and_landmarks","conceptId":"muralla-china"},
     {"word":"Guggenheim Museum","clues":["Art","Frank Lloyd Wright","Museum","New York","Spiral"],"reveal":"11211","category":"cities_and_landmarks","conceptId":"guggenheim-museum"},
     {"word":"Hagia Sophia","clues":["Byzantine","Church","Dome","Istanbul","Mosque","Turkey"],"reveal":"121121","category":"cities_and_landmarks","conceptId":"hagia-sophia"},
     {"word":"Havana","clues":["Capital","Cuba","Malecon","Salsa","Vintage Cars"],"category":"cities_and_landmarks","conceptId":"havana"},
@@ -91,6 +95,7 @@
     {"word":"Uluru","clues":["Aboriginal","Australia","Desert","Red Rock","Sacred"],"category":"cities_and_landmarks","conceptId":"uluru"},
     {"word":"Venice","clues":["Bridge","Canals","Gondola","Italy"],"category":"cities_and_landmarks","conceptId":"venecia"},
     {"word":"Versailles Palace","clues":["Gardens","Hall of Mirrors","Louis XIV","Royal","France"],"category":"cities_and_landmarks","conceptId":"palacio-de-versalles"},
-    {"word":"Vienna","clues":["Austria","Danube","Music","Opera","Waltz"],"category":"cities_and_landmarks","conceptId":"viena"}
+    {"word":"Vienna","clues":["Austria","Danube","Music","Opera","Waltz"],"category":"cities_and_landmarks","conceptId":"viena"},
+    {"word":"Walls of Ávila","clues":["Castile","Medieval","Saint Teresa","Walled city"],"category":"cities_and_landmarks","conceptId":"murallas-de-avila"}
   ]
 }
