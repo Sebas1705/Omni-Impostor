@@ -77,3 +77,10 @@ test('merge folds a concept into another and add validates new concepts', () => 
   const thin = JSON.stringify({ labels: { es: 'Piscina' }, categories: ['home_and_furniture'], hints: { es: ['Agua', 'Nadar'] } });
   assert.throws(() => run(['add', 'pool', thin], dir), /at least 3 clues/);
 });
+
+test('rename changes an id and the links that point at it', () => {
+  const dir = setup();
+  run(['rename', 'hogar', 'hogar~home'], dir);
+  assert.equal(read(dir, 'links.jsonl')[0].to, 'hogar~home');
+  assert.throws(() => run(['rename', 'casa', 'hogar~home'], dir), /already used/);
+});

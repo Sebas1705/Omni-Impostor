@@ -88,6 +88,14 @@ export function run(argv, dir = conceptsDir) {
       message = `deleted ${id} and ${n - map.links.length} link(s)`;
       break;
     }
+    case 'rename': {
+      const [newId] = a;
+      need(newId && !map.byId.has(newId), `id "${newId}" is missing or already used`);
+      c.id = newId;
+      for (const l of map.links) { if (l.from === id) l.from = newId; if (l.to === id) l.to = newId; }
+      message = `renamed ${id} to ${newId}`;
+      break;
+    }
     case 'merge': {
       const [dropId] = a;
       const d = map.byId.get(dropId);
@@ -146,7 +154,7 @@ export function run(argv, dir = conceptsDir) {
       message = `added ${id}`;
       break;
     }
-    default: throw new Error('usage: edit.mjs show|label|categories|translatable|add-hint|remove-hint|type|link|unlink|delete|merge|add <id> ...');
+    default: throw new Error('usage: edit.mjs show|label|categories|translatable|add-hint|remove-hint|type|link|unlink|delete|merge|rename|add <id> ...');
   }
   const line = (o) => JSON.stringify(o);
   writeFileSync(join(dir, 'concepts.jsonl'), [...map.concepts].sort((x, y) => cmp(x.id, y.id)).map(line).join('\n') + '\n');
