@@ -1,6 +1,6 @@
 # Concept map: detailed design
 
-Status: phases 1 and 2 implemented (see sections 12 and 13). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
+Status: phases 1 to 3 implemented, with open parts (see sections 12 to 14). Follows `word-model-study.md` (option C). Nothing in the app or the word files changes with this
 document. The sizes quoted come from `data/concept-dry-run.md` (script `scripts/word-study/concept-dry-run.mjs`), the rules
 can be tried with `scripts/word-study/concept-compile-prototype.mjs` on `concept-map-example/`.
 
@@ -48,6 +48,7 @@ JSON Lines keeps diffs and review batches line based, like the current one-entry
 | `categories` | string[] | At least 1, each an existing category slug. A word belongs to every category where it fits; the first is the primary one. |
 | `hints` | map lang to hint[] | Plain-text clues that are not concepts (yet). Per language, because text is language specific. |
 | `kind` | `"thing"` (default) or `"topic"` | `topic` marks very general words (`Historia`, `Ciencia`, `Space`) that are labels of a topic more than things; they are valid targets of `broader` links but are reviewed before being a secret word. |
+| `translatable` | boolean, default `true` | `false` marks a proper name (Spiderman, The Beatles): a language without its own label uses the text of another one, so no translation is needed; a language may still carry an explicit label (`Los Beatles`). Hints are still per language. |
 | `todo` | string[] | Languages still missing while the concept is being completed, e.g. `["es"]` for a migrated English-only word. The release check fails if any concept has `todo`. |
 | `status` | `approved` (default) / `proposed` | `proposed` = written by the AI, not reviewed. |
 
@@ -159,7 +160,7 @@ merged), so the pick is uniform over concepts; `WordJson`, `WordDoc` and `WordMo
 ## 7. Validation (CI, extends `WordAssetsValidationTest`)
 
 On the source files: unique ids and id pattern; links reference existing concepts; no self or duplicate links; `es` label
-present unless `todo`; label and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
+present unless `todo` or `translatable: false`; label and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
 and are non-empty; weights 1 to 5; known link types; two concepts with the same label in a language must differ by a sense
 tag; every `(concept, language)` compiles to at least 3 clues at `normal`; `proposed` records are never compiled.
 Release check: no `todo`, and `words_version.txt` matches the compiled output. The existing validator keeps checking the
@@ -284,3 +285,81 @@ change the lists only by adding `reveal`; the labels alone fail `ConceptSourcesV
 Tested on the emulator (Spanish, debug build with the clue types applied): the Settings > Gameplay chips render and persist, and
 over 30 games the number of clues given matched the expected count for each word at low, normal and high (including the
 fallback to all clues when fewer than 3 would remain).
+
+## 14. Phase 3 as built
+
+| Piece | Where |
+|---|---|
+| `ratingFactor` from player ratings (lower bound of the Wilson interval of the share of positive votes, neutral below 5 votes, floor 0.25) | `scripts/words/lib.mjs` |
+| Download, import and report of `clue_ratings` | `scripts/words/ratings.mjs` (`ratings.jsonl` is the aggregated result) |
+| Weighted clue draw at game start | `ClueArrangement` + `ClueArrangementTest` (feature:offlinegame) |
+| Tooling tests, run in CI | `node --test scripts/words/words.test.mjs` |
+
+- **Ratings.** The app only records a rating when the player finishes the rating screen, and ratings start positive (a player taps a
+  clue to dislike it). A low factor is therefore a strong signal and a high one a weak one, which is why the factor floor is
+  0.25 and the neutral zone starts at 5 votes. A clue that falls under the compile floor is dropped while 4 or more remain, so
+  a disliked clue stops shipping instead of only moving down. `ratings.jsonl` does not exist yet: fetching the collection needs
+  the owner's own Google credentials (the rules deny client reads), so that step is the owner's. The import maps a rating to a
+  concept by word, category and clue text, and reports the documents that no longer match.
+- **Weighted draw.** The clues of a word come ranked best first from the compiler. At game start the positions the impostors
+  map to (`player % size`) are filled by a draw with weight `0.75^rank` without replacement; the rest keep their order. The
+  screens and the rating still read `clue[player % size]`, so nothing else changed. Two impostors that share a position still
+  share a clue, as before.
+- **Not built:** the optional "similar word" impostor mode (the impostor receives a related concept instead of a clue). It
+  needs a product decision (rules, how to keep it fair, UI) more than data work; the map already has what it needs (links with
+  type and weight).
+
+## 15. Spanish labels reviewed and applied
+
+The owner reviewed the Spanish label proposals together with the assistant and approved applying them, with these decisions:
+
+- English words that mean the same in Spanish are **one concept**: the first English word keeps the label, the others become
+  aliases of it and their clues are merged (equipaje = baggage + luggage; hamburguesa, fetiche, libertad, sartén, sirena,
+  chincheta, tranvía, velocidad, reloj, Gorra Gatsby, satisfacción). Words that only look alike stay separate with their own label
+  (spirit → Destilado, magician → Ilusionista, binder → Archivador, smoothie → Smoothie, the two learning platforms).
+- `translatable: false` for proper names (see section 2.1). Proposals whose Spanish text equals the English one set it
+  automatically; the label is then not stored twice.
+- Left English-only for now: `hat` (Spanish `Sombrero` already exists with its own English label) and the second
+  `Spiderman`. The typo `The Beetles` was folded into `The Beatles`.
+- Applying labels renames ids that became homonyms to `<id>~<first category>` (23 ids) and links follow.
+
+Result: 1,154 new Spanish concepts and 1,263 English words folded into existing Spanish ones, no concept left without Spanish
+except the two above. Spanish went from 3,144 to 4,407 words (3,989 concepts), English from 3,484 to 3,531 entries (3,125
+concepts). `proposals.mjs` gained `merge <from> <into>` and `prune`; the clue-type proposals were pruned of 1,909 typed clues
+that no longer exist (6,754 remain, still to be reviewed; the new Spanish concepts have no type proposals yet).
+Checked on the emulator: upgrade from the previous build re-imports 7,938 words and a Spanish game with all categories sees
+3,989 concepts.
+
+## 16. Clue types reviewed and applied
+
+Decisions taken with the owner: only the types that really give the word away are applied (**synonym, broader, contrast**); the
+weaker `part` and `context` proposals (3,661 clues) were discarded, so those clues stay plain associations. The 3,093 remaining
+proposals went through an independent second pass (four sonnet reviewers, strict, "when in doubt drop"): 2,535 kept, 527 dropped
+(genres taken for categories such as `Katy Perry -> Pop`, brands taken for stores, derived forms of the same word such as
+`Velocidad -> Rápido`), 31 retyped (mostly synonym to broader, e.g. `Gmail -> Email`).
+
+Applied: 2,566 typed clues (1,933 broader, 618 synonym, 15 contrast) = 723 links and 1,843 hints. The compiled lists now carry a
+`reveal` string on 2,561 entries (clue levels: 10,048 weak, 2,314 medium, 709 strong). 62 entries have fewer than 3 clues at
+level normal and fall back to all their clues. Tested on the emulator in Spanish: at low and normal the number of clues given
+matched the expected count for every word played. The impostor help setting now has a visible effect.
+
+The new Spanish concepts were typed afterwards, see section 17.
+
+## 17. Clue types of the new Spanish concepts
+
+The 2,464 concept/language pairs that the label merge had created or changed (1,195 Spanish, 1,269 English) went through the same
+two passes: four strict typing agents (779 typed clues) and two independent reviewers (7 dropped, 7 retyped, because the first pass
+already used the strict definitions). Applied: 772 typed clues (540 broader, 227 synonym, 5 contrast) = 121 links and 651 hints; the
+compiled lists were regenerated (78 entries have fewer than 3 clues at level normal and fall back to all of them). Validators and
+tooling tests pass, and on the emulator the clues given at low help matched the expected count for every word played.
+
+## 18. Phase 0 clues and professions_es reviewed
+
+- The 87 entries with clues proposed in phase 0 (`phase0-review.md`) were reviewed with the owner and accepted as they are.
+- `professions_es` had 28 entries that were not professions. Decided with the owner: Blogger, Podcaster and Youtuber also join
+  `social_media_and_streamers`; TikToker, Instagrammer, Redditor and Troll de internet move there; eight hard-to-guess ones
+  were deleted (Facebooker, Snapchatter, Twittero, Pinterest user, Tumblr user, Stack Overflow user, GitHub contributor, LinkedIn
+  influencer); seven crime roles (Cibercriminal, Corrupto, Extorsionista, Lavador de dinero, Narcotraficante, Secuestrador,
+  Terrorista internacional) move to `adult_18_plus`; Mercenario, Espía cibernético, Hacker, Influencer, Streamer and Vlogger stay.
+  `professions_es` now has 152 words, `social_media_and_streamers_es` 87 and `adult_18_plus_es` 138.
+- The generic clue `Expansión` was removed from the 14 Spanish video game entries that had it (links to the concept `expansion`); it stays on Big Bang, Energía Oscura, Gigante Roja and Adquisición, where it means something. Their clue order changed slightly because the concept has fewer incoming links now.

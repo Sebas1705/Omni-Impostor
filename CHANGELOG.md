@@ -9,6 +9,21 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The bundled word lists are versioned (`words_version.txt`): when an update ships different lists, the app replaces the words stored on the device instead of keeping the old copy forever. An unreadable list never leaves the game without words. `node scripts/word-study/update-words-version.mjs` refreshes the version after editing a list.
 - A unit test (`WordAssetsValidationTest`) that checks the shape of the bundled word lists: at most 3 words per word, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a list.
 
+### Changed (Spanish professions)
+- Spanish professions list cleaned: social network roles moved to the social media category, hard-to-guess ones removed, crime roles moved to the +18 category.
+
+### Added (clue types)
+- About 2,500 clues are now typed as synonym, more general category or opposite, so the "Impostor help" setting changes which clue the impostor gets: low and normal hide synonyms, low also hides the more general categories.
+
+### Added (more Spanish words)
+- About 1,150 words that only existed in English are now also available in Spanish, and about 1,260 English synonyms were folded into the Spanish word they translate to (one word, one concept). Proper names are flagged as not translatable.
+
+### Fixed (database)
+- Replacing the stored words when the bundled lists change really deletes the old ones now (`deleteAll` and `deleteByParam` never purged anything).
+
+### Added (clue quality)
+- The clue an impostor gets is now a weighted draw over the word's ranked clues (best ranked clues are likelier, every impostor still gets a different one) instead of always the first ones. Player ratings can feed the ranking: `scripts/words/ratings.mjs` imports the `clue_ratings` counters and `compile.mjs` lowers the weight of clues players dislike.
+
 ### Added (impostor help)
 - New setting "Impostor help" (low, normal, high) in Settings > Gameplay: it decides how much the clue given to the impostor may give the word away. Every clue now carries a reveal level (1 weak, 2 medium, 3 strong, such as a synonym); high allows all of them, normal hides the strongest, low only the weakest. A word with fewer than 3 clues at the chosen level gives all of its clues instead.
 

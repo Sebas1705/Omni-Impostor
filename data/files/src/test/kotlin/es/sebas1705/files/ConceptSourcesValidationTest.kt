@@ -67,7 +67,10 @@ class ConceptSourcesValidationTest {
     fun `every concept has a spanish label unless it is marked todo`() {
         assertNone(
             "es label required",
-            concepts.filter { it.obj("labels")["es"] == null && it.arr("todo").none { t -> t.jsonPrimitive.content == "es" } }.map { it.id }
+            concepts.filter {
+                it.obj("labels")["es"] == null && it.str("translatable") != "false" &&
+                    it.arr("todo").none { t -> t.jsonPrimitive.content == "es" }
+            }.map { it.id }
         )
         assertNone("A concept needs at least one label", concepts.filter { it.obj("labels").isEmpty() }.map { it.id })
     }

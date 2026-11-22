@@ -162,7 +162,7 @@ class OfflineGameViewModel internal constructor(
                 currentRevealIndex = 0,
                 revealedCurrentCard = false,
                 currentSpeakerIndex = startingPlayerIndex,
-                wordEntry = selectedWord,
+                wordEntry = selectedWord.copy(clue = ClueArrangement.arrange(selectedWord.clue, impostorIndexes)),
                 correctVotes = 0,
                 incorrectVotes = 0,
                 guessFeedback = null,
