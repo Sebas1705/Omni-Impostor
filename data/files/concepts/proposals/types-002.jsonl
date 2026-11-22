@@ -1,29 +1,18 @@
-{"id":"balenciaga","lang":"es","clues":{"Tienda":"broader"}}
-{"id":"balmain","lang":"es","clues":{"Tienda":"broader"}}
-{"id":"baloncesto","lang":"es","clues":{"Canasta":"part","Tablero":"part"}}
-{"id":"balonmano","lang":"es","clues":{"Portería":"part"}}
-{"id":"ban","lang":"es","clues":{"Bloqueo":"synonym","Expulsión":"synonym","Prohibido":"synonym"}}
-{"id":"ban","lang":"en","clues":{"Blocking":"synonym","Expelled":"synonym","Forbidden":"synonym"}}
-{"id":"banjo","lang":"es","clues":{"Cuerdas":"part"}}
-{"id":"banjo","lang":"en","clues":{"Strings":"part"}}
-{"id":"bano","lang":"es","clues":{"Ducha":"part","Inodoro":"part"}}
+{"id":"ban","lang":"es","clues":{"Bloqueo":"synonym","Expulsión":"synonym"}}
+{"id":"ban","lang":"en","clues":{"Blocking":"synonym"}}
 {"id":"barajar","lang":"es","clues":{"Mezclar":"synonym"}}
 {"id":"barnes-noble","lang":"es","clues":{"Librería":"broader"}}
 {"id":"barnes-noble","lang":"en","clues":{"Bookstore":"broader"}}
 {"id":"baron","lang":"es","clues":{"Nobleza":"broader"}}
 {"id":"baronesa","lang":"es","clues":{"Nobleza":"broader"}}
-{"id":"base~science-chemistry","lang":"es","clues":{"Alcalino":"synonym","Opuesto":"contrast"}}
-{"id":"base~science-chemistry","lang":"en","clues":{"Alkaline":"synonym","Opposite":"contrast"}}
+{"id":"base~science-chemistry","lang":"es","clues":{"Alcalino":"synonym"}}
+{"id":"base~science-chemistry","lang":"en","clues":{"Alkaline":"synonym"}}
 {"id":"base~superheroes-and-comics","lang":"es","clues":{"Cuartel":"synonym","Guarida":"synonym","Escondite":"synonym"}}
 {"id":"base~superheroes-and-comics","lang":"en","clues":{"Headquarters":"synonym","Hideout":"synonym","Lair":"synonym"}}
 {"id":"basilisco","lang":"es","clues":{"Serpiente":"broader","Monstruo":"broader"}}
 {"id":"bastilla","lang":"es","clues":{"Prisión":"broader"}}
-{"id":"bateria~music","lang":"es","clues":{"Percusión":"broader","Bombo":"part","Platillos":"part"}}
-{"id":"batman","lang":"es","clues":{"Capa":"part"}}
-{"id":"batman","lang":"en","clues":{"Cape":"part"}}
-{"id":"bdsm","lang":"es","clues":{"Bondage":"part","Disciplina":"part","Dominación":"part","Sadomasoquismo":"part","Sumisión":"part"}}
-{"id":"bdsm","lang":"en","clues":{"Bondage":"part","Discipline":"part","Dominance":"part","Sadism":"part","Submission":"part"}}
-{"id":"beach-resort","lang":"en","clues":{"Resort":"synonym"}}
+{"id":"bateria~music","lang":"es","clues":{"Percusión":"broader"}}
+{"id":"beach-resort","lang":"en","clues":{"Resort":"broader"}}
 {"id":"bebida-alcoholica","lang":"es","clues":{"Bebida":"broader"}}
 {"id":"bebida-energetica","lang":"es","clues":{"Bebida":"broader"}}
 {"id":"bebida-espirituosa","lang":"es","clues":{"Bebida":"broader"}}
@@ -32,89 +21,68 @@
 {"id":"beerus","lang":"en","clues":{"God of Destruction":"synonym"}}
 {"id":"behavioral-ecology","lang":"en","clues":{"Ecology":"broader"}}
 {"id":"behavioral-genetics","lang":"en","clues":{"Genetics":"broader"}}
-{"id":"beisbol","lang":"es","clues":{"Bate":"part","Guante":"part","Base":"part"}}
 {"id":"belcebu","lang":"es","clues":{"Demonio Mayor":"broader","Satanás":"synonym"}}
 {"id":"bellini","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"beret","lang":"en","clues":{"Round Hat":"broader"}}
 {"id":"bergelmir","lang":"en","clues":{"Giant":"broader"}}
-{"id":"bernie-sanders-mittens","lang":"es","clues":{"Guantes":"synonym"}}
-{"id":"bernie-sanders-mittens","lang":"en","clues":{"Gloves":"synonym"}}
+{"id":"bernie-sanders-mittens","lang":"es","clues":{"Guantes":"broader"}}
+{"id":"bernie-sanders-mittens","lang":"en","clues":{"Gloves":"broader"}}
 {"id":"bershka","lang":"es","clues":{"Tienda":"broader","Ropa":"broader"}}
 {"id":"bershka","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
 {"id":"beyonce","lang":"es","clues":{"Cantante":"broader","Queen":"synonym"}}
 {"id":"beyonce","lang":"en","clues":{"Singer":"broader","Queen":"synonym"}}
-{"id":"biathlon","lang":"en","clues":{"Cross Country Skiing":"part","Rifle Shooting":"part"}}
-{"id":"bicicleta","lang":"es","clues":{"Pedal":"part","Cadena":"part","Dos Ruedas":"part"}}
 {"id":"big-ben","lang":"en","clues":{"Tower":"broader"}}
-{"id":"bikini","lang":"es","clues":{"Dos Piezas":"part"}}
-{"id":"billar","lang":"es","clues":{"Bolas":"part","Taco":"part","Tronera":"part"}}
 {"id":"billie-eilish","lang":"es","clues":{"Cantante":"broader"}}
 {"id":"billie-eilish","lang":"en","clues":{"Singer-songwriter":"broader"}}
 {"id":"binder-clips","lang":"en","clues":{"Clip":"broader"}}
-{"id":"bingo","lang":"es","clues":{"Juego":"broader","Cartón":"part","Bombo":"part"}}
-{"id":"bingo","lang":"en","clues":{"Game":"broader","Card":"part","Drum":"part"}}
-{"id":"bio","lang":"es","clues":{"Descripción":"synonym"}}
-{"id":"bio","lang":"en","clues":{"Description":"synonym"}}
+{"id":"bingo","lang":"es","clues":{"Juego":"broader"}}
+{"id":"bingo","lang":"en","clues":{"Game":"broader"}}
 {"id":"biochemistry","lang":"en","clues":{"Chemistry":"broader"}}
 {"id":"biocombustible","lang":"es","clues":{"Combustible":"broader"}}
-{"id":"biodiversidad","lang":"es","clues":{"Variedad":"synonym"}}
 {"id":"bioma","lang":"es","clues":{"Ecosistema":"broader"}}
 {"id":"biomass-energy","lang":"en","clues":{"Energy":"broader"}}
 {"id":"biotecnologia","lang":"es","clues":{"Tecnología":"broader"}}
-{"id":"birkenstock","lang":"en","clues":{"Store":"broader"}}
 {"id":"bit","lang":"es","clues":{"Unidad":"broader"}}
 {"id":"bit","lang":"en","clues":{"Unit":"broader"}}
 {"id":"bitcoin","lang":"es","clues":{"Moneda":"broader"}}
 {"id":"bitcoin","lang":"en","clues":{"Currency":"broader"}}
 {"id":"black-death","lang":"en","clues":{"Plague":"synonym"}}
-{"id":"black-russian","lang":"en","clues":{"Cocktail":"broader","Kahlua":"part","Vodka":"part"}}
+{"id":"black-russian","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"blackjack","lang":"es","clues":{"Veintiuno":"synonym"}}
 {"id":"blackjack","lang":"en","clues":{"Twenty-one":"synonym"}}
 {"id":"blackpink","lang":"es","clues":{"Banda de K-pop":"broader"}}
 {"id":"blazer","lang":"en","clues":{"Jacket":"broader","Clothing":"broader"}}
-{"id":"blockchain","lang":"es","clues":{"Bloques":"part","Cadena":"part"}}
-{"id":"blockchain","lang":"en","clues":{"Blocks":"part","Chain":"part"}}
 {"id":"blood-pressure","lang":"en","clues":{"Tension":"synonym"}}
-{"id":"bloody-mary","lang":"es","clues":{"Cóctel":"broader","Tomate":"part","Vodka":"part"}}
-{"id":"bloody-mary","lang":"en","clues":{"Cocktail":"broader","Tomato Juice":"part","Vodka":"part"}}
-{"id":"bloqueo~board-games-and-tabletop","lang":"es","clues":{"Impedir":"synonym"}}
-{"id":"bloqueo~politics-and-law","lang":"es","clues":{"Restricción":"synonym"}}
-{"id":"blue-lagoon","lang":"en","clues":{"Cocktail":"broader","Blue Curacao":"part","Vodka":"part"}}
+{"id":"bloody-mary","lang":"es","clues":{"Cóctel":"broader"}}
+{"id":"bloody-mary","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"blue-lagoon","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"blue-origin","lang":"en","clues":{"Company":"broader"}}
 {"id":"bmw","lang":"es","clues":{"Coche":"broader"}}
 {"id":"bmw","lang":"en","clues":{"Car":"broader"}}
 {"id":"bmx","lang":"es","clues":{"Bicicleta":"broader"}}
 {"id":"bo-staff","lang":"en","clues":{"Long Stick":"synonym","Weapon":"broader"}}
 {"id":"boater-hat","lang":"en","clues":{"Straw Hat":"broader"}}
-{"id":"bocadillo~food-and-drinks","lang":"es","clues":{"Pan":"part","Relleno":"part"}}
 {"id":"bocadillo~superheroes-and-comics","lang":"es","clues":{"Globo":"synonym"}}
 {"id":"boceto","lang":"es","clues":{"Dibujo":"broader"}}
 {"id":"boiling-point","lang":"en","clues":{"Temperature":"broader"}}
 {"id":"bol","lang":"es","clues":{"Recipiente":"broader"}}
 {"id":"boleto","lang":"es","clues":{"Billete":"synonym","Entrada":"synonym"}}
-{"id":"boligrafo","lang":"es","clues":{"Tinta":"part"}}
 {"id":"bolivia","lang":"es","clues":{"País":"broader"}}
 {"id":"bolso","lang":"es","clues":{"Accesorio":"broader"}}
-{"id":"bomber-jacket","lang":"es","clues":{"Chaqueta Corta":"broader","Cremallera Frontal":"part"}}
-{"id":"bomber-jacket","lang":"en","clues":{"Short Jacket":"broader","Zipper Front":"part"}}
-{"id":"bondad","lang":"es","clues":{"Bueno":"synonym","Generoso":"synonym","Malo":"contrast"}}
-{"id":"bondage","lang":"es","clues":{"BDSM":"broader","Atar":"synonym"}}
+{"id":"bomber-jacket","lang":"es","clues":{"Chaqueta Corta":"broader"}}
+{"id":"bomber-jacket","lang":"en","clues":{"Short Jacket":"broader"}}
+{"id":"bondage","lang":"es","clues":{"BDSM":"broader"}}
 {"id":"bongo","lang":"es","clues":{"Tambor":"broader","Percusión":"broader"}}
 {"id":"bongo","lang":"en","clues":{"Drum":"broader","Percussion":"broader"}}
-{"id":"booking","lang":"es","clues":{"Reserva":"synonym"}}
 {"id":"boomplay","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"boret","lang":"es","clues":{"Sombrero Redondo":"broader"}}
 {"id":"boson-de-higgs","lang":"es","clues":{"Partícula":"broader"}}
 {"id":"botas","lang":"es","clues":{"Calzado":"broader"}}
-{"id":"bottega-veneta","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"boulanger","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"boulanger","lang":"en","clues":{"Store":"broader"}}
-{"id":"bow-and-arrow","lang":"en","clues":{"Weapon":"broader","Bow":"part","Arrow":"part"}}
+{"id":"bow-and-arrow","lang":"en","clues":{"Weapon":"broader"}}
 {"id":"bow-tie","lang":"en","clues":{"Tie":"broader"}}
-{"id":"bowler-hat","lang":"en","clues":{"Derby":"synonym","Hard Felt Hat":"broader","Rounded Crown":"part"}}
-{"id":"bowling","lang":"es","clues":{"Bolos":"part","Pista":"part"}}
-{"id":"bowling","lang":"en","clues":{"Pins":"part","Lane":"part"}}
-{"id":"boxeo","lang":"es","clues":{"Ring":"part","Guantes":"part"}}
+{"id":"bowler-hat","lang":"en","clues":{"Derby":"synonym","Hard Felt Hat":"broader"}}
 {"id":"brad-pitt","lang":"es","clues":{"Actor":"broader"}}
 {"id":"brad-pitt","lang":"en","clues":{"Actor":"broader"}}
 {"id":"brain-computer-interface","lang":"en","clues":{"BCI":"synonym"}}
@@ -122,68 +90,52 @@
 {"id":"brasil","lang":"es","clues":{"País":"broader"}}
 {"id":"bread-maker","lang":"en","clues":{"Appliance":"broader"}}
 {"id":"breakdance","lang":"es","clues":{"Baile Urbano":"broader"}}
-{"id":"breitling","lang":"en","clues":{"Store":"broader","Watches":"broader"}}
+{"id":"breitling","lang":"en","clues":{"Watches":"broader"}}
 {"id":"brindis","lang":"es","clues":{"Chinchín":"synonym","Salud":"synonym"}}
 {"id":"bromo","lang":"es","clues":{"Elemento":"broader"}}
-{"id":"brooks-running","lang":"es","clues":{"Ropa Deportiva":"broader","Tienda":"broader"}}
+{"id":"brooks-running","lang":"es","clues":{"Ropa Deportiva":"broader"}}
 {"id":"bruce-lee","lang":"es","clues":{"Actor":"broader"}}
 {"id":"bruce-lee","lang":"en","clues":{"Actor":"broader"}}
-{"id":"brunello-cucinelli","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"bruno-mars","lang":"es","clues":{"Cantante":"broader"}}
 {"id":"bruno-mars","lang":"en","clues":{"Singer-songwriter":"broader"}}
 {"id":"bryant-myers","lang":"es","clues":{"Rapero de Trap/Reggaeton":"broader"}}
 {"id":"bts","lang":"es","clues":{"Banda de K-pop":"broader"}}
-{"id":"bubble-tea","lang":"en","clues":{"Tea":"broader","Tapioca Pearls":"part","Sweetened Milk":"part"}}
+{"id":"bubble-tea","lang":"en","clues":{"Tea":"broader"}}
 {"id":"buda","lang":"es","clues":{"Siddhartha":"synonym"}}
 {"id":"bufanda","lang":"es","clues":{"Accesorio":"broader"}}
-{"id":"buffalo-wings","lang":"en","clues":{"Appetizer":"broader","Chicken Wings":"synonym"}}
+{"id":"buffalo-wings","lang":"en","clues":{"Appetizer":"broader","Chicken Wings":"broader"}}
 {"id":"bulimia","lang":"es","clues":{"Trastorno Alimenticio":"broader"}}
-{"id":"burberry","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"bureaucracy","lang":"en","clues":{"Red Tape":"synonym"}}
-{"id":"burger-king","lang":"es","clues":{"Corona":"part"}}
-{"id":"burger-king","lang":"en","clues":{"Crown":"part"}}
 {"id":"burj-al-arab","lang":"en","clues":{"Hotel":"broader"}}
 {"id":"burj-khalifa","lang":"es","clues":{"Torre":"broader","Edificio":"broader"}}
 {"id":"burj-khalifa","lang":"en","clues":{"Tower":"broader","Building":"broader"}}
-{"id":"burrito","lang":"es","clues":{"Tortilla":"part"}}
-{"id":"burrito","lang":"en","clues":{"Tortilla":"part","Beans":"part"}}
 {"id":"butter-dish","lang":"en","clues":{"Container":"broader"}}
 {"id":"byte","lang":"es","clues":{"Unidad":"broader"}}
 {"id":"byte","lang":"en","clues":{"Unit":"broader"}}
 {"id":"c-a","lang":"es","clues":{"Tienda":"broader","Ropa":"broader"}}
 {"id":"c-a","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
-{"id":"caballo","lang":"es","clues":{"Crines":"part","Cascos":"part"}}
 {"id":"cafetera","lang":"es","clues":{"Máquina":"broader"}}
-{"id":"caipirinha","lang":"en","clues":{"Cocktail":"broader","Cachaça":"part"}}
+{"id":"caipirinha","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"caja-de-cambios","lang":"es","clues":{"Transmisión":"synonym"}}
 {"id":"cajon","lang":"es","clues":{"Mueble":"broader"}}
 {"id":"calcio","lang":"es","clues":{"Elemento":"broader","Metal":"broader"}}
 {"id":"calentamiento-global","lang":"es","clues":{"Cambio Climático":"synonym"}}
 {"id":"caligula","lang":"es","clues":{"Emperador":"broader"}}
-{"id":"calvin-klein","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
-{"id":"cama","lang":"es","clues":{"Colchón":"part"}}
+{"id":"calvin-klein","lang":"en","clues":{"Clothing":"broader"}}
 {"id":"camaleon","lang":"es","clues":{"Reptil":"broader"}}
-{"id":"camara","lang":"es","clues":{"Lente":"part"}}
-{"id":"camello","lang":"es","clues":{"Joroba":"part"}}
 {"id":"camila-cabello","lang":"es","clues":{"Cantante":"broader"}}
 {"id":"camiseta","lang":"es","clues":{"Ropa":"broader"}}
-{"id":"campari","lang":"es","clues":{"Alcohol":"broader"}}
 {"id":"can-opener","lang":"en","clues":{"Tool":"broader"}}
 {"id":"canada","lang":"es","clues":{"País":"broader"}}
 {"id":"candy-thermometer","lang":"en","clues":{"Thermometer":"broader"}}
-{"id":"cangrejo","lang":"es","clues":{"Pinzas":"part","Caparazón":"part"}}
-{"id":"canguro","lang":"es","clues":{"Marsupial":"broader","Bolsa":"part"}}
+{"id":"canguro","lang":"es","clues":{"Marsupial":"broader"}}
 {"id":"canoa","lang":"es","clues":{"Barca":"broader"}}
 {"id":"capitalismo","lang":"es","clues":{"Economía de Mercado":"synonym"}}
 {"id":"capitan-america","lang":"es","clues":{"Steve Rogers":"synonym"}}
 {"id":"capitulo","lang":"es","clues":{"Sección":"synonym","Parte":"broader"}}
 {"id":"capoeira","lang":"es","clues":{"Danza Marcial":"broader"}}
-{"id":"caption","lang":"en","clues":{"Description":"synonym"}}
-{"id":"capturar","lang":"es","clues":{"Quitar":"synonym"}}
-{"id":"capture","lang":"en","clues":{"Take":"synonym","Remove":"synonym"}}
+{"id":"capture","lang":"en","clues":{"Take":"synonym"}}
 {"id":"capybara","lang":"en","clues":{"Rodent":"broader"}}
 {"id":"car-accident","lang":"en","clues":{"Collision":"synonym","Crash":"synonym"}}
 {"id":"car-audio-system","lang":"en","clues":{"Stereo System":"synonym"}}
 {"id":"car-customization","lang":"en","clues":{"Tuning":"synonym","Modifications":"synonym","Personalization":"synonym"}}
-{"id":"car-dealer","lang":"en","clues":{"Salesperson":"broader"}}
-{"id":"car-dealership","lang":"en","clues":{"Showroom":"synonym"}}

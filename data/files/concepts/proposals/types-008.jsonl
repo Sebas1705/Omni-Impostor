@@ -1,370 +1,199 @@
-{"id":"legionnaire","lang":"en","clues":{"Soldier":"broader","Rome":"context"}}
-{"id":"lego","lang":"es","clues":{"Bloques":"part","Dinamarca":"context","Juguete":"broader","Piezas":"part"}}
-{"id":"lego","lang":"en","clues":{"Blocks":"part","Denmark":"context","Pieces":"part","Toy":"broader"}}
-{"id":"lemon-drop-martini","lang":"en","clues":{"Lemon":"part","Vodka":"part","Sugar":"part","Cocktail":"broader","Glass":"context"}}
-{"id":"lemonade","lang":"en","clues":{"Lemon":"part","Sugar":"part","Summer":"context"}}
-{"id":"leon","lang":"es","clues":{"Carnívoro":"broader","Depredador":"broader","Melena":"part","Rugido":"part","Selva":"context"}}
-{"id":"leonardo-da-vinci","lang":"es","clues":{"Mona Lisa":"context","Renacimiento":"context"}}
-{"id":"leonardo-da-vinci","lang":"en","clues":{"Artist":"broader","Inventor":"broader","Mona Lisa":"context","Renaissance":"context","Italy":"context"}}
-{"id":"leonardo-dicaprio","lang":"es","clues":{"Oscar":"context","Titanic":"context","Actor":"broader"}}
-{"id":"leonardo-dicaprio","lang":"en","clues":{"Oscar":"context","Titanic":"context","Actor":"broader"}}
-{"id":"leorio-paradinight","lang":"en","clues":{"Hunter x Hunter":"context","Doctor":"broader","Suit":"part"}}
-{"id":"leprechaun","lang":"en","clues":{"Ireland":"context","Gold":"part","Shoes":"part","Mythology":"broader"}}
-{"id":"leroy-merlin","lang":"es","clues":{"Bricolaje":"context"}}
-{"id":"leroy-merlin","lang":"en","clues":{"Construction":"context","DIY":"context"}}
-{"id":"letter-opener","lang":"en","clues":{"Envelope":"context","Sharp":"part"}}
-{"id":"letter-tray","lang":"en","clues":{"Mail":"context","Paper":"context"}}
-{"id":"levi","lang":"en","clues":{"Attack on Titan":"context","Captain":"broader","Humanity's Strongest Soldier":"synonym"}}
-{"id":"levi-s","lang":"en","clues":{"Denim":"part","Jeans":"part","Red Tab":"part","Store":"broader"}}
-{"id":"leviatan","lang":"es","clues":{"Demonio del Envidia":"broader","Siete Pecados Capitales":"context","Infierno":"context"}}
-{"id":"lewis-hamilton","lang":"es","clues":{"Carreras":"context","Fórmula 1":"context"}}
-{"id":"lewis-hamilton","lang":"en","clues":{"Formula 1":"context","Racing":"context"}}
-{"id":"ley","lang":"es","clues":{"Regla":"synonym","Código":"synonym","Obligatorio":"part"}}
+{"id":"legionnaire","lang":"en","clues":{"Soldier":"broader"}}
+{"id":"lego","lang":"es","clues":{"Juguete":"broader"}}
+{"id":"lego","lang":"en","clues":{"Toy":"broader"}}
+{"id":"lemon-drop-martini","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"leon","lang":"es","clues":{"Carnívoro":"broader","Depredador":"broader"}}
+{"id":"leonardo-da-vinci","lang":"en","clues":{"Artist":"broader","Inventor":"broader"}}
+{"id":"leonardo-dicaprio","lang":"es","clues":{"Actor":"broader"}}
+{"id":"leonardo-dicaprio","lang":"en","clues":{"Actor":"broader"}}
+{"id":"leorio-paradinight","lang":"en","clues":{"Doctor":"broader"}}
+{"id":"levi","lang":"en","clues":{"Captain":"broader","Humanity's Strongest Soldier":"synonym"}}
+{"id":"leviatan","lang":"es","clues":{"Demonio del Envidia":"broader"}}
+{"id":"ley","lang":"es","clues":{"Regla":"synonym"}}
 {"id":"leyenda","lang":"es","clues":{"Mito":"synonym","Narración":"broader"}}
-{"id":"libelula","lang":"es","clues":{"Alas":"part","Cuerpo Largo":"part","Insecto":"broader"}}
-{"id":"libertad","lang":"es","clues":{"Independencia":"synonym","Preso":"contrast"}}
+{"id":"libelula","lang":"es","clues":{"Insecto":"broader"}}
+{"id":"libertad","lang":"es","clues":{"Independencia":"synonym"}}
 {"id":"libia","lang":"es","clues":{"País":"broader"}}
-{"id":"librarian","lang":"en","clues":{"Books":"context","Library":"context"}}
-{"id":"libreria","lang":"es","clues":{"Estantes":"part","Libros":"part","Tienda":"broader"}}
+{"id":"libreria","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"licencia-de-conducir","lang":"es","clues":{"Carnet":"synonym","Documento":"broader","Permiso":"synonym"}}
-{"id":"licor","lang":"es","clues":{"Bebida":"broader","Destilado":"broader","Alcohol":"broader"}}
-{"id":"licor-de-hierbas","lang":"es","clues":{"Bebida":"broader","Digestivo":"context","Hierbas":"part","Alcohol":"broader"}}
-{"id":"licoreria","lang":"es","clues":{"Bebidas":"context","Tienda":"broader","Alcohol":"context"}}
+{"id":"licor","lang":"es","clues":{"Bebida":"broader"}}
+{"id":"licor-de-hierbas","lang":"es","clues":{"Bebida":"broader"}}
+{"id":"licoreria","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"lider-revolucionario","lang":"es","clues":{"Líder":"broader"}}
-{"id":"lidl","lang":"es","clues":{"Supermercado":"broader","Alemania":"context"}}
-{"id":"lidl","lang":"en","clues":{"Supermarket":"broader","Germany":"context"}}
-{"id":"lienzo","lang":"es","clues":{"Pintar":"context","Tela":"part"}}
-{"id":"like","lang":"es","clues":{"Botón":"part","Interacción":"broader","Me gusta":"synonym"}}
-{"id":"like","lang":"en","clues":{"Button":"part","Interaction":"broader"}}
-{"id":"lil-nas-x","lang":"en","clues":{"Hip Hop":"broader","Rapper":"broader"}}
-{"id":"lilith","lang":"es","clues":{"Ángel Caído":"broader","Demonio Femenino":"broader"}}
-{"id":"lima","lang":"es","clues":{"Ácido":"part","Cítrico":"broader","Fruta":"broader","Cóctel":"context"}}
-{"id":"limiting-reactant","lang":"en","clues":{"Chemistry":"broader","Reactant":"broader"}}
-{"id":"lingerie","lang":"en","clues":{"Intimate":"synonym","Lace":"part","Underwear":"synonym"}}
-{"id":"linkedin","lang":"es","clues":{"Contactos":"part","Currículum":"part","Perfil":"part","Red":"broader"}}
-{"id":"linkedin","lang":"en","clues":{"Connections":"part","Contacts":"part","Network":"broader","Profile":"part","Resume":"part"}}
-{"id":"linkedin-influencer","lang":"es","clues":{"Networking":"context"}}
-{"id":"linkedin-learning","lang":"en","clues":{"Courses":"part"}}
-{"id":"linux","lang":"es","clues":{"Pingüino":"part","Sistema":"broader"}}
-{"id":"linux","lang":"en","clues":{"Penguin":"part","System":"broader"}}
-{"id":"lionel-messi","lang":"es","clues":{"Barcelona":"context","Argentina":"context","Fútbol":"context"}}
-{"id":"lionel-messi","lang":"en","clues":{"Barcelona":"context","Soccer":"context","Argentina":"context"}}
-{"id":"lisboa","lang":"es","clues":{"Portugal":"context"}}
-{"id":"literatura","lang":"es","clues":{"Libros":"part","Novela":"part","Poesía":"part"}}
-{"id":"live","lang":"es","clues":{"Directo":"synonym","Tiempo real":"synonym","Vivo":"synonym","Cámara":"part"}}
-{"id":"live","lang":"en","clues":{"Direct":"synonym","Real time":"synonym","Streaming":"broader","Camera":"part"}}
-{"id":"livestreaming-setup","lang":"en","clues":{"Lights":"part","Microphone":"part","PC":"part","Camera":"part"}}
+{"id":"lidl","lang":"es","clues":{"Supermercado":"broader"}}
+{"id":"lidl","lang":"en","clues":{"Supermarket":"broader"}}
+{"id":"like","lang":"es","clues":{"Interacción":"broader","Me gusta":"synonym"}}
+{"id":"like","lang":"en","clues":{"Interaction":"broader"}}
+{"id":"lil-nas-x","lang":"en","clues":{"Rapper":"broader"}}
+{"id":"lilith","lang":"es","clues":{"Demonio Femenino":"broader"}}
+{"id":"lima","lang":"es","clues":{"Cítrico":"broader","Fruta":"broader"}}
+{"id":"limiting-reactant","lang":"en","clues":{"Reactant":"broader"}}
+{"id":"lingerie","lang":"en","clues":{"Underwear":"synonym"}}
+{"id":"linkedin","lang":"es","clues":{"Red":"broader"}}
+{"id":"linkedin","lang":"en","clues":{"Network":"broader"}}
+{"id":"linux","lang":"es","clues":{"Sistema":"broader"}}
+{"id":"linux","lang":"en","clues":{"System":"broader"}}
+{"id":"live","lang":"es","clues":{"Directo":"synonym","Tiempo real":"synonym","Vivo":"synonym"}}
+{"id":"live","lang":"en","clues":{"Direct":"synonym","Real time":"synonym"}}
 {"id":"lizzo","lang":"es","clues":{"Cantante/Rapera":"broader"}}
-{"id":"llama","lang":"es","clues":{"Andes":"context","Lana":"part"}}
-{"id":"llama","lang":"en","clues":{"Andes":"context","Spit":"part","Wool":"part"}}
-{"id":"llanura","lang":"es","clues":{"Extensión":"part","Plana":"part","Tierra":"broader"}}
-{"id":"lluvia","lang":"es","clues":{"Nubes":"context","Paraguas":"context"}}
-{"id":"lo-fi-girl","lang":"es","clues":{"Auriculares":"part","Estudiar":"context","Gato":"part"}}
-{"id":"lo-fi-girl","lang":"en","clues":{"Headphones":"part","Study":"context","Cat":"part"}}
-{"id":"loaded-dice","lang":"en","clues":{"Cheat":"context","Weight":"part"}}
-{"id":"lobbying","lang":"en","clues":{"Advocacy":"synonym","Influence":"synonym"}}
-{"id":"lobezno","lang":"es","clues":{"Garras de Adamantium":"part","Logan":"synonym","Mutante":"broader","X-Men":"context"}}
-{"id":"lobo","lang":"es","clues":{"Aullido":"part","Bosque":"context","Colmillos":"part","Manada":"context"}}
-{"id":"lobo-feroz","lang":"es","clues":{"Caperucita Roja":"context","Cuento":"context","Lobo":"broader"}}
-{"id":"local-cuisine","lang":"en","clues":{"Food":"broader","Restaurant":"context"}}
-{"id":"locomotora","lang":"es","clues":{"Máquina":"broader","Vapor":"part","Tren":"context","Motor":"synonym"}}
-{"id":"logopedia","lang":"es","clues":{"Salud":"broader","Terapia del Habla":"synonym"}}
-{"id":"loki","lang":"en","clues":{"Norse":"context","Shape-shifter":"part","Trickster":"broader","God":"broader"}}
-{"id":"lombriz","lang":"es","clues":{"Intestino":"context","Gusano":"broader","Parásito":"broader"}}
-{"id":"londres","lang":"es","clues":{"Big Ben":"part","Inglaterra":"context"}}
-{"id":"longitud","lang":"es","clues":{"Grados":"part","Meridiano":"part"}}
-{"id":"los-angeles","lang":"es","clues":{"Hollywood":"part"}}
-{"id":"los-angeles","lang":"en","clues":{"Hollywood":"part"}}
-{"id":"los-simpson","lang":"es","clues":{"Amarillos":"part","Dibujos":"broader","Televisión":"broader"}}
-{"id":"los-vengadores","lang":"es","clues":{"Capitán América":"part","Equipo":"broader","Héroes":"broader","Iron Man":"part","Thor":"part"}}
-{"id":"loteria","lang":"es","clues":{"Boleto":"part","Premio":"part","Sorteo":"synonym"}}
-{"id":"louis-vuitton","lang":"es","clues":{"Bolso":"part","Tienda":"broader","Francia":"context"}}
-{"id":"louis-vuitton","lang":"en","clues":{"Bag":"part","France":"context"}}
-{"id":"louvre-pyramid","lang":"en","clues":{"Louvre Museum":"context","Glass":"part","Paris":"context"}}
-{"id":"lucha-libre","lang":"es","clues":{"Luchador":"part","Ring":"context","Máscara":"part"}}
-{"id":"luchador","lang":"es","clues":{"Ring":"context","Lucha Libre":"context"}}
-{"id":"luciernaga","lang":"es","clues":{"Brillo":"part","Noche":"context","Insecto":"broader","Luz":"part"}}
-{"id":"lucifer~mythology-and-fantasy","lang":"es","clues":{"Ángel Caído":"broader","Demonio":"broader","Infierno":"context"}}
-{"id":"lucifer~superheroes-and-comics","lang":"en","clues":{"Fallen Angel":"broader","Ruler of Hell":"broader","Vertigo Comics":"context"}}
-{"id":"ludo-dice","lang":"en","clues":{"Ludo":"context","Roll":"context"}}
-{"id":"ludoteca","lang":"es","clues":{"Estantería":"part","Juegos":"part"}}
-{"id":"luffy","lang":"en","clues":{"Gum-Gum Fruit":"part","One Piece":"context","Straw Hat Crew":"context"}}
-{"id":"lugeing","lang":"en","clues":{"Ice Track":"context","Luge Sled":"part"}}
-{"id":"luis-arce","lang":"es","clues":{"Bolivia":"context","Presidente":"broader"}}
-{"id":"luisito-comunica","lang":"es","clues":{"YouTube":"context","México":"context"}}
-{"id":"luisito-comunica","lang":"en","clues":{"YouTube":"context","Mexico":"context"}}
-{"id":"luke-cage","lang":"es","clues":{"Héroe de Barrio":"broader","Marvel":"context","Piel Indestructible":"part"}}
-{"id":"luna","lang":"es","clues":{"Fases":"part","Satélite":"broader"}}
-{"id":"lunar-eclipse","lang":"en","clues":{"Earth Shadow":"part","Moon":"part"}}
-{"id":"lunar-lander","lang":"en","clues":{"NASA":"context","Moon":"context"}}
-{"id":"lunay","lang":"es","clues":{"Cantante de Reggaeton/Trap":"broader","Puerto Rico":"context"}}
-{"id":"luxury-cruise","lang":"en","clues":{"Vacation":"broader","Ship":"broader"}}
-{"id":"luz","lang":"es","clues":{"Fotón":"part","Onda":"part"}}
-{"id":"mace","lang":"en","clues":{"Spiked":"part","Weapon":"broader"}}
-{"id":"maceta","lang":"es","clues":{"Cerámica":"part","Plantas":"context"}}
-{"id":"machine-learning","lang":"en","clues":{"AI":"broader","Algorithm":"part","Model":"part"}}
-{"id":"machu-picchu","lang":"es","clues":{"Inca":"context","Perú":"context","Ruinas":"broader"}}
-{"id":"machu-picchu","lang":"en","clues":{"Inca":"context","Peru":"context","Ruins":"broader"}}
-{"id":"macintosh","lang":"es","clues":{"Apple":"context","Mac":"synonym","Ordenador":"broader"}}
-{"id":"macintosh","lang":"en","clues":{"Apple":"context","Mac":"synonym","Computer":"broader"}}
-{"id":"macy-s","lang":"es","clues":{"Almacenes":"broader","Desfile":"context"}}
-{"id":"macy-s","lang":"en","clues":{"Department Store":"broader","Parade":"context"}}
-{"id":"made-in-abyss","lang":"es","clues":{"Reg":"part","Riko":"part"}}
-{"id":"madonna~celebrities","lang":"es","clues":{"Música":"broader","Pop":"broader"}}
-{"id":"madonna~celebrities","lang":"en","clues":{"Music":"broader","Pop":"broader"}}
+{"id":"llanura","lang":"es","clues":{"Tierra":"broader"}}
+{"id":"lobbying","lang":"en","clues":{"Advocacy":"synonym"}}
+{"id":"lobezno","lang":"es","clues":{"Logan":"synonym","Mutante":"broader"}}
+{"id":"lobo-feroz","lang":"es","clues":{"Lobo":"broader"}}
+{"id":"local-cuisine","lang":"en","clues":{"Food":"broader"}}
+{"id":"locomotora","lang":"es","clues":{"Máquina":"broader"}}
+{"id":"logopedia","lang":"es","clues":{"Terapia del Habla":"synonym"}}
+{"id":"loki","lang":"en","clues":{"Trickster":"broader","God":"broader"}}
+{"id":"lombriz","lang":"es","clues":{"Gusano":"broader"}}
+{"id":"los-vengadores","lang":"es","clues":{"Equipo":"broader"}}
+{"id":"loteria","lang":"es","clues":{"Sorteo":"synonym"}}
+{"id":"luciernaga","lang":"es","clues":{"Insecto":"broader"}}
+{"id":"lucifer~mythology-and-fantasy","lang":"es","clues":{"Ángel Caído":"broader","Demonio":"broader"}}
+{"id":"lucifer~superheroes-and-comics","lang":"en","clues":{"Fallen Angel":"broader","Ruler of Hell":"synonym"}}
+{"id":"luis-arce","lang":"es","clues":{"Presidente":"broader"}}
+{"id":"luke-cage","lang":"es","clues":{"Héroe de Barrio":"broader"}}
+{"id":"luna","lang":"es","clues":{"Satélite":"broader"}}
+{"id":"lunay","lang":"es","clues":{"Cantante de Reggaeton/Trap":"broader"}}
+{"id":"luxury-cruise","lang":"en","clues":{"Vacation":"broader"}}
+{"id":"mace","lang":"en","clues":{"Weapon":"broader"}}
+{"id":"machine-learning","lang":"en","clues":{"AI":"broader"}}
+{"id":"machu-picchu","lang":"es","clues":{"Ruinas":"broader"}}
+{"id":"machu-picchu","lang":"en","clues":{"Ruins":"broader"}}
+{"id":"macintosh","lang":"es","clues":{"Mac":"synonym","Ordenador":"broader"}}
+{"id":"macintosh","lang":"en","clues":{"Mac":"synonym","Computer":"broader"}}
+{"id":"macy-s","lang":"es","clues":{"Almacenes":"broader"}}
+{"id":"macy-s","lang":"en","clues":{"Department Store":"broader"}}
 {"id":"madonna~music","lang":"es","clues":{"Cantante":"broader","Reina del Pop":"synonym"}}
-{"id":"madre-teresa","lang":"es","clues":{"Misionera":"broader","Monja":"broader","Santa":"broader","India":"context"}}
-{"id":"madrid","lang":"es","clues":{"Capital":"broader","España":"context"}}
-{"id":"madrid","lang":"en","clues":{"Capital":"broader","Spain":"context"}}
+{"id":"madre-teresa","lang":"es","clues":{"Misionera":"broader","Monja":"broader","Santa":"broader"}}
+{"id":"madrid","lang":"es","clues":{"Capital":"broader"}}
+{"id":"madrid","lang":"en","clues":{"Capital":"broader"}}
 {"id":"magallanes","lang":"es","clues":{"Explorador":"broader"}}
-{"id":"magic-broomstick","lang":"en","clues":{"Fly":"context"}}
-{"id":"magician","lang":"en","clues":{"Hat":"part","Rabbit":"part","Trick":"part"}}
-{"id":"maglev-train","lang":"en","clues":{"High Speed":"part","Magnetic Levitation":"part","Train":"broader"}}
-{"id":"magnetismo","lang":"es","clues":{"Imán":"part","Polo":"part"}}
-{"id":"mago","lang":"es","clues":{"Barba":"part","Hechizo":"part","Sombrero":"part","Truco":"part","Varita":"part"}}
-{"id":"mahatma-gandhi","lang":"es","clues":{"India":"context","Líder":"broader"}}
-{"id":"mahatma-gandhi","lang":"en","clues":{"India":"context","Leader":"broader","Salt March":"context"}}
-{"id":"mai-tai","lang":"en","clues":{"Lime":"part","Orgeat":"part","Rum":"part","Cocktail":"broader"}}
-{"id":"mailbox","lang":"en","clues":{"Mail":"context"}}
-{"id":"maisons-du-monde","lang":"es","clues":{"Decoración":"context","Muebles":"part"}}
-{"id":"maisons-du-monde","lang":"en","clues":{"Decoration":"context","Furniture":"part"}}
-{"id":"maldives","lang":"en","clues":{"Atolls":"part"}}
-{"id":"maleta","lang":"es","clues":{"Equipaje":"broader","Ruedas":"part","Viajar":"context"}}
-{"id":"maletero","lang":"es","clues":{"Trasero":"part","Coche":"context"}}
+{"id":"maglev-train","lang":"en","clues":{"Train":"broader"}}
+{"id":"mahatma-gandhi","lang":"es","clues":{"Líder":"broader"}}
+{"id":"mahatma-gandhi","lang":"en","clues":{"Leader":"broader"}}
+{"id":"mai-tai","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"maleta","lang":"es","clues":{"Equipaje":"broader"}}
 {"id":"malta","lang":"en","clues":{"Island":"broader"}}
-{"id":"maluma","lang":"es","clues":{"Cantante":"broader","Cantante de Reggaeton/Pop":"broader","Colombia":"context","Música":"broader","Reggaeton":"broader"}}
-{"id":"maluma","lang":"en","clues":{"Colombia":"context","Music":"broader","Reggaeton":"broader","Singer":"broader"}}
-{"id":"mamifero","lang":"es","clues":{"Animal":"broader","Leche":"part","Pelo":"part","Vivíparo":"part"}}
+{"id":"maluma","lang":"es","clues":{"Cantante":"broader","Cantante de Reggaeton/Pop":"broader"}}
+{"id":"maluma","lang":"en","clues":{"Singer":"broader"}}
+{"id":"mamifero","lang":"es","clues":{"Animal":"broader"}}
 {"id":"manatee","lang":"en","clues":{"Aquatic Mammal":"broader","Sea Cow":"synonym"}}
-{"id":"mandela","lang":"es","clues":{"Apartheid":"context","Sudáfrica":"context","Presidente":"broader"}}
-{"id":"mandolina","lang":"es","clues":{"Cuerdas":"part","Púa":"part"}}
-{"id":"mandoline-slicer","lang":"en","clues":{"Cut":"context","Vegetables":"context"}}
-{"id":"manga-pastelera","lang":"es","clues":{"Decorar":"context","Pastel":"context"}}
-{"id":"mango","lang":"es","clues":{"Tienda":"broader","España":"context"}}
-{"id":"mango","lang":"en","clues":{"Store":"broader","Spain":"context"}}
-{"id":"manhattan","lang":"es","clues":{"Amargo de Angostura":"part","Cóctel Clásico":"broader","Vermut Rojo":"part","Whisky":"part"}}
-{"id":"manhattan","lang":"en","clues":{"Cherry":"part","Vermouth":"part","Whiskey":"part","Cocktail":"broader","Glass":"context"}}
-{"id":"manners","lang":"en","clues":{"Behavior":"broader","Protocol":"synonym"}}
-{"id":"manta","lang":"es","clues":{"Lana":"part","Cama":"context"}}
-{"id":"mantequera","lang":"es","clues":{"Mantequilla":"context","Recipiente":"broader"}}
-{"id":"mantequilla","lang":"es","clues":{"Grasa":"broader","Untar":"context"}}
-{"id":"mantis","lang":"es","clues":{"Depredador":"broader","Insecto":"broader","Piernas Largas":"part"}}
-{"id":"mantis","lang":"en","clues":{"Insect":"broader","Long Legs":"part","Predator":"broader"}}
-{"id":"manualidades","lang":"es","clues":{"Arte":"broader","Tijeras":"context"}}
-{"id":"manuel-carrasco","lang":"es","clues":{"Cantante de Pop/Rock":"broader","España":"context"}}
-{"id":"manuscrito","lang":"es","clues":{"Mano":"part"}}
-{"id":"mapa","lang":"es","clues":{"Ciudad":"part","Orientación":"context","Países":"part","Dibujo":"broader"}}
+{"id":"mandela","lang":"es","clues":{"Presidente":"broader"}}
+{"id":"mango","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"mango","lang":"en","clues":{"Store":"broader"}}
+{"id":"manhattan","lang":"es","clues":{"Cóctel Clásico":"broader"}}
+{"id":"manhattan","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"manners","lang":"en","clues":{"Behavior":"broader"}}
+{"id":"mantequera","lang":"es","clues":{"Recipiente":"broader"}}
+{"id":"mantequilla","lang":"es","clues":{"Grasa":"broader"}}
+{"id":"mantis","lang":"es","clues":{"Depredador":"broader","Insecto":"broader"}}
+{"id":"mantis","lang":"en","clues":{"Insect":"broader","Predator":"broader"}}
+{"id":"manuel-carrasco","lang":"es","clues":{"Cantante de Pop/Rock":"broader"}}
 {"id":"maquillaje","lang":"es","clues":{"Cosméticos":"synonym"}}
-{"id":"mar","lang":"es","clues":{"Olas":"part","Salada":"part","Océano":"synonym"}}
-{"id":"maracas","lang":"es","clues":{"Sacudir":"context","Semillas":"part"}}
-{"id":"maracas","lang":"en","clues":{"Seeds":"part","Shake":"context"}}
-{"id":"maraton","lang":"es","clues":{"Kilómetros":"part","Meta":"part"}}
-{"id":"marcador","lang":"es","clues":{"Escribir":"context","Pizarra blanca":"context"}}
-{"id":"marco-aurelio","lang":"es","clues":{"Emperador":"broader","Filosofía estoica":"context","Roma":"context"}}
-{"id":"mardi-gras","lang":"en","clues":{"Carnival":"broader","Fat Tuesday":"synonym","New Orleans":"context"}}
-{"id":"maremoto","lang":"es","clues":{"Olas":"part","Terremoto":"context"}}
-{"id":"margaret-thatcher","lang":"es","clues":{"Primera Ministra":"broader","Reino Unido":"context"}}
-{"id":"margarita","lang":"es","clues":{"Limón":"part","Tequila":"part","Sal":"part","Cóctel":"broader"}}
-{"id":"margarita","lang":"en","clues":{"Lemon":"part","Lime":"part","Salt":"part","Tequila":"part","Cocktail":"broader","Glass":"context"}}
-{"id":"margot-robbie","lang":"es","clues":{"Actriz":"broader","Australia":"context"}}
-{"id":"margot-robbie","lang":"en","clues":{"Actress":"broader","Australia":"context"}}
-{"id":"marilyn-monroe","lang":"es","clues":{"Hollywood":"context"}}
-{"id":"marilyn-monroe","lang":"en","clues":{"Hollywood":"context"}}
-{"id":"marine-biology","lang":"en","clues":{"Sea Life":"part","Ocean":"context"}}
-{"id":"marine-le-pen","lang":"en","clues":{"National Rally":"context","Politician":"broader","France":"context"}}
-{"id":"mario-draghi","lang":"es","clues":{"Primer Ministro":"broader","Italia":"context"}}
-{"id":"mariposa","lang":"es","clues":{"Alas":"part","Metamorfosis":"context","Flores":"context"}}
-{"id":"mariquita","lang":"es","clues":{"Puntos Negros":"part","Insecto":"broader"}}
-{"id":"mark-zuckerberg","lang":"es","clues":{"Facebook":"context","Harvard":"context","Meta":"context","Programador":"broader"}}
-{"id":"mark-zuckerberg","lang":"en","clues":{"Facebook":"context","Harvard":"context","Meta":"context","Programmer":"broader"}}
-{"id":"marques","lang":"es","clues":{"Nobleza":"broader","Título":"broader"}}
-{"id":"marquesa","lang":"es","clues":{"Nobleza":"broader","Título":"broader"}}
+{"id":"marco-aurelio","lang":"es","clues":{"Emperador":"broader"}}
+{"id":"mardi-gras","lang":"en","clues":{"Carnival":"broader","Fat Tuesday":"synonym"}}
+{"id":"margaret-thatcher","lang":"es","clues":{"Primera Ministra":"broader"}}
+{"id":"margarita","lang":"es","clues":{"Cóctel":"broader"}}
+{"id":"margarita","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"margot-robbie","lang":"es","clues":{"Actriz":"broader"}}
+{"id":"margot-robbie","lang":"en","clues":{"Actress":"broader"}}
+{"id":"marine-le-pen","lang":"en","clues":{"Politician":"broader"}}
+{"id":"mario-draghi","lang":"es","clues":{"Primer Ministro":"broader"}}
+{"id":"mariquita","lang":"es","clues":{"Insecto":"broader"}}
+{"id":"mark-zuckerberg","lang":"es","clues":{"Programador":"broader"}}
+{"id":"mark-zuckerberg","lang":"en","clues":{"Programmer":"broader"}}
+{"id":"marques","lang":"es","clues":{"Título":"broader"}}
+{"id":"marquesa","lang":"es","clues":{"Título":"broader"}}
 {"id":"marruecos","lang":"es","clues":{"País":"broader"}}
-{"id":"mars-colonization","lang":"en","clues":{"Colony":"synonym","SpaceX":"context"}}
-{"id":"mars-rover","lang":"en","clues":{"Explore":"context","NASA":"context","Robot":"broader","Wheels":"part"}}
-{"id":"marte","lang":"es","clues":{"Cuarto":"part","Rojo":"part","Planeta":"broader"}}
-{"id":"martian-manhunter","lang":"en","clues":{"DC":"context","Hero":"broader","Shape-shifting":"part"}}
-{"id":"martillo","lang":"es","clues":{"Arma":"broader","Thor":"context"}}
-{"id":"martini","lang":"es","clues":{"Aceituna":"part","Ginebra":"part","Vermut":"part","Cóctel":"broader"}}
-{"id":"martini","lang":"en","clues":{"Olive":"part","Vermouth":"part","Gin":"part","Cocktail":"broader"}}
-{"id":"masa","lang":"es","clues":{"Kilos":"part","Peso":"synonym"}}
-{"id":"masaje-terapeutico","lang":"es","clues":{"Bienestar":"context","Salud":"broader"}}
-{"id":"mascara","lang":"es","clues":{"Cara":"context","Carnaval":"context"}}
-{"id":"mass-effect","lang":"es","clues":{"Nave":"part","Espacio":"context"}}
-{"id":"mass-effect","lang":"en","clues":{"Space":"context","Ship":"part"}}
-{"id":"mass-effect-legendary","lang":"es","clues":{"Nave":"part","Espacio":"context"}}
-{"id":"masseuse","lang":"en","clues":{"Massage":"context","Therapy":"context"}}
-{"id":"massimo-dutti","lang":"es","clues":{"Ropa":"broader","España":"context"}}
-{"id":"massimo-dutti","lang":"en","clues":{"Spain":"context","Clothing":"broader"}}
-{"id":"master","lang":"es","clues":{"Guía":"synonym","Narrador":"synonym","Rol":"context"}}
-{"id":"mastercard","lang":"es","clues":{"Círculos":"part","Tarjeta":"broader"}}
-{"id":"mastercard","lang":"en","clues":{"Card":"broader","Circles":"part","Payment":"context"}}
+{"id":"mars-rover","lang":"en","clues":{"Robot":"broader"}}
+{"id":"marte","lang":"es","clues":{"Planeta":"broader"}}
+{"id":"martian-manhunter","lang":"en","clues":{"Hero":"broader"}}
+{"id":"martillo","lang":"es","clues":{"Arma":"broader"}}
+{"id":"martini","lang":"es","clues":{"Cóctel":"broader"}}
+{"id":"martini","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"master","lang":"es","clues":{"Guía":"synonym","Narrador":"synonym"}}
+{"id":"mastercard","lang":"es","clues":{"Tarjeta":"broader"}}
+{"id":"mastercard","lang":"en","clues":{"Card":"broader"}}
 {"id":"masturbation","lang":"en","clues":{"Self-Pleasure":"synonym"}}
-{"id":"matematicas","lang":"es","clues":{"Álgebra":"part","Cálculo":"part","Geometría":"part"}}
-{"id":"materia-antimateria","lang":"es","clues":{"Opuestas":"contrast"}}
-{"id":"materia-oscura","lang":"es","clues":{"Invisible":"part","Universo":"context"}}
-{"id":"matricula","lang":"es","clues":{"Letras":"part","Número":"part","Números":"part","Placa":"synonym","Coche":"context"}}
-{"id":"matrix","lang":"es","clues":{"Pastilla":"part","Simulación":"part"}}
-{"id":"matrix","lang":"en","clues":{"Pill":"part","Simulation":"part"}}
-{"id":"matteo-salvini","lang":"en","clues":{"League Party":"context","Politician":"broader","Italy":"context"}}
-{"id":"maya","lang":"es","clues":{"Calendario":"part","Pirámide":"part","México":"context"}}
-{"id":"maya","lang":"en","clues":{"Calendar":"part","Pyramid":"part","Mexico":"context"}}
-{"id":"mazmorra","lang":"es","clues":{"Lugar":"broader","Monstruos":"part"}}
-{"id":"mazo","lang":"es","clues":{"Pila":"synonym","Cartas":"part"}}
-{"id":"mcdonald-s","lang":"es","clues":{"Arcos":"part","Hamburguesa":"part","Patatas":"part","Payaso":"part"}}
-{"id":"mcdonald-s","lang":"en","clues":{"Arches":"part","Burger":"part","Clown":"part","Fries":"part"}}
-{"id":"mclaren","lang":"es","clues":{"F1":"context","Superdeportivo":"broader","Reino Unido":"context"}}
-{"id":"mclaren","lang":"en","clues":{"F1":"context","Supercar":"broader","UK":"context"}}
-{"id":"meadow","lang":"en","clues":{"Field":"synonym","Grass":"part","Pasture":"synonym"}}
-{"id":"meat-tenderizer","lang":"en","clues":{"Hammer":"broader","Meat":"context"}}
-{"id":"meat-thermometer","lang":"en","clues":{"Meat":"context","Thermometer":"broader"}}
-{"id":"mecanica","lang":"es","clues":{"Juego":"context"}}
-{"id":"mecanica-cuantica","lang":"es","clues":{"Física":"broader","Partícula":"part"}}
-{"id":"mechanic~board-games-and-tabletop","lang":"en","clues":{"Rules":"part","Game":"context"}}
-{"id":"mediamarkt","lang":"es","clues":{"Electrodomésticos":"context","Electrónica":"context","Tienda":"broader"}}
-{"id":"mediamarkt","lang":"en","clues":{"Appliances":"context","Electronics":"context","Store":"broader"}}
-{"id":"medicina","lang":"es","clues":{"Curar":"context","Farmacia":"context","Salud":"broader"}}
-{"id":"medicine","lang":"en","clues":{"Cure":"context","Health":"broader","Pharmacy":"context"}}
-{"id":"medico","lang":"es","clues":{"Bata":"part","Consulta":"context","Doctor":"synonym","Estetoscopio":"part","Paciente":"context","Hospital":"context"}}
-{"id":"medio-ambiente","lang":"es","clues":{"Naturaleza":"synonym"}}
-{"id":"meditacion","lang":"es","clues":{"Conciencia del Presente":"part","Salud Mental":"broader"}}
-{"id":"medusa~animals","lang":"es","clues":{"Picadura":"part","Tentáculos":"part"}}
-{"id":"medusa~mythology-and-fantasy","lang":"es","clues":{"Cabeza":"part","Mirada":"part","Monstruo":"broader","Serpientes":"part"}}
-{"id":"medusa~mythology-and-fantasy","lang":"en","clues":{"Gaze":"part","Monster":"broader","Snakes":"part"}}
-{"id":"meeple","lang":"en","clues":{"Piece":"broader","Wooden":"part","Game":"context"}}
+{"id":"matricula","lang":"es","clues":{"Placa":"synonym"}}
+{"id":"matteo-salvini","lang":"en","clues":{"Politician":"broader"}}
+{"id":"mclaren","lang":"es","clues":{"Superdeportivo":"broader"}}
+{"id":"mclaren","lang":"en","clues":{"Supercar":"broader"}}
+{"id":"meadow","lang":"en","clues":{"Field":"synonym","Pasture":"synonym"}}
+{"id":"meat-thermometer","lang":"en","clues":{"Thermometer":"broader"}}
+{"id":"mecanica-cuantica","lang":"es","clues":{"Física":"broader"}}
+{"id":"mediamarkt","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"mediamarkt","lang":"en","clues":{"Store":"broader"}}
+{"id":"medico","lang":"es","clues":{"Doctor":"synonym"}}
+{"id":"medusa~mythology-and-fantasy","lang":"es","clues":{"Monstruo":"broader"}}
+{"id":"medusa~mythology-and-fantasy","lang":"en","clues":{"Monster":"broader"}}
+{"id":"meeple","lang":"en","clues":{"Piece":"broader"}}
 {"id":"megan-thee-stallion","lang":"es","clues":{"Rapera":"broader"}}
-{"id":"megan-thee-stallion","lang":"en","clues":{"Hip Hop":"broader","Rapper":"broader"}}
+{"id":"megan-thee-stallion","lang":"en","clues":{"Rapper":"broader"}}
 {"id":"melancolia","lang":"es","clues":{"Sentimiento":"broader","Tristeza":"synonym"}}
-{"id":"melendi","lang":"es","clues":{"Cantante de Pop/Rock":"broader","España":"context"}}
-{"id":"melodia","lang":"es","clues":{"Música":"broader"}}
-{"id":"melon-baller","lang":"en","clues":{"Fruit Salad":"context","Melon":"context","Kitchen":"context"}}
-{"id":"melting-point","lang":"en","clues":{"Chemistry":"broader","Solid to Liquid":"part","Temperature":"broader"}}
-{"id":"meme","lang":"es","clues":{"Imagen":"part","Texto":"part","Internet":"context"}}
-{"id":"meme","lang":"en","clues":{"Image":"part","Text":"part","Internet":"context"}}
-{"id":"memoria-flash","lang":"es","clues":{"Almacenamiento":"broader","USB":"context"}}
-{"id":"memoria-ram","lang":"es","clues":{"Módulo":"part","Temporal":"part"}}
-{"id":"mercado","lang":"es","clues":{"Comprar":"context","Precios":"part","Vender":"context"}}
-{"id":"mercado-de-valores","lang":"es","clues":{"Acciones":"part","Finanzas":"broader","Bolsa":"synonym"}}
-{"id":"mercadona","lang":"es","clues":{"Hacendado":"part","Supermercado":"broader","España":"context"}}
-{"id":"mercadona","lang":"en","clues":{"Supermarket":"broader","Spain":"context"}}
-{"id":"mercedes-benz","lang":"es","clues":{"Clase S":"part","Flechas Plata":"context","Estrella":"part","Alemania":"context","Coche":"broader"}}
-{"id":"mercedes-benz","lang":"en","clues":{"S-Class":"part","Silver Arrows":"context","Star":"part","Germany":"context","Car":"broader"}}
-{"id":"mercenario","lang":"es","clues":{"Contrato":"part","Soldado":"broader","Guerra":"context"}}
-{"id":"merchandising","lang":"es","clues":{"Productos":"broader"}}
-{"id":"mercurio~science-chemistry","lang":"es","clues":{"Líquido":"part","Metal":"broader","Termómetro":"context"}}
-{"id":"mercurio~space-and-astronomy","lang":"es","clues":{"Primero":"part","Sol":"context","Planeta":"broader"}}
-{"id":"mercury~space-and-astronomy","lang":"en","clues":{"First":"part","Planet":"broader","Sun":"context"}}
-{"id":"merengue","lang":"es","clues":{"Ritmo":"broader","República Dominicana":"context"}}
-{"id":"meridiano","lang":"es","clues":{"Greenwich":"context","Línea":"broader","Longitud":"context"}}
-{"id":"meritocracy","lang":"en","clues":{"Rule by Merit":"synonym","Talent":"part"}}
-{"id":"merman","lang":"en","clues":{"Tail":"part","Fish":"part"}}
-{"id":"merrell","lang":"es","clues":{"Tienda":"broader","Zapatillas de Senderismo":"part"}}
-{"id":"meruem","lang":"en","clues":{"Chimera Ant King":"broader","Hunter x Hunter":"context","Nen User":"broader"}}
-{"id":"mesa","lang":"es","clues":{"Comer":"context","Mueble":"broader","Patas":"part","Sillas":"context","Superficie":"part"}}
-{"id":"meseta","lang":"es","clues":{"Altura":"part","Elevada":"part","Plana":"part","Tierra":"broader"}}
-{"id":"mesita-de-noche","lang":"es","clues":{"Dormir":"context","Cama":"context"}}
-{"id":"messi","lang":"es","clues":{"Barcelona":"context","Argentina":"context","Fútbol":"context"}}
-{"id":"metafora","lang":"es","clues":{"Comparación":"synonym","Similitud":"synonym","Literatura":"context"}}
-{"id":"metal-gear-solid","lang":"es","clues":{"Caja":"part","Sigilo":"part"}}
-{"id":"metal-gear-solid","lang":"en","clues":{"Box":"part","Stealth":"part"}}
-{"id":"metallica","lang":"en","clues":{"Band":"broader","Heavy Metal":"broader"}}
-{"id":"metamorphosis","lang":"en","clues":{"Butterfly":"context","Caterpillar":"context","Change":"synonym"}}
-{"id":"metano","lang":"es","clues":{"Gas":"broader","Vaca":"context"}}
-{"id":"meteor-shower","lang":"en","clues":{"Space":"context","Sky":"context"}}
-{"id":"meteorito","lang":"es","clues":{"Impacto":"part","Roca":"broader"}}
-{"id":"meteoro","lang":"es","clues":{"Cielo":"context"}}
-{"id":"meteorologo","lang":"es","clues":{"Clima":"context","Previsión":"context","Tiempo":"context"}}
-{"id":"metro","lang":"es","clues":{"Estación":"part","Subterráneo":"part","Túnel":"part","Tren":"broader"}}
-{"id":"metroid","lang":"es","clues":{"Armadura":"part","Espacio":"context"}}
-{"id":"metroid","lang":"en","clues":{"Armor":"part","Space":"context"}}
-{"id":"metroid-dread","lang":"es","clues":{"Armadura":"part","Espacio":"context"}}
-{"id":"metropolis","lang":"es","clues":{"Ciudad":"broader","Edificios":"part","Lugar":"broader","Superman":"context"}}
-{"id":"metropolis","lang":"en","clues":{"Buildings":"part","City":"broader","Place":"broader","Superman":"context"}}
-{"id":"mexico","lang":"es","clues":{"América Latina":"broader","Ciudad de México":"part","País":"broader"}}
-{"id":"mezcla","lang":"es","clues":{"Combinar":"synonym","Sustancias":"part","Unión":"synonym"}}
-{"id":"michael-jackson~celebrities","lang":"es","clues":{"Guante":"part","Moonwalk":"part","Pop":"broader","Rey":"synonym"}}
-{"id":"michael-jackson~celebrities","lang":"en","clues":{"Glove":"part","King":"synonym","Moonwalk":"part","Pop":"broader"}}
+{"id":"melendi","lang":"es","clues":{"Cantante de Pop/Rock":"broader"}}
+{"id":"melting-point","lang":"en","clues":{"Temperature":"broader"}}
+{"id":"memoria-flash","lang":"es","clues":{"Almacenamiento":"broader"}}
+{"id":"mercado-de-valores","lang":"es","clues":{"Bolsa":"synonym"}}
+{"id":"mercadona","lang":"es","clues":{"Supermercado":"broader"}}
+{"id":"mercadona","lang":"en","clues":{"Supermarket":"broader"}}
+{"id":"mercedes-benz","lang":"es","clues":{"Coche":"broader"}}
+{"id":"mercedes-benz","lang":"en","clues":{"Car":"broader"}}
+{"id":"mercenario","lang":"es","clues":{"Soldado":"broader"}}
+{"id":"mercurio~science-chemistry","lang":"es","clues":{"Metal":"broader"}}
+{"id":"mercurio~space-and-astronomy","lang":"es","clues":{"Planeta":"broader"}}
+{"id":"mercury~space-and-astronomy","lang":"en","clues":{"Planet":"broader"}}
+{"id":"merengue","lang":"es","clues":{"Ritmo":"broader"}}
+{"id":"meridiano","lang":"es","clues":{"Línea":"broader"}}
+{"id":"meritocracy","lang":"en","clues":{"Rule by Merit":"synonym"}}
+{"id":"meruem","lang":"en","clues":{"Chimera Ant King":"broader","Nen User":"broader"}}
+{"id":"mesa","lang":"es","clues":{"Mueble":"broader"}}
+{"id":"meseta","lang":"es","clues":{"Tierra":"broader"}}
+{"id":"metallica","lang":"en","clues":{"Band":"broader"}}
+{"id":"metamorphosis","lang":"en","clues":{"Change":"synonym"}}
+{"id":"metano","lang":"es","clues":{"Gas":"broader"}}
+{"id":"meteorito","lang":"es","clues":{"Roca":"broader"}}
+{"id":"metro","lang":"es","clues":{"Tren":"broader"}}
+{"id":"metropolis","lang":"es","clues":{"Ciudad":"broader"}}
+{"id":"metropolis","lang":"en","clues":{"City":"broader"}}
+{"id":"mexico","lang":"es","clues":{"País":"broader"}}
 {"id":"michael-jackson~music","lang":"es","clues":{"Bailarín":"broader","Rey del Pop":"synonym"}}
-{"id":"michael-kors","lang":"en","clues":{"Store":"broader","Clothing":"context"}}
-{"id":"microbiologia","lang":"es","clues":{"Bacterias":"part","Laboratorio":"context","Microorganismos":"part","Virus":"part"}}
-{"id":"microbiologo","lang":"es","clues":{"Laboratorio":"context","Microbiología":"context"}}
-{"id":"microchip","lang":"es","clues":{"Circuito":"part","Componente":"broader","Silicio":"part"}}
-{"id":"microchip","lang":"en","clues":{"Circuit":"part","Component":"broader","Silicon":"part"}}
-{"id":"microondas","lang":"es","clues":{"Botones":"part","Calentar":"context","Electrodoméstico":"broader","Ondas":"part","Cocina":"context"}}
-{"id":"microorganismo","lang":"es","clues":{"Ser Vivo":"broader","Pequeño":"part","Invisible":"part"}}
-{"id":"microphone","lang":"en","clues":{"Amplify":"context","Speak":"context","Stage":"context"}}
-{"id":"microscopio","lang":"es","clues":{"Célula":"context","Laboratorio":"context","Lente":"part"}}
-{"id":"microsoft","lang":"es","clues":{"Bill Gates":"context","Software":"broader","Windows":"part"}}
-{"id":"microsoft","lang":"en","clues":{"Bill Gates":"context","Software":"broader","Windows":"part"}}
-{"id":"microsoft-teams","lang":"es","clues":{"Chat":"part","Reunión":"context","Videollamada":"part"}}
-{"id":"microsoft-teams","lang":"en","clues":{"Chat":"part","Meeting":"context","Video Call":"part"}}
-{"id":"midgard","lang":"en","clues":{"Norse":"context","Earth":"synonym","Mythology":"broader"}}
-{"id":"midnight-chimes","lang":"en","clues":{"Clock":"part","Grapes":"context","New Year":"context","Twelve":"part"}}
-{"id":"midwife","lang":"en","clues":{"Birth":"context","Delivery":"context","Pregnancy":"context"}}
-{"id":"miedo","lang":"es","clues":{"Susto":"synonym","Terror":"synonym"}}
-{"id":"miel","lang":"es","clues":{"Abeja":"context","Colmena":"context","Dulce":"part"}}
-{"id":"miguel-angel","lang":"es","clues":{"Capilla Sixtina":"context","David":"part","Renacimiento":"context"}}
-{"id":"mikasa","lang":"en","clues":{"Attack on Titan":"context","Red Scarf":"part","Soldier":"broader"}}
-{"id":"miley-cyrus~celebrities","lang":"es","clues":{"Actriz":"broader","Cantante":"broader","Hannah":"context"}}
-{"id":"miley-cyrus~celebrities","lang":"en","clues":{"Actress":"broader","Hannah":"context","Singer":"broader"}}
+{"id":"microchip","lang":"es","clues":{"Componente":"broader"}}
+{"id":"microchip","lang":"en","clues":{"Component":"broader"}}
+{"id":"microondas","lang":"es","clues":{"Electrodoméstico":"broader"}}
+{"id":"microorganismo","lang":"es","clues":{"Ser Vivo":"broader"}}
+{"id":"midgard","lang":"en","clues":{"Earth":"synonym"}}
+{"id":"mikasa","lang":"en","clues":{"Soldier":"broader"}}
+{"id":"miley-cyrus~celebrities","lang":"es","clues":{"Actriz":"broader","Cantante":"broader"}}
+{"id":"miley-cyrus~celebrities","lang":"en","clues":{"Actress":"broader","Singer":"broader"}}
 {"id":"miley-cyrus~music","lang":"es","clues":{"Cantante/Actriz":"broader"}}
-{"id":"miley-cyrus~music","lang":"en","clues":{"Singer-songwriter":"broader","Pop":"broader"}}
-{"id":"milkshake","lang":"en","clues":{"Blender":"context","Ice Cream":"part","Straw":"context","Milk":"part"}}
-{"id":"mimir","lang":"en","clues":{"Norse":"context","Odin":"context","Mythology":"broader"}}
-{"id":"mind-control","lang":"en","clues":{"Manipulation":"synonym"}}
-{"id":"mindfulness","lang":"es","clues":{"Atención Plena":"synonym","Conciencia del Presente":"synonym","Salud Mental":"broader"}}
-{"id":"minecraft","lang":"es","clues":{"Bloques":"part","Pico":"part"}}
-{"id":"minecraft","lang":"en","clues":{"Blocks":"part","Pickaxe":"part"}}
-{"id":"minecraft-dungeons","lang":"es","clues":{"Mazmorras":"synonym"}}
-{"id":"miner","lang":"en","clues":{"Mine":"context","Pickaxe":"part","Helmet":"part"}}
-{"id":"miniatura","lang":"es","clues":{"Figura":"broader","Pequeña":"part"}}
-{"id":"ministro","lang":"es","clues":{"Político":"broader","Gobierno":"context","Cartera":"part"}}
+{"id":"miley-cyrus~music","lang":"en","clues":{"Singer-songwriter":"broader"}}
+{"id":"mindfulness","lang":"es","clues":{"Atención Plena":"synonym","Conciencia del Presente":"synonym"}}
+{"id":"miniatura","lang":"es","clues":{"Figura":"broader"}}
+{"id":"ministro","lang":"es","clues":{"Político":"broader"}}
 {"id":"minivan","lang":"es","clues":{"Van":"broader","Coche":"broader"}}
 {"id":"minivan","lang":"en","clues":{"Van":"broader","Car":"broader"}}
-{"id":"minotauro","lang":"es","clues":{"Cuernos":"part","Hombre":"part","Laberinto":"context","Toro":"part"}}
-{"id":"mint-julep","lang":"en","clues":{"Bourbon":"part","Kentucky":"context","Mint":"part","Whiskey":"part","Sugar":"part","Cocktail":"broader","Glass":"context"}}
+{"id":"mint-julep","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"mision","lang":"es","clues":{"Objetivo":"synonym"}}
-{"id":"mision-imposible","lang":"es","clues":{"Agente":"context","Espía":"context","Máscara":"part"}}
 {"id":"misionero","lang":"es","clues":{"Posición":"broader"}}
-{"id":"miso-soup","lang":"en","clues":{"Miso Paste":"part","Soup":"broader"}}
-{"id":"mist","lang":"en","clues":{"Fog":"synonym","Norse":"context","Mythology":"broader"}}
-{"id":"mito","lang":"es","clues":{"Dioses":"part"}}
-{"id":"mitologia","lang":"es","clues":{"Dioses":"part","Mito":"part"}}
-{"id":"mitosis","lang":"es","clues":{"División":"part","Reproducción":"broader"}}
-{"id":"mitosis","lang":"en","clues":{"Division":"part","Reproduction":"broader"}}
-{"id":"mixcloud","lang":"es","clues":{"DJ":"context","Música":"broader","Streaming":"broader"}}
-{"id":"mma","lang":"es","clues":{"Artes Marciales Mixtas":"synonym","Combate":"broader","Lucha":"broader","Octágono":"context"}}
-{"id":"mob-psycho-100","lang":"es","clues":{"Reigen Arataka":"part"}}
-{"id":"moby-dick","lang":"es","clues":{"Ahab":"part","Ballena Blanca":"synonym","Herman Melville":"context"}}
-{"id":"moby-dick","lang":"en","clues":{"Captain Ahab":"part","Herman Melville":"context","Whale":"part"}}
-{"id":"mochi","lang":"en","clues":{"Rice Cake":"broader","Japan":"context"}}
-{"id":"mochila","lang":"es","clues":{"Equipaje":"broader","Espalda":"context","Libros":"context"}}
-{"id":"mod","lang":"es","clues":{"Chat":"context","Moderador":"synonym","Reglas":"context"}}
-{"id":"mod","lang":"en","clues":{"Chat":"context","Moderator":"synonym","Rules":"context"}}
-{"id":"moda","lang":"es","clues":{"Estilo":"synonym","Pasarela":"context","Tendencia":"synonym"}}
-{"id":"modelo","lang":"es","clues":{"Pasarela":"context","Persona":"broader"}}
-{"id":"mohammed-bin-salman","lang":"en","clues":{"Crown Prince":"broader","Saudi Arabia":"context"}}
-{"id":"mojito","lang":"es","clues":{"Azúcar":"part","Cuba":"context","Hierbabuena":"part","Limón":"part","Ron":"part","Cóctel":"broader"}}
-{"id":"mojito","lang":"en","clues":{"Cuba":"context","Lime":"part","Mint":"part","Rum":"part","Sugar":"part","Cocktail":"broader"}}
-{"id":"molar-mass","lang":"en","clues":{"Chemistry":"broader","Mole":"context","Mass":"broader"}}
-{"id":"molecula","lang":"es","clues":{"Átomos":"part","Enlace":"part","Química":"broader"}}
-{"id":"molecular-biology","lang":"en","clues":{"Molecules":"part"}}
-{"id":"molecular-evolution","lang":"en","clues":{"Molecules":"part","Evolution":"part"}}
-{"id":"molecular-formula","lang":"en","clues":{"Chemistry":"broader","Compound":"context"}}
-{"id":"molecular-genetics","lang":"en","clues":{"Genes":"part","Molecules":"part","Genetics":"broader"}}
-{"id":"molinillo","lang":"es","clues":{"Café":"context","Moler":"context","Pimienta":"context"}}
-{"id":"momento","lang":"es","clues":{"Física":"broader","Impulso":"synonym","Masa":"part","Velocidad":"part"}}
-{"id":"momento-angular","lang":"es","clues":{"Física":"broader","Rotación":"part"}}
-{"id":"momentum","lang":"en","clues":{"Impulse":"synonym","Physics":"broader","Mass":"part"}}
-{"id":"momia","lang":"es","clues":{"Faraón":"context","Tumba":"context","Vendajes":"part","Vendas":"part","Egipto":"context"}}
-{"id":"monaco","lang":"en","clues":{"Casino":"context"}}
-{"id":"monarquia","lang":"es","clues":{"Corona":"part","Dinastía":"part","Hereditario":"part","Gobierno":"broader","Rey":"part"}}
-{"id":"moncler","lang":"es","clues":{"Tienda":"broader","Italia":"context"}}
-{"id":"money-heist","lang":"en","clues":{"Professor":"part","Robbery":"synonym","Mask":"part"}}
-{"id":"monitor","lang":"es","clues":{"Píxel":"part","Pantalla":"synonym"}}
-{"id":"monitor","lang":"en","clues":{"Pixel":"part","Screen":"synonym"}}
+{"id":"miso-soup","lang":"en","clues":{"Soup":"broader"}}
+{"id":"mist","lang":"en","clues":{"Fog":"synonym"}}
+{"id":"mixcloud","lang":"es","clues":{"Streaming":"broader"}}
+{"id":"mma","lang":"es","clues":{"Artes Marciales Mixtas":"synonym","Combate":"broader","Lucha":"broader"}}
+{"id":"moby-dick","lang":"es","clues":{"Ballena Blanca":"synonym"}}
+{"id":"mochi","lang":"en","clues":{"Rice Cake":"broader"}}
+{"id":"mochila","lang":"es","clues":{"Equipaje":"broader"}}
+{"id":"mod","lang":"es","clues":{"Moderador":"synonym"}}
+{"id":"mod","lang":"en","clues":{"Moderator":"synonym"}}
+{"id":"moda","lang":"es","clues":{"Tendencia":"synonym"}}
+{"id":"mohammed-bin-salman","lang":"en","clues":{"Crown Prince":"broader"}}
+{"id":"mojito","lang":"es","clues":{"Cóctel":"broader"}}
+{"id":"mojito","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"molar-mass","lang":"en","clues":{"Mass":"broader"}}
+{"id":"molecular-genetics","lang":"en","clues":{"Genetics":"broader"}}
+{"id":"monarquia","lang":"es","clues":{"Gobierno":"broader"}}
+{"id":"monitor","lang":"es","clues":{"Pantalla":"synonym"}}
+{"id":"monitor","lang":"en","clues":{"Screen":"synonym"}}
 {"id":"mono","lang":"es","clues":{"Primates":"broader"}}
-{"id":"monopatin","lang":"es","clues":{"Ruedas":"part","Skate":"synonym","Tabla":"part"}}
-{"id":"monopoly","lang":"es","clues":{"Calles":"part","Hoteles":"part","Propiedad":"part","Tablero":"part"}}
-{"id":"monopoly","lang":"en","clues":{"Hotels":"part","Property":"part","Streets":"part","Board":"part"}}
-{"id":"monorail","lang":"en","clues":{"Elevated":"part","Single Track":"part","Train":"broader"}}
+{"id":"monopatin","lang":"es","clues":{"Skate":"synonym"}}
+{"id":"monorail","lang":"en","clues":{"Train":"broader"}}

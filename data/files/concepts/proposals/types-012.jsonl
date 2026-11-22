@@ -1,18 +1,15 @@
 {"id":"sodio","lang":"es","clues":{"Elemento":"broader","Metal":"broader"}}
-{"id":"sofa","lang":"es","clues":{"Cojines":"part","Salón":"context"}}
-{"id":"sofa","lang":"en","clues":{"Cushions":"part","Living Room":"context"}}
 {"id":"software","lang":"es","clues":{"Programa":"synonym"}}
 {"id":"software","lang":"en","clues":{"Program":"synonym"}}
 {"id":"sol","lang":"es","clues":{"Estrella":"broader"}}
-{"id":"solar-light","lang":"en","clues":{"Light Fixture":"broader","Outdoor":"context"}}
+{"id":"solar-light","lang":"en","clues":{"Light Fixture":"broader"}}
 {"id":"solar-powered-vehicle","lang":"en","clues":{"Vehicle":"broader"}}
-{"id":"soldado","lang":"es","clues":{"Uniforme":"part","Ejército":"context"}}
-{"id":"soledad","lang":"es","clues":{"Solo":"synonym","Sentimiento":"broader"}}
-{"id":"solidaridad","lang":"es","clues":{"Apoyo":"synonym","Unión":"synonym"}}
-{"id":"solitario","lang":"es","clues":{"Juego":"broader","Cartas":"part"}}
-{"id":"solucion","lang":"es","clues":{"Mezcla":"broader","Soluto":"part"}}
-{"id":"solution","lang":"en","clues":{"Mixture":"broader","Solute":"part"}}
-{"id":"sombrero","lang":"es","clues":{"Accesorio":"broader","Ala":"part"}}
+{"id":"soledad","lang":"es","clues":{"Sentimiento":"broader"}}
+{"id":"solidaridad","lang":"es","clues":{"Apoyo":"synonym"}}
+{"id":"solitario","lang":"es","clues":{"Juego":"broader"}}
+{"id":"solucion","lang":"es","clues":{"Mezcla":"broader"}}
+{"id":"solution","lang":"en","clues":{"Mixture":"broader"}}
+{"id":"sombrero","lang":"es","clues":{"Accesorio":"broader"}}
 {"id":"sombrero","lang":"en","clues":{"Wide Brimmed Hat":"broader"}}
 {"id":"sonda-voyager","lang":"es","clues":{"Sonda":"broader"}}
 {"id":"sonic","lang":"es","clues":{"Erizo":"broader"}}
@@ -20,18 +17,15 @@
 {"id":"sorel","lang":"en","clues":{"Boots":"broader"}}
 {"id":"sorpresa","lang":"es","clues":{"Asombro":"synonym"}}
 {"id":"sorrow","lang":"en","clues":{"Grief":"synonym","Sadness":"synonym"}}
-{"id":"soundcloud","lang":"es","clues":{"Nube":"part"}}
-{"id":"soundcloud","lang":"en","clues":{"Cloud":"part"}}
-{"id":"sous-vide-machine","lang":"en","clues":{"Cooker":"broader","Sous Vide":"synonym","Water Bath":"synonym"}}
+{"id":"sous-vide-machine","lang":"en","clues":{"Cooker":"broader"}}
 {"id":"sovereign","lang":"en","clues":{"Ruler":"synonym"}}
-{"id":"space-elevator","lang":"en","clues":{"Cable":"part","Elevator":"broader","Transport":"broader"}}
+{"id":"space-elevator","lang":"en","clues":{"Elevator":"broader","Transport":"broader"}}
 {"id":"space-tourism","lang":"en","clues":{"Commercial Spaceflight":"synonym","Space Travel":"synonym","Tourism":"broader"}}
 {"id":"spacex","lang":"en","clues":{"Company":"broader"}}
 {"id":"spawn","lang":"en","clues":{"Antihero":"broader"}}
 {"id":"spear","lang":"en","clues":{"Weapon":"broader"}}
 {"id":"speech-bubble","lang":"en","clues":{"Balloon":"synonym"}}
 {"id":"sphinx-of-giza","lang":"en","clues":{"Sphinx":"broader"}}
-{"id":"spiderman~movies-and-series","lang":"es","clues":{"Máscara":"part"}}
 {"id":"spiderman~movies-and-series-2","lang":"en","clues":{"Hero":"broader"}}
 {"id":"spiderman~superheroes-and-comics","lang":"es","clues":{"Peter Parker":"synonym"}}
 {"id":"spin-off","lang":"es","clues":{"Derivado":"synonym"}}
@@ -47,103 +41,62 @@
 {"id":"spyro","lang":"es","clues":{"Dragón":"broader"}}
 {"id":"spyro","lang":"en","clues":{"Dragon":"broader"}}
 {"id":"spyro-reignited","lang":"es","clues":{"Dragón":"broader"}}
-{"id":"squash","lang":"es","clues":{"Pared":"part","Raqueta":"part"}}
-{"id":"squash","lang":"en","clues":{"Racket":"part","Wall":"part"}}
-{"id":"st-patrick-s-day","lang":"en","clues":{"Ireland":"context","March":"context"}}
-{"id":"starbucks","lang":"es","clues":{"Sirena":"part"}}
-{"id":"starbucks","lang":"en","clues":{"Mermaid":"part"}}
-{"id":"starfish","lang":"en","clues":{"Five Arms":"part","Sea Creature":"broader"}}
+{"id":"starfish","lang":"en","clues":{"Sea Creature":"broader"}}
 {"id":"start-up","lang":"es","clues":{"Empresa nueva":"synonym"}}
-{"id":"statue-of-liberty","lang":"en","clues":{"Torch":"part"}}
 {"id":"staycation","lang":"en","clues":{"Vacation":"broader"}}
 {"id":"stereochemistry","lang":"en","clues":{"Chemistry":"broader"}}
 {"id":"sticker","lang":"es","clues":{"Imagen":"broader","Pegatina":"synonym"}}
 {"id":"sticker","lang":"en","clues":{"Graphic":"broader","Image":"broader"}}
-{"id":"stinks","lang":"es","clues":{"Flecha":"part","Maniquí":"part"}}
 {"id":"stoichiometry","lang":"en","clues":{"Chemistry":"broader"}}
-{"id":"stonehenge","lang":"es","clues":{"Círculo":"part","Piedras":"part"}}
-{"id":"stonehenge","lang":"en","clues":{"Circle":"part","Stones":"part"}}
-{"id":"stonks","lang":"en","clues":{"Arrow":"part","Mannequin":"part"}}
-{"id":"stradivarius","lang":"es","clues":{"Clave Sol":"part","Tienda":"broader"}}
-{"id":"stradivarius","lang":"en","clues":{"Music Note":"part","Store":"broader"}}
+{"id":"stradivarius","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"stradivarius","lang":"en","clues":{"Store":"broader"}}
 {"id":"stream-sniper","lang":"en","clues":{"Cheater":"broader"}}
 {"id":"stream-team","lang":"en","clues":{"Group":"broader"}}
-{"id":"street-fighter","lang":"es","clues":{"Lucha":"broader"}}
-{"id":"street-fighter","lang":"en","clues":{"Fighting":"broader"}}
 {"id":"string-lights","lang":"en","clues":{"Light Fixture":"broader"}}
-{"id":"string-theory","lang":"en","clues":{"Physics":"broader","Strings":"part","Theory":"broader"}}
+{"id":"string-theory","lang":"en","clues":{"Physics":"broader","Theory":"broader"}}
 {"id":"striptease","lang":"es","clues":{"Baile":"broader"}}
 {"id":"striptease","lang":"en","clues":{"Dance":"broader"}}
 {"id":"student","lang":"en","clues":{"Learner":"synonym"}}
-{"id":"subaru","lang":"es","clues":{"Boxer":"part","Impreza":"part"}}
-{"id":"subaru","lang":"en","clues":{"Boxer":"part","Impreza":"part"}}
-{"id":"subasta","lang":"es","clues":{"Pujar":"part"}}
-{"id":"sublimation","lang":"en","clues":{"Phase Change":"broader","Solid to Gas":"part"}}
-{"id":"subrayador","lang":"es","clues":{"Resaltar":"synonym"}}
-{"id":"subreddit","lang":"en","clues":{"Community":"broader","Forum":"broader","Reddit":"part"}}
-{"id":"subscriber-goal","lang":"en","clues":{"Milestone":"synonym","Target":"synonym"}}
+{"id":"sublimation","lang":"en","clues":{"Phase Change":"broader"}}
+{"id":"subreddit","lang":"en","clues":{"Community":"broader","Forum":"broader"}}
+{"id":"subscriber-goal","lang":"en","clues":{"Target":"synonym"}}
 {"id":"subtitulo","lang":"es","clues":{"Texto":"broader"}}
 {"id":"sudafrica","lang":"es","clues":{"País":"broader"}}
 {"id":"sudan","lang":"es","clues":{"País":"broader"}}
-{"id":"sueno","lang":"es","clues":{"Descanso":"synonym"}}
 {"id":"sufragio","lang":"es","clues":{"Derecho":"broader","Voto":"synonym"}}
 {"id":"sugar-glider","lang":"en","clues":{"Marsupial":"broader"}}
-{"id":"sumisa","lang":"es","clues":{"BDSM":"context","Sumisión":"synonym"}}
-{"id":"sumiso","lang":"es","clues":{"BDSM":"context","Sumisión":"synonym"}}
-{"id":"sumo","lang":"es","clues":{"Círculo":"part"}}
-{"id":"sumo","lang":"en","clues":{"Circle":"part"}}
-{"id":"super-intelligence","lang":"en","clues":{"Genius":"synonym","Smart":"synonym"}}
 {"id":"super-mario-bros","lang":"es","clues":{"Videojuego":"broader"}}
 {"id":"super-mario-bros","lang":"en","clues":{"Video Game":"broader"}}
-{"id":"superdry","lang":"en","clues":{"Clothing":"broader","Fashion":"broader","Store":"broader"}}
+{"id":"superdry","lang":"en","clues":{"Clothing":"broader","Store":"broader"}}
 {"id":"supergirl","lang":"en","clues":{"Heroine":"broader","Kryptonian":"broader"}}
-{"id":"superheroe","lang":"es","clues":{"Capa":"part","Disfraz":"part","Héroe":"broader"}}
-{"id":"superhuman-senses","lang":"en","clues":{"Enhanced Senses":"synonym","Hearing":"part","Sight":"part"}}
+{"id":"superheroe","lang":"es","clues":{"Héroe":"broader"}}
+{"id":"superhuman-senses","lang":"en","clues":{"Enhanced Senses":"synonym"}}
 {"id":"superman","lang":"es","clues":{"Clark Kent":"synonym"}}
-{"id":"superman","lang":"en","clues":{"Hero":"broader","Steel":"synonym"}}
-{"id":"supernova","lang":"es","clues":{"Estrella":"broader"}}
-{"id":"supernova","lang":"en","clues":{"Star":"broader"}}
+{"id":"superman","lang":"en","clues":{"Hero":"broader"}}
 {"id":"superpoderes","lang":"es","clues":{"Habilidades":"synonym"}}
-{"id":"superposicion-cuantica","lang":"es","clues":{"Estados múltiples":"synonym","Fenómeno":"broader","Física cuántica":"broader"}}
-{"id":"superposition","lang":"en","clues":{"Overlap":"synonym","Physics":"broader"}}
+{"id":"superposicion-cuantica","lang":"es","clues":{"Estados múltiples":"synonym","Fenómeno":"broader"}}
+{"id":"superposition","lang":"en","clues":{"Overlap":"synonym"}}
 {"id":"suprematismo","lang":"es","clues":{"Arte Abstracto":"broader"}}
-{"id":"supreme","lang":"es","clues":{"Logo":"part","Moda":"broader"}}
-{"id":"supreme","lang":"en","clues":{"Fashion":"broader","Logo":"part"}}
-{"id":"surf","lang":"es","clues":{"Neopreno":"part","Tabla":"part"}}
-{"id":"surprised-pikachu","lang":"es","clues":{"Sorpresa":"synonym"}}
-{"id":"surprised-pikachu","lang":"en","clues":{"Surprise":"synonym"}}
 {"id":"surrealismo","lang":"es","clues":{"Arte":"broader"}}
 {"id":"surtur","lang":"en","clues":{"Giant":"broader"}}
-{"id":"sushi","lang":"es","clues":{"Alga":"part","Arroz":"part","Pescado":"part"}}
-{"id":"sushi","lang":"en","clues":{"Rice":"part","Seaweed":"part","Fish":"part"}}
-{"id":"sushi-mat","lang":"en","clues":{"Bamboo":"part","Mat":"broader"}}
-{"id":"suspension","lang":"es","clues":{"Amortiguador":"part","Muelle":"part"}}
-{"id":"suspension","lang":"en","clues":{"Shock Absorber":"part","Spring":"part"}}
+{"id":"sushi-mat","lang":"en","clues":{"Mat":"broader"}}
 {"id":"sustainable-energy","lang":"en","clues":{"Clean Energy":"synonym","Renewable":"synonym"}}
 {"id":"suv","lang":"es","clues":{"Coche":"broader","Sport Utility Vehicle":"synonym"}}
 {"id":"suv","lang":"en","clues":{"Car":"broader","Sport Utility Vehicle":"synonym"}}
 {"id":"suvenir","lang":"es","clues":{"Recuerdo":"synonym"}}
-{"id":"swarovski","lang":"es","clues":{"Cisne":"part","Cristal":"part"}}
-{"id":"swarovski","lang":"en","clues":{"Crystal":"part","Swan":"part"}}
 {"id":"swingers-party","lang":"en","clues":{"Party":"broader"}}
 {"id":"sword-art-online","lang":"es","clues":{"MMORPG":"broader"}}
 {"id":"synthetic-biology","lang":"en","clues":{"Biology":"broader"}}
 {"id":"systems-biology","lang":"en","clues":{"Biology":"broader"}}
-{"id":"tabaco","lang":"es","clues":{"Nicotina":"part"}}
 {"id":"tabas","lang":"es","clues":{"Juego":"broader"}}
-{"id":"tabla-periodica","lang":"es","clues":{"Elementos":"part","Química":"broader"}}
 {"id":"table-lamp","lang":"en","clues":{"Light Fixture":"broader"}}
-{"id":"table-tennis","lang":"en","clues":{"Net":"part","Paddle":"part"}}
-{"id":"tablet-educativa","lang":"es","clues":{"Tecnología":"broader"}}
 {"id":"taboo","lang":"en","clues":{"Forbidden":"synonym"}}
-{"id":"taco","lang":"es","clues":{"Relleno":"part","Tortilla":"part"}}
-{"id":"taco","lang":"en","clues":{"Filling":"part","Tortilla":"part"}}
 {"id":"tacones","lang":"es","clues":{"Zapatos":"broader"}}
-{"id":"tag-heuer","lang":"en","clues":{"Store":"broader","Watches":"broader"}}
-{"id":"tai-chi","lang":"es","clues":{"Arte Marcial Interno":"broader","Movimiento Lento":"part"}}
-{"id":"taiyaki","lang":"en","clues":{"Fish-shaped Cake":"broader","Sweet Filling":"part"}}
-{"id":"taj-mahal","lang":"es","clues":{"Mármol":"part","Tumba":"broader"}}
-{"id":"taj-mahal","lang":"en","clues":{"Marble":"part","Tomb":"broader"}}
+{"id":"tag-heuer","lang":"en","clues":{"Watches":"broader"}}
+{"id":"tai-chi","lang":"es","clues":{"Arte Marcial Interno":"broader"}}
+{"id":"taiyaki","lang":"en","clues":{"Fish-shaped Cake":"broader"}}
+{"id":"taj-mahal","lang":"es","clues":{"Tumba":"broader"}}
+{"id":"taj-mahal","lang":"en","clues":{"Tomb":"broader"}}
 {"id":"takoyaki","lang":"en","clues":{"Octopus Balls":"synonym"}}
 {"id":"taladradora","lang":"es","clues":{"Herramienta":"broader"}}
 {"id":"talla","lang":"es","clues":{"Medida":"synonym"}}
@@ -158,51 +111,34 @@
 {"id":"tarta","lang":"es","clues":{"Pastel":"synonym"}}
 {"id":"taylor-swift","lang":"es","clues":{"Cantante":"broader","Compositora":"broader"}}
 {"id":"taylor-swift","lang":"en","clues":{"Singer":"broader","Songwriter":"broader"}}
-{"id":"taza","lang":"es","clues":{"Asa":"part","Manija":"part"}}
-{"id":"tdah","lang":"es","clues":{"Salud Mental":"broader"}}
-{"id":"te","lang":"es","clues":{"Bolsita":"part","Infusión":"broader"}}
+{"id":"te","lang":"es","clues":{"Infusión":"broader"}}
 {"id":"technocracy","lang":"en","clues":{"Rule by Experts":"synonym"}}
 {"id":"techo","lang":"es","clues":{"Cubierta":"synonym"}}
-{"id":"teclado","lang":"es","clues":{"Periférico":"broader","Teclas":"part"}}
-{"id":"tejido","lang":"es","clues":{"Células":"part"}}
-{"id":"teleferico","lang":"es","clues":{"Cable":"part","Cesta":"part"}}
-{"id":"teleportation","lang":"en","clues":{"Transport":"broader"}}
-{"id":"telescopio","lang":"es","clues":{"Lentes":"part"}}
+{"id":"teclado","lang":"es","clues":{"Periférico":"broader"}}
 {"id":"telescopio-espacial-hubble","lang":"es","clues":{"Telescopio":"broader"}}
-{"id":"television","lang":"es","clues":{"Mando":"part","Pantalla":"part"}}
-{"id":"television","lang":"en","clues":{"Remote":"part","Screen":"part"}}
 {"id":"templanza","lang":"es","clues":{"Moderación":"synonym"}}
-{"id":"tenedor","lang":"es","clues":{"Cubierto":"broader","Cubiertos":"broader","Dientes":"part","Puntas":"part"}}
+{"id":"tenedor","lang":"es","clues":{"Cubierto":"broader","Cubiertos":"broader"}}
 {"id":"tenia","lang":"es","clues":{"Gusano":"broader","Parásito":"broader"}}
-{"id":"tenis","lang":"es","clues":{"Raqueta":"part","Red":"part"}}
 {"id":"teoria-de-cuerdas","lang":"es","clues":{"Física teórica":"broader"}}
-{"id":"tequila","lang":"es","clues":{"Agave":"part","Alcohol":"broader"}}
-{"id":"tequila","lang":"en","clues":{"Agave":"part","Alcohol":"broader"}}
+{"id":"tequila","lang":"es","clues":{"Alcohol":"broader"}}
+{"id":"tequila","lang":"en","clues":{"Alcohol":"broader"}}
 {"id":"terapia-ocupacional","lang":"es","clues":{"Rehabilitación":"broader"}}
 {"id":"termita","lang":"es","clues":{"Insecto":"broader","Plaga":"broader"}}
 {"id":"ternura","lang":"es","clues":{"Cariño":"synonym","Sentimiento":"broader"}}
-{"id":"terrapin","lang":"en","clues":{"Reptile":"broader","Shell":"part"}}
+{"id":"terrapin","lang":"en","clues":{"Reptile":"broader"}}
 {"id":"terremoto","lang":"es","clues":{"Temblor":"synonym"}}
 {"id":"tesco","lang":"es","clues":{"Supermercado":"broader","Tienda":"broader"}}
 {"id":"tesco","lang":"en","clues":{"Store":"broader","Supermarket":"broader"}}
 {"id":"tesla","lang":"es","clues":{"Coche":"broader"}}
 {"id":"tesla","lang":"en","clues":{"Car":"broader"}}
-{"id":"tesoro","lang":"es","clues":{"Monedas":"part"}}
-{"id":"tetris","lang":"es","clues":{"Piezas":"part","Puzzle":"broader"}}
-{"id":"tetris","lang":"en","clues":{"Pieces":"part","Puzzle":"broader"}}
-{"id":"thanos","lang":"es","clues":{"Guantelete del Infinito":"part","Mad Titan":"synonym","Villano":"broader"}}
+{"id":"tetris","lang":"es","clues":{"Puzzle":"broader"}}
+{"id":"tetris","lang":"en","clues":{"Puzzle":"broader"}}
+{"id":"thanos","lang":"es","clues":{"Mad Titan":"synonym","Villano":"broader"}}
 {"id":"the-beatles","lang":"es","clues":{"Banda":"broader"}}
 {"id":"the-beatles","lang":"en","clues":{"Band":"broader"}}
-{"id":"the-infinity-gauntlet","lang":"en","clues":{"Infinity Stones":"part","Marvel Comics":"broader"}}
-{"id":"the-mandalorian","lang":"en","clues":{"Helmet":"part","Series":"broader"}}
-{"id":"the-north-face","lang":"es","clues":{"Tienda":"broader"}}
-{"id":"the-office","lang":"es","clues":{"Comedia":"broader","Mockumentary":"broader"}}
-{"id":"the-office","lang":"en","clues":{"Comedy":"broader","Mockumentary":"broader"}}
+{"id":"the-mandalorian","lang":"en","clues":{"Series":"broader"}}
 {"id":"the-simpsons","lang":"es","clues":{"Dibujos":"broader","Televisión":"broader"}}
 {"id":"the-simpsons","lang":"en","clues":{"Cartoon":"broader","TV":"broader"}}
-{"id":"the-sims","lang":"es","clues":{"Simulacion":"broader"}}
-{"id":"the-sims","lang":"en","clues":{"Simulation":"broader"}}
-{"id":"the-weeknd","lang":"es","clues":{"Cantante/Rapero":"broader"}}
 {"id":"the-witcher","lang":"es","clues":{"Brujo":"synonym"}}
 {"id":"the-witcher","lang":"en","clues":{"Series":"broader"}}
 {"id":"thegrefg","lang":"es","clues":{"Streamer":"broader"}}
@@ -213,7 +149,6 @@
 {"id":"theseus","lang":"en","clues":{"Hero":"broader"}}
 {"id":"thinking-guy","lang":"es","clues":{"Meme":"broader"}}
 {"id":"thinking-guy","lang":"en","clues":{"Meme":"broader"}}
-{"id":"thor","lang":"es","clues":{"Dios":"broader","Dios del Trueno":"synonym","Martillo":"part"}}
-{"id":"thor","lang":"en","clues":{"God":"broader","Hammer":"part","Hero":"broader"}}
+{"id":"thor","lang":"es","clues":{"Dios":"broader","Dios del Trueno":"synonym"}}
+{"id":"thor","lang":"en","clues":{"God":"broader","Hero":"broader"}}
 {"id":"thread","lang":"es","clues":{"Hilo":"synonym"}}
-{"id":"tiburon","lang":"es","clues":{"Aleta":"part","Mandíbula":"part"}}

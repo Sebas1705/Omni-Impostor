@@ -1,292 +1,182 @@
 {"id":"ticket","lang":"en","clues":{"Pass":"synonym"}}
 {"id":"tidal","lang":"es","clues":{"Streaming":"broader"}}
-{"id":"tiempo","lang":"es","clues":{"Dimensión":"broader"}}
 {"id":"tierra","lang":"es","clues":{"Planeta":"broader"}}
-{"id":"tiffany-co","lang":"en","clues":{"Store":"broader","Blue Box":"part"}}
-{"id":"tigre","lang":"es","clues":{"Felino":"broader","Rayas":"part","Selva":"context"}}
-{"id":"tijeras","lang":"es","clues":{"Cortar":"context","Filo":"part","Hojas":"part"}}
-{"id":"timberland","lang":"en","clues":{"Store":"broader"}}
-{"id":"time-dilation","lang":"en","clues":{"Theory":"broader","Physics":"broader"}}
-{"id":"time-machine","lang":"en","clues":{"Transport":"broader","Time Travel":"context"}}
+{"id":"tiffany-co","lang":"en","clues":{"Store":"broader"}}
+{"id":"tigre","lang":"es","clues":{"Felino":"broader"}}
 {"id":"time-space-continuum","lang":"en","clues":{"Time and Space":"synonym"}}
-{"id":"times-square","lang":"es","clues":{"Nueva York":"context"}}
-{"id":"times-square","lang":"en","clues":{"New York":"context"}}
 {"id":"timocracy","lang":"en","clues":{"Rule by Honor":"synonym"}}
 {"id":"timon-holandes","lang":"es","clues":{"Posición":"broader"}}
-{"id":"tinder","lang":"es","clues":{"Citas":"context"}}
-{"id":"tinder","lang":"en","clues":{"Dating":"context"}}
-{"id":"tinta","lang":"es","clues":{"Líquido":"broader","Escribir":"context"}}
+{"id":"tinta","lang":"es","clues":{"Líquido":"broader"}}
 {"id":"tipografia","lang":"es","clues":{"Fuente":"synonym"}}
-{"id":"tiritas","lang":"es","clues":{"Herida":"context"}}
-{"id":"tiro-con-arco","lang":"es","clues":{"Flecha":"part","Diana":"part"}}
-{"id":"titanic","lang":"es","clues":{"Barco":"broader","Océano":"context"}}
-{"id":"titanic","lang":"en","clues":{"Ship":"broader","Ocean":"context"}}
-{"id":"toalla","lang":"es","clues":{"Baño":"context","Secar":"context"}}
-{"id":"toga","lang":"es","clues":{"Ropa Tradicional":"broader","Roma Antigua":"context"}}
-{"id":"tokio","lang":"es","clues":{"Capital":"broader","Japón":"context"}}
-{"id":"tom-collins","lang":"en","clues":{"Cocktail":"broader","Gin":"part","Lemon":"part","Soda":"part"}}
+{"id":"titanic","lang":"es","clues":{"Barco":"broader"}}
+{"id":"titanic","lang":"en","clues":{"Ship":"broader"}}
+{"id":"toga","lang":"es","clues":{"Ropa Tradicional":"broader"}}
+{"id":"tokio","lang":"es","clues":{"Capital":"broader"}}
+{"id":"tom-collins","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"tom-cruise","lang":"es","clues":{"Actor":"broader"}}
 {"id":"tom-cruise","lang":"en","clues":{"Actor":"broader"}}
-{"id":"tom-ford","lang":"es","clues":{"Tienda":"broader"}}
-{"id":"tomb-raider","lang":"es","clues":{"Aventura":"broader"}}
-{"id":"tomb-raider","lang":"en","clues":{"Adventure":"broader"}}
-{"id":"tommy-hilfiger","lang":"en","clues":{"Store":"broader","Fashion":"broader","Clothing":"broader","Flag Logo":"part"}}
-{"id":"tonic-water","lang":"en","clues":{"Soda":"broader","Quinine":"part","Gin":"context"}}
+{"id":"tommy-hilfiger","lang":"en","clues":{"Clothing":"broader"}}
+{"id":"tonic-water","lang":"en","clues":{"Soda":"broader"}}
 {"id":"tonkatsu","lang":"en","clues":{"Breaded Pork Cutlet":"synonym"}}
-{"id":"toolbox","lang":"en","clues":{"Tools":"part"}}
-{"id":"top-hat","lang":"es","clues":{"Chistera":"synonym","Sombrero Alto":"synonym","Ropa Formal":"broader","Mago":"context","Esmoquin":"context"}}
-{"id":"top-hat","lang":"en","clues":{"Tall Hat":"synonym","Formal Wear":"broader","Magician":"context","Tuxedo":"context"}}
-{"id":"topo","lang":"es","clues":{"Subterráneo":"context"}}
-{"id":"tormenta","lang":"es","clues":{"Rayo":"part","Trueno":"part"}}
-{"id":"toronto","lang":"es","clues":{"Canadá":"context","Torre CN":"part"}}
-{"id":"toronto","lang":"en","clues":{"Canada":"context","CN Tower":"part"}}
-{"id":"torre-eiffel","lang":"es","clues":{"Monumento":"broader","París":"context","Francia":"context","Hierro":"part"}}
-{"id":"tortilla","lang":"es","clues":{"Huevo":"part","Patata":"part","Sartén":"context"}}
-{"id":"tortitas","lang":"es","clues":{"Harina":"part","Desayuno":"context"}}
-{"id":"tortoise","lang":"en","clues":{"Reptile":"broader","Shell":"part"}}
-{"id":"tostadora","lang":"es","clues":{"Pan":"context"}}
-{"id":"totalitarianism","lang":"en","clues":{"Dictatorship":"synonym","Government Control":"synonym"}}
-{"id":"town-fair","lang":"en","clues":{"Party":"broader"}}
+{"id":"top-hat","lang":"es","clues":{"Chistera":"synonym","Sombrero Alto":"synonym","Ropa Formal":"broader"}}
+{"id":"top-hat","lang":"en","clues":{"Tall Hat":"synonym","Formal Wear":"broader"}}
+{"id":"torre-eiffel","lang":"es","clues":{"Monumento":"broader"}}
+{"id":"tortoise","lang":"en","clues":{"Reptile":"broader"}}
+{"id":"totalitarianism","lang":"en","clues":{"Dictatorship":"synonym"}}
 {"id":"toy-story","lang":"es","clues":{"Animación":"broader"}}
 {"id":"toy-story","lang":"en","clues":{"Animation":"broader"}}
-{"id":"toyota","lang":"es","clues":{"Coche":"broader","Japón":"context"}}
-{"id":"toyota","lang":"en","clues":{"Car":"broader","Japan":"context"}}
-{"id":"toys-r-us","lang":"es","clues":{"Tienda":"broader","Jirafa":"part"}}
-{"id":"toys-r-us","lang":"en","clues":{"Store":"broader","Giraffe":"part"}}
+{"id":"toyota","lang":"es","clues":{"Coche":"broader"}}
+{"id":"toyota","lang":"en","clues":{"Car":"broader"}}
+{"id":"toys-r-us","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"toys-r-us","lang":"en","clues":{"Store":"broader"}}
 {"id":"trabajo-en-equipo","lang":"es","clues":{"Colaborar":"synonym"}}
-{"id":"track-light","lang":"en","clues":{"Light Fixture":"broader","Multiple Heads":"part"}}
+{"id":"track-light","lang":"en","clues":{"Light Fixture":"broader"}}
 {"id":"tradicion","lang":"es","clues":{"Costumbre":"synonym"}}
 {"id":"traditional-clothing","lang":"en","clues":{"Clothes":"broader","Costume":"synonym"}}
-{"id":"traffic-jam~cars-and-motorsport","lang":"en","clues":{"Congestion":"synonym","Gridlock":"synonym","Rush Hour":"context"}}
+{"id":"traffic-jam~cars-and-motorsport","lang":"en","clues":{"Congestion":"synonym","Gridlock":"synonym"}}
 {"id":"traffic-jam~transport","lang":"en","clues":{"Slowdown":"synonym"}}
-{"id":"traffic-sign","lang":"en","clues":{"Sign":"broader","Road":"context"}}
-{"id":"tragaperras","lang":"es","clues":{"Máquina":"broader","Casino":"context"}}
-{"id":"trajano","lang":"es","clues":{"Emperador":"broader","Roma":"context"}}
-{"id":"traje","lang":"es","clues":{"Chaqueta":"part","Pantalón":"part","Boda":"context"}}
+{"id":"traffic-sign","lang":"en","clues":{"Sign":"broader"}}
+{"id":"tragaperras","lang":"es","clues":{"Máquina":"broader"}}
+{"id":"trajano","lang":"es","clues":{"Emperador":"broader"}}
 {"id":"trama","lang":"es","clues":{"Argumento":"synonym"}}
-{"id":"trampa","lang":"es","clues":{"Engañar":"synonym"}}
-{"id":"trampoline","lang":"en","clues":{"Mat":"part","Gymnastics":"context"}}
 {"id":"tranquilidad","lang":"es","clues":{"Calma":"synonym","Paz":"synonym","Serenidad":"synonym"}}
-{"id":"transcript","lang":"en","clues":{"Record":"synonym","Grades":"part"}}
-{"id":"transfusion-de-sangre","lang":"es","clues":{"Hospital":"context"}}
-{"id":"transparencia","lang":"es","clues":{"Claridad":"synonym","Honestidad":"synonym"}}
-{"id":"transportador","lang":"es","clues":{"Medir":"context","Semicírculo":"part"}}
-{"id":"transportin-para-mascotas","lang":"es","clues":{"Viajar":"context"}}
+{"id":"transcript","lang":"en","clues":{"Record":"synonym"}}
+{"id":"transparencia","lang":"es","clues":{"Claridad":"synonym"}}
 {"id":"trash-can","lang":"en","clues":{"Bin":"synonym"}}
 {"id":"trasplante","lang":"es","clues":{"Cirugía":"broader"}}
-{"id":"tratado","lang":"es","clues":{"Acuerdo":"synonym","Paz":"context"}}
-{"id":"traumatologo","lang":"es","clues":{"Huesos":"context"}}
+{"id":"tratado","lang":"es","clues":{"Acuerdo":"synonym"}}
 {"id":"travel-blog","lang":"en","clues":{"Blog":"broader"}}
 {"id":"travel-insurance","lang":"en","clues":{"Insurance":"broader"}}
 {"id":"travis-scott","lang":"es","clues":{"Rapero":"broader"}}
 {"id":"travis-scott","lang":"en","clues":{"Rapper":"broader"}}
-{"id":"trello","lang":"es","clues":{"Tablero":"part","Tarjetas":"part"}}
-{"id":"trello","lang":"en","clues":{"Cards":"part","Board":"part"}}
-{"id":"tren","lang":"es","clues":{"Locomotora":"part","Vagón":"part","Estación":"context"}}
 {"id":"trend","lang":"es","clues":{"Tendencia":"synonym"}}
-{"id":"triangulo","lang":"es","clues":{"Percusión":"broader","Varilla":"part"}}
-{"id":"triatlon","lang":"es","clues":{"Correr":"part","Nadar":"part","Bicicleta":"part"}}
-{"id":"tribuno","lang":"es","clues":{"Roma":"context"}}
-{"id":"trichuris","lang":"es","clues":{"Gusano":"broader","Parásito":"broader","Intestino":"context"}}
-{"id":"trident","lang":"en","clues":{"Weapon":"broader","Poseidon":"context","Three Prongs":"part","Sea":"context"}}
+{"id":"triangulo","lang":"es","clues":{"Percusión":"broader"}}
+{"id":"trichuris","lang":"es","clues":{"Gusano":"broader","Parásito":"broader"}}
+{"id":"trident","lang":"en","clues":{"Weapon":"broader"}}
 {"id":"trilby-hat","lang":"en","clues":{"Fedora":"synonym","Narrow Brimmed Hat":"broader"}}
-{"id":"tripadvisor","lang":"es","clues":{"Búho":"part"}}
-{"id":"tripadvisor","lang":"en","clues":{"Owl":"part"}}
 {"id":"tristeza","lang":"es","clues":{"Pena":"synonym","Sentimiento":"broader"}}
-{"id":"trol","lang":"es","clues":{"Puente":"context","Cueva":"context"}}
-{"id":"troll-de-internet","lang":"es","clues":{"Trolleo":"synonym"}}
-{"id":"trolleybus","lang":"en","clues":{"Electric Bus":"synonym","Overhead Wires":"part"}}
+{"id":"trolleybus","lang":"en","clues":{"Electric Bus":"synonym"}}
 {"id":"trollface","lang":"es","clues":{"Dibujo":"broader"}}
 {"id":"trollface","lang":"en","clues":{"Drawing":"broader"}}
-{"id":"trombon","lang":"es","clues":{"Viento":"broader","Vara":"part"}}
-{"id":"trompeta","lang":"es","clues":{"Viento":"broader","Boquilla":"part","Pistones":"part"}}
-{"id":"true-religion","lang":"en","clues":{"Store":"broader","Fashion":"broader","Clothing":"broader"}}
-{"id":"trueno","lang":"es","clues":{"Sonido":"broader","Ruido":"broader","Tormenta":"context"}}
+{"id":"trombon","lang":"es","clues":{"Viento":"broader"}}
+{"id":"trompeta","lang":"es","clues":{"Viento":"broader"}}
+{"id":"true-religion","lang":"en","clues":{"Clothing":"broader"}}
+{"id":"trueno","lang":"es","clues":{"Sonido":"broader","Ruido":"broader"}}
 {"id":"tsunami","lang":"en","clues":{"Wave":"broader"}}
-{"id":"tuba","lang":"es","clues":{"Viento":"broader","Boquilla":"part"}}
-{"id":"tuba","lang":"en","clues":{"Brass":"broader","Wind":"broader","Mouthpiece":"part"}}
+{"id":"tuba","lang":"es","clues":{"Viento":"broader"}}
+{"id":"tuba","lang":"en","clues":{"Brass":"broader","Wind":"broader"}}
 {"id":"tube-light","lang":"en","clues":{"Light Fixture":"broader"}}
-{"id":"tubo-de-ensayo","lang":"es","clues":{"Laboratorio":"context","Cristal":"part"}}
 {"id":"tumblr","lang":"es","clues":{"Microblogging":"broader","Blogging":"broader"}}
-{"id":"tundra","lang":"es","clues":{"Bioma":"broader","Ártico":"context","Sin Árboles":"part"}}
-{"id":"tundra","lang":"en","clues":{"Biome":"broader","Arctic":"context","Treeless":"part"}}
+{"id":"tundra","lang":"es","clues":{"Bioma":"broader"}}
+{"id":"tundra","lang":"en","clues":{"Biome":"broader"}}
 {"id":"tunel-cuantico","lang":"es","clues":{"Fenómeno":"broader"}}
 {"id":"tunica","lang":"es","clues":{"Ropa":"broader","Vestimenta":"broader"}}
-{"id":"tupper","lang":"es","clues":{"Guardar":"context"}}
-{"id":"tupperware","lang":"en","clues":{"Store":"context"}}
-{"id":"turbo","lang":"es","clues":{"Compresor":"broader","Motor":"context"}}
-{"id":"turbo","lang":"en","clues":{"Compressor":"broader","Engine":"context"}}
+{"id":"turbo","lang":"es","clues":{"Compresor":"broader"}}
+{"id":"turbo","lang":"en","clues":{"Compressor":"broader"}}
 {"id":"turismo-rural","lang":"es","clues":{"Viaje al campo":"synonym"}}
 {"id":"turismo-sostenible","lang":"es","clues":{"Ecoturismo":"synonym","Viaje responsable":"synonym"}}
 {"id":"turista","lang":"es","clues":{"Persona":"broader"}}
-{"id":"turtle","lang":"en","clues":{"Reptile":"broader","Shell":"part"}}
+{"id":"turtle","lang":"en","clues":{"Reptile":"broader"}}
 {"id":"twitch","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"twitch","lang":"en","clues":{"Streaming":"broader"}}
 {"id":"twitch-drops","lang":"en","clues":{"Rewards":"synonym"}}
 {"id":"twitch-prime","lang":"en","clues":{"Subscription":"broader"}}
-{"id":"twitter","lang":"es","clues":{"Pájaro":"part"}}
-{"id":"twitter","lang":"en","clues":{"Bird":"part"}}
 {"id":"twitter-spaces","lang":"en","clues":{"Chatroom":"broader"}}
-{"id":"tyr","lang":"en","clues":{"God":"broader","Norse":"context","Hand":"part"}}
+{"id":"tyr","lang":"en","clues":{"God":"broader"}}
 {"id":"uber","lang":"es","clues":{"App":"broader"}}
 {"id":"uber","lang":"en","clues":{"App":"broader"}}
 {"id":"uber-eats","lang":"es","clues":{"App":"broader"}}
 {"id":"uber-eats","lang":"en","clues":{"App":"broader"}}
-{"id":"udon","lang":"en","clues":{"Thick Noodles":"synonym","Broth":"part"}}
-{"id":"ugg","lang":"en","clues":{"Boots":"broader","Store":"broader","Sheepskin":"part"}}
-{"id":"ukelele","lang":"es","clues":{"Cuerdas":"part","Hawaii":"context"}}
-{"id":"ullr","lang":"en","clues":{"Norse":"context"}}
-{"id":"umbrella-stand","lang":"en","clues":{"Entryway":"context"}}
-{"id":"unagi","lang":"en","clues":{"Grilled Eel":"synonym","Japan":"context"}}
-{"id":"uncharted","lang":"es","clues":{"Aventura":"broader"}}
-{"id":"uncharted","lang":"en","clues":{"Adventure":"broader"}}
-{"id":"under-armour","lang":"es","clues":{"Tienda":"broader","Ropa Técnica":"broader"}}
-{"id":"under-armour","lang":"en","clues":{"Sportswear":"broader","Store":"broader"}}
-{"id":"under-cabinet-light","lang":"en","clues":{"Light Fixture":"broader","Task Lighting":"broader","Kitchen":"context"}}
+{"id":"udon","lang":"en","clues":{"Thick Noodles":"synonym"}}
+{"id":"ugg","lang":"en","clues":{"Boots":"broader"}}
+{"id":"unagi","lang":"en","clues":{"Grilled Eel":"synonym"}}
+{"id":"under-armour","lang":"es","clues":{"Ropa Técnica":"broader"}}
+{"id":"under-armour","lang":"en","clues":{"Sportswear":"broader"}}
+{"id":"under-cabinet-light","lang":"en","clues":{"Light Fixture":"broader","Task Lighting":"broader"}}
 {"id":"unemployment-rate","lang":"en","clues":{"Economic Indicator.":"broader","Percentage of Unemployed.":"synonym"}}
 {"id":"unfollow","lang":"en","clues":{"Stop following":"synonym"}}
-{"id":"unicornio","lang":"es","clues":{"Cuerno":"part"}}
 {"id":"uniforme","lang":"es","clues":{"Ropa":"broader"}}
-{"id":"uniforme-escolar","lang":"es","clues":{"Ropa":"broader","Colegio":"context"}}
+{"id":"uniforme-escolar","lang":"es","clues":{"Ropa":"broader"}}
 {"id":"uniqlo","lang":"es","clues":{"Tienda":"broader","Ropa":"broader"}}
 {"id":"uniqlo","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
-{"id":"universidad","lang":"es","clues":{"Estudiar":"context"}}
-{"id":"universo","lang":"es","clues":{"Todo":"synonym","Espacio":"synonym","Galaxias":"part"}}
-{"id":"uranio","lang":"es","clues":{"Elemento":"broader","Radioactivo":"part"}}
+{"id":"universo","lang":"es","clues":{"Todo":"synonym"}}
+{"id":"uranio","lang":"es","clues":{"Elemento":"broader"}}
 {"id":"urano","lang":"es","clues":{"Planeta":"broader"}}
-{"id":"urologist","lang":"en","clues":{"Urinary System Doctor":"synonym","Urology":"context"}}
-{"id":"urologo","lang":"es","clues":{"Sistema urinario":"context"}}
-{"id":"uruguay","lang":"es","clues":{"País":"broader","Montevideo":"context"}}
-{"id":"uruguay","lang":"en","clues":{"Montevideo":"context"}}
-{"id":"usb","lang":"es","clues":{"Conector":"broader","Puerto":"part"}}
-{"id":"usb","lang":"en","clues":{"Connector":"broader","Port":"part"}}
-{"id":"ushanka","lang":"en","clues":{"Russian Hat":"synonym","Ear Flaps":"part","Fur":"part","Winter":"context"}}
-{"id":"usopp","lang":"en","clues":{"Long Nose":"part","One Piece":"context"}}
-{"id":"vaca","lang":"es","clues":{"Cuernos":"part","Granja":"context"}}
-{"id":"vacaciones","lang":"es","clues":{"Descanso":"synonym"}}
-{"id":"vaccination","lang":"en","clues":{"Vaccine":"part"}}
-{"id":"vacheron-constantin","lang":"en","clues":{"Store":"broader","Watches":"context","Switzerland":"context"}}
-{"id":"vacuna","lang":"es","clues":{"Inmunidad":"context"}}
-{"id":"vacuum-cleaner","lang":"en","clues":{"Appliance":"broader","Suction":"part","Clean":"context"}}
-{"id":"vagon","lang":"es","clues":{"Tren":"context","Raíl":"context"}}
-{"id":"valencia","lang":"es","clues":{"Química":"broader","Electrón":"part"}}
+{"id":"urologist","lang":"en","clues":{"Urinary System Doctor":"synonym"}}
+{"id":"uruguay","lang":"es","clues":{"País":"broader"}}
+{"id":"usb","lang":"es","clues":{"Conector":"broader"}}
+{"id":"usb","lang":"en","clues":{"Connector":"broader"}}
+{"id":"ushanka","lang":"en","clues":{"Russian Hat":"synonym"}}
+{"id":"vacuum-cleaner","lang":"en","clues":{"Appliance":"broader"}}
 {"id":"valentia","lang":"es","clues":{"Coraje":"synonym","Miedo":"contrast"}}
-{"id":"valentino","lang":"es","clues":{"Tienda":"broader"}}
-{"id":"valhalla","lang":"en","clues":{"Afterlife":"broader","Odin":"context"}}
-{"id":"valor-neto","lang":"es","clues":{"Riqueza":"synonym","Activos":"part","Pasivos":"part"}}
-{"id":"valorant","lang":"es","clues":{"Táctico":"broader","Agentes":"part"}}
-{"id":"valorant","lang":"en","clues":{"Tactical":"broader","Agents":"part"}}
+{"id":"valhalla","lang":"en","clues":{"Afterlife":"broader"}}
+{"id":"valor-neto","lang":"es","clues":{"Riqueza":"synonym"}}
 {"id":"valquiria","lang":"es","clues":{"Guerrera":"broader"}}
-{"id":"vampiro","lang":"es","clues":{"Colmillos":"part"}}
-{"id":"van-gogh","lang":"es","clues":{"Postimpresionismo":"broader"}}
-{"id":"vanesa-martin","lang":"es","clues":{"Cantante de Pop/Rock":"broader"}}
-{"id":"vans","lang":"es","clues":{"Tienda":"broader","Ropa":"broader","Ropa Casual":"broader"}}
-{"id":"vans","lang":"en","clues":{"Store":"broader","Sneakers":"broader"}}
-{"id":"vape","lang":"en","clues":{"Nicotine":"part","Vapor":"part"}}
-{"id":"vaper","lang":"es","clues":{"Nicotina":"part"}}
+{"id":"vans","lang":"en","clues":{"Sneakers":"broader"}}
 {"id":"vaporization","lang":"en","clues":{"Liquid to Gas":"synonym","Phase Change":"broader"}}
-{"id":"vaqueros","lang":"es","clues":{"Denim":"part","Pantalón":"broader","Ropa":"broader"}}
-{"id":"varillas","lang":"es","clues":{"Batir":"context"}}
-{"id":"varita","lang":"es","clues":{"Madera":"part","Mago":"context"}}
-{"id":"vaso","lang":"es","clues":{"Beber":"context","Cristal":"part"}}
-{"id":"vatican-city","lang":"en","clues":{"Pope":"context","Smallest Country":"part"}}
-{"id":"vegeta","lang":"es","clues":{"Saiyan":"broader","Dragon Ball":"context"}}
-{"id":"vegeta","lang":"en","clues":{"Saiyan":"broader","Dragon Ball":"context"}}
-{"id":"veggie-burger","lang":"en","clues":{"Patty":"part","Bun":"part"}}
-{"id":"vehiculo-electrico","lang":"es","clues":{"EV":"synonym","Coche":"broader","Batería Recargable":"part","Motor Eléctrico":"part"}}
+{"id":"vaqueros","lang":"es","clues":{"Pantalón":"broader","Ropa":"broader"}}
+{"id":"vegeta","lang":"es","clues":{"Saiyan":"broader"}}
+{"id":"vegeta","lang":"en","clues":{"Saiyan":"broader"}}
+{"id":"vehiculo-electrico","lang":"es","clues":{"EV":"synonym","Coche":"broader"}}
 {"id":"vehiculos-autonomos","lang":"es","clues":{"Coches sin conductor":"synonym"}}
-{"id":"vela~holidays-and-celebrations","lang":"es","clues":{"Cumpleaños":"context","Pastel":"context"}}
-{"id":"vela~sports","lang":"es","clues":{"Barco":"context","Regata":"context","Mástil":"part"}}
-{"id":"velocidad","lang":"es","clues":{"Rapidez":"synonym","Rápido":"synonym"}}
-{"id":"venda","lang":"es","clues":{"Herida":"context","Tela":"part"}}
-{"id":"vendedor","lang":"es","clues":{"Tienda":"context"}}
-{"id":"venecia","lang":"es","clues":{"Italia":"context","Góndola":"part"}}
-{"id":"venezuela","lang":"es","clues":{"País":"broader","América Latina":"context"}}
-{"id":"venom","lang":"es","clues":{"Anti-Héroe":"broader","Marvel":"context"}}
-{"id":"ventana","lang":"es","clues":{"Cristal":"part"}}
+{"id":"velocidad","lang":"es","clues":{"Rapidez":"synonym"}}
+{"id":"venezuela","lang":"es","clues":{"País":"broader"}}
+{"id":"venom","lang":"es","clues":{"Anti-Héroe":"broader"}}
 {"id":"venus","lang":"es","clues":{"Planeta":"broader"}}
 {"id":"venus","lang":"en","clues":{"Planet":"broader"}}
 {"id":"venus-flytrap-nebula","lang":"en","clues":{"Nebula":"broader","Gas Cloud":"broader"}}
-{"id":"veracidad","lang":"es","clues":{"Verdad":"synonym","Honestidad":"synonym"}}
+{"id":"veracidad","lang":"es","clues":{"Verdad":"synonym"}}
 {"id":"verano","lang":"es","clues":{"Estación":"broader"}}
 {"id":"verbena","lang":"es","clues":{"Fiesta":"broader"}}
-{"id":"versace","lang":"es","clues":{"Tienda":"broader","Moda":"broader"}}
-{"id":"vesper-martini","lang":"en","clues":{"Cocktail":"broader","Gin":"part","Vodka":"part","Lillet":"part"}}
-{"id":"vestido","lang":"es","clues":{"Ropa":"broader","Una Pieza":"part"}}
+{"id":"vesper-martini","lang":"en","clues":{"Cocktail":"broader"}}
+{"id":"vestido","lang":"es","clues":{"Ropa":"broader"}}
 {"id":"vestimenta","lang":"es","clues":{"Ropa":"synonym"}}
 {"id":"vestimenta-tradicional","lang":"es","clues":{"Traje típico":"synonym","Ropa":"broader"}}
-{"id":"vetements","lang":"es","clues":{"Tienda":"broader","Francia":"context"}}
-{"id":"veterans-day","lang":"en","clues":{"Holiday":"broader","November 11th":"context"}}
-{"id":"veterinario","lang":"es","clues":{"Clínica":"context"}}
+{"id":"veterans-day","lang":"en","clues":{"Holiday":"broader"}}
 {"id":"veto","lang":"en","clues":{"Reject":"synonym"}}
 {"id":"via-lactea","lang":"es","clues":{"Galaxia":"broader"}}
-{"id":"viaje-organizado","lang":"es","clues":{"Agencia de Viajes":"context"}}
 {"id":"vibe-check","lang":"es","clues":{"Prueba":"synonym"}}
 {"id":"vibe-check","lang":"en","clues":{"Test":"synonym"}}
-{"id":"vibram-fivefingers","lang":"es","clues":{"Zapatillas Minimalistas":"broader","Tienda":"broader"}}
-{"id":"victoria","lang":"es","clues":{"Ganar":"synonym"}}
-{"id":"victoria-s-secret","lang":"es","clues":{"Tienda":"broader","Moda":"broader"}}
-{"id":"victoria-s-secret","lang":"en","clues":{"Store":"broader","Fashion":"broader","Angels":"part"}}
-{"id":"vida","lang":"es","clues":{"Existencia":"synonym","Seres Vivos":"synonym"}}
-{"id":"vidar","lang":"en","clues":{"Norse":"context"}}
-{"id":"viena","lang":"es","clues":{"Austria":"context"}}
-{"id":"viento","lang":"es","clues":{"Aire":"synonym"}}
-{"id":"viento-solar","lang":"es","clues":{"Partículas":"part","Sol":"context"}}
-{"id":"vikingo","lang":"es","clues":{"Guerrero":"broader","Casco":"part"}}
-{"id":"viktor-orban","lang":"en","clues":{"Prime Minister":"broader","Hungary":"context"}}
+{"id":"vibram-fivefingers","lang":"es","clues":{"Zapatillas Minimalistas":"broader"}}
+{"id":"victoria-s-secret","lang":"es","clues":{"Tienda":"broader"}}
+{"id":"victoria-s-secret","lang":"en","clues":{"Store":"broader"}}
+{"id":"vida","lang":"es","clues":{"Existencia":"synonym"}}
+{"id":"vikingo","lang":"es","clues":{"Guerrero":"broader"}}
+{"id":"viktor-orban","lang":"en","clues":{"Prime Minister":"broader"}}
 {"id":"villano","lang":"es","clues":{"Malvado":"synonym","Enemigo":"synonym","Héroe":"contrast"}}
 {"id":"vimeo","lang":"es","clues":{"Streaming":"broader"}}
-{"id":"vinagrera","lang":"es","clues":{"Aliñar":"context","Vinagre":"context"}}
-{"id":"vineta","lang":"es","clues":{"Cuadro":"synonym","Cómic":"context"}}
-{"id":"vino","lang":"es","clues":{"Alcohol":"broader","Uva":"part","Bodega":"context"}}
-{"id":"violin","lang":"es","clues":{"Cuerdas":"broader","Arco":"part"}}
-{"id":"violin","lang":"en","clues":{"Strings":"broader","Bow":"part"}}
+{"id":"vineta","lang":"es","clues":{"Cuadro":"synonym"}}
+{"id":"vino","lang":"es","clues":{"Alcohol":"broader"}}
+{"id":"violin","lang":"es","clues":{"Cuerdas":"broader"}}
+{"id":"violin","lang":"en","clues":{"Strings":"broader"}}
 {"id":"violonchelo","lang":"es","clues":{"Cuerdas":"broader"}}
-{"id":"vip","lang":"es","clues":{"Exclusivo":"synonym"}}
-{"id":"vip","lang":"en","clues":{"Exclusive":"synonym"}}
 {"id":"virgin-galactic","lang":"en","clues":{"Company":"broader"}}
-{"id":"virologo","lang":"es","clues":{"Virus":"context"}}
 {"id":"virtual-classroom-software","lang":"en","clues":{"Remote Learning Software":"synonym","Online Meeting Software":"broader","Video Conferencing Software":"broader"}}
 {"id":"virtual-private-network","lang":"en","clues":{"VPN":"synonym","Secure Connection":"synonym"}}
-{"id":"virtual-reality-headset","lang":"en","clues":{"Technology":"broader"}}
-{"id":"virtual-reality-therapy","lang":"en","clues":{"Treatment":"synonym","Mental Health":"context"}}
+{"id":"virtual-reality-therapy","lang":"en","clues":{"Treatment":"broader"}}
 {"id":"visa~brands","lang":"es","clues":{"Tarjeta":"broader"}}
 {"id":"visa~brands","lang":"en","clues":{"Card":"broader"}}
-{"id":"viscosidad","lang":"es","clues":{"Espeso":"part"}}
-{"id":"vishnu","lang":"en","clues":{"Hinduism":"context","Chakra":"part","Conch":"part"}}
 {"id":"vitaminas","lang":"es","clues":{"Suplemento":"broader"}}
 {"id":"vizconde","lang":"es","clues":{"Título":"broader","Nobleza":"broader"}}
 {"id":"vizcondesa","lang":"es","clues":{"Título":"broader","Nobleza":"broader"}}
-{"id":"vladimir-putin","lang":"es","clues":{"Presidente":"broader","Rusia":"context"}}
-{"id":"vladimir-putin","lang":"en","clues":{"President":"broader","Russia":"context"}}
+{"id":"vladimir-putin","lang":"es","clues":{"Presidente":"broader"}}
+{"id":"vladimir-putin","lang":"en","clues":{"President":"broader"}}
 {"id":"vlog","lang":"es","clues":{"Diario":"synonym","Vídeo":"broader"}}
 {"id":"vlog","lang":"en","clues":{"Diary":"synonym","Video":"broader"}}
 {"id":"vocacion","lang":"es","clues":{"Llamado":"synonym"}}
-{"id":"vodka","lang":"es","clues":{"Destilado":"broader","Patata":"part","Patata o Cereal":"part","Rusia":"context"}}
-{"id":"vodka","lang":"en","clues":{"Alcohol":"broader","Potato":"part","Russia":"context"}}
-{"id":"volante","lang":"es","clues":{"Conducir":"context","Coche":"context"}}
-{"id":"volcan","lang":"es","clues":{"Montaña":"broader","Cráter":"part","Lava":"part"}}
-{"id":"voleibol","lang":"es","clues":{"Red":"part"}}
-{"id":"voltaje","lang":"es","clues":{"Potencial":"synonym","Electricidad":"context"}}
+{"id":"vodka","lang":"es","clues":{"Destilado":"broader"}}
+{"id":"vodka","lang":"en","clues":{"Alcohol":"broader"}}
+{"id":"volcan","lang":"es","clues":{"Montaña":"broader"}}
+{"id":"voltaje","lang":"es","clues":{"Potencial":"synonym"}}
 {"id":"volunteer-tourism","lang":"en","clues":{"Travel":"broader"}}
-{"id":"voto","lang":"es","clues":{"Elegir":"synonym","Elecciones":"context"}}
-{"id":"voyager-1","lang":"en","clues":{"Space Probe":"broader","Golden Record":"part"}}
-{"id":"voyager-2","lang":"en","clues":{"Space Probe":"broader","Golden Record":"part"}}
-{"id":"vuelo","lang":"es","clues":{"Avión":"context"}}
-{"id":"vulnerabilidad","lang":"es","clues":{"Débil":"synonym"}}
-{"id":"waffle-iron","lang":"en","clues":{"Waffle":"context"}}
-{"id":"waffles","lang":"es","clues":{"Cuadrados con Rejilla":"part","Harina":"part"}}
+{"id":"voyager-1","lang":"en","clues":{"Space Probe":"broader"}}
+{"id":"voyager-2","lang":"en","clues":{"Space Probe":"broader"}}
 {"id":"walgreens","lang":"es","clues":{"Farmacia":"broader","Tienda":"broader"}}
 {"id":"walgreens","lang":"en","clues":{"Pharmacy":"broader","Store":"broader"}}
 {"id":"wall-sconce","lang":"en","clues":{"Light Fixture":"broader"}}
-{"id":"wallapop","lang":"es","clues":{"Segunda Mano":"context"}}
-{"id":"wallapop","lang":"en","clues":{"Second Hand":"context"}}
 {"id":"walmart","lang":"es","clues":{"Minorista":"broader","Supermercado":"broader"}}
 {"id":"walmart","lang":"en","clues":{"Retailer":"broader","Supermarket":"broader"}}
-{"id":"walrus","lang":"en","clues":{"Pinniped":"broader","Tusk":"part"}}
-{"id":"war-and-peace","lang":"en","clues":{"Classic":"broader","Leo Tolstoy":"context"}}
-{"id":"watchmen","lang":"en","clues":{"Superheroes":"broader"}}
-{"id":"waterpolo","lang":"es","clues":{"Piscina":"context"}}
-{"id":"waze","lang":"es","clues":{"GPS":"broader","Conducir":"context"}}
-{"id":"waze","lang":"en","clues":{"GPS":"broader","Driving":"context"}}
+{"id":"walrus","lang":"en","clues":{"Pinniped":"broader"}}
+{"id":"waze","lang":"es","clues":{"GPS":"broader"}}
+{"id":"waze","lang":"en","clues":{"GPS":"broader"}}
 {"id":"wearable-technology","lang":"en","clues":{"Wearable Device":"synonym","Gadget":"broader"}}

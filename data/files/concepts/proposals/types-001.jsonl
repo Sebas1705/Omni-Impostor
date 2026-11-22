@@ -1,62 +1,45 @@
-{"id":"1984","lang":"es","clues":{"Distopía":"broader"}}
-{"id":"1984","lang":"en","clues":{"Dystopia":"broader"}}
 {"id":"3d-bioprinting","lang":"en","clues":{"3D Printing":"broader"}}
-{"id":"3d-printed-electronics","lang":"en","clues":{"3D Printing":"broader"}}
-{"id":"3d-printed-fashion","lang":"en","clues":{"3D Printing":"broader"}}
-{"id":"3d-printed-food","lang":"en","clues":{"3D Printing":"broader"}}
-{"id":"3d-printed-houses","lang":"en","clues":{"3D Printing":"broader"}}
-{"id":"3d-printed-prosthetics","lang":"en","clues":{"3D Printing":"broader"}}
 {"id":"3d-printing","lang":"en","clues":{"Manufacture":"broader"}}
 {"id":"5g-network","lang":"en","clues":{"Mobile Network":"broader"}}
 {"id":"5g-technology","lang":"en","clues":{"5G":"synonym","Mobile Network":"broader"}}
 {"id":"7-eleven","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"7-eleven","lang":"en","clues":{"Store":"broader"}}
-{"id":"9-11-attacks","lang":"en","clues":{"Terrorism":"broader"}}
 {"id":"abaddon","lang":"es","clues":{"Ángel del Abismo":"synonym","Demonio":"broader"}}
 {"id":"abercrombie-fitch","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
 {"id":"abridor","lang":"es","clues":{"Herramienta":"broader"}}
 {"id":"abrigo","lang":"es","clues":{"Ropa":"broader"}}
-{"id":"absenta","lang":"es","clues":{"Destilado":"broader","Anís":"part"}}
+{"id":"absenta","lang":"es","clues":{"Destilado":"broader"}}
 {"id":"aburrimiento","lang":"es","clues":{"Interés":"contrast"}}
-{"id":"accion","lang":"es","clues":{"Parte":"synonym","Título":"synonym"}}
-{"id":"accountability","lang":"en","clues":{"Answerable":"synonym","Responsibility":"synonym"}}
+{"id":"accion","lang":"es","clues":{"Título":"synonym"}}
+{"id":"accountability","lang":"en","clues":{"Responsibility":"synonym"}}
 {"id":"acupuntura","lang":"es","clues":{"Medicina Tradicional China":"broader"}}
 {"id":"adele","lang":"es","clues":{"Cantante":"broader"}}
 {"id":"adele","lang":"en","clues":{"Singer":"broader"}}
 {"id":"adiccion","lang":"es","clues":{"Dependencia":"synonym"}}
-{"id":"adidas","lang":"es","clues":{"Tres Rayas":"part","Ropa":"broader"}}
-{"id":"adidas","lang":"en","clues":{"Three Stripes":"part","Sportswear":"broader"}}
-{"id":"admiracion","lang":"es","clues":{"Respeto":"synonym"}}
+{"id":"adidas","lang":"es","clues":{"Ropa":"broader"}}
+{"id":"adidas","lang":"en","clues":{"Sportswear":"broader"}}
 {"id":"adquisicion","lang":"es","clues":{"Compra":"synonym"}}
 {"id":"aeropostale","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
-{"id":"aeropuerto","lang":"es","clues":{"Terminal":"part","Pista":"part"}}
 {"id":"afecto","lang":"es","clues":{"Cariño":"synonym","Sentimiento":"broader"}}
 {"id":"affection","lang":"en","clues":{"Feeling":"broader"}}
 {"id":"afrodita","lang":"es","clues":{"Venus":"synonym","Diosa del Amor":"synonym"}}
 {"id":"agitation","lang":"en","clues":{"Feeling":"broader"}}
 {"id":"agobio","lang":"es","clues":{"Estrés":"synonym"}}
 {"id":"agua","lang":"es","clues":{"H2O":"synonym","Líquido":"broader"}}
-{"id":"aguila","lang":"es","clues":{"Garra":"part","Pico":"part"}}
-{"id":"agujero-negro","lang":"es","clues":{"Singularidad":"part"}}
-{"id":"ai-generated-art","lang":"en","clues":{"Generated Art":"synonym"}}
 {"id":"air-conditioner","lang":"en","clues":{"Appliance":"broader"}}
 {"id":"airbnb","lang":"es","clues":{"App":"broader"}}
 {"id":"airbnb","lang":"en","clues":{"App":"broader"}}
-{"id":"ajedrez","lang":"es","clues":{"Tablero":"part","Piezas":"part"}}
-{"id":"aladino","lang":"es","clues":{"Lámpara Mágica":"part"}}
-{"id":"album","lang":"es","clues":{"Disco":"synonym","Portada":"part"}}
-{"id":"album","lang":"en","clues":{"Record":"synonym","Cover":"part"}}
+{"id":"album","lang":"es","clues":{"Disco":"synonym"}}
+{"id":"album","lang":"en","clues":{"Record":"synonym"}}
 {"id":"alcampo","lang":"es","clues":{"Supermercado":"broader"}}
 {"id":"alcampo","lang":"en","clues":{"Supermarket":"broader"}}
-{"id":"alcazar-de-segovia","lang":"es","clues":{"Alcázar":"synonym","Castillo":"broader"}}
-{"id":"alce","lang":"es","clues":{"Astas":"part","Cuernos":"part"}}
+{"id":"alcazar-de-segovia","lang":"es","clues":{"Alcázar":"broader","Castillo":"broader"}}
 {"id":"alcohol","lang":"es","clues":{"Etanol":"synonym"}}
 {"id":"alcohol","lang":"en","clues":{"Ethanol":"synonym"}}
 {"id":"aldi","lang":"es","clues":{"Supermercado":"broader"}}
 {"id":"aldi","lang":"en","clues":{"Supermarket":"broader"}}
 {"id":"alegre","lang":"es","clues":{"Feliz":"synonym"}}
 {"id":"alemania","lang":"es","clues":{"País":"broader"}}
-{"id":"alfabeto","lang":"es","clues":{"Letras":"part"}}
 {"id":"algodon","lang":"es","clues":{"Material":"broader","Tela":"broader"}}
 {"id":"algorithm","lang":"es","clues":{"Algoritmo":"synonym"}}
 {"id":"alhambra","lang":"es","clues":{"Castillo":"broader"}}
@@ -68,18 +51,14 @@
 {"id":"aliexpress","lang":"en","clues":{"Store":"broader"}}
 {"id":"allergist-immunologist","lang":"en","clues":{"Doctor":"broader","Allergies Doctor":"synonym"}}
 {"id":"altitud","lang":"es","clues":{"Altura":"synonym"}}
-{"id":"altruismo","lang":"es","clues":{"Generosidad":"synonym"}}
 {"id":"alumno","lang":"es","clues":{"Estudiante":"synonym"}}
-{"id":"alusion","lang":"es","clues":{"Referencia":"synonym","Mención":"synonym","Indirecta":"synonym","Sugerencia":"synonym"}}
+{"id":"alusion","lang":"es","clues":{"Referencia":"synonym","Mención":"synonym","Indirecta":"synonym"}}
 {"id":"alzheimer","lang":"es","clues":{"Demencia":"broader","Enfermedad Neurodegenerativa":"broader"}}
-{"id":"amargo-de-angostura","lang":"es","clues":{"Alcohol":"broader"}}
-{"id":"amargo-de-peychaud","lang":"es","clues":{"Alcohol":"broader"}}
 {"id":"amazon","lang":"es","clues":{"Tienda":"broader"}}
 {"id":"amazon","lang":"en","clues":{"Store":"broader"}}
 {"id":"amazon-music","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"ambulancia","lang":"es","clues":{"Vehículo":"broader"}}
 {"id":"american-eagle-outfitters","lang":"en","clues":{"Store":"broader","Clothing":"broader"}}
-{"id":"amino-acid","lang":"en","clues":{"Protein Building Block":"part"}}
 {"id":"amoniaco","lang":"es","clues":{"Gas":"broader"}}
 {"id":"amor","lang":"es","clues":{"Sentimiento":"broader"}}
 {"id":"amphibious-vehicle","lang":"en","clues":{"Vehicle":"broader"}}
@@ -95,10 +74,9 @@
 {"id":"anmitsu","lang":"en","clues":{"Agar Jelly Dessert":"broader"}}
 {"id":"anorexia","lang":"es","clues":{"Trastorno Alimenticio":"broader"}}
 {"id":"anquilostoma","lang":"es","clues":{"Parásito":"broader","Gusano":"broader"}}
-{"id":"ansiedad","lang":"es","clues":{"Inquietud":"synonym","Preocupación":"synonym","Nervios":"synonym"}}
+{"id":"ansiedad","lang":"es","clues":{"Inquietud":"synonym","Preocupación":"synonym"}}
 {"id":"antartida","lang":"es","clues":{"Continente":"broader"}}
 {"id":"antibiotico","lang":"es","clues":{"Medicina":"broader"}}
-{"id":"antimateria","lang":"es","clues":{"Opuesto":"contrast"}}
 {"id":"antonio-orozco","lang":"es","clues":{"Cantante de Pop/Rock":"broader"}}
 {"id":"anuel-aa","lang":"es","clues":{"Rapero de Trap/Reggaeton":"broader"}}
 {"id":"aparcamiento","lang":"es","clues":{"Estacionamiento":"synonym","Parking":"synonym"}}
@@ -111,41 +89,36 @@
 {"id":"apple","lang":"es","clues":{"Manzana":"synonym"}}
 {"id":"apple-music","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"appletini","lang":"en","clues":{"Cocktail":"broader"}}
-{"id":"arana","lang":"es","clues":{"Arácnido":"broader","Ocho Patas":"part"}}
-{"id":"arbol","lang":"es","clues":{"Tronco":"part","Hojas":"part"}}
+{"id":"arana","lang":"es","clues":{"Arácnido":"broader"}}
 {"id":"archienemigo","lang":"es","clues":{"Enemigo":"broader","Rival":"synonym"}}
-{"id":"archipielago","lang":"es","clues":{"Grupo":"broader","Conjunto":"broader"}}
-{"id":"archivador-de-anillas","lang":"es","clues":{"Anillas":"part"}}
 {"id":"ardilla","lang":"es","clues":{"Roedor":"broader"}}
 {"id":"ares","lang":"en","clues":{"Mars":"synonym","God":"broader"}}
 {"id":"argelia","lang":"es","clues":{"País":"broader"}}
 {"id":"argentina","lang":"es","clues":{"País":"broader"}}
 {"id":"ariana-grande","lang":"es","clues":{"Cantante":"broader"}}
 {"id":"ariana-grande","lang":"en","clues":{"Singer":"broader"}}
-{"id":"armario","lang":"es","clues":{"Puertas":"part"}}
 {"id":"armonica","lang":"es","clues":{"Viento":"broader"}}
 {"id":"arnold-schwarzenegger","lang":"es","clues":{"Actor":"broader"}}
 {"id":"arnold-schwarzenegger","lang":"en","clues":{"Actor":"broader"}}
-{"id":"arpa","lang":"es","clues":{"Cuerdas":"part"}}
 {"id":"arroz","lang":"es","clues":{"Cereal":"broader","Grano":"broader"}}
 {"id":"artemis","lang":"en","clues":{"Goddess":"broader"}}
 {"id":"artificial-general-intelligence","lang":"en","clues":{"AGI":"synonym","General Intelligence":"synonym","Artificial Intelligence":"broader"}}
 {"id":"artritis","lang":"es","clues":{"Enfermedad Crónica":"broader"}}
-{"id":"asaltante-de-caminos","lang":"es","clues":{"Asaltante":"broader","Asalto de caminos":"synonym"}}
+{"id":"asaltante-de-caminos","lang":"es","clues":{"Asaltante":"broader"}}
 {"id":"asco","lang":"es","clues":{"Repulsión":"synonym"}}
-{"id":"asics","lang":"es","clues":{"Ropa Deportiva":"broader","Tienda":"broader"}}
-{"id":"asics","lang":"en","clues":{"Sportswear":"broader","Store":"broader"}}
+{"id":"asics","lang":"es","clues":{"Ropa Deportiva":"broader"}}
+{"id":"asics","lang":"en","clues":{"Sportswear":"broader"}}
 {"id":"asma","lang":"es","clues":{"Enfermedad Respiratoria":"broader"}}
 {"id":"asombro","lang":"es","clues":{"Sorpresa":"synonym"}}
 {"id":"astrobiology","lang":"en","clues":{"Life in Space":"synonym"}}
 {"id":"astrophysics","lang":"en","clues":{"Physics":"broader"}}
 {"id":"athena","lang":"en","clues":{"Goddess":"broader"}}
-{"id":"atomo","lang":"es","clues":{"Partícula":"broader","Electrón":"part","Núcleo":"part"}}
+{"id":"atomo","lang":"es","clues":{"Partícula":"broader"}}
 {"id":"atv","lang":"en","clues":{"All-Terrain Vehicle":"synonym"}}
-{"id":"audemars-piguet","lang":"en","clues":{"Store":"broader","Watches":"broader"}}
+{"id":"audemars-piguet","lang":"en","clues":{"Watches":"broader"}}
 {"id":"audhumla","lang":"en","clues":{"Cow":"broader"}}
-{"id":"audi","lang":"es","clues":{"Coche":"broader","Aros":"part"}}
-{"id":"audi","lang":"en","clues":{"Car":"broader","Rings":"part"}}
+{"id":"audi","lang":"es","clues":{"Coche":"broader"}}
+{"id":"audi","lang":"en","clues":{"Car":"broader"}}
 {"id":"audiomack","lang":"es","clues":{"Streaming":"broader"}}
 {"id":"auditoria","lang":"es","clues":{"Revisión":"synonym"}}
 {"id":"audius","lang":"es","clues":{"Streaming":"broader"}}
@@ -153,31 +126,25 @@
 {"id":"auronplay","lang":"es","clues":{"Streamer":"broader"}}
 {"id":"auronplay","lang":"en","clues":{"Streamer":"broader"}}
 {"id":"australia","lang":"es","clues":{"País":"broader"}}
-{"id":"autenticidad","lang":"es","clues":{"Genuino":"synonym"}}
-{"id":"autocracy","lang":"en","clues":{"Dictatorship":"synonym","One Ruler":"synonym"}}
-{"id":"autonomo","lang":"es","clues":{"Conducir solo":"synonym"}}
+{"id":"autocracy","lang":"en","clues":{"Dictatorship":"synonym"}}
 {"id":"autonomous-vehicle","lang":"en","clues":{"Driverless":"synonym","Self-driving":"synonym","Self-driving Car":"synonym"}}
 {"id":"autopista","lang":"es","clues":{"Carretera":"broader"}}
 {"id":"autovia","lang":"es","clues":{"Carretera":"broader"}}
-{"id":"ave","lang":"es","clues":{"Animal":"broader","Pico":"part","Plumas":"part"}}
-{"id":"aviation","lang":"en","clues":{"Cocktail":"broader","Gin":"part"}}
-{"id":"avion","lang":"es","clues":{"Alas":"part"}}
+{"id":"ave","lang":"es","clues":{"Animal":"broader"}}
+{"id":"aviation","lang":"en","clues":{"Cocktail":"broader"}}
 {"id":"avispa","lang":"es","clues":{"Insecto":"broader"}}
 {"id":"avispon","lang":"es","clues":{"Insecto":"broader"}}
-{"id":"axe","lang":"en","clues":{"Weapon":"broader","Handle":"part"}}
-{"id":"axolotl","lang":"en","clues":{"Amphibian":"broader","Gills":"part"}}
+{"id":"axe","lang":"en","clues":{"Weapon":"broader"}}
+{"id":"axolotl","lang":"en","clues":{"Amphibian":"broader"}}
 {"id":"azael","lang":"es","clues":{"Ángel Caído":"broader","Demonio":"broader"}}
-{"id":"azar","lang":"es","clues":{"Aleatorio":"synonym","Suerte":"synonym"}}
+{"id":"azar","lang":"es","clues":{"Suerte":"synonym"}}
 {"id":"azazel","lang":"es","clues":{"Ángel Caído":"broader","Demonio del Desierto":"synonym"}}
 {"id":"azufre","lang":"es","clues":{"Elemento":"broader"}}
-{"id":"bacteria","lang":"es","clues":{"Microbio":"synonym","Microorganismo":"synonym","Unicelular":"part"}}
-{"id":"bacteria","lang":"en","clues":{"Microbe":"synonym","Unicellular":"part"}}
-{"id":"bad-bunny","lang":"es","clues":{"Cantante de Reggaeton/Trap":"broader","Conejo":"synonym"}}
-{"id":"bad-bunny","lang":"en","clues":{"Rabbit":"synonym"}}
+{"id":"bacteria","lang":"es","clues":{"Microbio":"synonym","Microorganismo":"synonym"}}
+{"id":"bacteria","lang":"en","clues":{"Microbe":"synonym"}}
+{"id":"bad-bunny","lang":"es","clues":{"Cantante de Reggaeton/Trap":"broader"}}
 {"id":"bad-luck-brian","lang":"es","clues":{"Meme":"broader"}}
 {"id":"bad-luck-brian","lang":"en","clues":{"Meme":"broader"}}
-{"id":"badminton","lang":"es","clues":{"Raqueta":"part","Volante":"part"}}
-{"id":"badminton","lang":"en","clues":{"Racket":"part","Shuttlecock":"part"}}
 {"id":"balaclava","lang":"en","clues":{"Face Mask":"broader","Head Covering":"broader"}}
 {"id":"balada","lang":"es","clues":{"Canción":"broader"}}
 {"id":"baldur","lang":"en","clues":{"God":"broader"}}
