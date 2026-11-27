@@ -34,7 +34,6 @@
     {"word":"Dress Code","clues":["Elegant","Wear","Wedding","Party","Clothing"],"category":"fashion_and_clothing","conceptId":"dress-code"},
     {"word":"Earrings","clues":["Accessory","Ears","Hang","Pair","Jewelry"],"reveal":"11112","category":"fashion_and_clothing","conceptId":"pendientes"},
     {"word":"Espadrilles","clues":["Canvas","Rope Sole","Spain","Summer"],"category":"fashion_and_clothing","conceptId":"espadrilles"},
-    {"word":"Fashion","clues":["Design","Runway","Style","Trend","Clothing"],"category":"fashion_and_clothing","conceptId":"moda"},
     {"word":"Fedora","clues":["Accessory","Brim","Classic","Hat","Stylish"],"reveal":"11121","category":"fashion_and_clothing","conceptId":"fedora"},
     {"word":"Fez","clues":["Flat Top","Red Hat","Traditional"],"category":"fashion_and_clothing","conceptId":"fez"},
     {"word":"Fitting Room","clues":["Change","Curtain","Mirror","Store","Clothing"],"category":"fashion_and_clothing","conceptId":"probador"},

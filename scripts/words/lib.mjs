@@ -139,6 +139,7 @@ export function compileAll(map, level = 'high') {
   const underfilled = [];
   const weakAtNormal = [];
   for (const concept of map.concepts.filter(approved)) {
+    if (concept.clueOnly) continue; // generic topic word: kept as a clue of other concepts, never a secret word
     for (const lang of LANGS) {
       const r = compileConcept(concept, lang, level, indexed, inDeg);
       if (!r) continue;

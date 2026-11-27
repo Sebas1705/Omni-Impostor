@@ -26,6 +26,7 @@ const rows = map.concepts.map((c) => {
     al: Object.fromEntries(Object.entries(c.labels).filter(([, l]) => l.aliases).map(([k, l]) => [k, l.aliases])),
     cats: c.categories,
     tr: c.translatable === false ? 0 : 1,
+    co: c.clueOnly ? 1 : 0,
     h: Object.fromEntries(Object.entries(c.hints ?? {}).map(([k, a]) => [k, a.map((h) => [h.t, h.type ?? 'association'])])),
     out: out.map(([to, type, langs]) => [to, type, langs, labelOf(map.byId.get(to), 'es')?.text ?? labelOf(map.byId.get(to), 'en')?.text ?? to]),
     inn: incoming.get(c.id) ?? 0,

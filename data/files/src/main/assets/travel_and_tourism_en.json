@@ -80,7 +80,6 @@
     {"word":"Tour Guide","clues":["City","Explain","Guide","Information","Tourism"],"reveal":"11211","category":"travel_and_tourism","conceptId":"guia-turistico"},
     {"word":"Tourism","clues":["Culture","Holiday","Sightseeing","Travel","Vacation"],"category":"travel_and_tourism","conceptId":"turismo"},
     {"word":"Tourist","clues":["Person","Photos","Travel","Map","Camera"],"category":"travel_and_tourism","conceptId":"turista"},
-    {"word":"Transport","clues":["Cars","Moving","Planes","Trains","Travel"],"category":"travel_and_tourism","conceptId":"transporte"},
     {"word":"Travel Adapter","clues":["Abroad","Charger","Pins","Plug","Power"],"category":"travel_and_tourism","conceptId":"travel-adapter"},
     {"word":"Travel Agency","clues":["Agency","Book","Help","Trip","Vacation"],"category":"travel_and_tourism","conceptId":"agencia-de-viajes"},
     {"word":"Travel Backpack","clues":["Back","Cabin","Light","Luggage","Zipper"],"category":"travel_and_tourism","conceptId":"travel-backpack"},

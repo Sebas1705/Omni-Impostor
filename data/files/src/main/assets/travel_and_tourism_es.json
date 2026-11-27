@@ -74,7 +74,6 @@
     {"word":"Tarjeta de embarque","clues":["Aeropuerto","Asiento","Código QR","Puerta","Vuelo"],"category":"travel_and_tourism","conceptId":"boarding-pass"},
     {"word":"Tienda de campaña","clues":["Camping","Cremallera","Dormir","Lluvia","Montar"],"category":"travel_and_tourism","conceptId":"tent"},
     {"word":"Todo incluido","clues":["Barra libre","Buffet","Hotel","Pulsera","Vacaciones"],"category":"travel_and_tourism","conceptId":"all-inclusive"},
-    {"word":"Transporte","clues":["Aviones","Coches","Mover","Trenes","Viaje","Avión","Tren","Coche"],"category":"travel_and_tourism","conceptId":"transporte"},
     {"word":"Trotamundos","clues":["Explorar","Globo","Mundo","Viajar"],"category":"travel_and_tourism","conceptId":"globetrotter"},
     {"word":"Turismo","clues":["Cultura","Destino","Monumento","Turistas","Vacaciones","Viajar","Visitar"],"category":"travel_and_tourism","conceptId":"turismo"},
     {"word":"Turismo Cultural","clues":["Arte","Monumentos","Museos","Viaje educativo"],"category":"travel_and_tourism","conceptId":"turismo-cultural"},

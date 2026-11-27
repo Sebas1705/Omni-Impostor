@@ -113,7 +113,6 @@
     {"word":"Mummy","clues":["Bandages","Dead","Pharaoh","Pyramid","Tomb","Egypt"],"category":"mythology_and_fantasy","conceptId":"momia"},
     {"word":"Muspelheim","clues":["Fire","Fire Giants","Lava","Norse","Surtur","Mythology"],"category":"mythology_and_fantasy","conceptId":"muspelheim"},
     {"word":"Myth","clues":["Ancient","Culture","Explanation","Gods","Story"],"reveal":"11112","category":"mythology_and_fantasy","conceptId":"myth"},
-    {"word":"Mythology","clues":["Ancient","Culture","Gods","Legends","Stories"],"category":"mythology_and_fantasy","conceptId":"mitologia"},
     {"word":"Narcissus","clues":["Echo","Flower","Mirror","Pond","Reflection","Vanity"],"category":"mythology_and_fantasy","conceptId":"narcissus"},
     {"word":"Niflheim","clues":["Mist","Norse","Underworld","Ice","Mythology"],"category":"mythology_and_fantasy","conceptId":"niflheim"},
     {"word":"Njord","clues":["Norse","Wind","God","Sea","Mythology"],"reveal":"11211","category":"mythology_and_fantasy","conceptId":"njord"},

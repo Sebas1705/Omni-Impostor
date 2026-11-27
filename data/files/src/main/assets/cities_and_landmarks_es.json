@@ -37,7 +37,7 @@
     {"word":"Empire State","clues":["Estados Unidos","Mirador","Nueva York","Rascacielos"],"category":"cities_and_landmarks","conceptId":"empire-state-building"},
     {"word":"Esfinge de Guiza","clues":["Antigua","Cabeza humana","Cuerpo de león","Desierto","Egipto","Enigma","Pirámides"],"category":"cities_and_landmarks","conceptId":"sphinx-of-giza"},
     {"word":"Estambul","clues":["Bósforo","Mezquita","Puente","Turquía"],"category":"cities_and_landmarks","conceptId":"estambul"},
-    {"word":"Estatua Libertad","clues":["Antorcha","Isla","Nueva York","Regalo","Verde"],"category":"cities_and_landmarks","conceptId":"statue-of-liberty"},
+    {"word":"Estatua de la Libertad","clues":["Antorcha","Isla","Nueva York","Regalo","Verde"],"category":"cities_and_landmarks","conceptId":"statue-of-liberty"},
     {"word":"Estocolmo","clues":["Frío","Islas","Nobel","Nórdico","Suecia"],"category":"cities_and_landmarks","conceptId":"estocolmo"},
     {"word":"Florencia","clues":["Arte","Duomo","Italia","Renacimiento","Toscana"],"category":"cities_and_landmarks","conceptId":"florence"},
     {"word":"Fontana de Trevi","clues":["Barroca","Deseo","Italia","Monedas","Roma"],"category":"cities_and_landmarks","conceptId":"trevi-fountain"},

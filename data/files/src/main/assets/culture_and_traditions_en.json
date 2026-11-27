@@ -50,7 +50,6 @@
     {"word":"Monument","clues":["Building","City","Famous","Statue","Visit","Stone"],"category":"culture_and_traditions","conceptId":"monumento"},
     {"word":"Moors and Christians","clues":["Alicante","Battle","Costumes","Festival","Parade"],"category":"culture_and_traditions","conceptId":"moors-and-christians"},
     {"word":"Museum","clues":["Art","Culture","Exhibition","Gallery","Paintings","Visit"],"category":"culture_and_traditions","conceptId":"museo"},
-    {"word":"Mythology","clues":["Ancient","Culture","Gods","Legends","Stories"],"category":"culture_and_traditions","conceptId":"mitologia"},
     {"word":"Nativity Scene","clues":["Baby Jesus","Christmas","Figurines","Manger","Three Kings"],"category":"culture_and_traditions","conceptId":"nativity-scene"},
     {"word":"New Year","clues":["Calendar","Celebration","January","Midnight","Party"],"category":"culture_and_traditions","conceptId":"ano-nuevo"},
     {"word":"Oktoberfest","clues":["Beer Steins","Lederhosen","Munich","Pretzels"],"category":"culture_and_traditions","conceptId":"oktoberfest~culture-and-traditions"},

@@ -104,7 +104,6 @@
     {"word":"Smart Grid","clues":["Efficiency","Meters","Renewable","Renewable Energy","Technology","Electricity"],"category":"science_physics","conceptId":"smart-grid"},
     {"word":"Solar Energy","clues":["Clean","Panels","Electricity","Sun","Light"],"category":"science_physics","conceptId":"energia-solar"},
     {"word":"Sound","clues":["Acoustics","Air","Hearing","Vibration","Wave"],"category":"science_physics","conceptId":"sonido"},
-    {"word":"Space","clues":["Dimension","Galaxy","Place","Vacuum","Universe"],"category":"science_physics","conceptId":"espacio~science-physics"},
     {"word":"Spectrum","clues":["Frequency","Prism","Rainbow","Color","Light"],"category":"science_physics","conceptId":"espectro"},
     {"word":"Speed","clues":["Distance","Fast","Flash","Limit","Meter","Motion","Movement","Run"],"category":"science_physics","conceptId":"velocidad"},
     {"word":"String Theory","clues":["Multidimensional","Physics","Strings","Theory","Universe"],"reveal":"12121","category":"science_physics","conceptId":"string-theory"},

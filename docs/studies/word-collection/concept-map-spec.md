@@ -8,7 +8,7 @@ can be tried with `scripts/word-study/concept-compile-prototype.mjs` on `concept
 
 | Question | Decision |
 |---|---|
-| Shape of a word | One concept, at most 3 words, articles stay in the label (`The Hobbit`). Aliases go to a separate field, never in parentheses. |
+| Shape of a word | One concept, at most 4 words, articles stay in the label (`The Hobbit`). Aliases go to a separate field, never in parentheses. |
 | Model | Concept map: concepts (senses) with category tags, typed weighted links between concepts, plain-text hints as leaves. |
 | Languages | **One map.** A concept carries a label per language. **Spanish (`es`) is mandatory**, every other language is optional. Looking for clues is filtered by language. |
 | Synonyms as clues | Allowed, gated by a difficulty setting (impostor help). |
@@ -43,7 +43,8 @@ JSON Lines keeps diffs and review batches line based, like the current one-entry
 |---|---|---|
 | `id` | string | Stable forever. `slug` of the Spanish label (`leon`; of the English one while the concept is `todo`); homonyms add a sense tag: `espacio~universo`, `espacio~casilla`. Pattern `^[a-z0-9]+(-[a-z0-9]+)*(~[a-z0-9]+(-[a-z0-9]+)*)?$`. Labels may change, the id never does (links and ratings point at it). |
 | `labels` | map lang to label | `es` required (see `todo`). Other keys are ISO 639-1 codes. A concept without a label in a language is **not a word in that language** and cannot be a clue there. |
-| `labels.<l>.text` | string | 1 to 3 words, no parentheses, not blank. This is what players see. |
+| `clueOnly` | bool | `true` for a generic topic word (`Historia`, `Space`): it stays as a clue of other concepts but is never a secret word. |
+| `labels.<l>.text` | string | 1 to 4 words, no parentheses, not blank. This is what players see. |
 | `labels.<l>.aliases` | string[] | Optional. Never shown. Used only to reject clues that give the word away. |
 | `categories` | string[] | At least 1, each an existing category slug. A word belongs to every category where it fits; the first is the primary one. |
 | `hints` | map lang to hint[] | Plain-text clues that are not concepts (yet). Per language, because text is language specific. |
@@ -160,7 +161,7 @@ merged), so the pick is uniform over concepts; `WordJson`, `WordDoc` and `WordMo
 ## 7. Validation (CI, extends `WordAssetsValidationTest`)
 
 On the source files: unique ids and id pattern; links reference existing concepts; no self or duplicate links; `es` label
-present unless `todo` or `translatable: false`; label and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
+present unless `todo` or `translatable: false`; label text 1 to 4 words and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
 and are non-empty; weights 1 to 5; known link types; two concepts with the same label in a language must differ by a sense
 tag; every `(concept, language)` compiles to at least 3 clues at `normal`; `proposed` records are never compiled.
 Release check: no `todo`, and `words_version.txt` matches the compiled output. The existing validator keeps checking the

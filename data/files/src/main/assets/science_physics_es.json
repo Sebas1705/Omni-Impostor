@@ -51,7 +51,6 @@
     {"word":"Energía sostenible","clues":["Ecológico","Energía limpia","Futuro","Renovable"],"reveal":"1311","category":"science_physics","conceptId":"sustainable-energy"},
     {"word":"Entrelazamiento","clues":["Acción fantasmal","Conexión","Conexión instantánea","Cuántico","Fenómeno","Física","Física cuántica","Misterio"],"reveal":"11112111","category":"science_physics","conceptId":"entanglement"},
     {"word":"Entropía","clues":["Caos","Desorden","Sistema","Termodinámica","Energía física"],"reveal":"13111","category":"science_physics","conceptId":"entropia"},
-    {"word":"Espacio","clues":["Dimensión","Galaxia","Lugar","Vacío","Universo"],"category":"science_physics","conceptId":"espacio~science-physics"},
     {"word":"Espacio-tiempo","clues":["Ciencia ficción","Continuo","Tiempo y espacio"],"category":"science_physics","conceptId":"time-space-continuum"},
     {"word":"Espectro","clues":["Arcoíris","Frecuencia","Prisma","Color","Luz"],"category":"science_physics","conceptId":"espectro"},
     {"word":"Fisión Nuclear","clues":["Bomba","Dividir","Nuclear","Núcleo","Química","Reacción","Uranio","Átomo"],"reveal":"13111111","category":"science_physics","conceptId":"fision-nuclear"},

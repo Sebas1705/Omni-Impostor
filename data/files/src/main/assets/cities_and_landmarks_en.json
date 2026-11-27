@@ -38,7 +38,7 @@
     {"word":"Forbidden City","clues":["Beijing","Emperor","Palace","China"],"reveal":"1121","category":"cities_and_landmarks","conceptId":"ciudad-prohibida"},
     {"word":"Golden Gate Bridge","clues":["Bay","California","Fog","Red","San Francisco","Suspension"],"category":"cities_and_landmarks","conceptId":"puente-golden-gate"},
     {"word":"Grand Canyon","clues":["Arizona","Cliffs","Colorado River","GAP","Hiking","River","Desert","Rock"],"category":"cities_and_landmarks","conceptId":"gran-canon"},
-    {"word":"Great Wall","clues":["Defense","Dynasty","Long","Tourism"],"category":"cities_and_landmarks","conceptId":"muralla-china"},
+    {"word":"Great Wall of China","clues":["Defense","Dynasty","Long","Tourism"],"category":"cities_and_landmarks","conceptId":"muralla-china"},
     {"word":"Guggenheim Museum","clues":["Art","Frank Lloyd Wright","Museum","New York","Spiral"],"reveal":"11211","category":"cities_and_landmarks","conceptId":"guggenheim-museum"},
     {"word":"Hagia Sophia","clues":["Byzantine","Church","Dome","Istanbul","Mosque","Turkey"],"reveal":"121121","category":"cities_and_landmarks","conceptId":"hagia-sophia"},
     {"word":"Havana","clues":["Capital","Cuba","Malecon","Salsa","Vintage Cars"],"category":"cities_and_landmarks","conceptId":"havana"},

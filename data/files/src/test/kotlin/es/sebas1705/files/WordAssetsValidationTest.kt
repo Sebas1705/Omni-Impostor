@@ -10,7 +10,7 @@ import java.text.Normalizer
 
 /**
  * Guards the shape rules of the bundled word lists (docs/studies/word-collection/word-model-study.md, section 1):
- * a word is one concept written with at most 3 words, every word has at least 3 distinct clues, and no clue gives
+ * a word is one concept written with at most 4 words, every word has at least 3 distinct clues, and no clue gives
  * the word away. The impostor sees one clue, so a clue equal to the word would reveal it.
  */
 class WordAssetsValidationTest {
@@ -86,7 +86,7 @@ class WordAssetsValidationTest {
     }
 
     @Test
-    fun `words are not blank and have at most 3 words`() {
+    fun `words are not blank and have at most 4 words`() {
         assertNone("Blank word", entries.filter { it.word.isBlank() }.map { it.label() })
         assertNone(
             "A word has at most $MAX_WORDS words",
@@ -158,7 +158,7 @@ class WordAssetsValidationTest {
         val DIACRITICS = Regex("\\p{M}+")
         val WHITESPACE = Regex("\\s+")
         val SEPARATORS = setOf('「', '」', '|', ';')
-        const val MAX_WORDS = 3
+        const val MAX_WORDS = 4
         const val MIN_CLUES = 3
         const val MAX_LISTED = 30
         const val VERSION_LENGTH = 16

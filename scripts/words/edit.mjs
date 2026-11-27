@@ -25,7 +25,7 @@ export function run(argv, dir = conceptsDir) {
   const map = loadMap(dir);
   const c = map.byId.get(id);
   const need = (cond, msg) => { if (!cond) throw new Error(msg); };
-  const cleanText = (t) => { need(t && t.trim() && tokens(t).length <= 3 && !/[()「」|;]/.test(t), `"${t}" must be 1 to 3 words without parentheses`); return t.trim(); };
+  const cleanText = (t, max = 3) => { need(t && t.trim() && tokens(t).length <= max && !/[()「」|;]/.test(t), `"${t}" must be 1 to ${max} words without parentheses`); return t.trim(); };
   const isType = (t) => t in REVEAL;
   if (cmd !== 'link' && cmd !== 'unlink' && cmd !== 'add') need(c, `unknown concept "${id}"`);
   let message = 'ok';
@@ -34,7 +34,7 @@ export function run(argv, dir = conceptsDir) {
       return JSON.stringify({ concept: c, linksOut: map.links.filter((l) => l.from === id), linksIn: map.links.filter((l) => l.to === id).map((l) => l.from) }, null, 1);
     case 'label': {
       const [lang, text] = a;
-      const clean = cleanText(text);
+      const clean = cleanText(text, 4);
       const clash = map.concepts.find((o) => o !== c && [o.labels[lang]?.text, ...(o.labels[lang]?.aliases ?? [])].some((x) => x && norm(x) === norm(clean)));
       need(!clash, `"${clean}" (${lang}) already belongs to ${clash?.id}: merge the two or tag both ids with a sense (rename)`);
       c.labels[lang] = { ...(c.labels[lang] ?? {}), text: clean };
@@ -91,6 +91,7 @@ export function run(argv, dir = conceptsDir) {
       message = `deleted ${id} and ${n - map.links.length} link(s)`;
       break;
     }
+    case 'clue-only': c.clueOnly = a[0] === 'true' ? true : undefined; if (c.clueOnly === undefined) delete c.clueOnly; break;
     case 'rename': {
       const [newId] = a;
       need(newId && !map.byId.has(newId), `id "${newId}" is missing or already used`);
@@ -130,7 +131,7 @@ export function run(argv, dir = conceptsDir) {
       need(spec.categories?.length, 'at least one category');
       const labels = {};
       for (const [lang, t] of Object.entries(spec.labels)) {
-        const text = cleanText(typeof t === 'string' ? t : t.text);
+        const text = cleanText(typeof t === 'string' ? t : t.text, 4);
         for (const o of map.concepts) {
           const ol = o.labels[lang];
           need(!ol || ![ol.text, ...(ol.aliases ?? [])].some((x) => norm(x) === norm(text)) || spec.allowHomonym, `"${text}" (${lang}) already exists as ${o.id}`);
@@ -157,7 +158,7 @@ export function run(argv, dir = conceptsDir) {
       message = `added ${id}`;
       break;
     }
-    default: throw new Error('usage: edit.mjs show|label|categories|translatable|add-hint|remove-hint|type|link|unlink|delete|merge|rename|add <id> ...');
+    default: throw new Error('usage: edit.mjs show|label|categories|translatable|add-hint|remove-hint|type|link|unlink|delete|merge|rename|clue-only|add <id> ...');
   }
   const line = (o) => JSON.stringify(o);
   writeFileSync(join(dir, 'concepts.jsonl'), [...map.concepts].sort((x, y) => cmp(x.id, y.id)).map(line).join('\n') + '\n');
