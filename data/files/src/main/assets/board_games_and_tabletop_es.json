@@ -78,7 +78,7 @@
     {"word":"Parchís","clues":["Casa","Colores","Comer","Dados","Meta"],"category":"board_games_and_tabletop","conceptId":"parchis"},
     {"word":"Pictionary","clues":["Adivinar","Dibujar","Equipos","Lápiz","Palabra","Pizarra"],"category":"board_games_and_tabletop","conceptId":"pictionary"},
     {"word":"Pista","clues":["Ayuda","Juego","Reglas","Resolver","Sugerencia"],"reveal":"11113","category":"board_games_and_tabletop","conceptId":"pista"},
-    {"word":"Puntos","clues":["Final","Ganar","Marcador","Número","Sumar"],"category":"board_games_and_tabletop","conceptId":"puntos"},
+    {"word":"Puntos","clues":["Final","Ganar","Número","Rotulador","Sumar"],"category":"board_games_and_tabletop","conceptId":"puntos"},
     {"word":"Puzzle","clues":["Encajar","Imagen","Piezas","Rompecabezas","Mesa"],"reveal":"11131","category":"board_games_and_tabletop","conceptId":"puzzle"},
     {"word":"Recursos","clues":["Gestionar","Juego","Madera","Piezas","Piedra"],"category":"board_games_and_tabletop","conceptId":"recursos"},
     {"word":"Reloj","clues":["Accesorio","Ajedrez","Brazo","Hora","Medir","Muñeca","Rápido","Turno"],"reveal":"21111111","category":"board_games_and_tabletop","conceptId":"reloj"},

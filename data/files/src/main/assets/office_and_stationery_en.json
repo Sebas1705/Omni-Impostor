@@ -55,7 +55,7 @@
     {"word":"Letter Opener","clues":["Envelope","Open","Paper","Sharp","The Office"],"category":"office_and_stationery","conceptId":"letter-opener"},
     {"word":"Letter Tray","clues":["Mail","Organize","Paper","Tray","The Office"],"category":"office_and_stationery","conceptId":"letter-tray"},
     {"word":"Manila Envelope","clues":["Brown","Clasp","Documents","Large","Mail","Office"],"category":"office_and_stationery","conceptId":"manila-envelope"},
-    {"word":"Marker","clues":["Draw","Paint","Write","Ink","Color"],"category":"office_and_stationery","conceptId":"rotulador"},
+    {"word":"Marker","clues":["Cap","Class","Colors","Draw","Erasing","Paint","Write","Writing"],"category":"office_and_stationery","conceptId":"rotulador"},
     {"word":"Masking Tape","clues":["Beige","Painter","Painting","Paper","Roll"],"category":"office_and_stationery","conceptId":"masking-tape"},
     {"word":"Mechanical Pencil","clues":["Fine","Lead","Pencil","Plastic","Write"],"reveal":"11211","category":"office_and_stationery","conceptId":"portaminas"},
     {"word":"Meeting Room","clues":["Big table","Booking","Projector","Team","Whiteboard"],"category":"office_and_stationery","conceptId":"meeting-room"},

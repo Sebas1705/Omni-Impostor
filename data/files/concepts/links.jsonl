@@ -3560,7 +3560,6 @@
 {"from":"maracas","to":"ritmo","type":"association","w":3,"langs":["en","es"]}
 {"from":"maracas","to":"sonido","type":"association","w":3,"langs":["en","es"]}
 {"from":"maraton","to":"resistencia","type":"association","w":3,"langs":["es"]}
-{"from":"marcador","to":"pizarra-blanca","type":"association","w":3,"langs":["es"]}
 {"from":"marco-aurelio","to":"roma","type":"association","w":3,"langs":["es"]}
 {"from":"mardi-gras","to":"carnaval","type":"broader","w":3,"langs":["en"]}
 {"from":"mardi-gras","to":"desfile","type":"association","w":3,"langs":["en"]}
@@ -4682,7 +4681,7 @@
 {"from":"punisher","to":"justiciero","type":"synonym","w":3,"langs":["en","es"]}
 {"from":"punisher","to":"venganza","type":"association","w":3,"langs":["en","es"]}
 {"from":"puntero-laser","to":"luz","type":"association","w":3,"langs":["en","es"]}
-{"from":"puntos","to":"marcador","type":"association","w":3,"langs":["es"]}
+{"from":"puntos","to":"rotulador","type":"association","w":3,"langs":["es"]}
 {"from":"pupitre","to":"mesa","type":"broader","w":3,"langs":["es"]}
 {"from":"pupitre","to":"silla","type":"association","w":3,"langs":["es"]}
 {"from":"pupitre","to":"student","type":"association","w":3,"langs":["es"]}
@@ -4993,7 +4992,6 @@
 {"from":"rotonda","to":"trafico","type":"association","w":3,"langs":["es"]}
 {"from":"rotulador","to":"color","type":"association","w":3,"langs":["en","es"]}
 {"from":"rotulador","to":"dibujo","type":"association","w":3,"langs":["es"]}
-{"from":"rotulador","to":"marcador","type":"synonym","w":3,"langs":["es"]}
 {"from":"rotulador","to":"pizarra-blanca","type":"association","w":3,"langs":["es"]}
 {"from":"rotulador","to":"tinta","type":"association","w":3,"langs":["en","es"]}
 {"from":"rotulador-permanente","to":"color","type":"association","w":3,"langs":["es"]}

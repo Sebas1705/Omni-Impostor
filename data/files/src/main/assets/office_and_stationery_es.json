@@ -87,7 +87,7 @@
     {"word":"Regla","clues":["Centímetros","Línea","Medir","Plástico","Recta"],"category":"office_and_stationery","conceptId":"regla"},
     {"word":"Reloj fichador","clues":["Control de horario","Fichar","Horas de trabajo"],"category":"office_and_stationery","conceptId":"time-clock"},
     {"word":"Reposapiés","clues":["Descanso","Ergonomía","Escritorio","Pies","Postura","Silla"],"category":"office_and_stationery","conceptId":"footrest"},
-    {"word":"Rotulador","clues":["Clase","Colores","Escribir","Marcador","Pintar","Pizarra blanca","Tinta","Dibujo"],"reveal":"11131111","category":"office_and_stationery","conceptId":"rotulador"},
+    {"word":"Rotulador","clues":["Borrar","Clase","Colores","Escribir","Pintar","Pizarra blanca","Tinta","Dibujo"],"category":"office_and_stationery","conceptId":"rotulador"},
     {"word":"Rotulador permanente","clues":["Escribir","Pintar","Tinta","Dibujo","Color"],"category":"office_and_stationery","conceptId":"rotulador-permanente"},
     {"word":"Rotuladora","clues":["Cinta","Etiquetas","Imprimir","Organizar","The Office"],"category":"office_and_stationery","conceptId":"label-maker"},
     {"word":"Rotuladores de pizarra","clues":["Escribir","La Oficina","Pizarra blanca","Rotuladores"],"reveal":"1112","category":"office_and_stationery","conceptId":"dry-erase-markers"},
