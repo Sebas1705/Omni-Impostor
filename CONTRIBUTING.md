@@ -52,7 +52,7 @@ node scripts/words/compile.mjs
 
 It rewrites the assets and refreshes `words_version.txt`, which is how installed apps know they must replace their stored
 words. CI runs `node scripts/words/compile.mjs --check`, `ConceptSourcesValidationTest` (shape of the sources) and
-`WordAssetsValidationTest` (shape of the compiled lists: at most 3 words, at least 3 distinct clues, no clue equal to the
+`WordAssetsValidationTest` (shape of the compiled lists: at most 4 words, at least 3 distinct clues, no clue equal to the
 word, no duplicates in a list). `scripts/words/migrate.mjs` was the one-off migration from the old flat lists and refuses to
 run again.
 

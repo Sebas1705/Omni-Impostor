@@ -82,7 +82,10 @@ class ConceptSourcesValidationTest {
                 c.obj("hints").flatMap { (lang, hs) -> hs.jsonArray.map { "${c.id} hint $lang" to it.jsonObject.str("t").orEmpty() } }
         }
         assertNone("Blank text", texts.filter { it.second.isBlank() }.map { it.first })
-        assertNone("At most 3 words", texts.filter { it.second.trim().split(Regex("\\s+")).size > 3 }.map { "${it.first}: ${it.second}" })
+        assertNone(
+            "A label has at most 4 words and a hint at most 3",
+            texts.filter { it.second.trim().split(Regex("\\s+")).size > (if (" label " in it.first) 4 else 3) }.map { "${it.first}: ${it.second}" }
+        )
         assertNone("No parentheses or separators", texts.filter { t -> t.second.any { it in "()「」|;" } }.map { "${it.first}: ${it.second}" })
         assertNone("No leading or trailing spaces", texts.filter { it.second != it.second.trim() }.map { "${it.first}: \"${it.second}\"" })
     }

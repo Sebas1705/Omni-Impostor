@@ -98,7 +98,7 @@ function check(files) {
         // a proper name (`"translatable": false`) may leave out the text: it is the English one
         const es = { text: r.es?.text ?? (r.translatable === false ? c.labels.en?.text : undefined), hints: r.es?.hints };
         if (!es?.text || !es.text.trim()) { problems.push(`${where}: missing text`); continue; }
-        if (tokens(es.text).length > 3 || /[()「」|;]/.test(es.text)) problems.push(`${where}: label "${es.text}" is not 1-3 clean words`);
+        if (tokens(es.text).length > 4 || /[()「」|;]/.test(es.text)) problems.push(`${where}: label "${es.text}" is not 1-4 clean words`);
         const hints = es.hints ?? [];
         if (hints.length < 3) problems.push(`${where}: needs at least 3 hints`);
         const ns = hints.map(norm);

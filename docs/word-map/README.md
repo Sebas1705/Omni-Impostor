@@ -16,7 +16,7 @@ Find the concept in the viewer (each card shows its `id`), then either tell the 
 
 ```powershell
 node scripts/words/edit.mjs show <id>                      # see the raw concept and its links
-node scripts/words/edit.mjs label <id> es "Nuevo nombre"   # change a label (1 to 3 words)
+node scripts/words/edit.mjs label <id> es "Nuevo nombre"   # change a label (1 to 4 words)
 node scripts/words/edit.mjs add-hint <id> es "Pista"       # add a text clue
 node scripts/words/edit.mjs remove-hint <id> es "Pista"    # remove a text clue
 node scripts/words/edit.mjs type <id> es "Pista" synonym   # type a clue: association, synonym, broader, contrast, part, context

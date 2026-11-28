@@ -52,7 +52,7 @@ test('labels, categories and proper name flag change; delete drops the links', (
 
 test('bad input is rejected', () => {
   const dir = setup();
-  assert.throws(() => run(['label', 'casa', 'es', 'Una casa muy grande'], dir), /1 to 3 words/);
+  assert.throws(() => run(['label', 'casa', 'es', 'Una casa muy muy grande'], dir), /1 to 4 words/);
   assert.throws(() => run(['add-hint', 'casa', 'es', 'puerta'], dir), /already exists/);
   assert.throws(() => run(['type', 'casa', 'es', 'Puerta', 'nonsense'], dir), /unknown type/);
   assert.throws(() => run(['show', 'nope'], dir), /unknown concept/);
@@ -83,4 +83,12 @@ test('rename changes an id and the links that point at it', () => {
   run(['rename', 'hogar', 'hogar~home'], dir);
   assert.equal(read(dir, 'links.jsonl')[0].to, 'hogar~home');
   assert.throws(() => run(['rename', 'casa', 'hogar~home'], dir), /already used/);
+});
+
+test('clue-only is set and cleared', () => {
+  const dir = setup();
+  run(['clue-only', 'casa', 'true'], dir);
+  assert.equal(read(dir, 'concepts.jsonl')[0].clueOnly, true);
+  run(['clue-only', 'casa', 'false'], dir);
+  assert.equal(read(dir, 'concepts.jsonl')[0].clueOnly, undefined);
 });
