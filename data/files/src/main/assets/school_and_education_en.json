@@ -63,7 +63,7 @@
     {"word":"Library","clues":["Books","Borrow","Read","Shelf","Silence","Study"],"category":"school_and_education","conceptId":"biblioteca"},
     {"word":"Literature","clues":["Authors","Books","Novel","Poetry","Read"],"category":"school_and_education","conceptId":"literatura"},
     {"word":"Map","clues":["City","Countries","Geography","Location","Orientation","Paper","Path","World"],"category":"school_and_education","conceptId":"mapa"},
-    {"word":"Marker","clues":["Draw","Paint","Write","Ink","Color"],"category":"school_and_education","conceptId":"rotulador"},
+    {"word":"Marker","clues":["Cap","Class","Colors","Draw","Erasing","Paint","Write","Writing"],"category":"school_and_education","conceptId":"rotulador"},
     {"word":"Mathematics","clues":["Add","Algebra","Calculation","Geometry","Numbers"],"category":"school_and_education","conceptId":"matematicas"},
     {"word":"Microscope","clues":["Cell","Lab","Lens","See","Small"],"category":"school_and_education","conceptId":"microscopio"},
     {"word":"Notebook","clues":["Notes","Pages","Paper","Pencil","Sheets","Spiral","Write"],"category":"school_and_education","conceptId":"cuaderno"},
@@ -118,7 +118,6 @@
     {"word":"University Entrance Exam","clues":["College","Cut-off Mark","Final Year","Nerves","Test"],"category":"school_and_education","conceptId":"university-entrance-exam"},
     {"word":"Virtual Classroom Software","clues":["Education","Online Meeting Software","Remote Learning Software","Video Conferencing Software"],"reveal":"1232","category":"school_and_education","conceptId":"virtual-classroom-software"},
     {"word":"Virtual Reality Headset","clues":["Education","Experience","Immersive","Technology","VR"],"category":"school_and_education","conceptId":"virtual-reality-headset"},
-    {"word":"Whiteboard","clues":["Classroom","Erase","Explain","Marker","Meeting","White","Write","Board"],"reveal":"11111112","category":"school_and_education","conceptId":"pizarra-blanca"},
-    {"word":"Whiteboard Marker","clues":["Cap","Class","Colors","Erasing","Writing"],"category":"school_and_education","conceptId":"marcador"}
+    {"word":"Whiteboard","clues":["Classroom","Erase","Explain","Marker","Meeting","White","Write","Board"],"reveal":"11111112","category":"school_and_education","conceptId":"pizarra-blanca"}
   ]
 }
