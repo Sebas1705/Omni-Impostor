@@ -1,0 +1,12 @@
+{
+  "words": [
+    {"word":"El zoo","clues":["Cuidador","Entradas","Jaulas"],"category":"animals","conceptId":"zoo"},
+    {"word":"Gato","clues":["Bigotes","León","Maullido","Ratón","El zoo","Tigre"],"reveal":"121111","category":"animals","conceptId":"cat"},
+    {"word":"León","clues":["Fantasma","Spiderman","El zoo","Felino","Melena","Rey","Tigre","Selva"],"reveal":"11121321","category":"animals","conceptId":"lion"},
+    {"word":"León","clues":["Fantasma","Spiderman","El zoo","Felino","Melena","Rey","Tigre","Selva"],"reveal":"11121321","category":"nature_and_weather","conceptId":"lion"},
+    {"word":"Poco","clues":["Dos","El zoo","Uno"],"category":"animals","conceptId":"thin"},
+    {"word":"Siesta","clues":["Calor","Dormir","León","Sofá","Tarde"],"category":"culture_and_traditions","conceptId":"only-es"},
+    {"word":"Spiderman","clues":["La selva","Marvel","Peter Parker","Telaraña"],"category":"superheroes_and_comics","conceptId":"spiderman"},
+    {"word":"Tigre","clues":["Bengala","León","Naranja","Rayas"],"reveal":"1211","category":"animals","conceptId":"tiger"}
+  ]
+}
