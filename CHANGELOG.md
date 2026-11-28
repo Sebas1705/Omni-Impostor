@@ -5,9 +5,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Added
-- The bundled word lists are versioned (`words_version.txt`): when an update ships different lists, the app replaces the words stored on the device instead of keeping the old copy forever. An unreadable list never leaves the game without words. `node scripts/word-study/update-words-version.mjs` refreshes the version after editing a list.
-- A unit test (`WordAssetsValidationTest`) that checks the shape of the bundled word lists: at most 3 words per word, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a list.
+### Changed (concept graph at runtime)
+- The app now reads the concept map directly (`concepts.jsonl` and `links.jsonl` are bundled as they are) and compiles the playable words on the device, per language and category, the first time a game needs them. The pre-generated word lists, `words_version.txt` and the copy of the words stored in the database are gone: editing a concept is enough, nothing needs regenerating. Words an earlier version stored on the device are deleted on the first launch.
+- A unit test suite keeps the Kotlin compiler equal to the Node one (`ConceptCompilerParityTest` against a shared fixture) and checks the shape of the compiled words (`CompiledWordsValidationTest`): at most 4 words, at least 3 distinct clues, no clue equal to the word, no stray separators, no duplicates in a category.
 
 ### Changed (Spanish professions)
 - Spanish professions list cleaned: social network roles moved to the social media category, hard-to-guess ones removed, crime roles moved to the +18 category.
@@ -28,10 +28,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - New setting "Impostor help" (low, normal, high) in Settings > Gameplay: it decides how much the clue given to the impostor may give the word away. Every clue now carries a reveal level (1 weak, 2 medium, 3 strong, such as a synonym); high allows all of them, normal hides the strongest, low only the weakest. A word with fewer than 3 clues at the chosen level gives all of its clues instead.
 
 ### Changed
-- The word lists are now generated from a concept map (`data/files/concepts`): a word that fits several categories is one concept instead of several copies, and the game picks the round word uniformly over concepts, so it is no longer twice as likely when two of its categories are selected. Words and clues stay the same for players apart from merged duplicates; the new `conceptId` field is ignored by older builds.
+- The words now come from a concept map (`data/files/concepts`): a word that fits several categories is one concept instead of several copies, and the game picks the round word uniformly over concepts, so it is no longer twice as likely when two of its categories are selected. Words and clues stay the same for players apart from merged duplicates; the new `conceptId` field is ignored by older builds.
 
 ### Fixed
-- Word lists: 78 clues that gave the secret word away to the impostor were removed, 7 glued clues were split, 4 duplicate words were merged, aliases were moved out of parentheses and about 85 entries with too few clues got new ones. Existing installs receive them through the new word list versioning.
+- Word lists: 78 clues that gave the secret word away to the impostor were removed, 7 glued clues were split, 4 duplicate words were merged, aliases were moved out of parentheses and about 85 entries with too few clues got new ones. Existing installs receive them with the next update, since the app compiles the words from the concept map.
 
 ## [v1.4.1] - 2026-11-01
 

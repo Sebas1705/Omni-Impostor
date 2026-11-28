@@ -75,7 +75,7 @@ Replication notes:
 2. Fire analytics from ViewModel side effects, not composables.
 3. Avoid blocking UI work with analytics dispatch.
 
-## Flow 6: Default Words Import (JSON assets -> Couchbase)
+## Flow 6: Default Words Load (concept map assets -> in-memory words)
 
 - Entry:
   - `feature/debug/...` manual trigger
@@ -84,16 +84,16 @@ Replication notes:
   - `domain/usescases/game/.../ImportDefaultGameWordsUseCase.kt`
   - `domain/usescases/game/.../SearchGameWordsUseCase.kt`
 - Data:
-  - `data/files/.../WordFileDataSource.kt`
-  - `data/couchbase/.../WordsEsCBDataSource.kt`
-  - `data/couchbase/.../WordsEnCBDataSource.kt`
-  - `data/repositories/.../WordRepository.kt`
+  - `data/files/.../WordFileDataSource.kt` (reads `concepts.jsonl` and `links.jsonl`)
+  - `data/files/.../graph/ConceptCompiler.kt` (compiles a language and categories into words)
+  - `data/repositories/.../WordRepository.kt` (keeps the map and the compiled categories in memory)
 
 Replication notes:
 
-1. Import from `:data:files` JSON schema, not hardcoded in domain/feature.
-2. Ensure import runs when DB is incomplete for expected asset content.
-3. Keep stats query path lightweight for debug screen usage.
+1. Read the map through `:data:files`, not hardcoded in domain/feature. Nothing is stored in the database; the
+   Couchbase word collections only exist to delete what older versions saved.
+2. Compile lazily per language and category and cache the result; a game only pays for the categories picked.
+3. Keep the stats query path (`findByCategories` with no categories) rare: it compiles every category.
 
 ## Flow 7: Debug Diagnostics Console (Data/Quality/Performance/Device/History)
 
@@ -125,14 +125,14 @@ Replication notes:
   - `domain/usescases/settings/.../ReadSettingsUseCase.kt`
 - Data:
   - `data/repositories/.../IWordRepository.kt`
-  - `data/couchbase/.../Words{Lang}CBDataSource.kt`
+  - `data/repositories/.../WordRepository.kt`
 
 Replication notes:
 
-1. Keep one Couchbase collection per language (`es`, `en`) for game word entries.
+1. Words are compiled per language (`es`, `en`) from the concept map; an unknown language falls back to `es`.
 2. Resolve active language from settings preference before querying words.
-3. Store clues as a fixed-size string list (5 items expected by JSON schema).
-4. Keep category mapping resilient when converting persistence data into domain models.
+3. Clues are a ranked list of 3 to 8 items with an optional `reveal` digit per clue.
+4. Keep category mapping resilient when converting compiled words into domain models.
 
 ## Flow 9: Offline Round Runtime (Reveal -> Discussion -> Result)
 

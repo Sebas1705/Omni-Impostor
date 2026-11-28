@@ -1,48 +1,60 @@
 #!/usr/bin/env node
 /**
- * Compiles the concept map (data/files/concepts) into the flat word lists the app reads
- * (data/files/src/main/assets/{category}_{lang}.json) and refreshes words_version.txt.
+ * Reports on the concept map (data/files/concepts) as the app will compile it, and keeps the shared test fixture honest.
  *
- *   node scripts/words/compile.mjs            # write the assets
- *   node scripts/words/compile.mjs --check    # exit 1 when the assets are not what the sources compile to
+ *   node scripts/words/compile.mjs            # report what would not play well and refresh docs/word-map/index.html
+ *   node scripts/words/compile.mjs --golden   # rewrite the expected lists of the fixture (after changing lib.mjs rules)
+ *   node scripts/words/compile.mjs --check    # exit 1 when the fixture's expected lists are out of date
  *
- * Rules: docs/studies/word-collection/concept-map-spec.md, section 6. Edit the sources, never the generated assets.
+ * The app does NOT read compiled lists: it bundles concepts.jsonl / links.jsonl and compiles them on the device with
+ * ConceptCompiler.kt, a port of compileAll in lib.mjs. The fixture in scripts/words/fixtures/graph (with its expected
+ * lists) is what both implementations are tested against. Rules: docs/studies/word-collection/concept-map-spec.md, section 6.
  */
-import { readdirSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { assetsDir, compileAll, loadMap, root, serialize } from './lib.mjs';
+import { LANGS, cmp, compileAll, loadMap, root, serialize } from './lib.mjs';
 
-const check = process.argv.includes('--check');
-const { files, underfilled, weakAtNormal } = compileAll(loadMap());
+export const fixtureDir = join(root, 'scripts/words/fixtures/graph');
 
-const expected = new Map(Object.entries(files).map(([name, entries]) => [`${name}.json`, serialize(entries)]));
-const existing = readdirSync(assetsDir).filter((f) => /_(en|es)\.json$/.test(f));
-const problems = [];
-for (const [name, content] of expected) {
-  let current = null;
-  try { current = readFileSync(join(assetsDir, name), 'utf8').replace(/^﻿/, ''); } catch { /* missing */ }
-  // the repository stores LF and a Windows checkout may turn it into CRLF: compare without line endings
-  if (current === null || current.replace(/\r\n/g, '\n') !== content.replace(/\r\n/g, '\n')) problems.push(name);
+/** The words of one language as the Kotlin compiler returns them: one list, sorted by word then concept id. */
+export function flatLists(files, lang) {
+  return Object.entries(files)
+    .filter(([name]) => name.endsWith(`_${lang}`))
+    .flatMap(([, entries]) => entries)
+    .sort((a, b) => cmp(a.word, b.word) || cmp(a.conceptId, b.conceptId));
 }
-for (const name of existing) if (!expected.has(name)) problems.push(`${name} (no longer produced)`);
 
-if (underfilled.length) console.log(`not emitted (fewer than 3 clues): ${underfilled.length}\n - ${underfilled.slice(0, 15).join('\n - ')}`);
+export function expectedFixture() {
+  const { files } = compileAll(loadMap(fixtureDir));
+  return Object.fromEntries(LANGS.map((lang) => [lang, serialize(flatLists(files, lang))]));
+}
 
-if (weakAtNormal.length) console.log(`fewer than 3 clues at help level normal (the app falls back to all clues): ${weakAtNormal.length}`);
-
-if (check) {
-  if (problems.length) {
-    console.error(`assets are out of date with data/files/concepts (${problems.length} file(s), e.g. ${problems.slice(0, 3).join(', ')}). Run: node scripts/words/compile.mjs`);
-    process.exit(1);
+if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/[\\]/g, '/').split('/').pop())) {
+  const check = process.argv.includes('--check');
+  const golden = process.argv.includes('--golden');
+  if (check || golden) {
+    const expected = expectedFixture();
+    const stale = [];
+    for (const lang of LANGS) {
+      const file = join(fixtureDir, `expected_${lang}.json`);
+      if (golden) { writeFileSync(file, expected[lang]); continue; }
+      let current = '';
+      try { current = readFileSync(file, 'utf8'); } catch { /* missing */ }
+      if (current.replace(/\r\n/g, '\n') !== expected[lang].replace(/\r\n/g, '\n')) stale.push(`expected_${lang}.json`);
+    }
+    if (check && stale.length) {
+      console.error(`fixture is out of date (${stale.join(', ')}). Run: node scripts/words/compile.mjs --golden`);
+      process.exit(1);
+    }
+    console.log(golden ? 'fixture lists written' : 'fixture lists are up to date');
+  } else {
+    const { files, underfilled, weakAtNormal } = compileAll(loadMap());
+    const total = LANGS.map((lang) => `${lang} ${flatLists(files, lang).length}`).join(', ');
+    console.log(`the app will compile: ${total} entries`);
+    if (underfilled.length) console.log(`not playable (fewer than 3 clues): ${underfilled.length}\n - ${underfilled.slice(0, 15).join('\n - ')}`);
+    console.log(`fewer than 3 clues at help level normal (the app falls back to all clues): ${weakAtNormal.length}`);
+    const v = spawnSync(process.execPath, [join(root, 'scripts/words/export-viewer.mjs')], { stdio: 'inherit' }); // keep docs/word-map in step
+    if (v.status !== 0) process.exit(v.status ?? 1);
   }
-  console.log('assets match the concept map');
-} else {
-  for (const [name, content] of expected) writeFileSync(join(assetsDir, name), content);
-  for (const name of existing) if (!expected.has(name)) unlinkSync(join(assetsDir, name));
-  const r = spawnSync(process.execPath, [join(root, 'scripts/word-study/update-words-version.mjs')], { stdio: 'inherit' });
-  if (r.status !== 0) process.exit(r.status ?? 1);
-  const v = spawnSync(process.execPath, [join(root, 'scripts/words/export-viewer.mjs')], { stdio: 'inherit' }); // keep docs/word-map in step
-  if (v.status !== 0) process.exit(v.status ?? 1);
-  console.log(`wrote ${expected.size} files, ${[...expected.values()].length} lists`);
 }

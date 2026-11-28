@@ -1,6 +1,6 @@
 /**
  * Shared helpers of the word tooling (docs/studies/word-collection/concept-map-spec.md).
- * Source of truth: data/files/concepts/{concepts,links}.jsonl. Output: data/files/src/main/assets/{category}_{lang}.json.
+ * Source of truth: data/files/concepts/{concepts,links}.jsonl. The app bundles these files and compiles them on the device (ConceptCompiler.kt, a port of compileAll below).
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -8,7 +8,6 @@ import { fileURLToPath } from 'node:url';
 
 export const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const conceptsDir = join(root, 'data/files/concepts');
-export const assetsDir = join(root, 'data/files/src/main/assets');
 
 export const LANGS = ['es', 'en'];
 

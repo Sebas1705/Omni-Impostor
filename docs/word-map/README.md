@@ -4,11 +4,11 @@
 |---|---|
 | **Browse everything** (search, filters, every clue with its type) | [`index.html`](index.html), open the file in a browser. Once merged it is also served at <https://sebas1705.github.io/Omni-Impostor/word-map/> |
 | The data itself | [`data/files/concepts/concepts.jsonl`](../../data/files/concepts/concepts.jsonl) (one concept per line: labels, categories, clues) and [`links.jsonl`](../../data/files/concepts/links.jsonl) (concept to concept clues) |
-| What the app ships (generated, do not edit) | `data/files/src/main/assets/{category}_{es,en}.json` |
+| What the app ships | the two files above, as they are; the app compiles the playable words from them on the device (`ConceptCompiler.kt`) |
 | Design and decisions | [`docs/studies/word-collection/concept-map-spec.md`](../studies/word-collection/concept-map-spec.md) |
 | Migration report (numbers, what is unreviewed) | [`docs/studies/word-collection/migration-report.md`](../studies/word-collection/migration-report.md) |
 
-`index.html` is generated: `node scripts/words/compile.mjs` rewrites it together with the lists (or run `node scripts/words/export-viewer.mjs`).
+`index.html` is generated: `node scripts/words/compile.mjs` rewrites it and reports what would not play well (or run `node scripts/words/export-viewer.mjs`).
 
 ## Correcting something
 
@@ -30,11 +30,9 @@ node scripts/words/edit.mjs delete <id>                    # remove a concept an
 After editing:
 
 ```powershell
-node scripts/words/compile.mjs                 # regenerates the lists the app ships and words_version.txt
-node scripts/words/export-viewer.mjs           # refreshes this page
+node scripts/words/compile.mjs                 # reports what would not play well and refreshes this page
 node --test scripts/words/words.test.mjs scripts/words/edit.test.mjs
 ```
 
-Then run the unit tests of `data:files` (`ConceptSourcesValidationTest`, `WordAssetsValidationTest`) and open a pull request.
-Installed apps replace their stored words by themselves when `words_version.txt` changes. Never edit the files under
-`src/main/assets`: CI regenerates them from the concepts and fails if they differ.
+Then run the unit tests of `data:files` (`ConceptSourcesValidationTest`, `CompiledWordsValidationTest`) and open a pull
+request. Nothing else needs regenerating: installed apps compile the new concepts the first time a game uses them.

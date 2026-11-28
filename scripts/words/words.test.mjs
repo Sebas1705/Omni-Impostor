@@ -54,3 +54,14 @@ test('ratings map onto concepts by word, category and clue text', () => {
   assert.deepEqual(rows.map((r) => [r.id, r.lang, r.pos, r.neg]), [['leon', 'en', 3, 0], ['leon', 'es', 6, 1]]);
   assert.equal(unmatched.length, 2);
 });
+
+test('the fixture lists the Kotlin compiler is tested against are up to date', async () => {
+  const { expectedFixture, fixtureDir } = await import('./compile.mjs');
+  const { readFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const expected = expectedFixture();
+  for (const lang of ['es', 'en']) {
+    const current = readFileSync(join(fixtureDir, `expected_${lang}.json`), 'utf8').replace(/\r\n/g, '\n');
+    assert.equal(current, expected[lang].replace(/\r\n/g, '\n'), `expected_${lang}.json is stale: run node scripts/words/compile.mjs --golden`);
+  }
+});

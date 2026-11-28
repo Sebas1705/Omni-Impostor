@@ -17,15 +17,14 @@ can be tried with `scripts/word-study/concept-compile-prototype.mjs` on `concept
 
 ## 2. Entities and files
 
-Source of truth lives **outside** `src/main/assets`, so it is not shipped; the app keeps consuming the flat files that the
-compiler writes into the assets.
+The two files are bundled into the app as they are (the `data:files` module adds `concepts/` as an assets directory) and
+the app compiles the playable words from them on the device (section 6). Phase 1 first shipped generated flat files
+(`{category}_{lang}.json`, `words_version.txt`); they were removed once the app read the graph directly.
 
 ```
 data/files/concepts/
   concepts.jsonl      one concept per line, sorted by id
   links.jsonl         one link per line, sorted by from, to
-data/files/src/main/assets/{category}_{lang}.json     generated (same format as today)
-data/files/src/main/assets/words_version.txt          generated (existing script)
 ```
 
 JSON Lines keeps diffs and review batches line based, like the current one-entry-per-line files.
@@ -134,10 +133,12 @@ A later phase can make the runtime pick clues by weight instead of by index; the
   instead; that needs UI work and is an open question (section 10).
 - Category candidates suggested by the graph (136 EN / 145 ES, about half right) enter as `proposed` and are reviewed.
 
-## 6. Compiler: concept map to the flat files
+## 6. Compiler: concept map to playable words
 
-`node scripts/words/compile.mjs` (to be written in phase 1; `scripts/word-study/concept-compile-prototype.mjs` is the
-reference) writes `{category}_{lang}.json` for every language and category, then runs `update-words-version.mjs`.
+The app compiles on the device with `ConceptCompiler` (`data:files`), per language and category, the first time a game
+asks for them; the result is kept in memory. `scripts/words/lib.mjs` (`compileAll`) is the Node twin used for reports and
+tests, and `node scripts/words/compile.mjs` reports what would not play well. Both are checked against one shared fixture
+(`scripts/words/fixtures/graph`, expected lists rewritten with `compile.mjs --golden`).
 
 For each concept `C`, language `L` that `C` labels, and level `normal`:
 
@@ -164,8 +165,8 @@ On the source files: unique ids and id pattern; links reference existing concept
 present unless `todo` or `translatable: false`; label text 1 to 4 words and hint text 1 to 3 words, not blank, no parentheses, no separators (`「」|;`); categories exist
 and are non-empty; weights 1 to 5; known link types; two concepts with the same label in a language must differ by a sense
 tag; every `(concept, language)` compiles to at least 3 clues at `normal`; `proposed` records are never compiled.
-Release check: no `todo`, and `words_version.txt` matches the compiled output. The existing validator keeps checking the
-compiled files, so both layers are covered.
+Release check: no `todo`. `CompiledWordsValidationTest` compiles the real map with the Kotlin compiler and checks the shape
+of the words, and `ConceptCompilerParityTest` keeps the Kotlin and Node compilers equal, so both layers are covered.
 
 ## 8. Review workflow
 
@@ -230,9 +231,10 @@ reveal values per type are starting points to calibrate with reviewed data and r
 | Piece | Where |
 |---|---|
 | Shared rules (ranking, caps, serialization) | `scripts/words/lib.mjs` |
-| One-off migration (refuses to run again) | `scripts/words/migrate.mjs` |
-| Compiler, `--check` for CI | `scripts/words/compile.mjs` |
-| Before/after comparison of two list directories | `scripts/words/compare.mjs` |
+| Report, fixture `--golden` / `--check` for CI | `scripts/words/compile.mjs` |
+| Compiler on the device (port of `compileAll`) | `ConceptCompiler.kt` (data:files) |
+| Kotlin equals Node on the shared fixture | `ConceptCompilerParityTest` |
+| The one-off migration and the list comparison script | removed once the app read the graph |
 | Source validator | `ConceptSourcesValidationTest` (data:files) |
 | Uniform sampling test | `SearchWordsUseCaseTest` (domain:usescases:game) |
 | CI | job `word_lists` in `validate.yml` |
