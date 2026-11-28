@@ -11,7 +11,7 @@ object ConceptMapParser {
     private inline fun <reified T> lines(stream: InputStream?): List<T> =
         stream?.bufferedReader(Charsets.UTF_8)?.use { reader ->
             reader.lineSequence()
-                .map { it.removePrefix("﻿").trim() }
+                .map { it.removePrefix("\uFEFF").trim() }
                 .filter { it.isNotEmpty() }
                 .map { json.decodeFromString<T>(it) }
                 .toList()

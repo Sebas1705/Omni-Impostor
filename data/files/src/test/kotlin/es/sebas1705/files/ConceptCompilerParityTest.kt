@@ -30,7 +30,7 @@ class ConceptCompilerParityTest {
     }
 
     private fun expected(lang: String) =
-        json.decodeFromString<WordsJson>(File(dir, "expected_$lang.json").readText().removePrefix("﻿")).words
+        json.decodeFromString<WordsJson>(File(dir, "expected_$lang.json").readText().removePrefix("\uFEFF")).words
 
     @Test
     fun `spanish words equal the node compile`() = assertEquals(expected("es"), ConceptCompiler.compile(map, "es"))
