@@ -5,18 +5,27 @@ import es.sebas1705.common.utlis.extensions.types.logW
 import es.sebas1705.couchbase.datasources.WordsEnCBDataSource
 import es.sebas1705.couchbase.datasources.WordsEsCBDataSource
 import es.sebas1705.couchbase.documents.WordDoc
-import es.sebas1705.datastore.datasources.SettingsPreferencesDataSource
 import es.sebas1705.files.datasource.WordFileDataSource
+import es.sebas1705.files.graph.ConceptCompiler
 import es.sebas1705.files.json.WordJson
 import es.sebas1705.repositories.interfaces.IWordRepository
-import java.util.UUID
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
+/**
+ * Serves the playable words straight from the bundled concept map (`data/files/concepts`).
+ *
+ * The map is read once and kept in memory. A language/category is compiled the first time it is asked for (clues
+ * ranked from hints and links, see [ConceptCompiler]) and remembered, so a game only pays for the categories its
+ * players picked. Nothing is stored; words an earlier version saved into the database are deleted on the first import.
+ */
 class WordRepository @Inject constructor(
     private val wordsEnCBDataSource: WordsEnCBDataSource,
     private val wordsEsCBDataSource: WordsEsCBDataSource,
     private val wordFileDataSource: WordFileDataSource,
-    private val settingsPreferencesDataSource: SettingsPreferencesDataSource
 ) : IWordRepository {
 
     companion object {
@@ -24,102 +33,95 @@ class WordRepository @Inject constructor(
         private const val SPANISH_LANGUAGE_CODE = "es"
     }
 
-    private fun String.normalizeLanguageCode(): String = this.trim().lowercase()
+    private val lock = Mutex()
+    private var compiler: ConceptCompiler? = null
+
+    /** Compiled words by language, then category. */
+    private val byCategory = HashMap<String, HashMap<String, List<WordDoc>>>()
+
+    /** Languages whose every category has been compiled (asked for with no category filter). */
+    private val complete = HashSet<String>()
+
+    private fun String.normalizeLanguageCode(): String =
+        if (trim().lowercase() == ENGLISH_LANGUAGE_CODE) ENGLISH_LANGUAGE_CODE else SPANISH_LANGUAGE_CODE
+
+    private fun millisSince(startedAt: Long) = (System.nanoTime() - startedAt) / 1_000_000
+
+    private fun WordJson.toDoc(lang: String) = WordDoc(
+        id = "$lang:$category:$conceptId",
+        word = word,
+        clue = clues,
+        category = category,
+        conceptId = conceptId,
+        reveal = reveal
+    )
+
+    /** The compiler over the concept map, reading the map on first use; a failed read is not remembered. */
+    private fun compilerOrNull(): ConceptCompiler? = compiler ?: run {
+        val startedAt = System.nanoTime()
+        val map = wordFileDataSource.readConceptMap()
+        if (map == null) {
+            logW("The concept map could not be read, there are no words")
+            null
+        } else {
+            logI("Read the concept map (${map.concepts.size} concepts) in ${millisSince(startedAt)} ms")
+            ConceptCompiler(map).also { compiler = it }
+        }
+    }
+
+    /** Compiles the [categories] (all when null) of [lang] that are not compiled yet. */
+    private fun compileMissing(compiler: ConceptCompiler, lang: String, categories: Set<String>?) {
+        val cache = byCategory.getOrPut(lang) { HashMap() }
+        val missing = categories?.filter { it !in cache }?.toSet()
+        if (missing != null && missing.isEmpty()) return
+        val startedAt = System.nanoTime()
+        val compiled = compiler.compile(lang, missing).map { it.toDoc(lang) }.groupBy { it.category }
+        if (missing == null) {
+            cache.putAll(compiled)
+            complete += lang
+        } else {
+            missing.forEach { cache[it] = compiled[it].orEmpty() }
+        }
+        logI("Compiled ${missing?.size ?: "all"} categories of $lang in ${millisSince(startedAt)} ms")
+    }
 
     override suspend fun findByCategories(
         languageCode: String,
         categories: Set<String>
-    ): List<WordDoc> = if (categories.isEmpty())
-        if (languageCode.normalizeLanguageCode() == ENGLISH_LANGUAGE_CODE)
-            wordsEnCBDataSource.getAll()
-        else wordsEsCBDataSource.getAll()
-    else if (languageCode.normalizeLanguageCode() == ENGLISH_LANGUAGE_CODE)
-        wordsEnCBDataSource.getByParam(WordDoc::category, categories)
-    else wordsEsCBDataSource.getByParam(WordDoc::category, categories)
-
-    override suspend fun upsertAll(
-        languageCode: String,
-        entries: List<WordDoc>
-    ): Boolean = if (languageCode.normalizeLanguageCode() == ENGLISH_LANGUAGE_CODE)
-        wordsEnCBDataSource.upsertAll(entries)
-    else wordsEsCBDataSource.upsertAll(entries)
-
-    /**
-     * Loads the bundled word lists into the database.
-     *
-     * An empty database is filled. A database that already has words is kept as long as it holds the bundled
-     * version (`words_version.txt`); when the app ships different lists (or the version was never recorded, as on
-     * installs that predate it) the old words are replaced. The files are read before anything is deleted, so an
-     * unreadable asset never leaves the player without words, and the version is only recorded after a complete
-     * import, so an interrupted import is simply redone on the next launch.
-     */
-    override suspend fun importDefaultFromFiles(): Boolean {
-        val assetsVersion = wordFileDataSource.readWordsVersion()
-        val hasWords = wordsEnCBDataSource.count() > 0 || wordsEsCBDataSource.count() > 0
-        if (hasWords && isUpToDate(assetsVersion)) {
-            logI("Default words already exist in the database (version=$assetsVersion), skipping import")
-            return true
-        }
-
-        val wordMap = wordFileDataSource.readDefaultWords()
-        val readyToImport = if (wordMap.isEmpty()) {
-            logW("Default words could not be read from the files, keeping the database as it is")
-            false
-        } else {
-            !hasWords || clearStoredWords(assetsVersion)
-        }
-        val imported = readyToImport && upsertDefaultWords(wordMap)
-        if (imported && assetsVersion != null) settingsPreferencesDataSource.saveDefaultWordsVersion(assetsVersion)
-        return imported
-    }
-
-    /** The stored words are current when the bundle has no version to compare or it equals the recorded one. */
-    private suspend fun isUpToDate(assetsVersion: String?): Boolean =
-        assetsVersion == null || settingsPreferencesDataSource.readDefaultWordsVersion() == assetsVersion
-
-    private fun clearStoredWords(assetsVersion: String?): Boolean {
-        logI("Bundled word lists changed (version=$assetsVersion), replacing the words in the database")
-        val cleared = wordsEnCBDataSource.deleteAll() && wordsEsCBDataSource.deleteAll()
-        if (!cleared) logW("Could not clear the old words, the import will be retried on the next launch")
-        return cleared
-    }
-
-    private fun upsertDefaultWords(wordMap: Map<String, List<WordJson>>): Boolean {
-        var jsonsUpserted = 0
-        var totalToUpsert = 0
-
-        wordMap.forEach { (language, jsons) ->
-            totalToUpsert += jsons.size
-            val languageCode = language.normalizeLanguageCode()
-            val entries = jsons.map {
-                WordDoc(
-                    id = UUID.randomUUID().toString(),
-                    word = it.word,
-                    clue = it.clues,
-                    category = it.category,
-                    conceptId = it.conceptId,
-                    reveal = it.reveal
-                )
+    ): List<WordDoc> = lock.withLock {
+        withContext(Dispatchers.Default) {
+            val lang = languageCode.normalizeLanguageCode()
+            val compiler = compilerOrNull() ?: return@withContext emptyList()
+            if (categories.isEmpty()) {
+                if (lang !in complete) compileMissing(compiler, lang, null)
+                byCategory.getValue(lang).values.flatten()
+            } else {
+                compileMissing(compiler, lang, categories)
+                val cache = byCategory.getValue(lang)
+                categories.flatMap { cache[it].orEmpty() }
             }
-
-            if(when (languageCode) {
-                ENGLISH_LANGUAGE_CODE -> wordsEnCBDataSource.upsertAll(entries)
-                SPANISH_LANGUAGE_CODE -> wordsEsCBDataSource.upsertAll(entries)
-                else -> false
-            }) jsonsUpserted += entries.size
         }
+    }
 
-        logI("Upserted $jsonsUpserted out of $totalToUpsert default words from files")
-        return jsonsUpserted == totalToUpsert
+    /** Loads the concept map ahead of the first game and drops the words an older version stored in the database. */
+    override suspend fun importDefaultFromFiles(): Boolean {
+        dropLegacyStoredWords()
+        return lock.withLock { withContext(Dispatchers.Default) { compilerOrNull() != null } }
     }
 
     override suspend fun resetToDefault(): Boolean {
-        val deleteEn = wordsEnCBDataSource.deleteAll()
-        val deleteEs = wordsEsCBDataSource.deleteAll()
-        logI("Deleted all existing words. English delete success: $deleteEn, Spanish delete success: $deleteEs. Importing default words from files...")
-        val importResult = importDefaultFromFiles()
+        lock.withLock {
+            compiler = null
+            byCategory.clear()
+            complete.clear()
+        }
+        return importDefaultFromFiles()
+    }
 
-        return deleteEn && deleteEs && importResult
+    private fun dropLegacyStoredWords() {
+        if (wordsEnCBDataSource.count() == 0L && wordsEsCBDataSource.count() == 0L) return
+        val cleared = wordsEnCBDataSource.deleteAll() && wordsEsCBDataSource.deleteAll()
+        if (cleared) logI("Deleted the words stored by an earlier version")
+        else logW("Could not delete the words stored by an earlier version, they will be retried on the next launch")
     }
 }
-

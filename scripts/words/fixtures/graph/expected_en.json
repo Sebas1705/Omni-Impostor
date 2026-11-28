@@ -1,0 +1,10 @@
+{
+  "words": [
+    {"word":"Cat","clues":["Lion","Meow","Mouse","Whiskers","The zoo","Tiger"],"reveal":"211111","category":"animals","conceptId":"cat"},
+    {"word":"Lion","clues":["Ghost","Spiderman","The zoo","Jungle","Mane","Roar","Tiger","Cat"],"reveal":"11111122","category":"animals","conceptId":"lion"},
+    {"word":"Lion","clues":["Ghost","Spiderman","The zoo","Jungle","Mane","Roar","Tiger","Cat"],"reveal":"11111122","category":"nature_and_weather","conceptId":"lion"},
+    {"word":"Spiderman","clues":["Marvel","Peter Parker","The jungle","Web"],"category":"superheroes_and_comics","conceptId":"spiderman"},
+    {"word":"The zoo","clues":["Cages","Keeper","Tickets"],"category":"animals","conceptId":"zoo"},
+    {"word":"Tiger","clues":["Bengal","Lion","Orange","Stripes"],"reveal":"1211","category":"animals","conceptId":"tiger"}
+  ]
+}

@@ -43,18 +43,20 @@ This repository contains the **Omni-Impostor** Android app and its CI/CD automat
 
 Browse the data in `docs/word-map/index.html` and fix small things with `node scripts/words/edit.mjs` (see `docs/word-map/README.md`).
 The words are authored as a concept map in `data/files/concepts/{concepts,links}.jsonl` (design:
-`docs/studies/word-collection/concept-map-spec.md`). The files in `data/files/src/main/assets/*_{en,es}.json` are
-**generated** from it: edit the concepts, never the assets. After editing run:
+`docs/studies/word-collection/concept-map-spec.md`). The app bundles these two files as they are and compiles the playable
+words (clues ranked from hints and links) on the device, per language and category, the first time a game needs them
+(`ConceptCompiler`). There are no generated word lists to refresh: edit the concepts and commit. To see what the app will
+compile, and to refresh the browsable viewer, run:
 
 ```powershell
 node scripts/words/compile.mjs
 ```
 
-It rewrites the assets and refreshes `words_version.txt`, which is how installed apps know they must replace their stored
-words. CI runs `node scripts/words/compile.mjs --check`, `ConceptSourcesValidationTest` (shape of the sources) and
-`WordAssetsValidationTest` (shape of the compiled lists: at most 4 words, at least 3 distinct clues, no clue equal to the
-word, no duplicates in a list). `scripts/words/migrate.mjs` was the one-off migration from the old flat lists and refuses to
-run again.
+`ConceptCompiler.kt` is a port of `compileAll` in `scripts/words/lib.mjs`. Both are tested against the same fixture
+(`scripts/words/fixtures/graph`): if you change a compile rule, change both and run `node scripts/words/compile.mjs --golden`
+to rewrite the fixture's expected lists. CI runs `compile.mjs --check`, `ConceptSourcesValidationTest` (shape of the
+sources), `ConceptCompilerParityTest` (Kotlin equals the fixture) and `CompiledWordsValidationTest` (shape of the compiled
+words: at most 4 words, at least 3 distinct clues, no clue equal to the word, no duplicates in a category).
 
 Clue ratings from players: with your own Google credentials run `node scripts/words/ratings.mjs fetch <file>` (see its header),
 then `ratings.mjs import <file>` and `compile.mjs`; `ratings.mjs report` lists the best and worst rated clues. `node --test scripts/words/words.test.mjs`

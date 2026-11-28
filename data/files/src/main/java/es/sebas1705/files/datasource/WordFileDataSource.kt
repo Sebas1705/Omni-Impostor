@@ -4,15 +4,16 @@ import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import es.sebas1705.analytics.datasources.LogEventDataSource
 import es.sebas1705.common.managers.ClassLogData
-import es.sebas1705.files.config.SettingsFL.ASSET_NAME_REGEX
-import es.sebas1705.files.config.SettingsFL.WORDS_VERSION_ASSET
-import es.sebas1705.files.json.WordJson
-import es.sebas1705.files.json.WordsJson
-import kotlinx.serialization.json.Json
+import es.sebas1705.files.config.SettingsFL.CONCEPTS_ASSET
+import es.sebas1705.files.config.SettingsFL.LINKS_ASSET
+import es.sebas1705.files.config.SettingsFL.RATINGS_ASSET
+import es.sebas1705.files.graph.ConceptMap
+import es.sebas1705.files.graph.ConceptMapParser
+import java.io.FileNotFoundException
 import javax.inject.Inject
 
 /**
- * Class to represent the repository of the files
+ * Reads the bundled concept map (`concepts.jsonl`, `links.jsonl`, optional `ratings.jsonl`) from the assets.
  *
  * @property context [Context]: Application context
  * @property logEventDataSource [LogEventDataSource]: Data source for logging events
@@ -25,47 +26,21 @@ class WordFileDataSource @Inject constructor(
     private val logEventDataSource: LogEventDataSource
 ) : ClassLogData() {
 
-    private val jsonParser = Json { ignoreUnknownKeys = true }
-
-    /**
-     * Version of the bundled word lists (`words_version.txt`, a hash of their content kept in sync by a unit test),
-     * or null when the file is missing or unreadable.
-     */
-    fun readWordsVersion(): String? =
+    /** The concept map, or null when the assets are missing or unreadable (the cause is logged). */
+    fun readConceptMap(): ConceptMap? =
         try {
-            context.assets.open(WORDS_VERSION_ASSET).bufferedReader().use { it.readText() }.trim().ifEmpty { null }
-        } catch (ex: java.io.IOException) {
-            logEventDataSource.logError(this, "words version unavailable: ${ex.message}")
+            val ratings = try {
+                context.assets.open(RATINGS_ASSET)
+            } catch (_: FileNotFoundException) {
+                null
+            }
+            ConceptMapParser.parse(
+                concepts = context.assets.open(CONCEPTS_ASSET),
+                links = context.assets.open(LINKS_ASSET),
+                ratings = ratings
+            )
+        } catch (ex: Exception) {
+            logEventDataSource.logError(this, "concept map unavailable: ${ex.message}")
             null
         }
-
-    fun readDefaultWords(): Map<String, List<WordJson>> =
-        try {
-            val wordMap: MutableMap<String, List<WordJson>> = mutableMapOf()
-            context.assets
-                .list("")
-                .orEmpty()
-                .filter { ASSET_NAME_REGEX.matches(it) }
-                .forEach { assetName ->
-                    val languageCode = ASSET_NAME_REGEX.matchEntire(assetName)
-                        ?.groupValues
-                        ?.getOrNull(1)
-                        .orEmpty()
-
-                    val payload = context.assets
-                        .open(assetName)
-                        .bufferedReader()
-                        .use { it.readText() }
-
-                    val fileWords = jsonParser
-                        .decodeFromString<WordsJson>(payload)
-
-                    wordMap[languageCode] = (wordMap[languageCode] as? MutableList ?: emptyList()) + fileWords.words
-                }
-            wordMap
-        } catch (ex: Exception) {
-            logEventDataSource.logError(this, ex.message.toString())
-            emptyMap()
-        }
-
 }

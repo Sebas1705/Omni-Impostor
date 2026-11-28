@@ -14,21 +14,25 @@ import java.text.Normalizer
 
 /**
  * Guards the concept map sources (`data/files/concepts`, design in docs/studies/word-collection/concept-map-spec.md,
- * section 7). The compiled word lists are checked by [WordAssetsValidationTest]; whether they match the sources is
- * checked by `node scripts/words/compile.mjs --check`.
+ * section 7). The words compiled from them are checked by [CompiledWordsValidationTest]; the Kotlin and Node compilers
+ * are kept equal by [ConceptCompilerParityTest].
  */
 class ConceptSourcesValidationTest {
 
     private val dir: File = listOf("concepts", "data/files/concepts").map(::File).first { it.isDirectory }
-    private val assets: File = listOf("src/main/assets", "data/files/src/main/assets").map(::File).first { it.isDirectory }
+    private val categoriesFile: File = listOf(
+        "../../domain/models/src/main/java/es/sebas1705/models/Categories.kt",
+        "domain/models/src/main/java/es/sebas1705/models/Categories.kt"
+    ).map(::File).first { it.isFile }
 
     private fun jsonl(name: String): List<JsonObject> =
         File(dir, name).readLines().filter { it.isNotBlank() }.map { Json.parseToJsonElement(it).jsonObject }
 
     private val concepts by lazy { jsonl("concepts.jsonl") }
     private val links by lazy { jsonl("links.jsonl") }
+    /** The categories the app offers: the entries of the `Categories` enum, in storage (lower case) form. */
     private val categories by lazy {
-        assets.listFiles().orEmpty().mapNotNull { Regex("^(.+)_(en|es)\\.json$").matchEntire(it.name)?.groupValues?.get(1) }.toSet()
+        categoriesFile.readLines().mapNotNull { Regex("^\\s{4}([A-Z][A-Z0-9_]*)\\(").find(it)?.groupValues?.get(1)?.lowercase() }.toSet()
     }
 
     private fun JsonObject.str(key: String) = this[key]?.jsonPrimitive?.content

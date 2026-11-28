@@ -5,6 +5,11 @@ plugins {
 
 android {
     namespace = "es.sebas1705.data.files"
+
+    sourceSets {
+        // The concept map sources (concepts.jsonl, links.jsonl) are bundled as they are: the app compiles them on use.
+        getByName("main").assets.srcDir("concepts")
+    }
 }
 
 dependencies {

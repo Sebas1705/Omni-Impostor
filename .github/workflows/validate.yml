@@ -50,10 +50,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Check the word lists match the concept map
+      - name: Check the compiler fixture is current
         run: node scripts/words/compile.mjs --check
-      - name: Check the words version
-        run: node scripts/word-study/update-words-version.mjs --check
       - name: Test the word tooling
         run: node --test scripts/words/words.test.mjs scripts/words/edit.test.mjs
   changes:

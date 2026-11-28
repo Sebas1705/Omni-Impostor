@@ -1,0 +1,13 @@
+{"from":"lion","to":"tiger","type":"contrast","w":3}
+{"from":"lion","to":"cat","type":"broader","w":2,"langs":["en"]}
+{"from":"lion","to":"spiderman","type":"association","w":5}
+{"from":"lion","to":"zoo","type":"context","w":4}
+{"from":"lion","to":"ghost","type":"association","w":5}
+{"from":"tiger","to":"lion","type":"contrast","w":3}
+{"from":"cat","to":"lion","type":"part","w":3}
+{"from":"cat","to":"zoo","type":"association","w":1}
+{"from":"cat","to":"tiger","type":"association","w":1}
+{"from":"only-es","to":"lion","type":"association","w":3}
+{"from":"thin","to":"zoo","type":"association","w":3}
+{"from":"thin","to":"lion","type":"nonsense","w":3}
+{"from":"spiderman","to":"jungle-topic","type":"association","w":3}
